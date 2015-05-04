@@ -18,6 +18,7 @@ import umsa.capricornio.utilitarios.herramientas.ColumnData;
  * @author UMSA-JES
  */
 //esto es nuevo para ver en git
+//COMMIT DE HENRRY
 public class TablaFechaRestricciones extends AbstractTableModel 
 {
   static final public ColumnData m_columns[] = {
