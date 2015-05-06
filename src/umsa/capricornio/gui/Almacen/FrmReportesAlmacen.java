@@ -10,7 +10,10 @@
  */
 package umsa.capricornio.gui.Almacen;
 
+import java.net.URL;
 import java.rmi.RemoteException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +21,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.xml.rpc.ServiceException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import umsa.capricornio.domain.Transaccion;
 import umsa.capricornio.gui.Almacen.reportes.RepDocsEnviados;
 import umsa.capricornio.gui.Almacen.reportes.RepIngresoMatPeriodico;
@@ -270,6 +278,35 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
         CerrarFrame();
     }//GEN-LAST:event_BtnSalirActionPerformed
 
+    void mostrarreporteya(String e,int ts,Date fi,Date ff)
+    {
+        URL urlMaestro,urlMaestro1,urlMaestro2;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");            
+            Connection conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
+            JD_Reporte1 t1 = new JD_Reporte1();
+            Map parameters = new HashMap();
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra.jasper");
+            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra2.jasper");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+            parameters.put("ESTADO",e);
+            parameters.put("TIPO_SOL",ts);
+            parameters.put("FECHA_INICIO",fi);
+            parameters.put("FECHA_FINAL",ff);
+            parameters.put("DIR", urlMaestro1.toString());
+            parameters.put("DIR1", urlMaestro2.toString());
+            JasperReport reporte = (JasperReport) JRLoader.loadObject(urlMaestro); 
+            System.out.println("realizo el jasper reporte");
+            JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parameters, conexion);
+            System.out.println("realizo el jasper print");
+            JasperViewer.viewReport(jasperPrint, false);  
+            System.out.println("realizo el jasper view");
+            
+        } catch (Exception ec) {
+            System.out.println("Error Gravichimo: "+e);
+        }
+    }
+    
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
         int ts=0;
         String e="";
@@ -302,8 +339,9 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
         //System.out.println("fecha final: "+DatFec_fin.getValue().toString());
         fi=(Date) DatFec_ini.getValue();
         ff=(Date) DatFec_fin.getValue();
-        JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
-        r.setVisible(true);
+        mostrarreporteya(e,ts,fi,ff);
+        //JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
+        //r.setVisible(true);
     }//GEN-LAST:event_BtnReporteActionPerformed
 
     private void RadIngreso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadIngreso2ActionPerformed

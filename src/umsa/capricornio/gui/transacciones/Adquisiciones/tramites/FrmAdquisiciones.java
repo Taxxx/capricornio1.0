@@ -354,7 +354,6 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         BtnSalir = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         PnlTransaccionBandeja = new javax.swing.JScrollPane();
@@ -384,16 +383,16 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosed(evt);
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameClosed(evt);
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameOpened(evt);
@@ -417,15 +416,6 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         });
         getContentPane().add(BtnSalir);
         BtnSalir.setBounds(510, 640, 150, 25);
-
-        jButton4.setText("Reporte");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(1000, 10, 140, 25);
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 204));
         jPanel4.setLayout(null);
@@ -540,15 +530,15 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nro. Orden de Compra:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(230, 24, 140, 16);
+        jLabel1.setBounds(230, 24, 140, 14);
 
         jLabel2.setText("Nro. Hoja de Ruta: ");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(540, 24, 120, 16);
+        jLabel2.setBounds(540, 24, 120, 14);
         jPanel2.add(JTF_nroOrden);
-        JTF_nroOrden.setBounds(370, 20, 110, 22);
+        JTF_nroOrden.setBounds(370, 20, 110, 20);
         jPanel2.add(JTF_hojaRuta);
-        JTF_hojaRuta.setBounds(650, 20, 100, 22);
+        JTF_hojaRuta.setBounds(650, 20, 100, 20);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/search_16.png"))); // NOI18N
         jButton1.setText("BUSCAR");
@@ -739,12 +729,6 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         this.JTF_nroOrden.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        JD_Reporte r = new JD_Reporte(this.menu,false);
-        r.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizar;
     private javax.swing.JButton BtnAdelante;
@@ -762,7 +746,6 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
