@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.xml.rpc.ServiceException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -308,8 +309,8 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
     }
     
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
-        int ts=0;
-        String e="";
+        int ts=-1;
+        String e="ttt";
         Date fi,ff;
         if (RadEnvio1.isSelected())
             ts=0;
@@ -339,7 +340,19 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
         //System.out.println("fecha final: "+DatFec_fin.getValue().toString());
         fi=(Date) DatFec_ini.getValue();
         ff=(Date) DatFec_fin.getValue();
-        mostrarreporteya(e,ts,fi,ff);
+        if(ts==-1)
+        {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un tipo de solicitud");
+        }
+        else{
+        if(e.equals("ttt"))
+        {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un Estado");
+        }else{
+        mostrarreporteya(e,ts,fi,ff);    
+        }
+        }
+        
         //JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
         //r.setVisible(true);
     }//GEN-LAST:event_BtnReporteActionPerformed
