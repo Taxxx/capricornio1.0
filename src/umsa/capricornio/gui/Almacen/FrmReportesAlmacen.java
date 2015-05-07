@@ -281,6 +281,17 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
 
     void mostrarreporteya(String e,int ts,Date fi,Date ff)
     {
+        if(fi.toString().equals(ff.toString()))
+        {
+            fi.setDate(fi.getDate()-1);
+            ff.setDate(ff.getDate()+1);
+            System.out.println(fi);
+            System.out.println(ff);
+        }
+        else
+        {
+            System.out.println("no muestra"+fi);
+        }
         URL urlMaestro,urlMaestro1,urlMaestro2;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");            
@@ -304,7 +315,7 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
             System.out.println("realizo el jasper view");
             
         } catch (Exception ec) {
-            System.out.println("Error Gravichimo: "+e);
+            System.out.println("Error Gravichimo: "+ec);
         }
     }
     
