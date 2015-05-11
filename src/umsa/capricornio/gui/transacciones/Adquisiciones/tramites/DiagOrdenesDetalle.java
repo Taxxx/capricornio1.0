@@ -1272,6 +1272,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             sw = true;
         }
         System.out.println("El cod_rol" + cod_rol);
+        System.out.println("si aparece la cuantia "+cuantia);
         //System.out.println("El cod"+this.proveedor.getCod_proveedor());
         /*if(this.proveedor.getCod_proveedor()==null && cod_rol!=2 && this.verifica_monto(Double.parseDouble(this.TxtTotal.getText())))
          {
@@ -1342,14 +1343,21 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 }
                 String destino = "";
                 //System.out.println("");
+                int cod_aux=cod_w;
                 for (int f = 0; f < TblItems.getRowCount(); f++) {
                     if (!"".equals(TblItems.getValueAt(f, 1).toString()) && !"D".equals(TblItems.getValueAt(f, 1).toString())) {
                         System.out.println("cod_trans_detalle: " + Integer.parseInt(TblItems.getValueAt(f, 2).toString()) + ", cod_w:" + cod_w + ", origen" + TblItems.getValueAt(f, 1).toString());
                         System.out.println("Destino Waoooo");
+                        System.out.println("sdfsfsdfsdfsdfdsf"+cuantia+" "+cod_w);
+                        if(cuantia.equals("COMPRA MENOR") && cod_w==7)
+                        {
+                            cod_aux=cod_w;
+                            cod_w=1;
+                        }
                         destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
                     }
                 }
-
+                cod_w=cod_aux;
                 BtnSalir.doClick();
             } catch (RemoteException e) {
                 javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
