@@ -147,11 +147,11 @@ public class Reportes {
                
         }
         catch (RemoteException e){
-           
+           System.out.println("nououououou -> "+e.getMessage());
         }
         catch (ServiceException e){ System.out.println("error 1:"+e);} 
         catch (NumberFormatException e) {
-            
+            System.out.println("nououououou jijijij-> "+e.getMessage());
         }  
     }
     public void MostrarOrden(int cod_trans_nro,String cod_estado,int cod_tramite,String titulo){
@@ -234,6 +234,7 @@ public class Reportes {
             }  */      
         }
         catch (RemoteException e){
+            System.out.println("erroooorrrr!!! "+e.getMessage());
 //            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
 //                        javax.swing.JOptionPane.ERROR_MESSAGE);
         }

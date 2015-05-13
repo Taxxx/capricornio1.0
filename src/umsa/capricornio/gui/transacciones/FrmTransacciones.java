@@ -364,7 +364,8 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
                 } 
                 RepTransaccion rep = new RepTransaccion();
                 rep.Reporte(list,titulo, cod_tramite,cod_trans_nro);
-            }                         
+            }
+            System.out.println("error:P ");
             /*for (int i = 0; i < list.size(); i++) {
                 Transaccion aux = (Transaccion) list.get(i);t           
                 System.out.println(aux.getNro_gestion()+" "+aux.getFecha_creacion()+" "+ aux.getFecha_envio()+" "+aux.getUnidad_sol()+" "+aux.getUnidad_des()+" "+aux.getUsuario_sol()+" "+aux.getUnidad_medida()+" "+aux.getCantidad_pedido()+" "+aux.getTipo_item()+" "+aux.getArticulo()+" "+aux.getDetalle_solicitud());
@@ -411,14 +412,14 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         //System.out.println("Capri :D :D :D cod_transaccion -----> "+this.cod_transaccion);
         /*if (cod_rol==2 && cod_tram==3 && "C".equals(cod_estado))
             MostrarReporte(cod_trans_nro, cod_estado, cod_tram, titulo);*/
-        if (cod_tram==3 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)) && this.cod_rol==2)
+        if (cod_tram==3 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)) && (this.cod_rol==2|| this.cod_rol==4))
             reportes.MostrarIngreso(cod_trans_nro, cod_estado, cod_tram);//MostrarIngreso(cod_trans_nro, cod_estado, cod_tram, titulo);
         else if (cod_tram==1 && (this.cod_rol==2||this.cod_rol==4))
             reportes.MostrarSolicitud(cod_transaccion, "PPTO", 1, "SOLICITUD DE COMPRAS");//MostrarSolicitud(cod_transaccion, "PPTO", 1, "SOLICITUD DE COMPRAS");
             //System.out.println();
-        else if (cod_tram==2 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& this.cod_rol==2)
+        else if (cod_tram==2 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& (this.cod_rol==2 || this.cod_rol==4))
             reportes.MostrarOrden(cod_trans_nro, cod_estado, cod_tram, titulo);//MostrarOrden(cod_trans_nro, cod_estado, cod_tram, titulo);
-        else if (cod_tram==4 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& this.cod_rol==2)
+        else if (cod_tram==4 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& (this.cod_rol==2|| this.cod_rol==4))
             reportes.MostrarPedido(cod_trans_nro, cod_estado, cod_tram);//MostrarPedido(cod_trans_nro, cod_estado, cod_tram);
             System.out.println();
     }

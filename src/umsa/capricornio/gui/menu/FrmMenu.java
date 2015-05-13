@@ -152,6 +152,8 @@ public class FrmMenu extends javax.swing.JFrame {
         ItemOrdenes.setEnabled(false);
         BtnOrdenesCompra.setEnabled(false);
         ItemBandeja.setEnabled(false);
+        ItmDocsEnviados.setEnabled(false);
+        ItmDocsEnviados.setVisible(false);
         BtnBandeja.setEnabled(false);
     }
 
