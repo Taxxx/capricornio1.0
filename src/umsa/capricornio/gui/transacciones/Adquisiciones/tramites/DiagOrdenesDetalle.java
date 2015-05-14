@@ -1471,6 +1471,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             TxtMemo.setEditable(true);
             TxtObsAlmacen.setEditable(true);
             BtnBuscaProveedor.setEnabled(false);
+            BtnRetornar.setEnabled(true);
             tab_habil = 1;
         } else if (cod_rol == 5) {
             TxtObsAdq.setEditable(true);

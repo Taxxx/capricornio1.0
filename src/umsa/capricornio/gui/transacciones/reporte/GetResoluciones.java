@@ -118,7 +118,7 @@ public class GetResoluciones {
         parameters.put("DESTINO", destino);
         //parameters.put("Destino", this.destino);
         
-        System.out.println("El cod_w es --> "+cod_w);
+        System.out.println("El cod_w es --> "+cod_w+", y el destino es: "+destino);
         //urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniServ.jasper");
         switch(cod_w){
             case 6:
