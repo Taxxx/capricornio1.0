@@ -518,23 +518,43 @@ public class FrmMenu extends javax.swing.JFrame {
         ItemDespacho.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItemDespacho.setForeground(new java.awt.Color(0, 51, 204));
         ItemDespacho.setText("Despacho de Almacen");
+        ItemDespacho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemDespachoActionPerformed(evt);
+            }
+        });
         MenProcesos.add(ItemDespacho);
         MenProcesos.add(jSeparator5);
 
         ItemProvedores.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItemProvedores.setForeground(new java.awt.Color(0, 51, 204));
         ItemProvedores.setText("Proveedores");
+        ItemProvedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemProvedoresActionPerformed(evt);
+            }
+        });
         MenProcesos.add(ItemProvedores);
 
         ItemOrdenes.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItemOrdenes.setForeground(new java.awt.Color(0, 51, 204));
         ItemOrdenes.setText("Ordenes de Compra");
+        ItemOrdenes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemOrdenesActionPerformed(evt);
+            }
+        });
         MenProcesos.add(ItemOrdenes);
         MenProcesos.add(jSeparator6);
 
         ItemBandeja.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItemBandeja.setForeground(new java.awt.Color(0, 51, 204));
         ItemBandeja.setText("Bandeja de Transacciones");
+        ItemBandeja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemBandejaActionPerformed(evt);
+            }
+        });
         MenProcesos.add(ItemBandeja);
 
         MenMenu.add(MenProcesos);
@@ -692,6 +712,25 @@ public class FrmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         AbrirFrameInterno(new JIF_DatosInstitucion(this));
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void ItemDespachoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemDespachoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ItemDespachoActionPerformed
+
+    private void ItemBandejaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemBandejaActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmTransacciones(this, cod_usuario, cod_rol, gestion,cod_almacen));
+    }//GEN-LAST:event_ItemBandejaActionPerformed
+
+    private void ItemOrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemOrdenesActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmAdquisiciones(this, cod_usuario, cod_rol, gestion,cod_almacen));
+    }//GEN-LAST:event_ItemOrdenesActionPerformed
+
+    private void ItemProvedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemProvedoresActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmBancoProveedores(this, cod_usuario, cod_rol, cod_almacen));
+    }//GEN-LAST:event_ItemProvedoresActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
