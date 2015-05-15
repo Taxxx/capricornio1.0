@@ -282,7 +282,8 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         int fila = TblTransaccionBandeja.getSelectedRow();
         int cod_transaccion=Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 0).toString());
         if ("ALM1".equals(TblTransaccionBandeja.getValueAt(fila, 1).toString()) || "JUR".equals(TblTransaccionBandeja.getValueAt(fila, 1).toString())){           
-            DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(menu,cod_almacen, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),cod_rol,  TblTransaccionBandeja.getValueAt(fila, 5).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 3).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 8).toString(),TblTransaccionBandeja.getValueAt(fila, 4).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),TblTransaccionBandeja.getValueAt(fila, 12).toString());
+            this.setVisible(false);
+            DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),cod_rol,  TblTransaccionBandeja.getValueAt(fila, 5).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 3).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 8).toString(),TblTransaccionBandeja.getValueAt(fila, 4).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),TblTransaccionBandeja.getValueAt(fila, 12).toString());
             ordenes.AbreDialogo(); 
             //LlenaBandeja();
             //LlenaEstados();
@@ -412,12 +413,12 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         //System.out.println("Capri :D :D :D cod_transaccion -----> "+this.cod_transaccion);
         /*if (cod_rol==2 && cod_tram==3 && "C".equals(cod_estado))
             MostrarReporte(cod_trans_nro, cod_estado, cod_tram, titulo);*/
-        if (cod_tram==3 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)) && (this.cod_rol==2|| this.cod_rol==4))
+        if (cod_tram==3 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)) && (this.cod_rol==2 || this.cod_rol==4))
             reportes.MostrarIngreso(cod_trans_nro, cod_estado, cod_tram);//MostrarIngreso(cod_trans_nro, cod_estado, cod_tram, titulo);
         else if (cod_tram==1 && (this.cod_rol==2||this.cod_rol==4))
             reportes.MostrarSolicitud(cod_transaccion, "PPTO", 1, "SOLICITUD DE COMPRAS");//MostrarSolicitud(cod_transaccion, "PPTO", 1, "SOLICITUD DE COMPRAS");
             //System.out.println();
-        else if (cod_tram==2 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& (this.cod_rol==2 || this.cod_rol==4))
+        else if (cod_tram==2 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)||"JUR".equals(cod_estado))&& (this.cod_rol==2 || this.cod_rol==4))
             reportes.MostrarOrden(cod_trans_nro, cod_estado, cod_tram, titulo);//MostrarOrden(cod_trans_nro, cod_estado, cod_tram, titulo);
         else if (cod_tram==4 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& (this.cod_rol==2|| this.cod_rol==4))
             reportes.MostrarPedido(cod_trans_nro, cod_estado, cod_tram);//MostrarPedido(cod_trans_nro, cod_estado, cod_tram);
@@ -451,20 +452,20 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(104, 129, 156));
         setClosable(true);
-        setTitle("TRAESTADO DE TRANSACCIONES Y BANDE JA DE ENTRADA");
+        setTitle("BANDEJA DE TRANSACCIONES DE ENTRADA Y TRANSACCIONES DE ESTADO");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosed(evt);
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameClosed(evt);
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameOpened(evt);

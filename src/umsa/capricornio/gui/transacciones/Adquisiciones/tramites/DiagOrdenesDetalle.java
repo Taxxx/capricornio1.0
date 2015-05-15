@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.JTableHeader;
@@ -37,6 +38,7 @@ import umsa.capricornio.gui.transacciones.Adquisiciones.BancoProveedor.DiagBusca
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.Item;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.ItemCellEditor;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.TablaOrden;
+import umsa.capricornio.gui.transacciones.FrmTransacciones;
 import umsa.capricornio.gui.transacciones.JD_CambiaPartida;
 import umsa.capricornio.gui.transacciones.JD_DefItem;
 import umsa.capricornio.gui.transacciones.JD_abmDetalle;
@@ -57,6 +59,7 @@ import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
     FrmMenu menu;
+    JInternalFrame ft;
     private Reportes reportes = new Reportes();
     private double Total;
     int cod_almacen, cod_trans_nro, cod_rol, gestion, cod_w, tab_habil;
@@ -72,9 +75,12 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     /**
      * Creates new form DiagOrdenesDetalle
      */
-    public DiagOrdenesDetalle(FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta) {
+    public DiagOrdenesDetalle(JInternalFrame frmt ,FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta) {
         super(menu, false);
         initComponents();
+        ft=frmt;
+        this.BtnAnular.setVisible(false);
+        this.BtnRetornar.setVisible(false);
         this.menu = menu;
         this.cod_almacen = cod_almacen;
         this.cod_trans_nro = cod_trans_nro;
@@ -530,6 +536,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     }
 
     public void AbreDialogo() {
+        ft.setVisible(false);
         setVisible(true);
     }
 
@@ -558,7 +565,6 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         LblDe = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jButton11 = new javax.swing.JButton();
         PnlItems = new javax.swing.JScrollPane();
         TblItems = new javax.swing.JTable();
         TabTransaccion = new javax.swing.JTabbedPane();
@@ -599,9 +605,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         BtnRetornar = new javax.swing.JButton();
         BtnAnular = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ZODIAC CAPRICORN SYSTEM");
+        setBackground(new java.awt.Color(255, 0, 0));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -713,15 +721,6 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jLabel13.setText("A :");
         jPanel1.add(jLabel13);
         jLabel13.setBounds(450, 90, 30, 20);
-
-        jButton11.setText("Generacion de contrato");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton11);
-        jButton11.setBounds(960, 70, 170, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 1140, 120);
@@ -885,7 +884,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         ScrObs.setViewportView(TxtObsAlmacen);
 
         PnlAlmacen.add(ScrObs);
-        ScrObs.setBounds(70, 60, 630, 60);
+        ScrObs.setBounds(70, 60, 650, 60);
 
         LblFactura.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         LblFactura.setText("Factura :");
@@ -1004,7 +1003,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         TxtTotal.setBounds(1030, 350, 120, 21);
 
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        BtnSalir.setForeground(new java.awt.Color(0, 102, 0));
+        BtnSalir.setForeground(new java.awt.Color(255, 0, 51));
         BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
         BtnSalir.setText("Salir");
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -1013,7 +1012,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(810, 540, 150, 25);
+        BtnSalir.setBounds(560, 350, 150, 25);
 
         BtnGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnGuardar.setForeground(new java.awt.Color(0, 51, 153));
@@ -1025,7 +1024,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnGuardar);
-        BtnGuardar.setBounds(590, 540, 120, 25);
+        BtnGuardar.setBounds(440, 350, 120, 25);
 
         BtnAvanzar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnAvanzar.setForeground(new java.awt.Color(0, 51, 153));
@@ -1037,7 +1036,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnAvanzar);
-        BtnAvanzar.setBounds(430, 540, 160, 25);
+        BtnAvanzar.setBounds(280, 350, 160, 25);
 
         BtnRetornar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnRetornar.setForeground(new java.awt.Color(0, 102, 0));
@@ -1050,7 +1049,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnRetornar);
-        BtnRetornar.setBounds(10, 540, 150, 25);
+        BtnRetornar.setBounds(130, 350, 150, 25);
 
         BtnAnular.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnAnular.setForeground(new java.awt.Color(255, 0, 0));
@@ -1064,14 +1063,25 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnAnular);
-        BtnAnular.setBounds(180, 540, 110, 25);
+        BtnAnular.setBounds(20, 350, 110, 25);
 
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("TOTAL:");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(970, 350, 60, 20);
 
-        setSize(new java.awt.Dimension(1181, 677));
+        jButton11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/printer.png"))); // NOI18N
+        jButton11.setText("Generacion de contrato");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(710, 350, 185, 25);
+
+        setSize(new java.awt.Dimension(1181, 585));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1105,6 +1115,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 //        long mem1 = r.freeMemory();
 //        dispose();
         this.setVisible(false);
+        ft.setVisible(true);
 }//GEN-LAST:event_BtnSalirActionPerformed
 
     private void setCodW(int cod_transaccion, int cod_w){
@@ -1471,7 +1482,6 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             TxtMemo.setEditable(true);
             TxtObsAlmacen.setEditable(true);
             BtnBuscaProveedor.setEnabled(false);
-            BtnRetornar.setEnabled(true);
             tab_habil = 1;
         } else if (cod_rol == 5) {
             TxtObsAdq.setEditable(true);
@@ -1479,6 +1489,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         } else if (cod_rol == 7) {
             TabTransaccion.setVisible(false);
             BtnGuardar.setEnabled(false);
+            this.setSize(this.getWidth(), this.getHeight()-160);
 
         }
         TabTransaccion.setSelectedIndex(tab_habil);
