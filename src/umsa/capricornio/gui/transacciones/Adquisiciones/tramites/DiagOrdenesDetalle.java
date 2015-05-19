@@ -75,7 +75,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     /**
      * Creates new form DiagOrdenesDetalle
      */
-    public DiagOrdenesDetalle(JInternalFrame frmt ,FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta) {
+    public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta) {
         super(menu, false);
         initComponents();
         ft=frmt;

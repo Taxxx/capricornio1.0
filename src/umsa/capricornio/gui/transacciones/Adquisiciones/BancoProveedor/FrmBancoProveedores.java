@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
@@ -28,6 +29,7 @@ import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.menu.FrmMenu;
 import umsa.capricornio.gui.transacciones.Adquisiciones.BancoProveedor.reportes.RepProveedores;
 import umsa.capricornio.gui.transacciones.Adquisiciones.BancoProveedor.tablas.TablaProveedores;
+import umsa.capricornio.gui.transacciones.Adquisiciones.BancoProveedor.tablas.TablaProveedores1;
 import umsa.capricornio.gui.transacciones.reporte.RepTransaccion;
 import umsa.capricornio.utilitarios.herramientas.MiRenderer;
 import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
@@ -42,8 +44,10 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
     
     int cod_usuario,cod_rol,cod_almacen;
     private Runtime r;
+    int sw=0;
     
     TablaProveedores proveedor;
+    TablaProveedores1 proveedor1;
     /** Creates new form FrmBancoProveedores */
     public FrmBancoProveedores(FrmMenu menu,int cod_usuario,int cod_rol,int cod_almacen) {
         this.menu=menu;
@@ -71,6 +75,24 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         header.setReorderingAllowed(true);
         PnlProveedores.getViewport().add(TblProveedores);
     }
+    private void ConstruyeTablaProveedores1(){
+        proveedor1 = new TablaProveedores1();
+        TblProveedores1.setAutoCreateColumnsFromModel(false);
+        TblProveedores1.setModel(proveedor1);
+
+        for (int k = 0; k < TablaProveedores1.m_columns.length; k++) {
+            TableCellRenderer renderer = new MiRenderer(TablaProveedores1.m_columns[k].m_alignment);
+            /*DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
+            renderer.setHorizontalAlignment(DatosTablaObligacionBandeja.m_columns[k].m_alignment);*/
+            TableColumn column = new TableColumn(k, TablaProveedores1.m_columns[k].m_width, renderer, null);
+            TblProveedores1.addColumn(column);
+        }
+        JTableHeader header = TblProveedores1.getTableHeader();
+        header.setUpdateTableInRealTime(true);
+        header.setReorderingAllowed(true);
+        PnlProveedores1.getViewport().add(TblProveedores1);
+    }
+    
         
     void CerrarFrame(){
         menu.CerrarFrameInterno(this);
@@ -84,26 +106,34 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.getProveedores();
+            System.out.println("jjjj "+datos.length);
             CerearTablaProveedor();
-            
+            System.out.println("jjjj "+datos[0].get("cod"));
+            System.out.println("jjjj "+datos[0].get("COD"));
             if (datos!=null){
                 for (int c=0;c<datos.length;c++){
                     proveedor.insert(c);
+                    System.out.println("uuuuu");
                     TblProveedores.tableChanged(new TableModelEvent(proveedor, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
-                    TblProveedores.setValueAt(datos[c].get("COD_PROVEEDOR"),c,0);
-                    TblProveedores.setValueAt(datos[c].get("COD_ESTADO"),c,1);                    
-                    TblProveedores.setValueAt(datos[c].get("WEB"),c,2);
-                    TblProveedores.setValueAt(datos[c].get("GRAN_ACTIVIDAD_NIT"),c,3);
-                    TblProveedores.setValueAt(datos[c].get("RAZON_SOCIAL_NIT"),c,4);
-                    TblProveedores.setValueAt(datos[c].get("PARTIDA"),c,5);
-                    TblProveedores.setValueAt(datos[c].get("CASA_COMERCIAL"),c,6);
-                    TblProveedores.setValueAt(datos[c].get("SERVICIO"),c,7);
-                    TblProveedores.setValueAt(datos[c].get("DIRECCION"),c,8);
-                    TblProveedores.setValueAt(datos[c].get("TELEFONO"),c,9);
-                    TblProveedores.setValueAt(datos[c].get("FAX"),c,10);
-                    TblProveedores.setValueAt(datos[c].get("NIT"),c,11);
-                    TblProveedores.setValueAt(datos[c].get("ESTADO"),c,12);
+                    System.out.println("el cod es--> "+datos[c].get("nombre"));
+                    TblProveedores.setValueAt(datos[c].get("COD"),c,0);
+                    TblProveedores.setValueAt(datos[c].get("TIPO"),c,1);                    
+                    TblProveedores.setValueAt(datos[c].get("CLASE"),c,2);
+                    TblProveedores.setValueAt(datos[c].get("NOMBRE"),c,3);
+                    TblProveedores.setValueAt(datos[c].get("NC"),c,4);
+                    TblProveedores.setValueAt(datos[c].get("TEL"),c,5);
+                    TblProveedores.setValueAt(datos[c].get("DIR"),c,6);
+                    //TblProveedores.setValueAt(datos[c].get("SERVICIO"),c,7);
+                    //TblProveedores.setValueAt(datos[c].get("DIRECCION"),c,7);
+                    //TblProveedores.setValueAt(datos[c].get("TELEFONO"),c,8);
+                    //TblProveedores.setValueAt(datos[c].get("FAX"),c,9);
+                    //TblProveedores.setValueAt(datos[c].get("NIT"),c,10);
+                    //TblProveedores.setValueAt(datos[c].get("ESTADO"),c,11);
                 }
+            }
+            else
+            {
+                System.out.println("sin datos :p");
             }
         }
         catch (RemoteException e){
@@ -119,6 +149,16 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
              if (proveedor.delete(i)) {
                 TblProveedores.tableChanged(new TableModelEvent(
                 proveedor, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
+             }
+        }
+    } 
+    void CerearTablaProveedor1(){
+        int f = TblProveedores1.getRowCount();
+        for (int i=f-1;i>=0;i--){
+             if (proveedor1.delete(i)) {
+                System.out.println("ew");
+                TblProveedores1.tableChanged(new TableModelEvent(
+                proveedor1, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
              }
         }
     } 
@@ -197,7 +237,6 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         PnlProveedores = new javax.swing.JScrollPane();
         TblProveedores = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        BtnSalir = new javax.swing.JButton();
         BtnNuevo = new javax.swing.JButton();
         BtnGuardar = new javax.swing.JButton();
         BtnModificar = new javax.swing.JButton();
@@ -227,6 +266,23 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         RadInhabilitado = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        BtnSalir = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        PnlProveedores1 = new javax.swing.JScrollPane();
+        TblProveedores1 = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(39, 67, 121));
         setTitle("BANCO DE PROVEEDORES");
@@ -259,22 +315,11 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         PnlProveedores.setViewportView(TblProveedores);
 
         getContentPane().add(PnlProveedores);
-        PnlProveedores.setBounds(10, 10, 930, 220);
+        PnlProveedores.setBounds(10, 70, 930, 220);
 
         jPanel1.setBackground(new java.awt.Color(185, 203, 221));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Administracion de Banco de Proveedores"));
         jPanel1.setLayout(null);
-
-        BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
-        BtnSalir.setText("Salir");
-        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSalirActionPerformed(evt);
-            }
-        });
-        jPanel1.add(BtnSalir);
-        BtnSalir.setBounds(500, 240, 90, 25);
 
         BtnNuevo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/page.png"))); // NOI18N
@@ -506,9 +551,100 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         jButton2.setBounds(210, 240, 90, 23);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(30, 240, 900, 280);
+        jPanel1.setBounds(10, 20, 930, 20);
 
-        setBounds(0, 0, 969, 560);
+        jPanel3.setBackground(new java.awt.Color(185, 203, 221));
+        jPanel3.setLayout(null);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_first.png"))); // NOI18N
+        jPanel3.add(jButton3);
+        jButton3.setBounds(20, 0, 49, 25);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_previous.png"))); // NOI18N
+        jPanel3.add(jButton4);
+        jButton4.setBounds(70, 0, 50, 25);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
+        jPanel3.add(jButton5);
+        jButton5.setBounds(120, 0, 50, 25);
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_last.png"))); // NOI18N
+        jPanel3.add(jButton6);
+        jButton6.setBounds(170, 0, 50, 25);
+
+        BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
+        BtnSalir.setText("Salir");
+        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalirActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BtnSalir);
+        BtnSalir.setBounds(230, 0, 90, 25);
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(10, 290, 930, 30);
+
+        jPanel4.setBackground(new java.awt.Color(185, 203, 221));
+        jPanel4.setLayout(null);
+
+        jLabel11.setText("NOMBRE:");
+        jPanel4.add(jLabel11);
+        jLabel11.setBounds(30, 4, 50, 20);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField1);
+        jTextField1.setBounds(80, 0, 180, 30);
+
+        jLabel12.setText("NOMBRE COMERCIAL:");
+        jPanel4.add(jLabel12);
+        jLabel12.setBounds(270, 0, 110, 30);
+        jPanel4.add(jTextField2);
+        jTextField2.setBounds(380, 0, 190, 30);
+
+        jLabel13.setText("ITEM:");
+        jPanel4.add(jLabel13);
+        jLabel13.setBounds(590, 4, 30, 20);
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField3);
+        jTextField3.setBounds(620, 0, 170, 30);
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/find.png"))); // NOI18N
+        jButton7.setText("BUSCAR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton7);
+        jButton7.setBounds(810, 0, 60, 30);
+
+        getContentPane().add(jPanel4);
+        jPanel4.setBounds(10, 40, 930, 30);
+
+        TblProveedores1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        PnlProveedores1.setViewportView(TblProveedores1);
+
+        getContentPane().add(PnlProveedores1);
+        PnlProveedores1.setBounds(10, 360, 930, 130);
+
+        jPanel5.setBackground(new java.awt.Color(185, 203, 221));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Partidas que se les adjudicaron"));
+        getContentPane().add(jPanel5);
+        jPanel5.setBounds(10, 340, 930, 20);
+        jPanel5.getAccessibleContext().setAccessibleName("");
+
+        setBounds(0, 0, 969, 529);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
@@ -866,8 +1002,8 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
 
     private void TblProveedoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblProveedoresMousePressed
         if (evt.getClickCount() == 2) {
-            RecuperaDatosProveedor();
-            BtnNuevo.setEnabled(true);
+            //RecuperaDatosProveedor();
+            /**BtnNuevo.setEnabled(true);
             BtnGuardar.setEnabled(false);
             BtnModificar.setEnabled(true);
             Btneliminar.setEnabled(true);
@@ -883,7 +1019,55 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
             TxtRazonNit.setEnabled(true);
             TxtServicio.setEnabled(true);
             TxtTelefono.setEnabled(true);
-            TxtWeb.setEnabled(true);
+            TxtWeb.setEnabled(true);*/
+            
+            
+            //TblProveedores1.removeAll();
+            if(sw==0)
+            {
+                ConstruyeTablaProveedores1();
+                sw=1;
+            }
+            int fila=TblProveedores.getSelectedRow();
+            CerearTablaProveedor1();
+            //int cod_proveedor=Integer.parseInt(TblProveedores1.getValueAt(fila, 0).toString());
+            try{
+                System.out.println("uno");
+                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                System.out.println("dos");
+                AdquiWS_PortType puerto = servicio.getAdquiWS();
+                System.out.println("3");
+                Map[] datos=puerto.getDetProveedores(TblProveedores.getValueAt(fila, 0).toString());
+                System.out.println("4.->"+datos.length);
+                CerearTablaProveedor1();
+                if (datos!=null){
+                    System.out.println("4.->"+datos.length);
+                for (int c=0;c<datos.length;c++){
+                    System.out.println("PARTIDA "+datos[c].get("PARTIDA"));
+                    System.out.println("PARTIDA "+datos[c].get("CANTIDAD"));
+                    System.out.println("PARTIDA "+datos[c].get("UNIDAD"));
+                    System.out.println("PARTIDA "+datos[c].get("DETALLE"));
+                    proveedor1.insert(c);
+                    System.out.println("aaaaaa");
+                    TblProveedores1.tableChanged(new TableModelEvent(proveedor1, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
+                    //System.out.println("el cod es--> "+datos[c].get("nombre"));
+                    TblProveedores1.setValueAt(datos[c].get("PARTIDA"),c,0);
+                    TblProveedores1.setValueAt(datos[c].get("CANTIDAD"),c,1);                    
+                    TblProveedores1.setValueAt(datos[c].get("UNIDAD"),c,2);
+                    TblProveedores1.setValueAt(datos[c].get("DETALLE"),c,3);
+                    TblProveedores1.setValueAt(datos[c].get("GESTION"),c,4);
+                    }
+                }
+                else
+                {
+                    System.out.println("esta vacio rayos :P");
+                }
+                
+            }catch(Exception e)
+            {
+                System.out.println("error "+e.getMessage());
+            }
+            
         }
     }//GEN-LAST:event_TblProveedoresMousePressed
 
@@ -988,6 +1172,76 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         MostrarProveedores();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        String nombre=this.jTextField1.getText();
+        String n_comercial=this.jTextField2.getText();
+        String item=this.jTextField3.getText();
+        if(nombre=="" && n_comercial=="" && item=="")
+            JOptionPane.showMessageDialog( null, "debe ingresar un valor" );
+        else
+        {
+            if(nombre=="")
+                nombre="%";
+            else
+                nombre=nombre.toUpperCase();
+            if(n_comercial=="")
+                n_comercial="%";
+            else
+                n_comercial=n_comercial.toUpperCase();
+            if(item=="")
+                item="%";
+            else
+                item=item.toUpperCase();
+            try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos=puerto.getProveedoresbusca(nombre,n_comercial,item);
+            System.out.println("jjjj "+datos.length);
+            CerearTablaProveedor();
+            System.out.println("jjjj "+datos[0].get("cod"));
+            System.out.println("jjjj "+datos[0].get("COD"));
+            if (datos!=null){
+                for (int c=0;c<datos.length;c++){
+                    proveedor.insert(c);
+                    System.out.println("uuuuu");
+                    TblProveedores.tableChanged(new TableModelEvent(proveedor, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
+                    System.out.println("el cod es--> "+datos[c].get("nombre"));
+                    TblProveedores.setValueAt(datos[c].get("COD"),c,0);
+                    TblProveedores.setValueAt(datos[c].get("TIPO"),c,1);                    
+                    TblProveedores.setValueAt(datos[c].get("CLASE"),c,2);
+                    TblProveedores.setValueAt(datos[c].get("NOMBRE"),c,3);
+                    TblProveedores.setValueAt(datos[c].get("NC"),c,4);
+                    TblProveedores.setValueAt(datos[c].get("TEL"),c,5);
+                    TblProveedores.setValueAt(datos[c].get("DIR"),c,6);
+                    //TblProveedores.setValueAt(datos[c].get("SERVICIO"),c,7);
+                    //TblProveedores.setValueAt(datos[c].get("DIRECCION"),c,7);
+                    //TblProveedores.setValueAt(datos[c].get("TELEFONO"),c,8);
+                    //TblProveedores.setValueAt(datos[c].get("FAX"),c,9);
+                    //TblProveedores.setValueAt(datos[c].get("NIT"),c,10);
+                    //TblProveedores.setValueAt(datos[c].get("ESTADO"),c,11);
+                }
+            }
+            else
+            {
+                System.out.println("sin datos :p");
+            }
+            }
+            catch (Exception e){
+                javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+            } 
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup BtnGrpHabilitado;
     private javax.swing.JButton BtnGuardar;
@@ -996,9 +1250,11 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSalir;
     private javax.swing.JButton Btneliminar;
     private javax.swing.JScrollPane PnlProveedores;
+    private javax.swing.JScrollPane PnlProveedores1;
     private javax.swing.JRadioButton RadHabilitado;
     private javax.swing.JRadioButton RadInhabilitado;
     private javax.swing.JTable TblProveedores;
+    private javax.swing.JTable TblProveedores1;
     private javax.swing.JTextField TxtCasaComercial;
     private javax.swing.JTextField TxtDireccion;
     private javax.swing.JTextField TxtFax;
@@ -1011,8 +1267,16 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtWeb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1023,5 +1287,11 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

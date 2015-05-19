@@ -18,7 +18,7 @@ import umsa.capricornio.utilitarios.herramientas.ColumnData;
 public class TablaProveedores extends AbstractTableModel 
 {
   static final public ColumnData m_columns[] = {
-    new ColumnData( "cp", 0, JLabel.RIGHT ),
+    /*new ColumnData( "cp", 0, JLabel.RIGHT ),
     new ColumnData( "ce", 0, JLabel.RIGHT ),    
     new ColumnData( "web", 0, JLabel.RIGHT ),
     new ColumnData( "gran_act", 0, JLabel.RIGHT ),
@@ -30,7 +30,16 @@ public class TablaProveedores extends AbstractTableModel
     new ColumnData( "Telefono", 80, JLabel.CENTER ),   
     new ColumnData( "FAX", 80, JLabel.CENTER ),   
     new ColumnData( "NIT", 80, JLabel.CENTER ),       
-    new ColumnData( "estado", 80, JLabel.CENTER )
+    new ColumnData( "estado", 80, JLabel.CENTER )*/
+    new ColumnData("NIT o CI", 50, JLabel.CENTER),
+    new ColumnData("TIPO", 3, JLabel.LEFT),
+    new ColumnData("CLASE", 30, JLabel.LEFT),
+    new ColumnData("NOMBRE", 200, JLabel.LEFT),
+    new ColumnData("NOMBRE COMERCIAL", 280, JLabel.LEFT),
+    new ColumnData("TELEFONO", 20, JLabel.LEFT),
+    new ColumnData("DIRECCION", 150, JLabel.LEFT)
+    //new ColumnData("ESTADO", 3, JLabel.LEFT)
+    
   };
 
   protected ArrayList lista;  
@@ -63,7 +72,7 @@ public class TablaProveedores extends AbstractTableModel
       return "";
     ProveedoresData row = (ProveedoresData)lista.get(nRow);
     switch (nCol) {
-      case 0: return row.cod_proveedor;
+      /*case 0: return row.cod_proveedor;
       case 1: return row.cod_estado;      
       case 2: return row.web;
       case 3: return row.gran_act;
@@ -75,7 +84,14 @@ public class TablaProveedores extends AbstractTableModel
       case 9: return row.telefono;
       case 10: return row.fax;
       case 11: return row.nit;
-      case 12: return row.estado;
+      case 12: return row.estado;*/
+      case 0: return row.cod;
+      case 1: return row.tipo;
+      case 2: return row.clase;
+      case 3: return row.nombre;
+      case 4: return row.nc;
+      case 5: return row.tel;
+      case 6: return row.dir;
     }
     return "";          
   }             
@@ -85,48 +101,30 @@ public class TablaProveedores extends AbstractTableModel
     if (nRow < 0 || nRow>=getRowCount())
       return;    
     ProveedoresData row = (ProveedoresData)lista.get(nRow);
+    System.out.println("aqui+++"+value+" asdnoasdn++"+nRow+" asdnoasdn++"+nCol);
     String svalue = value.toString();
-    
     switch (nCol) {
       case 0:
-        row.cod_proveedor = svalue;
+        row.cod = svalue;
         break;      
       case 1:
-        row.cod_estado = svalue;
+        row.tipo = svalue;
         break;       
       case 2:
-        row.web = svalue;
+        row.clase = svalue;
         break;       
       case 3:
-        row.gran_act = svalue;
+        row.nombre = svalue;
         break;       
       case 4:
-        row.razon_nit = svalue;
+        row.nc = svalue;
         break;       
       case 5:
-        row.partida = svalue;
+        row.tel = svalue;
         break;       
       case 6:
-        row.casa_comercial = svalue;
+        row.dir = svalue;
         break;       
-      case 7:
-        row.servicio = svalue;
-        break;
-      case 8:
-        row.direccion = svalue;
-        break;
-      case 9:
-        row.telefono = svalue;
-        break;            
-      case 10:
-        row.fax = svalue;
-        break;            
-      case 11:
-        row.nit = svalue;
-        break;            
-      case 12:
-          row.estado = svalue;          
-          break;        
     }
   }
   
