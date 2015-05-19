@@ -607,7 +607,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("ZODIAC CAPRICORN SYSTEM");
         setBackground(new java.awt.Color(255, 0, 0));
         setResizable(false);
@@ -1485,9 +1485,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             BtnBuscaProveedor.setEnabled(false);
             BtnRetornar.setEnabled(true);
             tab_habil = 1;
+            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAdquisiciones),false);
         } else if (cod_rol == 5) {
             TxtObsAdq.setEditable(true);
             tab_habil = 0;
+            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAlmacen),false);
         } else if (cod_rol == 7) {
             TabTransaccion.setVisible(false);
             BtnGuardar.setEnabled(false);

@@ -270,7 +270,7 @@ public class FrmMenu extends javax.swing.JFrame {
         ItmDocsEnviados = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("mio de mi");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {

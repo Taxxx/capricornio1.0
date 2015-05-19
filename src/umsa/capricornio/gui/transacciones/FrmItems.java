@@ -103,6 +103,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
         initComponents();
         ConstruyeTablaItems();
         ConstruyeTablaVistaPreventivo();
+        
         //this.JB_Buscar.setVisible(false);
         //ConstruyeTablaDocumentos();
     }
@@ -613,7 +614,6 @@ public class FrmItems extends javax.swing.JInternalFrame {
         TblItems = new javax.swing.JTable();
         BtnAvanzar = new javax.swing.JButton();
         BtnSalir = new javax.swing.JButton();
-        BtnGuardar = new javax.swing.JButton();
         BtnRetornar = new javax.swing.JButton();
         TabTransaccion = new javax.swing.JTabbedPane();
         PnlAlmacen = new javax.swing.JPanel();
@@ -646,9 +646,9 @@ public class FrmItems extends javax.swing.JInternalFrame {
         BtnAnular = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        BtnGuardar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(61, 82, 122));
-        setClosable(true);
         setTitle("ZODIAC CAPRICORN SYSTEM");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -798,7 +798,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnAvanzar);
-        BtnAvanzar.setBounds(10, 440, 160, 25);
+        BtnAvanzar.setBounds(770, 530, 160, 25);
 
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnSalir.setForeground(new java.awt.Color(255, 0, 0));
@@ -810,19 +810,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(10, 500, 160, 25);
-
-        BtnGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        BtnGuardar.setForeground(new java.awt.Color(0, 51, 153));
-        BtnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk.png"))); // NOI18N
-        BtnGuardar.setText("Guardar");
-        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BtnGuardar);
-        BtnGuardar.setBounds(10, 470, 160, 25);
+        BtnSalir.setBounds(450, 530, 160, 25);
 
         BtnRetornar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnRetornar.setForeground(new java.awt.Color(0, 102, 0));
@@ -834,11 +822,12 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnRetornar);
-        BtnRetornar.setBounds(10, 410, 160, 25);
+        BtnRetornar.setBounds(130, 530, 160, 25);
 
         TabTransaccion.setBackground(new java.awt.Color(209, 224, 240));
 
         PnlAlmacen.setBackground(new java.awt.Color(209, 224, 240));
+        PnlAlmacen.setEnabled(false);
         PnlAlmacen.setLayout(null);
 
         ScrObs.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
@@ -933,24 +922,24 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         PnlPpto.add(TxtObsPpto);
-        TxtObsPpto.setBounds(30, 40, 360, 40);
+        TxtObsPpto.setBounds(30, 40, 440, 40);
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel16.setText("Observacion");
         PnlPpto.add(jLabel16);
-        jLabel16.setBounds(170, 10, 90, 20);
+        jLabel16.setBounds(220, 10, 90, 20);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         PnlPpto.add(jSeparator1);
-        jSeparator1.setBounds(470, 0, 20, 170);
+        jSeparator1.setBounds(520, 0, 20, 170);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel6.setText("HOJA DE RUTA:");
         PnlPpto.add(jLabel6);
-        jLabel6.setBounds(110, 90, 90, 20);
+        jLabel6.setBounds(150, 90, 90, 20);
         PnlPpto.add(JT_HRUTA);
-        JT_HRUTA.setBounds(220, 90, 100, 20);
+        JT_HRUTA.setBounds(270, 90, 100, 20);
 
         BtnCertifPpto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/magnifier.png"))); // NOI18N
         BtnCertifPpto.setText("Preventivo SIGMA");
@@ -960,7 +949,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         PnlPpto.add(BtnCertifPpto);
-        BtnCertifPpto.setBounds(470, 10, 190, 25);
+        BtnCertifPpto.setBounds(620, 10, 190, 25);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/cancel.png"))); // NOI18N
         jButton4.setText("Eliminar  Preventivo");
@@ -970,7 +959,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         PnlPpto.add(jButton4);
-        jButton4.setBounds(470, 40, 190, 25);
+        jButton4.setBounds(620, 40, 190, 25);
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 0));
@@ -982,22 +971,22 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         PnlPpto.add(jButton1);
-        jButton1.setBounds(470, 70, 190, 25);
+        jButton1.setBounds(620, 70, 190, 25);
 
         PnlPreventivo.setViewportView(JTbl_VPreventivo);
 
         PnlPpto.add(PnlPreventivo);
-        PnlPreventivo.setBounds(680, 10, 250, 110);
+        PnlPreventivo.setBounds(830, 10, 250, 110);
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 204));
         jLabel4.setText("TOTAL PREVENTIVOS:");
         PnlPpto.add(jLabel4);
-        jLabel4.setBounds(670, 130, 140, 14);
+        jLabel4.setBounds(820, 130, 140, 14);
 
         JL_TotalM.setForeground(new java.awt.Color(255, 0, 0));
         JL_TotalM.setText("0");
         PnlPpto.add(JL_TotalM);
-        JL_TotalM.setBounds(810, 130, 150, 14);
+        JL_TotalM.setBounds(960, 130, 150, 14);
 
         jButton5.setText("TOTALES POR PARTIDAS");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -1006,12 +995,12 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         PnlPpto.add(jButton5);
-        jButton5.setBounds(470, 100, 190, 23);
+        jButton5.setBounds(620, 100, 190, 23);
 
         TabTransaccion.addTab("Presupuesto", PnlPpto);
 
         getContentPane().add(TabTransaccion);
-        TabTransaccion.setBounds(170, 350, 970, 180);
+        TabTransaccion.setBounds(10, 350, 1130, 180);
 
         TxtTotal.setEditable(false);
         TxtTotal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -1032,7 +1021,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnAnular);
-        BtnAnular.setBounds(10, 380, 160, 25);
+        BtnAnular.setBounds(290, 530, 160, 25);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -1047,9 +1036,21 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(540, 340, 190, 23);
+        jButton2.setBounds(450, 340, 190, 23);
 
-        setBounds(0, 0, 1168, 581);
+        BtnGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnGuardar.setForeground(new java.awt.Color(0, 51, 153));
+        BtnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk.png"))); // NOI18N
+        BtnGuardar.setText("Guardar");
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnGuardar);
+        BtnGuardar.setBounds(610, 530, 160, 25);
+
+        setBounds(0, 0, 1168, 612);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
@@ -1121,6 +1122,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
 //            TxtFondo.setEditable(true);
 //            TxtMontoPpto.setEditable(true);
             tab_habil=1;
+            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAlmacen),false);
         }   
         else if (cod_rol==7){
                 TabTransaccion.setVisible(false);
