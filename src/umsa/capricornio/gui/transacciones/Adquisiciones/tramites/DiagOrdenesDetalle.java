@@ -1858,6 +1858,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             puerto.addHojaRuta("SET-addHojaRuta", cod_transaccion, hoja_ruta);
         } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,"Error al guardar la hoja de ruta","SYSTEM CAPRICORN",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -1869,7 +1871,9 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             System.out.println("La hoja de ruta es: "+puerto.getHojaRuta(cod_transaccion));
             this.JT_HRUTA.setText(puerto.getHojaRuta(cod_transaccion));
         } catch (Exception e) {
-            System.out.println("Terrible Error!!!");
+//            System.out.println("Terrible Error!!!");
+            javax.swing.JOptionPane.showMessageDialog(this,"Error al leer la hoja de ruta","SYSTEM CAPRICORN",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
     
