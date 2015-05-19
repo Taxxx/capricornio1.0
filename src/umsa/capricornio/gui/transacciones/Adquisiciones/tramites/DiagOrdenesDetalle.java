@@ -101,6 +101,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         System.out.println("Yuhuuuuu :P");
         getDatosAlmacen(cod_trans_nro);
         ConstruyeTablaItems();
+        
     }
     /*private void addProv(){
         
@@ -185,7 +186,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             if (datos != null) {
                 for (int c = 0; c < datos.length; c++) {
                     //this.JC_Partidas.addItem(datos[c].get("PARTIDA")+" - "+datos[c].get("DETALLE") );
-                    System.out.println("--> " + datos[c].get("PARTIDA").toString());
+//                    System.out.println("--> " + datos[c].get("PARTIDA").toString());
 //                        System.out.println("--> "+datos[c].get("PARTIDA").toString()+" - "+datos[c].get("DETALLE").toString()); 
                     listPartida.add(new Partida(datos[c].get("PARTIDA").toString() + " - " + datos[c].get("DETALLE").toString()));
                 }
@@ -583,6 +584,9 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        JT_HRUTA = new javax.swing.JTextField();
+        jButton13 = new javax.swing.JButton();
         PnlAlmacen = new javax.swing.JPanel();
         ScrObs = new javax.swing.JScrollPane();
         TxtObsAlmacen = new javax.swing.JTextPane();
@@ -871,6 +875,22 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         });
         PnlAdquisiciones.add(jButton10);
         jButton10.setBounds(670, 100, 210, 25);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel8.setText("HOJA DE RUTA:");
+        PnlAdquisiciones.add(jLabel8);
+        jLabel8.setBounds(10, 100, 90, 20);
+        PnlAdquisiciones.add(JT_HRUTA);
+        JT_HRUTA.setBounds(100, 100, 100, 20);
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk.png"))); // NOI18N
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        PnlAdquisiciones.add(jButton13);
+        jButton13.setBounds(200, 97, 30, 25);
 
         TabTransaccion.addTab("Adquisiciones", PnlAdquisiciones);
 
@@ -1448,6 +1468,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         //if(this.cod_rol==5)
         LlenaDetalles();
         LlenaItems();
+        GetDatos();
         //VerificaTipoTramite(); 
 
         LblDetalle.setText(detalle);
@@ -1826,6 +1847,39 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         fe.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        GuardarDatos(this.JT_HRUTA.getText());
+        javax.swing.JOptionPane.showMessageDialog(this,"Se guardo la Hoja de Ruta","SYSTEM CAPRICORN",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void GuardarDatos(String hoja_ruta){
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            puerto.addHojaRuta("SET-addHojaRuta", cod_transaccion, hoja_ruta);
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,"Error al guardar la hoja de ruta","SYSTEM CAPRICORN",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void GetDatos() {
+        try {
+            System.out.println("El cod_transaccion es: "+cod_transaccion);
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("La hoja de ruta es: "+puerto.getHojaRuta(cod_transaccion));
+            this.JT_HRUTA.setText(puerto.getHojaRuta(cod_transaccion));
+        } catch (Exception e) {
+//            System.out.println("Terrible Error!!!");
+            javax.swing.JOptionPane.showMessageDialog(this,"Error al leer la hoja de ruta","SYSTEM CAPRICORN",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAnular;
     private javax.swing.JButton BtnAvanzar;
@@ -1835,6 +1889,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton BtnSalir;
     private net.sf.nachocalendar.components.DateField CalFechaFact;
     private net.sf.nachocalendar.components.DateField CalFechaIng;
+    private javax.swing.JTextField JT_HRUTA;
     private javax.swing.JLabel LblA;
     private javax.swing.JLabel LblCuantia;
     private javax.swing.JLabel LblDe;
@@ -1863,6 +1918,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1882,6 +1938,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

@@ -1209,7 +1209,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
                 javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
                             javax.swing.JOptionPane.ERROR_MESSAGE);
             }
-            catch (ServiceException e){ System.out.println(e);}
+            catch (ServiceException e){System.out.println(e);}
             catch (IllegalArgumentException e){
                 javax.swing.JOptionPane.showMessageDialog(this,"Debe elegir una fila de la bandeja de salida para enviar el memorandum","SYSTEM CAPRICORN",
                             javax.swing.JOptionPane.ERROR_MESSAGE);
