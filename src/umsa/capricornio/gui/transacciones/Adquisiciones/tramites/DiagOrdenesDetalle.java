@@ -80,7 +80,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         initComponents();
         ft=frmt;
         this.BtnAnular.setVisible(false);
-        this.BtnRetornar.setVisible(false);
+        //this.BtnRetornar.setVisible(false);
         this.menu = menu;
         this.cod_almacen = cod_almacen;
         this.cod_trans_nro = cod_trans_nro;
@@ -993,7 +993,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         TabTransaccion.addTab("Almacen", PnlAlmacen);
 
         getContentPane().add(TabTransaccion);
-        TabTransaccion.setBounds(10, 370, 1140, 160);
+        TabTransaccion.setBounds(10, 380, 1140, 160);
 
         TxtTotal.setEditable(false);
         TxtTotal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -1477,11 +1477,13 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
          } */
         CalFechaFact.setEnabled(false);
         if (cod_rol == 2) {
+            System.out.println("Entro a la Restricción");
             TxtFactura.setEditable(true);
             CalFechaFact.setEnabled(true);
             TxtMemo.setEditable(true);
             TxtObsAlmacen.setEditable(true);
             BtnBuscaProveedor.setEnabled(false);
+            BtnRetornar.setEnabled(true);
             tab_habil = 1;
         } else if (cod_rol == 5) {
             TxtObsAdq.setEditable(true);
