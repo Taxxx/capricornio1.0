@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import com.caucho.hessian.client.HessianProxyFactory;
@@ -38,6 +37,7 @@ import umsa.capricornio.utilitarios.herramientas.MiRenderer;
  * @author UMSA-JES
  */
 public class JDAdjuntos extends javax.swing.JDialog {
+
     private File rutaArchivo;
     private String lectura;
     private String nombre_archivo;
@@ -47,34 +47,35 @@ public class JDAdjuntos extends javax.swing.JDialog {
     private int cod_rol;
     //private String origen;
     private Runtime r;
-    private int cod_tipo_adj=-1;
+    private int cod_tipo_adj = -1;
 
     /**
      * Creates new form JDAdjuntos
      */
-    
-    public JDAdjuntos(FrmMenu menu, boolean modal, int cod_transaccion,int cod_rol) {
+    public JDAdjuntos(FrmMenu menu, boolean modal, int cod_transaccion, int cod_rol) {
         super(menu, modal);
         initComponents();
         /*this.rutaArchivo=rutaArchivo;
-        this.lectura=lectura;
-        this.nombre_archivo=nombre_archivo;*/
-        this.cod_transaccion=cod_transaccion;
+         this.lectura=lectura;
+         this.nombre_archivo=nombre_archivo;*/
+        this.cod_transaccion = cod_transaccion;
         //this.origen=origen;
-        this.cod_rol=cod_rol;
+        this.cod_rol = cod_rol;
         ConstruyeTablaDocumentos();
         this.LlenaDocumentos();
         LlenaTipoAdj();
         CheckOrigen(this.cod_rol);
     }
-    private void CheckOrigen(int cod_rol){
-        System.out.println("El cod_rol es --> "+cod_rol);
-        if(cod_rol==7){
-            this.cod_tipo_adj=9;
+
+    private void CheckOrigen(int cod_rol) {
+        System.out.println("El cod_rol es --> " + cod_rol);
+        if (cod_rol == 7) {
+            this.cod_tipo_adj = 9;
             this.JCB_TipoAdj.setEnabled(false);
         }
     }
-    private void LlenaTipoAdj(){
+
+    private void LlenaTipoAdj() {
         //this.BtnAdjuntar.setEnabled(false);
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -87,18 +88,18 @@ public class JDAdjuntos extends javax.swing.JDialog {
                     //TblDocumentos.setValueAt(datos1[c].get("COD_DOCS"),c,0);
                     //ultimo_valor = (String) datos1[c].get("ULTIMO");
                     //System.out.println("cod : "+datos[c].get("COD")+" descripcion: "+datos[c].get("DESCRIPCION"));
-                    JCB_TipoAdj.addItem(datos[c].get("COD_ADJUNTO")+"-"+datos[c].get("DESCRIPCION"));
+                    JCB_TipoAdj.addItem(datos[c].get("COD_ADJUNTO") + "-" + datos[c].get("DESCRIPCION"));
                 }
             }
         } catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         } catch (ServiceException e) {
             System.out.println(e);
         }
     }
-    
-    private void ConstruyeTablaDocumentos(){
+
+    private void ConstruyeTablaDocumentos() {
         //cod_rol=5;
         //origen="ADQ";
         documentos = new TablaDocumentos();
@@ -114,9 +115,8 @@ public class JDAdjuntos extends javax.swing.JDialog {
         header.setUpdateTableInRealTime(true);
         header.setReorderingAllowed(true);
         PnlDocumentos.getViewport().add(TblDocumentos);
-       
+
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -288,14 +288,14 @@ public class JDAdjuntos extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void AbreDialogo(){
+    public void AbreDialogo() {
         setVisible(true);
     }
     private void BtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDeleteActionPerformed
         // TODO add your handling code here:
         int fila = TblDocumentos.getSelectedRow();
         int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea ELIMINAR EL ARCHIVO ADJUNTO?",
-            "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
         if (res != javax.swing.JOptionPane.YES_OPTION) {
             return;
         }
@@ -305,16 +305,16 @@ public class JDAdjuntos extends javax.swing.JDialog {
             Map[] datos = null;
             datos = puerto.setAnulaDocumento("SET-upDateAnulaDocumento", Integer.parseInt(TblDocumentos.getValueAt(fila, 0).toString()));
             javax.swing.JOptionPane.showMessageDialog(this, "EL DOCUMENTO ADJUNTO FUE ANULADO", "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         } catch (ServiceException e) {
             System.out.println(e);
         } catch (IllegalArgumentException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe elegir una fila de la bandeja de salida para enviar el memorandum", "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
         LlenaDocumentos();
     }//GEN-LAST:event_BtnDeleteActionPerformed
@@ -329,7 +329,7 @@ public class JDAdjuntos extends javax.swing.JDialog {
         //Directorio destino para las descargas
         String folder = "c:/descargas/";
         int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea DESCARGAR EL ARCHIVO ADJUNTO?",
-            "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
         if (res != javax.swing.JOptionPane.YES_OPTION) {
             return;
         }
@@ -362,7 +362,7 @@ public class JDAdjuntos extends javax.swing.JDialog {
             out.close();
             in.close();
             javax.swing.JOptionPane.showMessageDialog(this, "EL ARCHIVO SELECCIONADO " + nombre_doc + " FUE DESCARGADO EN SU SU COMPUTADORA EN C:/descargas", "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } catch (MalformedURLException e) {
             System.out.println("la url: " + url + " no es valida!");
         } catch (IOException e) {
@@ -393,10 +393,10 @@ public class JDAdjuntos extends javax.swing.JDialog {
                     //MigraDatosTabla("\\|"); // ESTE METODO TAMBIEN FUNCIONA, ambos son validos
                 } catch (FileNotFoundException e) {
                     javax.swing.JOptionPane.showMessageDialog(this, "No se encontro el archivo \n" + e, "CAJA PAGADORA",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                            javax.swing.JOptionPane.ERROR_MESSAGE);
                 } catch (IOException e) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Error de Flujo Entrada Salida \n" + e, "CAJA PAGADORA",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                            javax.swing.JOptionPane.ERROR_MESSAGE);
                 }
             }
             //MigraDatosTabla("|");
@@ -427,14 +427,14 @@ public class JDAdjuntos extends javax.swing.JDialog {
             }
         } catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         } catch (ServiceException e) {
             System.out.println(e);
         }
 
         //Grabar los datos del documento
         //javax.swing.JOptionPane.showMessageDialog(this, " V1 and cod_tipo_adj= "+this.cod_tipo_adj, "SYSTEM CAPRICORN",javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        if (!"".equals(TxtNombreArchivo.getText()) && this.cod_tipo_adj!=-1) {
+        if (!"".equals(TxtNombreArchivo.getText()) && this.cod_tipo_adj != -1) {
             //this.BtnAdjuntar.setEnabled(true);
             try {
                 //javax.swing.JOptionPane.showMessageDialog(this, " V1", "SYSTEM CAPRICORN",javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -449,21 +449,21 @@ public class JDAdjuntos extends javax.swing.JDialog {
                     if (!"".equals(TxtNombreArchivo.getText())) {
                         //javax.swing.JOptionPane.showMessageDialog(this, " V3", "SYSTEM CAPRICORN",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                         detalle = TxtNombreArchivo.getText();
-                        datos = puerto.setDocumentos("SET-insDataDoc", cod_transaccion, nombre_nuevo, "/opt/tomcat/webapps/prueba", TxtDescripcionArchivo.getText(), "V",this.cod_tipo_adj);
+                        datos = puerto.setDocumentos("SET-insDataDoc", cod_transaccion, nombre_nuevo, "/opt/tomcat/webapps/prueba", TxtDescripcionArchivo.getText(), "V", this.cod_tipo_adj);
                         javax.swing.JOptionPane.showMessageDialog(this, "ARCHIVO ALMACENADO CORRECTAMENTE", "SYSTEM CAPRICORN",
-                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                                javax.swing.JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
                 //cerrarDiag();
             } catch (RemoteException e) {
                 javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
             } catch (ServiceException e) {
                 System.out.println(e);
             }
         } else {
             javax.swing.JOptionPane.showMessageDialog(menu, "No eligio ningun archivo para subir\n o no le asigno un tipo al archivo adjunto", "SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
         LlenaDocumentos();
         TxtNombreArchivo.setText("");
@@ -479,109 +479,113 @@ public class JDAdjuntos extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private String getTipoAdj(String cadena){
-        int i=-1;
-        String aux=null;
-        for(int j=0;j<cadena.length();j++){
+    private String getTipoAdj(String cadena) {
+        int i = -1;
+        String aux = null;
+        for (int j = 0; j < cadena.length(); j++) {
             //cadena.charAt(j);
-            if(cadena.charAt(j)=='-'){
-                i=j;
+            if (cadena.charAt(j) == '-') {
+                i = j;
                 break;
             }
         }
         //System.out.println("El valor de i --> "+i);
-        if(i!=-1)
-            aux=cadena.substring(0,i);
+        if (i != -1) {
+            aux = cadena.substring(0, i);
+        }
         return aux;
     }
     private void JCB_TipoAdjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_TipoAdjActionPerformed
         // TODO add your handling code here:
         //System.out.println("el tipo de documento es: "+JCB_TipoAdj.getSelectedItem().toString());
         //System.out.println(":O "+getTipoAdj(JCB_TipoAdj.getSelectedItem().toString()));
-        this.cod_tipo_adj=Integer.valueOf(getTipoAdj(JCB_TipoAdj.getSelectedItem().toString()));
+        this.cod_tipo_adj = Integer.valueOf(getTipoAdj(JCB_TipoAdj.getSelectedItem().toString()));
     }//GEN-LAST:event_JCB_TipoAdjActionPerformed
 
-    boolean AdjuntarArchivo(String ruta_archivo,String nombre_archivo) {
-     boolean sw=false;   
-            HessianProxyFactory proxy = new HessianProxyFactory();
-    try {
-   //call proxy for Upload
-      HelloService x = (HelloService) proxy.create(HelloService.class, "http://200.7.160.25/HessianServerI/HelloServlet");
-      InputStream in;
-  try {
-        in = new FileInputStream(ruta_archivo);
-        x.upload("/opt/tomcat/webapps/prueba/"+nombre_archivo, in);
-        sw=true;
-      } catch (FileNotFoundException ex) {
-          sw=false;
-        //Logger.getLogger(HessianFrame.class.getName()).log(Level.SEVERE, null, ex);
-      }
-    } catch (MalformedURLException ex) {
-        sw=false;
-        //Logger.getLogger(HessianFrame.class.getName()).log(Level.SEVERE, null, ex);
+    boolean AdjuntarArchivo(String ruta_archivo, String nombre_archivo) {
+        boolean sw = false;
+        HessianProxyFactory proxy = new HessianProxyFactory();
+        try {
+            //call proxy for Upload
+            HelloService x = (HelloService) proxy.create(HelloService.class, "http://200.7.160.25/HessianServerI/HelloServlet");
+            InputStream in;
+            try {
+                in = new FileInputStream(ruta_archivo);
+                x.upload("/opt/tomcat/webapps/prueba/" + nombre_archivo, in);
+                sw = true;
+            } catch (FileNotFoundException ex) {
+                sw = false;
+                //Logger.getLogger(HessianFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (MalformedURLException ex) {
+            sw = false;
+            //Logger.getLogger(HessianFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sw;
     }
-    return sw;
-    }
-    private void LlenaDocumentos(){        
-        try{
+
+    private void LlenaDocumentos() {
+        try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.getDocumentos(cod_transaccion);
+            Map[] datos = puerto.getDocumentos(cod_transaccion);
             CerearTablaDocumentos();
-            if (datos!=null){
-                for (int c=0;c<datos.length;c++){
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
                     documentos.insert(c);
-                    TblDocumentos.tableChanged(new TableModelEvent(documentos, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
-                    TblDocumentos.setValueAt(datos[c].get("COD_DOCS"),c,0);
-                    TblDocumentos.setValueAt(datos[c].get("COD_TRANSACCION"),c,1);                    
-                    TblDocumentos.setValueAt(datos[c].get("TERMINOS_REF"),c,2);                    
-                    TblDocumentos.setValueAt(datos[c].get("UBICACION"),c,3);
-                    TblDocumentos.setValueAt(datos[c].get("DESCRIPCION"),c,4);
-                            
+                    TblDocumentos.tableChanged(new TableModelEvent(documentos, c, c, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
+                    TblDocumentos.setValueAt(datos[c].get("COD_DOCS"), c, 0);
+                    TblDocumentos.setValueAt(datos[c].get("COD_TRANSACCION"), c, 1);
+                    TblDocumentos.setValueAt(datos[c].get("TERMINOS_REF"), c, 2);
+                    TblDocumentos.setValueAt(datos[c].get("UBICACION"), c, 3);
+                    TblDocumentos.setValueAt(datos[c].get("DESCRIPCION"), c, 4);
+
                 }
             }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
         }
-        catch (RemoteException e){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
-        catch (ServiceException e){ System.out.println(e);}        
     }
+
     public static String getExtension(String filename) {
-            int index = filename.lastIndexOf('.');
-            if (index == -1) {
-                  return "";
-            } else {
-                  return filename.substring(index + 1);
-            }
-    }
-    void CerearTablaDocumentos(){
-        int f = TblDocumentos.getRowCount();
-        for (int i=f-1;i>=0;i--){
-             if (documentos.delete(i)) {
-                TblDocumentos.tableChanged(new TableModelEvent(
-                documentos, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
-             }
+        int index = filename.lastIndexOf('.');
+        if (index == -1) {
+            return "";
+        } else {
+            return filename.substring(index + 1);
         }
-    } 
+    }
+
+    void CerearTablaDocumentos() {
+        int f = TblDocumentos.getRowCount();
+        for (int i = f - 1; i >= 0; i--) {
+            if (documentos.delete(i)) {
+                TblDocumentos.tableChanged(new TableModelEvent(
+                        documentos, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
     /*public static void main(String args[]) {
        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JDAdjuntos dialog = new JDAdjuntos(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }*/
+     java.awt.EventQueue.invokeLater(new Runnable() {
+     public void run() {
+     JDAdjuntos dialog = new JDAdjuntos(new javax.swing.JFrame(), true);
+     dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+     @Override
+     public void windowClosing(java.awt.event.WindowEvent e) {
+     System.exit(0);
+     }
+     });
+     dialog.setVisible(true);
+     }
+     });
+     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAdjuntar;
