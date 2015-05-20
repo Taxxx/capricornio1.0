@@ -1276,6 +1276,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                         javax.swing.JOptionPane.ERROR_MESSAGE);
                 return false;
             }
+            if (this.JT_HRUTA.getText() == null || this.JT_HRUTA.getText().trim().length()==0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe adicionar la hoja de ruta", "SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
             /*
              if(cod_rol==2){
              javax.swing.JOptionPane.showMessageDialog(this,"El rol que se le asigno, no le permite avanzar la transacción","SYSTEM CAPRICORN",
