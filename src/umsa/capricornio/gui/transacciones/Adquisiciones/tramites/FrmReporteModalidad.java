@@ -10,14 +10,23 @@
  */
 package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
+import java.net.URL;
 import java.rmi.RemoteException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.xml.rpc.ServiceException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import umsa.capricornio.domain.Transaccion;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
@@ -191,16 +200,67 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
-        MostrarReporte();
+        //MostrarReporte();
+        int ts=-1;
+        String e="PPTO";
+        Date fi,ff;
+        ts=CmbModalidad.getSelectedIndex();
+        fi=(Date) DatFec_ini.getValue();
+        ff=(Date) DatFec_fin.getValue();
+        System.out.println("ts "+ts+" fi "+fi+" ff "+ff+" e "+e);
+        mostrarreporteya(e,ts,fi,ff);
     }//GEN-LAST:event_BtnReporteActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
         CerrarFrame();
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
+    void mostrarreporteya(String e,int ts,Date fi,Date ff)
+    {
+        if(fi.toString().equals(ff.toString()))
+            {
+                //fi.setDate(fi.getDate()-1);
+                ff.setDate(ff.getDate()+1);
+                System.out.println(fi);
+                System.out.println(ff);
+                //JOptionPane.showMessageDialog(this, "Las fechas deben ser diferentes aun si es de un dia");
+                
+            }
+            else
+            {
+                System.out.println("no muestra"+fi);
+                //mostrarreporteya(e,ts,fi,ff);
+            }
+        URL urlMaestro,urlMaestro1,urlMaestro2;
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");            
+            Connection conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
+            JD_Reporte1 t1 = new JD_Reporte1();
+            Map parameters = new HashMap();
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra.jasper");
+            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra2.jasper");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+            parameters.put("ESTADO",e);
+            parameters.put("TIPO_SOL",ts);
+            parameters.put("FECHA_INICIO",fi);
+            parameters.put("FECHA_FINAL",ff);
+            parameters.put("DIR", urlMaestro1.toString());
+            parameters.put("DIR1", urlMaestro2.toString());
+            JasperReport reporte = (JasperReport) JRLoader.loadObject(urlMaestro); 
+            System.out.println("realizo el jasper reporte");
+            JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parameters, conexion);
+            System.out.println("realizo el jasper print");
+            JasperViewer.viewReport(jasperPrint, false);  
+            System.out.println("realizo el jasper view");
+            
+        } catch (Exception ec) {
+            System.out.println("Error Gravichimo: "+ec);
+        }
+    }
+    
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         try{
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            /*AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.getModalidad();            
             if (datos!=null){                 
@@ -208,9 +268,11 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
                 for (int f=0;f<datos.length;f++){
                     CmbModalidad.addItem(datos[f].get("COD_CUANTIA").toString()+" - "+ datos[f].get("CUANTIA").toString());                    
                 }                 
-            }                                     
+            }*/
+            CmbModalidad.addItem("DESCARGO");
+            CmbModalidad.addItem("NORMAL");
         }
-        catch (RemoteException e){
+        /*catch (RemoteException e){
             javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
         }
@@ -218,7 +280,11 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
         catch (NumberFormatException e) {
             javax.swing.JOptionPane.showMessageDialog(this,"LA ORDEN NO FUE APROBADA O \n NO ELIJIO UNA FILA PARA PODER IMPRIMIR EL REPORTE "+e,"SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
-        }  
+        }*/
+        catch(Exception e)
+        {
+            System.out.println("error nouououou");
+        }
     }//GEN-LAST:event_formInternalFrameOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

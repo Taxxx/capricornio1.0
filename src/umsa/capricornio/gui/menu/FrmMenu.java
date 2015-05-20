@@ -152,8 +152,16 @@ public class FrmMenu extends javax.swing.JFrame {
         ItemOrdenes.setEnabled(false);
         BtnOrdenesCompra.setEnabled(false);
         ItemBandeja.setEnabled(false);
-        ItmDocsEnviados.setEnabled(false);
-        ItmDocsEnviados.setVisible(false);
+        System.out.println("el cod usuario "+cod_usuario);
+        if(cod_usuario!=4 && cod_usuario!=12 && cod_usuario!=14)
+        {
+            ItmDocsEnviados.setEnabled(false);
+            ItmDocsEnviados.setVisible(false);
+        }
+        else
+        {
+            ItmRepAlmacen.setVisible(false);
+        }
         BtnBandeja.setEnabled(false);
     }
 
@@ -565,7 +573,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
         ItmRepAlmacen.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItmRepAlmacen.setForeground(new java.awt.Color(0, 51, 204));
-        ItmRepAlmacen.setText("Reportes");
+        ItmRepAlmacen.setText("Reportes Generales");
         ItmRepAlmacen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ItmRepAlmacenActionPerformed(evt);
@@ -575,7 +583,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
         ItmDocsEnviados.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItmDocsEnviados.setForeground(new java.awt.Color(0, 51, 204));
-        ItmDocsEnviados.setText("Reportes por Modalidad");
+        ItmDocsEnviados.setText("Reportes por Tipo de solicitud");
         ItmDocsEnviados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ItmDocsEnviadosActionPerformed(evt);
