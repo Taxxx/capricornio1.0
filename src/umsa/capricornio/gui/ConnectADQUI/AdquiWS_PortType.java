@@ -173,7 +173,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] setProponenteADJ(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String nombre, java.lang.String nombre_comercial, java.lang.String direccion, java.lang.String telefono) throws java.rmi.RemoteException;
     public java.util.HashMap[] generaResIni(int cod_transaccion, int tipo_resolucion, java.lang.String detalle, java.lang.String envia, java.lang.String detalle_nota_solicitud, java.lang.String detalle_nota_presupuesto, java.lang.String destino, int xx) throws java.rmi.RemoteException;
     public java.util.HashMap[] getResIni(int cod_transaccion) throws java.rmi.RemoteException;
-    public java.util.HashMap[] updateResIni(int cod_res_ini, java.lang.String envia, java.lang.String dns, java.lang.String dnp, java.lang.String destino) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateResIni(int cod_res_ini, java.lang.String envia, java.lang.String dns, java.lang.String dnp, java.lang.String destino, int dias) throws java.rmi.RemoteException;
     public java.util.HashMap[] generaResAdj(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String detalle) throws java.rmi.RemoteException;
     public java.util.HashMap[] getResAdj(int cod_trans_nro) throws java.rmi.RemoteException;
     public java.util.HashMap[] addResAdj(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String tipo, java.lang.String num_res_adm, java.lang.String notas_adq, java.lang.String num_adc_anpe, java.lang.String convocatoria, java.lang.String num_inf_adq, java.lang.String num_inf_hp, java.lang.String proveedor, java.lang.String destino, java.lang.String actividad, java.lang.String titulo) throws java.rmi.RemoteException;

@@ -32,10 +32,12 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
     FrmMenu menu;
     private File rutaArchivo;
     private String lectura;
+    private int cod_almacen;
     
-    public JD_UploadFirmaDigital(FrmMenu menu, boolean modal) {
+    public JD_UploadFirmaDigital(FrmMenu menu, boolean modal, int cod_almacen) {
         super(menu, modal);
         initComponents();
+        this.cod_almacen=cod_almacen;
         this.setLocationRelativeTo(null);
     }
     boolean AdjuntarArchivo(String ruta_archivo, String nombre_archivo) {
