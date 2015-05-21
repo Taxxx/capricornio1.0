@@ -108,7 +108,10 @@ public class GetResAdj {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            
+            //dir_daf = puerto.getDatoGeneral("DIR_DAF");
             dir_daf = puerto.getDatoGeneral("DIR_DAF");
+            
             System.out.println("DIR_DAF: "+dir_daf);
         } catch (Exception e) {
             System.out.println("Gravichimo error: "+e);

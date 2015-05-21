@@ -24,15 +24,17 @@ public class ResolucionInicio extends javax.swing.JFrame {
     String detalle;
     int cod_transaccion, cod_w, cod_res_ini=0,dias;
     String envia,dns,dnp,destino,num_resolucion,monto_ppto;
-    GetResoluciones genera_reportes = new  GetResoluciones();
+    private int cod_almacen;
+    GetResoluciones genera_reportes;
   
-    public ResolucionInicio(String detalle, int cod_transaccion, int cod_w) {
+    public ResolucionInicio(String detalle, int cod_transaccion, int cod_w, int cod_almacen) {
         //this.setFocusable(true);
         this.setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         initComponents();
         this.detalle=detalle;
         this.cod_transaccion=cod_transaccion;
         this.cod_w=cod_w;
+        genera_reportes = new  GetResoluciones(cod_almacen);
         bloqueo();
         LlenaDatos();
         
@@ -499,11 +501,11 @@ public class ResolucionInicio extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ResolucionInicio("Detalle",12,0).setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new ResolucionInicio("Detalle",12,0).setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -70,7 +70,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private int cod_transaccion;
     private String des;
     private Proveedor proveedor;
-    GetResoluciones genera_reportes = new GetResoluciones();
+    GetResoluciones genera_reportes;
 
     /**
      * Creates new form DiagOrdenesDetalle
@@ -78,7 +78,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta) {
         super(menu, false);
         initComponents();
-        ft=frmt;
+        ft = frmt;
         this.BtnAnular.setVisible(false);
         //this.BtnRetornar.setVisible(false);
         this.menu = menu;
@@ -96,12 +96,13 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.cuantia = cuantia;
         this.del = del;
         this.hasta = hasta;
+        genera_reportes = new GetResoluciones(this.cod_almacen);
         //this.des=dest;
         bloquea();
         System.out.println("Yuhuuuuu :P");
         getDatosAlmacen(cod_trans_nro);
         ConstruyeTablaItems();
-        
+
     }
     /*private void addProv(){
         
@@ -143,10 +144,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             this.jButton5.setEnabled(false);
             this.jButton6.setEnabled(false);
             this.jButton10.setEnabled(false);
-            if(cod_rol==7)
+            if (cod_rol == 7) {
                 this.jButton11.setEnabled(true);
-            else
+            } else {
                 this.jButton11.setEnabled(false);
+            }
 //            this.jButton12.setEnabled(false);
         }
     }
@@ -1138,7 +1140,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         ft.setVisible(true);
 }//GEN-LAST:event_BtnSalirActionPerformed
 
-    private void setCodW(int cod_transaccion, int cod_w){
+    private void setCodW(int cod_transaccion, int cod_w) {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -1149,10 +1151,10 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     }
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
         String obs_almacen = null, obs_adq = null, factura = null, memo = null;
-        System.out.println("cod_w: "+cod_w+" cuantia: "+cuantia);
-        if(this.cod_w == 7 && !cuantia.equals("COMPRA MENOR")){
-            setCodW(this.cod_transaccion,7);
-            this.cod_w=7;
+        System.out.println("cod_w: " + cod_w + " cuantia: " + cuantia);
+        if (this.cod_w == 7 && !cuantia.equals("COMPRA MENOR")) {
+            setCodW(this.cod_transaccion, 7);
+            this.cod_w = 7;
         }
         if (!"".equals(TxtObsAlmacen.getText().trim())) {
             obs_almacen = "'" + TxtObsAlmacen.getText().trim() + "'";
@@ -1204,13 +1206,13 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                             javax.swing.JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                
+
                 if (!this.VerificaITEM()) {
                     javax.swing.JOptionPane.showMessageDialog(this, "Todos los items deben tener su codigo", "SYSTEM CAPRICORN",
                             javax.swing.JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                
+
                 System.out.println("Intentando actualizar proveedor :D  " + proveedor.getCod_proveedor());
                 this.AddObservacion();
                 //ActualizaTransaccionAdq(obs_adq,proveedor.getCod_proveedor());
@@ -1252,13 +1254,14 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
         return sw;
     }
+
     private boolean VerificaITEM() {
 //        boolean sw_vf = true;
         for (int f = 0; f < TblItems.getRowCount(); f++) {
             System.out.println("length --> " + (TblItems.getValueAt(f, 5)).toString().length());
             if ((TblItems.getValueAt(f, 5)).toString().length() != 0) {
 //                System.out.println(( TblItems.getValueAt(f, 5)).toString().trim());
-                String cod_item = ( TblItems.getValueAt(f, 5)).toString().trim();
+                String cod_item = (TblItems.getValueAt(f, 5)).toString().trim();
                 if (cod_item.equals("Sin Definir") && !(TblItems.getValueAt(f, 5)).toString().equals("")) {
                     sw = false;
                 }
@@ -1276,7 +1279,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                         javax.swing.JOptionPane.ERROR_MESSAGE);
                 return false;
             }
-            if (this.JT_HRUTA.getText() == null || this.JT_HRUTA.getText().trim().length()==0) {
+            if (this.JT_HRUTA.getText() == null || this.JT_HRUTA.getText().trim().length() == 0) {
                 javax.swing.JOptionPane.showMessageDialog(this, "Debe adicionar la hoja de ruta", "SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
                 return false;
@@ -1299,7 +1302,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             return true;
         }
     }
-    
+
     private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
 
         if (cod_rol != 7) {
@@ -1308,7 +1311,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             sw = true;
         }
         System.out.println("El cod_rol" + cod_rol);
-        System.out.println("si aparece la cuantia "+cuantia);
+        System.out.println("si aparece la cuantia " + cuantia);
         //System.out.println("El cod"+this.proveedor.getCod_proveedor());
         /*if(this.proveedor.getCod_proveedor()==null && cod_rol!=2 && this.verifica_monto(Double.parseDouble(this.TxtTotal.getText())))
          {
@@ -1379,21 +1382,20 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 }
                 String destino = "";
                 //System.out.println("");
-                int cod_aux=cod_w;
+                int cod_aux = cod_w;
                 for (int f = 0; f < TblItems.getRowCount(); f++) {
                     if (!"".equals(TblItems.getValueAt(f, 1).toString()) && !"D".equals(TblItems.getValueAt(f, 1).toString())) {
                         System.out.println("cod_trans_detalle: " + Integer.parseInt(TblItems.getValueAt(f, 2).toString()) + ", cod_w:" + cod_w + ", origen" + TblItems.getValueAt(f, 1).toString());
                         System.out.println("Destino Waoooo");
-                        System.out.println("sdfsfsdfsdfsdfdsf"+cuantia+" "+cod_w);
-                        if(cuantia.equals("COMPRA MENOR") && cod_w==7)
-                        {
-                            cod_aux=cod_w;
-                            cod_w=1;
+                        System.out.println("sdfsfsdfsdfsdfdsf" + cuantia + " " + cod_w);
+                        if (cuantia.equals("COMPRA MENOR") && cod_w == 7) {
+                            cod_aux = cod_w;
+                            cod_w = 1;
                         }
                         destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
                     }
                 }
-                cod_w=cod_aux;
+                cod_w = cod_aux;
                 BtnSalir.doClick();
             } catch (RemoteException e) {
                 javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
@@ -1511,15 +1513,15 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             BtnBuscaProveedor.setEnabled(false);
             BtnRetornar.setEnabled(true);
             tab_habil = 1;
-            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAdquisiciones),false);
+            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAdquisiciones), false);
         } else if (cod_rol == 5) {
             TxtObsAdq.setEditable(true);
             tab_habil = 0;
-            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAlmacen),false);
+            TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAlmacen), false);
         } else if (cod_rol == 7) {
             TabTransaccion.setVisible(false);
             BtnGuardar.setEnabled(false);
-            this.setSize(this.getWidth(), this.getHeight()-160);
+            this.setSize(this.getWidth(), this.getHeight() - 160);
 
         }
         TabTransaccion.setSelectedIndex(tab_habil);
@@ -1636,11 +1638,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
                 int cod_item = JDi.getCod_item();
                 System.out.println("Wolasss :P!!!! " + cod_item);
-                if(cod_item!=0){
+                if (cod_item != 0) {
                     this.guardarClaseItem(Integer.parseInt(cod_trans_detalle), cod_item);
                     TblItems.setValueAt(cod_item, fila, 5);
                 }
-               
+
             }
         }
     }//GEN-LAST:event_TblItemsMousePressed
@@ -1734,21 +1736,18 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             BtnBuscaProveedor.requestFocus();
             return;
         } else {
-            if(cod_w==4)
-            {
+            if (cod_w == 4) {
                 System.out.println("entra al if de obras");
-                JDResAdjObra x=new JDResAdjObra(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion);
+                JDResAdjObra x = new JDResAdjObra(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion);
                 this.setModal(false);
-            x.setVisible(true);
-            }
-            else
-            {
-            this.BtnGuardar.doClick();
-            System.out.println(":P :P :P cod_w: " + cod_w + "cod_trans_nro: " + this.cod_trans_nro + "  nombre_comercial: " + this.proveedor.getCasa_comercial() + " detalle: " + this.detalle);
-            //JDResAdj x = new JDResAdj(menu,true,this.cod_trans_nro);
-            JDResAdj2 x = new JDResAdj2(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion);
-            this.setModal(false);
-            x.setVisible(true);
+                x.setVisible(true);
+            } else {
+                this.BtnGuardar.doClick();
+                System.out.println(":P :P :P cod_w: " + cod_w + "cod_trans_nro: " + this.cod_trans_nro + "  nombre_comercial: " + this.proveedor.getCasa_comercial() + " detalle: " + this.detalle);
+                //JDResAdj x = new JDResAdj(menu,true,this.cod_trans_nro);
+                JDResAdj2 x = new JDResAdj2(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion);
+                this.setModal(false);
+                x.setVisible(true);
             }
 
         }
@@ -1836,55 +1835,55 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false,this.cod_trans_nro,this.cod_transaccion);
+        JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
         JDF.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        JD_GeneraContrato gc = new JD_GeneraContrato(menu, false,this.cod_trans_nro);
+        JD_GeneraContrato gc = new JD_GeneraContrato(menu, false, this.cod_trans_nro);
         gc.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        JD_FechaEntrega fe = new JD_FechaEntrega(menu,false,cod_trans_nro);
+        JD_FechaEntrega fe = new JD_FechaEntrega(menu, false, cod_trans_nro);
         fe.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         GuardarDatos(this.JT_HRUTA.getText());
-        javax.swing.JOptionPane.showMessageDialog(this,"Se guardo la Hoja de Ruta","SYSTEM CAPRICORN",
+        javax.swing.JOptionPane.showMessageDialog(this, "Se guardo la Hoja de Ruta", "SYSTEM CAPRICORN",
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void GuardarDatos(String hoja_ruta){
+    private void GuardarDatos(String hoja_ruta) {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             puerto.addHojaRuta("SET-addHojaRuta", cod_transaccion, hoja_ruta);
         } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(this,"Error al guardar la hoja de ruta","SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Error al guardar la hoja de ruta", "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     private void GetDatos() {
         try {
-            System.out.println("El cod_transaccion es: "+cod_transaccion);
+            System.out.println("El cod_transaccion es: " + cod_transaccion);
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            System.out.println("La hoja de ruta es: "+puerto.getHojaRuta(cod_transaccion));
+            System.out.println("La hoja de ruta es: " + puerto.getHojaRuta(cod_transaccion));
             this.JT_HRUTA.setText(puerto.getHojaRuta(cod_transaccion));
         } catch (Exception e) {
 //            System.out.println("Terrible Error!!!");
-            javax.swing.JOptionPane.showMessageDialog(this,"Error al leer la hoja de ruta","SYSTEM CAPRICORN",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Error al leer la hoja de ruta", "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAnular;
     private javax.swing.JButton BtnAvanzar;

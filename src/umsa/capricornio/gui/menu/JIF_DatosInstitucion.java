@@ -14,7 +14,7 @@ import umsa.capricornio.gui.firmadigital.JD_UploadFirmaDigital;
 
 /**
  *
- * @author UMSA-JES
+ * @author Henrry
  */
 public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
 

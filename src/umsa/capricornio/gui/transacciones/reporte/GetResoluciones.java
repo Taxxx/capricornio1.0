@@ -35,6 +35,10 @@ public class GetResoluciones {
     String envia,dns,dnp,destino,num_resolucion,monto_ppto,dir_daf,monto;
     private double total,ti;
     private String Monto,mon;
+    private int cod_almacen;
+    public GetResoluciones(int cod_almacen){
+        this.cod_almacen=cod_almacen;
+    }
     public void arma(int cod_transaccion){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -58,7 +62,14 @@ public class GetResoluciones {
             //System.out.println("Para cod_transaccion: "+cod_transaccion);
             //System.out.println("El cod_transaccion --> "+cod_transaccion+" y el cod_w: "+cod_w);
             Map[] datos = puerto.getResIni(cod_transaccion);
-            dir_daf = puerto.getDatoGeneral("DIR_DAF");
+            
+//            dir_daf = puerto.getDatoGeneral("DIR_DAF");
+            Map[] datos2 = puerto.getDatosGenerales2(this.cod_almacen);
+            if (datos2!=null){
+                   dir_daf = datos2[0].get("RPA").toString();
+            }
+            
+            
             //System.out.println("Dir Daf es: "+dir_daf);
             if(datos!=null){
                 
