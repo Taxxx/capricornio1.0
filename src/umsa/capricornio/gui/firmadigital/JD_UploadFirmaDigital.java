@@ -33,10 +33,12 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
     private File rutaArchivo;
     private String lectura;
     private int cod_almacen;
+    private int gestion;
     
-    public JD_UploadFirmaDigital(FrmMenu menu, boolean modal, int cod_almacen) {
+    public JD_UploadFirmaDigital(FrmMenu menu, boolean modal, int cod_almacen, int gestion) {
         super(menu, modal);
         initComponents();
+        this.gestion=gestion;
         this.cod_almacen=cod_almacen;
         this.setLocationRelativeTo(null);
     }
@@ -62,6 +64,14 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
         return sw;
     }
 
+    public static String getExtension(String filename) {
+        int index = filename.lastIndexOf('.');
+        if (index == -1) {
+            return "";
+        } else {
+            return filename.substring(index + 1);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -184,19 +194,27 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(AdjuntarArchivo(this.JT_FIRMA.getText(), "oky_doky.jpg")){
-            
+        
+        String ext = getExtension(this.JT_FIRMA.getText().trim());
+        String nombre = String.valueOf(gestion)+"-rpa-"+cod_almacen+"."+ext;
+        if(AdjuntarArchivo(this.JT_FIRMA.getText(), nombre)){
+            GuardarRutaFirma(nombre);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void GuardarRutaFirma(){
+    private void GuardarRutaFirma(String nombre){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            puerto.updateRutaFirmaDigital("2014-01","/opt/tomcat/webapps/firmas/oky_doky.jpg");
+//            puerto.getc
+            puerto.updateRutaFirmaDigital(puerto.getCodFacultad(cod_almacen),"/opt/tomcat/webapps/firmas/"+nombre);
+            javax.swing.JOptionPane.showMessageDialog(this, "Se adiciono la firma de manera exitosa", "CAPRICORNIO",
+                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
+            
         }
     }
     /**
