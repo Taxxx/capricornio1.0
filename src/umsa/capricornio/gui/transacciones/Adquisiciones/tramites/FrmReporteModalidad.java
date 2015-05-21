@@ -126,7 +126,7 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
         BtnReporte = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
 
-        setTitle("REPORTE POR MODALIDAD");
+        setTitle("REPORTE PRESUPUESTOS");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -146,13 +146,13 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("DEL :");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(20, 20, 50, 20);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("AL :");
         getContentPane().add(jLabel2);
@@ -166,13 +166,13 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
         getContentPane().add(DatFec_fin);
         DatFec_fin.setBounds(260, 20, 100, 18);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("MODALIDAD :");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 60, 90, 20);
 
-        CmbModalidad.setFont(new java.awt.Font("Arial", 1, 11));
+        CmbModalidad.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         getContentPane().add(CmbModalidad);
         CmbModalidad.setBounds(130, 60, 190, 20);
 
@@ -186,7 +186,7 @@ public class FrmReporteModalidad extends javax.swing.JInternalFrame {
         getContentPane().add(BtnReporte);
         BtnReporte.setBounds(50, 110, 120, 23);
 
-        BtnCancelar.setFont(new java.awt.Font("Arial", 1, 11));
+        BtnCancelar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         BtnCancelar.setText("Cancelar");
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

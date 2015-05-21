@@ -863,10 +863,10 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         String lugar11 = this.JTlugar11.getText();
         this.guarda_restriccion_fecha(11, cod_trans_nro, fecha11, lugar11);
         
-        
+        /*
         String fecha_GI = "'" + form.format(this.Fecha_GI.getValue()) + "'";
         String fecha_GF = "'" + form.format(this.Fecha_GF.getValue()) + "'";
-        this.guarda_restriccion_fecha2(12, cod_trans_nro, fecha_GI,fecha_GF, "","");
+        this.guarda_restriccion_fecha2(12, cod_trans_nro, fecha_GI,fecha_GF, "","");*/
         
         javax.swing.JOptionPane.showMessageDialog(this, "Las restricciones de tiempo se adicionaron correctamente", 
                "SYSTEM CAPRICORN",javax.swing.JOptionPane.INFORMATION_MESSAGE);
