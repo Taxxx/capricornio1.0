@@ -170,17 +170,9 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jBGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jBImprimir)
-                        .addGap(164, 164, 164))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
+                        .addGap(228, 228, 228)
                         .addComponent(jBModificar)
-                        .addGap(52, 52, 52)
+                        .addGap(41, 41, 41)
                         .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jSeparator1)))
@@ -201,7 +193,15 @@ public class ResolucionInicio extends javax.swing.JFrame {
                         .addComponent(JTFPpto, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(JTFDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 60, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jBImprimir)
+                .addGap(129, 129, 129))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +228,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBGuardar)
                     .addComponent(jBModificar))
@@ -283,6 +283,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
         this.JTFDestino.setEnabled(true);
     }
     private void LlenaDatos(){
+        String dias1="";
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -299,12 +300,14 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.destino=datos[0].get("DESTINO").toString();
                 this.cod_res_ini=Integer.parseInt(datos[0].get("COD_RES_INI").toString());
                 this.num_resolucion=datos[0].get("NUM_RESOLUCION").toString();
+                dias1=(datos[0].get("DIAS").toString());
 //                this.monto_ppto=datos[0].get("MONTO_PPTO").toString();
                 
                 this.JTFEnviado.setText(envia);
                 this.JTFDns.setText(dns);
                 this.JTFPpto.setText(dnp);
                 this.JTFDestino.setText(destino);
+                this.jTextField1.setText(dias1);
                 
                 bloqueaTodo();
                 MsjAlertaFechas(puerto);
@@ -316,7 +319,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 System.out.println("Vacio");
             }
         } catch (Exception e) {
-            System.out.println("Error :(");
+            System.out.println("Errorr :(");
         }
     }
     private void MsjAlertaFechas(AdquiWS_PortType puerto){
@@ -403,8 +406,9 @@ public class ResolucionInicio extends javax.swing.JFrame {
             this.dns=this.JTFDns.getText();
             this.dnp=this.JTFPpto.getText();
             this.destino=this.JTFDestino.getText();
+            this.dias=Integer.parseInt(this.jTextField1.getText());
             
-            puerto.updateResIni(cod_res_ini, envia, dns, dnp, destino);
+            puerto.updateResIni(cod_res_ini, envia, dns, dnp, destino, dias);
             //puerto.generaResIni(cod_transaccion, cod_w, detalle, envia, dns, dnp, destino);
             System.out.println("Exito :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de inicio ha sido modificada exitosamente","SYSTEM CAPRICORN",
