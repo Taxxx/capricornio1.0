@@ -9,6 +9,8 @@ package umsa.capricornio.gui.menu;
 import java.util.Map;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
+import umsa.capricornio.gui.firmadigital.JD_UploadFirmaDigital;
+//import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.JDAdjuntos;
 
 /**
  *
@@ -20,27 +22,32 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
      * Creates new form JIF_DatosInstitucion
      */
     FrmMenu menu;
-    public JIF_DatosInstitucion(FrmMenu menu) {
+    private int cod_almacen;
+    public JIF_DatosInstitucion(FrmMenu menu, int cod_almacen) {
+        this.cod_almacen=cod_almacen;
         this.menu=menu;
         initComponents();
         Inicia();
     }
     
     private void Inicia(){
+        System.out.println("**--> El cod_almacen es: "+this.cod_almacen);
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos = puerto.getDatosGenerales();
+            Map[] datos = puerto.getDatosGenerales2(this.cod_almacen);
             if (datos!=null){
                 /*for (int c=0;c<datos.length;c++){
                     
                 }*/
                 //System.out.println("Wolaaas --> "+datos[0].get("CODIGO").toString());
-                if(datos[0].get("CODIGO").toString().equals("DIR_DAF")){
-                    this.JTF_DIR_DAF.setText(datos[0].get("DESCRIPCION").toString());
-                }
+//                if(datos[0].get("CODIGO").toString().equals("DIR_DAF")){
+//                    this.JTF_DIR_DAF.setText(datos[0].get("DESCRIPCION").toString());
+//                }
+                this.JTF_DIR_DAF.setText(datos[0].get("RPA").toString());
             }
         } catch (Exception e) {
+            
         }
         
     }
@@ -59,10 +66,11 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
         JTF_DIR_DAF = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setTitle("Datos de la Institución");
 
-        jLabel1.setText("Director D.A.F.:");
+        jLabel1.setText("RPA/RPC:");
 
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
         jButton1.setText("SALIR");
@@ -80,6 +88,14 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/application_edit.png"))); // NOI18N
+        jButton3.setText("Firma RPA/RPC");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -87,15 +103,20 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(JTF_DIR_DAF))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(JTF_DIR_DAF)))))
                 .addGap(74, 74, 74))
         );
         jPanel1Layout.setVerticalGroup(
@@ -105,7 +126,9 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(JTF_DIR_DAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -140,14 +163,25 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             puerto.updateDatosGenerales("DIR_DAF", this.JTF_DIR_DAF.getText().toString());
         } catch (Exception e) {
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+//        JDAdjuntos JDA = new JDAdjuntos(menu, true, 2000, 1);
+        
+        JD_UploadFirmaDigital JDU = new JD_UploadFirmaDigital(menu, true);
+        JDU.setVisible(true);
+//        JDA.AbreDialogo();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTF_DIR_DAF;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
