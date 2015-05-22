@@ -4,12 +4,15 @@
  */
 package umsa.capricornio.gui.transacciones.reporte;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.rpc.ServiceException;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -29,7 +32,7 @@ import umsa.capricornio.utilitarios.herramientas.NumerosTextuales;
  */
 public class RepTransaccion {     
       
-    URL urlMaestro,urlImage,firma1,firma2,firma3;
+    URL urlMaestro,urlImage,firma1,firma2,firma_rpa;
     private String usuariox;
     public String generaUsuario(int cod_transaccion){
         try {
@@ -43,7 +46,7 @@ public class RepTransaccion {
         }
     }
     
-    public void Reporte (List aux,String titulo,int cod_tramite,int cod_trans_nro)
+    public void Reporte (List aux,String titulo,int cod_tramite,int cod_trans_nro,int cod_almacen)
     {
         this.usuariox = this.generaUsuario(cod_trans_nro);
         System.out.println("Generando Reporte, del tipo --> "+titulo);
@@ -89,7 +92,25 @@ public class RepTransaccion {
         urlImage=t1.getClass().getResource("/umsa/capricornio/gui/images/umsa.jpg");
         firma1=t1.getClass().getResource("/umsa/capricornio/gui/images/gustavofirma.jpg");
         firma2=t1.getClass().getResource("/umsa/capricornio/gui/images/liliana.jpg");
-        firma3=t1.getClass().getResource("/umsa/capricornio/gui/images/firma_MonicaDiaz.jpg");
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            String ubi_archivo = puerto.getDatosGenerales2(cod_almacen)[0].get("FIRMA_RPA").toString();
+            
+            //        firma_rpa=t1.getClass().getResource("/umsa/capricornio/gui/images/firma_MonicaDiaz.jpg");
+            //firma_rpa=t1.getClass().getResource("/../../../firmas/2015-rpa-3.jpg");
+            firma_rpa= new URL("http://200.7.160.25"+ubi_archivo);
+//            firma_rpa= new URL("http://200.7.160.25/firmas/2015-rpa-3.jpg");
+//        firma_rpa=t1.getClass().getResource("");
+//        firma_rpa = "http://200.7.160.25/prueba/";
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(RepTransaccion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch(Exception e){
+            
+        }
+        
+        System.out.println("----->>>>  Wujuuu la ruta de la firma es: "+firma_rpa);
 
         // Recuperamos el fichero fuente el xml para la compilacion interna
         /*File rep = new File(urlMaestro.getFile());
@@ -112,7 +133,7 @@ public class RepTransaccion {
         parameters.put("imagen",urlImage.toString());
         parameters.put("firma1",firma1.toString());
         parameters.put("firma2",firma2.toString());
-        parameters.put("firma3",firma3.toString());
+        parameters.put("firma_rpa",firma_rpa.toString());
         parameters.put("titulo",titulo);
         //parameters.put("titulo",titulo);
         parameters.put("usuario",usuariox);

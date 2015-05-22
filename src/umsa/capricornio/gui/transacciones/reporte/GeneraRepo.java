@@ -81,7 +81,7 @@ public class GeneraRepo {
                 System.out.println("cod_tramite: "+cod_tramite);
                 System.out.println("cod_trans_nro: "+cod_transaccion);
                 
-                rep.Reporte(list,titulo,cod_tramite,cod_transaccion);
+                //rep.Reporte(list,titulo,cod_tramite,cod_transaccion,cod_almacen);
             }                         
             /*for (int i = 0; i < list.size(); i++) {
                 Transaccion aux = (Transaccion) list.get(i);t           

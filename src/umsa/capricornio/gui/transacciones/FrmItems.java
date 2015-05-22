@@ -1550,7 +1550,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
                 System.out.println("cod_tramite: "+cod_tramite);
                 System.out.println("cod_trans_nro: "+cod_trans_nro);
                 
-                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro);
+                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro,cod_almacen);
             }        
             else
                 System.out.println("Vaciooooo :P");

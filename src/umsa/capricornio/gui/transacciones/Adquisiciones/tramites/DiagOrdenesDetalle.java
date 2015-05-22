@@ -60,7 +60,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
     FrmMenu menu;
     JInternalFrame ft;
-    private Reportes reportes = new Reportes();
+    private Reportes reportes;
     private double Total;
     int cod_almacen, cod_trans_nro, cod_rol, gestion, cod_w, tab_habil;
     private Runtime r;
@@ -98,6 +98,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.hasta = hasta;
         genera_reportes = new GetResoluciones(this.cod_almacen);
         //this.des=dest;
+        reportes = new Reportes(cod_almacen);
         bloquea();
         System.out.println("Yuhuuuuu :P");
         getDatosAlmacen(cod_trans_nro);

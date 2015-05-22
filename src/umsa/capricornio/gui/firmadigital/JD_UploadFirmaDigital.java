@@ -210,7 +210,7 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
 //            puerto.getc
-            puerto.updateRutaFirmaDigital(puerto.getCodFacultad(cod_almacen),"/opt/tomcat/webapps/firmas/"+nombre);
+            puerto.updateRutaFirmaDigital(puerto.getCodFacultad(cod_almacen),"/firmas/"+nombre);
             javax.swing.JOptionPane.showMessageDialog(this, "Se adiciono la firma de manera exitosa", "CAPRICORNIO",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
