@@ -163,9 +163,14 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            puerto.updateDatosGenerales("DIR_DAF", this.JTF_DIR_DAF.getText().toString());
-        } catch (Exception e) {
+            //puerto.updateDatosGenerales("DIR_DAF", this.JTF_DIR_DAF.getText().toString());
+            puerto.updateNombreRpa(puerto.getCodFacultad(cod_almacen), this.JTF_DIR_DAF.getText().toString());
+            javax.swing.JOptionPane.showMessageDialog(this, "SE GUARDO EL NOMBRE DEL RPA DE FORMA EXITOSA", "CAPRICORNIO",
+                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
             
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "ERROR!!! "+e, "CAPRICORNIO",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

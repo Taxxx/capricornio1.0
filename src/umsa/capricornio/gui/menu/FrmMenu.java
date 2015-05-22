@@ -31,7 +31,7 @@ import umsa.capricornio.gui.transacciones.FrmTransacciones;
 
 /**
  *
- * @author julian
+ * @author Henrry
  */
 public class FrmMenu extends javax.swing.JFrame {
 

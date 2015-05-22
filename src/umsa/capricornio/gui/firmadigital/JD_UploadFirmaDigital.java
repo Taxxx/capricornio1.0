@@ -181,10 +181,10 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
 //                    nombre_archivo = rutaArchivo.getName();
                     //MigraDatosTabla("\\|"); // ESTE METODO TAMBIEN FUNCIONA, ambos son validos
                 } catch (FileNotFoundException e) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "No se encontro el archivo \n" + e, "CAJA PAGADORA",
+                    javax.swing.JOptionPane.showMessageDialog(this, "No se encontro el archivo \n" + e, "CAPRICORNIO",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
                 } catch (IOException e) {
-                    javax.swing.JOptionPane.showMessageDialog(this, "Error de Flujo Entrada Salida \n" + e, "CAJA PAGADORA",
+                    javax.swing.JOptionPane.showMessageDialog(this, "Error de Flujo Entrada Salida \n" + e, "CAPRICORNIO",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -214,7 +214,8 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
             javax.swing.JOptionPane.showMessageDialog(this, "Se adiciono la firma de manera exitosa", "CAPRICORNIO",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
-            
+//            javax.swing.JOptionPane.showMessageDialog(this, "nO SE ", "CAPRICORNIO",
+//                        javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
     /**
