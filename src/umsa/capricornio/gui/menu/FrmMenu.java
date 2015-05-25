@@ -21,6 +21,7 @@ import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.Maestros.*;
 import umsa.capricornio.gui.menu.JIF_DatosInstitucion;
+import umsa.capricornio.gui.relacionadores.FrmUsrFirma;
 import umsa.capricornio.gui.relacionadores.FrmUsrRol;
 import umsa.capricornio.gui.relacionadores.FrmUsrUnidad;
 import umsa.capricornio.gui.relacionadores.FrmUsrWorkflow;
@@ -266,6 +267,7 @@ public class FrmMenu extends javax.swing.JFrame {
         ItemUsrRol = new javax.swing.JMenuItem();
         ItemUsrUnidad = new javax.swing.JMenuItem();
         ItemUsrWorkflow = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         MenProcesos = new javax.swing.JMenu();
         ItemDespacho = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
@@ -517,6 +519,16 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenRelacion.add(ItemUsrWorkflow);
 
+        jMenuItem2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(0, 51, 204));
+        jMenuItem2.setText("Usuario - Firma");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        MenRelacion.add(jMenuItem2);
+
         MenMenu.add(MenRelacion);
 
         MenProcesos.setForeground(new java.awt.Color(21, 65, 108));
@@ -740,6 +752,11 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmBancoProveedores(this, cod_usuario, cod_rol, cod_almacen));
     }//GEN-LAST:event_ItemProvedoresActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmUsrFirma(this,this.gestion,this.cod_almacen));
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -777,6 +794,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
