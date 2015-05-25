@@ -178,7 +178,7 @@ public class JIF_DatosInstitucion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
 //        JDAdjuntos JDA = new JDAdjuntos(menu, true, 2000, 1);
         
-        JD_UploadFirmaDigital JDU = new JD_UploadFirmaDigital(menu, true, cod_almacen, gestion);
+        JD_UploadFirmaDigital JDU = new JD_UploadFirmaDigital(menu, true, cod_almacen, gestion, 0);
         JDU.setVisible(true);
 //        JDA.AbreDialogo();
     }//GEN-LAST:event_jButton3ActionPerformed

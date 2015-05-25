@@ -34,12 +34,14 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
     private String lectura;
     private int cod_almacen;
     private int gestion;
+    private int cod_usuario;
     
-    public JD_UploadFirmaDigital(FrmMenu menu, boolean modal, int cod_almacen, int gestion) {
+    public JD_UploadFirmaDigital(FrmMenu menu, boolean modal, int cod_almacen, int gestion, int cod_usuario) {
         super(menu, modal);
         initComponents();
         this.gestion=gestion;
         this.cod_almacen=cod_almacen;
+        this.cod_usuario=cod_usuario;
         this.setLocationRelativeTo(null);
     }
     boolean AdjuntarArchivo(String ruta_archivo, String nombre_archivo) {
@@ -199,7 +201,11 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
         // TODO add your handling code here:
         
         String ext = getExtension(this.JT_FIRMA.getText().trim());
-        String nombre = String.valueOf(gestion)+"-rpa-"+cod_almacen+"."+ext;
+        String nombre;
+        if(this.cod_usuario==0)
+            nombre = String.valueOf(gestion)+"-rpa-"+cod_almacen+"."+ext;
+        else
+            nombre = String.valueOf(gestion)+"-"+cod_usuario+"-"+cod_almacen+"."+ext;
         if(AdjuntarArchivo(this.JT_FIRMA.getText(), nombre)){
             GuardarRutaFirma(nombre);
         }
@@ -210,7 +216,14 @@ public class JD_UploadFirmaDigital extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
 //            puerto.getc
-            puerto.updateRutaFirmaDigital(puerto.getCodFacultad(cod_almacen),"/firmas/"+nombre);
+            if(this.cod_usuario==0)
+                puerto.updateRutaFirmaDigitalRPA(puerto.getCodFacultad(cod_almacen),"/firmas/"+nombre);
+            else{
+                System.out.println("-->> cod_usuario: "+cod_usuario+", ruta: "+"/firmas/"+nombre);
+                puerto.updateRutaFirmaDigitalUSER(cod_usuario, "/firmas/"+nombre);
+            }
+                
+            
             javax.swing.JOptionPane.showMessageDialog(this, "Se adiciono la firma de manera exitosa", "CAPRICORNIO",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {

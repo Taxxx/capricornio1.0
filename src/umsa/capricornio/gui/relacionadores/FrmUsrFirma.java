@@ -16,8 +16,9 @@ import javax.swing.table.TableColumn;
 import javax.xml.rpc.ServiceException;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
+import umsa.capricornio.gui.firmadigital.JD_UploadFirmaDigital;
 import umsa.capricornio.gui.menu.FrmMenu;
-import umsa.capricornio.gui.relacionadores.tablas.TablaUsrRol;
+import umsa.capricornio.gui.relacionadores.tablas.TablaUsrFirma;
 
 /**
  *
@@ -25,7 +26,7 @@ import umsa.capricornio.gui.relacionadores.tablas.TablaUsrRol;
  */
 public class FrmUsrFirma extends javax.swing.JInternalFrame {
 
-    TablaUsrRol relacion;
+    TablaUsrFirma relacion;
 
     FrmMenu menu;
     
@@ -43,14 +44,14 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
         ConstruyeTablaUsrRol();
     }
     private void ConstruyeTablaUsrRol(){        
-        relacion = new TablaUsrRol();        
+        relacion = new TablaUsrFirma();        
         TblUsrRol.setAutoCreateColumnsFromModel(false);
         TblUsrRol.setModel(relacion); 
         
-        for (int k = 0; k < TablaUsrRol.m_columns.length; k++) {               
+        for (int k = 0; k < TablaUsrFirma.m_columns.length; k++) {               
             DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-            renderer.setHorizontalAlignment(TablaUsrRol.m_columns[k].m_alignment);
-            TableColumn column = new TableColumn(k, TablaUsrRol.m_columns[k].m_width, renderer, null);
+            renderer.setHorizontalAlignment(TablaUsrFirma.m_columns[k].m_alignment);
+            TableColumn column = new TableColumn(k, TablaUsrFirma.m_columns[k].m_width, renderer, null);
             TblUsrRol.addColumn(column);                           
         }        
         JTableHeader header = TblUsrRol.getTableHeader();
@@ -82,8 +83,6 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
         jInternalFrame1 = new javax.swing.JInternalFrame();
         PnlUsrRol = new javax.swing.JScrollPane();
         TblUsrRol = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        LstUsuarios = new javax.swing.JList();
         jPanel1 = new javax.swing.JPanel();
         BtnNuevo = new javax.swing.JButton();
         BtnGuardar = new javax.swing.JButton();
@@ -127,12 +126,6 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
             }
         });
         PnlUsrRol.setViewportView(TblUsrRol);
-
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuario"));
-        jScrollPane2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-
-        LstUsuarios.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jScrollPane2.setViewportView(LstUsuarios);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Relacion Usuario - Rol"));
         jPanel1.setLayout(null);
@@ -200,9 +193,7 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PnlUsrRol, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(PnlUsrRol, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(130, Short.MAX_VALUE)
@@ -217,11 +208,9 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PnlUsrRol, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(19, 19, 19)
+                .addComponent(PnlUsrRol, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -237,12 +226,21 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
 
     private void TblUsrRolMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblUsrRolMousePressed
         if (evt.getClickCount() == 2) {
-            BtnGuardar.setEnabled(false);
-            BtnEliminar.setEnabled(true);
-            TblUsrRol.setEnabled(false);
+//            BtnGuardar.setEnabled(false);
+//            BtnEliminar.setEnabled(true);
+//            TblUsrRol.setEnabled(false);
             int fila=TblUsrRol.getSelectedRow();
-            LstUsuarios.setSelectedValue(TblUsrRol.getValueAt(fila, 0)+" - "+TblUsrRol.getValueAt(fila, 2), true);
+            int cod_usuario = Integer.parseInt(TblUsrRol.getValueAt(fila, 0).toString());
+//            LstUsuarios.setSelectedValue(TblUsrRol.getValueAt(fila, 0)+" - "+TblUsrRol.getValueAt(fila, 2), true);
 //            LstRoles.setSelectedValue(TblUsrRol.getValueAt(fila, 1)+" - "+TblUsrRol.getValueAt(fila, 3), true);
+            System.out.println("Wujuuuuu oky doky!!!!! "+cod_usuario);
+            JD_UploadFirmaDigital JDU = new JD_UploadFirmaDigital(menu,true,cod_almacen,gestion,cod_usuario);
+            JDU.setVisible(true);
+            
+            System.out.println("Olo !!!");
+//            this.LlenaListasUsrRol();
+            LlenaUsrRol();
+            
         }
     }//GEN-LAST:event_TblUsrRolMousePressed
 
@@ -258,7 +256,7 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
         String v2="";
         try {
 //            v1=LstRoles.getSelectedValue().toString();
-            v2=LstUsuarios.getSelectedValue().toString();
+//            v2=LstUsuarios.getSelectedValue().toString();
         }
         catch(NullPointerException e){
             javax.swing.JOptionPane.showMessageDialog(this,"Debe Elegir Ambos componentes","ZODIAC CAPRICORN SYSTEM",
@@ -306,7 +304,7 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
         String v2="";
         try {
 //            v1=LstRoles.getSelectedValue().toString();
-            v2=LstUsuarios.getSelectedValue().toString();
+//            v2=LstUsuarios.getSelectedValue().toString();
         }
         catch(NullPointerException e){
             javax.swing.JOptionPane.showMessageDialog(this,"Debe Elegir Ambos componentes","ZODIAC CAPRICORN SYSTEM",
@@ -351,50 +349,72 @@ public class FrmUsrFirma extends javax.swing.JInternalFrame {
         BtnEliminar.setEnabled(false);
         BtnModificar.setEnabled(false);
         BtnGuardar.setEnabled(true); 
-//        LlenaUsrRol();
-        LlenaListasUsrRol();
+        LlenaUsrRol();
+//        LlenaListasUsrRol();
     }//GEN-LAST:event_formInternalFrameOpened
 
-void LlenaListasUsrRol(){
-//        LstRoles.removeAll();
-        LstUsuarios.removeAll();
-        DefaultListModel ListaUsr = new DefaultListModel();    
-        DefaultListModel ListaUE = new DefaultListModel();    
+    private void LlenaUsrRol(){
+        CerearTablaUsrRol();
+        String q = "";
         try{
-                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-                AdquiWS_PortType puerto = servicio.getAdquiWS();
-                Map[] datos= puerto.getUsuariox2(this.gestion, this.cod_almacen);
-                if (datos!=null){
-                    for (int c=0;c<datos.length;c++){                    
-                        ListaUsr.addElement(datos[c].get("COD_USUARIO")+" - "+datos[c].get("USUARIO"));
-                    }                
-                    LstUsuarios.setModel(ListaUsr);
-                } 
-                datos= puerto.getRoles();
-                if (datos!=null){
-                    for (int c=0;c<datos.length;c++){
-                        ListaUE.addElement(datos[c].get("COD_ROL")+" - "+datos[c].get("ROL"));
-                    }                
-//                    LstRoles.setModel(ListaUE);
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos=puerto.getUsrFirma(this.cod_almacen);
+            if (datos!=null){
+                for (int c=0;c<datos.length;c++){
+                    relacion.insert(c);                    
+                    TblUsrRol.tableChanged(new TableModelEvent(relacion, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));                    
+                    TblUsrRol.setValueAt(datos[c].get("COD_USUARIO"),c,0);
+                    TblUsrRol.setValueAt(0,c,1);
+                    TblUsrRol.setValueAt(datos[c].get("USUARIO"),c,2);        
+                    TblUsrRol.setValueAt(datos[c].get("FIRMA"),c,3);        
                 }
+            }                                                                          
         }
         catch (RemoteException e){ 
             javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"ZODIAC CAPRICORN SYSTEM",
                         javax.swing.JOptionPane.ERROR_MESSAGE);           
         }
-        catch (ServiceException e){ System.out.println(e);}    
+        catch (ServiceException e){ System.out.println(e);}
     }
+//void LlenaListasUsrRol(){
+////        LstRoles.removeAll();
+////        LstUsuarios.removeAll();
+//        DefaultListModel ListaUsr = new DefaultListModel();    
+//        DefaultListModel ListaUE = new DefaultListModel();    
+//        try{
+//                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+//                AdquiWS_PortType puerto = servicio.getAdquiWS();
+//                Map[] datos= puerto.getUsuariox2(this.gestion, this.cod_almacen);
+//                if (datos!=null){
+//                    for (int c=0;c<datos.length;c++){                    
+//                        ListaUsr.addElement(datos[c].get("COD_USUARIO")+" - "+datos[c].get("USUARIO"));
+//                    }                
+////                    LstUsuarios.setModel(ListaUsr);
+//                } 
+//                datos= puerto.getRoles();
+//                if (datos!=null){
+//                    for (int c=0;c<datos.length;c++){
+//                        ListaUE.addElement(datos[c].get("COD_ROL")+" - "+datos[c].get("ROL"));
+//                    }                
+////                    LstRoles.setModel(ListaUE);
+//                }
+//        }
+//        catch (RemoteException e){ 
+//            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"ZODIAC CAPRICORN SYSTEM",
+//                        javax.swing.JOptionPane.ERROR_MESSAGE);           
+//        }
+//        catch (ServiceException e){ System.out.println(e);}    
+//    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEliminar;
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnModificar;
     private javax.swing.JButton BtnNuevo;
-    private javax.swing.JList LstUsuarios;
     private javax.swing.JScrollPane PnlUsrRol;
     private javax.swing.JTable TblUsrRol;
     private javax.swing.JButton jButton5;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
