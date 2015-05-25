@@ -56,6 +56,7 @@ public class FrmMenu extends javax.swing.JFrame {
             MenRelacionadores.setEnabled(false);
             MenReportes.setEnabled(false);
             MenOtrosProcesos.setEnabled(false);*/
+            System.out.println("wujuuuuu :D!!!");
             MenAdministracion.setEnabled(false);
             MenProcesos.setEnabled(false);
             MenRelacion.setEnabled(false);
@@ -623,6 +624,7 @@ public class FrmMenu extends javax.swing.JFrame {
         TieneVariosRoles();
         habilita();
         MensajesAlerta();
+        
     }//GEN-LAST:event_formWindowOpened
     private void MensajesAlerta(){
         try {

@@ -98,7 +98,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.hasta = hasta;
         genera_reportes = new GetResoluciones(this.cod_almacen);
         //this.des=dest;
-        reportes = new Reportes(cod_almacen);
+        
         bloquea();
         System.out.println("Yuhuuuuu :P");
         getDatosAlmacen(cod_trans_nro);
@@ -1477,6 +1477,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         LlenaDetalles();
         LlenaItems();
         GetDatos();
+        reportes = new Reportes(cod_almacen);
+        
         //VerificaTipoTramite(); 
 
         LblDetalle.setText(detalle);

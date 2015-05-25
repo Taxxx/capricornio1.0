@@ -32,7 +32,7 @@ import umsa.capricornio.utilitarios.herramientas.NumerosTextuales;
  */
 public class RepTransaccion {     
       
-    URL urlMaestro,urlImage,firma1,firma2,firma_rpa;
+    URL urlMaestro,urlImage,firma_usr,firma2,firma_rpa;
     private String usuariox;
     public String generaUsuario(int cod_transaccion){
         try {
@@ -90,16 +90,41 @@ public class RepTransaccion {
         if (cod_tramite==4)
             urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/PedidoMateriales.jasper");
         urlImage=t1.getClass().getResource("/umsa/capricornio/gui/images/umsa.jpg");
-        firma1=t1.getClass().getResource("/umsa/capricornio/gui/images/gustavofirma.jpg");
+        
         firma2=t1.getClass().getResource("/umsa/capricornio/gui/images/liliana.jpg");
         try {
+            
+            System.out.println("el cod_trans_nro es: "+cod_trans_nro);
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            String ubi_archivo = puerto.getDatosGenerales2(cod_almacen)[0].get("FIRMA_RPA").toString();
+            String ubi_rpa = puerto.getDatosGenerales2(cod_almacen)[0].get("FIRMA_RPA").toString();
+             String ubi_usr;
+            if (cod_tramite==2){
+                ubi_usr = puerto.getFirmaUsuario(cod_trans_nro)[0].get("FIRMA").toString();
+            }
+            else{
+                ubi_usr = puerto.getFirmaUsuario2(cod_trans_nro)[0].get("FIRMA").toString();
+            }
+                
             
             //        firma_rpa=t1.getClass().getResource("/umsa/capricornio/gui/images/firma_MonicaDiaz.jpg");
             //firma_rpa=t1.getClass().getResource("/../../../firmas/2015-rpa-3.jpg");
-            firma_rpa= new URL("http://200.7.160.25"+ubi_archivo);
+            
+            if(ubi_rpa.trim().length()!=0){
+                firma_rpa = new URL("http://200.7.160.25"+ubi_rpa);
+                parameters.put("firma_rpa",firma_rpa.toString());
+            }
+            
+            if(ubi_usr.trim().length()!=0){
+                firma_usr = new URL("http://200.7.160.25"+ubi_usr);
+                parameters.put("firma_usr",firma_usr.toString());
+            }
+            
+  //        parameters.put("firma2",firma2.toString());
+            
+            
+            
+            
 //            firma_rpa= new URL("http://200.7.160.25/firmas/2015-rpa-3.jpg");
 //        firma_rpa=t1.getClass().getResource("");
 //        firma_rpa = "http://200.7.160.25/prueba/";
@@ -111,6 +136,7 @@ public class RepTransaccion {
         }
         
         System.out.println("----->>>>  Wujuuu la ruta de la firma es: "+firma_rpa);
+        System.out.println("----->>>>  Wujuuu la ruta de la otra firma es: "+firma_usr);
 
         // Recuperamos el fichero fuente el xml para la compilacion interna
         /*File rep = new File(urlMaestro.getFile());
@@ -131,9 +157,7 @@ public class RepTransaccion {
             }
         
         parameters.put("imagen",urlImage.toString());
-        parameters.put("firma1",firma1.toString());
-        parameters.put("firma2",firma2.toString());
-        parameters.put("firma_rpa",firma_rpa.toString());
+        
         parameters.put("titulo",titulo);
         //parameters.put("titulo",titulo);
         parameters.put("usuario",usuariox);
