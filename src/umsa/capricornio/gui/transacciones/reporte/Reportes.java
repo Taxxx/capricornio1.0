@@ -22,7 +22,13 @@ import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
  * @author UMSA-JES
  **/
 public class Reportes {
+    private int cod_almacen;
+//    private int cod_trans_nro;
+    private RepTransaccion rep = new RepTransaccion();
     
+    public Reportes(int cod_almacen){
+        this.cod_almacen = cod_almacen;
+    }
     public void MostrarPedido(int cod_trans_nro, String cod_estado, int cod_tramite){
         try {
             List list=new ArrayList();    
@@ -77,25 +83,25 @@ public class Reportes {
                     trans.setCod_trans_detalle(cod_trans_detalle);
                     list.add(trans);
                 }
-                RepTransaccion rep = new RepTransaccion();
+                
                 //System.out.println("titulo: "+"");
                 System.out.println("cod_tramite: "+cod_tramite);
                 System.out.println("cod_trans_nro: "+cod_trans_nro);
                 
-                rep.Reporte(list,"PEDIDO DE MATERIALES",cod_tramite,cod_trans_nro);
+                rep.Reporte(list,"PEDIDO DE MATERIALES",cod_tramite,cod_trans_nro,cod_almacen);
             }
         } catch (Exception e) {
         }
     }
-    public void MostrarSolicitud(int cod_trans_nro,String cod_estado,int cod_tramite,String titulo){
+    public void MostrarSolicitud(int cod_transaccion,String cod_estado,int cod_tramite,String titulo){
         List list=new ArrayList();
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            System.out.println("cod_trans_nro: "+cod_trans_nro+" cod_estado: "+cod_estado+" cod_tramite: "+cod_tramite+" titulo: "+titulo);
+            System.out.println("cod_transaccion: "+cod_transaccion+" cod_estado: "+cod_estado+" cod_tramite: "+cod_tramite+" titulo: "+titulo);
             //String nom_usuario = puerto.getNombreUsuario(String.valueOf(cod_transaccion));
             //System.out.println("WWAADSADASDA------> "+nom_usuario);
-            Map[] datos=puerto.getReporteSolicitudx(cod_trans_nro,cod_estado,cod_tramite);
+            Map[] datos=puerto.getReporteSolicitudx(cod_transaccion,cod_estado,cod_tramite);
             if (datos!=null){
                 System.out.println("Tiene Datos :D :D :D");
                 Map map = new HashMap();
@@ -138,9 +144,9 @@ public class Reportes {
                 RepTransaccion rep = new RepTransaccion();
                 System.out.println("titulo: "+titulo);
                 System.out.println("cod_tramite: "+cod_tramite);
-                System.out.println("cod_trans_nro: "+cod_trans_nro);
+                System.out.println("cod_transaccion: "+cod_transaccion);
                 
-                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro);
+                rep.Reporte(list,titulo,cod_tramite,cod_transaccion,cod_almacen);
             }        
             else
                 System.out.println("Vaciooooo :P");
@@ -155,7 +161,7 @@ public class Reportes {
         }  
     }
     public void MostrarOrden(int cod_trans_nro,String cod_estado,int cod_tramite,String titulo){
-        System.out.println("======Hola Camaron================== cod_trans_nro: "+cod_trans_nro+"  cod_estado: "+cod_estado+" titulo: "+titulo+" cod_tramite: "+cod_tramite);
+        System.out.println("====== Hola Camaron ================== cod_trans_nro: "+cod_trans_nro+"  cod_estado: "+cod_estado+" titulo: "+titulo+" cod_tramite: "+cod_tramite);
         List list=new ArrayList();
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -224,7 +230,7 @@ public class Reportes {
                 System.out.println("cod_tramite: "+cod_tramite);
                 System.out.println("cod_trans_nro: "+cod_trans_nro);
                 
-                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro);
+                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro,cod_almacen);
             }
             else
                 System.out.println("Sin Datos!!!");
@@ -307,7 +313,7 @@ public class Reportes {
                     list.add(trans);
                 } 
                 RepTransaccion rep = new RepTransaccion();
-                rep.Reporte(list,"Ingreso Almacen", cod_tramite,cod_trans_nro);
+                rep.Reporte(list,"Ingreso Almacen", cod_tramite,cod_trans_nro,cod_almacen);
             }else{
                 System.out.println("Vaciooooo");
             }                         

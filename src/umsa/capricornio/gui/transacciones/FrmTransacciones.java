@@ -43,7 +43,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     TablaTransaccionEstados estados;
     
     FrmMenu menu;
-    Reportes reportes = new Reportes();
+    Reportes reportes;
     //String cod_transaccion;
     int cod_usuario,cod_rol,gestion,x,tope,ini,fin,cod_almacen;
     private Runtime r;
@@ -56,6 +56,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         this.cod_rol=cod_rol;
         this.gestion=gestion;
         this.cod_almacen=cod_almacen;
+        reportes = new Reportes(cod_almacen);
         initComponents();
         ConstruyeTablaTransacciones();
         ConstruyeTablaEstados();
@@ -364,7 +365,8 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
                     list.add(trans);
                 } 
                 RepTransaccion rep = new RepTransaccion();
-                rep.Reporte(list,titulo, cod_tramite,cod_trans_nro);
+               // rep.Reporte(list,titulo, cod_tramite,cod_trans_nro);
+                reportes.MostrarIngreso(cod_trans_nro, cod_estado, cod_tramite);
             }
             System.out.println("error:P ");
             /*for (int i = 0; i < list.size(); i++) {

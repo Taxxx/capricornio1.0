@@ -44,7 +44,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     TablaTransaccionEstados estados;
     
     FrmMenu menu;
-    private Reportes reportes = new Reportes();
+    private Reportes reportes;
     int cod_usuario,cod_rol,gestion,x,tope,ini,fin,cod_almacen;
     private Runtime r;
     private int cod_tramite;
@@ -55,6 +55,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         this.cod_rol=cod_rol;
         this.gestion=gestion;
         this.cod_almacen=cod_almacen;
+        reportes = new Reportes(cod_almacen);
         initComponents();
         ConstruyeTablaTransacciones();
         ConstruyeTablaEstados();
@@ -315,7 +316,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                 System.out.println("cod_tramite: "+cod_tramite);
                 System.out.println("cod_trans_nro: "+cod_trans_nro);
                 
-                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro);
+                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro,cod_almacen);
             }                         
             /*for (int i = 0; i < list.size(); i++) {
                 Transaccion aux = (Transaccion) list.get(i);t           

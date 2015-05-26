@@ -105,6 +105,7 @@ public class FrmUsuarioIng extends javax.swing.JDialog {
                     cod_almacen=Integer.parseInt(datos[c].get("COD_ALMACEN").toString());
                 }
                 dispose();
+                System.out.println("cod_usuario: "+cod_usuario+", gestion: "+gestion+",  ");
                 new FrmMenu(cod_usuario,gestion,cod_almacen,LblVersion.getText()).setVisible(true);
             }
             else {javax.swing.JOptionPane.showMessageDialog(this,"USUARIO NO HABILITADO","CAJA PAGADORA",
