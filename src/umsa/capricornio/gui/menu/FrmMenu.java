@@ -256,6 +256,7 @@ public class FrmMenu extends javax.swing.JFrame {
         ItemAlmacen = new javax.swing.JMenuItem();
         ItemUnidadEjec = new javax.swing.JMenuItem();
         ItemItems = new javax.swing.JMenuItem();
+        FechasNH = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         ItemCambioGestion = new javax.swing.JMenuItem();
         ItemRol = new javax.swing.JMenuItem();
@@ -437,6 +438,16 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
         MenAdministracion.add(ItemItems);
+
+        FechasNH.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        FechasNH.setForeground(new java.awt.Color(0, 51, 204));
+        FechasNH.setText("Fechas No Habiles");
+        FechasNH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FechasNHActionPerformed(evt);
+            }
+        });
+        MenAdministracion.add(FechasNH);
         MenAdministracion.add(jSeparator4);
 
         ItemCambioGestion.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -740,12 +751,18 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmBancoProveedores(this, cod_usuario, cod_rol, cod_almacen));
     }//GEN-LAST:event_ItemProvedoresActionPerformed
 
+    private void FechasNHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechasNHActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmFechasNH(this));
+    }//GEN-LAST:event_FechasNHActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
     private javax.swing.JButton BtnOrdenesCompra;
     private javax.swing.JButton BtnProveedores;
     private javax.swing.JButton BtnSalir;
+    private javax.swing.JMenuItem FechasNH;
     private javax.swing.JMenuItem ItemAlmacen;
     private javax.swing.JMenuItem ItemBandeja;
     private javax.swing.JMenuItem ItemCambioGestion;
