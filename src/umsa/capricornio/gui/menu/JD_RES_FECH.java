@@ -62,8 +62,9 @@ public class JD_RES_FECH extends javax.swing.JDialog {
             Map[] datos=puerto.getFechasRestriccionAdquiDepto();
 ////            Map[] datos = null;
             CerearTabla();
-            
+            System.out.println("hasta aqui");
             if (datos!=null){
+                System.out.println("entrooooo");
                 for (int c=0;c<datos.length;c++){
                     restricciones.insert(c);
                     JTRestricciones.tableChanged(new TableModelEvent(restricciones, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
@@ -78,14 +79,16 @@ public class JD_RES_FECH extends javax.swing.JDialog {
                
 //                this.TxtTotal.setText(String.valueOf(sum));
             }
+            else
+                System.out.println("nooooo");
             
         }
-//        catch (RemoteException e){
-//            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
-//                        javax.swing.JOptionPane.ERROR_MESSAGE);
-//        }
-//        catch (ServiceException e){ System.out.println(e);}
-        catch (Exception e){}
+        catch (RemoteException e){
+            System.out.println(e.getMessage());
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        catch (ServiceException e){ System.out.println(e.getMessage());}        
     }
     void CerearTabla(){
         int f = JTRestricciones.getRowCount();
