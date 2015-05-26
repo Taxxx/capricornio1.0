@@ -554,6 +554,16 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenRelacion.add(jMenuItem2);
 
+        jMenuItem2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(0, 51, 204));
+        jMenuItem2.setText("Usuario - Firma");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        MenRelacion.add(jMenuItem2);
+
         MenMenu.add(MenRelacion);
 
         MenProcesos.setForeground(new java.awt.Color(21, 65, 108));

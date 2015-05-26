@@ -59,8 +59,8 @@ public class JD_RES_FECH extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            Map[] datos=puerto.getFechasRestriccionAdquiDepto();
-//            Map[] datos = null;
+//            Map[] datos=puerto.getFechasRestriccionAdquiDepto();
+            Map[] datos = null;
             CerearTabla();
             
             if (datos!=null){
@@ -80,11 +80,12 @@ public class JD_RES_FECH extends javax.swing.JDialog {
             }
             
         }
-        catch (RemoteException e){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
-        catch (ServiceException e){ System.out.println(e);}        
+//        catch (RemoteException e){
+//            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+//                        javax.swing.JOptionPane.ERROR_MESSAGE);
+//        }
+//        catch (ServiceException e){ System.out.println(e);}
+        catch (Exception e){}
     }
     void CerearTabla(){
         int f = JTRestricciones.getRowCount();
