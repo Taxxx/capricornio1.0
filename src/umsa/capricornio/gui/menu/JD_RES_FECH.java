@@ -60,6 +60,7 @@ public class JD_RES_FECH extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             Map[] datos=puerto.getFechasRestriccionAdquiDepto();
+////            Map[] datos = null;
             CerearTabla();
             System.out.println("hasta aqui");
             if (datos!=null){

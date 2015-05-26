@@ -135,7 +135,7 @@ public class FrmMenu extends javax.swing.JFrame {
         }
         catch (ServiceException e){ System.out.println(e);}                
     }
-    private void FechasNHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechasNHActionPerformed
+    private void FechasNHActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         AbrirFrameInterno(new FrmFechasNH(this));
     }
@@ -272,7 +272,7 @@ public class FrmMenu extends javax.swing.JFrame {
         ItemUsrRol = new javax.swing.JMenuItem();
         ItemUsrUnidad = new javax.swing.JMenuItem();
         ItemUsrWorkflow = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        ItemUsrFirma = new javax.swing.JMenuItem();
         MenProcesos = new javax.swing.JMenu();
         ItemDespacho = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
@@ -534,35 +534,15 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenRelacion.add(ItemUsrWorkflow);
 
-        jMenuItem2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 51, 204));
-        jMenuItem2.setText("Usuario - Firma");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        ItemUsrFirma.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ItemUsrFirma.setForeground(new java.awt.Color(0, 51, 204));
+        ItemUsrFirma.setText("Usuario - Firma");
+        ItemUsrFirma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                ItemUsrFirmaActionPerformed(evt);
             }
         });
-        MenRelacion.add(jMenuItem2);
-
-        jMenuItem2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 51, 204));
-        jMenuItem2.setText("Usuario - Firma");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        MenRelacion.add(jMenuItem2);
-
-        jMenuItem2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 51, 204));
-        jMenuItem2.setText("Usuario - Firma");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        MenRelacion.add(jMenuItem2);
+        MenRelacion.add(ItemUsrFirma);
 
         MenMenu.add(MenRelacion);
 
@@ -736,6 +716,7 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ItemGestionActionPerformed
 
     private void ItemUsrRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemUsrRolActionPerformed
+        System.out.println("A ver pues");
         AbrirFrameInterno(new FrmUsrRol(this,this.gestion,this.cod_almacen));
     }//GEN-LAST:event_ItemUsrRolActionPerformed
 
@@ -788,10 +769,11 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmBancoProveedores(this, cod_usuario, cod_rol, cod_almacen));
     }//GEN-LAST:event_ItemProvedoresActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void ItemUsrFirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemUsrFirmaActionPerformed
         // TODO add your handling code here:
+        System.out.println("a ver cuantas veces entra!!!");
         AbrirFrameInterno(new FrmUsrFirma(this,this.gestion,this.cod_almacen));
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_ItemUsrFirmaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
@@ -811,6 +793,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem ItemProvedores;
     private javax.swing.JMenuItem ItemRol;
     private javax.swing.JMenuItem ItemUnidadEjec;
+    private javax.swing.JMenuItem ItemUsrFirma;
     private javax.swing.JMenuItem ItemUsrRol;
     private javax.swing.JMenuItem ItemUsrUnidad;
     private javax.swing.JMenuItem ItemUsrWorkflow;
@@ -831,7 +814,6 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;

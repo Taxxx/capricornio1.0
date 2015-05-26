@@ -192,9 +192,9 @@ public class RepTransaccion {
         double var= m-valor;
         
         DecimalFormat formato_decimal = new DecimalFormat("0.00");        
-        String decimal =formato_decimal.format(var);
+        String decimal = formato_decimal.format(var);
       
-        String montoLetra=NumerosTextuales.NumTextuales(valor);
+        String montoLetra = NumerosTextuales.NumTextuales(valor);
         
         if ((m>=1000 && m<2000) || (m>=1000000 && m<2000000)){ montoLetra="UN "+montoLetra;}        
         if (var ==0.0) montoLetra=montoLetra+" 00/100";
