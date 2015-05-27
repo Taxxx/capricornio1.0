@@ -1205,10 +1205,10 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.getProveedoresbusca(nombre,n_comercial,item);
-            System.out.println("jjjj "+datos.length);
+            //System.out.println("jjjj "+datos.length);
             CerearTablaProveedor();
-            System.out.println("jjjj "+datos[0].get("cod"));
-            System.out.println("jjjj "+datos[0].get("COD"));
+            //System.out.println("jjjj "+datos[0].get("cod"));
+            //System.out.println("jjjj "+datos[0].get("COD"));
             if (datos!=null){
                 for (int c=0;c<datos.length;c++){
                     proveedor.insert(c);
