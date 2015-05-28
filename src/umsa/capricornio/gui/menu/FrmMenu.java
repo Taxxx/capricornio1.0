@@ -788,7 +788,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void ItemAdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAdministradoresActionPerformed
         // TODO add your handling code here:
-        AbrirFrameInterno(new FrmAdministradores(this,this.gestion,this.cod_almacen,"C2015"));
+        AbrirFrameInterno(new FrmAdministradores(this,this.gestion,this.cod_almacen));
     }//GEN-LAST:event_ItemAdministradoresActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

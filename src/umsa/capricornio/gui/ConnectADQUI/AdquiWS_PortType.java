@@ -264,6 +264,9 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getFirmaUsuario2(int cod_transaccion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getDias(int cod) throws java.rmi.RemoteException;
     public java.util.HashMap[] setDias(int cod, int d) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getProgramaticApertGestion(int gestion, int cod_almacen) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getAlmacenGestion(int gestion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getUsuariosTipo(int cod_rol) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;

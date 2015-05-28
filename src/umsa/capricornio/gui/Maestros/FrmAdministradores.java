@@ -37,18 +37,37 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
     int cod_almacen;
     String cod_apert;
     
-    public FrmAdministradores(FrmMenu menu, int gestion, int cod_almacen, String cod_apert) {
+    public FrmAdministradores(FrmMenu menu, int gestion, int cod_almacen) {
         this.menu=menu;
         initComponents();
         this.gestion=gestion;
 //        this.cod_usuario=cod_usuario;
         this.cod_almacen=cod_almacen;
-        this.cod_apert=cod_apert;
+//        this.cod_apert=cod_apert;
         System.out.println("gestion: "+gestion+", cod_almacen: "+cod_almacen);
         ConstruyeTablaUsuarios();
+        LlenaComboApertura();
         
     }
 
+    public void LlenaComboApertura(){
+            try {
+                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                AdquiWS_PortType puerto = servicio.getAdquiWS();           
+                Map[] datos=puerto.getAlmacenGestion(gestion);
+                this.JC_Aperturas.addItem("- ELIJA UN TIPO DE TRAMITE -");
+                if (datos!=null){
+                    for (int c=0;c<datos.length;c++){
+                        this.JC_Aperturas.addItem(datos[c].get("COD_FAC")+" - "+datos[c].get("ALMACEN") );
+                    }
+                }
+            }
+            catch (RemoteException e){
+                javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+            catch (ServiceException e){ System.out.println(e);}
+    }
     private void ConstruyeTablaUsuarios(){        
         usuario = new TablaUsuario();        
         TblUsuarios.setAutoCreateColumnsFromModel(false);
@@ -87,7 +106,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         TxtPass2 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         TxtResumen = new javax.swing.JTextField();
-        JC_Partidas = new javax.swing.JComboBox();
+        JC_Aperturas = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         BtnNuevo = new javax.swing.JButton();
@@ -135,7 +154,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Escoja Unidad:");
+        jLabel2.setText("Escoja Almacen:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(450, 70, 80, 20);
 
@@ -190,14 +209,14 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         jPanel1.add(TxtResumen);
         TxtResumen.setBounds(110, 50, 220, 20);
 
-        JC_Partidas.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        JC_Partidas.addActionListener(new java.awt.event.ActionListener() {
+        JC_Aperturas.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        JC_Aperturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JC_PartidasActionPerformed(evt);
+                JC_AperturasActionPerformed(evt);
             }
         });
-        jPanel1.add(JC_Partidas);
-        JC_Partidas.setBounds(540, 70, 280, 19);
+        jPanel1.add(JC_Aperturas);
+        JC_Aperturas.setBounds(540, 70, 280, 19);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -269,20 +288,20 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(BtnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 524, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PnlUsuarios))
+                    .addComponent(PnlUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -438,7 +457,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
 //            Map[] datos= puerto.getUsuario();
-            Map[] datos= puerto.getUsuariox2(this.gestion, this.cod_almacen);
+            Map[] datos= puerto.getUsuariosTipo(1);
             if (datos!=null){
                 for (int c=0;c<datos.length;c++){
                     usuario.insert(c);                    
@@ -529,7 +548,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         BtnEliminar.setEnabled(false);        
     }//GEN-LAST:event_formInternalFrameOpened
 
-    private void JC_PartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JC_PartidasActionPerformed
+    private void JC_AperturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JC_AperturasActionPerformed
         // TODO add your handling code here:
         System.out.println("Waooo Llocallo");
         //System.out.println("Sacatelas Babuchas --> "+this.JC_Partidas.getSelectedItem());
@@ -537,7 +556,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
 //        this.partida=partida;
 //        this.JTA_Descripcion.setText(getDescripcion(partida));
         //this.JC_Partidas.getSelectedItem();
-    }//GEN-LAST:event_JC_PartidasActionPerformed
+    }//GEN-LAST:event_JC_AperturasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -545,7 +564,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnModificar;
     private javax.swing.JButton BtnNuevo;
-    private javax.swing.JComboBox JC_Partidas;
+    private javax.swing.JComboBox JC_Aperturas;
     private javax.swing.JScrollPane PnlUsuarios;
     private javax.swing.JTable TblUsuarios;
     private javax.swing.JTextField TxtAlias;
