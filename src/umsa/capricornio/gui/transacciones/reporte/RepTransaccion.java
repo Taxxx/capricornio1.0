@@ -79,8 +79,10 @@ public class RepTransaccion {
                     //System.out.println("............................ El total redondeado es: "+this.Redondear(datos[0].get("TOTAL").toString(),2));
                     parameters.put("TxtTotal",TotalTexto(this.Redondear(datos[0].get("TOTAL").toString(),2)));
                 }
+                System.out.println(cod_trans_nro);
                 Map[] datos1= puerto.getDias(cod_trans_nro);
-                if (datos1!=null){
+                if (!datos1[0].get("DIAS").toString().equals("")){
+                    System.out.println(datos1[0].get("DIAS").toString());
                     //System.out.println("............................ El total es: "+datos[0].get("TOTAL").toString());
                     //System.out.println("............................ El total redondeado es: "+this.Redondear(datos[0].get("TOTAL").toString(),2));
                     int tt=Integer.parseInt(datos1[0].get("DIAS").toString());
@@ -90,7 +92,7 @@ public class RepTransaccion {
                 else
                 {
                     System.err.println("eto nya 2");
-                    parameters.put("dias", 15);
+                    parameters.put("dias", 0);
                 }
             }
             catch (RemoteException e){System.out.println(e);
