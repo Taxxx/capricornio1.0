@@ -117,11 +117,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             if (datos != null) {
                 for (int f = 0; f < datos.length; f++) {
                     //Transaccion trans = new Transaccion();
-                    System.out.println(" -->" + datos[f].get("FACTURA").toString());
-                    System.out.println(" -->" + datos[f].get("FECHA_FACT").toString());
-                    System.out.println(" -->" + datos[f].get("FECHA_ING").toString());
-                    System.out.println(" -->" + datos[f].get("MEMO").toString());
-                    System.out.println(" -->" + datos[f].get("OBS").toString());
+//                    System.out.println(" -->" + datos[f].get("FACTURA").toString());
+//                    System.out.println(" -->" + datos[f].get("FECHA_FACT").toString());
+//                    System.out.println(" -->" + datos[f].get("FECHA_ING").toString());
+//                    System.out.println(" -->" + datos[f].get("MEMO").toString());
+//                    System.out.println(" -->" + datos[f].get("OBS").toString());
                     SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
                     //String fec_fact="'"+form.format(CalFechaFact.getValue())+"'";
                     this.TxtFactura.setText(datos[f].get("FACTURA").toString());

@@ -258,6 +258,7 @@ public class FrmMenu extends javax.swing.JFrame {
         MenAdministracion = new javax.swing.JMenu();
         ItemGestion = new javax.swing.JMenuItem();
         ItemUsuario = new javax.swing.JMenuItem();
+        ItemAdministradores = new javax.swing.JMenuItem();
         ItemAlmacen = new javax.swing.JMenuItem();
         ItemUnidadEjec = new javax.swing.JMenuItem();
         ItemItems = new javax.swing.JMenuItem();
@@ -414,6 +415,16 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
         MenAdministracion.add(ItemUsuario);
+
+        ItemAdministradores.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        ItemAdministradores.setForeground(new java.awt.Color(0, 51, 204));
+        ItemAdministradores.setText("Administradores");
+        ItemAdministradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemAdministradoresActionPerformed(evt);
+            }
+        });
+        MenAdministracion.add(ItemAdministradores);
 
         ItemAlmacen.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         ItemAlmacen.setForeground(new java.awt.Color(0, 51, 204));
@@ -775,6 +786,11 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmUsrFirma(this,this.gestion,this.cod_almacen));
     }//GEN-LAST:event_ItemUsrFirmaActionPerformed
 
+    private void ItemAdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemAdministradoresActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmAdministradores(this,this.gestion,this.cod_almacen,"C2015"));
+    }//GEN-LAST:event_ItemAdministradoresActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -782,6 +798,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JButton BtnProveedores;
     private javax.swing.JButton BtnSalir;
     private javax.swing.JMenuItem FechasNH;
+    private javax.swing.JMenuItem ItemAdministradores;
     private javax.swing.JMenuItem ItemAlmacen;
     private javax.swing.JMenuItem ItemBandeja;
     private javax.swing.JMenuItem ItemCambioGestion;
