@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package umsa.capricornio.gui.Maestros;
 
 import java.awt.event.KeyEvent;
@@ -29,63 +28,65 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
      * Creates new form FrmAdministradores
      */
     TablaUsuario usuario;
-        
+
     Runtime r;
     FrmMenu menu;
 //    int cod_usuario;
     int gestion;
     int cod_almacen;
     String cod_apert;
-    
-    public FrmAdministradores(FrmMenu menu, int gestion, int cod_almacen) {
-        this.menu=menu;
+
+    public FrmAdministradores(FrmMenu menu, int gestion) {
+        this.menu = menu;
         initComponents();
-        this.gestion=gestion;
+        this.gestion = gestion;
 //        this.cod_usuario=cod_usuario;
-        this.cod_almacen=cod_almacen;
+//        this.cod_almacen=cod_almacen;
 //        this.cod_apert=cod_apert;
-        System.out.println("gestion: "+gestion+", cod_almacen: "+cod_almacen);
+        System.out.println("gestion: " + gestion);
         ConstruyeTablaUsuarios();
         LlenaComboApertura();
-        
+
     }
 
-    public void LlenaComboApertura(){
-            try {
-                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-                AdquiWS_PortType puerto = servicio.getAdquiWS();           
-                Map[] datos=puerto.getAlmacenGestion(gestion);
-                this.JC_Aperturas.addItem("- ELIJA UN TIPO DE TRAMITE -");
-                if (datos!=null){
-                    for (int c=0;c<datos.length;c++){
-                        this.JC_Aperturas.addItem(datos[c].get("COD_FAC")+" - "+datos[c].get("ALMACEN") );
-                    }
+    public void LlenaComboApertura() {
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos = puerto.getAlmacenGestion(gestion);
+            this.JC_Aperturas.addItem("- ELIJA UN TIPO DE TRAMITE -");
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    this.JC_Aperturas.addItem(datos[c].get("COD_FAC") + " - " + datos[c].get("ALMACEN"));
                 }
             }
-            catch (RemoteException e){
-                javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
-            }
-            catch (ServiceException e){ System.out.println(e);}
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
+        }
     }
-    private void ConstruyeTablaUsuarios(){        
-        usuario = new TablaUsuario();        
+
+    private void ConstruyeTablaUsuarios() {
+        usuario = new TablaUsuario();
         TblUsuarios.setAutoCreateColumnsFromModel(false);
-        TblUsuarios.setModel(usuario); 
-        
-        for (int k = 0; k < TablaUsuario.m_columns.length; k++) {               
+        TblUsuarios.setModel(usuario);
+
+        for (int k = 0; k < TablaUsuario.m_columns.length; k++) {
             DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
             renderer.setHorizontalAlignment(TablaUsuario.m_columns[k].m_alignment);
             TableColumn column = new TableColumn(k, TablaUsuario.m_columns[k].m_width, renderer, null);
-            TblUsuarios.addColumn(column);                           
-        }        
+            TblUsuarios.addColumn(column);
+        }
         JTableHeader header = TblUsuarios.getTableHeader();
         header.setUpdateTableInRealTime(true);
         header.setReorderingAllowed(true);
 
-        PnlUsuarios.getViewport().add(TblUsuarios);        
+        PnlUsuarios.getViewport().add(TblUsuarios);
         //getContentPane().add(PnlTechos, BorderLayout.CENTER);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -325,33 +326,35 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TxtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtUsuarioKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             TxtResumen.requestFocus();
         }
     }//GEN-LAST:event_TxtUsuarioKeyPressed
 
     private void TxtAliasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtAliasKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             TxtPass1.requestFocus();
         }
     }//GEN-LAST:event_TxtAliasKeyPressed
 
     private void TxtPass1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtPass1KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             TxtPass2.requestFocus();
         }
     }//GEN-LAST:event_TxtPass1KeyPressed
 
     private void TxtPass2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtPass2KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
-            if (BtnModificar.isEnabled()==true)
-            BtnModificar.doClick();
-            else BtnGuardar.doClick();
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (BtnModificar.isEnabled() == true) {
+                BtnModificar.doClick();
+            } else {
+                BtnGuardar.doClick();
+            }
         }
     }//GEN-LAST:event_TxtPass2KeyPressed
 
     private void TxtResumenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtResumenKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             TxtAlias.requestFocus();
         }
     }//GEN-LAST:event_TxtResumenKeyPressed
@@ -374,60 +377,68 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         TxtPass2.setText("");
         TxtUsuario.requestFocus();
         /*CmbRubro.setEnabled(true);
-        CmbFF.setEnabled(true);
-        CmbOF.setEnabled(true);
+         CmbFF.setEnabled(true);
+         CmbOF.setEnabled(true);
 
-        TxtMonto.setText("");
-        CmbRubro.setSelectedIndex(0);
-        CmbRubro.requestFocus();*/
+         TxtMonto.setText("");
+         CmbRubro.setSelectedIndex(0);
+         CmbRubro.requestFocus();*/
     }//GEN-LAST:event_BtnNuevoActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
 
         if (!(TxtPass1.getText().equals(TxtPass2.getText()))) {
-            javax.swing.JOptionPane.showMessageDialog(this,"Los passwords son diferentes","ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Los passwords son diferentes", "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
             TxtPass1.setText("");
             TxtPass2.setText("");
             TxtPass1.requestFocus();
             return;
         }
 
-        if ((TxtPass1.getText().length()<6 && TxtPass1.getText().length()>20)  || (TxtPass2.getText().length()<6 && TxtPass2.getText().length()>20)) {
-            javax.swing.JOptionPane.showMessageDialog(this,"El password debe ser por lo menos de 6 carcateres","ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+        if ((TxtPass1.getText().length() < 6 && TxtPass1.getText().length() > 20) || (TxtPass2.getText().length() < 6 && TxtPass2.getText().length() > 20)) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El password debe ser por lo menos de 6 carcateres", "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
             TxtPass1.setText("");
             TxtPass2.setText("");
             TxtPass1.requestFocus();
             return;
         }
 
-        if ("".equals(TxtUsuario.getText().trim()) ) {
-            javax.swing.JOptionPane.showMessageDialog(this,"Debe introducir nombre completo del susuario","ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+        if ("".equals(TxtUsuario.getText().trim())) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe introducir nombre completo del susuario", "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
             TxtUsuario.requestFocus();
             return;
         }
 
-        if ("".equals(TxtResumen.getText().trim()) ) {
-            javax.swing.JOptionPane.showMessageDialog(this,"Debe introducir resumen del nombre del usuario","ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+        if ("".equals(TxtResumen.getText().trim())) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe introducir resumen del nombre del usuario", "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
             TxtResumen.requestFocus();
             return;
         }
 
-        int res = javax.swing.JOptionPane.showConfirmDialog( this,"¿Desea guardar los datos?",
-            "ZODIAC LIBRA SYSTEM",javax.swing.JOptionPane.YES_NO_OPTION );
-        if (res == javax.swing.JOptionPane.NO_OPTION) return;
-        try {   AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea guardar los datos?",
+                "ZODIAC LIBRA SYSTEM", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (res == javax.swing.JOptionPane.NO_OPTION) {
+            return;
+        }
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             int cod_usuario = puerto.secCodUsuario();
-            puerto.setUsuariox("SET-insDataUsr", cod_usuario, TxtAlias.getText().trim(),TxtPass1.getText(),TxtUsuario.getText().trim(),TxtResumen.getText().trim());
+            
+            System.out.println("cod_usuario: "+cod_usuario+", cod_almacen: "+this.cod_almacen);
+            
+            puerto.setUsuariox("SET-insDataUsr", cod_usuario, TxtAlias.getText().trim(), TxtPass1.getText(), TxtUsuario.getText().trim(), TxtResumen.getText().trim());
             //            puerto.addUserApert("SET-addUserApert",cod_usuario,this.cod_apert,this.gestion);
             puerto.addAdmAlm("SET-addAdmAlm", cod_usuario, this.cod_almacen);
+            //Adicionando rol de administrador al usuario :D
+            puerto.setUsrRol("SET-insDataUsr", cod_usuario, 1);
             //            Map[] datos = datos=puerto.setUsuario("SET-insDataUsr",TxtAlias.getText().trim(),TxtPass1.getText(),TxtUsuario.getText().trim(),TxtResumen.getText().trim());
-            javax.swing.JOptionPane.showMessageDialog(this,"Usuario Registrado","ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Usuario Registrado", "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
             LlenaUsuarios();
             TxtUsuario.setText("");
             TxtPass1.setText("");
@@ -435,56 +446,60 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             TxtAlias.setText("");
             TxtUsuario.requestFocus();
         } catch (RemoteException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+ex,"ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);    }
-        catch (ServiceException ex) {}
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + ex, "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException ex) {
+        }
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
-    void CerearTablaUsuarios(){
+    void CerearTablaUsuarios() {
         int f = TblUsuarios.getRowCount();
-        for (int i=f;i>=0;i--){
-             if (usuario.delete(i)) {
+        for (int i = f; i >= 0; i--) {
+            if (usuario.delete(i)) {
                 TblUsuarios.tableChanged(new TableModelEvent(
-                usuario, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT)); 
-             }
+                        usuario, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
+            }
         }
     }
-    
-    private void LlenaUsuarios(){
+
+    private void LlenaUsuarios() {
         CerearTablaUsuarios();
-        System.out.println("La gestion es: "+this.gestion+", y el cod_almacen es :"+this.cod_almacen);
-        try{
+        System.out.println("La gestion es: " + this.gestion + ", y el cod_almacen es :" + this.cod_almacen);
+        try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
 //            Map[] datos= puerto.getUsuario();
-            Map[] datos= puerto.getUsuariosTipo(1);
-            if (datos!=null){
-                for (int c=0;c<datos.length;c++){
-                    usuario.insert(c);                    
-                    TblUsuarios.tableChanged(new TableModelEvent(usuario, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT)); 
-                    TblUsuarios.setValueAt(datos[c].get("COD_USUARIO"),c,0);
-                    TblUsuarios.setValueAt(datos[c].get("USUARIO"),c,1);
-                    TblUsuarios.setValueAt(datos[c].get("NOMBRE_RESUMEN"),c,2);
-                }                
-            }                    
+            Map[] datos = puerto.getUsuariosTipo(1);
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    usuario.insert(c);
+                    TblUsuarios.tableChanged(new TableModelEvent(usuario, c, c, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
+                    TblUsuarios.setValueAt(datos[c].get("COD_USUARIO"), c, 0);
+                    TblUsuarios.setValueAt(datos[c].get("USUARIO"), c, 1);
+                    TblUsuarios.setValueAt(datos[c].get("NOMBRE_RESUMEN"), c, 2);
+                }
+            }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
         }
-        catch (RemoteException e){ 
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"ZODIAC LIBRA SYSTEM",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);           
-        }
-        catch (ServiceException e){ System.out.println(e);}        
     }
     private void BtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarActionPerformed
-        int res = javax.swing.JOptionPane.showConfirmDialog( this,"¿Desea Modificar los datos?",
-            "ZODIAC LIBRA SYSTEM",javax.swing.JOptionPane.YES_NO_OPTION );
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea Modificar los datos?",
+                "ZODIAC LIBRA SYSTEM", javax.swing.JOptionPane.YES_NO_OPTION);
         int f = TblUsuarios.getSelectedRow();
-        int id_usr=Integer.parseInt(TblUsuarios.getValueAt(f, 0).toString());
-        if (res == javax.swing.JOptionPane.NO_OPTION) return;
-        try {   AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+        int id_usr = Integer.parseInt(TblUsuarios.getValueAt(f, 0).toString());
+        if (res == javax.swing.JOptionPane.NO_OPTION) {
+            return;
+        }
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos = puerto.setUsuarioModif("SET-updDataUsr",id_usr,TxtUsuario.getText().trim(),TxtResumen.getText().trim());
-            javax.swing.JOptionPane.showMessageDialog(this,"Datos modificado","ZODIAC CAPRICORN SYSTEM",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            Map[] datos = puerto.setUsuarioModif("SET-updDataUsr", id_usr, TxtUsuario.getText().trim(), TxtResumen.getText().trim());
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos modificado", "ZODIAC CAPRICORN SYSTEM",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
             LlenaUsuarios();
             BtnEliminar.setEnabled(false);
             BtnModificar.setEnabled(false);
@@ -496,22 +511,26 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             TxtAlias.setText("");
             TxtUsuario.requestFocus();
         } catch (RemoteException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+ex,"ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);    }
-        catch (ServiceException ex) {}
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + ex, "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException ex) {
+        }
     }//GEN-LAST:event_BtnModificarActionPerformed
 
     private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
-        int res = javax.swing.JOptionPane.showConfirmDialog( this,"¿Desea Eliminar los datos?",
-            "ZODIAC LIBRA SYSTEM",javax.swing.JOptionPane.YES_NO_OPTION );
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea Eliminar los datos?",
+                "ZODIAC LIBRA SYSTEM", javax.swing.JOptionPane.YES_NO_OPTION);
         int f = TblUsuarios.getSelectedRow();
-        int id_usr=Integer.parseInt(TblUsuarios.getValueAt(f, 0).toString());
-        if (res == javax.swing.JOptionPane.NO_OPTION) return;
-        try {   AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+        int id_usr = Integer.parseInt(TblUsuarios.getValueAt(f, 0).toString());
+        if (res == javax.swing.JOptionPane.NO_OPTION) {
+            return;
+        }
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos = datos=puerto.setUsuarioDel("SET-delDataUsr",id_usr);
-            javax.swing.JOptionPane.showMessageDialog(this,"Datos Eliminados","ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            Map[] datos = datos = puerto.setUsuarioDel("SET-delDataUsr", id_usr);
+            javax.swing.JOptionPane.showMessageDialog(this, "Datos Eliminados", "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
             LlenaUsuarios();
             BtnEliminar.setEnabled(false);
             BtnModificar.setEnabled(false);
@@ -523,9 +542,10 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             TxtAlias.setText("");
             TxtUsuario.requestFocus();
         } catch (RemoteException ex) {
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+ex,"ZODIAC LIBRA SYSTEM",
-                javax.swing.JOptionPane.ERROR_MESSAGE);    }
-        catch (ServiceException ex) {}
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + ex, "ZODIAC LIBRA SYSTEM",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException ex) {
+        }
     }//GEN-LAST:event_BtnEliminarActionPerformed
 
     private void TblUsuariosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblUsuariosMousePressed
@@ -534,9 +554,9 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             BtnModificar.setEnabled(true);
             BtnGuardar.setEnabled(false);
             TblUsuarios.setEnabled(false);
-            int fila=TblUsuarios.getSelectedRow();
-            TxtUsuario.setText(TblUsuarios.getValueAt(fila,1).toString());
-            TxtResumen.setText(TblUsuarios.getValueAt(fila,2).toString());
+            int fila = TblUsuarios.getSelectedRow();
+            TxtUsuario.setText(TblUsuarios.getValueAt(fila, 1).toString());
+            TxtResumen.setText(TblUsuarios.getValueAt(fila, 2).toString());
         }
     }//GEN-LAST:event_TblUsuariosMousePressed
 
@@ -545,17 +565,22 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         LlenaUsuarios();
         BtnGuardar.setEnabled(true);
         BtnModificar.setEnabled(false);
-        BtnEliminar.setEnabled(false);        
+        BtnEliminar.setEnabled(false);
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void JC_AperturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JC_AperturasActionPerformed
         // TODO add your handling code here:
-        System.out.println("Waooo Llocallo");
-        //System.out.println("Sacatelas Babuchas --> "+this.JC_Partidas.getSelectedItem());
-//        String partida = this.JC_Partidas.getSelectedItem().toString().split(" - ")[0];
-//        this.partida=partida;
+        try {
+            System.out.println("Waooo Llocallo");
+//        System.out.println("Sacatelas Babuchas --> "+this.JC_Aperturas.getSelectedItem());
+            int cod_almacen = Integer.parseInt(this.JC_Aperturas.getSelectedItem().toString().split(" - ")[0]);
+            this.cod_almacen = cod_almacen;
+            System.out.println("El cod almacen es: " + this.cod_almacen);
 //        this.JTA_Descripcion.setText(getDescripcion(partida));
-        //this.JC_Partidas.getSelectedItem();
+            //this.JC_Partidas.getSelectedItem();
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_JC_AperturasActionPerformed
 
 
