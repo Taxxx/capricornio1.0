@@ -1311,6 +1311,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         } else {
             sw = true;
         }
+        
         System.out.println("El cod_rol" + cod_rol);
         System.out.println("si aparece la cuantia " + cuantia);
         //System.out.println("El cod"+this.proveedor.getCod_proveedor());
@@ -1327,6 +1328,31 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             if (res != javax.swing.JOptionPane.YES_OPTION) {
                 return;
             }
+            try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos=puerto.getDias(this.cod_trans_nro);
+            int t=15;
+            if(!datos[0].get("DIAS").toString().equals(""))
+            {
+                System.out.println("ttttt ya tiene dias");
+            }
+            else
+            {
+                String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
+                if(resp.equals(""))
+                {
+                    System.out.println("s 15");
+                }
+                else{
+                    t=Integer.parseInt(resp);
+                    System.out.println("ttttt "+t);
+                }
+                Map[] datos1=puerto.setDias(this.cod_trans_nro,t);
+            }
+        }
+        catch(Exception e)
+        {}
             try {
                 System.out.println(":P intentando");
                 AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
