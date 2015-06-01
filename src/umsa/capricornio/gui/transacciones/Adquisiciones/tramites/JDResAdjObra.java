@@ -35,7 +35,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
     private String cuce;
     JLabel j1;
     JCheckBox jc;
-    JTextField jt1,jt2,jt3;
+    JTextField jt1,jt2,jt3,jt4,jt5;
     String s1, tprov="", tbche="";
     int tadju;
     String[] vt1;
@@ -102,6 +102,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -259,22 +261,32 @@ public class JDResAdjObra extends javax.swing.JDialog {
 
         jLabel16.setText("OBSERVACIONES");
 
+        jLabel26.setText("PTG E.\nECO...");
+
+        jLabel27.setText("PTG E. \nTEC...");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel26)
+                .addGap(349, 349, 349))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel12)
                 .addGap(214, 214, 214)
                 .addComponent(jLabel13)
-                .addGap(92, 92, 92)
-                .addComponent(jLabel14)
-                .addGap(51, 51, 51)
+                .addGap(65, 65, 65)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel15)
-                .addGap(44, 44, 44)
-                .addComponent(jLabel16)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel16))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,8 +298,14 @@ public class JDResAdjObra extends javax.swing.JDialog {
                     .addComponent(jLabel14)
                     .addComponent(jLabel15)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jLabel27)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel26)
+                .addGap(23, 23, 23))
         );
+
+        jLabel26.getAccessibleContext().setAccessibleName("PTG E.\nECO...");
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -324,54 +342,54 @@ public class JDResAdjObra extends javax.swing.JDialog {
                         .addGap(42, 42, 42)
                         .addComponent(JB_Imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(JTF_CARGO, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_DESTINO, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_MEVAL, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_DET_CONC_PROP, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_INFDIVADQUI, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_FechaCC, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_ADC, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_Res_Admi)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(JTF_CARGO, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_DESTINO, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_MEVAL, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_DET_CONC_PROP, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_INFDIVADQUI, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_FechaCC, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_ADC, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_Res_Admi)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(JB_Actualizar)
-                                                .addGap(112, 112, 112)
-                                                .addComponent(JB_Guardar)
-                                                .addGap(77, 77, 77))
-                                            .addComponent(JTF_ACTIVIDAD))
-                                        .addGap(31, 31, 31)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel17)
-                                            .addComponent(jLabel18)
-                                            .addComponent(jLabel19)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel21)
-                                            .addComponent(jLabel22)
-                                            .addComponent(jLabel23)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel25)))))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(JB_Actualizar)
+                                        .addGap(112, 112, 112)
+                                        .addComponent(JB_Guardar)
+                                        .addGap(77, 77, 77))
+                                    .addComponent(JTF_ACTIVIDAD))
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel25)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel11)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,9 +453,9 @@ public class JDResAdjObra extends javax.swing.JDialog {
                     .addComponent(JB_Guardar))
                 .addGap(15, 15, 15)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -497,16 +515,16 @@ public class JDResAdjObra extends javax.swing.JDialog {
     }
     private void verifielementos()
     {
-        int c=0,c1=0,c2=0,c3=0;
+        int c=0,c1=0,c2=0,c3=0,c4=0,c5=0;
         JTextField jtv[]=new JTextField[30];
         JCheckBox jc[]=new JCheckBox[30];
         tprov="";
         tbche="";
         //System.out.println("total adju"+tadju*5);
-        for(int i=5; i<=(tadju*5)+4 ;i++)
+        for(int i=7; i<=(tadju*7)+6 ;i++)
         {
             //System.out.println(" ");
-            //System.out.println(jPanel2.getComponent(i).getName());
+            ///System.out.println(jPanel2.getComponent(i).getName());
             if(jPanel2.getComponent(i).getName().toString().equals("texto1"+c))
             {
                 jtv[c]=(JTextField) jPanel2.getComponent(i);
@@ -528,6 +546,20 @@ public class JDResAdjObra extends javax.swing.JDialog {
                 tprov=tprov+","+jtv[c3].getText();
                 c3++;
             }
+            if(jPanel2.getComponent(i).getName().toString().equals("texto4"+c4))
+            {
+                jtv[c4]=(JTextField) jPanel2.getComponent(i);
+                //System.out.println(jtv[c].getText().toString());
+                tprov=tprov+","+jtv[c4].getText();
+                c4++;
+            }
+            if(jPanel2.getComponent(i).getName().toString().equals("texto5"+c5))
+            {
+                jtv[c5]=(JTextField) jPanel2.getComponent(i);
+                //System.out.println(jtv[c].getText().toString());
+                tprov=tprov+","+jtv[c5].getText();
+                c5++;
+            }
             if(jPanel2.getComponent(i).getName().toString().equals("check1"+c1))
             {
                 jc[c1]=(JCheckBox) jPanel2.getComponent(i);
@@ -539,9 +571,11 @@ public class JDResAdjObra extends javax.swing.JDialog {
                    tbche=tbche+",no cumple";
                 c1++;
             }
+            System.err.println("u"+c+"u"+c1+"u"+c2+"u"+c3+"u"+c4+"u"+c5);
+            System.err.println("dsf"+jPanel2.getComponent(i).getName().toString());
             
         }
-        System.out.println("tprov: "+tprov+", tbche"+tbche);
+        //System.out.println("tprov: "+tprov+", tbche"+tbche);
     }
     private void LlenaTabla(String t1,String t2)
     {
@@ -563,6 +597,10 @@ public class JDResAdjObra extends javax.swing.JDialog {
         //codigos[]=new String[10];
         System.out.println("entra acreartbla");
         int k=30,kk=10,kkk=572,p=1,p1=1;
+        jLabel26.setBounds(840,10,60,20);
+        jPanel2.add(jLabel26);
+        jLabel27.setBounds(910,10,60,20);
+        jPanel2.add(jLabel27);
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -591,19 +629,27 @@ public class JDResAdjObra extends javax.swing.JDialog {
                         jc.setEnabled(true);
                         jc.setName("check1"+c);
                         jt1=new JTextField();
-                        jt1.setBounds(430, k, 150, 30);
+                        jt1.setBounds(410, k, 100, 30);
                         jt1.setName("texto1"+c);
                         jt2=new JTextField();
-                        jt2.setBounds(600, k, 150, 30);
+                        jt2.setBounds(520, k, 150, 30);
                         jt2.setName("texto2"+c);
                         jt3=new JTextField();
-                        jt3.setBounds(780, k, 150, 30);
+                        jt3.setBounds(680, k, 150, 30);
                         jt3.setName("texto3"+c);
+                        jt4=new JTextField();
+                        jt4.setBounds(840, k, 60, 30);
+                        jt4.setName("texto4"+c);
+                        jt5=new JTextField();
+                        jt5.setBounds(910, k, 60, 30);
+                        jt5.setName("texto5"+c);
                         jPanel2.add(j1);
                         jPanel2.add(jc);
                         jPanel2.add(jt1);
                         jPanel2.add(jt2);
                         jPanel2.add(jt3);
+                        jPanel2.add(jt4);
+                        jPanel2.add(jt5);
                         jPanel2.setSize(970, kk);
                         jPanel2.setPreferredSize(jPanel2.getSize());
                         jPanel1.setSize(997, kkk);
@@ -620,11 +666,15 @@ public class JDResAdjObra extends javax.swing.JDialog {
                             jt1.setText((datos[c].get("MONTO").toString()));
                             jt2.setText((datos[c].get("PLAZO").toString()));
                             jt3.setText((datos[c].get("OBSERVACION").toString()));
-                            p=p+3;
+                            jt4.setText(datos[c].get("PTG_ECONOMICO").toString());
+                            jt5.setText(datos[c].get("PTG_TECNICO").toString());
+                            p=p+5;
                             
                             jt1.setEnabled(false);
                             jt2.setEnabled(false);
                             jt3.setEnabled(false);
+                            jt4.setEnabled(false);
+                            jt5.setEnabled(false);
                             if((datos[c].get("CUMPLE").toString()).equals("cumple"))
                                 jc.setSelected(true);
                             jc.setEnabled(false);
@@ -646,19 +696,27 @@ public class JDResAdjObra extends javax.swing.JDialog {
                         jc.setVisible(true);
                         jc.setEnabled(true);
                         jt1=new JTextField();
-                        jt1.setBounds(430, k, 150, 30);
+                        jt1.setBounds(410, k, 100, 30);
                         jt1.setName("texto1"+c);
                         jt2=new JTextField();
-                        jt2.setBounds(600, k, 150, 30);
+                        jt2.setBounds(520, k, 150, 30);
                         jt2.setName("texto2"+c);
                         jt3=new JTextField();
-                        jt3.setBounds(780, k, 150, 30);
+                        jt3.setBounds(680, k, 150, 30);
                         jt3.setName("texto3"+c);
+                        jt4=new JTextField();
+                        jt4.setBounds(840, k, 60, 30);
+                        jt4.setName("texto4"+c);
+                        jt5=new JTextField();
+                        jt5.setBounds(910, k, 60, 30);
+                        jt5.setName("texto5"+c);
                         jPanel2.add(j1);
                         jPanel2.add(jc);
                         jPanel2.add(jt1);
                         jPanel2.add(jt2);
                         jPanel2.add(jt3);
+                        jPanel2.add(jt4);
+                        jPanel2.add(jt5);
                         jPanel2.setSize(970, kk);
                         System.out.println("WIDTH "+jPanel2.getSize());
                         jPanel2.setPreferredSize(jPanel2.getSize());
@@ -673,11 +731,15 @@ public class JDResAdjObra extends javax.swing.JDialog {
                             jt1.setText((datos[c].get("MONTO").toString()));
                             jt2.setText((datos[c].get("PLAZO").toString()));
                             jt3.setText((datos[c].get("OBSERVACION").toString()));
-                            p=p+3;
+                            jt4.setText(datos[c].get("PTG_ECONOMICO").toString());
+                            jt5.setText(datos[c].get("PTG_TECNICO").toString());
+                            p=p+5;
                             
                             jt1.setEnabled(false);
                             jt2.setEnabled(false);
                             jt3.setEnabled(false);
+                            jt4.setEnabled(false);
+                            jt5.setEnabled(false);
                             if((datos[c].get("CUMPLE").toString()).equals("cumple"))
                                 jc.setSelected(true);
                             jc.setEnabled(false);
@@ -827,7 +889,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         //this.JTF_DESTINO.setEnabled(true);
         this.JTF_CARGO.setEnabled(true);
         this.JTF_ACTIVIDAD.setEnabled(true);
-        for(int i=5; i<=(tadju*5)+4 ;i++)
+        for(int i=7; i<=(tadju*7)+6 ;i++)
         {
             jPanel2.getComponent(i).setEnabled(true);
         }
@@ -866,8 +928,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
             n2=tbche.split(",");
             while(cc<n1.length)
             {
-                //puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
-                cc=cc+3;
+                puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh],n1[cc+3],n1[cc+4]);
+                cc=cc+5;
                 hh++;
                 nh++;
             }
@@ -889,6 +951,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         if(this.cod_w==3)
             this.updateAdjCons(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());*/
         this.verifielementos();
+        System.err.println("jijiji "+tprov+"  jujujuju "+tbche);
         this.updateAdjObra(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
         //this.LlenaBien();
         this.setVisible(false);
@@ -1124,8 +1187,10 @@ public class JDResAdjObra extends javax.swing.JDialog {
             n2=tbche.split(",");
             while(cc<n1.length)
             {
-                //puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
-                cc=cc+3;
+                puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh],n1[cc+3],n1[cc+4]);
+                cc=cc+5;
+                /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
+                cc=cc+3;*/
                 hh++;
                 nh++;
             }
@@ -1229,6 +1294,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
