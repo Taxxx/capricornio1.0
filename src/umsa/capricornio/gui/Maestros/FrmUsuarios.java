@@ -359,7 +359,7 @@ private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             int cod_usuario = puerto.secCodUsuario();
             puerto.setUsuariox("SET-insDataUsr", cod_usuario, TxtAlias.getText().trim(),TxtPass1.getText(),TxtUsuario.getText().trim(),TxtResumen.getText().trim());
 //            puerto.addUserApert("SET-addUserApert",cod_usuario,this.cod_apert,this.gestion);
-            puerto.addAdmAlm("SET-addAdmAlm", cod_usuario, this.cod_almacen);
+            puerto.addAdmAlm("SET-addAdmAlm", cod_usuario, this.cod_almacen,gestion);
 //            Map[] datos = datos=puerto.setUsuario("SET-insDataUsr",TxtAlias.getText().trim(),TxtPass1.getText(),TxtUsuario.getText().trim(),TxtResumen.getText().trim());            
             javax.swing.JOptionPane.showMessageDialog(this,"Usuario Registrado","ZODIAC LIBRA SYSTEM",
              javax.swing.JOptionPane.INFORMATION_MESSAGE);

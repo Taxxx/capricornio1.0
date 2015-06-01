@@ -22,7 +22,7 @@ import umsa.capricornio.gui.relacionadores.tablas.TablaUsrRol;
 
 /**
  *
- * @author  julian
+ * @author  Henrry
  */
 public class FrmUsrUnidad extends javax.swing.JInternalFrame {
 
@@ -370,8 +370,8 @@ private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     String v1="";
     String v2="";
     try {
-        v1=LstUnidad.getSelectedValue().toString();
-        v2=LstUsuarios.getSelectedValue().toString();        
+        v1 = LstUnidad.getSelectedValue().toString();
+        v2 = LstUsuarios.getSelectedValue().toString();        
     }
     catch(NullPointerException e){ 
         javax.swing.JOptionPane.showMessageDialog(this,"Debe Elegir Ambos componentes","ZODIAC CAPRICORN SYSTEM",

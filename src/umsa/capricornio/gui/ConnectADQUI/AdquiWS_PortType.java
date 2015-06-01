@@ -177,7 +177,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] generaResAdj(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String detalle) throws java.rmi.RemoteException;
     public java.util.HashMap[] getResAdj(int cod_trans_nro) throws java.rmi.RemoteException;
     public java.util.HashMap[] addResAdj(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String tipo, java.lang.String num_res_adm, java.lang.String notas_adq, java.lang.String num_adc_anpe, java.lang.String convocatoria, java.lang.String num_inf_adq, java.lang.String num_inf_hp, java.lang.String proveedor, java.lang.String destino, java.lang.String actividad, java.lang.String titulo) throws java.rmi.RemoteException;
-    public java.util.HashMap[] gentabla(java.lang.String aaa, java.lang.String bbb, java.lang.String ccc, java.lang.String ddd, int xx, java.lang.String yy) throws java.rmi.RemoteException;
+    public java.util.HashMap[] gentabla(java.lang.String aaa, java.lang.String bbb, java.lang.String ccc, java.lang.String ddd, int xx, java.lang.String yy, java.lang.String f, java.lang.String g) throws java.rmi.RemoteException;
     public java.util.HashMap[] genResAdjServ2(int cod_trans_nro, int tipo_resolucion, java.lang.String det_res_adj, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, java.lang.String adc) throws java.rmi.RemoteException;
     public java.util.HashMap[] genResAdjBien(int cod_trans_nro, int tipo_resolucion, java.lang.String det_res_adj, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, java.lang.String adc) throws java.rmi.RemoteException;
     public java.util.HashMap[] genResAdjConsu(int cod_trans_nro, int tipo_resolucion, java.lang.String det_res_adj, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad) throws java.rmi.RemoteException;
@@ -240,7 +240,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getAdjunto(int cod_transaccion, int cod_adjunto) throws java.rmi.RemoteException;
     public java.util.HashMap[] addCuceSicoes(java.lang.String tran, int cod_transaccion, java.lang.String cuce_sicoes) throws java.rmi.RemoteException;
     public java.util.HashMap[] getCuceSicoes(int cod_transaccion) throws java.rmi.RemoteException;
-    public java.util.HashMap[] addAdmAlm(java.lang.String tran, int cod_usuario, int cod_almacen) throws java.rmi.RemoteException;
+    public java.util.HashMap[] addAdmAlm(java.lang.String tran, int cod_usuario, int cod_almacen, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateAdmAlm(java.lang.String tran, int cod_usr_alm, int cod_usuario, int cod_almacen) throws java.rmi.RemoteException;
     public java.util.HashMap[] getNotaConformidad(int cod_trans_nro) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateNotaConformidad(java.lang.String tran, int cod_trans_nro, java.lang.String fecha_nc, java.lang.String hora_nc, java.lang.String ciudad, java.lang.String lugar) throws java.rmi.RemoteException;
@@ -266,7 +266,8 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] setDias(int cod, int d) throws java.rmi.RemoteException;
     public java.util.HashMap[] getProgramaticApertGestion(int gestion, int cod_almacen) throws java.rmi.RemoteException;
     public java.util.HashMap[] getAlmacenGestion(int gestion) throws java.rmi.RemoteException;
-    public java.util.HashMap[] getUsuariosTipo(int cod_rol) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getUsuariosTipo(int cod_rol, int gestion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getUnidadEjecutora1(int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;

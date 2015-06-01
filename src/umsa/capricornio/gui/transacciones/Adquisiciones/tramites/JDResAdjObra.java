@@ -866,7 +866,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
             n2=tbche.split(",");
             while(cc<n1.length)
             {
-                puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
+                //puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;
                 hh++;
                 nh++;
@@ -1124,7 +1124,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
             n2=tbche.split(",");
             while(cc<n1.length)
             {
-                puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
+                //puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;
                 hh++;
                 nh++;

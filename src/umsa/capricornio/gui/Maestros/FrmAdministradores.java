@@ -45,7 +45,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
 //        this.cod_apert=cod_apert;
         System.out.println("gestion: " + gestion);
         ConstruyeTablaUsuarios();
-        LlenaComboApertura();
+        LlenaComboApertura1();
 
     }
 
@@ -54,10 +54,28 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos = puerto.getAlmacenGestion(gestion);
-            this.JC_Aperturas.addItem("- ELIJA UN TIPO DE TRAMITE -");
+            this.JC_Aperturas.addItem("- ELIJA UN ALMACEN -");
             if (datos != null) {
                 for (int c = 0; c < datos.length; c++) {
                     this.JC_Aperturas.addItem(datos[c].get("COD_FAC") + " - " + datos[c].get("ALMACEN"));
+                }
+            }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
+        }
+    }
+    public void LlenaComboApertura1() {
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos = puerto.getUnidadEjecutora1(gestion);
+            this.JC_Aperturas.addItem("- ELIJA UNA FACULTAD -");
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    this.JC_Aperturas.addItem(datos[c].get("COD_ALMACEN") + " - " + datos[c].get("COD_FACULTY") + " - " + datos[c].get("DA"));
                 }
             }
         } catch (RemoteException e) {
@@ -99,7 +117,6 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         TxtUsuario = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         TxtAlias = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -152,12 +169,6 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
         });
         jPanel1.add(TxtUsuario);
         TxtUsuario.setBounds(110, 20, 330, 20);
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Escoja Almacen:");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(450, 70, 80, 20);
 
         TxtAlias.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         TxtAlias.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -217,7 +228,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(JC_Aperturas);
-        JC_Aperturas.setBounds(540, 70, 280, 19);
+        JC_Aperturas.setBounds(420, 80, 400, 19);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -433,7 +444,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             
             puerto.setUsuariox("SET-insDataUsr", cod_usuario, TxtAlias.getText().trim(), TxtPass1.getText(), TxtUsuario.getText().trim(), TxtResumen.getText().trim());
             //            puerto.addUserApert("SET-addUserApert",cod_usuario,this.cod_apert,this.gestion);
-            puerto.addAdmAlm("SET-addAdmAlm", cod_usuario, this.cod_almacen);
+            puerto.addAdmAlm("SET-addAdmAlm", cod_usuario, this.cod_almacen,gestion);
             //Adicionando rol de administrador al usuario :D
             puerto.setUsrRol("SET-insDataUsr", cod_usuario, 1);
             //            Map[] datos = datos=puerto.setUsuario("SET-insDataUsr",TxtAlias.getText().trim(),TxtPass1.getText(),TxtUsuario.getText().trim(),TxtResumen.getText().trim());
@@ -469,7 +480,7 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
 //            Map[] datos= puerto.getUsuario();
-            Map[] datos = puerto.getUsuariosTipo(1);
+            Map[] datos = puerto.getUsuariosTipo(1,gestion);
             if (datos != null) {
                 for (int c = 0; c < datos.length; c++) {
                     usuario.insert(c);
@@ -599,7 +610,6 @@ public class FrmAdministradores extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtUsuario;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
