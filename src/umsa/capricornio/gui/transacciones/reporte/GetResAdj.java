@@ -39,7 +39,7 @@ import umsa.capricornio.utilitarios.herramientas.NumerosTextuales;
  */
 public class GetResAdj {
     
-    URL urlMaestro,urlImage,urlMaestro1,urlMaestro2;
+    URL urlMaestro,urlImage,urlMaestro1,urlMaestro2,urlMaestro3;
     String dir_daf;
     public GetResAdj(){
         this.genera();
@@ -219,6 +219,7 @@ public class GetResAdj {
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjObra.jasper");
         urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/RO2.jasper");
         urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report2.jasper");
+        urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report3.jasper");
         /*String path = urlMaestro1.getPath();
         File temp=null,temp1=null,file=null;
         try{
@@ -267,8 +268,9 @@ public class GetResAdj {
         //ServletContext scontext = (ServletContext)context.getExternalContext().getContext(); 
         //parameters.put("SUBREPORT_DIR", scontext.getRealPath("CAMINHODODIRETORIORELATIVOAQUI/")+"/"); 
         //System.out.println("muestra amigo "+System.getProperty("user.dir")+"\\umsa\\capricornio\\gui\\reports"); 
-        parameters.put("DIR", urlMaestro1.toString());
-        parameters.put("DIR1", urlMaestro2.toString());
+        parameters.put("DIR", urlMaestro3.toString());
+        parameters.put("DIR1", urlMaestro1.toString());
+        parameters.put("DIR2", urlMaestro2.toString());
         this.imprimePDF2(urlMaestro, parameters);
         System.out.println(cuce+"   sdfjsdfoisdjfoisjdoifjds");
     }
