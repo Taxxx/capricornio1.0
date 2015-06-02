@@ -542,7 +542,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
             if(jPanel2.getComponent(i).getName().toString().equals("texto3"+c3))
             {
                 jtv[c3]=(JTextField) jPanel2.getComponent(i);
-                //System.out.println(jtv[c].getText().toString());
+                jtv[c3].setText(jtv[c3].getText().toLowerCase());
+                System.out.println("noooooooo"+jtv[c3].getText().toString());
                 tprov=tprov+","+jtv[c3].getText();
                 c3++;
             }
