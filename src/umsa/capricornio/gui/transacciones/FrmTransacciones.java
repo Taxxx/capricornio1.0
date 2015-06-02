@@ -127,7 +127,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             if (datos!=null)
                 for (int c=0;c<datos.length;c++){
                     bandeja.insert(c);
-                    System.out.println("******El cod"+datos[c].get("NRO_TRAMITE"));
+                    //System.out.println("******El cod"+datos[c].get("NRO_TRAMITE"));
                     TblTransaccionBandeja.tableChanged(new TableModelEvent(bandeja, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
                     TblTransaccionBandeja.setValueAt(datos[c].get("COD_TRANSACCION"),c,0);
                     TblTransaccionBandeja.setValueAt(datos[c].get("COD_ESTADO"),c,1);

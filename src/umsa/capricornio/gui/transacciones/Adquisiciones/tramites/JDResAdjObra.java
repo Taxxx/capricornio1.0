@@ -574,7 +574,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
             }
             System.err.println("u"+c+"u"+c1+"u"+c2+"u"+c3+"u"+c4+"u"+c5);
             System.err.println("dsf"+jPanel2.getComponent(i).getName().toString());
-            
         }
         //System.out.println("tprov: "+tprov+", tbche"+tbche);
     }
@@ -802,7 +801,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
                     }
                     else{
                         conc = conc+", "+datos[c].get("NOMBRE_COMERCIAL").toString();
-                        System.out.println(".. "+this.num_resol);}
+                        System.out.println(".. "+this.num_resol);
+                    }
                 }
             }
             else

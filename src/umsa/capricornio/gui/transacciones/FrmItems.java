@@ -644,8 +644,8 @@ public class FrmItems extends javax.swing.JInternalFrame {
         jButton5 = new javax.swing.JButton();
         TxtTotal = new javax.swing.JTextField();
         BtnAnular = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         BtnGuardar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(61, 82, 122));
@@ -715,7 +715,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
         LblTituloNro.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         LblTituloNro.setForeground(new java.awt.Color(204, 0, 51));
         LblTituloNro.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        LblTituloNro.setText("titulo");
+        LblTituloNro.setText("titulo:");
         jPanel1.add(LblTituloNro);
         LblTituloNro.setBounds(630, 10, 370, 20);
 
@@ -1023,12 +1023,6 @@ public class FrmItems extends javax.swing.JInternalFrame {
         getContentPane().add(BtnAnular);
         BtnAnular.setBounds(290, 530, 160, 25);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("TOTAL: ");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(930, 330, 60, 17);
-
         jButton2.setText("Mostrar Solicitud de Compra");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1036,7 +1030,13 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(450, 340, 190, 23);
+        jButton2.setBounds(430, 330, 270, 23);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("TOTAL: ");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(930, 330, 60, 17);
 
         BtnGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnGuardar.setForeground(new java.awt.Color(0, 51, 153));
