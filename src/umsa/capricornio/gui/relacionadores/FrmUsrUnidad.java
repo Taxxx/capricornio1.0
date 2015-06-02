@@ -67,7 +67,8 @@ public class FrmUsrUnidad extends javax.swing.JInternalFrame {
         try{        
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.getUsrUnidad(gestion);
+            System.out.println("La gestion es : "+gestion+", el cod_almacen es: "+cod_almacen);
+            Map[] datos=puerto.getUsrUnidad(gestion,cod_almacen);
             if (datos!=null){
                 for (int c=0;c<datos.length;c++){
                     relacion.insert(c);                    
@@ -189,14 +190,19 @@ public class FrmUsrUnidad extends javax.swing.JInternalFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(10, 200, 300, 160);
 
-        jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder("Unidad"));
+        jScrollPane3.setBorder(javax.swing.BorderFactory.createTitledBorder("Apertura Programatica"));
+        jScrollPane3.setToolTipText("");
         jScrollPane3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         LstUnidad.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        LstUnidad.setToolTipText("");
         jScrollPane3.setViewportView(LstUnidad);
+        LstUnidad.getAccessibleContext().setAccessibleName("");
+        LstUnidad.getAccessibleContext().setAccessibleDescription("");
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(320, 200, 500, 160);
+        jScrollPane3.getAccessibleContext().setAccessibleName("");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Relacion Usuario - Unidad"));
         jPanel1.setLayout(null);

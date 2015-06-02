@@ -502,9 +502,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="PTG E.&#xa;ECO..."/>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="PTG E.&#xa;ECO..."/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel27">
                   <Properties>

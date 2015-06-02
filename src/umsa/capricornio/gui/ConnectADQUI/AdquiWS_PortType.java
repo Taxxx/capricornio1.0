@@ -85,7 +85,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getUsrRol2(int cod_almacen) throws java.rmi.RemoteException;
     public java.util.HashMap[] setUsrRol(java.lang.String tran, int cod_usuario, int cod_rol) throws java.rmi.RemoteException;
     public java.util.HashMap[] setUsrRolDel(java.lang.String tran, int cod_usuario, int cod_rol) throws java.rmi.RemoteException;
-    public java.util.HashMap[] getUsrUnidad(int gestion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getUsrUnidad(int gestion, int cod_almacen) throws java.rmi.RemoteException;
     public java.util.HashMap[] setUsrUnidad(java.lang.String tran, int cod_usuario, java.lang.String cod_unidad, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] setUsrUnidadDel(java.lang.String tran, int cod_usuario, java.lang.String cod_unidad, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getUsrWorkflow() throws java.rmi.RemoteException;
