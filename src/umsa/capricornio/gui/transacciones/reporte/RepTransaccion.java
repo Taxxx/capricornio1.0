@@ -91,8 +91,16 @@ public class RepTransaccion {
                 }
                 else
                 {
+                    Map[] datos2=puerto.getEst(cod_trans_nro);
+                    System.err.println("asdasd"+datos2[0].get("ESTADO").toString());
+                    if(datos2[0].get("ESTADO").toString().equals("JUR") || datos2[0].get("ESTADO").toString().equals("ALM1") || datos2[0].get("ESTADO").toString().equals("C"))
+                    {
+                        System.err.println("eto nya 3");
+                        parameters.put("dias", 15);
+                    }
+                    else{
                     System.err.println("eto nya 2");
-                    parameters.put("dias", 0);
+                    parameters.put("dias", 0);}
                 }
             }
             catch (RemoteException e){System.out.println(e);
