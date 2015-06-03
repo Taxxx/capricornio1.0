@@ -19,7 +19,7 @@ import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
 /**
  *
- * @author UMSA-JES
+ * @author Henrry
  **/
 public class Reportes {
     private int cod_almacen;

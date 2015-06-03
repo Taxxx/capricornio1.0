@@ -35,7 +35,7 @@ import umsa.capricornio.gui.transacciones.reporte.GetResoluciones;
 
 /**
  *
- * @author julian
+ * @author Henrry
  */
 public class DiagOrdenesGenera extends javax.swing.JDialog {
 

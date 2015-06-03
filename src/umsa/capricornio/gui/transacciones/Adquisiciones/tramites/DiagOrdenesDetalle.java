@@ -606,13 +606,14 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jButton9 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         TxtTotal = new javax.swing.JTextField();
-        BtnSalir = new javax.swing.JButton();
+        BtnGarantia = new javax.swing.JButton();
         BtnGuardar = new javax.swing.JButton();
         BtnAvanzar = new javax.swing.JButton();
         BtnRetornar = new javax.swing.JButton();
         BtnAnular = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
+        BtnSalir1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("ZODIAC CAPRICORN SYSTEM");
@@ -1025,17 +1026,18 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         getContentPane().add(TxtTotal);
         TxtTotal.setBounds(1030, 350, 120, 21);
 
-        BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        BtnSalir.setForeground(new java.awt.Color(255, 0, 51));
-        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
-        BtnSalir.setText("Salir");
-        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
+        BtnGarantia.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        BtnGarantia.setForeground(new java.awt.Color(255, 0, 51));
+        BtnGarantia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/calendar_16.png"))); // NOI18N
+        BtnGarantia.setText("B.G.");
+        BtnGarantia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnGarantia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSalirActionPerformed(evt);
+                BtnGarantiaActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(560, 350, 150, 25);
+        getContentPane().add(BtnGarantia);
+        BtnGarantia.setBounds(860, 350, 80, 25);
 
         BtnGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnGuardar.setForeground(new java.awt.Color(0, 51, 153));
@@ -1047,7 +1049,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnGuardar);
-        BtnGuardar.setBounds(440, 350, 120, 25);
+        BtnGuardar.setBounds(430, 350, 120, 25);
 
         BtnAvanzar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnAvanzar.setForeground(new java.awt.Color(0, 51, 153));
@@ -1059,7 +1061,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnAvanzar);
-        BtnAvanzar.setBounds(280, 350, 160, 25);
+        BtnAvanzar.setBounds(270, 350, 160, 25);
 
         BtnRetornar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnRetornar.setForeground(new java.awt.Color(0, 102, 0));
@@ -1072,7 +1074,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnRetornar);
-        BtnRetornar.setBounds(130, 350, 150, 25);
+        BtnRetornar.setBounds(120, 350, 150, 25);
 
         BtnAnular.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnAnular.setForeground(new java.awt.Color(255, 0, 0));
@@ -1086,7 +1088,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnAnular);
-        BtnAnular.setBounds(20, 350, 110, 25);
+        BtnAnular.setBounds(10, 350, 110, 25);
 
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("TOTAL:");
@@ -1102,7 +1104,19 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(710, 350, 185, 25);
+        jButton11.setBounds(670, 350, 185, 25);
+
+        BtnSalir1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnSalir1.setForeground(new java.awt.Color(255, 0, 51));
+        BtnSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
+        BtnSalir1.setText("Salir");
+        BtnSalir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalir1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnSalir1);
+        BtnSalir1.setBounds(550, 350, 120, 25);
 
         setSize(new java.awt.Dimension(1181, 585));
         setLocationRelativeTo(null);
@@ -1132,14 +1146,12 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
 }//GEN-LAST:event_TxtMemoKeyPressed
 
-    private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
-//        System.gc();
-//        r = Runtime.getRuntime();
-//        long mem1 = r.freeMemory();
-//        dispose();
-        this.setVisible(false);
-        ft.setVisible(true);
-}//GEN-LAST:event_BtnSalirActionPerformed
+    private void BtnGarantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGarantiaActionPerformed
+        
+        JD_BoletaGarantia JDBG = new JD_BoletaGarantia(menu,true);
+        JDBG.setVisible(true);
+       
+}//GEN-LAST:event_BtnGarantiaActionPerformed
 
     private void setCodW(int cod_transaccion, int cod_w) {
         try {
@@ -1423,7 +1435,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                     }
                 }
                 cod_w = cod_aux;
-                BtnSalir.doClick();
+                BtnGarantia.doClick();
             } catch (RemoteException e) {
                 javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -1454,7 +1466,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
             javax.swing.JOptionPane.showMessageDialog(this, "LA TRANSACCION SE RETORNO A LA UNIDAD ANTERIOR", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            BtnSalir.doClick();
+            BtnGarantia.doClick();
         } catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -1479,7 +1491,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             datos = puerto.setAnulaTransaccionAdq("SET-upDateAnulTransAdq", cod_trans_nro);
             javax.swing.JOptionPane.showMessageDialog(this, "LA TRANSACCION FUE ANULADA", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            BtnSalir.doClick();
+            BtnGarantia.doClick();
         } catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -1887,6 +1899,10 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    private void BtnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalir1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnSalir1ActionPerformed
+
     private void GuardarDatos(String hoja_ruta) {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -1917,9 +1933,10 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton BtnAnular;
     private javax.swing.JButton BtnAvanzar;
     private javax.swing.JButton BtnBuscaProveedor;
+    private javax.swing.JButton BtnGarantia;
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnRetornar;
-    private javax.swing.JButton BtnSalir;
+    private javax.swing.JButton BtnSalir1;
     private net.sf.nachocalendar.components.DateField CalFechaFact;
     private net.sf.nachocalendar.components.DateField CalFechaIng;
     private javax.swing.JTextField JT_HRUTA;

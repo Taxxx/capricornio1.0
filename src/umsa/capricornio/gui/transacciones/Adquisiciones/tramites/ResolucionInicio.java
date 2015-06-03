@@ -14,7 +14,7 @@ import umsa.capricornio.gui.transacciones.reporte.GetResoluciones;
 
 /**
  *
- * @author UMSA-JES
+ * @author Henrry
  */
 public class ResolucionInicio extends javax.swing.JFrame {
 
@@ -464,7 +464,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
 
     private void JTFEnviadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEnviadoActionPerformed
         // TODO add your handling code here:
-        System.out.println("Helllo world");
+        //System.out.println("Helllo world");
         this.JTFDns.requestFocus();
     }//GEN-LAST:event_JTFEnviadoActionPerformed
 

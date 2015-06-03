@@ -22,7 +22,7 @@ import umsa.capricornio.utilitarios.herramientas.NumerosTextuales;
 
 /**
  *
- * @author UMSA-JES
+ * @author Henrry
  */
 public class JDResAdjObra extends javax.swing.JDialog {
 
