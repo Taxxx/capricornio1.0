@@ -1340,6 +1340,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             else
             {
                 String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
+                if(resp==null)
+                {
+                    return;
+                    //System.err.println("jajaja si detecto el cancel");
+                }
                 if(resp.equals(""))
                 {
                     System.out.println("s 15");
@@ -1347,6 +1352,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 else{
                     t=Integer.parseInt(resp);
                     System.out.println("ttttt "+t);
+                }
+                int res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
+                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                if (res1 != javax.swing.JOptionPane.YES_OPTION) {
+                    return;
                 }
                 Map[] datos1=puerto.setDias(this.cod_trans_nro,t);
             }
