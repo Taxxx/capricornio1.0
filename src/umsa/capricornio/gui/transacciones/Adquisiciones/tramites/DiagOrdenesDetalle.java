@@ -54,7 +54,7 @@ import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
 /**
  *
- * @author julian
+ * @author Henrry
  */
 public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
@@ -1148,7 +1148,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
     private void BtnGarantiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGarantiaActionPerformed
         
-        JD_BoletaGarantia JDBG = new JD_BoletaGarantia(menu,true);
+        JD_BoletaGarantia JDBG = new JD_BoletaGarantia(menu,true,this.cod_trans_nro);
         JDBG.setVisible(true);
        
 }//GEN-LAST:event_BtnGarantiaActionPerformed

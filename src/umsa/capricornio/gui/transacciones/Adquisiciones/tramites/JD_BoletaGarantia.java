@@ -7,6 +7,11 @@
 package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
+import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
+import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 
 /**
  *
@@ -17,9 +22,13 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
     /**
      * Creates new form JD_BoletaGarantia
      */
-    public JD_BoletaGarantia(java.awt.Frame parent, boolean modal) {
+    private int cod_trans_nro;
+    public JD_BoletaGarantia(java.awt.Frame parent, boolean modal, int cod_trans_nro) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.cod_trans_nro = cod_trans_nro;
+        fillFechaBG();
     }
 
     /**
@@ -37,6 +46,8 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
         Fecha_GF = new net.sf.nachocalendar.components.DateField();
         Fecha_GI = new net.sf.nachocalendar.components.DateField();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Fecha Boletas de Garantia");
@@ -44,9 +55,11 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 255));
         jLabel18.setText("Fecha Final:");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 255));
         jLabel17.setText("Fecha Inicio:");
 
         Fecha_GF.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
@@ -65,7 +78,24 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk.png"))); // NOI18N
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Ingrese el rango de validez de la boleta de garantia:");
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/arrow_left (2).png"))); // NOI18N
+        jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,32 +105,44 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addGap(24, 24, 24)
-                        .addComponent(Fecha_GI, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(18, 18, 18)
-                        .addComponent(Fecha_GF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha_GI, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha_GF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
                 .addComponent(jButton1)
-                .addGap(165, 165, 165))
+                .addGap(53, 53, 53)
+                .addComponent(jButton2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
-                    .addComponent(Fecha_GF, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel18)
                     .addComponent(Fecha_GI, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Fecha_GF, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
@@ -132,6 +174,54 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_Fecha_GIKeyPressed
 
+    private void fillFechaBG(){
+    
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("El cod_trans_nro es: "+cod_trans_nro);
+            Map[] datos = puerto.getRestriccionFechas(cod_trans_nro, 12);
+            if (datos != null) {
+                this.Fecha_GI.setValue(new Date(datos[0].get("FECHA_INICIO").toString()));
+                this.Fecha_GF.setValue(new Date(datos[0].get("FECHA_CONCLUSION").toString()));
+//                BloqueaInputs();
+            }
+//            else
+//                sw_datos = false;
+            
+        } catch (Exception e) {
+            System.out.println("Error :( "+e);
+        }
+    }
+    
+    private void guardarFechaBGarantia(String FechaIni, String FechaFinal){
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            puerto.addFechaBoletaGarantia("SET-addFechaRestriccion", 12, cod_trans_nro, FechaIni, FechaFinal);
+            javax.swing.JOptionPane.showMessageDialog(this, "Se guardo correctamente el rango de fechas de garantia", 
+              "SYSTEM CAPRICORN",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+            System.out.println("Se presento un Error!!!! "+e);
+            javax.swing.JOptionPane.showMessageDialog(this, "No se pudo guardar correctamente :(", 
+              "SYSTEM CAPRICORN",javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+        String fecha_GI = "'" + form.format(this.Fecha_GI.getValue()) + "'";
+        String fecha_GF = "'" + form.format(this.Fecha_GF.getValue()) + "'";
+        
+        System.out.println("--->>> la fecha de inicio es: "+fecha_GI);
+        System.out.println("--->>> la fecha final es: "+fecha_GF);
+        guardarFechaBGarantia(fecha_GI, fecha_GF);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false); 
+    }//GEN-LAST:event_jButton2ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -162,7 +252,7 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JD_BoletaGarantia dialog = new JD_BoletaGarantia(new javax.swing.JFrame(), true);
+                JD_BoletaGarantia dialog = new JD_BoletaGarantia(new javax.swing.JFrame(), true,0);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -178,6 +268,8 @@ public class JD_BoletaGarantia extends javax.swing.JDialog {
     private net.sf.nachocalendar.components.DateField Fecha_GF;
     private net.sf.nachocalendar.components.DateField Fecha_GI;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel1;
