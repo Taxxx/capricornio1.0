@@ -1351,6 +1351,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
             else
             {
+                boolean sw12=true;
+                do{
                 String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
                 if(resp==null)
                 {
@@ -1362,9 +1364,15 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                     System.out.println("s 15");
                 }
                 else{
+                    try{
                     t=Integer.parseInt(resp);
                     System.out.println("ttttt "+t);
+                    sw12=true;
+                    }
+                    catch(Exception e){JOptionPane.showMessageDialog (null, "El dato digitado no es un número", "Error", JOptionPane.ERROR_MESSAGE);
+                    sw12=false;}
                 }
+                }while(sw12==false);
                 int res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
                     "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
                 if (res1 != javax.swing.JOptionPane.YES_OPTION) {
@@ -1446,6 +1454,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 }
                 cod_w = cod_aux;
                 //BtnGarantia.doClick();
+                BtnSalir1.doClick();
             } catch (RemoteException e) {
                 javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);

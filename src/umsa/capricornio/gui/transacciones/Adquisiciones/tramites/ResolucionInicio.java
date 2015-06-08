@@ -8,8 +8,10 @@ package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.awt.Dialog;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
+import umsa.capricornio.gui.menu.FrmMenu;
 import umsa.capricornio.gui.transacciones.reporte.GetResoluciones;
 
 /**
@@ -22,18 +24,21 @@ public class ResolucionInicio extends javax.swing.JFrame {
      * Creates new form ResolucionInicio
      */
     String detalle;
-    int cod_transaccion, cod_w, cod_res_ini=0,dias;
+    FrmMenu menu;
+    int cod_transaccion, cod_w, cod_res_ini=0,dias,cod_trans_nro;
     String envia,dns,dnp,destino,num_resolucion,monto_ppto;
     private int cod_almacen;
     GetResoluciones genera_reportes;
   
-    public ResolucionInicio(String detalle, int cod_transaccion, int cod_w, int cod_almacen) {
+    public ResolucionInicio(String detalle, int cod_transaccion, int cod_w, int cod_almacen, java.awt.Frame menu_ ,int cod_trans_nro_ ) {
         //this.setFocusable(true);
         this.setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         initComponents();
         this.detalle=detalle;
         this.cod_transaccion=cod_transaccion;
         this.cod_w=cod_w;
+        this.cod_trans_nro=cod_trans_nro_;
+        this.menu=(FrmMenu) menu_;
         genera_reportes = new  GetResoluciones(cod_almacen);
         bloqueo();
         LlenaDatos();
@@ -295,6 +300,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             if(datos!=null){
                 this.jBModificar.setVisible(true);
                 this.jBGuardar.setVisible(true);
+                this.jButton1.setEnabled(true);
                 //System.out.println("Devolvio Datos :P"+datos[0].get("DETALLE").toString());
                 this.envia=datos[0].get("ENVIA").toString();
                 this.dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();
@@ -318,6 +324,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             else{
                 this.jBModificar.setVisible(false);
                 this.jBGuardar.setVisible(false);
+                this.jButton1.setVisible(false);
                 System.out.println("Vacio");
             }
         } catch (Exception e) {
@@ -438,6 +445,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             this.jBGenerar.setEnabled(false);
             this.jBImprimir.setEnabled(false);
             this.jBModificar.setEnabled(false);
+            this.jButton1.setEnabled(false);
         }
         
         //LlenaDatos();
@@ -475,7 +483,33 @@ public class ResolucionInicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos = puerto.getCuceSicoes(cod_transaccion);
+            System.out.println("asdasd "+datos);
+            if(!datos[0].get("CUCE_SICOES").toString().equals("")){
+                System.out.println("--> "+datos[0].get("CUCE_SICOES").toString());
+                //cuce_sicoes = datos[0].get("CUCE_SICOES").toString();
+            }
+            else{
+                String resp=JOptionPane.showInputDialog("Ingresa el CUCE del SICOES para poner las fechas");
+                if(resp==null || resp.equals(""))
+                {
+                    return;
+                }
+                else
+                {
+                    try {
+                    puerto.addCuceSicoes("SET-addCuceSicoes", cod_transaccion, resp);
+                    } catch (Exception e) {
+                    }  
+                }
+            }
+        } catch (Exception e) {
+        }
+        JD_FECH_ANPE JDF = new JD_FECH_ANPE(this, false, this.cod_trans_nro, this.cod_transaccion);
+        JDF.setVisible(true);
         //JDF.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
