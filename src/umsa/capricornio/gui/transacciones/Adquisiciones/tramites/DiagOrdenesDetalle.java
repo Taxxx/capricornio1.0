@@ -1445,7 +1445,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                     }
                 }
                 cod_w = cod_aux;
-                BtnGarantia.doClick();
+                //BtnGarantia.doClick();
             } catch (RemoteException e) {
                 javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
