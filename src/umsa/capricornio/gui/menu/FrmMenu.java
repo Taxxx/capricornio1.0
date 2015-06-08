@@ -19,6 +19,7 @@ import umsa.capricornio.domain.Roles;
 import umsa.capricornio.gui.Almacen.FrmReportesAlmacen;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
+import umsa.capricornio.gui.Juridica.FrmReportesJuridica;
 import umsa.capricornio.gui.Maestros.*;
 import umsa.capricornio.gui.menu.JIF_DatosInstitucion;
 import umsa.capricornio.gui.relacionadores.FrmUsrFirma;
@@ -284,6 +285,7 @@ public class FrmMenu extends javax.swing.JFrame {
         MenReportes = new javax.swing.JMenu();
         ItmRepAlmacen = new javax.swing.JMenuItem();
         ItmDocsEnviados = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -629,6 +631,14 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenReportes.add(ItmDocsEnviados);
 
+        jMenuItem2.setText("Reporte Boletas de Garantia");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        MenReportes.add(jMenuItem2);
+
         MenMenu.add(MenReportes);
 
         jMenu7.setForeground(new java.awt.Color(21, 65, 108));
@@ -791,6 +801,11 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmAdministradores(this,this.gestion));
     }//GEN-LAST:event_ItemAdministradoresActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmReportesJuridica(this));
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -831,6 +846,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
