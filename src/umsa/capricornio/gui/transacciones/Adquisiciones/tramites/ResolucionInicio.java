@@ -301,6 +301,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.jBModificar.setVisible(true);
                 this.jBGuardar.setVisible(true);
                 this.jButton1.setEnabled(true);
+                this.jButton1.setVisible(true);
                 //System.out.println("Devolvio Datos :P"+datos[0].get("DETALLE").toString());
                 this.envia=datos[0].get("ENVIA").toString();
                 this.dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();

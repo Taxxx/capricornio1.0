@@ -15,6 +15,7 @@ import javax.swing.JCheckBox;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,7 +27,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     /**
      * Creates new form JD_FECH_ANPE
      */
-    private int cod_trans_nro, cod_transaccion;
+    private int cod_trans_nro, cod_transaccion,cod_alternativo;
     boolean sw_datos = true;
     public JD_FECH_ANPE(java.awt.Frame parent, boolean modal, int cod_trans_nro, int cod_transaccion) {
         super(parent, modal);
@@ -53,79 +54,282 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         jCheckBox9.setEnabled(false);
         jCheckBox10.setEnabled(false);
         jCheckBox11.setEnabled(false);
-        jLabel21.setVisible(false);
-        jLabel22.setVisible(false);
-        jLabel23.setVisible(false);
-        jLabel24.setVisible(false);
-        jLabel25.setVisible(false);
-        jLabel26.setVisible(false);
-        jLabel27.setVisible(false);
-        jLabel28.setVisible(false);
-        jLabel29.setVisible(false);
-        jLabel30.setVisible(false);
-        jLabel31.setVisible(false);
-        jLabel32.setVisible(false);
+        jLabel21.setEnabled(false);
+        jLabel22.setEnabled(false);
+        jLabel23.setEnabled(false);
+        jLabel24.setEnabled(false);
+        jLabel25.setEnabled(false);
+        jLabel26.setEnabled(false);
+        jLabel27.setEnabled(false);
+        jLabel28.setEnabled(false);
+        jLabel29.setEnabled(false);
+        jLabel30.setEnabled(false);
+        jLabel31.setEnabled(false);
+        jLabel32.setEnabled(false);
+        
+        Fecha2.setEnabled(false);
+        Fecha3.setEnabled(false);
+        Fecha4.setEnabled(false);
+        Fecha5.setEnabled(false);
+        
+        hora1.setEnabled(false);
+        hora2.setEnabled(false);
+        
+        JTlugar2.setEnabled(false);
+        JTlugar3.setEnabled(false);
+        JTlugar4.setEnabled(false);
+        JTlugar5.setEnabled(false);
     }
     private void LlenaFormulario(){
         try {
+            jCheckBox2.setEnabled(false);
+            jCheckBox11.setEnabled(false);
+            jCheckBox3.setEnabled(false);
+            jCheckBox4.setEnabled(false);
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos = puerto.getRestriccionFechas(cod_trans_nro);
+            Map[] d=puerto.getCod_Trans(cod_transaccion);
+            int cod_T_N=Integer.parseInt(d[0].get("COD_TRANS_NRO").toString());
+            cod_alternativo=cod_T_N;
+            Map[] datos = puerto.getRestriccionFechas(cod_T_N);
+            SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
             if (datos != null) {
                 for (int f = 0; f < datos.length; f++) {
 //                    System.out.println(f+" -->" + datos[f].get("COD_RES_FEC_PRO").toString());
-//                    System.out.println(f+" -->" + datos[f].get("COD_TIPO_RESF").toString());
+                    int ff=Integer.parseInt(datos[f].get("COD_TIPO_RESF").toString())-1;
+                    System.out.println(f+" -->"+ff);
 //                    System.out.println(f+" -->" + datos[f].get("FECHA_CONCLUSION").toString());
 //                    System.out.println(f+" -->" + datos[f].get("LUGAR").toString());
-                    
-                    switch(f){
+                        
+                    switch(ff){
                         case 0:
                             this.Fecha1.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar1.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel22.setText(form.format(f1));
+                                this.jCheckBox1.setText(form.format(f2));
+                                jCheckBox1.setEnabled(false);
+                                jCheckBox1.setSelected(true);
+                            }
+                            
                             break;
                         case 1:
                             this.Fecha2.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar2.setText(datos[f].get("LUGAR").toString());
+                            jCheckBox11.setEnabled(true);
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel23.setText(form.format(f1));
+                                this.jCheckBox11.setText(form.format(f2));
+                                jCheckBox11.setEnabled(false);
+                                jCheckBox11.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 2:
                             this.Fecha3.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar3.setText(datos[f].get("LUGAR").toString());
+                            jCheckBox2.setEnabled(true);
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel24.setText(form.format(f1));
+                                this.jCheckBox2.setText(form.format(f2));
+                                jCheckBox2.setEnabled(false);
+                                jCheckBox2.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 3:
                             this.Fecha4.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar4.setText(datos[f].get("LUGAR").toString());
                             this.hora1.setText(datos[f].get("HORA_INICIO").toString());
+                            jCheckBox3.setEnabled(true);
                             //
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel25.setText(form.format(f1));
+                                this.jCheckBox3.setText(form.format(f2));
+                                jCheckBox3.setEnabled(false);
+                                jCheckBox3.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 4:
                             this.Fecha5.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar5.setText(datos[f].get("LUGAR").toString());
                             this.hora2.setText(datos[f].get("HORA_INICIO").toString());
+                            jCheckBox4.setEnabled(true);
                             //
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel26.setText(form.format(f1));
+                                this.jCheckBox4.setText(form.format(f2));
+                                jCheckBox4.setEnabled(false);
+                                jCheckBox4.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 5:
                             this.Fecha6.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar6.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel27.setText(form.format(f1));
+                                this.jCheckBox5.setText(form.format(f2));
+                                jCheckBox5.setEnabled(false);
+                                jCheckBox5.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 6:
                             this.Fecha7.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar7.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel28.setText(form.format(f1));
+                                this.jCheckBox10.setText(form.format(f2));
+                                jCheckBox10.setEnabled(false);
+                                jCheckBox10.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 7:
                             this.Fecha8.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar8.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel29.setText(form.format(f1));
+                                this.jCheckBox9.setText(form.format(f2));
+                                jCheckBox9.setEnabled(false);
+                                jCheckBox9.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 8:
                             this.Fecha9.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar9.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel30.setText(form.format(f1));
+                                this.jCheckBox6.setText(form.format(f2));
+                                jCheckBox6.setEnabled(false);
+                                jCheckBox6.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 9:
                             this.Fecha10.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar10.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel31.setText(form.format(f1));
+                                this.jCheckBox7.setText(form.format(f2));
+                                jCheckBox7.setEnabled(false);
+                                jCheckBox7.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 10:
                             this.Fecha11.setValue(new Date(datos[f].get("FECHA_CONCLUSION").toString()));
                             this.JTlugar11.setText(datos[f].get("LUGAR").toString());
+                            if(datos[f].get("FECHA_CALIFICACION").toString().equals(""))
+                            {
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+                            }
+                            else
+                            {
+                                Date f1=new Date();
+                                Date f2=new Date();
+                                f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
+                                f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
+                                this.jLabel32.setText(form.format(f1));
+                                this.jCheckBox8.setText(form.format(f2));
+                                jCheckBox8.setEnabled(false);
+                                jCheckBox8.setSelected(true);
+                                System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
+                            }
                             break;
                         case 11:
 //                            this.Fecha_GI.setValue(new Date(datos[f].get("FECHA_INICIO").toString()));
@@ -134,6 +338,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                     }
                             
                 }
+               this.jButton1.setEnabled(false);
                BloqueaInputs();
             }
             else{
@@ -175,6 +380,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         /*******************************/
         this.hora1.setEnabled(false);
         this.hora2.setEnabled(false);
+        jCheckBox12.setEnabled(false);
+        jCheckBox13.setEnabled(false);
         
     }
     private void DesbloqueaInputs(){
@@ -288,6 +495,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -558,34 +767,52 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         jLabel21.setText("F. ENTREGO");
 
-        jLabel22.setText("jLabel22");
+        jLabel22.setText("SIN FECHA");
 
-        jLabel23.setText("jLabel23");
+        jLabel23.setText("SIN FECHA");
 
-        jLabel24.setText("jLabel24");
+        jLabel24.setText("SIN FECHA");
 
-        jLabel25.setText("jLabel25");
+        jLabel25.setText("SIN FECHA");
 
-        jLabel26.setText("jLabel26");
+        jLabel26.setText("SIN FECHA");
 
-        jLabel27.setText("jLabel27");
+        jLabel27.setText("SIN FECHA");
 
-        jLabel28.setText("jLabel28");
+        jLabel28.setText("SIN FECHA");
 
-        jLabel29.setText("jLabel29");
+        jLabel29.setText("SIN FECHA");
 
-        jLabel30.setText("jLabel30");
+        jLabel30.setText("SIN FECHA");
 
-        jLabel31.setText("jLabel31");
+        jLabel31.setText("SIN FECHA");
 
-        jLabel32.setText("jLabel32");
+        jLabel32.setText("SIN FECHA");
+
+        jCheckBox12.setText("jCheckBox12");
+        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox12ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox13.setText("jCheckBox13");
+        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jCheckBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -595,14 +822,15 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                             .addComponent(jLabel8)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
                             .addComponent(jLabel11)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(110, 110, 110)
-                                .addComponent(jLabel12)))
+                                .addComponent(jLabel12))
+                            .addComponent(jLabel2)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel10)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -660,10 +888,10 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                             .addComponent(jCheckBox5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(jCheckBox11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCheckBox8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
@@ -779,10 +1007,14 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                         .addGap(18, 18, Short.MAX_VALUE)
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jCheckBox12))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3)
-                                        .addGap(31, 31, 31)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jCheckBox13))
+                                        .addGap(26, 26, 26)
                                         .addComponent(jLabel10)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel11)
@@ -860,14 +1092,12 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 335, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(578, 578, 578))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -947,23 +1177,32 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         String lugar1 = this.JTlugar1.getText();
         this.guarda_restriccion_fecha(1, cod_trans_nro, fecha1, lugar1);
 //        System.out.println("La fecha1 es : "+fecha1+", El lugar es: "+lugar1);
-        String fecha2 = "'" + form.format(this.Fecha2.getValue()) + "'";
-        String lugar2 = this.JTlugar2.getText();
-        this.guarda_restriccion_fecha(2, cod_trans_nro, fecha2, lugar2);
-        
-        String fecha3 = "'" + form.format(this.Fecha3.getValue()) + "'";
-        String lugar3 = this.JTlugar3.getText();
-        this.guarda_restriccion_fecha(3, cod_trans_nro, fecha3, lugar3);
-        
-        String fecha4 = "'" + form.format(this.Fecha4.getValue()) + "'";
-        String lugar4 = this.JTlugar4.getText();
-        String hora1 = this.hora1.getText();
-        this.guarda_restriccion_fecha3(4, cod_trans_nro,fecha4, lugar4, hora1);
-        
-        String fecha5 = "'" + form.format(this.Fecha5.getValue()) + "'";
-        String lugar5 = this.JTlugar5.getText();
-        String hora2 = this.hora2.getText();
-        this.guarda_restriccion_fecha3(5, cod_trans_nro,fecha5, lugar5, hora2);
+        if(jCheckBox12.getSelectedObjects()!=null)
+        {
+            String fecha2 = "'" + form.format(this.Fecha2.getValue()) + "'";
+            String lugar2 = this.JTlugar2.getText();
+            this.guarda_restriccion_fecha(2, cod_trans_nro, fecha2, lugar2);
+        }
+        if(jCheckBox13.getSelectedObjects()!=null)
+        {
+            String fecha3 = "'" + form.format(this.Fecha3.getValue()) + "'";
+            String lugar3 = this.JTlugar3.getText();
+            this.guarda_restriccion_fecha(3, cod_trans_nro, fecha3, lugar3);
+        }
+        if(jCheckBox13.getSelectedObjects()!=null)
+        {
+            String fecha4 = "'" + form.format(this.Fecha4.getValue()) + "'";
+            String lugar4 = this.JTlugar4.getText();
+            String hora1 = this.hora1.getText();
+            this.guarda_restriccion_fecha3(4, cod_trans_nro,fecha4, lugar4, hora1);
+        }
+        if(jCheckBox13.getSelectedObjects()!=null)
+        {
+            String fecha5 = "'" + form.format(this.Fecha5.getValue()) + "'";
+            String lugar5 = this.JTlugar5.getText();
+            String hora2 = this.hora2.getText();
+            this.guarda_restriccion_fecha3(5, cod_trans_nro,fecha5, lugar5, hora2);
+        }
         
         String fecha6 = "'" + form.format(this.Fecha6.getValue()) + "'";
         String lugar6 = this.JTlugar6.getText();
@@ -1010,7 +1249,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 //        System.out.println("La fecha10 es : "+fecha10+", El lugar es: "+lugar10);
 //        System.out.println("La fecha11 es : "+fecha11+", El lugar es: "+lugar11);
        
-        
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void guardaCuceSicoes(String cuce_sicoes){
@@ -1024,66 +1263,152 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     }
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox1);
+        Verificacion_de_fechas(jCheckBox1,jLabel22,1);
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox11);
+        Verificacion_de_fechas(jCheckBox11,jLabel23,2);
     }//GEN-LAST:event_jCheckBox11ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox2);
+        Verificacion_de_fechas(jCheckBox2,jLabel24,3);
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox3);
+        Verificacion_de_fechas(jCheckBox3,jLabel25,4);
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox4);
+        Verificacion_de_fechas(jCheckBox4,jLabel26,5);
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox5);
+        Verificacion_de_fechas(jCheckBox5,jLabel27,6);
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox10);
+        Verificacion_de_fechas(jCheckBox10,jLabel28,7);
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
     private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox9);
+        Verificacion_de_fechas(jCheckBox9,jLabel29,8);
     }//GEN-LAST:event_jCheckBox9ActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox6);
+        Verificacion_de_fechas(jCheckBox6,jLabel30,9);
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox7);
+        Verificacion_de_fechas(jCheckBox7,jLabel31,10);
     }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
         // TODO add your handling code here:
-        Verificacion_de_fechas(jCheckBox8);
+        Verificacion_de_fechas(jCheckBox8,jLabel32,11);
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
-    private void Verificacion_de_fechas(JCheckBox jc)
+    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
+        // TODO add your handling code here:
+        if(jCheckBox12.getSelectedObjects()!=null)
+        {
+            Fecha2.setEnabled(true);
+            JTlugar2.setEnabled(true);
+        }
+        else
+        {
+            Fecha2.setEnabled(false);
+            JTlugar2.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCheckBox12ActionPerformed
+
+    private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
+        // TODO add your handling code here:
+        if(jCheckBox13.getSelectedObjects()!=null)
+        {
+            Fecha3.setEnabled(true);
+            Fecha4.setEnabled(true);
+            Fecha5.setEnabled(true);
+            hora1.setEnabled(true);
+            hora2.setEnabled(true);
+            JTlugar3.setEnabled(true);
+            JTlugar4.setEnabled(true);
+            JTlugar5.setEnabled(true);
+        }
+        else
+        {
+            Fecha3.setEnabled(false);
+            Fecha4.setEnabled(false);
+            Fecha5.setEnabled(false);
+            hora1.setEnabled(false);
+            hora2.setEnabled(false);
+            JTlugar3.setEnabled(false);
+            JTlugar4.setEnabled(false);
+            JTlugar5.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCheckBox13ActionPerformed
+
+    private void Verificacion_de_fechas(JCheckBox jc, JLabel jl,int num)
     {
         if(jc.getSelectedObjects()!=null){
             String resp=JOptionPane.showInputDialog("Ingrsa la fecha que se ejecuto esta accion de la siguiente forma 24/04/2015 ");
             if(resp==null)
             {
                 jc.setSelected(false);
+                return;
+            }
+            String [] date = resp.split("/");
+            System.out.println("la cantidad "+date.length);
+            if(date.length==3)
+            {
+                java.util.Date fecha = new Date();
+                Date d=new Date();
+                DateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String formattedDate = inputFormat.format(fecha);
+                try{
+                    d=inputFormat.parse(resp);
+                    jl.setText(resp);
+                }catch(Exception e)
+                {
+                    JOptionPane.showMessageDialog(null, "Usted no ingreso un formato correcto de fecha");
+                    jc.setSelected(false);
+                    return;
+                }
+                System.out.println (fecha);
+                System.err.println(d);
+                int xd=JOptionPane.showConfirmDialog(null, "esta seguro de colocar la fecha: "+resp);
+                System.out.println(xd);
+                if(xd==0)
+                {
+                    jc.setText(formattedDate);
+                    jc.setEnabled(false);
+                    try {
+                        AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                        AdquiWS_PortType puerto = servicio.getAdquiWS();
+                        puerto.fechasExtra(resp,formattedDate,cod_alternativo,num);
+                    } catch (Exception e) {
+                        System.out.println("noooooooooooooooo :(");
+                    }
+                }
+                else
+                {
+                    jc.setSelected(false);
+                    return;
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Usted no ingreso un formato correcto de fecha");
+                jc.setSelected(false);
+                return;
             }
         }
     }
@@ -1207,6 +1532,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
