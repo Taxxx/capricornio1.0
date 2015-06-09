@@ -1317,7 +1317,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     }
 
     private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
-
+        
         if (cod_rol != 7) {
             BtnGuardar.doClick();
         } else {
@@ -1334,13 +1334,16 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             
          }
          System.out.println("EL SW: "+sw);*/
+        
         if (verifica_avanzar() && sw) {
             int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea avanzar esta TRANSACCION?",
                     "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
             if (res != javax.swing.JOptionPane.YES_OPTION) {
                 return;
             }
-            try{
+            if(tab_habil==0)
+            {
+                try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.getDias(this.cod_trans_nro);
@@ -1383,6 +1386,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
         catch(Exception e)
         {}
+        }
+            
             try {
                 System.out.println(":P intentando");
                 AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
