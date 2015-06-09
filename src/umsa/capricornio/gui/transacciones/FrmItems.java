@@ -642,6 +642,8 @@ public class FrmItems extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         JL_TotalM = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        BtnCertifPpto1 = new javax.swing.JButton();
         TxtTotal = new javax.swing.JTextField();
         BtnAnular = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -941,18 +943,19 @@ public class FrmItems extends javax.swing.JInternalFrame {
         PnlPpto.add(JT_HRUTA);
         JT_HRUTA.setBounds(270, 90, 100, 20);
 
-        BtnCertifPpto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/magnifier.png"))); // NOI18N
-        BtnCertifPpto.setText("Preventivo SIGMA");
+        BtnCertifPpto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/note.png"))); // NOI18N
+        BtnCertifPpto.setText("NOTA");
+        BtnCertifPpto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnCertifPpto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnCertifPptoActionPerformed(evt);
             }
         });
         PnlPpto.add(BtnCertifPpto);
-        BtnCertifPpto.setBounds(620, 10, 190, 25);
+        BtnCertifPpto.setBounds(720, 10, 90, 25);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/cancel.png"))); // NOI18N
-        jButton4.setText("Eliminar  Preventivo");
+        jButton4.setText("Preventivo - Nota");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -996,6 +999,25 @@ public class FrmItems extends javax.swing.JInternalFrame {
         });
         PnlPpto.add(jButton5);
         jButton5.setBounds(620, 100, 190, 23);
+
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk.png"))); // NOI18N
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        PnlPpto.add(jButton13);
+        jButton13.setBounds(370, 89, 30, 25);
+
+        BtnCertifPpto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/magnifier.png"))); // NOI18N
+        BtnCertifPpto1.setText("SIGMA");
+        BtnCertifPpto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCertifPpto1ActionPerformed(evt);
+            }
+        });
+        PnlPpto.add(BtnCertifPpto1);
+        BtnCertifPpto1.setBounds(620, 10, 100, 25);
 
         TabTransaccion.addTab("Presupuesto", PnlPpto);
 
@@ -1153,6 +1175,21 @@ public class FrmItems extends javax.swing.JInternalFrame {
         }
         return sw_verAdj;
     }
+    private boolean verifica_avanzar() {
+        if (cod_rol != 2) {
+            
+            if (this.JT_HRUTA.getText() == null || this.JT_HRUTA.getText().trim().length() == 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe adicionar la hoja de ruta", "SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            
+            return true;
+        } else {
+            return true;
+        }
+    }
+    
     private void BtnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvanzarActionPerformed
         System.out.println("------> "+cod_rol+" sw: "+sw);
         if (cod_rol!=7)
@@ -1160,7 +1197,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
         else 
             sw=true;
         
-        if (sw && sw_preventivo) {
+        if (sw && sw_preventivo && verifica_avanzar()) {
             int res = javax.swing.JOptionPane.showConfirmDialog( this,"¿Desea avanzar esta TRANSACCION?",
                     "MENSAJE CAPRICORNIO",javax.swing.JOptionPane.YES_NO_OPTION );
             if (res != javax.swing.JOptionPane.YES_OPTION) return;
@@ -1256,12 +1293,12 @@ public class FrmItems extends javax.swing.JInternalFrame {
                      javax.swing.JOptionPane.ERROR_MESSAGE);
                   return;
              }
-             if(this.JT_HRUTA.getText().length()==0){
-                  javax.swing.JOptionPane.showMessageDialog(this,"Debe adicionar la hoja de ruta","SYSTEM CAPRICORN",
-                     javax.swing.JOptionPane.ERROR_MESSAGE);
-                  sw = false;
-                  return;
-             }
+//             if(this.JT_HRUTA.getText().length()==0){
+//                  javax.swing.JOptionPane.showMessageDialog(this,"Debe adicionar la hoja de ruta","SYSTEM CAPRICORN",
+//                     javax.swing.JOptionPane.ERROR_MESSAGE);
+//                  sw = false;
+//                  return;
+//             }
              if(!this.VerificaPartidas()){
                  javax.swing.JOptionPane.showMessageDialog(this,"Todos los items deben tener partida","SYSTEM CAPRICORN",
                      javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -1326,9 +1363,9 @@ public class FrmItems extends javax.swing.JInternalFrame {
 //             if(!"".equals(TxtFondo.getText().trim()))
 //                 fondo="'"+TxtFondo.getText().trim()+"'"; 
 //             ActualizaTransaccionPpto(obs_ppto, hoja_ruta, preventivo,certif_ppto,monto_ppto,fondo);
-             GuardarDatos(this.JT_HRUTA.getText());
-             javax.swing.JOptionPane.showMessageDialog(this,"Cambios Guardados!!!","SYSTEM CAPRICORN",
-                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+//             GuardarDatos(this.JT_HRUTA.getText());
+//             javax.swing.JOptionPane.showMessageDialog(this,"Cambios Guardados!!!","SYSTEM CAPRICORN",
+//                            javax.swing.JOptionPane.INFORMATION_MESSAGE);
              break;          
      }     
     }//GEN-LAST:event_BtnGuardarActionPerformed
@@ -1477,16 +1514,11 @@ public class FrmItems extends javax.swing.JInternalFrame {
 }//GEN-LAST:event_TxtFacturaKeyPressed
 
     private void BtnCertifPptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCertifPptoActionPerformed
-        JD_Preventivo certif_ppto = new JD_Preventivo(menu,gestion,cod_transaccion);
-        certif_ppto.AbreDialogo();
-        Ppto ppto= certif_ppto.Certif_Ppto();
+ 
+        System.out.println("Hola Clipetes !!! :D");
+        JD_NotaPpto JDN = new JD_NotaPpto(menu,true,cod_transaccion);
+        JDN.setVisible(true);
         this.LlenaVistaPreventivo();
-//        TxtCeritPpto.setText(ppto.getCertif_ppto());
-//        TxtHojaRuta.setText(ppto.getHoja_ruta());
-//        TxtFondo.setText(ppto.getFuente());
-//        TxtMontoPpto.setText(Double.toString(ppto.getMonto()));
-////////////--USando Preventivo---//////////
-            
     }//GEN-LAST:event_BtnCertifPptoActionPerformed
     void MostrarReporte(){
         //int fila=TblTransaccionEstado.getSelectedRow();
@@ -1593,7 +1625,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CalFechaIngKeyPressed
 
-    private void eliminaPreventivo(int cod_transaccion, int cod_preventivo){
+    private void eliminaPreventivo(int cod_transaccion, String cod_preventivo){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -1613,7 +1645,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
 //        System.out.println("cod_w="+cod_w+" , cod_rol = "+cod_rol+", fila = "+fila+" ,columna = "+col);
 //        System.out.println("A ver: "+JTbl_VPreventivo.getValueAt(fila, 0));
         try {
-            this.eliminaPreventivo(this.cod_transaccion,Integer.parseInt(JTbl_VPreventivo.getValueAt(fila, 0).toString()));
+            this.eliminaPreventivo(this.cod_transaccion,JTbl_VPreventivo.getValueAt(fila, 0).toString());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un preventivo", "Error",JOptionPane.ERROR_MESSAGE);
         }
@@ -1627,10 +1659,26 @@ public class FrmItems extends javax.swing.JInternalFrame {
         JDTP.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        GuardarDatos(this.JT_HRUTA.getText());
+        javax.swing.JOptionPane.showMessageDialog(this, "Se guardo la Hoja de Ruta", "SYSTEM CAPRICORN",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void BtnCertifPpto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCertifPpto1ActionPerformed
+        // TODO add your handling code here:
+        JD_Preventivo certif_ppto = new JD_Preventivo(menu,gestion,cod_transaccion);
+        certif_ppto.AbreDialogo();
+        Ppto ppto= certif_ppto.Certif_Ppto();
+        this.LlenaVistaPreventivo();
+    }//GEN-LAST:event_BtnCertifPpto1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAnular;
     private javax.swing.JButton BtnAvanzar;
     private javax.swing.JButton BtnCertifPpto;
+    private javax.swing.JButton BtnCertifPpto1;
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JButton BtnRetornar;
     private javax.swing.JButton BtnSalir;
@@ -1664,6 +1712,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtObsPpto;
     private javax.swing.JTextField TxtTotal;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
