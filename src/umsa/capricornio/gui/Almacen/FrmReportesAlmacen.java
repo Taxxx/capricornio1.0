@@ -288,7 +288,6 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
                 System.out.println(fi);
                 System.out.println(ff);
                 //JOptionPane.showMessageDialog(this, "Las fechas deben ser diferentes aun si es de un dia");
-                
             }
             else
             {
@@ -364,8 +363,6 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Debe seleccionar un Estado");
         }else{
             mostrarreporteya(e,ts,fi,ff);
-            
-            
             //mostrarreporteya(e,ts,fi,ff);    
         }
         }

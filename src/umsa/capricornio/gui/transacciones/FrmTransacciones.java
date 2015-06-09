@@ -196,7 +196,8 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             String []tram=CmbTramite.getSelectedItem().toString().split(" - ");
             int cod_tram=Integer.parseInt(tram[0]);
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();           
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("Wujuuuu --->>>>   Ini: "+ini+", Fin: "+fin);
             Map[] datos=puerto.getTransaccionEstado(cod_almacen,cod_tram,gestion,ini,fin);
             CerearTablaEstados();
             if (datos!=null){
@@ -243,7 +244,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             System.out.println("!cod_tramite: "+cod_tramite);
             System.out.println("!cod_almacen: "+cod_almacen);
             
-            Map[] datos= puerto.getNroTransacciones(gestion,cod_tramite,23);
+            Map[] datos= puerto.getNroTransacciones(gestion,cod_tramite,cod_almacen);
             if (datos!=null){
                 for (int c=0;c<datos.length;c++){
                     try{
