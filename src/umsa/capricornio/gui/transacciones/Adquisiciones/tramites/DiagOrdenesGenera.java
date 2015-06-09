@@ -734,7 +734,8 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             if(sw)
                 datos = puerto.getTransaccionesBuscaAdquisicion(cod_almacen, cod_usuario, 1, gestion, solicitud, hoja_ruta, preventivo);
             else
-                datos =puerto.getTransaccionesBuscaAdquisicionTODO(cod_almacen, cod_usuario, 1, gestion);
+                datos = puerto.getTransaccionesBuscaAdquisicionTODO(cod_almacen, cod_usuario, 1, gestion);
+            
             CerearTablaBandeja();
             CerearTablaPedidos();
             CerearTablaOrdenes();
