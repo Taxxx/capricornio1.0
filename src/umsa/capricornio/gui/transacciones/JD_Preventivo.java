@@ -429,7 +429,7 @@ public class JD_Preventivo extends javax.swing.JDialog {
         
     }//GEN-LAST:event_JT_PreventivoActionPerformed
 
-    private void guardarPreventivo(int cod_transaccion, int cod_preventivo, String resumen,int da, String total){
+    private void guardarPreventivo(int cod_transaccion, String cod_preventivo, String resumen,int da, String total){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -439,12 +439,14 @@ public class JD_Preventivo extends javax.swing.JDialog {
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
             this.setVisible(false);
         } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,"Error!!! "+e,"SYSTEM CAPRICORNIO",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.out.println("El cod_transaccion es: "+cod_transaccion+" , preventivo: "+this.JT_Preventivo.getText().toString().trim());
-        int preventivo = Integer.parseInt(this.JT_Preventivo.getText().toString().trim());
+        String preventivo = this.JT_Preventivo.getText().toString().trim();
         System.out.println("El preventivo es: "+this.JT_TotalA.getText().trim().replace(".", ","));
         this.guardarPreventivo(cod_transaccion, preventivo, this.JTA_Roperacion.getText().trim(),Integer.parseInt(this.JT_Da.getText().trim()),this.JT_TotalA.getText().trim());
         
