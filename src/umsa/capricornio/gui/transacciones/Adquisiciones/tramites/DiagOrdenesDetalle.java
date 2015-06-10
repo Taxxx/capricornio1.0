@@ -1907,6 +1907,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             int cod_T_N=Integer.parseInt(d[0].get("COD_TRANS_NRO").toString());
             Map[] datos=puerto.dias_restantes(cod_T_N);
             int dias=Integer.parseInt(datos[0].get("DIAS_RESTANTES").toString());
+            System.out.println("estos son los dias "+ dias);
             if(dias>=0)
             {
                 JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
@@ -1914,7 +1915,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO "+datos[0].get("PROCESO").toString()+" se ha agotado el limite de tiempo" );
+                
+                JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO: \n"+datos[0].get("PROCESO").toString()+" HA EXPIRTADO EL TIEMPO ESTABLECIDO: "+datos[0].get("FECHA")+"\nPOR TANTO SE HA BLOQUEADO EL PROCESO DEBE PRESENTAR UNA PRORROGA PARA REANUDARLO" );
             }
         }catch(Exception e)
         {
