@@ -23,7 +23,7 @@ public class TablaFechaRestricciones extends AbstractTableModel
 {
   static final public ColumnData m_columns[] = {
     new ColumnData( "Nro RI", 1, JLabel.CENTER ),
-    new ColumnData( "Nro SC", 1, JLabel.CENTER ),
+    new ColumnData( "Nro OC", 1, JLabel.CENTER ),
     new ColumnData( "Proceso", 40, JLabel.LEFT ),  
     new ColumnData( "F. Conclusión", 20, JLabel.CENTER ),
     new ColumnData( "Dias Restantes", 5, JLabel.CENTER )
