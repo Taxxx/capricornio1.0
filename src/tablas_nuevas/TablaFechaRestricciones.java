@@ -22,10 +22,10 @@ import umsa.capricornio.utilitarios.herramientas.ColumnData;
 public class TablaFechaRestricciones extends AbstractTableModel 
 {
   static final public ColumnData m_columns[] = {
-    new ColumnData( "Nro RI", 5, JLabel.CENTER ),
-    new ColumnData( "Nro SC", 5, JLabel.CENTER ),
-    new ColumnData( "Fecha de Inicio", 25, JLabel.CENTER ),  
-    new ColumnData( "Fecha de Conclusión", 25, JLabel.CENTER ),
+    new ColumnData( "Nro RI", 1, JLabel.CENTER ),
+    new ColumnData( "Nro SC", 1, JLabel.CENTER ),
+    new ColumnData( "Proceso", 40, JLabel.LEFT ),  
+    new ColumnData( "F. Conclusión", 20, JLabel.CENTER ),
     new ColumnData( "Dias Restantes", 5, JLabel.CENTER )
 //    new ColumnData( "Actividad", 5, JLabel.CENTER ),
 //    new ColumnData( "Partida", 15, JLabel.CENTER ),
