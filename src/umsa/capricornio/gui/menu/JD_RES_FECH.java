@@ -71,9 +71,10 @@ public class JD_RES_FECH extends javax.swing.JDialog {
                     JTRestricciones.tableChanged(new TableModelEvent(restricciones, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
                     JTRestricciones.setValueAt(datos[c].get("NRO_RI"),c,0);
                     JTRestricciones.setValueAt(datos[c].get("NRO_SOL"),c,1);
-                    JTRestricciones.setValueAt(datos[c].get("PROCESO"),c,2);
-                    JTRestricciones.setValueAt(datos[c].get("FECHA_FINAL"),c,3);
-                    JTRestricciones.setValueAt(datos[c].get("DIAS_RESTANTES"),c,4);
+                    JTRestricciones.setValueAt(datos[c].get("ORDEN"), c, 2);
+                    JTRestricciones.setValueAt(datos[c].get("PROCESO"),c,3);
+                    JTRestricciones.setValueAt(datos[c].get("FECHA_FINAL"),c,4);
+                    JTRestricciones.setValueAt(datos[c].get("DIAS_RESTANTES"),c,5);
                     
                     
                 }

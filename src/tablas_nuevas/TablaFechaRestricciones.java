@@ -23,11 +23,11 @@ public class TablaFechaRestricciones extends AbstractTableModel
 {
   static final public ColumnData m_columns[] = {
     new ColumnData( "Nro RI", 1, JLabel.CENTER ),
-    new ColumnData( "Nro OC", 1, JLabel.CENTER ),
+    new ColumnData( "Nro SC", 1, JLabel.CENTER ),
+    new ColumnData( "Nro OC", 5, JLabel.CENTER ),
     new ColumnData( "Proceso", 40, JLabel.LEFT ),  
     new ColumnData( "F. Conclusión", 20, JLabel.CENTER ),
     new ColumnData( "Dias Restantes", 5, JLabel.CENTER )
-//    new ColumnData( "Actividad", 5, JLabel.CENTER ),
 //    new ColumnData( "Partida", 15, JLabel.CENTER ),
 //    new ColumnData( "Importe", 15, JLabel.CENTER ),
 //    new ColumnData( "Monto", 10, JLabel.RIGHT )   
@@ -68,7 +68,7 @@ public class TablaFechaRestricciones extends AbstractTableModel
       case 2: return row.fecha_inicio;
       case 3: return row.fecha_final;
       case 4: return row.dias_restantes;
-//      case 2: return row.m_actividad;      
+      case 5: return row.m_actividad;      
 //      case 3: return row.m_partida;
 //      case 4: return row.m_importe;      
 //      case 5: return row.m_monto;      
@@ -99,9 +99,9 @@ public class TablaFechaRestricciones extends AbstractTableModel
       case 4:        
           row.dias_restantes = svalue;
         break;   
-//      case 2:        
-//          row.m_actividad = svalue;
-//        break;      
+      case 5:        
+          row.m_actividad = svalue;
+        break;      
 //      case 3:
 //          row.m_partida = svalue;
 //        break;
