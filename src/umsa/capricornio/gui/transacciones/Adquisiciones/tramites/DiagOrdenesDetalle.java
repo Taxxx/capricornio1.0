@@ -1900,8 +1900,27 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
-        JDF.setVisible(true);
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] d=puerto.getCod_Trans(cod_transaccion);
+            int cod_T_N=Integer.parseInt(d[0].get("COD_TRANS_NRO").toString());
+            Map[] datos=puerto.dias_restantes(cod_T_N);
+            int dias=Integer.parseInt(datos[0].get("DIAS_RESTANTES").toString());
+            if(dias>=0)
+            {
+                JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
+                JDF.setVisible(true);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO "+datos[0].get("PROCESO").toString()+" se ha agotado el limite de tiempo" );
+            }
+        }catch(Exception e)
+        {
+            
+        }
+        
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
