@@ -249,6 +249,7 @@ public class FrmMenu extends javax.swing.JFrame {
         BtnBandeja = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
         BtnSalir = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         PnlAdquisiciones = new javax.swing.JDesktopPane();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -363,6 +364,18 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
         ToolBotones.add(BtnSalir);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/application.png"))); // NOI18N
+        jButton1.setToolTipText("Notificaciones");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        ToolBotones.add(jButton1);
 
         getContentPane().add(ToolBotones);
         ToolBotones.setBounds(0, 0, 490, 30);
@@ -664,11 +677,14 @@ public class FrmMenu extends javax.swing.JFrame {
     private void MensajesAlerta(){
         try {
             if(cod_rol==5){
+                jButton1.setVisible(true);
 //                javax.swing.JOptionPane.showMessageDialog(this," :D","SYSTEM CAPRICORN",
 //                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 JD_RES_FECH restriccion_fechas = new JD_RES_FECH(this,false);
                 restriccion_fechas.setVisible(true);
             }
+            else
+                jButton1.setVisible(false);
         } catch (Exception e) {
         }
     }
@@ -806,6 +822,12 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmReportesJuridica(this));
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JD_RES_FECH jd=new JD_RES_FECH(new javax.swing.JFrame(), true);
+        jd.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -841,6 +863,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu MenReportes;
     private javax.swing.JDesktopPane PnlAdquisiciones;
     private javax.swing.JToolBar ToolBotones;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
