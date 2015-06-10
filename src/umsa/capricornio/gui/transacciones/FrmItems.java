@@ -82,7 +82,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
     
     /** Creates new form FrmTransaccionDetalle */
     public FrmItems(FrmMenu menu,FrmTransacciones frm_transaccion,int cod_transaccion,int cod_rol,String tramite,int gestion,int cod_w,String origen,String detalle,String unidad_sol,String unidad_des,String nro,String cuantia,String del,String hasta,int cod_almacen,int cod_trans_nro) {
-        System.out.println("entroooooooooo :P:P:P:P:P:P:P");
+        //System.out.println("entroooooooooo :P:P:P:P:P:P:P");
         this.menu=menu;
         this.frm_transaccion=frm_transaccion;
         this.cod_transaccion=cod_transaccion;
