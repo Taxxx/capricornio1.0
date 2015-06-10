@@ -59,7 +59,8 @@ public class JD_RES_FECH extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            Map[] datos=puerto.getFechasRestriccionAdquiDepto();
+            //Map[] datos=puerto.getFechasRestriccionAdquiDepto();
+            Map[] datos=puerto.notificacionfechas();
 ////            Map[] datos = null;
             CerearTabla();
             System.out.println("hasta aqui");
@@ -70,7 +71,7 @@ public class JD_RES_FECH extends javax.swing.JDialog {
                     JTRestricciones.tableChanged(new TableModelEvent(restricciones, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
                     JTRestricciones.setValueAt(datos[c].get("NRO_RI"),c,0);
                     JTRestricciones.setValueAt(datos[c].get("NRO_SOL"),c,1);
-                    JTRestricciones.setValueAt(datos[c].get("FECHA_INICIO"),c,2);
+                    JTRestricciones.setValueAt(datos[c].get("PROCESO"),c,2);
                     JTRestricciones.setValueAt(datos[c].get("FECHA_FINAL"),c,3);
                     JTRestricciones.setValueAt(datos[c].get("DIAS_RESTANTES"),c,4);
                     

@@ -37,9 +37,37 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         this.cod_trans_nro = cod_trans_nro;
         this.cod_transaccion = cod_transaccion;
         LlenaFormulario();
+        llenapasouno();
         //this.JT_CUCE.setText(getCuce());
         this.setLocationRelativeTo(null);
         //bloquea_check();
+    }
+    private void llenapasouno()
+    {
+        SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+        try{
+        AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+        AdquiWS_PortType puerto = servicio.getAdquiWS();
+        Map[] d=puerto.getResIni(cod_transaccion);
+        if(d!=null)
+        {
+            
+            JTlugar1.setText("EDIFICIO HOY");
+            Fecha1.setEnabled(false);
+            JTlugar1.setEnabled(false);
+            jCheckBox1.setEnabled(false);
+            Date f1=new Date();
+            f1=form.parse(d[0].get("FECHA").toString());
+            Fecha1.setValue(f1);
+            jCheckBox1.setText(form.format(f1));
+            jLabel22.setText(form.format(f1));
+        }
+        else
+        {
+            System.out.println("debe generar la resolucion de inicio");
+        }
+        System.err.println("siiiiii");
+        }catch(Exception e){System.err.println("errorororor");}
     }
     private void bloquea_check()
     {
@@ -380,7 +408,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         /*******************************/
         this.hora1.setEnabled(false);
         this.hora2.setEnabled(false);
-        jCheckBox12.setEnabled(false);
+        //jCheckBox12.setEnabled(false);
         jCheckBox13.setEnabled(false);
         
     }
@@ -495,7 +523,6 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jCheckBox12 = new javax.swing.JCheckBox();
         jCheckBox13 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -789,13 +816,6 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         jLabel32.setText("SIN FECHA");
 
-        jCheckBox12.setText("jCheckBox12");
-        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox12ActionPerformed(evt);
-            }
-        });
-
         jCheckBox13.setText("jCheckBox13");
         jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -809,9 +829,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCheckBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1009,12 +1027,10 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel2)
-                                            .addComponent(jCheckBox12))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel3)
                                             .addComponent(jCheckBox13))
-                                        .addGap(26, 26, 26)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel3)
+                                        .addGap(31, 31, 31)
                                         .addComponent(jLabel10)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel11)
@@ -1177,7 +1193,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         String lugar1 = this.JTlugar1.getText();
         this.guarda_restriccion_fecha(1, cod_trans_nro, fecha1, lugar1);
 //        System.out.println("La fecha1 es : "+fecha1+", El lugar es: "+lugar1);
-        if(jCheckBox12.getSelectedObjects()!=null)
+        if(jCheckBox13.getSelectedObjects()!=null)
         {
             String fecha2 = "'" + form.format(this.Fecha2.getValue()) + "'";
             String lugar2 = this.JTlugar2.getText();
@@ -1316,24 +1332,12 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         Verificacion_de_fechas(jCheckBox8,jLabel32,11);
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
-    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
-        // TODO add your handling code here:
-        if(jCheckBox12.getSelectedObjects()!=null)
-        {
-            Fecha2.setEnabled(true);
-            JTlugar2.setEnabled(true);
-        }
-        else
-        {
-            Fecha2.setEnabled(false);
-            JTlugar2.setEnabled(false);
-        }
-    }//GEN-LAST:event_jCheckBox12ActionPerformed
-
     private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
         // TODO add your handling code here:
         if(jCheckBox13.getSelectedObjects()!=null)
         {
+            Fecha2.setEnabled(true);
+            JTlugar2.setEnabled(true);
             Fecha3.setEnabled(true);
             Fecha4.setEnabled(true);
             Fecha5.setEnabled(true);
@@ -1345,6 +1349,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         }
         else
         {
+            Fecha2.setEnabled(false);
+            JTlugar2.setEnabled(false);
             Fecha3.setEnabled(false);
             Fecha4.setEnabled(false);
             Fecha5.setEnabled(false);
@@ -1438,6 +1444,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             puerto.addFechaRestriccion("SET-addFechaRestriccion", cod_tipo_resf, cod_trans_nro, fecha_final, lugar);
+            puerto.fechasExtra(this.jCheckBox1.getText(), this.jLabel22.getText(), cod_trans_nro, 1);
             System.out.println("Exito Wujuuuuuuuuu");
         } catch (Exception e) {
             System.out.println("Error en el servidor ..... :(");
@@ -1532,7 +1539,6 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
     private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
