@@ -1343,13 +1343,14 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
             if(tab_habil==0)
             {
+                int t=15;
                 try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.getDias(this.cod_trans_nro);
-            int t=15;
+            t=15;
             if(!datos[0].get("DIAS").toString().equals(""))
-            {
+            { 
                 System.out.println("ttttt ya tiene dias");
             }
             else
@@ -1386,6 +1387,13 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
         catch(Exception e)
         {}
+              try{
+              if(this.cod_w==6 && cuantia.equals("COMPRA MENOR") && t<=15)
+              {
+                  int cod_alternativo=cod_w;
+              }
+              }catch(Exception e)
+              {}
         }
             
             try {
@@ -1454,10 +1462,18 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                             cod_aux = cod_w;
                             cod_w = 1;
                         }
-                        destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                        Map[] d=puerto.getDias(cod_trans_nro);
+                        if(cuantia.equals("COMPRA MENOR") && cod_w == 6 && d[0].get("DIAS").toString().equals("15"))
+                        {
+                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "ALM1");
+                        }
+                        else
+                        {
+                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                        }
                     }
                 }
-                cod_w = cod_aux;
+                //cod_w = cod_aux;
                 //BtnGarantia.doClick();
                 BtnSalir1.doClick();
             } catch (RemoteException e) {

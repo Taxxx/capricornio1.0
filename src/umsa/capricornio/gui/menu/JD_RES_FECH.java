@@ -74,6 +74,10 @@ public class JD_RES_FECH extends javax.swing.JDialog {
                     JTRestricciones.setValueAt(datos[c].get("ORDEN"), c, 2);
                     JTRestricciones.setValueAt(datos[c].get("PROCESO"),c,3);
                     JTRestricciones.setValueAt(datos[c].get("FECHA_FINAL"),c,4);
+                    if(Integer.parseInt(datos[c].get("DIAS_RESTANTES").toString())==0)
+                    {
+                        JTRestricciones.setValueAt("DIA FINAL",c,5);
+                    }
                     if(Integer.parseInt(datos[c].get("DIAS_RESTANTES").toString())<0)
                     {
                         JTRestricciones.setValueAt("EXPIRADO",c,5);
