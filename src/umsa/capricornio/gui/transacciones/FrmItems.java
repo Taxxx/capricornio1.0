@@ -1052,7 +1052,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(430, 330, 270, 23);
+        jButton2.setBounds(470, 330, 230, 23);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));

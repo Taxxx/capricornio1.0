@@ -22,7 +22,7 @@ import umsa.capricornio.gui.menu.FrmMenu;
 import umsa.capricornio.gui.transacciones.tablas.TablaOrdenes;
 import umsa.capricornio.gui.transacciones.tablas.TablaPedidos;
 import umsa.capricornio.gui.transacciones.tablas.TablaTransaccionBandejaGral;
-import umsa.capricornio.utilitarios.herramientas.MiRenderer;
+import umsa.capricornio.utilitarios.herramientas.MiRenderer; 
 import javax.swing.JFileChooser;
 import java.net.URLConnection;
 import java.net.MalformedURLException;
