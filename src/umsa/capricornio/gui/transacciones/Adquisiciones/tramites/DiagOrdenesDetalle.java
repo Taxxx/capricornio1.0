@@ -1916,7 +1916,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             else
             {
                 
-                JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO: \n"+datos[0].get("PROCESO").toString()+" HA EXPIRTADO EL TIEMPO ESTABLECIDO: "+datos[0].get("FECHA")+"\nPOR TANTO SE HA BLOQUEADO EL PROCESO DEBE PRESENTAR UNA PRORROGA PARA REANUDARLO" );
+                JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO: \n"+datos[0].get("PROCESO").toString()+" HA EXPIRTADO EL TIEMPO ESTABLECIDO: "+datos[0].get("FECHA")+"\nDEBE PRESENTAR UNA PRORROGA PARA REANUDARLO" );
             }
         }catch(Exception e)
         {
