@@ -78,6 +78,7 @@ public class JD_RES_FECH extends javax.swing.JDialog {
                     {
                         JTRestricciones.setValueAt("DIA FINAL",c,5);
                     }
+                    else{
                     if(Integer.parseInt(datos[c].get("DIAS_RESTANTES").toString())<0)
                     {
                         JTRestricciones.setValueAt("EXPIRADO",c,5);
@@ -86,7 +87,7 @@ public class JD_RES_FECH extends javax.swing.JDialog {
                     {
                         JTRestricciones.setValueAt(datos[c].get("DIAS_RESTANTES"),c,5);
                     }
-                    
+                    }
                     
                     
                 }

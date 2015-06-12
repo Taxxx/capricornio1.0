@@ -1334,7 +1334,26 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             
          }
          System.out.println("EL SW: "+sw);*/
-        
+        try{
+            System.out.println("el cod_t "+cod_transaccion+" el CODTN "+cod_trans_nro);
+        AdquiWSServiceLocator servicio1 = new AdquiWSServiceLocator();
+        AdquiWS_PortType puerto1 = servicio1.getAdquiWS();
+        Map[] ddd=puerto1.getCod_Trans(cod_transaccion);
+        int cod_TN=Integer.parseInt(ddd[0].get("COD_TRANS_NRO").toString());
+        System.out.println(cod_TN);
+        Map[] dat=puerto1.dias_restantes(cod_TN);
+        System.err.println("zxfadsfsdfasdf "+dat[0].get("NUM").toString());
+        if(Integer.parseInt(dat[0].get("NUM").toString())!=9 && tab_habil==0 && cuantia.equals("ANPE"))
+        {
+            JOptionPane.showMessageDialog(null, "DEBE REALIZAR EL CONTROL DE FECHAS DE LOS PROCESOS ANPE");
+            return;
+        }
+        else
+        {
+            System.out.println("entro al else");
+        }
+        }catch(Exception e)
+        {System.out.println("entro al catch "+e.getMessage());}
         if (verifica_avanzar() && sw) {
             int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea avanzar esta TRANSACCION?",
                     "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
