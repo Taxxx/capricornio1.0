@@ -77,7 +77,7 @@ public class GetResoluciones {
                 dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();
                 dnp=datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString();
                 destino=datos[0].get("DESTINO").toString();
-                int cod_res_ini=Integer.parseInt(datos[0].get("COD_RES_INI").toString());
+                int cod_res_ini=Integer.parseInt(datos[0].get("NRO").toString());
                 num_resolucion=datos[0].get("NUM_RESOLUCION").toString();
                 monto_ppto=datos[0].get("MONTO_PPTO").toString();
                 

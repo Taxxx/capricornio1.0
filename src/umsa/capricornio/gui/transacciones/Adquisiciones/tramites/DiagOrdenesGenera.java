@@ -1085,7 +1085,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             } catch (Exception e) {
             }
             */
-            ResolucionInicio x = new ResolucionInicio(this.detalle, this.cod_transaccion, this.cod_w, this.cod_almacen,this.menu,this.cod_trans_nro);
+            ResolucionInicio x = new ResolucionInicio(this.detalle, this.cod_transaccion, this.cod_w, this.cod_almacen,this.menu,this.cod_trans_nro,this.gestion);
             x.setVisible(true);
             
             System.out.println("Se cerro ups :P");
