@@ -11,12 +11,15 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import javax.swing.Box;
 import javax.swing.JCheckBox;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import net.sf.nachocalendar.components.DateField;
 
 /**
@@ -1361,7 +1364,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     private void Verificacion_de_fechas(JCheckBox jc, JLabel jl,int num)
     {
         if(jc.getSelectedObjects()!=null){
-            String resp=JOptionPane.showInputDialog("Ingrsa la fecha que se ejecuto esta accion de la siguiente forma 24/04/2015 ");
+            //String resp=JOptionPane.showInputDialog("Ingrsa la fecha que se ejecuto esta accion de la siguiente forma 24/04/2015 ");
+            String resp=fecharestringida();
             if(resp==null)
             {
                 jc.setSelected(false);
@@ -1395,6 +1399,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                     try {
                         AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                         AdquiWS_PortType puerto = servicio.getAdquiWS();
+                        System.out.println("resp"+resp+" formaterdate"+formattedDate+" codalter"+cod_alternativo+" num"+num);
                         puerto.fechasExtra(resp,formattedDate,cod_alternativo,num);
                     } catch (Exception e) {
                         System.out.println("noooooooooooooooo :(");
@@ -1413,6 +1418,30 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                 return;
             }
         }
+    }
+    private String fecharestringida()
+    {
+        /*JTextField xField = new JTextField(5);
+      JTextField yField = new JTextField(5);*/
+        DateField xfield=new DateField();
+
+      JPanel myPanel = new JPanel();
+      myPanel.add(new JLabel("x:"));
+      myPanel.add(xfield);
+      myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      /*myPanel.add(new JLabel("y:"));
+      myPanel.add(yField);*/
+
+      int result = JOptionPane.showConfirmDialog(null, myPanel, 
+               "Please Enter X and Y Values", JOptionPane.OK_CANCEL_OPTION);
+      if (result == JOptionPane.OK_OPTION) {
+         System.out.println("x value: " + xfield.getValue());
+         //System.out.println("y value: " + yField.getText());
+      }
+    DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
+    String convertido = fecha.format(xfield.getValue());
+    System.out.println(convertido);
+        return convertido;
     }
     private String getCuce(){
         String cuce_sicoes = "";
