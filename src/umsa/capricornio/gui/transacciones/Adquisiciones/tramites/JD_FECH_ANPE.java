@@ -41,14 +41,15 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         this.cod_trans_nro = cod_trans_nro;
         this.cod_transaccion = cod_transaccion;
         LlenaFormulario();
-        llenapasouno();
+        //llenapasouno();
         //this.JT_CUCE.setText(getCuce());
         this.setLocationRelativeTo(null);
         //bloquea_check();
     }
     private void llenapasouno()
     {
-        SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat form = new SimpleDateFormat("MMM/dd/yyyy");
+        SimpleDateFormat formS = new SimpleDateFormat("dd/MM/yyyy");
         try{
         AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
         AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -62,8 +63,10 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
             jCheckBox1.setEnabled(false);
             Date f1=new Date();
             f1=form.parse(d[0].get("FECHA").toString());
+            System.err.println("fecha jeje "+f1);
             Fecha1.setValue(f1);
             jCheckBox1.setText(form.format(f1));
+            System.out.println(form.format(f1));
             jLabel22.setText(form.format(f1));
         }
         else
@@ -124,7 +127,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
             int cod_T_N=Integer.parseInt(d[0].get("COD_TRANS_NRO").toString());
             cod_alternativo=cod_T_N;
             Map[] datos = puerto.getRestriccionFechas(cod_T_N);
-            SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat form = new SimpleDateFormat("MM/dd/yyyy");
+            SimpleDateFormat formSalida = new SimpleDateFormat("MMM/dd/yyyy");
             if (datos != null) {
                 for (int f = 0; f < datos.length; f++) {
 //                    System.out.println(f+" -->" + datos[f].get("COD_RES_FEC_PRO").toString());
@@ -148,10 +152,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel22.setText(form.format(f1));
-                                this.jCheckBox1.setText(form.format(f2));
+                                this.jLabel22.setText(formSalida.format(f1));
+                                this.jCheckBox1.setText(formSalida.format(f2));
                                 jCheckBox1.setEnabled(false);
                                 jCheckBox1.setSelected(true);
+                                System.out.println("f1 "+f1+" f2"+f2);
                             }
                             
                             break;
@@ -169,10 +174,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel23.setText(form.format(f1));
-                                this.jCheckBox11.setText(form.format(f2));
+                                this.jLabel23.setText(formSalida.format(f1));
+                                this.jCheckBox11.setText(formSalida.format(f2));
                                 jCheckBox11.setEnabled(false);
                                 jCheckBox11.setSelected(true);
+                                System.out.println("f1 "+f1+" f2"+f2);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
                             }
                             break;
@@ -190,8 +196,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel24.setText(form.format(f1));
-                                this.jCheckBox2.setText(form.format(f2));
+                                this.jLabel24.setText(formSalida.format(f1));
+                                this.jCheckBox2.setText(formSalida.format(f2));
                                 jCheckBox2.setEnabled(false);
                                 jCheckBox2.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -213,8 +219,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel25.setText(form.format(f1));
-                                this.jCheckBox3.setText(form.format(f2));
+                                this.jLabel25.setText(formSalida.format(f1));
+                                this.jCheckBox3.setText(formSalida.format(f2));
                                 jCheckBox3.setEnabled(false);
                                 jCheckBox3.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -236,8 +242,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel26.setText(form.format(f1));
-                                this.jCheckBox4.setText(form.format(f2));
+                                this.jLabel26.setText(formSalida.format(f1));
+                                this.jCheckBox4.setText(formSalida.format(f2));
                                 jCheckBox4.setEnabled(false);
                                 jCheckBox4.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -256,8 +262,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel27.setText(form.format(f1));
-                                this.jCheckBox5.setText(form.format(f2));
+                                this.jLabel27.setText(formSalida.format(f1));
+                                this.jCheckBox5.setText(formSalida.format(f2));
                                 jCheckBox5.setEnabled(false);
                                 jCheckBox5.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -276,8 +282,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel28.setText(form.format(f1));
-                                this.jCheckBox10.setText(form.format(f2));
+                                this.jLabel28.setText(formSalida.format(f1));
+                                this.jCheckBox10.setText(formSalida.format(f2));
                                 jCheckBox10.setEnabled(false);
                                 jCheckBox10.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -296,8 +302,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel29.setText(form.format(f1));
-                                this.jCheckBox9.setText(form.format(f2));
+                                this.jLabel29.setText(formSalida.format(f1));
+                                this.jCheckBox9.setText(formSalida.format(f2));
                                 jCheckBox9.setEnabled(false);
                                 jCheckBox9.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -316,8 +322,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel30.setText(form.format(f1));
-                                this.jCheckBox6.setText(form.format(f2));
+                                this.jLabel30.setText(formSalida.format(f1));
+                                this.jCheckBox6.setText(formSalida.format(f2));
                                 jCheckBox6.setEnabled(false);
                                 jCheckBox6.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -336,8 +342,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel31.setText(form.format(f1));
-                                this.jCheckBox7.setText(form.format(f2));
+                                this.jLabel31.setText(formSalida.format(f1));
+                                this.jCheckBox7.setText(formSalida.format(f2));
                                 jCheckBox7.setEnabled(false);
                                 jCheckBox7.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -356,8 +362,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                                 Date f2=new Date();
                                 f1=form.parse(datos[f].get("FECHA_CALIFICACION").toString());
                                 f2=form.parse(datos[f].get("FECHA_ENTREGA").toString());
-                                this.jLabel32.setText(form.format(f1));
-                                this.jCheckBox8.setText(form.format(f2));
+                                this.jLabel32.setText(formSalida.format(f1));
+                                this.jCheckBox8.setText(formSalida.format(f2));
                                 jCheckBox8.setEnabled(false);
                                 jCheckBox8.setSelected(true);
                                 System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk1");
@@ -384,6 +390,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         }
     }
     private void BloqueaInputs(){
+        llenapasouno();
         this.Fecha1.setEnabled(false);
         this.Fecha2.setEnabled(false);
         this.Fecha3.setEnabled(false);
@@ -1366,6 +1373,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         if(jc.getSelectedObjects()!=null){
             //String resp=JOptionPane.showInputDialog("Ingrsa la fecha que se ejecuto esta accion de la siguiente forma 24/04/2015 ");
             String resp=fecharestringida();
+            System.out.println("es el resp: "+resp);
             if(resp==null)
             {
                 jc.setSelected(false);
@@ -1378,9 +1386,10 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                 java.util.Date fecha = new Date();
                 Date d=new Date();
                 DateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+                DateFormat salida = new SimpleDateFormat("MMM/dd/yyyy");
                 String formattedDate = inputFormat.format(fecha);
                 try{
-                    d=inputFormat.parse(resp);
+                    d=salida.parse(resp);
                     jl.setText(resp);
                 }catch(Exception e)
                 {
@@ -1394,13 +1403,13 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                 System.out.println(xd);
                 if(xd==0)
                 {
-                    jc.setText(formattedDate);
+                    jc.setText(salida.format(formattedDate));
                     jc.setEnabled(false);
                     try {
                         AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                         AdquiWS_PortType puerto = servicio.getAdquiWS();
                         System.out.println("resp"+resp+" formaterdate"+formattedDate+" codalter"+cod_alternativo+" num"+num);
-                        puerto.fechasExtra(resp,formattedDate,cod_alternativo,num);
+                        puerto.fechasExtra(inputFormat.format(d),formattedDate,cod_alternativo,num);
                     } catch (Exception e) {
                         System.out.println("noooooooooooooooo :(");
                     }
@@ -1423,24 +1432,30 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     {
         /*JTextField xField = new JTextField(5);
       JTextField yField = new JTextField(5);*/
-        DateField xfield=new DateField();
-
+      Date xx=new Date();
+      DateField xfield=new DateField();
+      xfield.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+      xfield.setValue(xx);
       JPanel myPanel = new JPanel();
-      myPanel.add(new JLabel("x:"));
+      myPanel.add(new JLabel("Fecha de Entrega:"));
       myPanel.add(xfield);
       myPanel.add(Box.createHorizontalStrut(15)); // a spacer
       /*myPanel.add(new JLabel("y:"));
       myPanel.add(yField);*/
-
+      String convertido;
       int result = JOptionPane.showConfirmDialog(null, myPanel, 
-               "Please Enter X and Y Values", JOptionPane.OK_CANCEL_OPTION);
+               "por favor inserte la fecha de entrega", JOptionPane.OK_CANCEL_OPTION);
       if (result == JOptionPane.OK_OPTION) {
-         System.out.println("x value: " + xfield.getValue());
+        System.out.println("x value: " + xfield.getValue());
+        DateFormat fecha = new SimpleDateFormat("MMM/dd/yyyy");
+        convertido = fecha.format(xfield.getValue());
+        System.out.println(convertido);
          //System.out.println("y value: " + yField.getText());
+      }else
+      {
+        convertido=null;
       }
-    DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
-    String convertido = fecha.format(xfield.getValue());
-    System.out.println(convertido);
+    
         return convertido;
     }
     private String getCuce(){
