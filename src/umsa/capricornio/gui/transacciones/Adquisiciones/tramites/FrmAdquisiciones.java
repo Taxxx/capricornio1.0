@@ -302,8 +302,11 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         int fila = TblTransaccionBandeja.getSelectedRow();
         int cod_trans_nro = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 0).toString());        
         //menu.AbrirOtroFrame(this, new FrmOrdenesDetalle(menu, this,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString()));
-        verificadias(menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString());
         String cuantia=TblTransaccionBandeja.getValueAt(fila, 9).toString();
+        if(!cuantia.equals("ANPE"))
+        {
+            verificadias(menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString());
+        }
         System.out.println("la cuantia: "+cuantia);
         if(pasa==-1 && !cuantia.equals("ANPE"))
         {
