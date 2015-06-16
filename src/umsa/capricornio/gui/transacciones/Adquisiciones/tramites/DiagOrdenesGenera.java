@@ -22,7 +22,7 @@ import umsa.capricornio.gui.menu.FrmMenu;
 import umsa.capricornio.gui.transacciones.tablas.TablaOrdenes;
 import umsa.capricornio.gui.transacciones.tablas.TablaPedidos;
 import umsa.capricornio.gui.transacciones.tablas.TablaTransaccionBandejaGral;
-import umsa.capricornio.utilitarios.herramientas.MiRenderer;
+import umsa.capricornio.utilitarios.herramientas.MiRenderer; 
 import javax.swing.JFileChooser;
 import java.net.URLConnection;
 import java.net.MalformedURLException;
@@ -641,7 +641,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         getContentPane().add(BtnSalir);
         BtnSalir.setBounds(410, 630, 120, 25);
 
-        setSize(new java.awt.Dimension(998, 717));
+        setSize(new java.awt.Dimension(998, 703));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -650,7 +650,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             //Map[] datos = puerto.getTransaccionesBuscaAdquisicion(cod_almacen, cod_usuario, 1, gestion, solicitud, hoja_ruta, preventivo);
-            System.out.println("WAAAAAAAAAAAAAAAAAAAAAA --> cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario+" cod_almacen: "+cod_almacen+" gestion: "+gestion);
+            System.out.println(":D --> cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario+" cod_almacen: "+cod_almacen+" gestion: "+gestion);
             Map[] datos =puerto.getTransaccionesBuscaAdquisicionTODO2(cod_almacen, cod_usuario, 1, gestion);
             CerearTablaBandeja();
             CerearTablaPedidos();
@@ -1085,7 +1085,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             } catch (Exception e) {
             }
             */
-            ResolucionInicio x = new ResolucionInicio(this.detalle, this.cod_transaccion, this.cod_w, this.cod_almacen,this.menu,this.cod_trans_nro);
+            ResolucionInicio x = new ResolucionInicio(this.detalle, this.cod_transaccion, this.cod_w, this.cod_almacen,this.menu,this.cod_trans_nro,this.gestion);
             x.setVisible(true);
             
             System.out.println("Se cerro ups :P");

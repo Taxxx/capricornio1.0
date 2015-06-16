@@ -25,19 +25,20 @@ public class ResolucionInicio extends javax.swing.JFrame {
      */
     String detalle;
     FrmMenu menu;
-    int cod_transaccion, cod_w, cod_res_ini=0,dias,cod_trans_nro;
+    int cod_transaccion, cod_w, cod_res_ini=0,dias,cod_trans_nro,gestion;
     String envia,dns,dnp,destino,num_resolucion,monto_ppto;
     private int cod_almacen;
     GetResoluciones genera_reportes;
   
-    public ResolucionInicio(String detalle, int cod_transaccion, int cod_w, int cod_almacen, java.awt.Frame menu_ ,int cod_trans_nro_ ) {
+    public ResolucionInicio(String detalle, int cod_transaccion, int cod_w, int cod_almacen, java.awt.Frame menu_ ,int cod_trans_nro,int gestion ) {
         //this.setFocusable(true);
         this.setModalExclusionType(Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         initComponents();
+        this.gestion=gestion;
         this.detalle=detalle;
         this.cod_transaccion=cod_transaccion;
         this.cod_w=cod_w;
-        this.cod_trans_nro=cod_trans_nro_;
+        this.cod_trans_nro=cod_trans_nro;
         this.menu=(FrmMenu) menu_;
         genera_reportes = new  GetResoluciones(cod_almacen);
         bloqueo();
@@ -303,11 +304,12 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.jButton1.setEnabled(true);
                 this.jButton1.setVisible(true);
                 //System.out.println("Devolvio Datos :P"+datos[0].get("DETALLE").toString());
+//                System.out.println("1");
                 this.envia=datos[0].get("ENVIA").toString();
                 this.dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();
                 this.dnp=datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString();
                 this.destino=datos[0].get("DESTINO").toString();
-                this.cod_res_ini=Integer.parseInt(datos[0].get("COD_RES_INI").toString());
+                this.cod_res_ini=Integer.parseInt(datos[0].get("NRO").toString());
                 this.num_resolucion=datos[0].get("NUM_RESOLUCION").toString();
                 dias1=(datos[0].get("DIAS").toString());
 //                this.monto_ppto=datos[0].get("MONTO_PPTO").toString();
@@ -351,15 +353,15 @@ public class ResolucionInicio extends javax.swing.JFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            System.out.println("cod_transaccion: "+cod_transaccion);
-            System.out.println("cod_w: "+cod_w);
-            System.out.println("detalle: "+detalle);
-            System.out.println("envia: "+envia);
-            System.out.println("dns: "+dns);
-            System.out.println("dnp: "+dnp);
-            System.out.println("destino: "+destino);
-            
-            puerto.generaResIni(cod_transaccion, cod_w, detalle, envia, dns, dnp, destino, dias);
+//            System.out.println("cod_transaccion: "+cod_transaccion);
+//            System.out.println("cod_w: "+cod_w);
+//            System.out.println("detalle: "+detalle);
+//            System.out.println("envia: "+envia);
+//            System.out.println("dns: "+dns);
+//            System.out.println("dnp: "+dnp);
+//            System.out.println("destino: "+destino);
+                        
+            puerto.generaResIni(cod_transaccion, 1, detalle, envia, dns, dnp, destino, dias, gestion);
             
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de inicio ha sido generada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);

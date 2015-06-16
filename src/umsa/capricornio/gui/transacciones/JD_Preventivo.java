@@ -282,7 +282,7 @@ public class JD_Preventivo extends javax.swing.JDialog {
             }
         });
         jPanel1.add(JT_Preventivo);
-        JT_Preventivo.setBounds(210, 10, 90, 22);
+        JT_Preventivo.setBounds(210, 10, 90, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 950, 80);
@@ -307,8 +307,9 @@ public class JD_Preventivo extends javax.swing.JDialog {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
 
-        BtnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        BtnSalir.setForeground(new java.awt.Color(0, 102, 51));
+        BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnSalir.setForeground(new java.awt.Color(255, 0, 0));
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/arrow_left.png"))); // NOI18N
         BtnSalir.setMnemonic('S');
         BtnSalir.setText("Cancelar");
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -317,56 +318,58 @@ public class JD_Preventivo extends javax.swing.JDialog {
             }
         });
         jPanel2.add(BtnSalir);
-        BtnSalir.setBounds(290, 180, 120, 30);
+        BtnSalir.setBounds(530, 60, 119, 25);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 204));
-        jButton1.setText("Adicionar Preventivo");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/add.png"))); // NOI18N
+        jButton1.setText(" Preventivo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(500, 180, 170, 25);
+        jButton1.setBounds(370, 60, 130, 25);
 
         jLabel4.setText("Total Autorizado:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(10, 10, 110, 16);
+        jLabel4.setBounds(10, 10, 110, 14);
 
         jLabel5.setText("Total Retenciones:");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(10, 40, 120, 16);
+        jLabel5.setBounds(10, 40, 120, 14);
 
         jLabel6.setText("Total Multas:");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(10, 70, 80, 16);
+        jLabel6.setBounds(10, 70, 80, 14);
 
         jLabel7.setText("Liquido Pagable:");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(10, 100, 100, 16);
+        jLabel7.setBounds(10, 100, 100, 14);
 
         JT_LPagable.setEditable(false);
         JT_LPagable.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(JT_LPagable);
-        JT_LPagable.setBounds(130, 100, 130, 22);
+        JT_LPagable.setBounds(130, 100, 130, 20);
 
         JT_TotalA.setEditable(false);
         JT_TotalA.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(JT_TotalA);
-        JT_TotalA.setBounds(130, 10, 130, 22);
+        JT_TotalA.setBounds(130, 10, 130, 20);
 
         JT_Retenciones.setEditable(false);
         JT_Retenciones.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(JT_Retenciones);
-        JT_Retenciones.setBounds(130, 40, 130, 22);
+        JT_Retenciones.setBounds(130, 40, 130, 20);
 
         JT_Multas.setEditable(false);
         JT_Multas.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(JT_Multas);
-        JT_Multas.setBounds(130, 70, 130, 22);
+        JT_Multas.setBounds(130, 70, 130, 20);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 310, 950, 220);
+        jPanel2.setBounds(10, 310, 950, 150);
 
         JTA_Roperacion.setColumns(20);
         JTA_Roperacion.setRows(5);
@@ -375,7 +378,7 @@ public class JD_Preventivo extends javax.swing.JDialog {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(10, 90, 950, 50);
 
-        setSize(new java.awt.Dimension(989, 596));
+        setSize(new java.awt.Dimension(989, 509));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

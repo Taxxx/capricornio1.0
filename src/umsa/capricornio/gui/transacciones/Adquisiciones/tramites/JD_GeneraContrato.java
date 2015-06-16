@@ -24,6 +24,7 @@ public class JD_GeneraContrato extends javax.swing.JDialog {
     public JD_GeneraContrato(java.awt.Frame parent, boolean modal, int cod_trans_nro) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
         this.cod_trans_nro = cod_trans_nro;
         LlenaForm();
     }
