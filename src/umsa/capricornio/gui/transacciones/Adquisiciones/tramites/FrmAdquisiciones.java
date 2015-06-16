@@ -38,7 +38,7 @@ import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
 /**
  *
- * @author julian
+ * @author henrry
  */
 public class FrmAdquisiciones extends javax.swing.JInternalFrame {
 
@@ -50,7 +50,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     int cod_usuario,cod_rol,gestion,x,tope,ini,fin,cod_almacen;
     private Runtime r;
     private int cod_tramite;
-    /** Creates new form FrmTransacciones */
+    /** Creates new form FrmTransacciones **/
     public FrmAdquisiciones(FrmMenu menu,int cod_usuario,int cod_rol,int gestion,int cod_almacen) {
         this.menu=menu;
         this.cod_usuario=cod_usuario;
