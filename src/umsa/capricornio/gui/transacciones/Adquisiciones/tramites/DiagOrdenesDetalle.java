@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellEditor;
@@ -1791,11 +1792,35 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
            
          }*/
         this.setModal(false);
+        System.out.println(this.cuantia+" sdf "+this.cod_trans_nro);
+        int dias=0;
+        try{
+        AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+        AdquiWS_PortType puerto = servicio.getAdquiWS();
+        Map[] datos=puerto.getDias(cod_trans_nro);
+        System.out.println(datos[0].get("DIAS").toString());
+        dias=Integer.parseInt(datos[0].get("DIAS").toString());
+        }
+        catch(Exception e)
+        {}
+        if(!this.cuantia.equals("ANPE") && dias>15)
+        {
+            System.out.println("si entra aqui "+TxtCasa.getText()+" "+TblItems);
+            ResMay15 jfnew=new ResMay15();
+            //this.jPanel1.add(jfnew);
+            jfnew.setLocationRelativeTo(null);
+            jfnew.setVisible(true);
+        }
+        else
+        {
+            reportes.MostrarOrden(cod_trans_nro, "ADQ", 2, "ORDEN DE COMPRA Y/U ORDEN DE SERVICIO");
+        }
         //this.OrdenCompra(cod_trans_nro, "ADQ", 2, "ORDEN DE COMPRA Y/U ORDEN DE SERVICIO");
-        reportes.MostrarOrden(cod_trans_nro, "ADQ", 2, "ORDEN DE COMPRA Y/U ORDEN DE SERVICIO");
+        
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         this.setModal(false);
