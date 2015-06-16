@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+//import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellEditor;
@@ -232,11 +234,73 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         }
         catch (ServiceException e){ System.out.println(e);}
     }
+     private void verificadias(FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta)
+    {
+        //if(tab_habil==0)
+           // {
+                int t=15;
+                try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos=puerto.getDias(cod_trans_nro);
+            t=15;
+            if(!datos[0].get("DIAS").toString().equals(""))
+            { 
+                System.out.println("ttttt ya tiene dias");
+            }
+            else
+            {
+                boolean sw12=true;
+                do{
+                String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
+                if(resp==null)
+                {
+                    //this.setVisible(false);
+                    this.setVisible(true);
+                    //BtnSalir1.doClick();
+                    System.err.println("jajaja si detecto el cancel");
+                    return;
+                    
+                }
+                if(resp.equals(""))
+                {
+                    System.out.println("s 15");
+                }
+                else{
+                    try{
+                    t=Integer.parseInt(resp);
+                    System.out.println("ttttt "+t);
+                    sw12=true;
+                    }
+                    catch(Exception e){JOptionPane.showMessageDialog (null, "El dato digitado no es un número", "Error", JOptionPane.ERROR_MESSAGE);
+                    sw12=false;}
+                }
+                }while(sw12==false);
+                int res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
+                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                if (res1 != javax.swing.JOptionPane.YES_OPTION) {
+                    return;
+                }
+                Map[] datos1=puerto.setDias(cod_trans_nro,t);
+            }
+        }
+        catch(Exception e)
+        {}
+              try{
+              if(cod_w==6 && cuantia.equals("COMPRA MENOR") && t<=15)
+              {
+                  int cod_alternativo=cod_w;
+              }
+              }catch(Exception e)
+              {}
+        //}
+    }
         
     void AbreItems(){
         int fila = TblTransaccionBandeja.getSelectedRow();
         int cod_trans_nro = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 0).toString());        
         //menu.AbrirOtroFrame(this, new FrmOrdenesDetalle(menu, this,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString()));
+        verificadias(menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString());
         DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString());
         ordenes.AbreDialogo();
 //        ordenes.setVisible(true);

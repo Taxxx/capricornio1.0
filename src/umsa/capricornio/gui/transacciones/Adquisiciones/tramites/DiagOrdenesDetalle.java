@@ -98,17 +98,77 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.hasta = hasta;
         genera_reportes = new GetResoluciones(this.cod_almacen);
         //this.des=dest;
-        
         bloquea();
         System.out.println("Yuhuuuuu :P");
         getDatosAlmacen(cod_trans_nro);
         ConstruyeTablaItems();
+        //verificadias();
 
     }
     /*private void addProv(){
         
      }*/
-
+    private void verificadias()
+    {
+        if(tab_habil==0)
+            {
+                int t=15;
+                try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos=puerto.getDias(this.cod_trans_nro);
+            t=15;
+            if(!datos[0].get("DIAS").toString().equals(""))
+            { 
+                System.out.println("ttttt ya tiene dias");
+            }
+            else
+            {
+                boolean sw12=true;
+                do{
+                String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
+                if(resp==null)
+                {
+                    /*this.setVisible(false);
+                    ft.setVisible(true);*/
+                    BtnSalir1.doClick();
+                    System.err.println("jajaja si detecto el cancel");
+                    //return;
+                    
+                }
+                if(resp.equals(""))
+                {
+                    System.out.println("s 15");
+                }
+                else{
+                    try{
+                    t=Integer.parseInt(resp);
+                    System.out.println("ttttt "+t);
+                    sw12=true;
+                    }
+                    catch(Exception e){JOptionPane.showMessageDialog (null, "El dato digitado no es un número", "Error", JOptionPane.ERROR_MESSAGE);
+                    sw12=false;}
+                }
+                }while(sw12==false);
+                int res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
+                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                if (res1 != javax.swing.JOptionPane.YES_OPTION) {
+                    return;
+                }
+                Map[] datos1=puerto.setDias(this.cod_trans_nro,t);
+            }
+        }
+        catch(Exception e)
+        {}
+              try{
+              if(this.cod_w==6 && cuantia.equals("COMPRA MENOR") && t<=15)
+              {
+                  int cod_alternativo=cod_w;
+              }
+              }catch(Exception e)
+              {}
+        }
+    }
     private void getDatosAlmacen(int cod_trans_nro) {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -1360,60 +1420,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             if (res != javax.swing.JOptionPane.YES_OPTION) {
                 return;
             }
-            if(tab_habil==0)
-            {
-                int t=15;
-                try{
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.getDias(this.cod_trans_nro);
-            t=15;
-            if(!datos[0].get("DIAS").toString().equals(""))
-            { 
-                System.out.println("ttttt ya tiene dias");
-            }
-            else
-            {
-                boolean sw12=true;
-                do{
-                String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
-                if(resp==null)
-                {
-                    return;
-                    //System.err.println("jajaja si detecto el cancel");
-                }
-                if(resp.equals(""))
-                {
-                    System.out.println("s 15");
-                }
-                else{
-                    try{
-                    t=Integer.parseInt(resp);
-                    System.out.println("ttttt "+t);
-                    sw12=true;
-                    }
-                    catch(Exception e){JOptionPane.showMessageDialog (null, "El dato digitado no es un número", "Error", JOptionPane.ERROR_MESSAGE);
-                    sw12=false;}
-                }
-                }while(sw12==false);
-                int res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
-                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
-                if (res1 != javax.swing.JOptionPane.YES_OPTION) {
-                    return;
-                }
-                Map[] datos1=puerto.setDias(this.cod_trans_nro,t);
-            }
-        }
-        catch(Exception e)
-        {}
-              try{
-              if(this.cod_w==6 && cuantia.equals("COMPRA MENOR") && t<=15)
-              {
-                  int cod_alternativo=cod_w;
-              }
-              }catch(Exception e)
-              {}
-        }
+            
             
             try {
                 System.out.println(":P intentando");
