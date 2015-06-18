@@ -28,6 +28,7 @@ import java.net.URLConnection;
 import java.net.MalformedURLException;
 import umsa.capricornio.gui.transacciones.tablas.TablaDocumentos;
 import java.net.URL;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import umsa.capricornio.service.HelloService;
 import umsa.capricornio.utilitarios.herramientas.Archivos;
@@ -42,7 +43,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     TablaPedidos pedidos;
     TablaOrdenes ordenes;
     TablaTransaccionBandejaGral bandeja;
-    
+    JInternalFrame ft;
     FrmMenu menu;
     int cod_transaccion,gestion,cod_w,cod_almacen,cod_usuario,cod_trans_nro,cod_rol,cod_res_ini,num_desiertos;
     String lectura,nombre_archivo,origen, detalle,cuantia;
@@ -57,9 +58,10 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     /**
      * Creates new form DiagOrdenesGenera
      */
-    public DiagOrdenesGenera(FrmMenu menu,int gestion,int cod_almacen,int cod_usuario) {
+    public DiagOrdenesGenera(JInternalFrame fft,FrmMenu menu,int gestion,int cod_almacen,int cod_usuario) {
         super(menu, false);
         initComponents();
+        this.ft=fft;
         this.menu=menu;        
         this.gestion=gestion;        
         this.cod_almacen=cod_almacen;
@@ -1040,6 +1042,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         r = Runtime.getRuntime();
         long mem1 = r.freeMemory();
         dispose();
+        ft.setVisible(true);
     }//GEN-LAST:event_BtnSalirActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
