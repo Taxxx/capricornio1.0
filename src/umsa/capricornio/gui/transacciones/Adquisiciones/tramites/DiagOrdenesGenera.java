@@ -155,7 +155,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.existeReIni(cod_transaccion);
             if(datos!=null)
-                this.cod_res_ini = Integer.parseInt(datos[0].get("COD_RES_INI").toString());
+                this.cod_res_ini = Integer.parseInt(datos[0].get("COD_RESOLUCION").toString());
             else
                 this.cod_res_ini=0;
             

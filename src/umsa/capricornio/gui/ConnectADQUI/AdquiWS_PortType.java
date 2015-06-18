@@ -274,6 +274,11 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] fechasExtra(java.lang.String a, java.lang.String b, int c, int d) throws java.rmi.RemoteException;
     public java.util.HashMap[] notificacionfechas() throws java.rmi.RemoteException;
     public java.util.HashMap[] dias_restantes(int cod_trans_nro) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getPartidas1(int cod) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getdatosres15(int cod) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getres15(int cod, int cod_t_n) throws java.rmi.RemoteException;
+    public java.util.HashMap[] generaRes15(int cod_trans, int cod_trans_nro, java.lang.String dias, java.lang.String cite, java.lang.String destino, java.lang.String objetivo, java.lang.String cotizacion, java.lang.String detalle, java.lang.String enviado, java.lang.String cargo, int gestion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateRes15(int cod, int cod_t_n, java.lang.String cite, java.lang.String destino, java.lang.String objetivo, java.lang.String cotizacion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;
