@@ -742,9 +742,9 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     private void BtnOrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOrdenesActionPerformed
         //menu.AbrirOtroFrame(this, new FrmOrdenesGenera(menu, this, gestion,cod_almacen,cod_usuario ));
         
-        DiagOrdenesGenera ordenes= new DiagOrdenesGenera(menu,gestion,cod_almacen,cod_usuario);
+        DiagOrdenesGenera ordenes= new DiagOrdenesGenera(this,menu,gestion,cod_almacen,cod_usuario);
+        this.setVisible(false);
         ordenes.AbreDialogo(); 
-        
         LlenaBandeja();
     }//GEN-LAST:event_BtnOrdenesActionPerformed
 
