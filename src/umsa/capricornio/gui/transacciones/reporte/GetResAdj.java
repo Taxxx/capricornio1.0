@@ -117,6 +117,29 @@ public class GetResAdj {
             System.out.println("Gravichimo error: "+e);
         }
     }
+    public void reporte15(String hr,String ep,String c,String det,String dest,String obj,String prev,String m,String part,String sc,String cot,String prov,String dias,String cite,String nro_res)
+    {
+        Map parameters = new HashMap();
+        parameters.put("HOJA_RUTA", hr);
+        parameters.put("ENVIADO_POR", ep);
+        parameters.put("CARGO", c);
+        parameters.put("DETALLE", det);
+        parameters.put("DESTINO", dest);
+        parameters.put("OBJETIVO", obj);
+        parameters.put("PREVENTIVO", prev);
+        parameters.put("MONTO", m);
+        parameters.put("PARTIDA", part);
+        parameters.put("SOL_COMPRA", sc);
+        parameters.put("COTIZACION", cot);
+        parameters.put("PROVEEDOR", prov);
+        parameters.put("DIAS", dias);
+        parameters.put("CITE", cite);
+        parameters.put("NRO_RES", nro_res);
+        parameters.put("DIR_DAF", this.dir_daf);
+        RepTransaccion t1 = new RepTransaccion(); 
+        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/RepMay15.jasper");
+        this.imprimePDF(urlMaestro, parameters);
+    }
     public void ReporteAdjServ(String det_adc,String res_adm,String fecha_cc,String inf_div_adq,String proveedor,String detalle,String num_resol,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String prop_proveedor,String proponentes, String cuce, String monto){
         Map parameters = new HashMap();
         
