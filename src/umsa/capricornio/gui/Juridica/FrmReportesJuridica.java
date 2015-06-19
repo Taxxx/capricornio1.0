@@ -178,6 +178,8 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
         DatFec_fin.setBounds(280, 20, 100, 18);
 
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnSalir.setForeground(new java.awt.Color(255, 0, 0));
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
         BtnSalir.setText("Salir");
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,9 +187,11 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(250, 80, 150, 23);
+        BtnSalir.setBounds(250, 80, 150, 25);
 
         BtnReporte.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnReporte.setForeground(new java.awt.Color(0, 0, 255));
+        BtnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/clipboard_text.png"))); // NOI18N
         BtnReporte.setText("Ver Reporte");
         BtnReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,7 +199,7 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnReporte);
-        BtnReporte.setBounds(70, 80, 150, 23);
+        BtnReporte.setBounds(70, 80, 150, 25);
 
         setBounds(0, 0, 481, 156);
     }// </editor-fold>//GEN-END:initComponents

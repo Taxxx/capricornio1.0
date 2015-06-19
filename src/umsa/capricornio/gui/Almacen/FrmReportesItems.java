@@ -49,8 +49,47 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
     public FrmReportesItems(FrmMenu menu) {
         this.menu=menu;
         initComponents();
+        LlenaComboUsuario();
+        LlenaComboTipoItem();
     }
 
+    public void LlenaComboUsuario() {
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+//            Map[] datos = puerto.getAlmacenGestion(gestion);
+            Map[] datos = puerto.getUsuarios();
+            this.JC_Usuario.addItem(" - ELIJA UN USUARIO -");
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    this.JC_Usuario.addItem(datos[c].get("COD_USUARIO") + " - " + datos[c].get("USUARIO"));
+                }
+            }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
+        }
+    }
+    public void LlenaComboTipoItem() {
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos = puerto.getItems();
+            this.JC_TipoItem.addItem(" - ELIJA UN ITEM -");
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    this.JC_TipoItem.addItem(datos[c].get("COD_ITEM") + " - " + datos[c].get("ARTICULO"));
+                }
+            }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
+        }
+    }
     void MostrarReporteIngMaterial(){
         List list=new ArrayList();        
         try{
@@ -155,6 +194,10 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         Rad1 = new javax.swing.JRadioButton();
         Rad2 = new javax.swing.JRadioButton();
+        JC_TipoItem = new javax.swing.JComboBox();
+        JC_Usuario = new javax.swing.JComboBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setTitle("Reportes Boletas de Garantia");
         getContentPane().setLayout(null);
@@ -163,25 +206,27 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Del :");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 20, 70, 20);
+        jLabel1.setBounds(30, 20, 60, 20);
 
         DatFec_ini.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         DatFec_ini.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         getContentPane().add(DatFec_ini);
-        DatFec_ini.setBounds(110, 20, 100, 18);
+        DatFec_ini.setBounds(100, 20, 100, 18);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Al :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(200, 20, 70, 20);
+        jLabel2.setBounds(220, 20, 70, 20);
 
         DatFec_fin.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         DatFec_fin.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         getContentPane().add(DatFec_fin);
-        DatFec_fin.setBounds(280, 20, 100, 18);
+        DatFec_fin.setBounds(300, 20, 100, 18);
 
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnSalir.setForeground(new java.awt.Color(255, 0, 0));
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
         BtnSalir.setText("Salir");
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,9 +234,11 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(240, 160, 150, 23);
+        BtnSalir.setBounds(240, 270, 150, 25);
 
         BtnReporte.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        BtnReporte.setForeground(new java.awt.Color(0, 0, 255));
+        BtnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/clipboard_text.png"))); // NOI18N
         BtnReporte.setText("Ver Reporte");
         BtnReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,25 +246,41 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnReporte);
-        BtnReporte.setBounds(60, 160, 150, 23);
+        BtnReporte.setBounds(60, 270, 150, 23);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(null);
 
+        BtnGrpReporte.add(Rad1);
         Rad1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         Rad1.setText("Usuarios - Items");
         jPanel2.add(Rad1);
         Rad1.setBounds(30, 20, 150, 23);
 
+        BtnGrpReporte.add(Rad2);
         Rad2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         Rad2.setText("Items - Usuarios");
         jPanel2.add(Rad2);
         Rad2.setBounds(210, 20, 117, 23);
+        jPanel2.add(JC_TipoItem);
+        JC_TipoItem.setBounds(120, 60, 250, 20);
+        jPanel2.add(JC_Usuario);
+        JC_Usuario.setBounds(120, 100, 250, 20);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setText("Tipo Item:");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(52, 60, 58, 14);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("Usuario:");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(60, 100, 50, 14);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(30, 60, 390, 70);
+        jPanel2.setBounds(30, 60, 390, 200);
 
-        setBounds(0, 0, 481, 239);
+        setBounds(0, 0, 481, 355);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
@@ -269,17 +332,27 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
     
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
 
+        String cod_item ="";
+        String cod_usuario ="";
+        try {
+            cod_item = this.JC_TipoItem.getSelectedItem().toString().split(" - ")[0];
+            cod_usuario = this.JC_Usuario.getSelectedItem().toString().split(" - ")[0];
+        } catch (Exception e) {
+            
+        }
+        
+        
         if(Rad1.isSelected())
-            MostrarReporteItems(1);
+            MostrarReporteItems(1,cod_item,cod_usuario);
         if(Rad2.isSelected())
-            MostrarReporteItems(2);
+            MostrarReporteItems(2,cod_item,cod_usuario);
         
         
         //JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
         //r.setVisible(true);
     }//GEN-LAST:event_BtnReporteActionPerformed
 
-    private void MostrarReporteItems(int cod_tipo_reporte){
+    private void MostrarReporteItems(int cod_tipo_reporte,String cod_item,String cod_usuario){
         URL urlMaestro,urlImage,urlMaestro2;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");            
@@ -296,6 +369,9 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
 //            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra2.jasper");
 //            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
             parameters.put("imagen",urlImage.toString());
+            parameters.put("cod_item",cod_item);
+//            System.out.println("el cod_usuario es :"+cod_usuario+"aja");
+            parameters.put("cod_usuario",cod_usuario);
 //            parameters.put("TIPO_SOL",ts);
 //            parameters.put("FECHA_INICIO",fi);
 //            parameters.put("FECHA_FINAL",ff);
@@ -318,11 +394,15 @@ public class FrmReportesItems extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSalir;
     private net.sf.nachocalendar.components.DateField DatFec_fin;
     private net.sf.nachocalendar.components.DateField DatFec_ini;
+    private javax.swing.JComboBox JC_TipoItem;
+    private javax.swing.JComboBox JC_Usuario;
     private javax.swing.JRadioButton Rad1;
     private javax.swing.JRadioButton Rad2;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
