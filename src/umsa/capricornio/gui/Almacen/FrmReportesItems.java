@@ -8,8 +8,9 @@
  *
  * Created on 24-11-2011, 06:28:20 PM
  */
-package umsa.capricornio.gui.Juridica;
+package umsa.capricornio.gui.Almacen;
 
+import umsa.capricornio.gui.Juridica.*;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.sql.Connection;
@@ -40,12 +41,12 @@ import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
  *
  * @author julian
  */
-public class FrmReportesJuridica extends javax.swing.JInternalFrame {
+public class FrmReportesItems extends javax.swing.JInternalFrame {
 
     FrmMenu menu;
     private Runtime r;
     /** Creates new form FrmReportesAlmacen */
-    public FrmReportesJuridica(FrmMenu menu) {
+    public FrmReportesItems(FrmMenu menu) {
         this.menu=menu;
         initComponents();
     }
@@ -151,8 +152,11 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
         DatFec_fin = new net.sf.nachocalendar.components.DateField();
         BtnSalir = new javax.swing.JButton();
         BtnReporte = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        Rad1 = new javax.swing.JRadioButton();
+        Rad2 = new javax.swing.JRadioButton();
 
-        setTitle("Reportes de Ingreso de Materiales y Envio de Documentos");
+        setTitle("Reportes Boletas de Garantia");
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -185,7 +189,7 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(250, 80, 150, 23);
+        BtnSalir.setBounds(240, 160, 150, 23);
 
         BtnReporte.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnReporte.setText("Ver Reporte");
@@ -195,9 +199,25 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnReporte);
-        BtnReporte.setBounds(70, 80, 150, 23);
+        BtnReporte.setBounds(60, 160, 150, 23);
 
-        setBounds(0, 0, 481, 156);
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(null);
+
+        Rad1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        Rad1.setText("Usuarios - Items");
+        jPanel2.add(Rad1);
+        Rad1.setBounds(30, 20, 150, 23);
+
+        Rad2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        Rad2.setText("Items - Usuarios");
+        jPanel2.add(Rad2);
+        Rad2.setBounds(210, 20, 117, 23);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(30, 60, 390, 70);
+
+        setBounds(0, 0, 481, 239);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
@@ -249,21 +269,29 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
     
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
 
+        if(Rad1.isSelected())
+            MostrarReporteItems(1);
+        if(Rad2.isSelected())
+            MostrarReporteItems(2);
         
-        MostrarReporteBoletasGarantia();
         
         //JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
         //r.setVisible(true);
     }//GEN-LAST:event_BtnReporteActionPerformed
 
-    private void MostrarReporteBoletasGarantia(){
+    private void MostrarReporteItems(int cod_tipo_reporte){
         URL urlMaestro,urlImage,urlMaestro2;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");            
             Connection conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
             JD_Reporte1 t1 = new JD_Reporte1();
             Map parameters = new HashMap();
-            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteBoletaGarantia.jasper");
+            
+            if(cod_tipo_reporte==1)
+                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteItems3.jasper");
+            else
+                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteItems4.jasper");
+            
             urlImage=t1.getClass().getResource("/umsa/capricornio/gui/images/umsa.jpg");
 //            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra2.jasper");
 //            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
@@ -290,8 +318,11 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSalir;
     private net.sf.nachocalendar.components.DateField DatFec_fin;
     private net.sf.nachocalendar.components.DateField DatFec_ini;
+    private javax.swing.JRadioButton Rad1;
+    private javax.swing.JRadioButton Rad2;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

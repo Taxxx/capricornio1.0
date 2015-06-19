@@ -17,6 +17,7 @@ import javax.swing.JInternalFrame;
 import javax.xml.rpc.ServiceException;
 import umsa.capricornio.domain.Roles;
 import umsa.capricornio.gui.Almacen.FrmReportesAlmacen;
+import umsa.capricornio.gui.Almacen.FrmReportesItems;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.Juridica.FrmReportesJuridica;
@@ -287,6 +288,7 @@ public class FrmMenu extends javax.swing.JFrame {
         ItmRepAlmacen = new javax.swing.JMenuItem();
         ItmDocsEnviados = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -644,6 +646,8 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenReportes.add(ItmDocsEnviados);
 
+        jMenuItem2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(0, 51, 204));
         jMenuItem2.setText("Reporte Boletas de Garantia");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -651,6 +655,16 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
         MenReportes.add(jMenuItem2);
+
+        jMenuItem3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jMenuItem3.setForeground(new java.awt.Color(0, 51, 204));
+        jMenuItem3.setText("Reporte de Items");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        MenReportes.add(jMenuItem3);
 
         MenMenu.add(MenReportes);
 
@@ -828,6 +842,11 @@ public class FrmMenu extends javax.swing.JFrame {
         jd.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmReportesItems(this));
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -870,6 +889,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
