@@ -1806,7 +1806,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         if(!this.cuantia.equals("ANPE") && dias>15)
         {
             System.out.println("si entra aqui "+TxtCasa.getText()+" "+TblItems);
-            ResMay15 jfnew=new ResMay15(menu,false,TxtCasa.getText(),cod_transaccion,cod_trans_nro,gestion);
+            ResMay15 jfnew=new ResMay15(menu,false,TxtCasa.getText(),cod_transaccion,cod_trans_nro,gestion,cod_w);
             //this.jPanel1.add(jfnew);
             jfnew.setLocationRelativeTo(null);
             jfnew.setVisible(true);
