@@ -217,6 +217,14 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             this.jButton11.setEnabled(false);
             BtnGarantia.setEnabled(false);
         }
+//        System.out.println("El cod_rol es: "+cod_rol);
+        if (cod_rol == 7) {
+            this.jButton11.setEnabled(true);
+            BtnGarantia.setEnabled(true);
+        } else {
+            this.jButton11.setEnabled(false);
+            BtnGarantia.setEnabled(false);
+        }
     }
 
     private List<Item> getItemClasificador(int gestion, int partida) {
