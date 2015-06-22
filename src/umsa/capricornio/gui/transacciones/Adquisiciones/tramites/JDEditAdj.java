@@ -90,14 +90,19 @@ public class JDEditAdj extends javax.swing.JDialog {
         });
 
         JT_Nombre.setText(":D");
+        JT_Nombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JT_NombreFocusLost(evt);
+            }
+        });
         JT_Nombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JT_NombreMouseClicked(evt);
             }
         });
-        JT_Nombre.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JT_NombreFocusLost(evt);
+        JT_Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JT_NombreActionPerformed(evt);
             }
         });
 
@@ -318,6 +323,10 @@ public class JDEditAdj extends javax.swing.JDialog {
         // TODO add your handling code here:
         UpdateADJ();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void JT_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JT_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JT_NombreActionPerformed
     private void UpdateADJ(){
         int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea modificar la información del proveedor adjudicado?",
                 "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);

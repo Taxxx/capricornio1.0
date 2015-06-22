@@ -221,7 +221,7 @@ public class JD_CambiaItem extends javax.swing.JDialog {
                 System.out.println("WOOOPAAA2");
                 this.setVisible(false);
             } catch (Exception e) {
-                System.out.println("NOPI :(");
+                System.err.println("NOPI :(");
 //                javax.swing.JOptionPane.showMessageDialog(this,
 //                "ERROR EN EL SERVIDOR "+e ,
 //                "SYSTEM CAPRICORN", javax.swing.JOptionPane.ERROR_MESSAGE);

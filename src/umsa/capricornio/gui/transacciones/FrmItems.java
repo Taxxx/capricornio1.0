@@ -574,7 +574,6 @@ public class FrmItems extends javax.swing.JInternalFrame {
                         cantidad_tram = Integer.parseInt(datos[0].get("CANTIDAD").toString());
                         break;
                     }
-                
                 }
         }
         catch (RemoteException e){

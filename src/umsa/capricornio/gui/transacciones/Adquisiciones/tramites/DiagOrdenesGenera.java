@@ -157,7 +157,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos=puerto.existeReIni(cod_transaccion);
             if(datos!=null)
-                this.cod_res_ini = Integer.parseInt(datos[0].get("COD_RES_INI").toString());
+                this.cod_res_ini = Integer.parseInt(datos[0].get("COD_RESOLUCION").toString());
             else
                 this.cod_res_ini=0;
             
@@ -254,42 +254,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     public void AbreDialogo(){
         setVisible(true);
     }
-    /*private void LlenaDocumentos(){        
-        try{
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.getDocumentos(cod_transaccion);
-            CerearTablaDocumentos();
-            if (datos!=null){
-                for (int c=0;c<datos.length;c++){
-                    documentos.insert(c);
-                    TblDocumentos.tableChanged(new TableModelEvent(documentos, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
-                    TblDocumentos.setValueAt(datos[c].get("COD_DOCS"),c,0);
-                    TblDocumentos.setValueAt(datos[c].get("COD_TRANSACCION"),c,1);                    
-                    TblDocumentos.setValueAt(datos[c].get("TERMINOS_REF"),c,2);                    
-                    TblDocumentos.setValueAt(datos[c].get("UBICACION"),c,3);
-                    TblDocumentos.setValueAt(datos[c].get("DESCRIPCION"),c,4);
-                            
-                }
-            }
-        }
-        catch (RemoteException e){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
-        catch (ServiceException e){ System.out.println(e);}        
-    }*/
-    
-    /*void CerearTablaDocumentos(){
-        int f = TblDocumentos.getRowCount();
-        for (int i=f-1;i>=0;i--){
-             if (documentos.delete(i)) {
-                TblDocumentos.tableChanged(new TableModelEvent(
-                documentos, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
-             }
-        }
-    } */
-    
+       
     boolean AdjuntarArchivo(String ruta_archivo,String nombre_archivo) {
      boolean sw=false;   
             HessianProxyFactory proxy = new HessianProxyFactory();
@@ -615,7 +580,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(jButton3);
-        jButton3.setBounds(390, 220, 110, 25);
+        jButton3.setBounds(400, 220, 110, 25);
 
         BtnAsignarTodo.setBackground(new java.awt.Color(51, 51, 51));
         BtnAsignarTodo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N

@@ -25,7 +25,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
      */
     String detalle;
     FrmMenu menu;
-    int cod_transaccion, cod_w, cod_res_ini=0,dias,cod_trans_nro,gestion;
+    int cod_transaccion, cod_w, cod_res_ini=0,dias,cod_trans_nro,gestion,cod_resolucion;
     String envia,dns,dnp,destino,num_resolucion,monto_ppto;
     private int cod_almacen;
     GetResoluciones genera_reportes;
@@ -309,6 +309,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();
                 this.dnp=datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString();
                 this.destino=datos[0].get("DESTINO").toString();
+                this.cod_resolucion = Integer.parseInt(datos[0].get("COD_RESOLUCION").toString());
                 this.cod_res_ini=Integer.parseInt(datos[0].get("NRO").toString());
                 this.num_resolucion=datos[0].get("NUM_RESOLUCION").toString();
                 dias1=(datos[0].get("DIAS").toString());
@@ -420,7 +421,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             this.destino=this.JTFDestino.getText();
 //            this.dias=Integer.parseInt(this.jTextField1.getText());
             
-            puerto.updateResIni(cod_res_ini, envia, dns, dnp, destino, dias);
+            puerto.updateResIni(cod_resolucion, envia, dns, dnp, destino, dias);
             //puerto.generaResIni(cod_transaccion, cod_w, detalle, envia, dns, dnp, destino);
             System.out.println("Exito :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de inicio ha sido modificada exitosamente","SYSTEM CAPRICORN",
