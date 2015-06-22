@@ -42,7 +42,7 @@ public class JD_CambiaPartida extends javax.swing.JDialog {
                 AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                 AdquiWS_PortType puerto = servicio.getAdquiWS();           
                 Map[] datos=puerto.getPartidas(String.valueOf(gestion));
-                this.JC_Partidas.addItem("- ELIJA UN TIPO DE TRAMITE -");
+                this.JC_Partidas.addItem("- ELIJA UNA PARTIDA -");
                 if (datos!=null){
                     for (int c=0;c<datos.length;c++){
                         this.JC_Partidas.addItem(datos[c].get("PARTIDA")+" - "+datos[c].get("DETALLE") );

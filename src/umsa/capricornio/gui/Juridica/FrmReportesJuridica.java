@@ -253,14 +253,16 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
     
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
 
-        
-        MostrarReporteBoletasGarantia();
+        Date fi,ff;
+        fi=(Date) DatFec_ini.getValue();
+        ff=(Date) DatFec_fin.getValue();
+        MostrarReporteBoletasGarantia(fi,ff);
         
         //JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
         //r.setVisible(true);
     }//GEN-LAST:event_BtnReporteActionPerformed
 
-    private void MostrarReporteBoletasGarantia(){
+    private void MostrarReporteBoletasGarantia(Date fi,Date ff){
         URL urlMaestro,urlImage,urlMaestro2;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");            
@@ -272,6 +274,8 @@ public class FrmReportesJuridica extends javax.swing.JInternalFrame {
 //            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra2.jasper");
 //            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
             parameters.put("imagen",urlImage.toString());
+            parameters.put("fecha_ini1",fi);
+            parameters.put("fecha_fin1",ff);
 //            parameters.put("TIPO_SOL",ts);
 //            parameters.put("FECHA_INICIO",fi);
 //            parameters.put("FECHA_FINAL",ff);

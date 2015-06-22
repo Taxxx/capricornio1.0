@@ -206,12 +206,16 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             this.jButton5.setEnabled(false);
             this.jButton6.setEnabled(false);
             this.jButton10.setEnabled(false);
-            if (cod_rol == 7) {
-                this.jButton11.setEnabled(true);
-            } else {
-                this.jButton11.setEnabled(false);
-            }
+            
 //            this.jButton12.setEnabled(false);
+        }
+//        System.out.println("El cod_rol es: "+cod_rol);
+        if (cod_rol == 7) {
+            this.jButton11.setEnabled(true);
+            BtnGarantia.setEnabled(true);
+        } else {
+            this.jButton11.setEnabled(false);
+            BtnGarantia.setEnabled(false);
         }
     }
 
