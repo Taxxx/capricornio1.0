@@ -87,7 +87,7 @@ public class ResMay15 extends javax.swing.JDialog {
     }
     public void llena_checks()
     {
-        String v[]=documentos.split(",");
+        String v[]=documentos.split("#");
         for(int i=0;i<v.length;i++)
         {
             System.out.println(v[i]);
@@ -673,35 +673,35 @@ public class ResMay15 extends javax.swing.JDialog {
         String x="";
         if(jCheckBox1.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox1.getText()+",";
+            x=x+"- "+jCheckBox1.getText()+"#";
         }
         if(jCheckBox2.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox2.getText()+",";
+            x=x+"- "+jCheckBox2.getText()+"#";
         }
         if(jCheckBox3.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox3.getText()+",";
+            x=x+"- "+jCheckBox3.getText()+"#";
         }
         if(jCheckBox4.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox4.getText()+",";
+            x=x+"- "+jCheckBox4.getText()+"#";
         }
         if(jCheckBox5.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox5.getText()+",";
+            x=x+"- "+jCheckBox5.getText()+"#";
         }
         if(jCheckBox6.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox6.getText()+",";
+            x=x+"- "+jCheckBox6.getText()+"#";
         }
         if(jCheckBox7.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox7.getText()+",";
+            x=x+"- "+jCheckBox7.getText()+"#";
         }
         if(jCheckBox8.getSelectedObjects()!=null)
         {
-            x=x+"- "+jCheckBox8.getText()+",";
+            x=x+"- "+jCheckBox8.getText()+"#";
         }
         return x;
         
