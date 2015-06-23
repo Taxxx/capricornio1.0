@@ -25,14 +25,14 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getReporteSolicitudBorrador2(int cod_transaccion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getReporteOrdenDescargox(int cod_transaccion, java.lang.String estado, int cod_tramite) throws java.rmi.RemoteException;
     public java.util.HashMap[] getReporteOrdenx(int cod_trans_nro, java.lang.String estado, int cod_tramite) throws java.rmi.RemoteException;
-    public java.util.HashMap[] getUnidadEjecutora(int gestion) throws java.rmi.RemoteException;
-    public java.util.HashMap[] setTransaccionDetalleNro(java.lang.String tran, int cod_trans_detalle, int cod_trans_nro) throws java.rmi.RemoteException;
-    public java.util.HashMap[] getBuscaItems(java.lang.String articulo) throws java.rmi.RemoteException;
     public java.util.HashMap[] getUsuario(java.lang.String apodo, java.lang.String clave) throws java.rmi.RemoteException;
     public java.util.HashMap[] getUsuario() throws java.rmi.RemoteException;
     public java.util.HashMap[] setUsuario(java.lang.String tran, java.lang.String apodo, java.lang.String clave, java.lang.String usuario, java.lang.String nombre_resumen) throws java.rmi.RemoteException;
     public java.util.HashMap[] getGestion(int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getGestion() throws java.rmi.RemoteException;
+    public java.util.HashMap[] getUnidadEjecutora(int gestion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] setTransaccionDetalleNro(java.lang.String tran, int cod_trans_detalle, int cod_trans_nro) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getBuscaItems(java.lang.String articulo) throws java.rmi.RemoteException;
     public java.util.HashMap[] getPartida(int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTipoItem() throws java.rmi.RemoteException;
     public java.util.HashMap[] getUnidadMedida() throws java.rmi.RemoteException;
