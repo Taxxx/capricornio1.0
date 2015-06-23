@@ -402,7 +402,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBox2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Certificado de No adeudo a las AFP&#x2019;s Futuro y Previsi&#xf3;n"/>
+        <Property name="text" type="java.lang.String" value="Certificado de No adeudo a las AFPs Futuro y Previsi&#xf3;n"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBox3">

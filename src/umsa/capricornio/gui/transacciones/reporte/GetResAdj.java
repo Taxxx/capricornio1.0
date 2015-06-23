@@ -117,7 +117,7 @@ public class GetResAdj {
             System.out.println("Gravichimo error: "+e);
         }
     }
-    public void reporte15(String hr,String ep,String c,String det,String dest,String obj,String prev,String m,String part,String sc,String cot,String prov,String dias,String cite,String nro_res,int estado,String doc)
+    public void reporte15(String hr,String ep,String c,String det,String dest,String obj,String prev,String m,String part,String sc,String cot,String prov,String dias,String cite,String nro_res,int estado,String doc,String fec_ini)
     {
         Map parameters = new HashMap();
         parameters.put("HOJA_RUTA", hr);
@@ -138,6 +138,7 @@ public class GetResAdj {
         parameters.put("DIR_DAF", this.dir_daf);
         parameters.put("ESTADO", estado);
         parameters.put("DOCUMENTOS", doc);
+        parameters.put("FECHA", fec_ini);
         RepTransaccion t1 = new RepTransaccion(); 
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReportMay15Cons.jasper");
         this.imprimePDF(urlMaestro, parameters);

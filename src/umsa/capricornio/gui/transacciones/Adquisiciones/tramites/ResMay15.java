@@ -73,6 +73,12 @@ public class ResMay15 extends javax.swing.JDialog {
     {
         jButton4.setVisible(false);
         jButton5.setVisible(false);
+        if(cod_w!=1)
+            bloquea3();
+    }
+    public void bloquea3()
+    {
+        jTextField6.setEnabled(false);
     }
     public void bloquea_check(Boolean x)
     {
@@ -138,7 +144,7 @@ public class ResMay15 extends javax.swing.JDialog {
             {
                 jTextField1.setText(datos[0].get("CITE").toString());
                 jTextField2.setText(datos[0].get("CARGO").toString());
-                SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat formatoDeFecha = new SimpleDateFormat("MM/dd/yyyy");
                 String strf=(datos[0].get("FECHA_INICIO_CON").toString());
                 System.out.println(strf);
                 Fecha1.setValue(formatoDeFecha.parse(strf));
@@ -405,7 +411,7 @@ public class ResMay15 extends javax.swing.JDialog {
 
         jCheckBox1.setText("Certificado del RUPE (Registro único de Proveedores del Estado)");
 
-        jCheckBox2.setText("Certificado de No adeudo a las AFP’s Futuro y Previsión");
+        jCheckBox2.setText("Certificado de No adeudo a las AFPs Futuro y Previsión");
 
         jCheckBox3.setText("Fotocopia de Cédula de Identidad");
 
@@ -634,17 +640,18 @@ public class ResMay15 extends javax.swing.JDialog {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        if(cod_w==1)
+            jTextField6.setEnabled(true);
         jButton1.setEnabled(false);
+        Fecha1.setEnabled(true);
         jButton3.setEnabled(false);
         jButton4.setEnabled(false);
         jTextField1.setEnabled(true);
-        Fecha1.setEnabled(true);
         jTextField2.setEnabled(true);
         //jTextField4.setEnabled(true);
         //jTextField5.setEnabled(true);
         jTextArea1.setEnabled(true);
         jTextArea2.setEnabled(true);
-        jTextField6.setEnabled(true);
         bloquea_check(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -656,12 +663,14 @@ public class ResMay15 extends javax.swing.JDialog {
         destino=jTextArea1.getText();
         objetivo=jTextArea2.getText();
         cotizacion=jTextField6.getText();
-        
+        cargo=jTextField2.getText();
+        SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd/MM/yyyy");
+        fec_ini=formatoDeFecha.format(Fecha1.getValue());
         llena_campos();
         montocompleto();
         String doc=obtiene_doc_imp();
         try{
-            this.genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc);
+            this.genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc,fec_ini);
         }catch(Exception e)
         {
             
