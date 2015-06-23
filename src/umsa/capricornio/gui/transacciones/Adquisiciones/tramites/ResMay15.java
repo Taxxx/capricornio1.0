@@ -74,11 +74,23 @@ public class ResMay15 extends javax.swing.JDialog {
         jButton4.setVisible(false);
         jButton5.setVisible(false);
     }
+    public void bloquea_check(Boolean x)
+    {
+        jCheckBox1.setEnabled(x);
+        jCheckBox2.setEnabled(x);
+        jCheckBox3.setEnabled(x);
+        jCheckBox4.setEnabled(x);
+        jCheckBox5.setEnabled(x);
+        jCheckBox6.setEnabled(x);
+        jCheckBox7.setEnabled(x);
+        jCheckBox8.setEnabled(x);
+    }
     public void llena_checks()
     {
-        String v[]=documentos.split("<br/>");
-        for(int i=1;i<=v.length;i++)
+        String v[]=documentos.split(",");
+        for(int i=0;i<v.length;i++)
         {
+            System.out.println(v[i]);
             if(v[i].equals("- "+jCheckBox1.getText()))
             {
                 jCheckBox1.setSelected(true);
@@ -119,7 +131,8 @@ public class ResMay15 extends javax.swing.JDialog {
         {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.getres15(cod_transaccion,cod_trans_nro);
+            System.out.println(cod_transaccion+" ggg "+cod_trans_nro);
+            Map[] datos=puerto.getresmay(cod_transaccion,cod_trans_nro);
             System.out.println("asdfsfsdfsdf"+datos);
             if(datos!=null)
             {
@@ -133,8 +146,9 @@ public class ResMay15 extends javax.swing.JDialog {
                 jTextArea2.setText(datos[0].get("OBJETIVO").toString());
                 jTextField6.setText(datos[0].get("COTIZACION").toString());
                 nro_res=datos[0].get("NRO").toString();
-                //documentos=datos[0].get("DOCUMENTOS").toString();
-                //llena_checks();
+                documentos=datos[0].get("DOCUMENTOS").toString();
+                llena_checks();
+                bloquea_check(false);
                 bloquea();
             }
             else
@@ -143,7 +157,7 @@ public class ResMay15 extends javax.swing.JDialog {
             }
         }catch(Exception e)
         {
-            
+            System.err.println("noooooo "+e);
         }
     }
     String TotalTexto(String total){
@@ -624,11 +638,14 @@ public class ResMay15 extends javax.swing.JDialog {
         jButton3.setEnabled(false);
         jButton4.setEnabled(false);
         jTextField1.setEnabled(true);
+        Fecha1.setEnabled(true);
+        jTextField2.setEnabled(true);
         //jTextField4.setEnabled(true);
         //jTextField5.setEnabled(true);
         jTextArea1.setEnabled(true);
         jTextArea2.setEnabled(true);
         jTextField6.setEnabled(true);
+        bloquea_check(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -642,7 +659,7 @@ public class ResMay15 extends javax.swing.JDialog {
         
         llena_campos();
         montocompleto();
-        String doc=obtiene_doc();
+        String doc=obtiene_doc_imp();
         try{
             this.genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc);
         }catch(Exception e)
@@ -652,6 +669,44 @@ public class ResMay15 extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private String obtiene_doc()
+    {
+        String x="";
+        if(jCheckBox1.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox1.getText()+",";
+        }
+        if(jCheckBox2.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox2.getText()+",";
+        }
+        if(jCheckBox3.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox3.getText()+",";
+        }
+        if(jCheckBox4.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox4.getText()+",";
+        }
+        if(jCheckBox5.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox5.getText()+",";
+        }
+        if(jCheckBox6.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox6.getText()+",";
+        }
+        if(jCheckBox7.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox7.getText()+",";
+        }
+        if(jCheckBox8.getSelectedObjects()!=null)
+        {
+            x=x+"- "+jCheckBox8.getText()+",";
+        }
+        return x;
+        
+    }
+    private String obtiene_doc_imp()
     {
         String x="";
         if(jCheckBox1.getSelectedObjects()!=null)
