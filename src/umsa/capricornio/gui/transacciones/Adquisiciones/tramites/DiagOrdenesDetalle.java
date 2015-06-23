@@ -877,7 +877,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
         jButton3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/report.png"))); // NOI18N
-        jButton3.setText("Orden de Compra");
+        jButton3.setText("O. Compra - Resolucion");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
