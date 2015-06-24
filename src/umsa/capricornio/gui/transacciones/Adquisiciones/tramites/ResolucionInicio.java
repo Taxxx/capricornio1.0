@@ -487,10 +487,37 @@ public class ResolucionInicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        int sw=0,sw1=0;
+        String proceso = null,fecha = null;
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos = puerto.getCuceSicoes(cod_transaccion);
+            System.err.println("uno");
+            Map[] datos1 =puerto.getResIni(cod_transaccion);
+            System.err.println("uno");
+            if(datos1==null)
+            {
+                sw=1;
+            }
+            else{
+                sw=0;
+            }
+            System.err.println("uno"+cod_trans_nro);
+            Map[] datos2=puerto.dias_restantes(cod_trans_nro);
+            System.err.println("uno");
+            int dias=Integer.parseInt(datos2[0].get("DIAS_RESTANTES").toString());
+            System.out.println("estos son los dias "+ dias);
+            if(dias>=0)
+            {
+                sw1=0;
+            }
+            else
+            {
+                proceso=datos2[0].get("PROCESO").toString();
+                fecha=datos2[0].get("FECHA").toString();
+                sw1=1;
+            }
             System.out.println("asdasd "+datos);
             if(!datos[0].get("CUCE_SICOES").toString().equals("")){
                 System.out.println("--> "+datos[0].get("CUCE_SICOES").toString());
@@ -511,9 +538,20 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO "+e);
         }
-        JD_FECH_ANPE JDF = new JD_FECH_ANPE(this, false, this.cod_trans_nro, this.cod_transaccion);
-        JDF.setVisible(true);
+        if(sw==0)
+        {
+            if(sw1==0)
+            {
+            JD_FECH_ANPE JDF = new JD_FECH_ANPE(this, false, this.cod_trans_nro, this.cod_transaccion);
+            JDF.setVisible(true);
+            }
+            else
+               JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO: \n"+proceso+" HA EXPIRTADO EL TIEMPO ESTABLECIDO: "+fecha+"\nDEBE PRESENTAR UNA PRORROGA PARA REANUDARLO" ); 
+        }
+        else
+            JOptionPane.showMessageDialog(this, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO");
         //JDF.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

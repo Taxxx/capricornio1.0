@@ -69,7 +69,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     TablaOrden orden;
     private boolean sw;
     private int cod_transaccion;
-    private String des;
+    private String des,dias;
     private Proveedor proveedor;
     GetResoluciones genera_reportes;
 
@@ -103,7 +103,13 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         System.out.println("Yuhuuuuu :P");
         getDatosAlmacen(cod_trans_nro);
         ConstruyeTablaItems();
-        //verificadias();
+        if(cuantia.equals("COMPRA MENOR"))
+            verificadias();
+        else
+        {
+            jLabel14.setVisible(false);
+            jLabel9.setVisible(false);
+        }
 
     }
     /*private void addProv(){
@@ -111,6 +117,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
      }*/
     private void verificadias()
     {
+        jLabel14.setVisible(true);
+        jLabel9.setVisible(true);
         if(tab_habil==0)
             {
                 int t=15;
@@ -122,17 +130,20 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             if(!datos[0].get("DIAS").toString().equals(""))
             { 
                 System.out.println("ttttt ya tiene dias");
+                dias=datos[0].get("DIAS").toString();
+                jLabel14.setText(dias);
             }
             else
             {
-                boolean sw12=true;
+                System.out.println("aqui era");
+                /*boolean sw12=true;
                 do{
                 String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
                 if(resp==null)
                 {
                     /*this.setVisible(false);
                     ft.setVisible(true);*/
-                    BtnSalir1.doClick();
+                    /*BtnSalir1.doClick();
                     System.err.println("jajaja si detecto el cancel");
                     //return;
                     
@@ -156,7 +167,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 if (res1 != javax.swing.JOptionPane.YES_OPTION) {
                     return;
                 }
-                Map[] datos1=puerto.setDias(this.cod_trans_nro,t);
+                Map[] datos1=puerto.setDias(this.cod_trans_nro,t);*/
             }
         }
         catch(Exception e)
@@ -642,6 +653,9 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         LblDe = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         PnlItems = new javax.swing.JScrollPane();
         TblItems = new javax.swing.JTable();
         TabTransaccion = new javax.swing.JTabbedPane();
@@ -802,6 +816,29 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jLabel13.setText("A :");
         jPanel1.add(jLabel13);
         jLabel13.setBounds(450, 90, 30, 20);
+
+        jButton14.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/alarm.png"))); // NOI18N
+        jButton14.setText("Fechas Limite");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton14);
+        jButton14.setBounds(930, 30, 210, 25);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 102, 51));
+        jLabel9.setText("Tiempo: ");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(980, 90, 50, 20);
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(44, 59, 89));
+        jLabel14.setText("jLabel14");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(1040, 90, 40, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 1140, 120);
@@ -1624,6 +1661,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
          tab_habil=1;
          } */
         CalFechaFact.setEnabled(false);
+        jButton14.setVisible(false);
         if (cod_rol == 2) {
             System.out.println("Entro a la Restricción");
             TxtFactura.setEditable(true);
@@ -1639,6 +1677,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             tab_habil = 0;
             TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAlmacen), false);
         } else if (cod_rol == 7) {
+            jButton14.setVisible(true);
             TabTransaccion.setVisible(false);
             BtnGuardar.setEnabled(false);
             this.setSize(this.getWidth(), this.getHeight() - 160);
@@ -1989,8 +2028,16 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             System.out.println("estos son los dias "+ dias);
             if(dias>=0)
             {
-                JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
-                JDF.setVisible(true);
+                Map[] datos1 =puerto.getResIni(cod_transaccion);
+                if(datos1==null)
+                {
+                    JOptionPane.showMessageDialog(this, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO");
+                }
+                else
+                {
+                    JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
+                    JDF.setVisible(true);
+                }
             }
             else
             {
@@ -1999,7 +2046,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         }catch(Exception e)
         {
-            
+            JOptionPane.showMessageDialog(null, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO");
         }
         
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -2028,6 +2075,40 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.setVisible(false);
         ft.setVisible(true);
     }//GEN-LAST:event_BtnSalir1ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] d=puerto.getCod_Trans(cod_transaccion);
+            int cod_T_N=Integer.parseInt(d[0].get("COD_TRANS_NRO").toString());
+            Map[] datos=puerto.dias_restantes(cod_T_N);
+            int dias=Integer.parseInt(datos[0].get("DIAS_RESTANTES").toString());
+            System.out.println("estos son los dias "+ dias);
+            if(dias>=0)
+            {
+                Map[] datos1 =puerto.getResIni(cod_transaccion);
+                if(datos1==null)
+                {
+                    JOptionPane.showMessageDialog(this, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO");
+                }
+                else
+                {
+                    JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
+                    JDF.setVisible(true);
+                }
+            }
+            else
+            {
+                
+                JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO: \n"+datos[0].get("PROCESO").toString()+" HA EXPIRTADO EL TIEMPO ESTABLECIDO: "+datos[0].get("FECHA")+"\nDEBE PRESENTAR UNA PRORROGA PARA REANUDARLO" );
+            }
+        }catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO");
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
 
     private void GuardarDatos(String hoja_ruta) {
         try {
@@ -2095,6 +2176,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2108,6 +2190,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2115,6 +2198,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

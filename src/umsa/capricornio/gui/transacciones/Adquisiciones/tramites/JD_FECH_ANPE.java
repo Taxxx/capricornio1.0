@@ -421,6 +421,8 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         this.hora2.setEnabled(false);
         //jCheckBox12.setEnabled(false);
         jCheckBox13.setEnabled(false);
+        jCheckBox7.setEnabled(false);
+        jCheckBox8.setEnabled(false);
         
     }
     private void DesbloqueaInputs(){
