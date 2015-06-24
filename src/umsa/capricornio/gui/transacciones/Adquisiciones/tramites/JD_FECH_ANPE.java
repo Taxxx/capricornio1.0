@@ -8,9 +8,12 @@ package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 import javax.swing.JCheckBox;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
@@ -31,7 +34,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
     /**
      * Creates new form JD_FECH_ANPE
      */
-    private int cod_trans_nro, cod_transaccion,cod_alternativo;
+    private int cod_trans_nro, cod_transaccion,cod_alternativo,cod_rol=-1;
     boolean sw_datos = true;
     public JD_FECH_ANPE(java.awt.Frame parent, boolean modal, int cod_trans_nro, int cod_transaccion) {
         super(parent, modal);
@@ -40,6 +43,20 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         System.out.println("esto de aqui si entro");
         this.cod_trans_nro = cod_trans_nro;
         this.cod_transaccion = cod_transaccion;
+        LlenaFormulario();
+        //llenapasouno();
+        //this.JT_CUCE.setText(getCuce());
+        this.setLocationRelativeTo(null);
+        //bloquea_check();
+    }
+    public JD_FECH_ANPE(java.awt.Frame parent, boolean modal, int cod_trans_nro, int cod_transaccion, int cod_roln) {
+        super(parent, modal);
+        initComponents();
+//        EstiloFechaInput();
+        System.out.println("esto de aqui si entro");
+        this.cod_trans_nro = cod_trans_nro;
+        this.cod_transaccion = cod_transaccion;
+        cod_rol=cod_roln;
         LlenaFormulario();
         //llenapasouno();
         //this.JT_CUCE.setText(getCuce());
@@ -130,6 +147,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
             SimpleDateFormat form = new SimpleDateFormat("MM/dd/yyyy");
             SimpleDateFormat formSalida = new SimpleDateFormat("MMM/dd/yyyy");
             if (datos != null) {
+                BloqueaInputs();
                 for (int f = 0; f < datos.length; f++) {
 //                    System.out.println(f+" -->" + datos[f].get("COD_RES_FEC_PRO").toString());
                     int ff=Integer.parseInt(datos[f].get("COD_TIPO_RESF").toString())-1;
@@ -377,7 +395,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                             
                 }
                this.jButton1.setEnabled(false);
-               BloqueaInputs();
+               
             }
             else{
                 System.out.println("Vacio :0");
@@ -421,8 +439,16 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         this.hora2.setEnabled(false);
         //jCheckBox12.setEnabled(false);
         jCheckBox13.setEnabled(false);
-        jCheckBox7.setEnabled(false);
-        jCheckBox8.setEnabled(false);
+        if(cod_rol==7)
+        {
+            jCheckBox7.setEnabled(true);
+            jCheckBox8.setEnabled(true);
+        }
+        else
+        {
+            jCheckBox7.setEnabled(false);
+            jCheckBox8.setEnabled(false);
+        }
         
     }
     private void DesbloqueaInputs(){
@@ -1405,7 +1431,17 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
                 System.out.println(xd);
                 if(xd==0)
                 {
-                    jc.setText(salida.format(formattedDate));
+                    System.out.println(formattedDate+" hola");
+                    Date xxxx=null;
+                    try {
+                        xxxx=inputFormat.parse(formattedDate);
+                    } catch (ParseException ex) {
+                        System.out.println("sjfhksdjfhkjdsfhksdjhfkjdshfkjds");
+                        Logger.getLogger(JD_FECH_ANPE.class.getName()).log(Level.SEVERE, null, ex);
+                        
+                    }
+                    
+                    jc.setText(salida.format(xxxx));
                     jc.setEnabled(false);
                     try {
                         AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();

@@ -836,9 +836,9 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(44, 59, 89));
-        jLabel14.setText("jLabel14");
+        jLabel14.setText("no tiene");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(1040, 90, 40, 20);
+        jLabel14.setBounds(1040, 90, 60, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 1140, 120);
@@ -1433,7 +1433,6 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         } else {
             sw = true;
         }
-        
         System.out.println("El cod_rol" + cod_rol);
         System.out.println("si aparece la cuantia " + cuantia);
         //System.out.println("El cod"+this.proveedor.getCod_proveedor());
@@ -1453,7 +1452,16 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         System.out.println(cod_TN);
         Map[] dat=puerto1.dias_restantes(cod_TN);
         System.err.println("zxfadsfsdfasdf "+dat[0].get("NUM").toString());
-        if(Integer.parseInt(dat[0].get("NUM").toString())!=9 && tab_habil==0 && cuantia.equals("ANPE"))
+        if(cod_rol==7 && Integer.parseInt(dat[0].get("NUM").toString())!=11 && cuantia.equals("ANPE"))
+        {
+            JOptionPane.showMessageDialog(null, "DEBE REALIZAR EL CONTROL DE FECHAS DE LOS PROCESOS ANPE");
+            return;
+        }
+        else
+        {
+            System.out.println("entro al else de juridicas");
+        }
+        if(Integer.parseInt(dat[0].get("NUM").toString())!=10 && tab_habil==0 && cuantia.equals("ANPE"))
         {
             JOptionPane.showMessageDialog(null, "DEBE REALIZAR EL CONTROL DE FECHAS DE LOS PROCESOS ANPE");
             return;
@@ -1677,7 +1685,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             tab_habil = 0;
             TabTransaccion.setEnabledAt(TabTransaccion.indexOfComponent(PnlAlmacen), false);
         } else if (cod_rol == 7) {
-            jButton14.setVisible(true);
+            if(cuantia.equals("ANPE"))
+                jButton14.setVisible(true);
             TabTransaccion.setVisible(false);
             BtnGuardar.setEnabled(false);
             this.setSize(this.getWidth(), this.getHeight() - 160);
@@ -2095,13 +2104,15 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 }
                 else
                 {
-                    JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion);
-                    JDF.setVisible(true);
+                    if(cod_rol==7)
+                    {
+                        JD_FECH_ANPE JDF = new JD_FECH_ANPE(menu, false, this.cod_trans_nro, this.cod_transaccion,cod_rol);
+                        JDF.setVisible(true);
+                    }
                 }
             }
             else
-            {
-                
+            {      
                 JOptionPane.showMessageDialog(null, "DEBIDO A QUE EL PROCESO: \n"+datos[0].get("PROCESO").toString()+" HA EXPIRTADO EL TIEMPO ESTABLECIDO: "+datos[0].get("FECHA")+"\nDEBE PRESENTAR UNA PRORROGA PARA REANUDARLO" );
             }
         }catch(Exception e)
