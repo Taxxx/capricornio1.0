@@ -227,11 +227,11 @@ public class GetResoluciones {
    }
     String formato(String t)
     {
-        System.out.println("aejrhaeusdhuiasdfhiudshf "+t);
+//        System.out.println("aejrhaeusdhuiasdfhiudshf "+t);
         try{
            double m=Double.parseDouble(t);  
         DecimalFormat formato_decimal = new DecimalFormat("###,###.##");
-        System.out.println("swdasda"+formato_decimal.format(m));
+//        System.out.println("swdasda"+formato_decimal.format(m));
         //String d=formato_decimal.format(t).toString();
         return (String.valueOf(formato_decimal.format(m)).toString());
         }
