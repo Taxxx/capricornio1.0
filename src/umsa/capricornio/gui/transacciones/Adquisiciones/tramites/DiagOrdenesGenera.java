@@ -444,7 +444,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(BtnRetorno);
-        BtnRetorno.setBounds(110, 80, 170, 25);
+        BtnRetorno.setBounds(120, 80, 170, 25);
 
         JB_RI.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_RI.setForeground(new java.awt.Color(0, 102, 102));
@@ -478,15 +478,15 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         JTA_ObsAdqui.setRows(5);
         JTA_ObsAdqui.setBorder(javax.swing.BorderFactory.createTitledBorder("Observacion"));
         jScrollPane2.setViewportView(JTA_ObsAdqui);
-        JTA_ObsAdqui.getAccessibleContext().setAccessibleName("Observacion");
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 10, 330, 60);
+        jScrollPane2.setBounds(30, 10, 380, 60);
 
         JB_RI1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_RI1.setForeground(new java.awt.Color(0, 102, 102));
         JB_RI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/photo_album.png"))); // NOI18N
         JB_RI1.setText("Generar Invitaciones");
+        JB_RI1.setToolTipText("");
         JB_RI1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         JB_RI1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         JB_RI1.addActionListener(new java.awt.event.ActionListener() {
@@ -509,6 +509,8 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         jPanel3.setBackground(new java.awt.Color(185, 203, 221));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(null);
+
+        PnlPedido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Items", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         TblPedido.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         TblPedido.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -571,7 +573,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         jPanel3.add(BtnEliminaOrden);
         BtnEliminaOrden.setBounds(500, 10, 40, 30);
 
-        PnlOrdenes.setBorder(javax.swing.BorderFactory.createTitledBorder("wujuuu"));
+        PnlOrdenes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ordenes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         TblOrdenes.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         TblOrdenes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
