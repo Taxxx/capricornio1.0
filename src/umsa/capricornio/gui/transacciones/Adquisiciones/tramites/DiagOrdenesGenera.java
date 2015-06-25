@@ -306,11 +306,13 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         TblTransaccionBandeja = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         BtnRetorno = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TxtObsAdqui = new javax.swing.JTextPane();
         JB_RI = new javax.swing.JButton();
         JB_adj = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JTA_ObsAdqui = new javax.swing.JTextArea();
+        JB_RI1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         PnlPedido = new javax.swing.JScrollPane();
         TblPedido = new javax.swing.JTable();
@@ -335,7 +337,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         });
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(185, 203, 221));
+        jPanel1.setBackground(new java.awt.Color(205, 215, 224));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(null);
 
@@ -353,7 +355,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(TxtSolicitud);
-        TxtSolicitud.setBounds(140, 20, 90, 21);
+        TxtSolicitud.setBounds(150, 20, 90, 21);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
@@ -374,7 +376,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(TxtHojaRuta);
-        TxtHojaRuta.setBounds(330, 20, 90, 21);
+        TxtHojaRuta.setBounds(340, 20, 90, 21);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 102));
@@ -390,13 +392,13 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(TxtPreventivo);
-        TxtPreventivo.setBounds(520, 20, 90, 21);
+        TxtPreventivo.setBounds(530, 20, 90, 21);
 
         BtnBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnBuscar.setForeground(new java.awt.Color(0, 51, 102));
         BtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/magnifier.png"))); // NOI18N
         BtnBuscar.setText("Buscar");
-        BtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         BtnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -404,7 +406,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(BtnBuscar);
-        BtnBuscar.setBounds(690, 10, 80, 40);
+        BtnBuscar.setBounds(730, 20, 100, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 960, 60);
@@ -434,7 +436,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         BtnRetorno.setForeground(new java.awt.Color(0, 102, 102));
         BtnRetorno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
         BtnRetorno.setText("Retorno a Ppto");
-        BtnRetorno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnRetorno.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         BtnRetorno.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BtnRetorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -442,20 +444,13 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(BtnRetorno);
-        BtnRetorno.setBounds(590, 60, 160, 40);
-
-        TxtObsAdqui.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 11))); // NOI18N
-        TxtObsAdqui.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jScrollPane1.setViewportView(TxtObsAdqui);
-
-        jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 40, 560, 50);
+        BtnRetorno.setBounds(110, 80, 170, 25);
 
         JB_RI.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_RI.setForeground(new java.awt.Color(0, 102, 102));
         JB_RI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/bookmark_document.png"))); // NOI18N
-        JB_RI.setText("Resolución de Inicio");
-        JB_RI.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_RI.setText("Genera Resolución de Inicio");
+        JB_RI.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         JB_RI.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         JB_RI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -463,13 +458,13 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(JB_RI);
-        JB_RI.setBounds(780, 30, 170, 40);
+        JB_RI.setBounds(710, 10, 240, 25);
 
         JB_adj.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_adj.setForeground(new java.awt.Color(0, 102, 102));
         JB_adj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/attach_2.png"))); // NOI18N
         JB_adj.setText("Archivos Adjuntos");
-        JB_adj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_adj.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         JB_adj.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         JB_adj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,16 +472,39 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(JB_adj);
-        JB_adj.setBounds(590, 10, 160, 40);
+        JB_adj.setBounds(710, 90, 240, 25);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel4.setText("- DOCUMENTOS");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(780, 10, 100, 16);
+        JTA_ObsAdqui.setColumns(20);
+        JTA_ObsAdqui.setRows(5);
+        JTA_ObsAdqui.setBorder(javax.swing.BorderFactory.createTitledBorder("Observacion"));
+        jScrollPane2.setViewportView(JTA_ObsAdqui);
+        JTA_ObsAdqui.getAccessibleContext().setAccessibleName("Observacion");
+
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(30, 10, 330, 60);
+
+        JB_RI1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JB_RI1.setForeground(new java.awt.Color(0, 102, 102));
+        JB_RI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/photo_album.png"))); // NOI18N
+        JB_RI1.setText("Generar Invitaciones");
+        JB_RI1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        JB_RI1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        JB_RI1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_RI1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JB_RI1);
+        JB_RI1.setBounds(710, 40, 240, 25);
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator1);
+        jSeparator1.setBounds(690, 0, 10, 130);
+        jPanel2.add(jSeparator2);
+        jSeparator2.setBounds(690, 70, 269, 10);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 230, 960, 130);
+        jPanel2.setBounds(10, 490, 960, 130);
 
         jPanel3.setBackground(new java.awt.Color(185, 203, 221));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -509,7 +527,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnDesierto);
-        BtnDesierto.setBounds(50, 220, 160, 25);
+        BtnDesierto.setBounds(130, 210, 160, 25);
 
         BtnAsignar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnAsignar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
@@ -519,7 +537,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnAsignar);
-        BtnAsignar.setBounds(420, 50, 50, 25);
+        BtnAsignar.setBounds(450, 50, 50, 25);
 
         BtnDevolver.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_previous.png"))); // NOI18N
@@ -529,7 +547,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnDevolver);
-        BtnDevolver.setBounds(420, 90, 50, 25);
+        BtnDevolver.setBounds(450, 80, 50, 25);
 
         BtnCreaOrden.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnCreaOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/folder_add.png"))); // NOI18N
@@ -540,7 +558,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnCreaOrden);
-        BtnCreaOrden.setBounds(410, 10, 30, 25);
+        BtnCreaOrden.setBounds(410, 10, 40, 30);
 
         BtnEliminaOrden.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnEliminaOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/folder_delete.png"))); // NOI18N
@@ -551,14 +569,16 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnEliminaOrden);
-        BtnEliminaOrden.setBounds(450, 10, 30, 25);
+        BtnEliminaOrden.setBounds(500, 10, 40, 30);
+
+        PnlOrdenes.setBorder(javax.swing.BorderFactory.createTitledBorder("wujuuu"));
 
         TblOrdenes.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         TblOrdenes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         PnlOrdenes.setViewportView(TblOrdenes);
 
         jPanel3.add(PnlOrdenes);
-        PnlOrdenes.setBounds(510, 20, 380, 180);
+        PnlOrdenes.setBounds(550, 20, 380, 180);
 
         BtnGeneraOrdenes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnGeneraOrdenes.setForeground(new java.awt.Color(0, 51, 51));
@@ -570,7 +590,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnGeneraOrdenes);
-        BtnGeneraOrdenes.setBounds(630, 220, 170, 25);
+        BtnGeneraOrdenes.setBounds(660, 210, 170, 25);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/trash_16.png"))); // NOI18N
         jButton3.setText("Limpiar");
@@ -580,7 +600,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(jButton3);
-        jButton3.setBounds(400, 220, 110, 25);
+        jButton3.setBounds(420, 220, 110, 25);
 
         BtnAsignarTodo.setBackground(new java.awt.Color(51, 51, 51));
         BtnAsignarTodo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -591,10 +611,10 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnAsignarTodo);
-        BtnAsignarTodo.setBounds(420, 140, 50, 25);
+        BtnAsignarTodo.setBounds(450, 110, 50, 25);
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(10, 360, 960, 260);
+        jPanel3.setBounds(10, 230, 960, 260);
 
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnSalir.setForeground(new java.awt.Color(0, 51, 102));
@@ -606,9 +626,9 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(410, 630, 120, 25);
+        BtnSalir.setBounds(480, 630, 110, 25);
 
-        setSize(new java.awt.Dimension(998, 703));
+        setSize(new java.awt.Dimension(995, 706));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -762,8 +782,8 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             return;
         }
         String obs_adqui = null;
-        if (!"".equals(TxtObsAdqui.getText().trim())) {
-            obs_adqui = "'" + TxtObsAdqui.getText().trim() + "'";
+        if (!"".equals(JTA_ObsAdqui.getText().trim())) {
+            obs_adqui = "'" + JTA_ObsAdqui.getText().trim() + "'";
         }
         /*
          * boolean sw=false; for (int f=0;f<TblPedido.getRowCount();f++)
@@ -1091,6 +1111,11 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnAsignarTodoActionPerformed
 
+    private void JB_RI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_RI1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("wujuuuuuu");
+    }//GEN-LAST:event_JB_RI1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAsignar;
     private javax.swing.JButton BtnAsignarTodo;
@@ -1103,7 +1128,9 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     private javax.swing.JButton BtnRetorno;
     private javax.swing.JButton BtnSalir;
     private javax.swing.JButton JB_RI;
+    private javax.swing.JButton JB_RI1;
     private javax.swing.JButton JB_adj;
+    private javax.swing.JTextArea JTA_ObsAdqui;
     private javax.swing.JScrollPane PnlOrdenes;
     private javax.swing.JScrollPane PnlPedido;
     private javax.swing.JScrollPane PnlTransaccionBandeja;
@@ -1111,17 +1138,17 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     private javax.swing.JTable TblPedido;
     private javax.swing.JTable TblTransaccionBandeja;
     private javax.swing.JTextField TxtHojaRuta;
-    private javax.swing.JTextPane TxtObsAdqui;
     private javax.swing.JTextField TxtPreventivo;
     private javax.swing.JTextField TxtSolicitud;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

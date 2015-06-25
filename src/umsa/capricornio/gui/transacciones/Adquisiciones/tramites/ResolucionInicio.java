@@ -436,8 +436,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             Map[] datos = puerto.getFechasRestriccion(cod_transaccion);
             javax.swing.JOptionPane.showMessageDialog(this,"El tramite se inicio el : "+datos[0].get("FECHA_INICIO").toString()+" \ntiene hasta el "+datos[0].get("FECHA_FINAL").toString()+" para que el tramite concluya","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
         
     }
     private void GuardaResIni(){
@@ -473,7 +472,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             System.out.println("Exito :D");
             
         } catch (Exception e) {
-            System.out.println("Error :(");
+            System.err.println("Error :(");
         }
     }
     private void jBGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerarActionPerformed
@@ -532,7 +531,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             System.out.println("Exito :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de inicio ha sido modificada exitosamente","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            this.setVisible(false);
+            //this.setVisible(false);
             
         } catch (Exception e) {
             System.out.println("Error :(");
@@ -567,7 +566,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             
             //System.out.println("1: "+this.JTFDns.getText()+" 2: "+this.JTFPpto.getText()+" 3: "+this.JTFEnviado.getText()+" 4: "+this.detalle+" 5: "+this.cod_transaccion+" 6: "+this.cod_w);
             this.genera_reportes.Reporte(this.cod_transaccion,this.cod_w,this.detalle);
-            this.setVisible(false);
+            //this.setVisible(false);
         }else{
             javax.swing.JOptionPane.showMessageDialog(this,"Todavia no se a generado la resolución","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -578,6 +577,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         // TODO add your handling code here:
         ActualizaResIni();
+        this.desbloqueaTodo();
     }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void JTFEnviadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEnviadoActionPerformed
@@ -599,9 +599,9 @@ public class ResolucionInicio extends javax.swing.JFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos = puerto.getCuceSicoes(cod_transaccion);
-            System.err.println("uno");
+//            System.err.println("uno");
             Map[] datos1 =puerto.getResIni(cod_transaccion);
-            System.err.println("uno");
+//            System.err.println("uno");
             if(datos1==null)
             {
                 sw=1;
@@ -609,11 +609,11 @@ public class ResolucionInicio extends javax.swing.JFrame {
             else{
                 sw=0;
             }
-            System.err.println("uno"+cod_trans_nro);
+//            System.err.println("uno"+cod_trans_nro);
             Map[] datos2=puerto.dias_restantes(cod_trans_nro);
-            System.err.println("uno");
+//            System.err.println("uno");
             int dias=Integer.parseInt(datos2[0].get("DIAS_RESTANTES").toString());
-            System.out.println("estos son los dias "+ dias);
+//            System.out.println("estos son los dias "+ dias);
             if(dias>=0)
             {
                 sw1=0;
@@ -624,7 +624,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 fecha=datos2[0].get("FECHA").toString();
                 sw1=1;
             }
-            System.out.println("asdasd "+datos);
+//            System.out.println("asdasd "+datos);
             if(!datos[0].get("CUCE_SICOES").toString().equals("")){
                 System.out.println("--> "+datos[0].get("CUCE_SICOES").toString());
                 //cuce_sicoes = datos[0].get("CUCE_SICOES").toString();
