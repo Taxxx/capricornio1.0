@@ -441,7 +441,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         {
             System.out.println("aqui error"+e);
         }
-        return 1;
+        return 0;
     }
     public String obtiene_doc_imp(String d)
     {
