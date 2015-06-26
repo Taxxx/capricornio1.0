@@ -435,7 +435,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         BtnRetorno.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnRetorno.setForeground(new java.awt.Color(0, 102, 102));
         BtnRetorno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
-        BtnRetorno.setText("Retorno a Ppto");
+        BtnRetorno.setText("Devolver a Presupuesto");
         BtnRetorno.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         BtnRetorno.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BtnRetorno.addActionListener(new java.awt.event.ActionListener() {
@@ -444,12 +444,12 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(BtnRetorno);
-        BtnRetorno.setBounds(120, 80, 170, 25);
+        BtnRetorno.setBounds(150, 80, 190, 25);
 
         JB_RI.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_RI.setForeground(new java.awt.Color(0, 102, 102));
         JB_RI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/bookmark_document.png"))); // NOI18N
-        JB_RI.setText("Genera Resolución de Inicio");
+        JB_RI.setText("Genera Resolucion de Inicio");
         JB_RI.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         JB_RI.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         JB_RI.addActionListener(new java.awt.event.ActionListener() {
@@ -480,7 +480,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         jScrollPane2.setViewportView(JTA_ObsAdqui);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 10, 380, 60);
+        jScrollPane2.setBounds(30, 10, 410, 60);
 
         JB_RI1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_RI1.setForeground(new java.awt.Color(0, 102, 102));
@@ -619,18 +619,18 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         jPanel3.setBounds(10, 230, 960, 260);
 
         BtnSalir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        BtnSalir.setForeground(new java.awt.Color(0, 51, 102));
+        BtnSalir.setForeground(new java.awt.Color(255, 0, 0));
         BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_first.png"))); // NOI18N
-        BtnSalir.setText("Salir");
+        BtnSalir.setText("SALIR");
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSalirActionPerformed(evt);
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(480, 630, 110, 25);
+        BtnSalir.setBounds(450, 620, 110, 25);
 
-        setSize(new java.awt.Dimension(995, 706));
+        setSize(new java.awt.Dimension(995, 688));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
