@@ -36,6 +36,7 @@ public class GetResoluciones {
     private double total,ti;
     private String Monto,mon;
     private int cod_almacen;
+    String detalle_uni_sol,detalle_autorizacion,jefe_adqui,detalle_recursos;
     public GetResoluciones(int cod_almacen){
         this.cod_almacen=cod_almacen;
     }
@@ -56,30 +57,38 @@ public class GetResoluciones {
             //mon=String.valueOf(ti);
             //Monto="168.202,32 ("+this.TotalTexto(monto)+")";
             Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
-            System.out.println("----- "+this.formato(monto));
-            System.out.println("esto sale aqui "+Monto);
+//            System.out.println("----- "+this.formato(monto));
+//            System.out.println("esto sale aqui "+Monto);
             //Monto=" ("+this.TotalTexto(monto)+")";
             //System.out.println("Para cod_transaccion: "+cod_transaccion);
             //System.out.println("El cod_transaccion --> "+cod_transaccion+" y el cod_w: "+cod_w);
+//            System.err.println("1");
             Map[] datos = puerto.getResIni(cod_transaccion);
-            
+//            System.err.println("2");
 //            dir_daf = puerto.getDatoGeneral("DIR_DAF");
             Map[] datos2 = puerto.getDatosGenerales2(this.cod_almacen);
             if (datos2!=null){
                    dir_daf = datos2[0].get("RPA").toString();
             }
+//            System.err.println("3");
             
             
             //System.out.println("Dir Daf es: "+dir_daf);
             if(datos!=null){
-                
                 envia=datos[0].get("ENVIA").toString();
                 dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();
                 dnp=datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString();
                 destino=datos[0].get("DESTINO").toString();
                 int cod_res_ini=Integer.parseInt(datos[0].get("NRO").toString());
                 num_resolucion=datos[0].get("NUM_RESOLUCION").toString();
-                monto_ppto=datos[0].get("MONTO_PPTO").toString();
+//                monto_ppto=datos[0].get("MONTO_PPTO").toString();
+                
+                               
+                this.detalle_autorizacion=datos[0].get("DET_AUT").toString();
+//                System.out.println("detalle de autorizacion --> "+datos[0].get("DET_AUT").toString());
+                this.detalle_recursos=datos[0].get("DET_RECURSOS").toString();
+                this.detalle_uni_sol=datos[0].get("DET_UNI_SOL").toString();
+                this.jefe_adqui=datos[0].get("JEFE_ADQUI").toString();
                 
 //                datos=puerto.getDatosGenerales();
 //                String dir_daf = datos[0].get("DIR_DAF").toString();
@@ -90,9 +99,11 @@ public class GetResoluciones {
                 //this.setVisible(false);
                 
             }
+            else
+                System.out.println("Vacio!!!!");
         } catch (Exception e) {
             System.out.println("esto sale"+Monto);
-            System.out.println("esto sale "+e.getMessage());
+            System.err.println("error!!! "+e.getMessage());
         }
     }
     public void Reporte (int cod_transaccion, int cod_w, String Detalle)
@@ -127,6 +138,12 @@ public class GetResoluciones {
         parameters.put("monto_num",m);*/
         parameters.put("DIR_DAF", this.dir_daf);
         parameters.put("DESTINO", destino);
+        
+        parameters.put("jefe_adqui", jefe_adqui);
+        parameters.put("det_jefe_sol",detalle_uni_sol);
+        parameters.put("det_recursos", detalle_recursos);
+        parameters.put("det_autorizacion", detalle_autorizacion);
+        
         //parameters.put("Destino", this.destino);
         
         System.out.println("El cod_w es --> "+cod_w+", y el destino es: "+destino);
@@ -136,7 +153,7 @@ public class GetResoluciones {
                 urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniServ.jasper");
                 break;
             case 1:
-                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniBien.jasper");
+                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniBienNuevo.jasper");
                 break;
             case 3:
                 urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniConsu.jasper");
@@ -146,7 +163,7 @@ public class GetResoluciones {
                 break;
             case 7:
                 System.out.println("Entro al 7");
-                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniBien.jasper");
+                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniBienNuevo.jasper");
                 break;
         }
         
@@ -210,11 +227,11 @@ public class GetResoluciones {
    }
     String formato(String t)
     {
-        System.out.println("aejrhaeusdhuiasdfhiudshf "+t);
+//        System.out.println("aejrhaeusdhuiasdfhiudshf "+t);
         try{
            double m=Double.parseDouble(t);  
         DecimalFormat formato_decimal = new DecimalFormat("###,###.##");
-        System.out.println("swdasda"+formato_decimal.format(m));
+//        System.out.println("swdasda"+formato_decimal.format(m));
         //String d=formato_decimal.format(t).toString();
         return (String.valueOf(formato_decimal.format(m)).toString());
         }
