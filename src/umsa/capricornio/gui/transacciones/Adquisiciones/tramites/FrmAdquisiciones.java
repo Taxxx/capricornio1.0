@@ -12,6 +12,7 @@ package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.awt.event.KeyEvent;
 import java.rmi.RemoteException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,10 +31,12 @@ import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.menu.FrmMenu;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.ItemCellEditor;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.TablaTransaccionBandeja;
+import umsa.capricornio.gui.transacciones.reporte.GetResAdj;
 import umsa.capricornio.gui.transacciones.reporte.RepTransaccion;
 import umsa.capricornio.gui.transacciones.reporte.Reportes;
 import umsa.capricornio.gui.transacciones.tablas.TablaTransaccionEstados;
 import umsa.capricornio.utilitarios.herramientas.MiRenderer;
+import umsa.capricornio.utilitarios.herramientas.NumerosTextuales;
 import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
 /**
@@ -330,88 +333,221 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         r = Runtime.getRuntime();
         long mem1 = r.freeMemory();
     }
-    
-    void MostrarReporte(int cod_trans_nro,String cod_estado,int cod_tramite,String titulo){
-        System.out.println("cod_trans_nro: "+cod_trans_nro);
-        System.out.println("cod_estado: "+cod_estado);
-        System.out.println("cod_tramite: "+cod_tramite);
-        System.out.println("titulo: "+titulo);
-        List list=new ArrayList();
+    public int verificaresolucion(int cod_trans_nro)
+    {
+        GetResAdj genera_res_15 = new GetResAdj();
+        String hoja_ruta = null;
+        String enviado_por = null;
+        String cargo;
+        String detalle = null;
+        String destino;
+        String objetivo;
+        String preventivo = null;
+        String monto = null;
+        String partida = null;
+        String sol_compra = null;
+        String cotizacion;
+        String proveedor = null;
+        String dias = null;
+        String cite;
+        String nro_res;
+        String fec_ini;
+        String documentos;
+        int cod_w = 0;
+        String t="";
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.getReporteOrden(cod_trans_nro,cod_estado,cod_tramite);
+            Map[] d=puerto.getTransaccionNro(cod_trans_nro);
+            int cod_transaccion=Integer.parseInt(d[0].get("COD_TRANSACCION").toString());
+            Map[] datos=puerto.getPartidas1(cod_transaccion);
+            Map[] dd=puerto.getDias(cod_trans_nro);
+            Map[] dat = puerto.getProponenteADJ(cod_trans_nro);
+            dias=dd[0].get("DIAS").toString();
+            proveedor=(dat[0].get("NOMBRE_COMERCIAL").toString());
+            if(datos!=null)
+            {
+                System.out.println("nro de partidas "+datos.length);
+                for(int i=0;i<datos.length;i++)
+                {
+                    t=t+"-"+datos[i].get("PARTIDA").toString()+"-"+datos[i].get("DETALLE").toString()+", ";
+                }
+            }
+        }catch(Exception e)
+        {
             
-            if (datos!=null){                 
-                Map map = new HashMap();
-                int i=0;
-                String cod_trans_detalle,aux = null;
-                for (int f=0;f<datos.length;f++){
-                    Transaccion trans = new Transaccion();
-                    trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
-                    trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
-                    trans.setFecha_envio(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_ENVIO").toString()));
-                    trans.setUnidad_sol(datos[f].get("UNIDAD_SOL").toString());
-                    trans.setUnidad_des(datos[f].get("UNIDAD_DES").toString());
-                    trans.setUsuario_sol(datos[f].get("USUARIO_SOL").toString());
-                    trans.setDetalle(datos[f].get("DETALLE").toString());
-                    trans.setUnidad_medida(datos[f].get("UNIDAD_MEDIDA").toString());
-                    trans.setCantidad_pedido(Integer.parseInt(datos[f].get("CANTIDAD_PEDIDO").toString()));
-                    trans.setTipo_item(datos[f].get("TIPO_ITEM").toString());
-                    trans.setArticulo(datos[f].get("ARTICULO").toString());
-                    trans.setDetalle_solicitud(datos[f].get("DETALLE_SOLICITUD").toString());
-                    //hoja_ruta,cbte,casa_comercial,direccion,telefono,nit,precio_unit
-                    trans.setHoja_ruta(datos[f].get("HOJA_RUTA").toString());
-                    trans.setCbte(datos[f].get("CBTE").toString());
-                    trans.setCasa_comercial(datos[f].get("CASA_COMERCIAL").toString());
-                    trans.setDireccion(datos[f].get("DIRECCION").toString());
-                    trans.setTelefono(datos[f].get("TELEFONO").toString());
-                    trans.setNit(datos[f].get("NIT").toString());
-                    trans.setPrecio_unit(Double.parseDouble(datos[f].get("PRECIO_UNIT").toString()));
-                    trans.setPartida(datos[f].get("PARTIDA").toString());
-                    trans.setObs(datos[f].get("OBS").toString());
-                    //trans.setSubtotal(Double.parseDouble(datos[f].get("SUBTOTAL").toString()));
-                    
-                    /*trans.setNro_orden_compra(Integer.parseInt(datos[f].get("NRO_ORDEN_COMPRA").toString()));
-                    if (!(datos[f].get("FEC_ORDEN_COMPRA")==null || "".equals(datos[f].get("FEC_ORDEN_COMPRA"))))
-                        trans.setFec_orden_compra(i_formatterDate.i_conveterStandardToDate(datos[f].get("FEC_ORDEN_COMPRA").toString()));
-                    trans.setFactura(datos[f].get("FACTURA").toString());
-                    if (!(datos[f].get("FECHA_FACT")==null || "".equals(datos[f].get("FECHA_FACT"))))
-                        trans.setFecha_fact(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_FACT").toString()));
-                    trans.setMemo(datos[f].get("MEMO").toString());*/
-                    trans.setNro_transaccion(Integer.parseInt(datos[f].get("NRO_TRANSACCION").toString()));
-                    //trans.setCod_trans_detalle(datos[f].get("COD_TRANS_DETALLE").toString());
-                    cod_trans_detalle=datos[f].get("COD_TRANS_DETALLE").toString();
-                    if(!cod_trans_detalle.equals(aux)){
-                        i++;
-                        System.out.println("El indice es wujuuu: "+i);
-                        trans.setIndice(String.valueOf(i));
-                    }
-                    aux=cod_trans_detalle;
-                    trans.setCod_trans_detalle(cod_trans_detalle);
-                    list.add(trans);
-                } 
-                RepTransaccion rep = new RepTransaccion();
-                System.out.println("titulo: "+titulo);
-                System.out.println("cod_tramite: "+cod_tramite);
+        }
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] d=puerto.getTransaccionNro(cod_trans_nro);
+            System.out.println("cod_tn"+cod_trans_nro);
+            int cod_transaccion=Integer.parseInt(d[0].get("COD_TRANSACCION").toString());
+            System.out.println("cod_tn"+cod_trans_nro+" cod_T"+cod_transaccion);
+            Map[] datos=puerto.getresmay(cod_transaccion, cod_trans_nro);
+            if(datos!=null)
+            {
+                cite=datos[0].get("CITE").toString();
+                destino=datos[0].get("DESTINO").toString();
+                cargo=datos[0].get("CARGO").toString();
+                objetivo=datos[0].get("OBJETIVO").toString();
+                cotizacion=datos[0].get("COTIZACION").toString();
+                nro_res=datos[0].get("NRO").toString();
+                documentos=datos[0].get("DOCUMENTOS").toString();
+                fec_ini=datos[0].get("FECHA_INICIO_CON").toString();
+                partida=t;
+                //*********
+                Map[] datos1=puerto.getdatosres15(cod_transaccion);
+                if(datos1!=null)
+                {
+                    hoja_ruta=datos1[0].get("HOJA_RUTA").toString();
+                    enviado_por=datos1[0].get("USUARIO_SOL").toString();
+                    detalle=datos1[0].get("DET").toString();
+                    preventivo=datos1[0].get("COD_PREVENTIVO").toString();
+                    monto=datos1[0].get("TOTAL").toString();
+                    //cargo=datos[0].get("CARGO").toString();
+                    sol_compra=datos1[0].get("SOL").toString();
+                }
+                else
+                    System.out.println("nookokokok");
+                monto=monto+" "+TotalTexto(monto);
+                String doc=obtiene_doc_imp(documentos);
+                try{
+                    System.out.println("monto "+monto);
+                    System.out.println("hr "+hoja_ruta);
+                    System.out.println("envia "+enviado_por);
+                    System.out.println("cargo "+cargo);
+                    System.out.println("detalle "+detalle);
+                    System.out.println("destino "+destino);
+                    System.out.println("objetivo "+objetivo);
+                    System.out.println("preventivo "+preventivo);
+                    System.out.println("partida "+partida);
+                    System.out.println("sol "+sol_compra);
+                    System.out.println("cot "+cotizacion);
+                    System.out.println("prov "+proveedor);
+                    System.out.println("dias "+dias);
+                    System.out.println("cite "+cite);
+                    genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc,fec_ini);
+                }catch(Exception e)
+                {
+            
+                }
+            }
+            else
+            {
+                System.out.println("esto");
+            }
+        }catch(Exception e)
+        {
+            System.out.println("aqui error"+e);
+        }
+        return 1;
+    }
+    public String obtiene_doc_imp(String d)
+    {
+        d=d.replaceAll("#", "<br/>");
+        return d;
+    }
+    String TotalTexto(String total){
+        double m=Double.parseDouble(total);                          
+        
+        long valor =(long)m;
+        double var= m-valor;
+        
+        DecimalFormat formato_decimal = new DecimalFormat("0.00");        
+        String decimal =formato_decimal.format(var);
+      
+        String montoLetra=NumerosTextuales.NumTextuales(valor);
+        
+        if ((m>=1000 && m<2000) || (m>=1000000 && m<2000000)){ montoLetra="UN "+montoLetra;}        
+        if (var ==0.0) montoLetra=montoLetra+" 00/100";
+        else montoLetra=montoLetra+" "+decimal.substring(2, 4)+"/100";
+       return montoLetra;
+   }
+    void MostrarReporte(int cod_trans_nro,String cod_estado,int cod_tramite,String titulo){
+        
+                System.out.println("asdasdasdasdasdddddddddddd");
                 System.out.println("cod_trans_nro: "+cod_trans_nro);
-                
-                rep.Reporte(list,titulo,cod_tramite,cod_trans_nro,cod_almacen);
-            }                         
-            /*for (int i = 0; i < list.size(); i++) {
-                Transaccion aux = (Transaccion) list.get(i);t           
-                System.out.println(aux.getNro_gestion()+" "+aux.getFecha_creacion()+" "+ aux.getFecha_envio()+" "+aux.getUnidad_sol()+" "+aux.getUnidad_des()+" "+aux.getUsuario_sol()+" "+aux.getUnidad_medida()+" "+aux.getCantidad_pedido()+" "+aux.getTipo_item()+" "+aux.getArticulo()+" "+aux.getDetalle_solicitud());
-            }  */      
-        }
-        catch (RemoteException e){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
-        catch (ServiceException e){ System.out.println("error 1:"+e);} 
-        catch (NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(this,"LA ORDEN NO FUE APROBADA O \n NO ELIJIO UNA FILA PARA PODER IMPRIMIR EL REPORTE","SYSTEM CAPRICORN",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
-        }  
+                System.out.println("cod_estado: "+cod_estado);
+                System.out.println("cod_tramite: "+cod_tramite);
+                System.out.println("titulo: "+titulo);
+                List list=new ArrayList();
+                try{
+                    AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                    AdquiWS_PortType puerto = servicio.getAdquiWS();
+                    Map[] datos=puerto.getReporteOrden(cod_trans_nro,cod_estado,cod_tramite);
+
+                    if (datos!=null){                 
+                        Map map = new HashMap();
+                        int i=0;
+                        String cod_trans_detalle,aux = null;
+                        for (int f=0;f<datos.length;f++){
+                            Transaccion trans = new Transaccion();
+                            trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
+                            trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
+                            trans.setFecha_envio(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_ENVIO").toString()));
+                            trans.setUnidad_sol(datos[f].get("UNIDAD_SOL").toString());
+                            trans.setUnidad_des(datos[f].get("UNIDAD_DES").toString());
+                            trans.setUsuario_sol(datos[f].get("USUARIO_SOL").toString());
+                            trans.setDetalle(datos[f].get("DETALLE").toString());
+                            trans.setUnidad_medida(datos[f].get("UNIDAD_MEDIDA").toString());
+                            trans.setCantidad_pedido(Integer.parseInt(datos[f].get("CANTIDAD_PEDIDO").toString()));
+                            trans.setTipo_item(datos[f].get("TIPO_ITEM").toString());
+                            trans.setArticulo(datos[f].get("ARTICULO").toString());
+                            trans.setDetalle_solicitud(datos[f].get("DETALLE_SOLICITUD").toString());
+                            //hoja_ruta,cbte,casa_comercial,direccion,telefono,nit,precio_unit
+                            trans.setHoja_ruta(datos[f].get("HOJA_RUTA").toString());
+                            trans.setCbte(datos[f].get("CBTE").toString());
+                            trans.setCasa_comercial(datos[f].get("CASA_COMERCIAL").toString());
+                            trans.setDireccion(datos[f].get("DIRECCION").toString());
+                            trans.setTelefono(datos[f].get("TELEFONO").toString());
+                            trans.setNit(datos[f].get("NIT").toString());
+                            trans.setPrecio_unit(Double.parseDouble(datos[f].get("PRECIO_UNIT").toString()));
+                            trans.setPartida(datos[f].get("PARTIDA").toString());
+                            trans.setObs(datos[f].get("OBS").toString());
+                            //trans.setSubtotal(Double.parseDouble(datos[f].get("SUBTOTAL").toString()));
+
+                            /*trans.setNro_orden_compra(Integer.parseInt(datos[f].get("NRO_ORDEN_COMPRA").toString()));
+                            if (!(datos[f].get("FEC_ORDEN_COMPRA")==null || "".equals(datos[f].get("FEC_ORDEN_COMPRA"))))
+                                trans.setFec_orden_compra(i_formatterDate.i_conveterStandardToDate(datos[f].get("FEC_ORDEN_COMPRA").toString()));
+                            trans.setFactura(datos[f].get("FACTURA").toString());
+                            if (!(datos[f].get("FECHA_FACT")==null || "".equals(datos[f].get("FECHA_FACT"))))
+                                trans.setFecha_fact(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_FACT").toString()));
+                            trans.setMemo(datos[f].get("MEMO").toString());*/
+                            trans.setNro_transaccion(Integer.parseInt(datos[f].get("NRO_TRANSACCION").toString()));
+                            //trans.setCod_trans_detalle(datos[f].get("COD_TRANS_DETALLE").toString());
+                            cod_trans_detalle=datos[f].get("COD_TRANS_DETALLE").toString();
+                            if(!cod_trans_detalle.equals(aux)){
+                                i++;
+                                System.out.println("El indice es wujuuu: "+i);
+                                trans.setIndice(String.valueOf(i));
+                            }
+                            aux=cod_trans_detalle;
+                            trans.setCod_trans_detalle(cod_trans_detalle);
+                            list.add(trans);
+                        } 
+                        RepTransaccion rep = new RepTransaccion();
+                        System.out.println("titulo: "+titulo);
+                        System.out.println("cod_tramite: "+cod_tramite);
+                        System.out.println("cod_trans_nro: "+cod_trans_nro);
+
+                        rep.Reporte(list,titulo,cod_tramite,cod_trans_nro,cod_almacen);
+                    }                         
+                    /*for (int i = 0; i < list.size(); i++) {
+                        Transaccion aux = (Transaccion) list.get(i);t           
+                        System.out.println(aux.getNro_gestion()+" "+aux.getFecha_creacion()+" "+ aux.getFecha_envio()+" "+aux.getUnidad_sol()+" "+aux.getUnidad_des()+" "+aux.getUsuario_sol()+" "+aux.getUnidad_medida()+" "+aux.getCantidad_pedido()+" "+aux.getTipo_item()+" "+aux.getArticulo()+" "+aux.getDetalle_solicitud());
+                    }  */      
+                }
+                catch (RemoteException e){
+                    javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+                                javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+                catch (ServiceException e){ System.out.println("error 1:"+e);} 
+                catch (NumberFormatException e) {
+                    javax.swing.JOptionPane.showMessageDialog(this,"LA ORDEN NO FUE APROBADA O \n NO ELIJIO UNA FILA PARA PODER IMPRIMIR EL REPORTE","SYSTEM CAPRICORN",
+                                javax.swing.JOptionPane.ERROR_MESSAGE);
+                }  
+        
     }
     
     void MostrarReporte(){
@@ -422,7 +558,14 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         String titulo=TblTransaccionEstado.getValueAt(fila, 4).toString();
         //if ((cod_rol==2 && cod_tramite==3)|| (cod_rol==5 && cod_tramite==2))
             System.out.println(":D :D :D cod_trans: "+cod_trans_nro+" cod_estado: "+cod_estado+" cod_tramite: "+cod_tramite+" titulo: "+titulo);
+            int xxxx=verificaresolucion(cod_trans_nro);
+        if(xxxx==1)
+        {
+            System.out.println("asdasdasdasdasdddddddddddd");
+        }
+        else{
             reportes.MostrarOrden(cod_trans_nro, "ADQ", 2, "ORDEN DE COMPRA Y/U ORDEN DE SERVICIO");
+        }
             //MostrarReporte(cod_trans_nro, cod_estado, cod_tramite, titulo);
     }
     /** This method is called from within the constructor to
