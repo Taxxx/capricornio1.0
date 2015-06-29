@@ -428,10 +428,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     System.out.println("dias "+dias);
                     System.out.println("cite "+cite);
                     genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc,fec_ini);
-                }catch(Exception e)
-                {
-            
-                }
+                }catch(Exception e){}
             }
             else
             {
