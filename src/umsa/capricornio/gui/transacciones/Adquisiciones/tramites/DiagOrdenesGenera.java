@@ -1116,8 +1116,8 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     private void JB_RI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_RI1ActionPerformed
         // TODO add your handling code here:
         System.out.println("wujuuuuuu");
-        ProponentesDialog11 x = new ProponentesDialog11(this,this.menu, true, this.cod_transaccion, this.cod_trans_nro,cod_w);
-        x.setVisible(true);
+        /*ProponentesDialog x = new ProponentesDialog(this.menu, true, this.cod_transaccion, this.cod_trans_nro);
+        x.setVisible(true);*/
     }//GEN-LAST:event_JB_RI1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

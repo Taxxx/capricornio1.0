@@ -310,7 +310,7 @@ public class ProponentesDialog extends javax.swing.JDialog {
                 
                 
                 
-                Map[] datos=puerto.addProponente11(String.valueOf(proveedor.getCod_proveedor()),this.cod_transaccion ,this.cod_trans_nro,this.proveedor.getTipo_cod(),this.proveedor.getClase(),this.proveedor.getNombre().replace("'", ""),this.proveedor.getCasa_comercial().replace("'", ""),this.proveedor.getDireccion(),this.proveedor.getTelefono(),this.proveedor.getAdh_nombre(),1);
+                Map[] datos=puerto.addProponente(String.valueOf(proveedor.getCod_proveedor()),this.cod_transaccion ,this.cod_trans_nro,this.proveedor.getTipo_cod(),this.proveedor.getClase(),this.proveedor.getNombre().replace("'", ""),this.proveedor.getCasa_comercial().replace("'", ""),this.proveedor.getDireccion(),this.proveedor.getTelefono(),this.proveedor.getAdh_nombre());
                 //Map[] datos=puerto.getProponentes(20);
                 //System.out.println("Tamaño "+datos.length);
                 //puerto.setGestion("SET-insDataGes", 2016);
