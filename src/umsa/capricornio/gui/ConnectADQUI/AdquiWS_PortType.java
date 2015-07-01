@@ -280,6 +280,11 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getProveedoresbusca(java.lang.String a, java.lang.String b, java.lang.String c) throws java.rmi.RemoteException;
     public java.util.HashMap[] getFirmaUsuario(int cod_trans_nro) throws java.rmi.RemoteException;
     public java.util.HashMap[] getFirmaUsuario2(int cod_transaccion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] addProponente11(java.lang.String cod_proveedor, int cod_transaccion, int cod_trans_nro, java.lang.String tipo, java.lang.String clase, java.lang.String nombre, java.lang.String nombre_comercial, java.lang.String direccion, java.lang.String telefono, java.lang.String adh_nombre, int tp) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getdatosextra(int cod_transaccion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] getinvitacion(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateinvitacion(int cod_t, int codtn, java.lang.String np, java.lang.String fec, java.lang.String fec_re, java.lang.String jefe_adq) throws java.rmi.RemoteException;
+    public java.util.HashMap[] geninvitacion(int cod_transaccion, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;

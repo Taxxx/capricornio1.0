@@ -117,6 +117,48 @@ public class GetResAdj {
             System.out.println("Gravichimo error: "+e);
         }
     }
+    public void invitacion(int cod_w,String nota,String detalle,String destino,String nro_propuesta,String fecha,String fecha_reunion,String jefe_adq,String nombre,String casa)
+    {
+        Map parameters = new HashMap();
+        parameters.put("NOTA", nota);
+        parameters.put("DETALLE", detalle);
+        parameters.put("NRO_PROPUESTA", nro_propuesta);
+        parameters.put("DESTINO", destino);
+        parameters.put("FECHA", fecha);
+        parameters.put("JEFE_ADQ", jefe_adq);
+        if(cod_w==4)
+        {
+            parameters.put("FECHA_REUNION", fecha_reunion);
+        }
+        if(casa.equals("Sin Nombre Comercial"))
+        {
+            parameters.put("INVITADO", nombre);
+        }
+        else
+        {
+            parameters.put("INVITADO", casa);
+        }
+        RepTransaccion t1 = new RepTransaccion();
+        if(cod_w==1)
+        {
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/invitacionBien.jasper");
+        }
+        if(cod_w==6)
+        {
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/invitacionServ.jasper");
+        }
+        if(cod_w==3)
+        {
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/invitacionCons.jasper");
+        }
+        if(cod_w==4)
+        {
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/invitacionObra.jasper");
+        }
+        
+        this.imprimePDF(urlMaestro, parameters);
+        
+    }
     public void reporte15(String hr,String ep,String c,String det,String dest,String obj,String prev,String m,String part,String sc,String cot,String prov,String dias,String cite,String nro_res,int estado,String doc,String fec_ini)
     {
         Map parameters = new HashMap();
