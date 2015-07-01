@@ -48,7 +48,7 @@ public class ProponentesDialog11 extends javax.swing.JDialog {
      */
     public ProponentesDialog11(DiagOrdenesGenera c,java.awt.Frame parent, boolean modal, int cod_transaccion, int cod_trans_nro,int cod_w) {
         //this.menu=parent;
-        super(c, modal);
+        super(c, false);
         initComponents();
         this.parent=(JFrame) parent;
         this.setLocationRelativeTo(null);
@@ -159,9 +159,6 @@ public class ProponentesDialog11 extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setModal(true);
 
         jPanel1.setBackground(new java.awt.Color(185, 203, 221));
 
@@ -542,7 +539,7 @@ public class ProponentesDialog11 extends javax.swing.JDialog {
         String direccion=String.valueOf(TablaProponentes.getValueAt(fila,5));
         String telefono=String.valueOf(TablaProponentes.getValueAt(fila,6));
         System.out.println("documento: "+documento+" tipo: "+tipo+" clase: "+clase+" nombre: "+nombre+" nombre_c: "+nombre_comercial+" direccion: "+direccion+" telefono: "+telefono);
-        invitacion x=new invitacion(this,this.parent,true,nombre,nombre_comercial,cod_transaccion,cod_trans_nro,cod_w);
+        invitacion x=new invitacion(this,this.parent,false,nombre,nombre_comercial,cod_transaccion,cod_trans_nro,cod_w);
         x.setLocationRelativeTo(null);
         x.setVisible(true);
         // proveedor.setCod_proveedor(TablaProponentes.getValueAt(fila,0).toString());
