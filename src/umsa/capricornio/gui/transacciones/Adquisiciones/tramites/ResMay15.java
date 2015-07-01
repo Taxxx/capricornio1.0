@@ -243,7 +243,7 @@ public class ResMay15 extends javax.swing.JDialog {
                 System.out.println("nro de partidas "+datos.length);
                 for(int i=0;i<datos.length;i++)
                 {
-                    t=t+"-"+datos[i].get("PARTIDA").toString()+"-"+datos[i].get("DETALLE").toString()+", ";
+                    t=t+""+datos[i].get("PARTIDA").toString()+"-"+datos[i].get("DETALLE").toString()+", ";
                 }
             }
         }catch(Exception e)
