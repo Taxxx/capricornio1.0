@@ -14,12 +14,15 @@ import java.awt.event.KeyEvent;
 import java.rmi.RemoteException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -1084,6 +1087,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
         CalFechaIng.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         CalFechaIng.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        CalFechaIng.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                CalFechaIngStateChanged(evt);
+            }
+        });
         CalFechaIng.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 CalFechaIngKeyPressed(evt);
@@ -2121,6 +2129,49 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void CalFechaIngStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CalFechaIngStateChanged
+        // TODO add your handling code here:
+        DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+        String s =  df1.format(CalFechaFact.getValue());
+        String s1 =  df1.format(CalFechaIng.getValue());
+        int comp=compara_fechas(s, s1);
+        if(comp!=0)
+        {
+            JOptionPane.showMessageDialog(null, "Debe introducir una fecha que no sea menor a la anterior");
+            CalFechaIng.setValue(CalFechaFact.getValue());
+        }
+    }//GEN-LAST:event_CalFechaIngStateChanged
+    
+    public int compara_fechas(String f1,String f2)
+    {
+        int res=-1;
+        try {
+            SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechaDate1 = formateador.parse(f1);
+            Date fechaDate2 = formateador.parse(f2);
+            if(fechaDate1.before(fechaDate2))
+            {
+                res=0;
+                System.out.println("Fecha1 es menor");
+            }
+            else
+            {
+                if(fechaDate2.before(fechaDate1))
+                {
+                    res=1;
+                }
+                else
+                {
+                    res=0;
+                }
+                
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(JD_FECH_ANPE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
+    
     private void GuardarDatos(String hoja_ruta) {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
