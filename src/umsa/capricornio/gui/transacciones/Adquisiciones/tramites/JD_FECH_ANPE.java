@@ -44,7 +44,7 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         this.cod_trans_nro = cod_trans_nro;
         this.cod_transaccion = cod_transaccion;
         LlenaFormulario();
-        //llenapasouno();
+        llenapasouno();
         //this.JT_CUCE.setText(getCuce());
         this.setLocationRelativeTo(null);
         //bloquea_check();

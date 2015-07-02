@@ -609,11 +609,11 @@ public class ResolucionInicio extends javax.swing.JFrame {
             else{
                 sw=0;
             }
-//            System.err.println("uno"+cod_trans_nro);
+            /*System.err.println("uno"+cod_trans_nro);
             Map[] datos2=puerto.dias_restantes(cod_trans_nro);
-//            System.err.println("uno");
+            System.err.println("uno");
             int dias=Integer.parseInt(datos2[0].get("DIAS_RESTANTES").toString());
-//            System.out.println("estos son los dias "+ dias);
+            System.out.println("estos son los dias "+ dias);
             if(dias>=0)
             {
                 sw1=0;
@@ -623,8 +623,8 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 proceso=datos2[0].get("PROCESO").toString();
                 fecha=datos2[0].get("FECHA").toString();
                 sw1=1;
-            }
-//            System.out.println("asdasd "+datos);
+            }*/
+            //System.out.println("asdasd "+datos);
             if(!datos[0].get("CUCE_SICOES").toString().equals("")){
                 System.out.println("--> "+datos[0].get("CUCE_SICOES").toString());
                 //cuce_sicoes = datos[0].get("CUCE_SICOES").toString();

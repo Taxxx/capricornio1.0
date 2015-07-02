@@ -2055,7 +2055,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         }catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null, "USTED DEBE GENERAR LA RESOLUCION DE INICIO PRIMERO");
+            JOptionPane.showMessageDialog(null, "USTED NO HA INSERTADO LAS FECHAS DEL SICOES");
         }
         
     }//GEN-LAST:event_jButton10ActionPerformed
