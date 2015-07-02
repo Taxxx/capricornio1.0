@@ -608,6 +608,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha2.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha2StateChanged(evt);
+            }
+        });
         Fecha2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha2KeyPressed(evt);
@@ -616,6 +621,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha4.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha4StateChanged(evt);
+            }
+        });
         Fecha4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha4KeyPressed(evt);
@@ -624,6 +634,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha11.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha11.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha11StateChanged(evt);
+            }
+        });
         Fecha11.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha11KeyPressed(evt);
@@ -632,6 +647,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha7.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha7.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha7StateChanged(evt);
+            }
+        });
         Fecha7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha7KeyPressed(evt);
@@ -640,6 +660,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha8.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha8.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha8StateChanged(evt);
+            }
+        });
         Fecha8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha8KeyPressed(evt);
@@ -648,6 +673,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha9.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha9.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha9StateChanged(evt);
+            }
+        });
         Fecha9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha9KeyPressed(evt);
@@ -656,6 +686,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha10.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha10.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha10StateChanged(evt);
+            }
+        });
         Fecha10.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha10KeyPressed(evt);
@@ -664,6 +699,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha3.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha3StateChanged(evt);
+            }
+        });
         Fecha3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha3KeyPressed(evt);
@@ -678,6 +718,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha5.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha5.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha5StateChanged(evt);
+            }
+        });
         Fecha5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha5KeyPressed(evt);
@@ -686,6 +731,11 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
 
         Fecha6.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         Fecha6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Fecha6.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Fecha6StateChanged(evt);
+            }
+        });
         Fecha6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Fecha6KeyPressed(evt);
@@ -1396,6 +1446,106 @@ public class JD_FECH_ANPE extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jCheckBox13ActionPerformed
 
+    private void Fecha6StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha6StateChanged
+        // TODO add your handling code here:
+        if(jCheckBox13.getSelectedObjects()!=null)
+        {
+            comp_fec(Fecha5, Fecha6);
+        }
+        else
+        {
+            comp_fec(Fecha1, Fecha6);
+        }
+    }//GEN-LAST:event_Fecha6StateChanged
+
+    private void Fecha7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha7StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha6, Fecha7);
+    }//GEN-LAST:event_Fecha7StateChanged
+
+    private void Fecha8StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha8StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha7, Fecha8);
+    }//GEN-LAST:event_Fecha8StateChanged
+
+    private void Fecha9StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha9StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha8, Fecha9);
+    }//GEN-LAST:event_Fecha9StateChanged
+
+    private void Fecha10StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha10StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha9, Fecha10);
+    }//GEN-LAST:event_Fecha10StateChanged
+
+    private void Fecha11StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha11StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha10, Fecha11);
+    }//GEN-LAST:event_Fecha11StateChanged
+
+    private void Fecha2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha2StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha1, Fecha2);
+    }//GEN-LAST:event_Fecha2StateChanged
+
+    private void Fecha3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha3StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha2, Fecha3);
+    }//GEN-LAST:event_Fecha3StateChanged
+
+    private void Fecha4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha4StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha3, Fecha4);
+    }//GEN-LAST:event_Fecha4StateChanged
+
+    private void Fecha5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Fecha5StateChanged
+        // TODO add your handling code here:
+        comp_fec(Fecha4, Fecha5);
+    }//GEN-LAST:event_Fecha5StateChanged
+    public void comp_fec(DateField Fec1,DateField Fec2)
+    {
+        DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+        String s =  df1.format(Fec1.getValue());
+        String s1 =  df1.format(Fec2.getValue());
+        int comp=compara_fechas(s, s1);
+        if(comp!=0)
+        {
+            JOptionPane.showMessageDialog(null, "Debe introducir una fecha que no sea menor a la anterior");
+            Fec2.setValue(Fec1.getValue());
+        }
+    }
+    
+    public int compara_fechas(String f1,String f2)
+    {
+        int res=-1;
+        try {
+            System.out.println(Fecha1.getValue().toString());
+            System.out.println(Fecha2.getValue().toString());
+            SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechaDate1 = formateador.parse(f1);
+            Date fechaDate2 = formateador.parse(f2);
+            if(fechaDate1.before(fechaDate2))
+            {
+                res=0;
+                System.out.println("Fecha1 es menor");
+            }
+            else
+            {
+                if(fechaDate2.before(fechaDate1))
+                {
+                    res=1;
+                }
+                else
+                {
+                    res=0;
+                }
+                
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(JD_FECH_ANPE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return res;
+    }
     private void Verificacion_de_fechas(JCheckBox jc, JLabel jl,int num)
     {
         if(jc.getSelectedObjects()!=null){
