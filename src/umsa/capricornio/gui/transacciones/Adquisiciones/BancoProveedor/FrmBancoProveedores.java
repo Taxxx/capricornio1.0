@@ -565,6 +565,11 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
         jButton4.setBounds(70, 0, 50, 25);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton5);
         jButton5.setBounds(120, 0, 50, 25);
 
@@ -1241,6 +1246,10 @@ public class FrmBancoProveedores extends javax.swing.JInternalFrame {
             } 
         }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup BtnGrpHabilitado;
