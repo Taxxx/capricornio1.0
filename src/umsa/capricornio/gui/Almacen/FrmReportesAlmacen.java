@@ -313,6 +313,7 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
             parameters.put("FECHA_FINAL",ff);
             parameters.put("DIR", urlMaestro1.toString());
             parameters.put("DIR1", urlMaestro2.toString());
+            parameters.put("cod_user",18);
             JasperReport reporte = (JasperReport) JRLoader.loadObject(urlMaestro); 
             System.out.println("realizo el jasper reporte");
             JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parameters, conexion);
