@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -39,7 +40,7 @@ import umsa.capricornio.utilitarios.herramientas.NumerosTextuales;
  */
 public class GetResAdj {
     
-    URL urlMaestro,urlImage,urlMaestro1,urlMaestro2,urlMaestro3;
+    URL urlMaestro,urlImage,urlMaestro1,urlMaestro2,urlMaestro3,urlMaestro4,urlMaestro5;
     String dir_daf;
     public GetResAdj(){
         this.genera();
@@ -60,7 +61,9 @@ public class GetResAdj {
             System.out.println("Esta vivo weon¡!¡"+masterReport);
             masterPrint = JasperFillManager.fillReport(masterReport, parameters, new JREmptyDataSource());
         }
-        catch (JRException e) {}  
+        catch (JRException e) {
+        System.out.println("error nq "+e);
+        }  
         System.out.println("el error debe estar por aqui---- "+masterPrint+" --sdfsd-- "+masterReport);
         JasperViewer.viewReport(masterPrint, false);
     }
@@ -117,6 +120,29 @@ public class GetResAdj {
             System.out.println("Gravichimo error: "+e);
         }
     }
+    
+    public void ReporteUnidad(Date fi,Date ff,int cod_user)
+    {
+        Map parameters = new HashMap();
+        parameters.put("FECHA_INICIO", fi);
+        parameters.put("FECHA_FINAL", ff);
+        //int x=18;
+        parameters.put("COD_USER", cod_user);
+        RepTransaccion t1 = new RepTransaccion();
+        urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra.jasper");
+        urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraS.jasper");
+        urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraO.jasper");
+        urlMaestro4 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraC.jasper");
+        urlMaestro5 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+        parameters.put("DIR1", urlMaestro1.toString());
+        parameters.put("DIR2", urlMaestro2.toString());
+        parameters.put("DIR3", urlMaestro3.toString());
+        parameters.put("DIR4", urlMaestro4.toString());
+        parameters.put("DIR5", urlMaestro5.toString());      
+        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraP.jasper");
+        this.imprimePDF2(urlMaestro, parameters);
+    }
+    
     public void invitacion(int cod_w,String nota,String detalle,String destino,String nro_propuesta,String fecha,String fecha_reunion,String jefe_adq,String nombre,String casa)
     {
         Map parameters = new HashMap();

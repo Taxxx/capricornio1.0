@@ -30,6 +30,7 @@ import umsa.capricornio.gui.relacionadores.FrmUsrWorkflow;
 import umsa.capricornio.gui.transacciones.Adquisiciones.BancoProveedor.FrmBancoProveedores;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmAdquisiciones;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmReporteModalidad;
+import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmReporteUnidad;
 import umsa.capricornio.gui.transacciones.FrmTransacciones;
 
 /**
@@ -289,6 +290,7 @@ public class FrmMenu extends javax.swing.JFrame {
         ItmDocsEnviados = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        ItmRepAlmacen1 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -666,6 +668,16 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenReportes.add(jMenuItem3);
 
+        ItmRepAlmacen1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        ItmRepAlmacen1.setForeground(new java.awt.Color(0, 51, 204));
+        ItmRepAlmacen1.setText("Reportes Por Unidad");
+        ItmRepAlmacen1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmRepAlmacen1ActionPerformed(evt);
+            }
+        });
+        MenReportes.add(ItmRepAlmacen1);
+
         MenMenu.add(MenReportes);
 
         jMenu7.setForeground(new java.awt.Color(21, 65, 108));
@@ -847,6 +859,12 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmReportesItems(this));
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void ItmRepAlmacen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmRepAlmacen1ActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmReporteUnidad(this,cod_usuario));
+        
+    }//GEN-LAST:event_ItmRepAlmacen1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -873,6 +891,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem ItemUsuario;
     private javax.swing.JMenuItem ItmDocsEnviados;
     private javax.swing.JMenuItem ItmRepAlmacen;
+    private javax.swing.JMenuItem ItmRepAlmacen1;
     private javax.swing.JLabel LblGestion;
     private javax.swing.JLabel LblRol;
     private javax.swing.JMenu MenAdministracion;
