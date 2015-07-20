@@ -120,8 +120,17 @@ public class GetResAdj {
             System.out.println("Gravichimo error: "+e);
         }
     }
+    public void reporteppto(Date fi,Date ff,int cod_user,int estado)
+    {
+        Map parameters = new HashMap();
+        parameters.put("FECHA_INICIO", fi);
+        parameters.put("FECHA_FINAL", ff);
+        parameters.put("COD_USER", cod_user);
+        parameters.put("ESTADO", estado);        
+        RepTransaccion t1 = new RepTransaccion();
+    }
     
-    public void ReporteUnidad(Date fi,Date ff,int cod_user)
+    public void ReporteUnidad(Date fi,Date ff,int cod_user,int cod_rol)
     {
         Map parameters = new HashMap();
         parameters.put("FECHA_INICIO", fi);
@@ -129,6 +138,17 @@ public class GetResAdj {
         //int x=18;
         parameters.put("COD_USER", cod_user);
         RepTransaccion t1 = new RepTransaccion();
+        if(cod_rol==2)
+        {
+           urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraSA.jasper");
+           urlMaestro4 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraCA.jasper");
+           urlMaestro5 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+           parameters.put("DIR1", urlMaestro2.toString());
+           parameters.put("DIR2", urlMaestro4.toString());
+           parameters.put("DIR5", urlMaestro5.toString());
+           System.out.println("jaja");
+        }
+        else{
         urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra.jasper");
         urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraS.jasper");
         urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraO.jasper");
@@ -139,6 +159,8 @@ public class GetResAdj {
         parameters.put("DIR3", urlMaestro3.toString());
         parameters.put("DIR4", urlMaestro4.toString());
         parameters.put("DIR5", urlMaestro5.toString());      
+        System.out.println("jaja2");
+        }
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraP.jasper");
         this.imprimePDF2(urlMaestro, parameters);
     }

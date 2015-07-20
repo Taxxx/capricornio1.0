@@ -861,7 +861,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void ItmRepAlmacen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmRepAlmacen1ActionPerformed
         // TODO add your handling code here:
-        AbrirFrameInterno(new FrmReporteUnidad(this,cod_usuario));
+        AbrirFrameInterno(new FrmReporteUnidad(this,cod_usuario,cod_rol));
         
     }//GEN-LAST:event_ItmRepAlmacen1ActionPerformed
 
