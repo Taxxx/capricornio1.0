@@ -895,7 +895,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
     private void LlenaDatos(){
         if(this.cod_w==6)
             this.LlenaServicio();
-        if(this.cod_w==7)
+        if(this.cod_w==7||cod_w==1)
             this.LlenaBien();
         if(this.cod_w==3)
             this.LlenaCons();
