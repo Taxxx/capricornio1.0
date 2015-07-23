@@ -1180,7 +1180,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             //puerto.genResAdjServ2(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
-            puerto.genResAdjObra(this.cod_trans_nro, this.cod_w,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,tprov,tbche,adc);
+            puerto.genResAdjObra(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,tprov,tbche,adc);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
