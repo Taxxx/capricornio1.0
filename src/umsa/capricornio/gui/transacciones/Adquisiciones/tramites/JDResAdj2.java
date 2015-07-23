@@ -386,7 +386,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         System.out.println("================ el cod_w: "+cod_w+" =============");
         if(this.cod_w==6)
             this.bloqueaServicio();
-        if(this.cod_w==7)
+        if(this.cod_w==7 || cod_w == 1)
             this.bloqueaBien();
         if(this.cod_w==3)
             this.bloqueaConsultoria();
@@ -395,7 +395,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         System.out.println("================ el cod_w: "+cod_w+" =============");
         if(this.cod_w==6)
             this.ejServicio();
-        if(this.cod_w==7)
+        if(this.cod_w==7 || cod_w == 1)
             this.ejBien();
         if(this.cod_w==3)
             this.ejConsultoria();
@@ -682,7 +682,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         // TODO add your handling code here:
         if(this.cod_w==6)
             this.updateAdjServ(this.JTF_ADC.getText(), this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
-        if(this.cod_w==7)
+        if(this.cod_w==7 || cod_w==1)
             this.updateAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
         if(this.cod_w==3)
             this.updateAdjCons(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
