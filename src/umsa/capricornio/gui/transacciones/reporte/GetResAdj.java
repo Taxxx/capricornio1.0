@@ -165,7 +165,7 @@ public class GetResAdj {
         this.imprimePDF2(urlMaestro, parameters);
     }
     
-    public void invitacion(int cod_w,String nota,String detalle,String destino,String nro_propuesta,String fecha,String fecha_reunion,String jefe_adq,String nombre,String casa)
+    public void invitacion(int cod_w,String nota,String detalle,String destino,String nro_propuesta,String fecha,String fecha_reunion,String jefe_adq,String nombre,String casa,String metodo)
     {
         Map parameters = new HashMap();
         parameters.put("NOTA", nota);
@@ -174,6 +174,7 @@ public class GetResAdj {
         parameters.put("DESTINO", destino);
         parameters.put("FECHA", fecha);
         parameters.put("JEFE_ADQ", jefe_adq);
+        parameters.put("METODO", metodo);
         if(cod_w==4)
         {
             parameters.put("FECHA_REUNION", fecha_reunion);

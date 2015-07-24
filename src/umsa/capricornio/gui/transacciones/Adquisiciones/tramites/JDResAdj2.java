@@ -8,6 +8,9 @@ package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.text.DecimalFormat;
 import java.util.Map;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.transacciones.reporte.GetResAdj;
@@ -24,8 +27,17 @@ public class JDResAdj2 extends javax.swing.JDialog {
      */
     String res_adm,adc,fecha_comision,inf_div_adqui,cod_proveedor,detalle,proveedor,num_resol,det_conc_prop,modo_eval,destino,cargo,actividad,prop_proveedor;
     int cod_trans_nro,cod_w,cod_transaccion;
+    String fec,lug;
+    JLabel j1;
+    JCheckBox jc;
+    JTextField jt1,jt2,jt3,jt4,jt5;
     GetResAdj genera_res_adj = new GetResAdj();
     private String cuce;
+    String s1, tprov="", tbche="";
+    int tadju,sw1;
+    String[] vt1;
+    String[] vt2;
+    String []codigos=new String[100];
     
     public JDResAdj2(java.awt.Frame parent, boolean modal,int cod_w,int cod_trans_nro,String cod_proveedor,String detalle,int cod_transaccion) {
         super(parent, modal);
@@ -36,8 +48,238 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.detalle=detalle;
         this.cod_transaccion=cod_transaccion;
         LlenaDatos();
+        creatabla();
         controlBloqueo();
         Llenaejemplos();
+    }
+    
+     private void verifielementos()
+    {
+        int c=0,c1=0,c2=0,c3=0,c4=0,c5=0;
+        JTextField jtv[]=new JTextField[30];
+        JCheckBox jc[]=new JCheckBox[30];
+        tprov="";
+        tbche="";
+        //System.out.println("total adju"+tadju*5);
+        for(int i=5; i<=(tadju*5)+4 ;i++)
+        {
+            //System.out.println(" ");
+            ///System.out.println(jPanel2.getComponent(i).getName());
+            if(jPanel2.getComponent(i).getName().toString().equals("texto1"+c))
+            {
+                jtv[c]=(JTextField) jPanel2.getComponent(i);
+                //System.out.println(jtv[c].getText().toString());
+                tprov=tprov+","+jtv[c].getText();
+                c++;
+            }
+            if(jPanel2.getComponent(i).getName().toString().equals("texto2"+c2))
+            {
+                jtv[c2]=(JTextField) jPanel2.getComponent(i);
+                //System.out.println(jtv[c].getText().toString());
+                tprov=tprov+","+jtv[c2].getText();
+                c2++;
+            }
+            if(jPanel2.getComponent(i).getName().toString().equals("texto3"+c3))
+            {
+                jtv[c3]=(JTextField) jPanel2.getComponent(i);
+                jtv[c3].setText(jtv[c3].getText().toLowerCase());
+                System.out.println("noooooooo"+jtv[c3].getText().toString());
+                tprov=tprov+","+jtv[c3].getText();
+                c3++;
+            }
+            /*if(jPanel2.getComponent(i).getName().toString().equals("texto4"+c4))
+            {
+                jtv[c4]=(JTextField) jPanel2.getComponent(i);
+                //System.out.println(jtv[c].getText().toString());
+                tprov=tprov+","+jtv[c4].getText();
+                c4++;
+            }
+            if(jPanel2.getComponent(i).getName().toString().equals("texto5"+c5))
+            {
+                jtv[c5]=(JTextField) jPanel2.getComponent(i);
+                //System.out.println(jtv[c].getText().toString());
+                tprov=tprov+","+jtv[c5].getText();
+                c5++;
+            }*/
+            if(jPanel2.getComponent(i).getName().toString().equals("check1"+c1))
+            {
+                jc[c1]=(JCheckBox) jPanel2.getComponent(i);
+                //System.out.println(jc[c1].getSelectedObjects());
+                //System.out.println("c1="+c1);
+                if(jc[c1].getSelectedObjects()!=null)
+                   tbche=tbche+",cumple";
+                else
+                   tbche=tbche+",no cumple";
+                c1++;
+            }
+            System.err.println("u"+c+"u"+c1+"u"+c2+"u"+c3+"u"+c4+"u"+c5);
+            System.err.println("dsf"+jPanel2.getComponent(i).getName().toString());
+        }
+        //System.out.println("tprov: "+tprov+", tbche"+tbche);
+    }
+    
+    private void creatabla()
+    {
+        String conc="";
+        //codigos[]=new String[10];
+        System.out.println("entra acreartbla");
+        int k=30,kk=10,kkk=572,p=1,p1=1;
+        jLabel24.setText("MONTO AJUSTADO");
+        /*jPanel2.add(jLabel26);
+        jLabel27.setBounds(910,10,60,20);
+        jPanel2.add(jLabel27);*/
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            
+            //System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
+            Map[] datos =puerto.getConcursantes(cod_transaccion);
+            if(datos!=null){
+                tadju=datos.length;
+                System.out.println("el total es: "+tadju);
+                kk=kk+(datos.length-1)*50;
+                kkk=kkk+(datos.length-1)*50;
+                for (int c=0;c<datos.length;c++){
+                    System.out.println("Concursantes con Datos...");
+                    if(datos[c].get("NOMBRE_COMERCIAL").equals("Sin Nombre Comercial"))
+                    {
+                        codigos[c]=datos[c].get("COD_PROVEEDOR").toString();
+                        System.out.println("jjjjj "+codigos[c]);
+                        j1=new JLabel(datos[c].get("NOMBRE").toString());
+                        j1.setBounds(5, k, 300, 30);
+                        j1.setText(datos[c].get("NOMBRE").toString());
+                        j1.setName("label1"+c);
+                        jc=new JCheckBox("si cumple");
+                        jc.setBounds(300, k, 100, 30);
+                        //jc.setText(datos[c].get("NOMBRE").toString());
+                        jc.setVisible(true);
+                        jc.setEnabled(true);
+                        jc.setName("check1"+c);
+                        jt1=new JTextField();
+                        jt1.setBounds(410, k, 100, 30);
+                        jt1.setName("texto1"+c);
+                        jt2=new JTextField();
+                        jt2.setBounds(520, k, 150, 30);
+                        jt2.setName("texto2"+c);
+                        jt3=new JTextField();
+                        jt3.setBounds(680, k, 150, 30);
+                        jt3.setName("texto3"+c);
+                        /*jt4=new JTextField();
+                        jt4.setBounds(840, k, 60, 30);
+                        jt4.setName("texto4"+c);
+                        jt5=new JTextField();
+                        jt5.setBounds(910, k, 60, 30);
+                        jt5.setName("texto5"+c);*/
+                        jPanel2.add(j1);
+                        jPanel2.add(jc);
+                        jPanel2.add(jt1);
+                        jPanel2.add(jt2);
+                        jPanel2.add(jt3);
+                        /*jPanel2.add(jt4);
+                        jPanel2.add(jt5);*/
+                        /*jPanel2.setSize(970, kk);
+                        jPanel2.setPreferredSize(jPanel2.getSize());
+                        jPanel1.setSize(997, kkk);
+                       // System.out.println("WIDTH "+jPanel2.getSize());
+                        jPanel1.setPreferredSize(jPanel1.getSize());*/
+                        k=k+30;
+                        conc = conc+", "+datos[c].get("NOMBRE").toString();
+                        System.out.println("uuuuuuuuu "+conc+" esto es el sw"+sw1);
+                        if(sw1==1)
+                        {
+                            /*System.out.println((datos[c].get("MONTO").toString()));
+                            System.out.println((datos[c].get("PLAZO").toString()));*/
+                            System.out.println((datos[c].get("OBSERVACION").toString()));
+                            jt1.setText((datos[c].get("OBSERVACION").toString()));
+                            jt2.setText((datos[c].get("PTG_ECONOMICO").toString()));
+                            jt3.setText((datos[c].get("PTG_TECNICO").toString()));
+                            /*jt4.setText(datos[c].get("PTG_ECONOMICO").toString());
+                            jt5.setText(datos[c].get("PTG_TECNICO").toString());*/
+                            p=p+1;
+                            
+                            jt1.setEnabled(false);
+                            jt2.setEnabled(false);
+                            jt3.setEnabled(false);
+                            /*jt4.setEnabled(false);
+                            jt5.setEnabled(false);*/
+                            if((datos[c].get("CUMPLE").toString()).equals("cumple"))
+                                jc.setSelected(true);
+                            jc.setEnabled(false);
+                        }
+                    }
+                    else
+                    {
+                        codigos[c]=datos[c].get("COD_PROVEEDOR").toString();
+                        System.out.println("jjjjj8 "+codigos[c]);
+                        j1=new JLabel(datos[c].get("NOMBRE_COMERCIAL").toString());
+                        j1.setBounds(5, k, 300, 30);
+                        j1.setVisible(true);
+                        j1.setEnabled(true);
+                        j1.setName("label1"+c);
+                        jc=new JCheckBox("si cumple");
+                        jc.setBounds(300, k, 100, 30);
+                        jc.setName("check1"+c);
+                        //jc.setText(datos[c].get("NOMBRE").toString());
+                        jc.setVisible(true);
+                        jc.setEnabled(true);
+                        jt1=new JTextField();
+                        jt1.setBounds(410, k, 100, 30);
+                        jt1.setName("texto1"+c);
+                        jt2=new JTextField();
+                        jt2.setBounds(520, k, 150, 30);
+                        jt2.setName("texto2"+c);
+                        jt3=new JTextField();
+                        jt3.setBounds(680, k, 150, 30);
+                        jt3.setName("texto3"+c);
+                        /*jt4=new JTextField();
+                        jt4.setBounds(840, k, 60, 30);
+                        jt4.setName("texto4"+c);
+                        jt5=new JTextField();
+                        jt5.setBounds(910, k, 60, 30);
+                        jt5.setName("texto5"+c);*/
+                        jPanel2.add(j1);
+                        jPanel2.add(jc);
+                        jPanel2.add(jt1);
+                        jPanel2.add(jt2);
+                        jPanel2.add(jt3);
+                        /*jPanel2.add(jt4);
+                        jPanel2.add(jt5);
+                        jPanel2.setSize(970, kk);
+                        System.out.println("WIDTH "+jPanel2.getSize());
+                        jPanel2.setPreferredSize(jPanel2.getSize());
+                        jPanel1.setSize(997, kkk);
+                       // System.out.println("WIDTH "+jPanel2.getSize());
+                        jPanel1.setPreferredSize(jPanel1.getSize());*/
+                        k=k+30;
+                        conc = conc+", "+datos[c].get("NOMBRE_COMERCIAL").toString();
+                        System.out.println("aaaaaaa "+conc);
+                        if(sw1==1)
+                        {
+                            jt1.setText((datos[c].get("OBSERVACION").toString()));
+                            jt2.setText((datos[c].get("PTG_ECONOMICO").toString()));
+                            jt3.setText((datos[c].get("PTG_TECNICO").toString()));
+                            /*jt4.setText(datos[c].get("PTG_ECONOMICO").toString());
+                            jt5.setText(datos[c].get("PTG_TECNICO").toString());*/
+                            p=p+1;
+                            
+                            jt1.setEnabled(false);
+                            jt2.setEnabled(false);
+                            jt3.setEnabled(false);
+                            /*jt4.setEnabled(false);
+                            jt5.setEnabled(false);*/
+                            if((datos[c].get("CUMPLE").toString()).equals("cumple"))
+                                jc.setSelected(true);
+                            jc.setEnabled(false);
+                        }
+                    }
+                    System.out.println("adsfsdf "+ c);
+                }
+            }
+            else
+                System.out.println("Vacio :(");
+        } catch (Exception e) {
+            System.out.println("ERROR: "+e);
+        }
     }
 
     /**
@@ -84,6 +326,17 @@ public class JDResAdj2 extends javax.swing.JDialog {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -238,6 +491,54 @@ public class JDResAdj2 extends javax.swing.JDialog {
 
         jLabel19.setText("jLabel19");
 
+        jLabel20.setText("PROPONENTE");
+
+        jLabel21.setText("CUMPLE");
+
+        jLabel22.setText("OBSERVACIONES");
+
+        jLabel23.setText("VALOR PROPUESTA");
+
+        jLabel24.setText("jLabel24");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jLabel20)
+                .addGap(160, 160, 160)
+                .addComponent(jLabel21)
+                .addGap(65, 65, 65)
+                .addComponent(jLabel22)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel23)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel24)
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel24))
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel2);
+
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel25.setText("LUGAR DEL ACTO DE APERTURA:");
+
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel26.setText("FECHA DEL ACTO DE APERTURA:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -248,52 +549,60 @@ public class JDResAdj2 extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel2))
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(JB_Actualizar)
-                                .addGap(56, 56, 56)
-                                .addComponent(JB_Guardar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(JTF_ACTIVIDAD, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_CARGO, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_DESTINO, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_MEVAL, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_DET_CONC_PROP, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_INFDIVADQUI, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                                    .addComponent(JTF_FechaCC, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_ADC, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTF_Res_Admi))
-                                .addGap(62, 62, 62)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel19)))))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26))
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_ACTIVIDAD, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_CARGO, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_DESTINO, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_MEVAL, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_DET_CONC_PROP, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_INFDIVADQUI, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                            .addComponent(JTF_FechaCC, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_ADC, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTF_Res_Admi))
+                                        .addGap(62, 62, 62)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel13)
+                                            .addComponent(jLabel14)
+                                            .addComponent(jLabel15)
+                                            .addComponent(jLabel16)
+                                            .addComponent(jLabel17)
+                                            .addComponent(jLabel18)
+                                            .addComponent(jLabel19)))))
+                            .addComponent(jLabel9)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(229, 229, 229)
                         .addComponent(JB_Generar)
                         .addGap(35, 35, 35)
                         .addComponent(JB_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
-                        .addComponent(JB_Imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(185, Short.MAX_VALUE))
+                        .addComponent(JB_Imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(JB_Actualizar)
+                        .addGap(56, 56, 56)
+                        .addComponent(JB_Guardar)))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,11 +659,21 @@ public class JDResAdj2 extends javax.swing.JDialog {
                     .addComponent(jLabel10)
                     .addComponent(JTF_ACTIVIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JB_Actualizar)
                     .addComponent(JB_Guardar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -375,8 +694,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -453,12 +772,13 @@ public class JDResAdj2 extends javax.swing.JDialog {
     }
     private void JB_GenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GenerarActionPerformed
         // TODO add your handling code here:
+        verifielementos();
         System.out.println("--***>> el cod_w es: "+cod_w);
         if(this.cod_w==6){
             this.GeneraResAdjServ(this.JTF_ADC.getText(), this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText());
         }
         if(this.cod_w==7||this.cod_w==1){
-            this.GeneraResAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
+            this.GeneraResAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText(),jTextField1.getText(),jTextField2.getText());
         }
         if(this.cod_w==3){
             this.GeneraResAdjConsu(this.JTF_Res_Admi.getText(), this.JTF_ADC.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText());
@@ -602,6 +922,13 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.JTF_DESTINO.setEnabled(true);
         this.JTF_CARGO.setEnabled(true);
         this.JTF_ACTIVIDAD.setEnabled(true);
+        this.jTextField1.setEnabled(true);
+        this.jTextField2.setEnabled(true);
+        
+        for(int i=5; i<=(tadju*5)+4 ;i++)
+        {
+            jPanel2.getComponent(i).setEnabled(true);
+        }
         
         this.JB_Generar.setEnabled(false);
         this.JB_Imprimir.setEnabled(false);
@@ -630,7 +957,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         if (res == javax.swing.JOptionPane.YES_OPTION) {
             if(this.cod_w==6)
                 this.unlockAdjServ();
-            if(this.cod_w==7)
+            if(this.cod_w==7 || cod_w==1)
                 this.unlockAdjBien();
             if(this.cod_w==3)
                 this.unlockAdjCons();
@@ -650,13 +977,29 @@ public class JDResAdj2 extends javax.swing.JDialog {
             System.out.println("ResAdjServ actualizado erroneamente :D");
         }
     }
-    private void updateAdjBien(String res_adm,String fecha_cc,String inf_div_adq,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc){
+    private void updateAdjBien(String res_adm,String fecha_cc,String inf_div_adq,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc,String aaa,String bbb){
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
                         
             //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjBien(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc);
+            puerto.updateResAdjBien(this.cod_trans_nro, 2, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,aaa,bbb);
+            int cc=1,hh=1,nh=0;
+            String []n1;
+            String []n2;
+            n1=tprov.split(",");
+            n2=tbche.split(",");
+            System.out.println(tprov+" aqui "+tbche);
+            System.out.println();
+            while(cc<n1.length)
+            {
+                puerto.gentabla(null, null, n1[cc], n2[hh],cod_trans_nro,codigos[nh],n1[cc+1],n1[cc+2]);
+                cc=cc+3;
+                /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
+                cc=cc+3;*/
+                hh++;
+                nh++;
+            }
             System.out.println("ResAdjServ actualizado correctamente :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de servicio ha sido actualizada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -680,10 +1023,11 @@ public class JDResAdj2 extends javax.swing.JDialog {
     }
     private void JB_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GuardarActionPerformed
         // TODO add your handling code here:
+        verifielementos();
         if(this.cod_w==6)
             this.updateAdjServ(this.JTF_ADC.getText(), this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
         if(this.cod_w==7 || cod_w==1)
-            this.updateAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
+            this.updateAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText(),jTextField1.getText(),jTextField2.getText());
         if(this.cod_w==3)
             this.updateAdjCons(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
         this.setVisible(false);
@@ -754,6 +1098,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.JTF_INFDIVADQUI.setEnabled(false);
         this.JTF_MEVAL.setEnabled(false);
         this.JTF_Res_Admi.setEnabled(false);
+        this.jTextField1.setEnabled(false);
+        this.jTextField2.setEnabled(false);
     }
     private void LlenaServicio(){
         System.out.println("En llena servicio");
@@ -810,6 +1156,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
             Map[] datos =puerto.getResAdjBien(cod_trans_nro);
             if(datos!=null){
+                sw1=1;
                 System.out.println("Con datos :D");
                 this.res_adm = datos[0].get("DET_RES_ADM").toString();
                 this.adc = datos[0].get("DET_ADC").toString();
@@ -824,6 +1171,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
                 this.cargo = datos[0].get("CARGO").toString();
                 this.actividad = datos[0].get("ACTIVIDAD").toString();
                 this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();
+                fec=datos[0].get("DET_UNI_SOL").toString();
+                lug=datos[0].get("DET_AUT").toString();
                 
                 this.JTF_Res_Admi.setText(res_adm);
                 this.JTF_ADC.setText(adc);
@@ -835,7 +1184,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
                 this.JTF_DESTINO.setText(destino);
                 this.JTF_CARGO.setText(cargo);
                 this.JTF_ACTIVIDAD.setText(actividad);
-                
+                jTextField1.setText(fec);
+                jTextField2.setText(lug);
                 this.bloqueaTodo();
             }
             else
@@ -918,7 +1268,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             System.out.println("Error al generar R.A.B :(");
         }
     }
-    private void GeneraResAdjBien(String res_adm, String fecha_comision, String inf_div_adqui, String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc){
+    private void GeneraResAdjBien(String res_adm, String fecha_comision, String inf_div_adqui, String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc,String aaa,String bbb){
           try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -935,7 +1285,21 @@ public class JDResAdj2 extends javax.swing.JDialog {
             System.out.println("destino: "+destino);
             System.out.println("cargo: "+cargo);
             System.out.println("actividad: "+actividad);
-            puerto.genResAdjBien(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc);
+            puerto.genResAdjBien(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc,aaa,bbb);
+            int cc=1,hh=1,nh=0;
+            String []n1;
+            String []n2;
+            n1=tprov.split(",");
+            n2=tbche.split(",");
+            while(cc<n1.length)
+            {
+                puerto.gentabla(null, null, n1[cc], n2[hh],cod_trans_nro,codigos[nh],n1[cc+1],n1[cc+2]);
+                cc=cc+3;
+                /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
+                cc=cc+3;*/
+                hh++;
+                nh++;
+            }
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de bien ha sido generada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
 //            this.setVisible(false);
@@ -1056,6 +1420,13 @@ public class JDResAdj2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1064,6 +1435,10 @@ public class JDResAdj2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

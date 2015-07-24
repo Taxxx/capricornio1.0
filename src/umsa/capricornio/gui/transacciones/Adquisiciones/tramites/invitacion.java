@@ -33,7 +33,7 @@ public class invitacion extends javax.swing.JDialog {
     String nro_propuesta;
     String fecha;
     String fecha_reunion;
-    String jefe_adq;
+    String jefe_adq,metodo;
     int cod_T,cod_TN,cod_w;
     GetResAdj Reporte=new GetResAdj();
     public invitacion(ProponentesDialog11 c,java.awt.Frame parent, boolean modal,String nombre,String nombre_comercial,int cod_t,int cod_tn, int cod_w) {
@@ -56,6 +56,7 @@ public class invitacion extends javax.swing.JDialog {
         jTextField2.setEnabled(false);
         jTextField4.setEnabled(false);
         jTextField5.setEnabled(false);
+        jTextField6.setEnabled(false);
         jButton1.setEnabled(false);
     }
     public void bloquea()
@@ -91,6 +92,7 @@ public class invitacion extends javax.swing.JDialog {
         jTextField2.setText(fecha);
         jTextField4.setText(jefe_adq);
         jTextField5.setText(fecha_reunion);
+        jTextField6.setText(metodo);
     }
     public void obtinedatos()
     {
@@ -98,6 +100,7 @@ public class invitacion extends javax.swing.JDialog {
         fecha=jTextField2.getText();
         jefe_adq=jTextField4.getText();
         fecha_reunion=jTextField5.getText();
+        metodo=jTextField6.getText();
     }
     public void llenadatos()
     {
@@ -114,6 +117,7 @@ public class invitacion extends javax.swing.JDialog {
                 fecha=datos[0].get("FECHA").toString();
                 fecha_reunion=datos[0].get("F_REUNION").toString();
                 jefe_adq=datos[0].get("JEFE_ADQ").toString();
+                metodo=datos[0].get("MODO_EVAL").toString();
                 datostextfield();
                 bloqueadatos();
             }
@@ -153,11 +157,14 @@ public class invitacion extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jTextField5 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -210,11 +217,13 @@ public class invitacion extends javax.swing.JDialog {
 
         jLabel2.setText("Nº DE PROPUESTA");
 
-        jLabel3.setText("FECHA");
+        jLabel3.setText("FECHA APERTURA");
 
         jLabel5.setText("JEFE DE ADQ");
 
         jLabel9.setText("FECHA DE REUNION");
+
+        jLabel10.setText("MODO EVALUACION");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -224,14 +233,16 @@ public class invitacion extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel9))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel10))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +255,9 @@ public class invitacion extends javax.swing.JDialog {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -259,7 +272,8 @@ public class invitacion extends javax.swing.JDialog {
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextField1)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -273,8 +287,12 @@ public class invitacion extends javax.swing.JDialog {
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        jLabel11.setText("CALIDAD");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -291,11 +309,12 @@ public class invitacion extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel8)))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,13 +350,15 @@ public class invitacion extends javax.swing.JDialog {
                         .addGap(14, 14, 14)
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel8)))
-                .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel11)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
@@ -378,7 +399,7 @@ public class invitacion extends javax.swing.JDialog {
             obtinedatos();
             datosextra();
             System.out.println("de "+cod_T+","+cod_TN+","+destino+","+detalle+","+fecha+","+fecha_reunion+","+jefe_adq+","+nro_propuesta);
-            Map[] datos =puerto.geninvitacion(cod_T,cod_TN,destino,detalle,fecha,fecha_reunion,jefe_adq,nro_propuesta,gestion);
+            Map[] datos =puerto.geninvitacion(cod_T,cod_TN,destino,detalle,fecha,fecha_reunion,jefe_adq,nro_propuesta,gestion,metodo);
             //Map[] datos =puerto.geninvitacion(cod_T,cod_TN,destino,detalle,fecha,fecha_reunion,jefe_adq,nro_propuesta);
             llenadatos();
             /*if(datos!=null)
@@ -405,6 +426,7 @@ public class invitacion extends javax.swing.JDialog {
         jTextField1.setEnabled(true);
         jTextField2.setEnabled(true);
         jTextField4.setEnabled(true);
+        jTextField6.setEnabled(true);
         jButton4.setEnabled(false);
         jButton3.setEnabled(false);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -418,7 +440,7 @@ public class invitacion extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             datosextra();
             obtinedatos();
-            Map[] datos =puerto.updateinvitacion(cod_T,cod_TN,nro_propuesta,fecha,fecha_reunion,jefe_adq);
+            Map[] datos =puerto.updateinvitacion(cod_T,cod_TN,nro_propuesta,fecha,fecha_reunion,jefe_adq,metodo);
             llenadatos();
             /*if(datos!=null)
             {
@@ -436,7 +458,7 @@ public class invitacion extends javax.swing.JDialog {
         datosextra();
         System.out.println("nombre "+n+" casacom "+nc);
          try{
-            this.Reporte.invitacion(cod_w,nota,detalle,destino,nro_propuesta,fecha,fecha_reunion,jefe_adq,n,nc);
+            this.Reporte.invitacion(cod_w,nota,detalle,destino,nro_propuesta,fecha,fecha_reunion,jefe_adq,n,nc,metodo);
         }catch(Exception e)
         {
             
@@ -493,6 +515,8 @@ public class invitacion extends javax.swing.JDialog {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -508,5 +532,6 @@ public class invitacion extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
