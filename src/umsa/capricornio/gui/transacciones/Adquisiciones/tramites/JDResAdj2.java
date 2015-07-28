@@ -890,7 +890,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         //this.genera_res_adj.Reporte(res_adm, res_adm, res_adm, adc, detalle, res_adm, fecha_comision, adc, adc, res_adm, res_adm, res_adm, cod_trans_nro, cod_w);
         if(this.cod_w==6)
             this.genera_res_adj.ReporteAdjServ(adc, res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
-        if(this.cod_w==7 || cod_w==1)
+        if(this.cod_w==1)
             this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,cod_transaccion);
 //        this.setVisible(false);
         if(this.cod_w==3)
