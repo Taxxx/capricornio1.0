@@ -890,8 +890,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
         //this.genera_res_adj.Reporte(res_adm, res_adm, res_adm, adc, detalle, res_adm, fecha_comision, adc, adc, res_adm, res_adm, res_adm, cod_trans_nro, cod_w);
         if(this.cod_w==6)
             this.genera_res_adj.ReporteAdjServ(adc, res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
-        if(this.cod_w==7)
-            this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc);
+        if(this.cod_w==7 || cod_w==1)
+            this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,cod_transaccion);
 //        this.setVisible(false);
         if(this.cod_w==3)
             this.genera_res_adj.ReporteAdjConsul(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
@@ -1257,7 +1257,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             //puerto.genResAdjServ2(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
-            puerto.genResAdjConsu(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad);
+            puerto.genResAdjConsu(this.cod_transaccion,this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad);
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de consultoria ha sido generada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
 //            this.setVisible(false);
@@ -1285,7 +1285,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             System.out.println("destino: "+destino);
             System.out.println("cargo: "+cargo);
             System.out.println("actividad: "+actividad);
-            puerto.genResAdjBien(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc,aaa,bbb);
+            puerto.genResAdjBien(this.cod_transaccion,this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc,aaa,bbb);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1327,7 +1327,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             //puerto.genResAdjServ(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
             //puerto.genResAdjServ2(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
             //puerto.genResAdjServ2(15,1, "ups","a", "b", "c", "d");
-            puerto.genResAdjServ2(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc);
+            puerto.genResAdjServ2(this.cod_transaccion,this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc);
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de servicio ha sido generada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
 //            this.setVisible(false);

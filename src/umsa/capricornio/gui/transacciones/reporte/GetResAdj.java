@@ -263,7 +263,7 @@ public class GetResAdj {
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjServ.jasper");
         this.imprimePDF(urlMaestro, parameters);
     }
-    public void ReporteAdjBien(String res_adm,String fecha_cc,String inf_div_adq,String proveedor,String detalle,String num_resol,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String prop_proveedor,String proponentes, String cuce, String monto, String adc){
+    public void ReporteAdjBien(String res_adm,String fecha_cc,String inf_div_adq,String proveedor,String detalle,String num_resol,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String prop_proveedor,String proponentes, String cuce, String monto, String adc,int cod_trans){
         Map parameters = new HashMap();
         
         parameters.put("num_res_adm", res_adm);
@@ -285,11 +285,18 @@ public class GetResAdj {
         parameters.put("CUCE", cuce);
         System.out.println(cuce+"   sdfjsdfoisdjfoisjdoifjds");
         parameters.put("MONTO", monto);
-        
+        parameters.put("cod_trans", cod_trans);
+        System.out.println("yuuuuuu");
         
         RepTransaccion t1 = new RepTransaccion(); 
-        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjBien.jasper");
-        this.imprimePDF(urlMaestro, parameters);
+        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjBienNuevo.jasper");
+        urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/uniendo_reportes.jasper");
+        urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/grafico_AB.jasper");
+        urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/GRAFICOS_ANPE_BIENES.jasper");
+        parameters.put("DIR1",urlMaestro1.toString());
+        parameters.put("DIR2",urlMaestro2.toString());
+        parameters.put("DIR3",urlMaestro3.toString());
+        this.imprimePDF2(urlMaestro, parameters);
     }
     
     public void ReporteAdjObra(String res_adm,String fecha_cc,String inf_div_adq,String proveedor,String detalle,String num_resol,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String prop_proveedor,String proponentes, String cuce, String monto,String adc,String a,String b,int cod,int total){
