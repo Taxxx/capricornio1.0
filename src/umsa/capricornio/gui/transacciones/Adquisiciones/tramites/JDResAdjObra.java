@@ -13,6 +13,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import static umsa.capricornio.gui.menu.FrmMenu.cod_usuario;
 import javax.swing.JTextField;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
@@ -37,13 +38,13 @@ public class JDResAdjObra extends javax.swing.JDialog {
     JCheckBox jc;
     JTextField jt1,jt2,jt3,jt4,jt5;
     String s1, tprov="", tbche="";
-    int tadju;
+    int tadju,gestion;
     String[] vt1;
     String[] vt2;
     String []codigos=new String[100];
     
     
-    public JDResAdjObra(java.awt.Frame parent, boolean modal,int cod_w,int cod_trans_nro,String cod_proveedor,String detalle,int cod_transaccion) {
+    public JDResAdjObra(java.awt.Frame parent, boolean modal,int cod_w,int cod_trans_nro,String cod_proveedor,String detalle,int cod_transaccion,int gestion) {
         super(parent, modal);
         initComponents();
         this.cod_w=cod_w;
@@ -51,6 +52,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         this.cod_proveedor=cod_proveedor;
         this.detalle=detalle;
         this.cod_transaccion=cod_transaccion;
+        this.gestion=gestion;
         System.out.println("codigotrnas"+cod_transaccion);
         LlenaBien();
         creatabla();
@@ -921,7 +923,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
             System.out.println("dsfsdfsdf"+adc); 
             //LlenaBien();
             //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche);
+            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1180,7 +1182,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             //puerto.genResAdjServ2(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
-            puerto.genResAdjObra(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,tprov,tbche,adc);
+            puerto.genResAdjObra(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,tprov,tbche,adc,gestion,cod_usuario);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1234,7 +1236,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JDResAdjObra dialog = new JDResAdjObra(new javax.swing.JFrame(), false,6,2,"xxx","qqq",0);
+                JDResAdjObra dialog = new JDResAdjObra(new javax.swing.JFrame(), false,6,2,"xxx","qqq",0,2015);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -1938,14 +1938,14 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         } else {
             if (cod_w == 4) {
                 System.out.println("entra al if de obras");
-                JDResAdjObra x = new JDResAdjObra(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion);
+                JDResAdjObra x = new JDResAdjObra(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
                 this.setModal(false);
                 x.setVisible(true);
             } else {
                 this.BtnGuardar.doClick();
                 System.out.println(":P :P :P cod_w: " + cod_w + "cod_trans_nro: " + this.cod_trans_nro + "  nombre_comercial: " + this.proveedor.getCasa_comercial() + " detalle: " + this.detalle);
                 //JDResAdj x = new JDResAdj(menu,true,this.cod_trans_nro);
-                JDResAdj2 x = new JDResAdj2(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion);
+                JDResAdj2 x = new JDResAdj2(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
                 this.setModal(false);
                 x.setVisible(true);
             }
