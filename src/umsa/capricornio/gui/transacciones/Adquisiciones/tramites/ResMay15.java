@@ -367,19 +367,19 @@ public class ResMay15 extends javax.swing.JDialog {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("DOCUMENTOS A PRESENTAR");
 
-        jCheckBox1.setText("Certificado del RUPE (Registro único de Proveedores del Estado)");
+        jCheckBox1.setText("Certificado del RUPE (Registro unico de Proveedores del Estado)");
 
-        jCheckBox2.setText("Certificado de No adeudo a las AFPs Futuro y Previsión");
+        jCheckBox2.setText("Certificado de No adeudo a las AFPs Futuro y Prevision");
 
-        jCheckBox3.setText("Fotocopia de Cédula de Identidad");
+        jCheckBox3.setText("Fotocopia de Cedula de Identidad");
 
         jCheckBox4.setText("Poder del Representante Legal (si corresponde en fotocopia)");
 
         jCheckBox5.setText("NIT (fotocopia)");
 
-        jCheckBox6.setText("Licencia de funcionamiento otorgada por la Policía Nacional (fotocopia)");
+        jCheckBox6.setText("Licencia de funcionamiento otorgada por la Policia Nacional (fotocopia)");
 
-        jCheckBox7.setText("Licencia de funcionamiento otorgada por el GAMLP (Alcaldía) fotocopia");
+        jCheckBox7.setText("Licencia de funcionamiento otorgada por el GAMLP (Alcaldia) fotocopia");
 
         jCheckBox8.setText("Curriculum vitae y documento que respalde copia legalzada");
 
@@ -481,11 +481,6 @@ public class ResMay15 extends javax.swing.JDialog {
                 .addGap(74, 74, 74)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2)
@@ -495,8 +490,10 @@ public class ResMay15 extends javax.swing.JDialog {
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jCheckBox2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCheckBox2)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox1)
                             .addComponent(jCheckBox3)
@@ -606,9 +603,11 @@ public class ResMay15 extends javax.swing.JDialog {
         destino=jTextArea1.getText();
         objetivo=jTextArea2.getText();
         cotizacion=jTextField6.getText();
+        System.out.println(fec_ini);
         llena_campos();
         montocompleto();
         String doc=obtiene_doc();
+        System.out.println(doc);
 //        if(cite.equals("") || destino.equals("") || objetivo.equals("") || cotizacion.equals(""))
 //        {
 //            JOptionPane.showMessageDialog(null, "todos los campos deben ser llenados");
@@ -618,11 +617,13 @@ public class ResMay15 extends javax.swing.JDialog {
             try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("aqui uno "+gestion);
             puerto.generaRes15(cod_transaccion,cod_trans_nro,dias,cite,destino,objetivo,cotizacion,detalle,enviado_por,cargo,gestion,doc,fec_ini);
+            System.out.println("aqui dos");
             llenadatos();
             }catch(Exception e)
             {
-            
+                System.out.println("aqui esta el error con un demonio "+e);
             }
         //}
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -644,6 +645,7 @@ public class ResMay15 extends javax.swing.JDialog {
         destino=jTextArea1.getText();
         objetivo=jTextArea2.getText();
         cotizacion=jTextField6.getText();
+        
         llena_campos();
         montocompleto();
         String doc=obtiene_doc();
@@ -656,6 +658,7 @@ public class ResMay15 extends javax.swing.JDialog {
             try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("la fecha "+fec_ini);
             puerto.updateRes15(cod_transaccion,cod_trans_nro,cite,destino,objetivo,cotizacion,doc,fec_ini,cargo);
             llenadatos();
             }catch(Exception e)
