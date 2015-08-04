@@ -618,6 +618,7 @@ public class ResMay15 extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("aqui uno "+gestion);
+            System.out.println(fec_ini);
             puerto.generaRes15(cod_transaccion,cod_trans_nro,dias,cite,destino,objetivo,cotizacion,detalle,enviado_por,cargo,gestion,doc,fec_ini);
             System.out.println("aqui dos");
             llenadatos();

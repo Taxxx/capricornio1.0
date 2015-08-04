@@ -47,7 +47,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
 
     TablaTransaccionBandeja bandeja;
     TablaTransaccionEstados estados;
-    int pasa=0;
+    int pasa=0,swdias=0;
     FrmMenu menu;
     private Reportes reportes;
     int cod_usuario,cod_rol,gestion,x,tope,ini,fin,cod_almacen;
@@ -438,6 +438,13 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             else
             {
                 System.out.println("esto");
+                Map[] datos1=puerto.getDias(cod_trans_nro);
+                if(!datos1[0].get("DIAS").toString().equals(""))
+                { 
+                    System.out.println("ttttt ya tiene dias");
+                    swdias=1;
+                    
+                }
             }
         }catch(Exception e)
         {
@@ -563,10 +570,19 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             int xxxx=verificaresolucion(cod_trans_nro);
         if(xxxx==1)
         {
-            System.out.println("asdasdasdasdasdddddddddddd");
+            
         }
         else{
-            reportes.MostrarOrden(cod_trans_nro, "ADQ", 2, "ORDEN DE COMPRA Y/U ORDEN DE SERVICIO");
+            if(swdias==1)
+            {
+                System.out.println("su resolucion aun no a sido generada por sistema");
+            JOptionPane.showMessageDialog(null, "su resolucion aun no ha sido generada por sistema debido a que no es necesario imprimir la orden de compra");
+            }
+            else
+            {
+                reportes.MostrarOrden(cod_trans_nro, "ADQ", 2, "ORDEN DE COMPRA Y/U ORDEN DE SERVICIO");
+            }
+            
         }
             //MostrarReporte(cod_trans_nro, cod_estado, cod_tramite, titulo);
     }

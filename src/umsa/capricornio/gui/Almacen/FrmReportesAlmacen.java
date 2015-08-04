@@ -304,9 +304,9 @@ public class FrmReportesAlmacen extends javax.swing.JInternalFrame {
             Connection conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
             JD_Reporte1 t1 = new JD_Reporte1();
             Map parameters = new HashMap();
-            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra.jasper");
-            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra2.jasper");
-            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra0.jasper");
+            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra20.jasper");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra30.jasper");
             parameters.put("ESTADO",e);
             parameters.put("TIPO_SOL",ts);
             parameters.put("FECHA_INICIO",fi);
