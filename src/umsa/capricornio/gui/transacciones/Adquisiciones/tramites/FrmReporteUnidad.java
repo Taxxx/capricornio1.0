@@ -20,11 +20,12 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
      * Creates new form FrmReporteUnidad
      */
     FrmMenu menu;
-    int cod_user, cod_rol,estado;
+    int cod_user, cod_rol,estado,btr;
     private Runtime r;
     GetResAdj genera_res_15 = new GetResAdj();
-    public FrmReporteUnidad(FrmMenu menu,int cod_user, int cod_rol) {
+    public FrmReporteUnidad(FrmMenu menu,int cod_user, int cod_rol,int bt) {
         this.menu=menu;
+        this.btr=bt;
         this.cod_user=cod_user;
         this.cod_rol=cod_rol;
         initComponents();
@@ -157,27 +158,55 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
         //System.out.println("estado: adquisiciones");
         //System.out.println("fecha inicio: "+DatFec_ini.getValue().toString());
         //System.out.println("fecha final: "+DatFec_fin.getValue().toString());
-        if(cod_rol==5 || cod_rol==2)
+        if(btr==1)
         {
-            fi=(Date) DatFec_ini.getValue();
-            ff=(Date) DatFec_fin.getValue();
-            System.out.println("fi "+fi);
-            System.out.println("ff "+ff);
-            this.genera_res_15.ReporteUnidad(fi, ff,cod_user,cod_rol);
+            if(cod_rol==5 || cod_rol==2)
+            {
+                fi=(Date) DatFec_ini.getValue();
+                ff=(Date) DatFec_fin.getValue();
+                System.out.println("fi "+fi);
+                System.out.println("ff "+ff);
+                this.genera_res_15.ReporteUnidad(fi, ff,cod_user,cod_rol);
+            }
+            if(cod_rol==4)
+            {
+                fi=(Date) DatFec_ini.getValue();
+                ff=(Date) DatFec_fin.getValue();
+                if(RadEnvio1.getSelectedObjects()==null)
+                {
+                    estado=1;
+                }
+                else
+                {
+                    estado=0;
+                }
+                this.genera_res_15.reporteppto(fi, ff, cod_user, estado);
+            }
         }
-        if(cod_rol==4)
+        else
         {
-            fi=(Date) DatFec_ini.getValue();
-            ff=(Date) DatFec_fin.getValue();
-            if(RadEnvio1.getSelectedObjects()==null)
+            if(cod_rol==5 || cod_rol==2)
             {
-                estado=1;
+                fi=(Date) DatFec_ini.getValue();
+                ff=(Date) DatFec_fin.getValue();
+                System.out.println("fi "+fi);
+                System.out.println("ff "+ff);
+                this.genera_res_15.ReporteSimplificado(fi, ff,cod_user,cod_rol);
             }
-            else
+            if(cod_rol==4)
             {
-                estado=0;
+                fi=(Date) DatFec_ini.getValue();
+                ff=(Date) DatFec_fin.getValue();
+                if(RadEnvio1.getSelectedObjects()==null)
+                {
+                    estado=1;
+                }
+                else
+                {
+                    estado=0;
+                }
+                this.genera_res_15.reporteppto(fi, ff, cod_user, estado);
             }
-            this.genera_res_15.reporteppto(fi, ff, cod_user, estado);
         }
         //JD_Reporte1 r = new JD_Reporte1(this.menu,false,e,ts,fi,ff);
         //r.setVisible(true);

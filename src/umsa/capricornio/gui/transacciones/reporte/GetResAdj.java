@@ -165,6 +165,41 @@ public class GetResAdj {
         this.imprimePDF2(urlMaestro, parameters);
     }
     
+    public void ReporteSimplificado(Date fi,Date ff,int cod_user,int cod_rol)
+    {
+        Map parameters = new HashMap();
+        parameters.put("FECHA_INICIO", fi);
+        parameters.put("FECHA_FINAL", ff);
+        //int x=18;
+        parameters.put("COD_USER", cod_user);
+        RepTransaccion t1 = new RepTransaccion();
+        if(cod_rol==2)
+        {
+           urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraSA.jasper");
+           urlMaestro4 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraCA.jasper");
+           urlMaestro5 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+           parameters.put("DIR1", urlMaestro2.toString());
+           parameters.put("DIR2", urlMaestro4.toString());
+           parameters.put("DIR5", urlMaestro5.toString());
+           System.out.println("jaja");
+        }
+        else{
+        urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraSimp.jasper");
+        urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraSSimp.jasper");
+        urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraOSimp.jasper");
+        urlMaestro4 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraCSimp.jasper");
+        urlMaestro5 = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompra3.jasper");
+        parameters.put("DIR1", urlMaestro1.toString());
+        parameters.put("DIR2", urlMaestro2.toString());
+        parameters.put("DIR3", urlMaestro3.toString());
+        parameters.put("DIR4", urlMaestro4.toString());
+        parameters.put("DIR5", urlMaestro5.toString());      
+        System.out.println("jaja2");
+        }
+        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraPSimp.jasper");
+        this.imprimePDF2(urlMaestro, parameters);
+    }
+    
     public void invitacion(int cod_w,String nota,String detalle,String destino,String nro_propuesta,String fecha,String fecha_reunion,String jefe_adq,String nombre,String casa,String metodo)
     {
         Map parameters = new HashMap();

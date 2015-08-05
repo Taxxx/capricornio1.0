@@ -291,6 +291,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         ItmRepAlmacen1 = new javax.swing.JMenuItem();
+        ItmRepAlmacen2 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -678,6 +679,16 @@ public class FrmMenu extends javax.swing.JFrame {
         });
         MenReportes.add(ItmRepAlmacen1);
 
+        ItmRepAlmacen2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        ItmRepAlmacen2.setForeground(new java.awt.Color(0, 51, 204));
+        ItmRepAlmacen2.setText("Reportes simplificados");
+        ItmRepAlmacen2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItmRepAlmacen2ActionPerformed(evt);
+            }
+        });
+        MenReportes.add(ItmRepAlmacen2);
+
         MenMenu.add(MenReportes);
 
         jMenu7.setForeground(new java.awt.Color(21, 65, 108));
@@ -861,9 +872,14 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void ItmRepAlmacen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmRepAlmacen1ActionPerformed
         // TODO add your handling code here:
-        AbrirFrameInterno(new FrmReporteUnidad(this,cod_usuario,cod_rol));
+        AbrirFrameInterno(new FrmReporteUnidad(this,cod_usuario,cod_rol,1));
         
     }//GEN-LAST:event_ItmRepAlmacen1ActionPerformed
+
+    private void ItmRepAlmacen2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItmRepAlmacen2ActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmReporteUnidad(this,cod_usuario,cod_rol,2));
+    }//GEN-LAST:event_ItmRepAlmacen2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
@@ -892,6 +908,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem ItmDocsEnviados;
     private javax.swing.JMenuItem ItmRepAlmacen;
     private javax.swing.JMenuItem ItmRepAlmacen1;
+    private javax.swing.JMenuItem ItmRepAlmacen2;
     private javax.swing.JLabel LblGestion;
     private javax.swing.JLabel LblRol;
     private javax.swing.JMenu MenAdministracion;
