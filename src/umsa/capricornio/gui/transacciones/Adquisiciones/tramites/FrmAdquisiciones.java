@@ -47,7 +47,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
 
     TablaTransaccionBandeja bandeja;
     TablaTransaccionEstados estados;
-    int pasa=0,swdias=0;
+    int pasa=0,swdias=0,dia;
     FrmMenu menu;
     private Reportes reportes;
     int cod_usuario,cod_rol,gestion,x,tope,ini,fin,cod_almacen;
@@ -441,7 +441,9 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                 Map[] datos1=puerto.getDias(cod_trans_nro);
                 if(!datos1[0].get("DIAS").toString().equals(""))
                 { 
-                    System.out.println("ttttt ya tiene dias");
+                    System.out.println("ttttt ya tiene dias "+datos1[0].get("DIAS").toString());
+                    String nh=datos1[0].get("DIAS").toString();
+                    dia=Integer.parseInt(nh);
                     swdias=1;
                     
                 }
@@ -573,8 +575,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             
         }
         else{
-            swdias=0;
-            if(swdias==1)
+            if(swdias==1 && dia>15)
             {
                 System.out.println("su resolucion aun no a sido generada por sistema");
             JOptionPane.showMessageDialog(null, "su resolucion aun no ha sido generada por sistema debido a que no es necesario imprimir la orden de compra");
