@@ -40,6 +40,9 @@ public class GetResoluciones {
     public GetResoluciones(int cod_almacen){
         this.cod_almacen=cod_almacen;
     }
+    public boolean isFloat(Double n) {
+        return n % 1 != 0;
+    }
     public void arma(int cod_transaccion){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -53,10 +56,17 @@ public class GetResoluciones {
                     //ti=ti+Double.parseDouble(datos1[c].get("TOTAL").toString());
                 }
             }
+            Boolean xcc=isFloat(total);
             monto=String.valueOf(total);
+            if(xcc==false)
+            {
+                Monto=this.formato(monto)+",00 ("+this.TotalTexto(monto)+" BOLIVIANOS)";
+            }
+            else
+                Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
             //mon=String.valueOf(ti);
             //Monto="168.202,32 ("+this.TotalTexto(monto)+")";
-            Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
+            //Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
 //            System.out.println("----- "+this.formato(monto));
 //            System.out.println("esto sale aqui "+Monto);
             //Monto=" ("+this.TotalTexto(monto)+")";

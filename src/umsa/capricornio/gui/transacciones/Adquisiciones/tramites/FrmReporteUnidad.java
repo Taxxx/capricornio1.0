@@ -39,6 +39,10 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
             this.RadEnvio1.setVisible(false);
             this.RadIngreso1.setVisible(false);
         }
+        else
+        {
+            this.jComboBox1.setVisible(false);
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +62,7 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
         BtnSalir = new javax.swing.JButton();
         RadIngreso1 = new javax.swing.JRadioButton();
         RadEnvio1 = new javax.swing.JRadioButton();
+        jComboBox1 = new javax.swing.JComboBox();
 
         setTitle("Reportes Por Unidad");
 
@@ -103,31 +108,38 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
         RadEnvio1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         RadEnvio1.setText("Solicitud Por Descargo");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TODO", "MAYORES A 20000", "MENORES A 20000" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DatFec_ini, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addComponent(DatFec_fin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RadIngreso1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RadEnvio1)
-                    .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(RadIngreso1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(RadEnvio1)))
+                .addContainerGap(67, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DatFec_ini, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10)
+                        .addComponent(DatFec_fin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,11 +150,13 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
                     .addComponent(DatFec_ini, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DatFec_fin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RadEnvio1)
                     .addComponent(RadIngreso1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnReporte)
                     .addComponent(BtnSalir))
@@ -155,9 +169,11 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
         
         Date fi,ff;
+        int x2=jComboBox1.getSelectedIndex();
         //System.out.println("estado: adquisiciones");
         //System.out.println("fecha inicio: "+DatFec_ini.getValue().toString());
         //System.out.println("fecha final: "+DatFec_fin.getValue().toString());
+        System.out.println("el indec del index "+x2);
         if(btr==1)
         {
             if(cod_rol==5 || cod_rol==2)
@@ -166,7 +182,7 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
                 ff=(Date) DatFec_fin.getValue();
                 System.out.println("fi "+fi);
                 System.out.println("ff "+ff);
-                this.genera_res_15.ReporteUnidad(fi, ff,cod_user,cod_rol);
+                this.genera_res_15.ReporteUnidad(fi, ff,cod_user,cod_rol,x2);
             }
             if(cod_rol==4)
             {
@@ -191,7 +207,7 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
                 ff=(Date) DatFec_fin.getValue();
                 System.out.println("fi "+fi);
                 System.out.println("ff "+ff);
-                this.genera_res_15.ReporteSimplificado(fi, ff,cod_user,cod_rol);
+                this.genera_res_15.ReporteSimplificado(fi, ff,cod_user,cod_rol,x2);
             }
             if(cod_rol==4)
             {
@@ -230,6 +246,7 @@ public class FrmReporteUnidad extends javax.swing.JInternalFrame {
     private net.sf.nachocalendar.components.DateField DatFec_ini;
     private javax.swing.JRadioButton RadEnvio1;
     private javax.swing.JRadioButton RadIngreso1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

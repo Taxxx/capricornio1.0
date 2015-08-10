@@ -130,7 +130,7 @@ public class GetResAdj {
         RepTransaccion t1 = new RepTransaccion();
     }
     
-    public void ReporteUnidad(Date fi,Date ff,int cod_user,int cod_rol)
+    public void ReporteUnidad(Date fi,Date ff,int cod_user,int cod_rol,int x2)
     {
         Map parameters = new HashMap();
         parameters.put("FECHA_INICIO", fi);
@@ -158,14 +158,30 @@ public class GetResAdj {
         parameters.put("DIR2", urlMaestro2.toString());
         parameters.put("DIR3", urlMaestro3.toString());
         parameters.put("DIR4", urlMaestro4.toString());
-        parameters.put("DIR5", urlMaestro5.toString());      
+        parameters.put("DIR5", urlMaestro5.toString());
+        System.out.println("esto es x2 "+x2);
+        if(x2==0)
+        {
+            parameters.put("MONTO_MENOR", 0);
+            parameters.put("MONTO_MAYOR", 50000);
+        }
+        if(x2==2)
+        {
+            parameters.put("MONTO_MENOR", 0);
+            parameters.put("MONTO_MAYOR", 20000);
+        }
+        if(x2==1)
+        {
+            parameters.put("MONTO_MENOR", 20000);
+            parameters.put("MONTO_MAYOR", 50000);
+        }
         System.out.println("jaja2");
         }
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraP.jasper");
         this.imprimePDF2(urlMaestro, parameters);
     }
     
-    public void ReporteSimplificado(Date fi,Date ff,int cod_user,int cod_rol)
+    public void ReporteSimplificado(Date fi,Date ff,int cod_user,int cod_rol,int x2)
     {
         Map parameters = new HashMap();
         parameters.put("FECHA_INICIO", fi);
@@ -193,7 +209,23 @@ public class GetResAdj {
         parameters.put("DIR2", urlMaestro2.toString());
         parameters.put("DIR3", urlMaestro3.toString());
         parameters.put("DIR4", urlMaestro4.toString());
-        parameters.put("DIR5", urlMaestro5.toString());      
+        parameters.put("DIR5", urlMaestro5.toString());
+        System.out.println("esto es x2 "+x2);
+        if(x2==0)
+        {
+            parameters.put("MONTO_MENOR", 0);
+            parameters.put("MONTO_MAYOR", 50000);
+        }
+        if(x2==2)
+        {
+            parameters.put("MONTO_MENOR", 0);
+            parameters.put("MONTO_MAYOR", 20000);
+        }
+        if(x2==1)
+        {
+            parameters.put("MONTO_MENOR", 20000);
+            parameters.put("MONTO_MAYOR", 50000);
+        }
         System.out.println("jaja2");
         }
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraPSimp.jasper");
