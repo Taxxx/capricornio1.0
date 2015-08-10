@@ -573,10 +573,12 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             
         }
         else{
+            swdias=0;
             if(swdias==1)
             {
                 System.out.println("su resolucion aun no a sido generada por sistema");
             JOptionPane.showMessageDialog(null, "su resolucion aun no ha sido generada por sistema debido a que no es necesario imprimir la orden de compra");
+                //swdias=0;
             }
             else
             {
