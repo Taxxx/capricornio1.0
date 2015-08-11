@@ -119,6 +119,8 @@ public class RepTransaccion {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             String ubi_rpa = puerto.getDatosGenerales2(cod_almacen)[0].get("FIRMA_RPA").toString();
+            String jefe_adqui = puerto.getDatosGenerales2(cod_almacen)[0].get("JADQUI").toString();
+            parameters.put("jefe_adqui", jefe_adqui);
              String ubi_usr;
             if (cod_tramite==2){
                 ubi_usr = puerto.getFirmaUsuario(cod_trans_nro)[0].get("FIRMA").toString();
