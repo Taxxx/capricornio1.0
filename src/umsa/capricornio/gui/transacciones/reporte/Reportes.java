@@ -36,9 +36,9 @@ public class Reportes {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            System.out.println("cod_trans_nro: "+cod_trans_nro);
-            System.out.println("cod_Estado: "+cod_estado);
-            System.out.println("cod_tramite: "+cod_tramite);
+//            System.out.println("cod_trans_nro: "+cod_trans_nro);
+//            System.out.println("cod_Estado: "+cod_estado);
+//            System.out.println("cod_tramite: "+cod_tramite);
             
             Map[] datos=puerto.getReportePedidox(cod_trans_nro,cod_estado,cod_tramite);
             if (datos!=null){
@@ -178,6 +178,8 @@ public class Reportes {
                     trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
                     trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
                     trans.setFecha_envio(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_ENVIO").toString()));
+//                    System.err.println("Fecha Creacion --> "+datos[f].get("FECHA_CREACION").toString());
+//                    System.err.println("Fecha Envio --> "+datos[f].get("FECHA_ENVIO").toString());
                     trans.setUnidad_sol(datos[f].get("UNIDAD_SOL").toString());
                     trans.setUnidad_des(datos[f].get("UNIDAD_DES").toString());
                     trans.setUsuario_sol(datos[f].get("USUARIO_SOL").toString());

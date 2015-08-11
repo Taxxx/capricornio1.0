@@ -213,7 +213,6 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] insertDatosGenerales(java.lang.String codigo, java.lang.String descripcion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getDatosGenerales() throws java.rmi.RemoteException;
     public java.util.HashMap[] getDatosGenerales2(int cod_almacen) throws java.rmi.RemoteException;
-    public java.util.HashMap[] updateNombreRpa(java.lang.String cod_faculty, java.lang.String rpa) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateRutaFirmaDigitalRPA(java.lang.String cod_faculty, java.lang.String firma_rpa) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateRutaFirmaDigitalUSER(int cod_usuario, java.lang.String firma) throws java.rmi.RemoteException;
     public java.util.HashMap[] getDatosAlmacen(int cod_trans_nro) throws java.rmi.RemoteException;
@@ -285,6 +284,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getinvitacion(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException;
     public java.util.HashMap[] geninvitacion(int cod_transaccion, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, int gestion, java.lang.String aaa) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateinvitacion(int cod_t, int codtn, java.lang.String np, java.lang.String fec, java.lang.String fec_re, java.lang.String jefe_adq, java.lang.String aaa) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateDatosDea(java.lang.String cod_faculty, java.lang.String rpa, java.lang.String jadqui) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;
