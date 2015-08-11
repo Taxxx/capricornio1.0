@@ -169,13 +169,14 @@ public class GetResoluciones {
                 urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniConsu.jasper");
                 break;
             case 4:
-                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniObra.jasper");
+                urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniObraNuevo.jasper");
                 break;
             case 7:
                 System.out.println("Entro al 7");
                 urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniBienNuevo.jasper");
                 break;
         }
+        
         
         //urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/IngresoMaterial.jasper");
         
