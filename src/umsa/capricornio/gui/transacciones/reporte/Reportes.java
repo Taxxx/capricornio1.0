@@ -103,13 +103,13 @@ public class Reportes {
             //System.out.println("WWAADSADASDA------> "+nom_usuario);
             Map[] datos=puerto.getReporteSolicitudx(cod_transaccion,cod_estado,cod_tramite);
             if (datos!=null){
-                System.out.println("Tiene Datos :D :D :D");
+                //System.out.println("Tiene Datos :D :D :D");
                 Map map = new HashMap();
                 int i=0;
                 String cod_trans_detalle,aux = null;
                 for (int f=0;f<datos.length;f++){
                     Transaccion trans = new Transaccion();
-                    System.out.println("Tiene Datos :D :D :D -->"+datos[f].get("NRO_GESTION").toString());
+                    //System.out.println("Tiene Datos :D :D :D -->"+datos[f].get("NRO_GESTION").toString());
                     trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
                     //System.out.println(datos[f].get("NRO_GESTION").toString());
                     trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
@@ -191,7 +191,7 @@ public class Reportes {
                     trans.setDetalle_solicitud(datos[f].get("DETALLE_SOLICITUD").toString());
                     //hoja_ruta,cbte,casa_comercial,direccion,telefono,nit,precio_unit
                     trans.setHoja_ruta(datos[f].get("HOJA_RUTA").toString());
-                    System.out.println("cbte es : "+datos[f].get("CBTE").toString());
+//                    System.out.println("cbte es : "+datos[f].get("CBTE").toString());
                     trans.setCbte(datos[f].get("CBTE").toString());
                     trans.setCasa_comercial(datos[f].get("CASA_COMERCIAL").toString());
                     trans.setDireccion(datos[f].get("DIRECCION").toString());
@@ -202,7 +202,7 @@ public class Reportes {
 //                        trans.setPrecio_unit(0.058338);
 //                    else
                         trans.setPrecio_unit(Double.parseDouble(datos[f].get("PRECIO_UNIT").toString()));
-                    System.out.println("PRecio ------------------> "+Double.parseDouble(datos[f].get("PRECIO_UNIT").toString()));
+//                    System.out.println("PRecio ------------------> "+Double.parseDouble(datos[f].get("PRECIO_UNIT").toString()));
                     trans.setPartida(datos[f].get("PARTIDA").toString());
                     trans.setObs(datos[f].get("OBS").toString());
                     //trans.setSubtotal(Double.parseDouble(datos[f].get("SUBTOTAL").toString()));
@@ -220,7 +220,7 @@ public class Reportes {
                     cod_trans_detalle=datos[f].get("COD_TRANS_DETALLE").toString();
                     if(!cod_trans_detalle.equals(aux)){
                         i++;
-                        System.out.println("El indice es wujuuu: "+i);
+//                        System.out.println("El indice es wujuuu: "+i);
                         trans.setIndice(String.valueOf(i));
                     }
                     aux=cod_trans_detalle;
@@ -228,9 +228,9 @@ public class Reportes {
                     list.add(trans);
                 } 
                 RepTransaccion rep = new RepTransaccion();
-                System.out.println("titulo: "+titulo);
-                System.out.println("cod_tramite: "+cod_tramite);
-                System.out.println("cod_trans_nro: "+cod_trans_nro);
+//                System.out.println("titulo: "+titulo);
+//                System.out.println("cod_tramite: "+cod_tramite);
+//                System.out.println("cod_trans_nro: "+cod_trans_nro);
                 
                 rep.Reporte(list,titulo,cod_tramite,cod_trans_nro,cod_almacen);
             }
