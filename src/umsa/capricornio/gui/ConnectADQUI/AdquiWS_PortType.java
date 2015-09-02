@@ -285,6 +285,8 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] geninvitacion(int cod_transaccion, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, int gestion, java.lang.String aaa) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateinvitacion(int cod_t, int codtn, java.lang.String np, java.lang.String fec, java.lang.String fec_re, java.lang.String jefe_adq, java.lang.String aaa) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateDatosDea(java.lang.String cod_faculty, java.lang.String rpa, java.lang.String jadqui) throws java.rmi.RemoteException;
+    public java.util.HashMap[] obtienetotal(int user, java.lang.String fi, java.lang.String ff, int men, int may) throws java.rmi.RemoteException;
+    public java.util.HashMap[] fechasTramite(java.lang.String a, java.lang.String b, int c) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;

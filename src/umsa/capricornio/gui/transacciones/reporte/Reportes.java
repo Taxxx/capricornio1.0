@@ -30,6 +30,7 @@ public class Reportes {
         this.cod_almacen = cod_almacen;
     }
     public void MostrarPedido(int cod_trans_nro, String cod_estado, int cod_tramite){
+        System.out.println(" PEdido!!!! ----->>>> cod_trans_nro: "+cod_trans_nro+", cod_estado: "+cod_estado+", cod_tramite: "+cod_tramite);
         try {
             List list=new ArrayList();    
             
@@ -49,6 +50,7 @@ public class Reportes {
                     Transaccion trans = new Transaccion();
                     trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
                     trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
+                    
                     
                     //System.out.println("----->>>> Fecha de creacion: "+trans.getFecha_creacion());
                     
