@@ -244,6 +244,7 @@ public class GetResoluciones {
         DecimalFormat formato_decimal = new DecimalFormat("###,###.##");
 //        System.out.println("swdasda"+formato_decimal.format(m));
         //String d=formato_decimal.format(t).toString();
+        System.out.println(formato_decimal.format(m));
         return (String.valueOf(formato_decimal.format(m)).toString());
         }
         catch(Exception e)

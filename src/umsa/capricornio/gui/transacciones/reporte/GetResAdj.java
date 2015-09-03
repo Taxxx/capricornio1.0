@@ -14,9 +14,12 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -97,13 +100,12 @@ public class GetResAdj {
 
         JasperPrint masterPrint = null;
         try {
-            System.out.println("Esta vivo weon¡!¡"+masterReport);
             masterPrint = JasperFillManager.fillReport(masterReport, parameters, conexion);
         }
         catch (JRException e) {
             JOptionPane.showMessageDialog( null, e.getMessage());
             System.out.println("el error debe estar "+ e.getMessage());
-        }  
+        }
         //System.out.println("el error debe estar por aqui:---- "+masterPrint+" --sdfsd-- "+masterReport);
         JasperViewer.viewReport(masterPrint, false);
     }
@@ -119,6 +121,46 @@ public class GetResAdj {
         } catch (Exception e) {
             System.out.println("Gravichimo error: "+e);
         }
+    }
+    public void reporteResumen(int mes1,int mes2,int cod_user)
+    {
+        int mes=1,i=mes1;
+        Map parameters = new HashMap();
+        System.out.println("mes1="+mes1+" mes2="+mes2);
+        RepTransaccion t1 = new RepTransaccion();
+        urlMaestro=t1.getClass().getResource("/umsa/capricornio/gui/reports/RESUMENMENSUAL.jasper");
+        while(i<=mes2)
+        {
+            if(mes==i)
+            {
+                try{
+                    AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                    AdquiWS_PortType puerto = servicio.getAdquiWS();
+                    String x="01/"+i+"/2015";
+                    String y="01/"+(i+1)+"/2015";
+                    System.out.println(x+" siiiii"+y);
+                    Map[] datos=puerto.obtienetotal(cod_user,x,y, 0, 50000);
+                    if(datos==null)
+                    {
+                        System.out.println("sii hay datos");
+                    }
+                    System.out.println("aqui "+datos[0].get("TOTAL").toString());
+                    System.out.println("aqui "+datos[0].get("COUNT").toString());
+                    parameters.put("C"+i, datos[0].get("COUNT").toString());
+                    parameters.put("M"+i, datos[0].get("TOTAL").toString());
+                }catch(Exception e)
+                {
+                    System.out.println("esto de aqui es el error mas reciente "+e);
+                }
+                i++;
+                mes++;
+            }
+            else
+            {
+                mes++;
+            }
+        }
+        this.imprimePDF2(urlMaestro, parameters);
     }
     public void reporteppto(Date fi,Date ff,int cod_user,int estado)
     {
@@ -211,21 +253,55 @@ public class GetResAdj {
         parameters.put("DIR4", urlMaestro4.toString());
         parameters.put("DIR5", urlMaestro5.toString());
         System.out.println("esto es x2 "+x2);
+        int a=0,b=0;
         if(x2==0)
         {
             parameters.put("MONTO_MENOR", 0);
             parameters.put("MONTO_MAYOR", 50000);
+            a=0;
+            b=50000;
         }
         if(x2==2)
         {
             parameters.put("MONTO_MENOR", 0);
             parameters.put("MONTO_MAYOR", 20000);
+            a=0;
+            b=20000;
         }
         if(x2==1)
         {
             parameters.put("MONTO_MENOR", 20000);
             parameters.put("MONTO_MAYOR", 50000);
+            a=20000;
+            b=50000;
         }
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
+            String f1=df1.format(fi);
+            String f2=df1.format(ff);
+            System.out.println("los datos: user->"+cod_user+" fec_ini->"+f1+" fec_fin->"+f2+" a->"+a+" b->"+b);
+            Map[] datos=puerto.getUsuarioRol(cod_user);
+            //Map[] datos=puerto.obtienetotal(cod_user,f1,f2,a,b);
+            //Map[] datos=puerto.obtienetotal(5,"01/05/2015","01/06/15", 0, 50000);
+            //Map[] datos1=puerto.obtienetotal(18,"01/04/2015","01/05/2015",0,50000);
+            if(datos==null)
+            {
+                System.out.println("esto esta raro");
+            }
+            /*String t=datos[0].get("COUNT").toString();
+            System.out.println("t:"+t);
+            String t11=datos[0].get("TOTAL").toString();
+            System.out.println("t: "+t+" T11:"+t11);*/
+            parameters.put("USUARIO", datos[0].get("USUARIO").toString());
+        }
+        catch(Exception e)
+        {
+            parameters.put("TOTAL","ERROR");
+            System.out.println("esto es un error rayos "+e);
+        }
+        //parameters.put("TOTAL", t);
         System.out.println("jaja2");
         }
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReporteCompraPSimp.jasper");

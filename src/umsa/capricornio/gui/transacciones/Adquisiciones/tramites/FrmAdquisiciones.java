@@ -12,19 +12,27 @@ package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.awt.event.KeyEvent;
 import java.rmi.RemoteException;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.Box;
+import javax.swing.JLabel;
 //import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.xml.rpc.ServiceException;
+import net.sf.nachocalendar.components.DateField;
 import umsa.capricornio.domain.Transaccion;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
@@ -237,6 +245,72 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         }
         catch (ServiceException e){ System.out.println(e);}
     }
+    
+    private String fecharestringida(int cod_trans_nro)
+    {
+      //JTextField xField = new JTextField(5);
+      JTextField field1 = new JTextField(5);
+      Date xx=new Date();
+      Date yy=new Date();
+      DateField xfield=new DateField();
+      DateField yfield=new DateField();
+      xfield.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+      yfield.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+      xfield.setValue(xx);
+      yfield.setValue(yy);
+      JPanel myPanel = new JPanel();
+      myPanel.add(new JLabel("Fecha de Inicio:"));
+      myPanel.add(xfield);
+      myPanel.add(new JLabel("Fecha de Final:"));
+      myPanel.add(yfield);
+      myPanel.add(new JLabel("Ingrese los dias:"));
+      myPanel.add(field1);
+      myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+      /*myPanel.add(new JLabel("y:"));
+      myPanel.add(yField);*/
+      String convertido,convertido1;
+      int result = JOptionPane.showConfirmDialog(null, myPanel, 
+               "POR FAVOR INSERTE LAS FECHAS O LOS DIAS EN CASO DE TENER UN ESTIMADO", JOptionPane.OK_CANCEL_OPTION);
+      if (result == JOptionPane.OK_OPTION) {
+        System.out.println("x value: " + field1.getText());
+        if(field1.getText().equals(""))
+        {
+            System.out.println("siiiiiiiiiiiiiiiiiiiii");
+        }
+        if(!field1.getText().equals(""))
+        {
+            System.out.println("aqui aja");
+            convertido=field1.getText();
+        }
+        else
+        {
+            DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");
+            convertido = fecha.format(xfield.getValue());
+            convertido1= fecha.format(yfield.getValue());
+            System.out.println(convertido+" - "+convertido1);
+            try{
+                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                AdquiWS_PortType puerto = servicio.getAdquiWS();
+                System.out.println("la fi="+xfield.getValue()+" la ff="+yfield.getValue());
+                Map[] datos=puerto.fechasTramite(convertido,convertido1,cod_trans_nro);
+                System.out.println("y value: " +datos[0].get("DIAS").toString());
+                System.out.println("esto de aqui esta entrando correctamente");
+                convertido=datos[0].get("DIAS").toString();
+            }
+            catch(Exception e)
+            {
+                System.out.println("esto es un error: "+e);
+            }
+        }
+        
+      }else
+      {
+        convertido=null;
+      }
+      //int dias=yfield.getValue()-xfield.getValue();
+      return convertido;
+    }
+    
      private void verificadias(FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta)
     {
         //if(tab_habil==0)
@@ -255,7 +329,10 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             {
                 boolean sw12=true;
                 do{
-                String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
+                    String resp=fecharestringida(cod_trans_nro);
+                    System.out.println("la fecha reconocida es: "+resp);
+                    //String resp=null;
+                //String resp=JOptionPane.showInputDialog("escribe el tiempo de entrega en caso de ser mayor a 15 dias\nsi es menor deje en blanco y click en aceptar");
                 if(resp==null)
                 {
                     //this.setVisible(false);
@@ -266,7 +343,8 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     return;
                     
                 }
-                if(resp.equals(""))
+                int num=Integer.parseInt(resp);
+                if(num<=15)
                 {
                     System.out.println("s 15");
                 }
@@ -280,8 +358,18 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     sw12=false;}
                 }
                 }while(sw12==false);
-                int res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
+                int res1;
+                if(t>15)
+                {
+                    res1 = javax.swing.JOptionPane.showConfirmDialog(this, "Esta seguro de que el tiempo de duracion se "+t+" dias",
                     "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                }
+                else
+                {
+                    res1 = javax.swing.JOptionPane.showConfirmDialog(this, "si los dias entre las fechas es menor a 15 dias se colocara automaticamente 15 \nEsta seguro de que el tiempo de duracion se "+t+" dias",
+                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+                }
+                
                 if (res1 != javax.swing.JOptionPane.YES_OPTION) {
                     pasa=-1;
                     return;
