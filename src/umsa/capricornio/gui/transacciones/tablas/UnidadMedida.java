@@ -10,14 +10,14 @@ package umsa.capricornio.gui.transacciones.tablas;
  *
  * @author UMSA-JES
  */
-public class Partida {
+public class UnidadMedida {
 
     private String codigo;
     
-    public Partida(String codigo) {
+    public UnidadMedida(String codigo) {
         super();
         this.codigo = codigo;
-    }
+    } 
     
     public String getCodigo() {
         return codigo;

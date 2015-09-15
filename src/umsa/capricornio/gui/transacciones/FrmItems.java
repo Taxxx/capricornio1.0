@@ -57,6 +57,8 @@ import umsa.capricornio.gui.transacciones.tablas.PartidaCellEditor;
 import umsa.capricornio.gui.transacciones.tablas.PartidaCellRenderer;
 import umsa.capricornio.gui.transacciones.tablas.TablaPreventivo;
 import umsa.capricornio.gui.transacciones.tablas.TablaVistaPreventivo;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedida;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedidaCellEditor;
 import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
 /**
@@ -68,7 +70,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
     FrmMenu menu;
     FrmTransacciones frm_transaccion;    
     
-    int cod_transaccion,cod_rol,gestion,cod_w,tab_habil,cod_almacen,cod_trans_nro;
+    int cod_transaccion,cod_rol,gestion,cod_w,tab_habil,cod_almacen,cod_trans_nro,cod_user;
     private Runtime r;
     private File rutaArchivo;
     String tramite,origen,detalle,unidad_des,unidad_sol,nro,cuantia,del,hasta,lectura,nombre_archivo;
@@ -100,6 +102,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
         this.hasta=hasta;
         this.cod_almacen=cod_almacen;
         this.cod_trans_nro=cod_trans_nro;
+        this.cod_user=cod_user;
         initComponents();
         ConstruyeTablaItems();
         ConstruyeTablaVistaPreventivo();
@@ -175,12 +178,36 @@ public class FrmItems extends javax.swing.JInternalFrame {
         }
         return sw;
     }
+    private List<UnidadMedida> getUnidadMedida() {
+        List<UnidadMedida> listUnidadMedida = null;
+        try {
+            listUnidadMedida = new ArrayList();
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos = puerto.getUnidadMedida();
+
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    //this.JC_Partidas.addItem(datos[c].get("PARTIDA")+" - "+datos[c].get("DETALLE") );
+//                    System.out.println("--> " + datos[c].get("PARTIDA").toString());
+                        System.out.println("--> "+datos[c].get("COD_UNIDAD_MEDIDA").toString()+" - "+datos[c].get("DETALLE").toString()); 
+                    listUnidadMedida.add(new UnidadMedida(datos[c].get("COD_UNIDAD_MEDIDA").toString() + " - " + datos[c].get("DETALLE").toString()));
+                }
+            }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
+        }
+        return listUnidadMedida;
+    }
     private void ConstruyeTablaItems(){
         
         List<Partida> listPartida = this.getPartidas(2014);
+        List<UnidadMedida> listUnidadMedida = this.getUnidadMedida();
         
-        
-        items = new TablaItems(this,cod_rol,origen);
+        items = new TablaItems(this,cod_rol,origen,this.cod_user);
         TblItems.setAutoCreateColumnsFromModel(false);
         TblItems.setModel(items);
 //        TblItems.setDefaultRenderer(Partida.class, new PartidaCellRenderer());
@@ -189,14 +216,18 @@ public class FrmItems extends javax.swing.JInternalFrame {
         for (int k = 0; k < TablaItems.m_columns.length; k++) {
             TableCellRenderer renderer = new MiRenderer(TablaItems.m_columns[k].m_alignment);
 //            TableCellRenderer renderer = new PartidaCellRenderer
-            TableCellEditor edit =new PartidaCellEditor(listPartida);
+            TableCellEditor edit1 = new PartidaCellEditor(listPartida);
+            TableCellEditor edit2 = new UnidadMedidaCellEditor(listUnidadMedida);
             
             /*DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
             renderer.setHorizontalAlignment(DatosTablaObligacionBandeja.m_columns[k].m_alignment);*/
             TableColumn column;
             if(k!=7){
-                column = new TableColumn(k, TablaItems.m_columns[k].m_width, renderer, edit);
-            }else{
+                column = new TableColumn(k, TablaItems.m_columns[k].m_width, renderer, edit1);
+            }else if(k!=6){
+                column = new TableColumn(k, TablaItems.m_columns[k].m_width, renderer, edit2);
+            }
+            else{
                 column = new TableColumn(k, TablaItems.m_columns[k].m_width, renderer, null);
             }
              
@@ -359,7 +390,15 @@ public class FrmItems extends javax.swing.JInternalFrame {
                     TblItems.setValueAt(datos[c].get("ESTADO"),c,1);                    
                     TblItems.setValueAt(datos[c].get("COD_TRANS_DETALLE"),c,2);                    
                     TblItems.setValueAt(datos[c].get("CANTIDAD_PEDIDO"),c,3);
-                    TblItems.setValueAt(datos[c].get("UNIDAD_MEDIDA"),c,4);
+                    
+                    
+                    if(datos[c].get("UNIDAD_MEDIDA").toString().equals("")){
+                        TblItems.setValueAt(new UnidadMedida("No tiene"),c,4);
+                    }else{
+//                        TblItems.setValueAt(datos[c].get("UNIDAD_MEDIDA").toString(),c,4);
+                        TblItems.setValueAt(new UnidadMedida(datos[c].get("UNIDAD_MEDIDA").toString()),c,4);
+                    }
+                    
                     //TblItems.setValueAt(datos[c].get("TIPO_ITEM"),c,5);
                     
 //                    TblItems.setValueAt(datos[c].get("PARTIDA"),c,5);
@@ -480,11 +519,11 @@ public class FrmItems extends javax.swing.JInternalFrame {
         catch (ServiceException e){ System.out.println(e);}  
     }
 
-    void ActualizaTransaccionIngresoAlmacen(String factura,String fecha_fact,String fecha_ing, String memo,String obs){
+    void ActualizaTransaccionIngresoAlmacen(String factura,String fecha_fact,String fecha_ing, String fecha_noti, String memo,String obs){
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos=puerto.setActualizaTransaccionIngresoAlm(cod_transaccion, factura,fecha_fact,fecha_ing,memo,obs);
+            Map[] datos=puerto.setActualizaTransaccionIngresoAlm(cod_transaccion, factura,fecha_fact,fecha_ing,fecha_noti,memo,obs);
             javax.swing.JOptionPane.showMessageDialog(this,"DATOS ALMACENADOS","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
@@ -851,7 +890,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
         LblFecFact.setBounds(300, 20, 90, 20);
 
         LblMemo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        LblMemo.setText("Memo :");
+        LblMemo.setText("Memo :)");
         PnlAlmacen.add(LblMemo);
         LblMemo.setBounds(780, 20, 50, 20);
 
@@ -1266,6 +1305,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
      SimpleDateFormat form =new SimpleDateFormat("dd/MM/yyyy");
      String fec_fact="'"+form.format(CalFechaFact.getValue())+"'";
      String fec_ing="'"+form.format(CalFechaIng.getValue())+"'";
+     String fec_noti="";
         sw=true;     
      switch (tab_habil) {
          case 0:             
@@ -1281,7 +1321,7 @@ public class FrmItems extends javax.swing.JInternalFrame {
                  }
                  String obs = this.TxtObsAlmacen.getText().trim();
                  System.out.println("La observacion seria : "+obs);
-                 ActualizaTransaccionIngresoAlmacen(factura, fec_fact,fec_ing, memo,obs);
+                 ActualizaTransaccionIngresoAlmacen(factura, fec_fact,fec_ing, fec_noti, memo,obs);
              }
              else
                  ActualizaTransaccionAlmacen(obs_almacen);

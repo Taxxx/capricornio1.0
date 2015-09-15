@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.Item;
 import umsa.capricornio.gui.transacciones.tablas.Partida;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedida;
 
 /**
  *
@@ -42,6 +43,10 @@ public class MiRenderer implements TableCellRenderer {
         if (value instanceof Partida) {
             Partida partida = (Partida) value;
             DEFAULT_RENDERER.setText(partida.getCodigo());
+        }
+        if (value instanceof UnidadMedida) {
+            UnidadMedida unidad_medida = (UnidadMedida) value;
+            DEFAULT_RENDERER.setText(unidad_medida.getCodigo());
         }
         if (isSelected) {
             foreground = new java.awt.Color(47,69,27);

@@ -15,6 +15,7 @@ import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.DiagOrdenesDetalle;
 import umsa.capricornio.gui.transacciones.tablas.Partida;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedida;
 import umsa.capricornio.utilitarios.herramientas.ColumnData;
 
 /**
@@ -28,8 +29,8 @@ public class TablaOrden extends AbstractTableModel {
         new ColumnData("ce", 0, JLabel.RIGHT),
         new ColumnData("ctd", 0, JLabel.RIGHT),
         new ColumnData("Cant.", 60, JLabel.CENTER),
-        new ColumnData("Unid.Med.", 120, JLabel.CENTER),
-        new ColumnData("Item", 150, JLabel.LEFT),
+        new ColumnData("Unid.Med.", 200, JLabel.CENTER),
+        new ColumnData("Item", 120, JLabel.LEFT),
         new ColumnData("Partida", 300, JLabel.LEFT),
         new ColumnData("Articulo", 300, JLabel.LEFT),
         new ColumnData("Articulo Actualizado ADQ", 300, JLabel.LEFT),
@@ -44,12 +45,14 @@ public class TablaOrden extends AbstractTableModel {
     DiagOrdenesDetalle orden;
     int cod_rol;
     String cod_estado;
+    int cod_user;
 
-    public TablaOrden(DiagOrdenesDetalle orden, int cod_rol, String cod_estado) {
+    public TablaOrden(DiagOrdenesDetalle orden, int cod_rol, String cod_estado,int cod_user) {
         lista = new ArrayList();
         this.orden = orden;
         this.cod_rol = cod_rol;
         this.cod_estado = cod_estado;
+        this.cod_user = cod_user;
     }
 
     public int getRowCount() {
@@ -99,7 +102,23 @@ public class TablaOrden extends AbstractTableModel {
             } else {
                 return false;
             }
-        } //            else if (nCol==5)
+        }
+         else if (nCol == 4) {
+            if ((cod_rol == 5) && ("".equals(this.getValueAt(nRow, 0)))) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+//        else if (nCol == 4) {
+//            if ((cod_rol == 5) && ("".equals(this.getValueAt(nRow, 0)))) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        }
+        
+        //            else if (nCol==5)
         //                    if ((cod_rol==5) &&("".equals(this.getValueAt(nRow, 0))))
         //                        return true;
         //                    else
@@ -124,7 +143,13 @@ public class TablaOrden extends AbstractTableModel {
             case 3:
                 return row.cantidad_pedido;
             case 4:
-                return row.unidad_medida;
+//                return row.unidad_medida;
+                 if (row.cod_complemento.equals("")) {
+//                     System.err.println("Unidad de medida: "+row.unidad_medida.getCodigo());
+                    return row.unidad_medida;
+                } else {
+                    return "";
+                }
 
 //      case 5: return row.tipo_item;
             case 5:
@@ -165,9 +190,14 @@ public class TablaOrden extends AbstractTableModel {
         }
         ItemsData row = (ItemsData) lista.get(nRow);
         String svalue = "";
-        if (nCol != 6) {
+        if (nCol != 4 && nCol != 6 ) {
+//            System.err.println("imprimimos --> "+value.toString());
             svalue = value.toString();
         }
+//        if (nCol != 4) {
+//            System.err.println("imprimimos --> "+value.toString());
+//            svalue = value.toString();
+//        }
 
         switch (nCol) {
             case 0:
@@ -191,7 +221,7 @@ public class TablaOrden extends AbstractTableModel {
                         Map[] datos = null;
                         if (cod_rol == 5) {
                             if (!"".equals(svalue)) {
-                                datos = puerto.updateCantidadItem("SET-updateCantidadItem", Integer.parseInt(this.getValueAt(nRow, 2).toString()), n);
+                                datos = puerto.updateCantidadItem2("SET-updateCantidadItem", Integer.parseInt(this.getValueAt(nRow, 2).toString()), n,cod_user);
                             }
                         }
                     } else {
@@ -204,8 +234,28 @@ public class TablaOrden extends AbstractTableModel {
                 }
                 break;
             case 4:
-                row.unidad_medida = svalue;
-                break;
+//                row.unidad_medida = svalue;
+                System.err.println("wujuuu");
+                if (row.cod_complemento.equals("")) {
+                    row.unidad_medida = (UnidadMedida) value;
+                    System.err.println("El codigo es:" + row.unidad_medida.getCodigo().split(" - ")[0]);
+//        row.partida.setCodigo(svalue);
+                    //Partida.setCodigo((Partida) svalue);
+                    try {
+                        //String partida = svalue.trim();
+                        int unidad_medida = Integer.parseInt(row.unidad_medida.getCodigo().split(" - ")[0]);
+                        
+                        System.out.println("----> Las unidades de medida son - " + unidad_medida);
+                        int cod_trans_detalle = Integer.parseInt(this.getValueAt(nRow, 2).toString());
+                        AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                        AdquiWS_PortType puerto = servicio.getAdquiWS();
+                        puerto.setUnidadMedida2("SET-setUnidadMedida", cod_trans_detalle, unidad_medida,cod_user);
+                    } catch (Exception e) {
+                        System.out.println("Error al actualizar la unidad de medida");
+                    }
+                    break;
+                }
+//                break;
             case 5:
                 row.item = svalue;
 //        row.tipo_item = new Item(svalue);
@@ -225,7 +275,7 @@ public class TablaOrden extends AbstractTableModel {
                         int cod_trans_detalle = Integer.parseInt(this.getValueAt(nRow, 2).toString());
                         AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                         AdquiWS_PortType puerto = servicio.getAdquiWS();
-                        puerto.setPartida("SET-setPartida", cod_trans_detalle, partida);
+                        puerto.setPartida2("SET-setPartida", cod_trans_detalle, partida,cod_user);
                     } catch (Exception e) {
                         System.out.println("Error al actualizar la partida");
                     }
@@ -290,7 +340,7 @@ public class TablaOrden extends AbstractTableModel {
                         Map[] datos = null;
                         if (cod_rol == 5) {
                             if (!"".equals(svalue)) {
-                                datos = puerto.setDetallePrecioUnit("SET-upDatedetPrecUnit", Integer.parseInt(this.getValueAt(nRow, 2).toString()), n);
+                                datos = puerto.setDetallePrecioUnit2("SET-upDatedetPrecUnit", Integer.parseInt(this.getValueAt(nRow, 2).toString()), n,cod_user);
                             }
                         }
                     } else {

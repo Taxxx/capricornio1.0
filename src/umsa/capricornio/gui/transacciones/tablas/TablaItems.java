@@ -30,7 +30,7 @@ public class TablaItems extends AbstractTableModel
     new ColumnData( "ce", 0, JLabel.RIGHT ),
     new ColumnData( "ctd", 0, JLabel.RIGHT ),
     new ColumnData( "Cantidad",140, JLabel.CENTER ),
-    new ColumnData( "Unidad Medida",140, JLabel.CENTER ),
+    new ColumnData( "Unidad Medida",180, JLabel.CENTER ),
     new ColumnData( "Partida", 260, JLabel.LEFT ),
     new ColumnData( "Articulo", 300, JLabel.LEFT ),
     new ColumnData( "Precio U.", 130, JLabel.CENTER ),
@@ -43,13 +43,15 @@ public class TablaItems extends AbstractTableModel
   FrmItems items;
   int cod_rol;
   String cod_estado;
+  int cod_user;
   //private List<Partida> listPartida = new ArrayList() ;
   
-  public TablaItems(FrmItems items,int cod_rol,String cod_estado) {    
+  public TablaItems(FrmItems items,int cod_rol,String cod_estado,int cod_user) {    
       lista = new ArrayList();
       this.items=items;
       this.cod_rol=cod_rol;
       this.cod_estado=cod_estado;
+      this.cod_user=cod_user;
       //this.listPartida.addAll(listPartida);
   }
 
@@ -70,6 +72,8 @@ public class TablaItems extends AbstractTableModel
     @Override
   public boolean isCellEditable(int nRow, int nCol) {
       if(nCol==5 && cod_rol==4)
+          return true;
+      if(nCol==4 && cod_rol==4)
           return true;
       if(nCol == 7 && cod_rol==4)
           return true;
@@ -108,7 +112,15 @@ public class TablaItems extends AbstractTableModel
       case 1: return row.cod_estado;
       case 2: return row.cod_trans_detalle;
       case 3: return row.cantidad_pedido;
-      case 4: return row.unidad_medida;
+      case 4: 
+//          return row.unidad_medida;
+           if(row.cod_complemento.equals("")){
+//               System.err.println("LA UNIDAD DE MEDIDA: "+row.unidad_medida.getCodigo());
+               return row.unidad_medida;
+           }
+              
+          else 
+              return "";   
       case 5: 
           if(row.cod_complemento.equals(""))
               return row.partida;
@@ -130,8 +142,12 @@ public class TablaItems extends AbstractTableModel
     
     ItemsData row = (ItemsData)lista.get(nRow);
     String svalue="";
-    if(nCol!=5)
-         svalue = value.toString();
+    if(nCol!=5 && nCol!=4){
+        System.err.println("el nCol es -> "+nCol);
+        svalue = value.toString();
+    }
+         
+    
          
     
     switch (nCol) {
@@ -148,12 +164,33 @@ public class TablaItems extends AbstractTableModel
         row.cantidad_pedido = svalue;
         break;       
       case 4:
-        row.unidad_medida = svalue;
-        break;
+//        row.unidad_medida = svalue;
+//        break;
+          
+          if (row.cod_complemento.equals("")) {
+            row.unidad_medida = (UnidadMedida) value;
+//            System.out.println("El codigo es:" + row.unidad_medida.getCodigo());
+//            System.out.println("El codigo es:" + row.unidad_medida.getCodigo().split(" - ")[0]);
+  //        row.partida.setCodigo(svalue);
+            //Partida.setCodigo((Partida) svalue);
+            try {
+                //String partida = svalue.trim();
+                int unidad_medida = Integer.parseInt(row.unidad_medida.getCodigo().split(" - ")[0]);
+                int cod_trans_detalle = Integer.parseInt(this.getValueAt(nRow, 2).toString()); 
+                AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                AdquiWS_PortType puerto = servicio.getAdquiWS();
+                puerto.setUnidadMedida2("SET-setUnidadMedida", cod_trans_detalle, unidad_medida,cod_user);
+            } catch (Exception e) {
+                System.out.println("Error al actualizar la unidad de medida");
+            }
+          break;
+        }
+          
       case 5:
           if (row.cod_complemento.equals("")) {
             row.partida = (Partida) value;
-            System.out.println("El codigo es:" + row.partida.getCodigo().split(" - ")[0]);
+//            System.err.println("1) El codigo es:" + row.partida.getCodigo());
+//            System.err.println("2) El codigo es:" + row.partida.getCodigo().split(" - ")[0]);
   //        row.partida.setCodigo(svalue);
             //Partida.setCodigo((Partida) svalue);
             try {
@@ -162,7 +199,7 @@ public class TablaItems extends AbstractTableModel
                 int cod_trans_detalle = Integer.parseInt(this.getValueAt(nRow, 2).toString()); 
                 AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                 AdquiWS_PortType puerto = servicio.getAdquiWS();
-                puerto.setPartida("SET-setPartida", cod_trans_detalle, partida);
+                puerto.setPartida2("SET-setPartida", cod_trans_detalle, partida,cod_user);
             } catch (Exception e) {
                 System.out.println("Error al actualizar la partida");
             }
@@ -182,7 +219,7 @@ public class TablaItems extends AbstractTableModel
 //                    Map[] datos=null;
                     if (cod_rol==4){
                         if (!"".equals(svalue))
-                            puerto.setDetallePrecioUnit("SET-upDatedetPrecUnit", Integer.parseInt(this.getValueAt(nRow, 2).toString()),n);
+                            puerto.setDetallePrecioUnit2("SET-upDatedetPrecUnit", Integer.parseInt(this.getValueAt(nRow, 2).toString()),n,cod_user);
                     }
               }
               else
