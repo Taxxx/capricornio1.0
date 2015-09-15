@@ -45,14 +45,18 @@ import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.TablaOrd
 import umsa.capricornio.gui.transacciones.FrmTransacciones;
 import umsa.capricornio.gui.transacciones.JD_CambiaPartida;
 import umsa.capricornio.gui.transacciones.JD_DefItem;
+import umsa.capricornio.gui.transacciones.JD_Opciones;
 import umsa.capricornio.gui.transacciones.JD_abmDetalle;
 import umsa.capricornio.gui.transacciones.JD_addDetalle;
+import umsa.capricornio.gui.transacciones.JD_updateItem;
 import umsa.capricornio.gui.transacciones.reporte.GeneraRepo;
 import umsa.capricornio.gui.transacciones.reporte.GetResAdj;
 import umsa.capricornio.gui.transacciones.reporte.GetResoluciones;
 import umsa.capricornio.gui.transacciones.reporte.Reportes;
 import umsa.capricornio.gui.transacciones.tablas.Partida;
 import umsa.capricornio.gui.transacciones.tablas.PartidaCellEditor;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedida;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedidaCellEditor;
 import umsa.capricornio.utilitarios.herramientas.MiRenderer;
 import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
@@ -66,7 +70,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     JInternalFrame ft;
     private Reportes reportes;
     private double Total;
-    int cod_almacen, cod_trans_nro, cod_rol, gestion, cod_w, tab_habil;
+    int cod_almacen, cod_trans_nro, cod_rol, gestion, cod_w, tab_habil,cod_user;
     private Runtime r;
     String tramite, origen, detalle, unidad_sol, unidad_des, nro, cuantia, del, hasta;
     TablaOrden orden;
@@ -79,7 +83,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     /**
      * Creates new form DiagOrdenesDetalle
      */
-    public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta) {
+    public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta,int cod_user) {
         super(menu, false);
         initComponents();
         ft = frmt;
@@ -100,6 +104,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.cuantia = cuantia;
         this.del = del;
         this.hasta = hasta;
+        this.cod_user = cod_user;
         genera_reportes = new GetResoluciones(this.cod_almacen);
         //this.des=dest;
         bloquea();
@@ -197,13 +202,25 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 //                    System.out.println(" -->" + datos[f].get("FECHA_ING").toString());
 //                    System.out.println(" -->" + datos[f].get("MEMO").toString());
 //                    System.out.println(" -->" + datos[f].get("OBS").toString());
-                    SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+//                    SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+                    
                     //String fec_fact="'"+form.format(CalFechaFact.getValue())+"'";
                     this.TxtFactura.setText(datos[f].get("FACTURA").toString());
                     this.TxtObsAlmacen.setText(datos[f].get("OBS").toString());
                     this.TxtMemo.setText(datos[f].get("MEMO").toString());
-                    //this.CalFechaFact.set(form.format(datos[f].get("FECHA_FACT").toString()));
-                    this.CalFechaIng.setValue(form.format(datos[f].get("FECHA_ING").toString()));
+//                    System.err.println("Try to Print");
+//                    System.err.println("1) Esta fecha es -->>> "+datos[f].get("FECHA_FACT").toString());
+//                    System.err.println("2) Esta fecha es -->>> "+form.format(datos[f].get("FECHA_FACT").toString()));
+//                    Date hoy = new Date(datos[f].get("FECHA_FACT").toString());
+//                    System.err.println("el dia de hoy ---> "+hoy);
+                   CalFechaFact.setValue(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(new Date(datos[f].get("FECHA_FACT").toString())));
+                   CalFechaIng.setValue(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(new Date(datos[f].get("FECHA_ING").toString())));
+                   CalFechaNotificacion.setValue(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(new Date(datos[f].get("FECHA_NOTI").toString())));
+                    
+                    
+                    
+//                    this.CalFechaIng.setValue(form.format(datos[f].get("FECHA_ING").toString()));
+//                    this.CalFechaNotificacion.setValue(form.format(datos[f].get("FECHA_NOTI").toString()));
 
                     //this.TxtObsAdq
                 }
@@ -289,11 +306,36 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
         return listPartida;
     }
+    private List<UnidadMedida> getUnidadMedida() {
+        List<UnidadMedida> listUnidadMedida = null;
+        try {
+            listUnidadMedida = new ArrayList();
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos = puerto.getUnidadMedida();
+
+            if (datos != null) {
+                for (int c = 0; c < datos.length; c++) {
+                    //this.JC_Partidas.addItem(datos[c].get("PARTIDA")+" - "+datos[c].get("DETALLE") );
+//                    System.out.println("--> " + datos[c].get("PARTIDA").toString());
+                        System.out.println("--> "+datos[c].get("COD_UNIDAD_MEDIDA").toString()+" - "+datos[c].get("DETALLE").toString()); 
+                    listUnidadMedida.add(new UnidadMedida(datos[c].get("COD_UNIDAD_MEDIDA").toString() + " - " + datos[c].get("DETALLE").toString()));
+                }
+            }
+        } catch (RemoteException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (ServiceException e) {
+            System.out.println(e);
+        }
+        return listUnidadMedida;
+    }
 
     private void ConstruyeTablaItems() {
 
         List<Partida> listPartida = this.getPartidas(2014);
-        orden = new TablaOrden(this, cod_rol, origen);
+        List<UnidadMedida> listUnidadMedida = this.getUnidadMedida();
+        orden = new TablaOrden(this, cod_rol, origen,this.cod_user);
         TblItems.setAutoCreateColumnsFromModel(false);
         TblItems.setModel(orden);
 
@@ -308,11 +350,22 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             /*DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
              renderer.setHorizontalAlignment(DatosTablaObligacionBandeja.m_columns[k].m_alignment);*/
 //            TableCellEditor edit =new ItemCellEditor(listItem);
-            TableCellEditor edit = new PartidaCellEditor(listPartida);
+            TableCellEditor edit1 = new PartidaCellEditor(listPartida);
+            TableCellEditor edit2 = new UnidadMedidaCellEditor(listUnidadMedida);
             TableColumn column;
-            if (k == 6) {
-                column = new TableColumn(k, TablaOrden.m_columns[k].m_width, renderer, edit);
-            } else {
+            
+//            if (k == 4) {
+//                column = new TableColumn(k, TablaOrden.m_columns[k].m_width, renderer, edit2);
+//            } else {
+//                column = new TableColumn(k, TablaOrden.m_columns[k].m_width, renderer, null);
+//            }
+            
+            if (k == 4) {
+                column = new TableColumn(k, TablaOrden.m_columns[k].m_width, renderer, edit2);
+            }else if(k==6){
+                column = new TableColumn(k, TablaOrden.m_columns[k].m_width, renderer, edit1);
+            } 
+            else {
                 column = new TableColumn(k, TablaOrden.m_columns[k].m_width, renderer, null);
             }
             TblItems.addColumn(column);
@@ -410,7 +463,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
     }
 
-    private void LlenaItems() {
+    public void LlenaItems() {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
@@ -427,7 +480,13 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
                     /*Wooooooo*/
                     TblItems.setValueAt(datos[c].get("CANTIDAD_PEDIDO"), c, 3);
-                    TblItems.setValueAt(datos[c].get("UNIDAD_MEDIDA"), c, 4);
+                    
+                    //TblItems.setValueAt(datos[c].get("UNIDAD_MEDIDA"), c, 4);
+                    if (datos[c].get("UNIDAD_MEDIDA").toString().equals("")) {
+                        TblItems.setValueAt(new UnidadMedida("No tiene"), c, 4);
+                    } else {
+                        TblItems.setValueAt(new UnidadMedida(datos[c].get("UNIDAD_MEDIDA").toString()), c, 4);
+                    }
 
 //                    System.out.println("----------------->> El cod_item : "+datos[c].get("COD_ITEM").toString());
                     if (datos[c].get("COD_ITEM").toString().equals("") || datos[c].get("COD_ITEM").toString().equals("0")) {
@@ -520,11 +579,11 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
     }
 
-    void ActualizaTransaccionIngresoAlmacen(String factura, String fecha_fact, String fecha_ing, String memo, String obs) {
+    void ActualizaTransaccionIngresoAlmacen(String factura, String fecha_fact, String fecha_ing, String fecha_noti, String memo, String obs) {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            //Map[] datos = puerto.setActualizaTransaccionIngresoAlm(cod_trans_nro, factura, fecha_fact, fecha_ing, memo, obs);
+            Map[] datos = puerto.setActualizaTransaccionIngresoAlm(cod_trans_nro, factura, fecha_fact, fecha_ing, fecha_noti, memo, obs);
             javax.swing.JOptionPane.showMessageDialog(this, "DATOS ALMACENADOS", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
         /*} catch (RemoteException e) {
@@ -696,6 +755,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        LblFechaIng1 = new javax.swing.JLabel();
+        CalFechaNotificacion = new net.sf.nachocalendar.components.DateField();
         TxtTotal = new javax.swing.JTextField();
         BtnGarantia = new javax.swing.JButton();
         BtnGuardar = new javax.swing.JButton();
@@ -830,7 +891,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         jPanel1.add(jButton14);
-        jButton14.setBounds(930, 30, 210, 25);
+        jButton14.setBounds(920, 30, 210, 25);
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 102, 51));
@@ -1041,12 +1102,12 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         LblFecFact.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         LblFecFact.setText("Fecha Factura :");
         PnlAlmacen.add(LblFecFact);
-        LblFecFact.setBounds(300, 20, 90, 20);
+        LblFecFact.setBounds(260, 20, 90, 20);
 
         LblFechaIng.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        LblFechaIng.setText("Fecha Ingreso:");
+        LblFechaIng.setText("Fecha Notificacion:");
         PnlAlmacen.add(LblFechaIng);
-        LblFechaIng.setBounds(530, 20, 90, 20);
+        LblFechaIng.setBounds(700, 20, 110, 20);
 
         TxtFactura.setEditable(false);
         TxtFactura.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -1066,7 +1127,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         PnlAlmacen.add(CalFechaFact);
-        CalFechaFact.setBounds(390, 20, 100, 20);
+        CalFechaFact.setBounds(350, 20, 100, 20);
 
         TxtMemo.setEditable(false);
         TxtMemo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -1076,7 +1137,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         PnlAlmacen.add(TxtMemo);
-        TxtMemo.setBounds(820, 20, 90, 21);
+        TxtMemo.setBounds(820, 50, 100, 21);
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 0));
@@ -1093,7 +1154,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         LblMemo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         LblMemo.setText("Memo :");
         PnlAlmacen.add(LblMemo);
-        LblMemo.setBounds(770, 20, 50, 20);
+        LblMemo.setBounds(770, 50, 50, 20);
 
         CalFechaIng.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
         CalFechaIng.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -1108,7 +1169,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         PnlAlmacen.add(CalFechaIng);
-        CalFechaIng.setBounds(620, 20, 100, 20);
+        CalFechaIng.setBounds(560, 20, 100, 20);
 
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton8.setText("Vista Previa");
@@ -1141,6 +1202,26 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         });
         PnlAlmacen.add(jButton12);
         jButton12.setBounds(757, 80, 160, 25);
+
+        LblFechaIng1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        LblFechaIng1.setText("Fecha Ingreso:");
+        PnlAlmacen.add(LblFechaIng1);
+        LblFechaIng1.setBounds(470, 20, 90, 20);
+
+        CalFechaNotificacion.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        CalFechaNotificacion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        CalFechaNotificacion.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                CalFechaNotificacionStateChanged(evt);
+            }
+        });
+        CalFechaNotificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CalFechaNotificacionKeyPressed(evt);
+            }
+        });
+        PnlAlmacen.add(CalFechaNotificacion);
+        CalFechaNotificacion.setBounds(820, 20, 100, 20);
 
         TabTransaccion.addTab("Almacen", PnlAlmacen);
 
@@ -1311,6 +1392,9 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
         String fec_fact = "'" + form.format(CalFechaFact.getValue()) + "'";
         String fec_ing = "'" + form.format(CalFechaIng.getValue()) + "'";
+        
+        
+        String fec_noti = "'" + form.format(CalFechaNotificacion.getValue()) + "'";
 
         System.out.println(" ------------------- ************** ------------ La fecha es: " + CalFechaFact.getValue());
 
@@ -1372,7 +1456,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                     String obs = this.TxtObsAlmacen.getText().trim();
                     System.out.println("La observacion seria : " + obs);
                     System.out.println("El memo al intentar guardarse es: " + memo);
-                    ActualizaTransaccionIngresoAlmacen(factura, fec_fact, fec_ing, memo, obs);
+                    ActualizaTransaccionIngresoAlmacen(factura, fec_fact, fec_ing, fec_noti, memo, obs);
                     //ActualizaTransaccionAlmacen("vvv");
                 }
                 break;
@@ -1649,7 +1733,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         LblTituloNro.setText(tramite + " Nro.:");
         Date hoy = new Date();
         LblNro.setText(nro + " - " + gestion);
-        CalFechaFact.setValue(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(hoy));
+//        CalFechaFact.setValue(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(hoy));
 
         proveedor = new Proveedor();
         System.out.println(" El cod rol es: " + this.cod_rol);
@@ -1789,16 +1873,24 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 //                //this.LlenaItems();
 //            }
             if (col == 7 && "".equals(TblItems.getValueAt(fila, 0))) {
+//                String cod_trans_detalle = TblItems.getValueAt(fila, 2).toString();
+//                String cod_item = TblItems.getValueAt(fila, 13).toString();
+//                System.out.println("Hola mamá, el cod_trans_detalle es -> " + cod_trans_detalle + " y el cod_item es: " + cod_item);
+//                
+//                JD_addDetalle JDad = new JD_addDetalle(this.menu, true, cod_trans_detalle, this.cod_rol);
+//                JDad.setVisible(true);
+//                this.LlenaItems();
+                
                 String cod_trans_detalle = TblItems.getValueAt(fila, 2).toString();
-                String cod_item = TblItems.getValueAt(fila, 13).toString();
-                System.out.println("Hola mamá, el cod_trans_detalle es -> " + cod_trans_detalle + " y el cod_item es: " + cod_item);
-//                JD_CambiaItem JDci = new JD_CambiaItem(this.menu,true,cod_trans_detalle,cod_item);
-//                JDci.setVisible(true);
-//                JD_CambiaPartida JDcp = new JD_CambiaPartida();
-
-                JD_addDetalle JDad = new JD_addDetalle(this.menu, true, cod_trans_detalle, this.cod_rol);
-                JDad.setVisible(true);
-                this.LlenaItems();
+//                String cod_item = TblItems.getValueAt(fila, 13).toString();
+//                System.out.println("Hola mamá, el cod_trans_detalle es -> " + cod_trans_detalle + " y el cod_item es: " + cod_item);
+                
+//                JD_updateItem JDup = new JD_updateItem(this.menu, true, cod_trans_detalle, this.cod_rol);
+//                JDup.setVisible(true);
+                
+                JD_Opciones JDo = new JD_Opciones (this.menu,true,this,cod_trans_detalle,this.cod_rol);
+                JDo.setVisible(true);
+//                this.LlenaItems();
             }
             if (col == 7 && !("".equals(TblItems.getValueAt(fila, 0)))) {
                 String cod_trans_detalle = TblItems.getValueAt(fila, 2).toString();
@@ -1839,7 +1931,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                 AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                 AdquiWS_PortType puerto = servicio.getAdquiWS();
                 System.out.println("El cod_trans_detalle es : " + cod_trans_detalle + ", cod_item: " + cod_item);
-                puerto.updateCodItem("SET-updateCodItem", cod_trans_detalle, cod_item);
+                puerto.updateCodItem2("SET-updateCodItem", cod_trans_detalle, cod_item,cod_user);
                 System.out.println("Guardado con exito!!! ");
             } catch (Exception e) {
                 System.out.println("Error --> " + e);
@@ -2248,6 +2340,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton BtnSalir1;
     private net.sf.nachocalendar.components.DateField CalFechaFact;
     private net.sf.nachocalendar.components.DateField CalFechaIng;
+    private net.sf.nachocalendar.components.DateField CalFechaNotificacion;
     private javax.swing.JTextField JT_HRUTA;
     private javax.swing.JLabel LblA;
     private javax.swing.JLabel LblCuantia;
@@ -2256,6 +2349,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JLabel LblFactura;
     private javax.swing.JLabel LblFecFact;
     private javax.swing.JLabel LblFechaIng;
+    private javax.swing.JLabel LblFechaIng1;
     private javax.swing.JLabel LblMemo;
     private javax.swing.JLabel LblNro;
     private javax.swing.JLabel LblTituloNro;

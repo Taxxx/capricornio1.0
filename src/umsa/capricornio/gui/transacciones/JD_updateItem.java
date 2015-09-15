@@ -13,64 +13,70 @@ import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
  *
  * @author UMSA-JES
  */
-public class JD_abmDetalle extends javax.swing.JDialog {
+public class JD_updateItem extends javax.swing.JDialog {
 
     /**
      * Creates new form JD_abmDetalle
      */
-    int cod_complemento;
+//    int cod_complemento;
     int cod_trans_detalle;
     int cod_rol;
-    public JD_abmDetalle(java.awt.Frame parent, boolean modal, String cod_trans_detalle, String cod_complemento,int cod_rol) {
+    public JD_updateItem(java.awt.Frame parent, boolean modal, String cod_trans_detalle,int cod_rol) {
         super(parent, modal);
         initComponents();
         this.cod_trans_detalle = Integer.parseInt(cod_trans_detalle);
-        this.cod_complemento = Integer.parseInt(cod_complemento);
+//        this.cod_complemento = Integer.parseInt(cod_complemento);
         this.cod_rol=cod_rol;
-        this.detalleDefault();
+        this.ItemDefault();
         this.setLocationRelativeTo(null);
     }
-    public void detalleDefault(){
+    public void ItemDefault(){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            if(cod_rol==2)
-                this.JTA_detalle.setText(puerto.getDetalleALM("SET-getDetalle", cod_complemento));
-            else
-                this.JTA_detalle.setText(puerto.getDetalle("SET-getDetalle", cod_complemento));
+//            if(cod_rol==2)
+//                this.JTA_detalle.setText(puerto.getDetalleALM("SET-getDetalle", cod_complemento));
+//            else
+//                this.JTA_detalle.setText(puerto.getDetalle("SET-getDetalle", cod_complemento));
+           this.JTA_item.setText(puerto.getItemMOD("SET-getItemMOD", cod_trans_detalle));
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(this,"<html> Error de conexion con el servidor <br> "+e,"Info Default",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void delDetalle(){
+    public void delItem(){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            int dialogResult = javax.swing.JOptionPane.showConfirmDialog (this, "¿Esta seguro(a) de eliminar el detalle?","Eliminar Detalle",javax.swing.JOptionPane.YES_NO_OPTION);
+            int dialogResult = javax.swing.JOptionPane.showConfirmDialog (this, "¿Esta seguro(a) de eliminar el Item?","Eliminar Item",javax.swing.JOptionPane.YES_NO_OPTION);
             if(dialogResult == javax.swing.JOptionPane.YES_OPTION){
 //                if(cod_rol==2)
 //                    puerto.delDetalleALM("SET-delDetalle", cod_complemento, cod_trans_detalle);
 //                else
-                    puerto.delDetalle("SET-delDetalle", cod_complemento, cod_trans_detalle);
-                javax.swing.JOptionPane.showMessageDialog(this,"Se elimino el detalle correctamente","Eliminar Detalle",
+//                    puerto.delDetalle("SET-delDetalle", cod_complemento, cod_trans_detalle);
+                puerto.delItemPro("SET-delItemPro", cod_trans_detalle);
+                javax.swing.JOptionPane.showMessageDialog(this,"Se elimino el item correctamente","Eliminar Item",
                             javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 this.setVisible(false);
             }
             
         } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> Error de conexion con el servidor <br> "+e,"Borrar Detalle",
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> Error de conexion con el servidor <br> "+e,"Borrar Item",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void updateDetalle(){
+    public void updateItem(){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS(); 
 //            if(cod_rol==2)
 //                puerto.updateDetalleALM("SET-updateDetalle", cod_complemento, this.JTA_detalle.getText().trim());
 //            else
-                puerto.updateDetalle("SET-updateDetalle", cod_complemento, this.JTA_detalle.getText().trim());
+//                puerto.updateDetalle("SET-updateDetalle", cod_complemento, this.JTA_detalle.getText().trim());
+            
+//            puerto.updateItem("SET-updateItem", String.valueOf(cod_trans_detalle), null, cod_complemento, cod_rol);
+            puerto.updateArticulo("SET-updateArticulo", cod_trans_detalle, this.JTA_item.getText());
+            
             javax.swing.JOptionPane.showMessageDialog(this,"Se actualizo el detalle correctamente","Adicionar Detalle",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
             this.setVisible(false);
@@ -92,7 +98,7 @@ public class JD_abmDetalle extends javax.swing.JDialog {
         JB_actualiza = new javax.swing.JButton();
         JB_elimina = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTA_detalle = new javax.swing.JTextArea();
+        JTA_item = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -116,13 +122,13 @@ public class JD_abmDetalle extends javax.swing.JDialog {
             }
         });
 
-        JTA_detalle.setColumns(20);
-        JTA_detalle.setRows(5);
-        jScrollPane1.setViewportView(JTA_detalle);
+        JTA_item.setColumns(20);
+        JTA_item.setRows(5);
+        jScrollPane1.setViewportView(JTA_item);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(20, 76, 232));
-        jLabel1.setText("OPCIONES DETALLE");
+        jLabel1.setText("ITEM");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
@@ -148,12 +154,12 @@ public class JD_abmDetalle extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(250, 250, 250)
                 .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(258, 258, 258)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -199,12 +205,12 @@ public class JD_abmDetalle extends javax.swing.JDialog {
 
     private void JB_eliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_eliminaActionPerformed
         // TODO add your handling code here:
-        this.delDetalle();
+        this.delItem();
     }//GEN-LAST:event_JB_eliminaActionPerformed
 
     private void JB_actualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_actualizaActionPerformed
         // TODO add your handling code here:
-        this.updateDetalle();
+        this.updateItem();
     }//GEN-LAST:event_JB_actualizaActionPerformed
 
     /**
@@ -237,7 +243,7 @@ public class JD_abmDetalle extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JD_abmDetalle dialog = new JD_abmDetalle(new javax.swing.JFrame(), true, "", "",0);
+                JD_updateItem dialog = new JD_updateItem(new javax.swing.JFrame(), true, "",0);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -252,7 +258,7 @@ public class JD_abmDetalle extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JB_actualiza;
     private javax.swing.JButton JB_elimina;
-    private javax.swing.JTextArea JTA_detalle;
+    private javax.swing.JTextArea JTA_item;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

@@ -146,13 +146,26 @@ public class GetResAdj {
                     String x="01/"+i+"/2015";
                     String y="01/"+(i+1)+"/2015";
                     System.out.println(x+" siiiii"+y);
+                    
+                    System.err.println("cod_user: "+cod_user);
+                    System.err.println("x: "+x);
+                    System.err.println("y: "+y);
+//                    System.err.println("y: ");
+                    
                     Map[] datos=puerto.obtienetotal(cod_user,x,y, 0, 50000);
                     if(datos==null)
                     {
-                        System.out.println("sii hay datos");
+                        System.out.println("no hay datos");
                     }
-                    System.out.println("aqui "+datos[0].get("TOTAL").toString());
+                    else
+                        System.err.println("wujuuuuu con datos!!!");
+                    
+                    System.err.println("B)");
                     System.out.println("aqui "+datos[0].get("COUNT").toString());
+                    System.err.println("A)");
+                    System.out.println("aqui "+datos[0].get("TOTAL").toString());
+                    
+                    
                     parameters.put("C"+i, datos[0].get("COUNT").toString());
                     parameters.put("M"+i, datos[0].get("TOTAL").toString());
                 }catch(Exception e)

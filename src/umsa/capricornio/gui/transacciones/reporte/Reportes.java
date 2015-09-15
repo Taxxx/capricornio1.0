@@ -30,6 +30,7 @@ public class Reportes {
         this.cod_almacen = cod_almacen;
     }
     public void MostrarPedido(int cod_trans_nro, String cod_estado, int cod_tramite){
+        System.out.println(" Pedido!!!! ----->>>> cod_trans_nro: "+cod_trans_nro+", cod_estado: "+cod_estado+", cod_tramite: "+cod_tramite);
         try {
             List list=new ArrayList();    
             
@@ -49,6 +50,7 @@ public class Reportes {
                     Transaccion trans = new Transaccion();
                     trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
                     trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
+                    
                     
                     //System.out.println("----->>>> Fecha de creacion: "+trans.getFecha_creacion());
                     
@@ -268,6 +270,11 @@ public class Reportes {
                     trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
                     trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
                     trans.setFecha_envio(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_ENVIO").toString()));
+                    
+                    trans.setFecha_noti(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_NOTI").toString()));
+                    
+//                    System.err.println("La fecha de notificacion es: "+datos[f].get("FECHA_NOTI").toString());
+                    
                     //trans.setFecha_envio(i_formatterDate.i_conveterStandardToDate("13-04-91"));
                     trans.setUnidad_sol(datos[f].get("UNIDAD_SOL").toString());
                     trans.setUnidad_des(datos[f].get("UNIDAD_DES").toString());

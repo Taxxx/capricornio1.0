@@ -24,6 +24,24 @@ public class Transaccion implements Serializable{
     private String nro_gestion;
     private Date fecha_creacion;
     private Date fecha_envio;
+    private Date fecha_noti;
+    private Date fecha_ing;
+
+    public Date getFecha_ing() {
+        return fecha_ing;
+    }
+
+    public void setFecha_ing(Date fecha_ing) {
+        this.fecha_ing = fecha_ing;
+    }
+
+    public Date getFecha_noti() {
+        return fecha_noti;
+    }
+
+    public void setFecha_noti(Date fecha_noti) {
+        this.fecha_noti = fecha_noti;
+    }
     private String unidad_sol;
     private String unidad_des;
     private String usuario_sol;

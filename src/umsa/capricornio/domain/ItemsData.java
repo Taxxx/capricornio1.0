@@ -5,8 +5,9 @@
 
 package umsa.capricornio.domain;
 
-import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.Item;
+//import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.tablas.Item;
 import umsa.capricornio.gui.transacciones.tablas.Partida;
+import umsa.capricornio.gui.transacciones.tablas.UnidadMedida;
 
 /**
  *
@@ -19,7 +20,8 @@ public class ItemsData {
     public String  cod_estado;
     public String  cod_trans_detalle;
     public String  cantidad_pedido;
-    public String  unidad_medida;
+    //public String  unidad_medida;
+    public UnidadMedida  unidad_medida;
     public String  item;
     //public String item;
 //    public Item  tipo_item;
@@ -33,7 +35,7 @@ public class ItemsData {
     public Partida partida;
     public String cod_item;
 
-    public ItemsData(String cod_complemento, String cod_estado,String cod_trans_detalle,String cantidad_pedido,String unidad_medida,String item,Partida partida,String articulo,String articulo_act,String articulo_alm,String dbc,String precio_unit,String sub_total,String cod_item) {
+    public ItemsData(String cod_complemento, String cod_estado,String cod_trans_detalle,String cantidad_pedido,UnidadMedida unidad_medida,String item,Partida partida,String articulo,String articulo_act,String articulo_alm,String dbc,String precio_unit,String sub_total,String cod_item) {
         this.cod_complemento=cod_complemento;
         this.cod_estado=cod_estado;
         this.cod_trans_detalle=cod_trans_detalle;
@@ -55,7 +57,8 @@ public class ItemsData {
         cod_estado="";
         cod_trans_detalle="";
         cantidad_pedido="";
-        unidad_medida="";
+        //unidad_medida="";
+        unidad_medida=null;
         item = "";
 //        tipo_item=null;
         //partida="";

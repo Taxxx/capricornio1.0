@@ -293,6 +293,13 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] updateArticulo(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateInformeComision(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm) throws java.rmi.RemoteException;
     public java.util.HashMap[] setUnidadMedida(java.lang.String tran, int cod_trans_detalle, int cod_unidad_medida) throws java.rmi.RemoteException;
+    public java.util.HashMap[] setDetallePrecioUnit2(java.lang.String tran, int cod_trans_detalle, double precio_unit, int cod_user) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateCantidadItem2(java.lang.String tran, int cod_trans_detalle, int cantidad_pedido, int cod_user) throws java.rmi.RemoteException;
+    public java.util.HashMap[] setPartida2(java.lang.String tran, int cod_trans_detalle, java.lang.String partida, int cod_user) throws java.rmi.RemoteException;
+    public java.util.HashMap[] setUnidadMedida2(java.lang.String tran, int cod_trans_detalle, int cod_unidad_medida, int cod_user) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateDetalle2(java.lang.String tran, int cod_complemento, java.lang.String detalle, int cod_user) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateArticulo2(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle, int cod_user) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateCodItem2(java.lang.String tran, int cod_trans_detalle, int cod_item, int cod_user) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;
