@@ -74,7 +74,8 @@ public class GetResAdj {
         JasperReport masterReport = null;
         Connection conexion=null;
         try { 
-            try {            
+            try {
+                System.out.println("aqui ya vemos otro");
                 Class.forName("oracle.jdbc.driver.OracleDriver");
             } catch (ClassNotFoundException ex) {
                 System.out.println("esto es un error");
@@ -82,13 +83,17 @@ public class GetResAdj {
                 Logger.getLogger(GetResAdj.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
+                System.out.println("aqui ya vemos otro2");
                 conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
             } catch (SQLException ex) {
                 System.out.println("esto es un error1");
                 JOptionPane.showMessageDialog( null, "esto1"+ex.getMessage());
                 Logger.getLogger(GetResAdj.class.getName()).log(Level.SEVERE, null, ex);
             }
-            masterReport = (JasperReport) JRLoader.loadObject(url);} 
+            System.out.println("es posible que el error este aqui");
+            masterReport = (JasperReport) JRLoader.loadObject(url);
+            System.out.println("es posible que el error este aqui2");
+        } 
         catch (JRException e) 
             { System.out.println("Error cargando el reporte maestro: " + e.getMessage());
               JOptionPane.showMessageDialog( null, "esto2"+e.getMessage());
@@ -100,7 +105,9 @@ public class GetResAdj {
 
         JasperPrint masterPrint = null;
         try {
+            System.out.println("el error debe estar por aqui---- "+masterPrint+" --sdfsd-- "+masterReport);
             masterPrint = JasperFillManager.fillReport(masterReport, parameters, conexion);
+            System.out.println("el error debe estar por aqui---- "+masterPrint+" --sdfsd-- "+masterReport);
         }
         catch (JRException e) {
             JOptionPane.showMessageDialog( null, e.getMessage());
@@ -170,6 +177,100 @@ public class GetResAdj {
         parameters.put("COD_USER", cod_user);
         parameters.put("ESTADO", estado);        
         RepTransaccion t1 = new RepTransaccion();
+    }
+    
+    public void imprimeinf_comicion(int cod_w,int gestion,int cod_transaccion,int cod_trans_nro,String detalle,String destino,String cargo,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String presidente,String vocal1,String vocal2,String secretario,String nota_uni,String nota_ppto,String Resolucion_admi,String monto,String hoja_ruta,String nro)
+    {
+        System.out.println("aqui ya vemos");
+        Map parameters=new HashMap();
+        parameters.put("detalle",detalle);
+        parameters.put("destino",destino);
+        parameters.put("cargo",cargo);
+        parameters.put("modalidad",modalidad);
+        parameters.put("notas",notas);
+        parameters.put("nota_jur",nota_juridica);
+        parameters.put("nro_cit",citacion);
+        parameters.put("fecha_nota",fec_cit);
+        parameters.put("fecha",fecha);
+        parameters.put("hora",hora);
+        parameters.put("nro_informe",nro_informe);
+        parameters.put("fecha_informe",fecha_inf);
+        parameters.put("presidente",presidente);
+        parameters.put("vocal1",vocal1);
+        parameters.put("vocal2",vocal2);
+        parameters.put("cod_trans",cod_transaccion);
+        parameters.put("cod_trans_nro",cod_trans_nro);
+        parameters.put("secretario",secretario);
+        parameters.put("nota_unidad",nota_uni);
+        parameters.put("nota_ppto",nota_ppto);
+        parameters.put("res_adm",Resolucion_admi);
+        parameters.put("desierta", 1);
+        parameters.put("MONTO",monto);
+        parameters.put("num", nro);
+        parameters.put("hoja_ruta",hoja_ruta);
+        parameters.put("DIR_DAF",this.dir_daf);
+        System.out.println("aqui ya vemos2 "+cod_trans_nro+" esto es cod "+cod_transaccion);
+        RepTransaccion t1=new RepTransaccion();
+        if(cod_w==1)
+        {
+            System.out.println("aqui ya vemosss");
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/InfComisionBien.jasper");
+            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/RO2.jasper");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report2.jasper");
+            urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report3.jasper");
+            parameters.put("DIR3", urlMaestro3.toString());
+            System.out.println("error3");
+            parameters.put("DIR1", urlMaestro1.toString());
+            System.out.println("error4");
+            parameters.put("DIR2", urlMaestro2.toString());
+            System.out.println("error5");
+        }
+        if(cod_w==3)
+        {
+            System.out.println("aqui ya vemosss1");
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/InfComisionCons.jasper");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report2.jasper");
+            parameters.put("DIR2", urlMaestro2.toString());
+            System.out.println("error5");
+        }
+        if(cod_w==6)
+        {
+            System.out.println("aqui ya vemosss2");
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/InfComisionServ.jasper");
+            System.out.println("error");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report2.jasper");
+            System.out.println("error1");
+            parameters.put("DIR2", urlMaestro2.toString());
+            System.out.println("error5");
+        }
+        if(cod_w==4)
+        {
+            System.out.println("aqui ya vemosss3");
+            urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/InfComisionObra.jasper");
+            urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/RO2.jasper");
+            urlMaestro2 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report2.jasper");
+            urlMaestro3 = t1.getClass().getResource("/umsa/capricornio/gui/reports/report3.jasper");
+            parameters.put("DIR3", urlMaestro3.toString());
+            System.out.println("error3");
+            parameters.put("DIR1", urlMaestro1.toString());
+            System.out.println("error4");
+            parameters.put("DIR2", urlMaestro2.toString());
+            System.out.println("error5");
+        }
+        System.out.println("error2");
+        /*parameters.put("DIR1", urlMaestro1.toString());
+        parameters.put("DIR2", urlMaestro2.toString());
+        parameters.put("DIR3", urlMaestro3.toString());*/
+        /*parameters.put("DIR3", urlMaestro3.toString());
+        System.out.println("error3");
+        parameters.put("DIR1", urlMaestro1.toString());
+        System.out.println("error4");
+        parameters.put("DIR2", urlMaestro2.toString());
+        System.out.println("error5");*/
+        System.out.println("aqui ya vemos3");
+        System.out.println(urlMaestro.toString());
+        this.imprimePDF2(urlMaestro, parameters);
+        System.out.println("aqui ya vemos4");
     }
     
     public void ReporteUnidad(Date fi,Date ff,int cod_user,int cod_rol,int x2)
@@ -406,7 +507,7 @@ public class GetResAdj {
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjServ.jasper");
         this.imprimePDF(urlMaestro, parameters);
     }
-    public void ReporteAdjBien(String res_adm,String fecha_cc,String inf_div_adq,String proveedor,String detalle,String num_resol,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String prop_proveedor,String proponentes, String cuce, String monto, String adc,int cod_trans){
+    public void ReporteAdjBien(String res_adm,String fecha_cc,String inf_div_adq,String proveedor,String detalle,String num_resol,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String prop_proveedor,String proponentes, String cuce, String monto, String adc,int cod_trans,int cod_trans_nro){
         Map parameters = new HashMap();
         
         parameters.put("num_res_adm", res_adm);
@@ -429,6 +530,7 @@ public class GetResAdj {
         System.out.println(cuce+"   sdfjsdfoisdjfoisjdoifjds");
         parameters.put("MONTO", monto);
         parameters.put("cod_trans", cod_trans);
+        parameters.put("cod_trans_nro", cod_trans_nro);
         System.out.println("yuuuuuu");
         
         RepTransaccion t1 = new RepTransaccion(); 

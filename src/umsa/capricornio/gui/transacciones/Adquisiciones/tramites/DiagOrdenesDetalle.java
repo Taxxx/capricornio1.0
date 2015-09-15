@@ -524,12 +524,12 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos = puerto.setActualizaTransaccionIngresoAlm(cod_trans_nro, factura, fecha_fact, fecha_ing, memo, obs);
+            //Map[] datos = puerto.setActualizaTransaccionIngresoAlm(cod_trans_nro, factura, fecha_fact, fecha_ing, memo, obs);
             javax.swing.JOptionPane.showMessageDialog(this, "DATOS ALMACENADOS", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        } catch (RemoteException e) {
+        /*} catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                    javax.swing.JOptionPane.ERROR_MESSAGE);*/
         } catch (ServiceException e) {
             System.out.println(e);
         }
@@ -680,6 +680,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         JT_HRUTA = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         PnlAlmacen = new javax.swing.JPanel();
         ScrObs = new javax.swing.JScrollPane();
         TxtObsAlmacen = new javax.swing.JTextPane();
@@ -901,7 +902,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         PnlAdquisiciones.add(BtnBuscaProveedor);
-        BtnBuscaProveedor.setBounds(290, 100, 130, 25);
+        BtnBuscaProveedor.setBounds(240, 100, 130, 25);
 
         jButton4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/report.png"))); // NOI18N
@@ -980,7 +981,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             }
         });
         PnlAdquisiciones.add(jButton7);
-        jButton7.setBounds(430, 100, 190, 23);
+        jButton7.setBounds(380, 100, 150, 23);
 
         jButton10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/alarm.png"))); // NOI18N
@@ -1008,6 +1009,15 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         });
         PnlAdquisiciones.add(jButton13);
         jButton13.setBounds(200, 97, 30, 25);
+
+        jButton15.setText("informe de la comision");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+        PnlAdquisiciones.add(jButton15);
+        jButton15.setBounds(540, 100, 110, 23);
 
         TabTransaccion.addTab("Adquisiciones", PnlAdquisiciones);
 
@@ -2141,6 +2151,36 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             CalFechaIng.setValue(CalFechaFact.getValue());
         }
     }//GEN-LAST:event_CalFechaIngStateChanged
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        
+        JDInformeComision x = new JDInformeComision(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
+        this.setModal(false);
+        x.setVisible(true);
+        // TODO add your handling code here:
+        /*if (proveedor.getCod_proveedor() == null) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe adjudicar la orden a un proveedor", "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            BtnBuscaProveedor.requestFocus();
+            return;
+        } else {*/
+            /*if (cod_w == 4) {
+                System.out.println("entra al if de obras");
+                
+                JDResAdjObra x = new JDResAdjObra(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
+                this.setModal(false);
+                x.setVisible(true);
+            } else {
+                this.BtnGuardar.doClick();
+                System.out.println(":P :P :P cod_w: " + cod_w + "cod_trans_nro: " + this.cod_trans_nro + "  nombre_comercial: " + this.proveedor.getCasa_comercial() + " detalle: " + this.detalle);
+                //JDResAdj x = new JDResAdj(menu,true,this.cod_trans_nro);
+                JDResAdj2 x = new JDResAdj2(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
+                this.setModal(false);
+                x.setVisible(true);
+            }
+*/
+        //}
+    }//GEN-LAST:event_jButton15ActionPerformed
     
     public int compara_fechas(String f1,String f2)
     {
@@ -2239,6 +2279,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

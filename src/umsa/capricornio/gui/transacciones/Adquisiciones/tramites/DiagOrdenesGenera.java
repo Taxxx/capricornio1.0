@@ -823,6 +823,11 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnRetornoActionPerformed
 
     private void BtnDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDesiertoActionPerformed
+        //JDInformeComision x = new JDInformeComision(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
+        JD_reporte_desierta x=new JD_reporte_desierta(menu, false, cod_w, cod_trans_nro, detalle, cod_transaccion, gestion);
+        //JD_reporte desierta x=new JD_reporte_desierta(menu, false, this.cod_w, this.cod_trans_nro, this.detalle, this.cod_transaccion,this.gestion);
+        this.setModal(false);
+        x.setVisible(true);
         int n = TblPedido.getSelectedRow();
         if ("D".equals(TblPedido.getValueAt(n, 1))) {
             javax.swing.JOptionPane.showMessageDialog(this, "Items ya fue declarado DESIERTO", "SYSTEM CAPRICORN",
