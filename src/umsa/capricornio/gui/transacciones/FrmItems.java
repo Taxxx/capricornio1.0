@@ -222,9 +222,9 @@ public class FrmItems extends javax.swing.JInternalFrame {
             /*DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
             renderer.setHorizontalAlignment(DatosTablaObligacionBandeja.m_columns[k].m_alignment);*/
             TableColumn column;
-            if(k!=7){
+            if(k==5){
                 column = new TableColumn(k, TablaItems.m_columns[k].m_width, renderer, edit1);
-            }else if(k!=6){
+            }else if(k==4){
                 column = new TableColumn(k, TablaItems.m_columns[k].m_width, renderer, edit2);
             }
             else{

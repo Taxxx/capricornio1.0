@@ -14,6 +14,7 @@ import umsa.capricornio.domain.ItemsData;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.DiagOrdenesDetalle;
+//import umsa.capricornio.gui.transacciones.tablas.Partida;
 import umsa.capricornio.gui.transacciones.tablas.Partida;
 import umsa.capricornio.gui.transacciones.tablas.UnidadMedida;
 import umsa.capricornio.utilitarios.herramientas.ColumnData;
@@ -183,8 +184,9 @@ public class TablaOrden extends AbstractTableModel {
         return "";
     }
 
-    @Override
+//    @Override
     public void setValueAt(Object value, int nRow, int nCol) {
+        
         if (nRow < 0 || nRow >= getRowCount()) {
             return;
         }
@@ -235,7 +237,7 @@ public class TablaOrden extends AbstractTableModel {
                 break;
             case 4:
 //                row.unidad_medida = svalue;
-                System.err.println("wujuuu");
+                System.err.println("**/*/wujuuu");
                 if (row.cod_complemento.equals("")) {
                     row.unidad_medida = (UnidadMedida) value;
                     System.err.println("El codigo es:" + row.unidad_medida.getCodigo().split(" - ")[0]);

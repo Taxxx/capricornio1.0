@@ -61,6 +61,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     int cod_usuario,cod_rol,gestion,x,tope,ini,fin,cod_almacen;
     private Runtime r;
     private int cod_tramite;
+//    DiagOrdenesDetalle ordenes;
     /** Creates new form FrmTransacciones **/
     public FrmAdquisiciones(FrmMenu menu,int cod_usuario,int cod_rol,int gestion,int cod_almacen) {
         this.menu=menu;
@@ -405,7 +406,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             pasa=0;
         }else
         {
-            DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),this.cod_usuario);
+            DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),this.cod_usuario,false);
             ordenes.AbreDialogo();
             pasa=0;
         }
@@ -533,7 +534,6 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     String nh=datos1[0].get("DIAS").toString();
                     dia=Integer.parseInt(nh);
                     swdias=1;
-                    
                 }
             }
         }catch(Exception e)
@@ -709,6 +709,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(104, 129, 156));
         setClosable(true);
@@ -819,7 +820,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         PnlTransaccionEstado.setViewportView(TblTransaccionEstado);
 
         jPanel3.add(PnlTransaccionEstado);
-        PnlTransaccionEstado.setBounds(10, 80, 1120, 470);
+        PnlTransaccionEstado.setBounds(10, 80, 1120, 440);
 
         jPanel2.setBackground(new java.awt.Color(185, 203, 221));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -905,6 +906,16 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(10, 20, 1120, 60);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/action_refresh_blue.gif"))); // NOI18N
+        jButton4.setText("Modificar Item");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton4);
+        jButton4.setBounds(510, 530, 130, 25);
 
         jTabbedPane1.addTab("Enviados", jPanel3);
 
@@ -1062,6 +1073,47 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         this.JTF_nroOrden.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+
+//        DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),this.cod_usuario,false);
+//        ordenes.AbreDialogo();
+        
+//        TblTransaccionBandeja.getValueAt(fila, 1).toString()//origen-S
+//        TblTransaccionBandeja.getValueAt(fila, 5).toString()//detalle-S
+//        TblTransaccionBandeja.getValueAt(fila, 6).toString()//unidad_sol-S
+//        TblTransaccionBandeja.getValueAt(fila, 7).toString()//unidad_des-S
+//        TblTransaccionBandeja.getValueAt(fila, 3).toString()//nro-S
+//        TblTransaccionBandeja.getValueAt(fila, 9).toString()//cuantia-S
+//        TblTransaccionBandeja.getValueAt(fila, 10).toString()//del-S
+//        TblTransaccionBandeja.getValueAt(fila, 11).toString()//hasta-S
+//        this.cod_usuario
+//        false
+        
+        
+        int fila = TblTransaccionEstado.getSelectedRow();
+        int cod_trans_nro = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 0).toString());
+        //String tramite = TblTransaccionBandeja.getValueAt(fila, 4).toString();
+        String tramite = "Correccion Tramite";
+        int cod_w = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString());
+        String origen=TblTransaccionBandeja.getValueAt(fila, 1).toString();
+        String detalle=TblTransaccionBandeja.getValueAt(fila, 5).toString();
+        String unidad_sol=TblTransaccionBandeja.getValueAt(fila, 6).toString();
+        String unidad_des=TblTransaccionBandeja.getValueAt(fila, 7).toString();
+        String nro=TblTransaccionBandeja.getValueAt(fila, 3).toString();
+        String cuantia=TblTransaccionBandeja.getValueAt(fila, 9).toString();
+        String del=TblTransaccionBandeja.getValueAt(fila, 10).toString();
+        String hasta=TblTransaccionBandeja.getValueAt(fila, 11).toString();
+        
+        DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle
+        (this,menu,cod_almacen, cod_trans_nro,cod_rol,tramite,gestion,cod_w,origen,detalle,unidad_sol,unidad_des,nro,cuantia,del,hasta,this.cod_usuario,true);
+        ordenes.AbreDialogo();
+        
+//        int gestion = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 4).toString(););
+//        System.err.println("el cod_trans_nro es: "+cod_trans_nro);
+//        System.err.println("el valor es: "+TblTransaccionEstado.getValueAt(fila, 0).toString());
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizar;
     private javax.swing.JButton BtnAdelante;
@@ -1079,6 +1131,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

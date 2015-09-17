@@ -74,7 +74,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private Runtime r;
     String tramite, origen, detalle, unidad_sol, unidad_des, nro, cuantia, del, hasta;
     TablaOrden orden;
-    private boolean sw;
+    private boolean sw,sw_modificacion_concluido=false;
     private int cod_transaccion;
     private String des,dias;
     private Proveedor proveedor;
@@ -83,7 +83,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     /**
      * Creates new form DiagOrdenesDetalle
      */
-    public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta,int cod_user) {
+    public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta,int cod_user,boolean sw_modificacion_concluido) {
         super(menu, false);
         initComponents();
         ft = frmt;
@@ -105,6 +105,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         this.del = del;
         this.hasta = hasta;
         this.cod_user = cod_user;
+        this.sw_modificacion_concluido=sw_modificacion_concluido;
         genera_reportes = new GetResoluciones(this.cod_almacen);
         //this.des=dest;
         bloquea();
@@ -686,6 +687,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     }
 
     public void AbreDialogo() {
+//        this.sw_modificacion_concluido = sw;
         ft.setVisible(false);
         setVisible(true);
     }

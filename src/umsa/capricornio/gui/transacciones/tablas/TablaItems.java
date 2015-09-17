@@ -7,8 +7,6 @@ package umsa.capricornio.gui.transacciones.tablas;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.table.AbstractTableModel;
 import javax.xml.rpc.ServiceException;
@@ -16,7 +14,6 @@ import umsa.capricornio.domain.ItemsData;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
 import umsa.capricornio.gui.transacciones.FrmItems;
-import umsa.capricornio.gui.transacciones.JD_CambiaItem;
 import umsa.capricornio.utilitarios.herramientas.ColumnData;
 
 /**
@@ -135,7 +132,7 @@ public class TablaItems extends AbstractTableModel
     return "";          
   }             
   
-    @Override
+//    @Override
   public void setValueAt(Object value, int nRow, int nCol) {
     if (nRow < 0 || nRow>=getRowCount())
       return; 
@@ -143,29 +140,31 @@ public class TablaItems extends AbstractTableModel
     ItemsData row = (ItemsData)lista.get(nRow);
     String svalue="";
     if(nCol!=5 && nCol!=4){
-        System.err.println("el nCol es -> "+nCol);
+//        System.err.println("el nCol es -> "+nCol);
         svalue = value.toString();
     }
-         
-    
-         
     
     switch (nCol) {
       case 0:
+          System.err.println("set cod_complemento: "+svalue);
         row.cod_complemento = svalue;
         break;      
       case 1:
+          System.err.println("set cod_estado: "+svalue);
         row.cod_estado = svalue;
         break;      
       case 2:
+          System.err.println("set cod_trans_detalle: "+svalue);
         row.cod_trans_detalle = svalue;
         break;       
       case 3:
+          System.err.println("set cantidad_pedido: "+svalue);
         row.cantidad_pedido = svalue;
         break;       
       case 4:
 //        row.unidad_medida = svalue;
 //        break;
+          System.err.println("SET to Cambiar Unidad de Medida");
           
           if (row.cod_complemento.equals("")) {
             row.unidad_medida = (UnidadMedida) value;
@@ -187,6 +186,7 @@ public class TablaItems extends AbstractTableModel
         }
           
       case 5:
+          System.err.println("SET to Cambiar Partida");
           if (row.cod_complemento.equals("")) {
             row.partida = (Partida) value;
 //            System.err.println("1) El codigo es:" + row.partida.getCodigo());
@@ -209,6 +209,7 @@ public class TablaItems extends AbstractTableModel
         row.articulo = svalue;
         break;
       case 7:
+          System.err.println("SET to Cambiar Precio");
           try { 
               if (!("".equals(svalue.trim()))) {
                     double n = new Double(svalue.trim());
@@ -238,6 +239,7 @@ public class TablaItems extends AbstractTableModel
 //        row.precio_unit = svalue;
         break;
       case 8:
+          System.err.println("set sub_total: "+svalue);
         row.sub_total = svalue;
         items.SumaPreciosTotales();
         break;    
