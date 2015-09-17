@@ -129,6 +129,42 @@ public class GetResAdj {
             System.out.println("Gravichimo error: "+e);
         }
     }
+    public void reporteDesierta(int cod_w,int cod_transaccion,int cod_trans_nro,String res_adm,String res_ini,String detalle,String invitados,String fecha_apert,String inf_tec,String inf_adq,String convocatoria,String modalidad)
+    {
+        Map parameters=new HashMap();
+        parameters.put("RES_ADM", res_adm);
+        parameters.put("RES_INI", res_ini);
+        parameters.put("DETALLE", detalle);
+        parameters.put("INVITADOS", invitados);
+        parameters.put("FECHA_APERTURA", fecha_apert);
+        parameters.put("INF_TEC", inf_tec);
+        parameters.put("INF_ADQ", inf_adq);
+        parameters.put("NRO_CONVOCATORIA", convocatoria);
+        parameters.put("MODALIDAD", modalidad);
+        parameters.put("cod_trans", cod_transaccion);
+        parameters.put("DIR_DAF",this.dir_daf);
+        RepTransaccion t1=new RepTransaccion();
+        System.out.println("siii hasta aqui");
+        if(cod_w==1)
+        {
+            urlMaestro=t1.getClass().getResource("/umsa/capricornio/gui/reports/desiertaBien.jasper");
+        }
+        if(cod_w==6)
+        {
+            urlMaestro=t1.getClass().getResource("/umsa/capricornio/gui/reports/desiertaServ.jasper");
+        }
+        if(cod_w==3)
+        {
+            urlMaestro=t1.getClass().getResource("/umsa/capricornio/gui/reports/desiertaCons.jasper");
+        }
+        if(cod_w==4)
+        {
+            urlMaestro=t1.getClass().getResource("/umsa/capricornio/gui/reports/desiertaObra.jasper");
+        }
+        System.out.println("siii hasta aqui");
+        this.imprimePDF2(urlMaestro, parameters);
+        
+    }
     public void reporteResumen(int mes1,int mes2,int cod_user)
     {
         int mes=1,i=mes1;
@@ -192,11 +228,12 @@ public class GetResAdj {
         RepTransaccion t1 = new RepTransaccion();
     }
     
-    public void imprimeinf_comicion(int cod_w,int gestion,int cod_transaccion,int cod_trans_nro,String detalle,String destino,String cargo,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String presidente,String vocal1,String vocal2,String secretario,String nota_uni,String nota_ppto,String Resolucion_admi,String monto,String hoja_ruta,String nro)
+    public void imprimeinf_comicion(int cod_w,int gestion,int cod_transaccion,int cod_trans_nro,String detalle,String destino,String cargo,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String presidente,String vocal1,String vocal2,String secretario,String nota_uni,String nota_ppto,String Resolucion_admi,String monto,String hoja_ruta,String nro,String proveedor)
     {
         System.out.println("aqui ya vemos");
         Map parameters=new HashMap();
         parameters.put("detalle",detalle);
+        parameters.put("contratado",proveedor);
         parameters.put("destino",destino);
         parameters.put("cargo",cargo);
         parameters.put("modalidad",modalidad);
@@ -217,7 +254,14 @@ public class GetResAdj {
         parameters.put("nota_unidad",nota_uni);
         parameters.put("nota_ppto",nota_ppto);
         parameters.put("res_adm",Resolucion_admi);
-        parameters.put("desierta", 1);
+        if(proveedor==null)
+        {
+            parameters.put("desierta", 1);
+        }
+        else
+        {
+            parameters.put("desierta", 0);
+        }
         parameters.put("MONTO",monto);
         parameters.put("num", nro);
         parameters.put("hoja_ruta",hoja_ruta);

@@ -55,7 +55,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         this.gestion=gestion;
         System.out.println("codigotrnas"+cod_transaccion);
         LlenaBien();
-        creatabla();
+        //creatabla();
         //ejBien();
         //this.Concursantes();
         //this.bloqueaBien();
@@ -370,8 +370,8 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         this.updateAdjCons(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());*/
         //this.verifielementos();
         //System.err.println("jijiji "+tprov+"  jujujuju "+tbche);
-        verifielementos();
-        //this.GuardaInfComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText(),JTF_CARGO8.getText(),JTF_CARGO9.getText(),JTF_CARGO10.getText(),JTF_CARGO11.getText(),JTF_CARGO12.getText(),JTF_CARGO13.getText(),JTF_CARGO14.getText(),JTF_CARGO15.getText(),JTF_CARGO16.getText(),JTF_CARGO17.getText(),JTF_CARGO18.getText());
+        //verifielementos();
+        this.GuardaInfComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText());
         //this.LlenaBien();
         this.setVisible(false);
     }//GEN-LAST:event_JB_GuardarActionPerformed
@@ -410,10 +410,10 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         // TODO add your handling code here:
         try{
             System.err.println("esto si que es raro");
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            /*AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            Map[] datos =puerto.getPreventivos(cod_transaccion);
-            //this.imprimeComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText(),JTF_CARGO8.getText(),JTF_CARGO9.getText(),JTF_CARGO10.getText(),JTF_CARGO11.getText(),JTF_CARGO12.getText(),JTF_CARGO13.getText(),JTF_CARGO14.getText(),JTF_CARGO15.getText(),JTF_CARGO16.getText(),JTF_CARGO17.getText(),JTF_CARGO18.getText());
+            Map[] datos =puerto.getPreventivos(cod_transaccion);*/
+            this.imprimeComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText());
             System.err.println("esto si que es raro2");
             //this.genera_res_adj.ReporteAdjObra(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,tprov,tbche,cod_transaccion,this.tadju);
         }
@@ -435,11 +435,11 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
 
     private void JB_GenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GenerarActionPerformed
         // TODO add your handling code here:
-        verifielementos();
+        //verifielementos();
         System.out.println("entra");
         System.out.println("--***>> el cod_w es: "+cod_w);
         //if(this.cod_w==6){
-//            this.GeneraInf_comision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText(),JTF_CARGO8.getText(),JTF_CARGO9.getText(),JTF_CARGO10.getText(),JTF_CARGO11.getText(),JTF_CARGO12.getText(),JTF_CARGO13.getText(),JTF_CARGO14.getText(),JTF_CARGO15.getText(),JTF_CARGO16.getText(),JTF_CARGO17.getText(),JTF_CARGO18.getText());
+            this.GeneraInf_comision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText());
 
             /*}
         if(this.cod_w==7||this.cod_w==1){
@@ -455,72 +455,6 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         this.setVisible(false);
     }//GEN-LAST:event_JB_SalirActionPerformed
 
-    
-    
-    private void verifielementos()
-    {
-        /*int c=0,c1=0,c2=0,c3=0,c4=0,c5=0;
-        JTextField jtv[]=new JTextField[30];
-        JCheckBox jc[]=new JCheckBox[30];
-        tprov="";
-        tbche="";
-        //System.out.println("total adju"+tadju*5);
-        for(int i=7; i<=(tadju*7)+6 ;i++)
-        {
-            //System.out.println(" ");
-            ///System.out.println(jPanel2.getComponent(i).getName());
-            if(jPanel2.getComponent(i).getName().toString().equals("texto1"+c))
-            {
-                jtv[c]=(JTextField) jPanel2.getComponent(i);
-                //System.out.println(jtv[c].getText().toString());
-                tprov=tprov+","+jtv[c].getText();
-                c++;
-            }
-            if(jPanel2.getComponent(i).getName().toString().equals("texto2"+c2))
-            {
-                jtv[c2]=(JTextField) jPanel2.getComponent(i);
-                //System.out.println(jtv[c].getText().toString());
-                tprov=tprov+","+jtv[c2].getText();
-                c2++;
-            }
-            if(jPanel2.getComponent(i).getName().toString().equals("texto3"+c3))
-            {
-                jtv[c3]=(JTextField) jPanel2.getComponent(i);
-                jtv[c3].setText(jtv[c3].getText().toLowerCase());
-                System.out.println("noooooooo"+jtv[c3].getText().toString());
-                tprov=tprov+","+jtv[c3].getText();
-                c3++;
-            }
-            if(jPanel2.getComponent(i).getName().toString().equals("texto4"+c4))
-            {
-                jtv[c4]=(JTextField) jPanel2.getComponent(i);
-                //System.out.println(jtv[c].getText().toString());
-                tprov=tprov+","+jtv[c4].getText();
-                c4++;
-            }
-            if(jPanel2.getComponent(i).getName().toString().equals("texto5"+c5))
-            {
-                jtv[c5]=(JTextField) jPanel2.getComponent(i);
-                //System.out.println(jtv[c].getText().toString());
-                tprov=tprov+","+jtv[c5].getText();
-                c5++;
-            }
-            if(jPanel2.getComponent(i).getName().toString().equals("check1"+c1))
-            {
-                jc[c1]=(JCheckBox) jPanel2.getComponent(i);
-                //System.out.println(jc[c1].getSelectedObjects());
-                //System.out.println("c1="+c1);
-                if(jc[c1].getSelectedObjects()!=null)
-                   tbche=tbche+",cumple";
-                else
-                   tbche=tbche+",no cumple";
-                c1++;
-            }
-            System.err.println("u"+c+"u"+c1+"u"+c2+"u"+c3+"u"+c4+"u"+c5);
-            System.err.println("dsf"+jPanel2.getComponent(i).getName().toString());
-        }
-        //System.out.println("tprov: "+tprov+", tbche"+tbche);*/
-    }
     private void LlenaTabla(String t1,String t2)
     {
         vt1=t1.split(",");
@@ -535,175 +469,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         }
     }
     
-    private void creatabla()
-    {
-        /*String conc="";
-        //codigos[]=new String[10];
-        System.out.println("entra acreartbla");
-        int k=30,kk=10,kkk=572,p=1,p1=1;
-        jLabel26.setBounds(840,10,60,20);
-        jPanel2.add(jLabel26);
-        jLabel27.setBounds(910,10,60,20);
-        jPanel2.add(jLabel27);
-        try {
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
-            //System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
-            Map[] datos =puerto.getConcursantes(cod_trans_nro);
-            if(datos!=null){
-                tadju=datos.length;
-                System.out.println("el total es: "+tadju);
-                kk=kk+(datos.length-1)*50;
-                kkk=kkk+(datos.length-1)*50;
-                for (int c=0;c<datos.length;c++){
-                    System.out.println("esto si esta aqui y sale bien");
-                    System.out.println("Concursantes con Datos...");
-                    if(datos[c].get("NOMBRE_COMERCIAL").equals("Sin Nombre Comercial"))
-                    {
-                        System.out.println("esto si esta aqui y sale bien1");
-                        codigos[c]=datos[c].get("COD_PROVEEDOR").toString();
-                        System.out.println("jjjjj "+codigos[c]);
-                        j1=new JLabel(datos[c].get("NOMBRE").toString());
-                        j1.setBounds(5, k, 300, 30);
-                        j1.setText(datos[c].get("NOMBRE").toString());
-                        j1.setName("label1"+c);
-                        jc=new JCheckBox("si cumple");
-                        jc.setBounds(300, k, 100, 30);
-                        //jc.setText(datos[c].get("NOMBRE").toString());
-                        jc.setVisible(true);
-                        jc.setEnabled(true);
-                        jc.setName("check1"+c);
-                        jt1=new JTextField();
-                        jt1.setBounds(410, k, 100, 30);
-                        jt1.setName("texto1"+c);
-                        jt2=new JTextField();
-                        jt2.setBounds(520, k, 150, 30);
-                        jt2.setName("texto2"+c);
-                        jt3=new JTextField();
-                        jt3.setBounds(680, k, 150, 30);
-                        jt3.setName("texto3"+c);
-                        jt4=new JTextField();
-                        jt4.setBounds(840, k, 60, 30);
-                        jt4.setName("texto4"+c);
-                        jt5=new JTextField();
-                        jt5.setBounds(910, k, 60, 30);
-                        jt5.setName("texto5"+c);
-                        jPanel2.add(j1);
-                        jPanel2.add(jc);
-                        jPanel2.add(jt1);
-                        jPanel2.add(jt2);
-                        jPanel2.add(jt3);
-                        jPanel2.add(jt4);
-                        jPanel2.add(jt5);
-                        jPanel2.setSize(970, kk);
-                        jPanel2.setPreferredSize(jPanel2.getSize());
-                        jPanel1.setSize(997, kkk);
-                       // System.out.println("WIDTH "+jPanel2.getSize());
-                        jPanel1.setPreferredSize(jPanel1.getSize());
-                        k=k+30;
-                        conc = conc+", "+datos[c].get("NOMBRE").toString();
-                        System.out.println("uuuuuuuuu "+conc+" esto es el sw"+sw1);
-                        if(sw1==1)
-                        {
-                            System.out.println((datos[c].get("MONTO").toString()));
-                            System.out.println((datos[c].get("PLAZO").toString()));
-                            System.out.println((datos[c].get("OBSERVACION").toString()));
-                            jt1.setText((datos[c].get("MONTO").toString()));
-                            jt2.setText((datos[c].get("PLAZO").toString()));
-                            jt3.setText((datos[c].get("OBSERVACION").toString()));
-                            jt4.setText(datos[c].get("PTG_ECONOMICO").toString());
-                            jt5.setText(datos[c].get("PTG_TECNICO").toString());
-                            p=p+5;
-                            
-                            jt1.setEnabled(false);
-                            jt2.setEnabled(false);
-                            jt3.setEnabled(false);
-                            jt4.setEnabled(false);
-                            jt5.setEnabled(false);
-                            if((datos[c].get("CUMPLE").toString()).equals("cumple"))
-                                jc.setSelected(true);
-                            jc.setEnabled(false);
-                        }
-                    }
-                    else
-                    {
-                        System.out.println("esto si esta aqui y sale bien2");
-                        codigos[c]=datos[c].get("COD_PROVEEDOR").toString();
-                        System.out.println("jjjjj "+codigos[c]);
-                        j1=new JLabel(datos[c].get("NOMBRE_COMERCIAL").toString());
-                        j1.setBounds(5, k, 300, 30);
-                        j1.setVisible(true);
-                        j1.setEnabled(true);
-                        j1.setName("label1"+c);
-                        jc=new JCheckBox("si cumple");
-                        jc.setBounds(300, k, 100, 30);
-                        jc.setName("check1"+c);
-                        //jc.setText(datos[c].get("NOMBRE").toString());
-                        jc.setVisible(true);
-                        jc.setEnabled(true);
-                        jt1=new JTextField();
-                        jt1.setBounds(410, k, 100, 30);
-                        jt1.setName("texto1"+c);
-                        jt2=new JTextField();
-                        jt2.setBounds(520, k, 150, 30);
-                        jt2.setName("texto2"+c);
-                        jt3=new JTextField();
-                        jt3.setBounds(680, k, 150, 30);
-                        jt3.setName("texto3"+c);
-                        jt4=new JTextField();
-                        jt4.setBounds(840, k, 60, 30);
-                        jt4.setName("texto4"+c);
-                        jt5=new JTextField();
-                        jt5.setBounds(910, k, 60, 30);
-                        jt5.setName("texto5"+c);
-                        jPanel2.add(j1);
-                        jPanel2.add(jc);
-                        jPanel2.add(jt1);
-                        jPanel2.add(jt2);
-                        jPanel2.add(jt3);
-                        jPanel2.add(jt4);
-                        jPanel2.add(jt5);
-                        jPanel2.setSize(970, kk);
-                        System.out.println("WIDTH1 "+jPanel1.getSize());
-                        System.out.println("WIDTH2 "+jPanel2.getSize());
-                        jPanel2.setPreferredSize(jPanel2.getSize());
-                        //jPanel1.setSize(997, kkk);
-                       // System.out.println("WIDTH "+jPanel2.getSize());
-                        //jPanel1.setPreferredSize(jPanel1.getSize());
-                        k=k+30;
-                        conc = conc+", "+datos[c].get("NOMBRE_COMERCIAL").toString();
-                        System.out.println("aaaaaaa "+conc);
-                        if(sw1==1)
-                        {
-                            jt1.setText((datos[c].get("MONTO").toString()));
-                            jt2.setText((datos[c].get("PLAZO").toString()));
-                            jt3.setText((datos[c].get("OBSERVACION").toString()));
-                            jt4.setText(datos[c].get("PTG_ECONOMICO").toString());
-                            jt5.setText(datos[c].get("PTG_TECNICO").toString());
-                            p=p+5;
-                            
-                            jt1.setEnabled(false);
-                            jt2.setEnabled(false);
-                            jt3.setEnabled(false);
-                            jt4.setEnabled(false);
-                            jt5.setEnabled(false);
-                            if((datos[c].get("CUMPLE").toString()).equals("cumple"))
-                                jc.setSelected(true);
-                            jc.setEnabled(false);
-                        }
-                    }
-                    System.out.println("adsfsdf "+ c);
-                }
-            }
-            else
-                System.out.println("Vacio :(");
-        } catch (Exception e) {
-            System.out.println("ERROR: "+e);
-        }*/
-    }
-    
-    public void GeneraInf_comision(String presidente,String vocal1,String vocal2,String secretario,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String nota_uni,String nota_ppto,String Resolucion_admi,String destino,String cargo)
+    public void GeneraInf_comision(String res_ini,String fec_apert,String inf_tec,String inf_adq,String modalidad,String destino,String convocatoria)
     {
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -713,7 +479,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             System.out.println("codTN "+cod_trans_nro);
             System.out.println("detalle "+detalle);
             System.out.println("destino "+destino);
-            System.out.println("cargo "+cargo);
+            /*System.out.println("cargo "+cargo);
             System.out.println("modalidad "+modalidad);
             System.out.println("notas "+notas);
             System.out.println("nota_juridica "+nota_juridica);
@@ -729,10 +495,11 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             System.out.println("secretario "+secretario);
             System.out.println("nota_uni "+nota_uni);
             System.out.println("nota_ppto "+nota_ppto);
-            System.out.println("resolucion_adm "+Resolucion_admi);
-            puerto.generainf_comicion(gestion,cod_transaccion,cod_trans_nro,detalle,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi,cod_usuario);
+            System.out.println("resolucion_adm "+Resolucion_admi);*/
+            puerto.generaDesierta(gestion, cod_transaccion, cod_trans_nro, detalle, destino, res_ini, fec_apert, inf_tec, inf_adq, modalidad, convocatoria);
+            //puerto.generainf_comicion(gestion,cod_transaccion,cod_trans_nro,detalle,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi,cod_usuario);
             System.out.println("paso");
-            int cc=1,hh=1,nh=0;
+            /*int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
             n1=tprov.split(",");
@@ -743,9 +510,9 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                 cc=cc+5;
                 /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;*/
-                hh++;
+                /*hh++;
                 nh++;
-            }
+            }*/
         }
         catch(Exception e)
         {
@@ -858,10 +625,51 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         }
         return datos;
     }
-    public void imprimeComision(String presidente,String vocal1,String vocal2,String secretario,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String nota_uni,String nota_ppto,String Resolucion_admi,String destino,String cargo)
+    public void imprimeComision(String res_ini,String fec_apert,String inf_tec,String inf_adq,String modalidad,String destino,String convocatoria)
     {
         System.out.println("System entra hasta aqui");
-        genera_res_adj.imprimeinf_comicion(cod_w,gestion,cod_transaccion,cod_trans_nro,detalle,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi,MONTO(),hoja_ruta(),nro_informe());
+        genera_res_adj.reporteDesierta(cod_w, cod_transaccion, cod_trans_nro, res_adm(), res_ini, detalle, invitados(), fec_apert, inf_tec, inf_adq, convocatoria, modalidad);
+    }
+    
+    public String res_adm()
+    {
+        String datos=null;
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] d=puerto.getDesierta(cod_transaccion, cod_trans_nro);
+            datos=d[0].get("NRO").toString();
+        }catch(Exception e)
+        {
+            
+        }
+        return datos;
+    }
+    public String invitados()
+    {
+        String d="";
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] datos=puerto.getProponentes(this.cod_transaccion, this.cod_trans_nro);
+            if (datos!=null){
+                System.out.println("Entro llena proponentes...");
+                for (int c=0;c<datos.length;c++){
+                    if(datos[c].get("NOMBRE_COMERCIAL").toString().equals("Sin Nombre Comercial"))
+                    {
+                        d=d+datos[c].get("NOMBRE").toString()+", ";
+                    }
+                    else
+                    {
+                        d=d+datos[c].get("NOMBRE_COMERCIAL").toString()+", ";
+                    }
+                }
+            }            
+        }catch(Exception e)
+        {
+            d=null;
+        }
+        return d;
     }
     
     private void updateAdjObra(String res_adm,String fecha_cc,String inf_div_adq,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc){
@@ -894,12 +702,12 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
     }
     
     
-    public void GuardaInfComision(String presidente,String vocal1,String vocal2,String secretario,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String nota_uni,String nota_ppto,String Resolucion_admi,String destino,String cargo)
+    public void GuardaInfComision(String res_ini,String fec_apert,String inf_tec,String inf_adq,String modalidad,String destino,String convocatoria)
     {
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            System.out.println("gestion "+gestion);
+            /*System.out.println("gestion "+gestion);
             System.out.println("cod_tra "+cod_transaccion);
             System.out.println("codTN "+cod_trans_nro);
             System.out.println("detalle "+detalle);
@@ -920,9 +728,10 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             System.out.println("secretario "+secretario);
             System.out.println("nota_uni "+nota_uni);
             System.out.println("nota_ppto "+nota_ppto);
-            System.out.println("resolucion_adm "+Resolucion_admi);
-            puerto.updateInformeComision(cod_transaccion,cod_trans_nro,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi);
-            int cc=1,hh=1,nh=0;
+            System.out.println("resolucion_adm "+Resolucion_admi);*/
+            puerto.updateDesierta(cod_transaccion, cod_trans_nro, destino, res_ini, fec_apert, inf_tec, inf_adq, modalidad, convocatoria);
+            //puerto.updateInformeComision(cod_transaccion,cod_trans_nro,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi);
+            /*int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
             n1=tprov.split(",");
@@ -933,9 +742,9 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                 cc=cc+5;
                 /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;*/
-                hh++;
+                /*hh++;
                 nh++;
-            }
+            }*/
             System.out.println("paso");
         }
         catch(Exception e)
@@ -966,61 +775,25 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         JTF_CARGO17.setEnabled(false);
         JTF_CARGO18.setEnabled(false);*/
     }
-    private void LlenaServicio(){
-        System.out.println("En llena servicio");
-        try {
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
-            System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
-            Map[] datos =puerto.getResAdjServ(cod_trans_nro);
-            if(datos!=null){
-                /*this.adc = datos[0].get("DET_ADC").toString();
-                System.out.println(".. "+this.adc);
-                this.res_adm = datos[0].get("DET_RES_ADM").toString();
-               
-                this.fecha_comision = datos[0].get("FECHA_CC").toString(); 
-                this.inf_div_adqui = datos[0].get("DET_INF_DIV_ADQ").toString();
-                this.proveedor = datos[0].get("PROVEEDOR").toString();
-                this.num_resol = datos[0].get("NUM_RESOLUCION").toString();
-                
-                this.det_conc_prop = datos[0].get("DET_CONC_PROP").toString();
-                this.modo_eval = datos[0].get("MODO_EVAL").toString();
-                this.destino = datos[0].get("DESTINO").toString();
-                this.cargo = datos[0].get("CARGO").toString();
-                this.actividad = datos[0].get("ACTIVIDAD").toString();
-                this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();*/
-                
-                
-                
-                
-                this.bloqueaTodo();
-            }
-            else
-                System.out.println("Vacio :(");
-        } catch (Exception e) {
-            System.out.println("ERROR: "+e);
-        }
-    }
     private void LlenaBien(){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
-            Map[] datos =puerto.getInformeComision(cod_transaccion,cod_trans_nro);
+            System.out.println("- El cod_w es: "+cod_transaccion+" y el cod_trans_nro: "+cod_trans_nro);
+            Map[] datos =puerto.getDesierta(cod_transaccion,cod_trans_nro);
             if(datos!=null){
                 sw1=1;
                 System.out.println("si hay datos wuju");
                 //System.out.println("esto si muestra "+datos[0].get("PRESIDENTE"));
                 System.out.println("Con datos :D");
-                JTF_CARGO1.setText(datos[0].get("PRESIDENTE").toString());
-                JTF_CARGO2.setText(datos[0].get("VOCAL1").toString());
-                JTF_CARGO3.setText(datos[0].get("VOCAL2").toString());
-                JTF_CARGO4.setText(datos[0].get("SECRETARIO").toString());
+                JTF_CARGO1.setText(datos[0].get("RES_ADM").toString());
+                JTF_CARGO2.setText(datos[0].get("FEC_APERT_SOBRE").toString());
+                JTF_CARGO3.setText(datos[0].get("NOTA_UNIDAD").toString());
+                JTF_CARGO4.setText(datos[0].get("NOTAS_ADQ").toString());
                 JTF_CARGO5.setText(datos[0].get("MODO_EVAL").toString());
-                JTF_CARGO6.setText(datos[0].get("NOTAS_ADQ").toString());
-                JTF_CARGO7.setText(datos[0].get("NOTA_JUR").toString());
+                JTF_CARGO6.setText(datos[0].get("DESTINO").toString());
+                JTF_CARGO7.setText(datos[0].get("CONVOCATORIA").toString());
                 /*JTF_CARGO8.setText(datos[0].get("NRO_CITA").toString());
                 JTF_CARGO9.setText(datos[0].get("FECHA_NOTA").toString());
                 JTF_CARGO10.setText(datos[0].get("FEC_APERT_SOBRE").toString());
@@ -1037,58 +810,12 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                 this.bloqueaTodo();
             }
             else
+                System.out.println("si es aqui");
                 System.out.println("Vacio :(");
         } catch (Exception e) {
             System.out.println("ERROR: "+e);
         }
     }
-    
-    private void LlenaCons(){
-        try {
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
-            System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
-            Map[] datos =puerto.getResAdjConsul(cod_trans_nro);
-            if(datos!=null){
-                /*System.out.println("Con datos :D");
-                this.res_adm = datos[0].get("DET_RES_ADM").toString();
-               
-                this.fecha_comision = datos[0].get("FECHA_CC").toString(); 
-                this.inf_div_adqui = datos[0].get("DET_INF_DIV_ADQ").toString();
-                this.proveedor = datos[0].get("PROVEEDOR").toString();
-                this.num_resol = datos[0].get("NUM_RESOLUCION").toString();
-                
-                this.det_conc_prop = datos[0].get("DET_CONC_PROP").toString();
-                this.modo_eval = datos[0].get("MODO_EVAL").toString();
-                this.destino = datos[0].get("DESTINO").toString();
-                this.cargo = datos[0].get("CARGO").toString();
-                this.actividad = datos[0].get("ACTIVIDAD").toString();
-                this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();
-                */
-                
-                
-                this.bloqueaTodo();
-            }
-            else{
-                System.out.println("Vacio :(");
-                //this.JB_Actualizar.setVisible(false);
-                //this.JB_Guardar.setVisible(false);
-            }
-        } catch (Exception e) {
-            System.out.println("ERROR: "+e);
-        }
-    }
-    private void LlenaDatos(){
-        if(this.cod_w==6)
-            this.LlenaServicio();
-        if(this.cod_w==7)
-            this.LlenaBien();
-        if(this.cod_w==3)
-            this.LlenaCons();
-        
-    }
-    
     private void Genera(String res_adm, String fecha_comision, String inf_div_adqui, String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc)
     {
         try {
@@ -1097,7 +824,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             
             //puerto.genResAdjServ2(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
             puerto.genResAdjObra(this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,tprov,tbche,adc,gestion,cod_usuario);
-            int cc=1,hh=1,nh=0;
+            /*int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
             n1=tprov.split(",");
@@ -1108,9 +835,9 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                 cc=cc+5;
                 /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;*/
-                hh++;
+                /*hh++;
                 nh++;
-            }
+            }*/
             //puerto.genprop()
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de Obra ha sido generada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);

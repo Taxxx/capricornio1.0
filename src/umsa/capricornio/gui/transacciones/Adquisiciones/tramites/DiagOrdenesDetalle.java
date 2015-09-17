@@ -26,6 +26,7 @@ import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellEditor;
@@ -586,9 +587,9 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             Map[] datos = puerto.setActualizaTransaccionIngresoAlm(cod_trans_nro, factura, fecha_fact, fecha_ing, fecha_noti, memo, obs);
             javax.swing.JOptionPane.showMessageDialog(this, "DATOS ALMACENADOS", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        /*} catch (RemoteException e) {
+        } catch (RemoteException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "<html> error de conexion con el servidor <br> " + e, "SYSTEM CAPRICORN",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);*/
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         } catch (ServiceException e) {
             System.out.println(e);
         }
@@ -2231,6 +2232,14 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void CalFechaNotificacionStateChanged(javax.swing.event.ChangeEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void CalFechaNotificacionKeyPressed(java.awt.event.KeyEvent evt) {                                                
+        // TODO add your handling code here:
+    }
+    
     private void CalFechaIngStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CalFechaIngStateChanged
         // TODO add your handling code here:
         DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);

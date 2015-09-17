@@ -326,6 +326,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         BtnGeneraOrdenes = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         BtnAsignarTodo = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         BtnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -529,7 +530,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnDesierto);
-        BtnDesierto.setBounds(130, 210, 160, 25);
+        BtnDesierto.setBounds(50, 210, 160, 25);
 
         BtnAsignar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnAsignar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
@@ -615,6 +616,16 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         jPanel3.add(BtnAsignarTodo);
         BtnAsignarTodo.setBounds(450, 110, 50, 25);
 
+        jButton1.setForeground(new java.awt.Color(0, 0, 255));
+        jButton1.setText("informe de la comision");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1);
+        jButton1.setBounds(230, 210, 170, 23);
+
         getContentPane().add(jPanel3);
         jPanel3.setBounds(10, 230, 960, 260);
 
@@ -648,6 +659,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             if (datos != null) {
                 for (int c = 0; c < datos.length; c++) {
                     bandeja.insert(c);
+                    System.out.println("esta entrando aqui");
                     TblTransaccionBandeja.tableChanged(new TableModelEvent(bandeja, c, c, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
                     TblTransaccionBandeja.setValueAt(datos[c].get("COD_TRANSACCION"), c, 0);
                     TblTransaccionBandeja.setValueAt(datos[c].get("COD_ESTADO"), c, 1);
@@ -828,7 +840,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         //JD_reporte desierta x=new JD_reporte_desierta(menu, false, this.cod_w, this.cod_trans_nro, this.detalle, this.cod_transaccion,this.gestion);
         this.setModal(false);
         x.setVisible(true);
-        int n = TblPedido.getSelectedRow();
+        /*int n = TblPedido.getSelectedRow();
         if ("D".equals(TblPedido.getValueAt(n, 1))) {
             javax.swing.JOptionPane.showMessageDialog(this, "Items ya fue declarado DESIERTO", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -856,7 +868,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         } catch (NumberFormatException e) {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe elejir un item para declararlo DESIERTO", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
+        }*/
     }//GEN-LAST:event_BtnDesiertoActionPerformed
 
     private void BtnAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAsignarActionPerformed
@@ -1126,6 +1138,13 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         x.setVisible(true);
     }//GEN-LAST:event_JB_RI1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JDInformeComision x = new JDInformeComision(menu, false, this.cod_w, this.cod_trans_nro, null, this.detalle, this.cod_transaccion,this.gestion);
+        this.setModal(false);
+        x.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAsignar;
     private javax.swing.JButton BtnAsignarTodo;
@@ -1150,6 +1169,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
     private javax.swing.JTextField TxtHojaRuta;
     private javax.swing.JTextField TxtPreventivo;
     private javax.swing.JTextField TxtSolicitud;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

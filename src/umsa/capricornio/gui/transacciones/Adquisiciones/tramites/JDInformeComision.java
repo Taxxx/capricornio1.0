@@ -577,14 +577,14 @@ public class JDInformeComision extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel46)
                     .addComponent(JTF_CARGO18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JB_Actualizar)
                     .addComponent(JB_Guardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -603,9 +603,7 @@ public class JDInformeComision extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -824,9 +822,9 @@ public class JDInformeComision extends javax.swing.JDialog {
                         System.out.println("WIDTH1 "+jPanel1.getSize());
                         System.out.println("WIDTH2 "+jPanel2.getSize());
                         jPanel2.setPreferredSize(jPanel2.getSize());
-                        //jPanel1.setSize(997, kkk);
-                       // System.out.println("WIDTH "+jPanel2.getSize());
-                        //jPanel1.setPreferredSize(jPanel1.getSize());
+                        jPanel1.setSize(997, kkk);
+                        System.out.println("WIDTH "+jPanel2.getSize());
+                        jPanel1.setPreferredSize(jPanel1.getSize());
                         k=k+30;
                         conc = conc+", "+datos[c].get("NOMBRE_COMERCIAL").toString();
                         System.out.println("aaaaaaa "+conc);
@@ -1039,8 +1037,8 @@ public class JDInformeComision extends javax.swing.JDialog {
     }
     public void imprimeComision(String presidente,String vocal1,String vocal2,String secretario,String modalidad,String notas,String nota_juridica,String citacion,String fec_cit,String fecha,String hora,String nro_informe,String fecha_inf,String nota_uni,String nota_ppto,String Resolucion_admi,String destino,String cargo)
     {
-        System.out.println("System entra hasta aqui");
-        genera_res_adj.imprimeinf_comicion(cod_w,gestion,cod_transaccion,cod_trans_nro,detalle,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi,MONTO(),hoja_ruta(),nro_informe());
+        System.out.println("System entra hasta aqui "+cod_proveedor);
+        genera_res_adj.imprimeinf_comicion(cod_w,gestion,cod_transaccion,cod_trans_nro,detalle,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi,MONTO(),hoja_ruta(),nro_informe(),cod_proveedor);
     }
     private void JB_ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_ImprimirActionPerformed
         // TODO add your handling code here:
