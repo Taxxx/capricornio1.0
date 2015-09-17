@@ -136,7 +136,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             //System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
-            Map[] datos =puerto.getConcursantes(cod_transaccion);
+            Map[] datos =puerto.getConcursantes(cod_trans_nro);
             if(datos!=null){
                 tadju=datos.length;
                 System.out.println("el total es: "+tadju);
@@ -894,7 +894,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         if(this.cod_w==6)
             this.genera_res_adj.ReporteAdjServ(adc, res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
         if(this.cod_w==1)
-            this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,cod_transaccion);
+            this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,cod_transaccion,cod_trans_nro);
 //        this.setVisible(false);
         if(this.cod_w==3)
             this.genera_res_adj.ReporteAdjConsul(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
@@ -1277,6 +1277,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             //puerto.genResAdjServ2(this.cod_trans_nro,this.cod_w, this.detalle,res_adm, adc, fecha_comision, inf_div_adqui);
+            System.out.println("cod_transaccion: "+this.cod_transaccion);
             System.out.println("cod_trans_nro: "+this.cod_trans_nro);
             System.out.println("cod_w: "+this.cod_w);
             System.out.println("detalle: "+this.detalle);
@@ -1288,7 +1289,15 @@ public class JDResAdj2 extends javax.swing.JDialog {
             System.out.println("destino: "+destino);
             System.out.println("cargo: "+cargo);
             System.out.println("actividad: "+actividad);
-            puerto.genResAdjBien(this.cod_transaccion,this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc,aaa,bbb,gestion,cod_usuario);
+            try{
+                System.out.println("uno");
+                puerto.genResAdjBien(this.cod_transaccion,this.cod_trans_nro, 2,this.detalle, res_adm, fecha_comision, inf_div_adqui, det_conc_prop, modo_eval, destino,cargo, actividad,adc,aaa,bbb,gestion,cod_usuario);
+                System.out.println("dos");
+            }
+            catch(Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1298,6 +1307,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
             {
                 puerto.gentabla(null, null, n1[cc], n2[hh],cod_trans_nro,codigos[nh],n1[cc+1],n1[cc+2]);
                 cc=cc+3;
+                System.out.println("entro");
                 /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;*/
                 hh++;

@@ -63,7 +63,7 @@ public class GetResoluciones {
                 Monto=this.formato(monto)+",00 ("+this.TotalTexto(monto)+" BOLIVIANOS)";
             }
             else
-                Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
+                Monto=this.formato(monto)+"0 ("+this.TotalTexto(monto)+" BOLIVIANOS)";
             //mon=String.valueOf(ti);
             //Monto="168.202,32 ("+this.TotalTexto(monto)+")";
             //Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
