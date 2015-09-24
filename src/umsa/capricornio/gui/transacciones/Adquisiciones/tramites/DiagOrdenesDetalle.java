@@ -1600,9 +1600,21 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                             System.out.println("Oka 1 cod_transaccion: " + cod_transaccion + " cod_almacen: " + cod_almacen + " viene el 3 gestion: " + gestion + " cod_trans_nro: " + cod_trans_nro + " cod_usuario: " + cod_usuario);
                             datos = puerto.setCreaNroTramiteDos("SET-upDateGeneraTramite", cod_transaccion, cod_almacen, 3, gestion, cod_trans_nro, cod_usuario);
                             System.out.println("El numero que devolvio es: " + datos[0].get("COD_TRANS_NRO").toString());
-                            if (datos != null) {
+                            if(cod_w==6)
+                            {
                                 nuevo_cod_trans_nro = Integer.parseInt(datos[0].get("COD_TRANS_NRO").toString());
-                                System.out.println(nuevo_cod_trans_nro);
+                                System.out.println("dasffsdf "+nuevo_cod_trans_nro);
+                                Map[] datos1 = puerto.setCreaNroTramiteDos("SET-upDateGeneraTramite", cod_transaccion, cod_almacen, 4, gestion, nuevo_cod_trans_nro, cod_usuario);
+                                puerto.updatenro(Integer.parseInt(datos1[0].get("COD_TRANS_NRO").toString()));
+                                nuevo_cod_trans_nro = Integer.parseInt(datos1[0].get("COD_TRANS_NRO").toString());
+                                System.out.println("dasffsdf "+nuevo_cod_trans_nro);
+                            }
+                            if (datos != null) {
+                                if(cod_w!=6)
+                                {
+                                    nuevo_cod_trans_nro = Integer.parseInt(datos[0].get("COD_TRANS_NRO").toString());
+                                    System.out.println(nuevo_cod_trans_nro);
+                                }
                                 for (int f = 0; f < TblItems.getRowCount(); f++) {
                                     if (!"".equals(TblItems.getValueAt(f, 1).toString())) {
                                         System.out.println("Oka 1/2");
