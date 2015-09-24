@@ -80,10 +80,12 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private String des,dias;
     private Proveedor proveedor;
     GetResoluciones genera_reportes;
+    
 
     /**
      * Creates new form DiagOrdenesDetalle
      */
+    
     public DiagOrdenesDetalle(JInternalFrame frmt, FrmMenu menu, int cod_almacen, int cod_trans_nro, int cod_rol, String tramite, int gestion, int cod_w, String origen, String detalle, String unidad_sol, String unidad_des, String nro, String cuantia, String del, String hasta,int cod_user,boolean sw_modificacion_concluido) {
         super(menu, false);
         initComponents();
@@ -120,7 +122,20 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
             jLabel14.setVisible(false);
             jLabel9.setVisible(false);
         }
+        if(this.sw_modificacion_concluido){
+            this.SetEstadoModificado(cod_transaccion);
+        }
 
+    }
+    private void SetEstadoModificado(int cod_transaccion){
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            puerto.setModificaEstado(cod_transaccion, "M");
+            
+        } catch (Exception e) {
+            System.err.println("Error terrible :( al modificar el estado de la transaccion");
+        }
     }
     /*private void addProv(){
         
@@ -257,6 +272,10 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         } else {
             this.jButton11.setEnabled(false);
             BtnGarantia.setEnabled(false);
+        }
+        
+        if(sw_modificacion_concluido){
+            this.BtnAvanzar.setEnabled(false);
         }
     }
 
@@ -721,6 +740,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jButton14 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
         PnlItems = new javax.swing.JScrollPane();
         TblItems = new javax.swing.JTable();
         TabTransaccion = new javax.swing.JTabbedPane();
@@ -907,6 +928,26 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         jLabel14.setText("no tiene");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(1040, 90, 60, 20);
+
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/add.png"))); // NOI18N
+        jButton16.setToolTipText("Adicionar un Item");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton16);
+        jButton16.setBounds(10, 90, 40, 25);
+
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/cancel.png"))); // NOI18N
+        jButton17.setToolTipText("Eliminar un Item");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton17);
+        jButton17.setBounds(50, 90, 40, 25);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 1140, 120);
@@ -2296,7 +2337,65 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 */
         //}
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Esta Seguro de Adicionar un nuevo item?",
+                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+            if (res != javax.swing.JOptionPane.YES_OPTION) {
+                return;
+            }
+        addItem();
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Esta Seguro de eliminar el item seleccionado?",
+                    "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+            if (res != javax.swing.JOptionPane.YES_OPTION) {
+                return;
+            }
+        delItem();
+    }//GEN-LAST:event_jButton17ActionPerformed
     
+    private void delItem(){
+        try {
+            int fila = TblItems.getSelectedRow();
+            int cod_trans_detalle = Integer.parseInt(TblItems.getValueAt(fila, 2).toString());
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            puerto.delItemPro("SET-delItemPro", cod_trans_detalle);
+            this.LlenaItems();
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(this, "Debe seleccionar un item", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void addItem(){
+        try {
+            int aux_cod_trans_nro;
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            String cod_trans_detalle = puerto.secTransaccionDetalle();
+            puerto.addItem("SET-addItem",Integer.parseInt(cod_trans_detalle) ,cod_transaccion, gestion);
+                                    
+            Map[] ArrayCod_trans_nro = puerto.getCod_trans_nro("GET-getCod_trans_nro",cod_transaccion);
+            
+            if (ArrayCod_trans_nro != null){
+                System.out.println("entro!!!");
+                for (int c=0;c<ArrayCod_trans_nro.length;c++){
+                   aux_cod_trans_nro = Integer.parseInt(ArrayCod_trans_nro[c].get("COD_TRANS_NRO").toString());
+                   System.out.println("El aux_cod_trans_nro es: "+aux_cod_trans_nro);
+                   puerto.setTransaccionDetalleNro("SET-upDateTransDetNro", Integer.parseInt(cod_trans_detalle), aux_cod_trans_nro);
+                }
+            }
+            this.LlenaItems();
+            
+            
+        } catch (Exception e) {
+            System.err.println("Error terrible!!!: "+e);
+        }
+    }
     public int compara_fechas(String f1,String f2)
     {
         int res=-1;
@@ -2397,6 +2496,8 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

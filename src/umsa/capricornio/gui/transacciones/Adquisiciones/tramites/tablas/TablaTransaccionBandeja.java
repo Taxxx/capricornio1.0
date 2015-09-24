@@ -49,13 +49,13 @@ public class TablaTransaccionBandeja extends AbstractTableModel
     return m_columns.length; 
   } 
 
-    @Override
+  @Override
   public String getColumnName(int column) {
     String str = m_columns[column].m_title;
     return str;
   }
   
-    @Override
+  @Override
   public boolean isCellEditable(int nRow, int nCol) {
       return false;
   }
@@ -83,7 +83,7 @@ public class TablaTransaccionBandeja extends AbstractTableModel
     return "";          
   }             
   
-    @Override
+   @Override
   public void setValueAt(Object value, int nRow, int nCol) {
     if (nRow < 0 || nRow>=getRowCount())
       return;

@@ -181,7 +181,10 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     TblTransaccionEstado.setValueAt(datos[c].get("DETALLE"),c,5);
                     TblTransaccionEstado.setValueAt(datos[c].get("UNIDAD_SOL"),c,6);
                     TblTransaccionEstado.setValueAt(datos[c].get("UNIDAD_DES"),c,7);
-                    TblTransaccionEstado.setValueAt(datos[c].get("ESTADO"),c,8);                    
+                    TblTransaccionEstado.setValueAt(datos[c].get("ESTADO"),c,8);
+                    TblTransaccionEstado.setValueAt(datos[c].get("CUANTIA"),c,10);
+                    TblTransaccionEstado.setValueAt(datos[c].get("DEL"),c,11);
+                    TblTransaccionEstado.setValueAt(datos[c].get("HASTA"),c,12);
                 }
             }
         }
@@ -908,14 +911,14 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         jPanel2.setBounds(10, 20, 1120, 60);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/action_refresh_blue.gif"))); // NOI18N
-        jButton4.setText("Modificar Item");
+        jButton4.setText("Modificar Tramite");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         jPanel3.add(jButton4);
-        jButton4.setBounds(510, 530, 130, 25);
+        jButton4.setBounds(480, 530, 190, 25);
 
         jTabbedPane1.addTab("Enviados", jPanel3);
 
@@ -1076,42 +1079,59 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
 
-//        DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, cod_trans_nro,cod_rol,  TblTransaccionBandeja.getValueAt(fila, 4).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 5).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 3).toString(),TblTransaccionBandeja.getValueAt(fila, 9).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),this.cod_usuario,false);
-//        ordenes.AbreDialogo();
-        
-//        TblTransaccionBandeja.getValueAt(fila, 1).toString()//origen-S
-//        TblTransaccionBandeja.getValueAt(fila, 5).toString()//detalle-S
-//        TblTransaccionBandeja.getValueAt(fila, 6).toString()//unidad_sol-S
-//        TblTransaccionBandeja.getValueAt(fila, 7).toString()//unidad_des-S
-//        TblTransaccionBandeja.getValueAt(fila, 3).toString()//nro-S
-//        TblTransaccionBandeja.getValueAt(fila, 9).toString()//cuantia-S
-//        TblTransaccionBandeja.getValueAt(fila, 10).toString()//del-S
-//        TblTransaccionBandeja.getValueAt(fila, 11).toString()//hasta-S
-//        this.cod_usuario
-//        false
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Esta seguro de Corregir el tramite?\ntenga en cuenta que afecatara a :"
+                + "\n - Solicitud de Compra\n"
+                + "- Orden de Compra\n"
+                + "- Pedido de Material\n"
+                + "- Ingreso de Material",
+                "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (res != javax.swing.JOptionPane.YES_OPTION) {
+            return;
+        }
         
         
-        int fila = TblTransaccionEstado.getSelectedRow();
-        int cod_trans_nro = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 0).toString());
+        try {
+            int fila = TblTransaccionEstado.getSelectedRow();
+        int cod_trans_nro = Integer.parseInt(TblTransaccionEstado.getValueAt(fila, 0).toString());
         //String tramite = TblTransaccionBandeja.getValueAt(fila, 4).toString();
+        System.err.println("El cod_trans_nro: "+cod_trans_nro);
         String tramite = "Correccion Tramite";
-        int cod_w = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString());
-        String origen=TblTransaccionBandeja.getValueAt(fila, 1).toString();
-        String detalle=TblTransaccionBandeja.getValueAt(fila, 5).toString();
-        String unidad_sol=TblTransaccionBandeja.getValueAt(fila, 6).toString();
-        String unidad_des=TblTransaccionBandeja.getValueAt(fila, 7).toString();
-        String nro=TblTransaccionBandeja.getValueAt(fila, 3).toString();
-        String cuantia=TblTransaccionBandeja.getValueAt(fila, 9).toString();
-        String del=TblTransaccionBandeja.getValueAt(fila, 10).toString();
-        String hasta=TblTransaccionBandeja.getValueAt(fila, 11).toString();
+        int cod_w = Integer.parseInt(TblTransaccionEstado.getValueAt(fila, 2).toString());
+        System.err.println("El cod_w: "+cod_w);
+        String origen=TblTransaccionEstado.getValueAt(fila, 1).toString();
+        System.err.println("El origen: "+origen);
+        String detalle=TblTransaccionEstado.getValueAt(fila, 5).toString();
+        System.err.println("El detalle: "+detalle);
+        String unidad_sol=TblTransaccionEstado.getValueAt(fila, 6).toString();
+        System.err.println("unidad_sol: "+unidad_sol);
+        String unidad_des=TblTransaccionEstado.getValueAt(fila, 7).toString();
+        System.err.println("unidad_des: "+unidad_des);
+        String estadox=TblTransaccionEstado.getValueAt(fila, 8).toString();
+        System.err.println("El estadox: "+estadox);
+        String nro=TblTransaccionEstado.getValueAt(fila, 3).toString();
+        System.err.println("El nro: "+nro);
+        String cuantia=TblTransaccionEstado.getValueAt(fila, 10).toString();
+        System.err.println("cuantia: "+cuantia);
+        String del=TblTransaccionEstado.getValueAt(fila, 11).toString();
+        System.err.println("del: "+del);
+        String hasta=TblTransaccionEstado.getValueAt(fila, 12).toString();
+        System.err.println("hasta: "+hasta);
+//        System.err.println("Bueno el estado es: "+estadox);
+        if(estadox.trim().equals("CONCLUIDO")){
+            DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle
+            (this,menu,cod_almacen, cod_trans_nro,cod_rol,tramite,gestion,cod_w,origen,detalle,unidad_sol,unidad_des,nro,cuantia,del,hasta,this.cod_usuario,true);
+            ordenes.AbreDialogo();
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> SOLO PUEDE MODIFICAR TRAMITES CONCLUIDOS<br> ","SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+            
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> DEBE PINTAR UNA FILA<br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
         
-        DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle
-        (this,menu,cod_almacen, cod_trans_nro,cod_rol,tramite,gestion,cod_w,origen,detalle,unidad_sol,unidad_des,nro,cuantia,del,hasta,this.cod_usuario,true);
-        ordenes.AbreDialogo();
-        
-//        int gestion = Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 4).toString(););
-//        System.err.println("el cod_trans_nro es: "+cod_trans_nro);
-//        System.err.println("el valor es: "+TblTransaccionEstado.getValueAt(fila, 0).toString());
+  
     }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

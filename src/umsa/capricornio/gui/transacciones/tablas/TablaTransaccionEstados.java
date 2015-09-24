@@ -28,7 +28,10 @@ public class TablaTransaccionEstados extends AbstractTableModel
     new ColumnData( "Unidad Solicitante", 150, JLabel.LEFT ),
     new ColumnData( "Unidad Destino", 150, JLabel.LEFT ),
     new ColumnData( "Estado", 100, JLabel.CENTER ),
-    new ColumnData( "ctrans", 100, JLabel.CENTER )
+    new ColumnData( "ctrans", 100, JLabel.CENTER ),
+    new ColumnData( "Cuantia", 0, JLabel.CENTER ),    
+    new ColumnData( "del", 0, JLabel.CENTER ),   
+    new ColumnData( "hasta", 0, JLabel.CENTER )    
   };
 
   //protected Vector m_vector;  
@@ -76,6 +79,9 @@ public class TablaTransaccionEstados extends AbstractTableModel
       case 7: return row.unidad_des;
       case 8: return row.estado;
       case 9: return row.cod_transaccion;
+      case 10: return row.cuantia;
+      case 11: return row.del;
+      case 12: return row.hasta;
     }
     return "";          
   }             
@@ -119,6 +125,15 @@ public class TablaTransaccionEstados extends AbstractTableModel
       case 9:
         row.cod_transaccion = svalue;
         break;
+      case 10:
+        row.cuantia = svalue;
+        break;      
+      case 11:
+        row.del = svalue;
+        break;      
+      case 12:
+        row.hasta = svalue;
+        break;      
     }
   }
   
