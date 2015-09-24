@@ -50,8 +50,7 @@ public class Reportes {
                     Transaccion trans = new Transaccion();
                     trans.setNro_gestion(datos[f].get("NRO_GESTION").toString());
                     trans.setFecha_creacion(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_CREACION").toString()));
-                    
-                    
+                                        
                     //System.out.println("----->>>> Fecha de creacion: "+trans.getFecha_creacion());
                     
                     trans.setFecha_envio(i_formatterDate.i_conveterStandardToDate(datos[f].get("FECHA_ENVIO").toString()));
@@ -92,8 +91,7 @@ public class Reportes {
                 
                 rep.Reporte(list,"PEDIDO DE MATERIALES",cod_tramite,cod_trans_nro,cod_almacen);
             }
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}
     }
     public void MostrarSolicitud(int cod_transaccion,String cod_estado,int cod_tramite,String titulo){
         List list=new ArrayList();

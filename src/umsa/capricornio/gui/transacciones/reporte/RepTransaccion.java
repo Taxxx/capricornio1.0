@@ -90,7 +90,7 @@ public class RepTransaccion {
                     parameters.put("dias", tt);
                 }
                 else
-                {
+                { 
                     Map[] dd=puerto.getEst(cod_trans_nro);
                     if(dd[0].get("ESTADO").toString().equals("PPTO") || dd[0].get("ESTADO").toString().equals("ADQ") || dd[0].get("ESTADO").toString().equals("B"))
                     {System.err.println("eto nya 2");

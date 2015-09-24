@@ -20,9 +20,15 @@ public class TransaccionEstadosData {
     public String  detalle;
     public String  unidad_sol;
     public String  unidad_des;
-    public String  estado;        
+    public String  estado;
+    public String  cuantia;        
+    public String  del;        
+    public String  hasta;
 
-    public TransaccionEstadosData(String cod_transaccion, String cod_trans_nro,String cod_estado,String cod_tramite,String nro_tramite,String tipo_tramite,String detalle,String unidad_sol,String unidad_des,String estado) {
+    public TransaccionEstadosData(
+            String cod_transaccion, String cod_trans_nro,String cod_estado,String cod_tramite
+            ,String nro_tramite,String tipo_tramite,String detalle,String unidad_sol
+            ,String unidad_des,String estado,String cuantia,String del,String hasta) {
         this.cod_transaccion=cod_transaccion;
         this.cod_trans_nro = cod_trans_nro;
         this.cod_estado=cod_estado;
@@ -33,6 +39,9 @@ public class TransaccionEstadosData {
         this.unidad_sol=unidad_sol;
         this.unidad_des=unidad_des;
         this.estado=estado;
+        this.cuantia=cuantia;
+        this.del=del;
+        this.hasta=hasta;
     }
     
     public TransaccionEstadosData() {
@@ -46,5 +55,8 @@ public class TransaccionEstadosData {
         unidad_sol="";
         unidad_des="";
         estado="";
+        cuantia="";
+        del="";
+        hasta="";
     }
 }
