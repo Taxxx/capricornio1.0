@@ -57,13 +57,14 @@ public class GetResoluciones {
                 }
             }
             Boolean xcc=isFloat(total);
+            System.out.println(xcc);
             monto=String.valueOf(total);
             if(xcc==false)
             {
                 Monto=this.formato(monto)+",00 ("+this.TotalTexto(monto)+" BOLIVIANOS)";
             }
             else
-                Monto=this.formato(monto)+"0 ("+this.TotalTexto(monto)+" BOLIVIANOS)";
+                Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
             //mon=String.valueOf(ti);
             //Monto="168.202,32 ("+this.TotalTexto(monto)+")";
             //Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
@@ -156,7 +157,7 @@ public class GetResoluciones {
         
         //parameters.put("Destino", this.destino);
         
-        System.out.println("El cod_w es --> "+cod_w+", y el destino es: "+destino);
+        System.out.println("El cod_w es --> "+cod_w+", y el destino es: "+destino+" el monto es "+Monto);
         //urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReIniServ.jasper");
         switch(cod_w){
             case 6:

@@ -1641,7 +1641,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                             System.out.println("Oka 1 cod_transaccion: " + cod_transaccion + " cod_almacen: " + cod_almacen + " viene el 3 gestion: " + gestion + " cod_trans_nro: " + cod_trans_nro + " cod_usuario: " + cod_usuario);
                             datos = puerto.setCreaNroTramiteDos("SET-upDateGeneraTramite", cod_transaccion, cod_almacen, 3, gestion, cod_trans_nro, cod_usuario);
                             System.out.println("El numero que devolvio es: " + datos[0].get("COD_TRANS_NRO").toString());
-                            if(cod_w==6)
+                            if(cod_w==6 && cod_rol==5)
                             {
                                 nuevo_cod_trans_nro = Integer.parseInt(datos[0].get("COD_TRANS_NRO").toString());
                                 System.out.println("dasffsdf "+nuevo_cod_trans_nro);
