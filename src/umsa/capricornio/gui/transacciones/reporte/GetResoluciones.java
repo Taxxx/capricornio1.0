@@ -66,7 +66,7 @@ public class GetResoluciones {
             else
             {
                 Boolean xxxx=isFloat(total*10);
-                if(xxxx==false)
+                if(xxxx==true)
                 {
                     Monto=this.formato(monto)+" ("+this.TotalTexto(monto)+" BOLIVIANOS)";
                 }
