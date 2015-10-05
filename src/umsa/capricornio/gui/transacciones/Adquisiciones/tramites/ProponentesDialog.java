@@ -87,7 +87,7 @@ public class ProponentesDialog extends javax.swing.JDialog {
                     TablaProponentes.setValueAt(datos[c].get("TELEFONO"),c,6);
                     TablaProponentes.setValueAt(datos[c].get("DIRECCION"),c,5);
                     TablaProponentes.setValueAt(datos[c].get("ESTADO"),c,7);
-                    ///
+                    ///modificado
                 }
             }
             
