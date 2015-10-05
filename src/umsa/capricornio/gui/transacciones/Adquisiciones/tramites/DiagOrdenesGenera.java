@@ -329,7 +329,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         BtnSalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("GENERACION DE ORDENES DE COMPRA");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -356,7 +356,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(TxtSolicitud);
-        TxtSolicitud.setBounds(150, 20, 90, 21);
+        TxtSolicitud.setBounds(150, 20, 90, 19);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
@@ -377,7 +377,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(TxtHojaRuta);
-        TxtHojaRuta.setBounds(340, 20, 90, 21);
+        TxtHojaRuta.setBounds(340, 20, 90, 19);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 102));
@@ -393,7 +393,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel1.add(TxtPreventivo);
-        TxtPreventivo.setBounds(530, 20, 90, 21);
+        TxtPreventivo.setBounds(530, 20, 90, 19);
 
         BtnBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         BtnBuscar.setForeground(new java.awt.Color(0, 51, 102));
@@ -445,7 +445,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(BtnRetorno);
-        BtnRetorno.setBounds(150, 80, 190, 25);
+        BtnRetorno.setBounds(150, 80, 190, 26);
 
         JB_RI.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_RI.setForeground(new java.awt.Color(0, 102, 102));
@@ -459,7 +459,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(JB_RI);
-        JB_RI.setBounds(710, 10, 240, 25);
+        JB_RI.setBounds(710, 10, 240, 26);
 
         JB_adj.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JB_adj.setForeground(new java.awt.Color(0, 102, 102));
@@ -473,7 +473,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(JB_adj);
-        JB_adj.setBounds(710, 90, 240, 25);
+        JB_adj.setBounds(710, 90, 240, 26);
 
         JTA_ObsAdqui.setColumns(20);
         JTA_ObsAdqui.setRows(5);
@@ -496,7 +496,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel2.add(JB_RI1);
-        JB_RI1.setBounds(710, 40, 240, 25);
+        JB_RI1.setBounds(710, 40, 240, 26);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel2.add(jSeparator1);
@@ -530,7 +530,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnDesierto);
-        BtnDesierto.setBounds(50, 210, 160, 25);
+        BtnDesierto.setBounds(50, 210, 160, 26);
 
         BtnAsignar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnAsignar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
@@ -540,7 +540,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnAsignar);
-        BtnAsignar.setBounds(450, 50, 50, 25);
+        BtnAsignar.setBounds(450, 50, 50, 26);
 
         BtnDevolver.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_previous.png"))); // NOI18N
@@ -550,7 +550,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnDevolver);
-        BtnDevolver.setBounds(450, 80, 50, 25);
+        BtnDevolver.setBounds(450, 80, 50, 26);
 
         BtnCreaOrden.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         BtnCreaOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/folder_add.png"))); // NOI18N
@@ -593,7 +593,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnGeneraOrdenes);
-        BtnGeneraOrdenes.setBounds(660, 210, 170, 25);
+        BtnGeneraOrdenes.setBounds(660, 210, 170, 26);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/trash_16.png"))); // NOI18N
         jButton3.setText("Limpiar");
@@ -603,7 +603,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(jButton3);
-        jButton3.setBounds(420, 220, 110, 25);
+        jButton3.setBounds(420, 220, 110, 26);
 
         BtnAsignarTodo.setBackground(new java.awt.Color(51, 51, 51));
         BtnAsignarTodo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -614,7 +614,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(BtnAsignarTodo);
-        BtnAsignarTodo.setBounds(450, 110, 50, 25);
+        BtnAsignarTodo.setBounds(450, 110, 50, 26);
 
         jButton1.setForeground(new java.awt.Color(0, 0, 255));
         jButton1.setText("informe de la comision");
@@ -624,7 +624,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         jPanel3.add(jButton1);
-        jButton1.setBounds(230, 210, 170, 23);
+        jButton1.setBounds(230, 210, 170, 25);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(10, 230, 960, 260);
@@ -639,7 +639,7 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(450, 620, 110, 25);
+        BtnSalir.setBounds(450, 620, 110, 26);
 
         setSize(new java.awt.Dimension(995, 688));
         setLocationRelativeTo(null);

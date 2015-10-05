@@ -415,7 +415,7 @@ public class JDInformeComision extends javax.swing.JDialog {
                         .addGap(42, 42, 42)
                         .addComponent(JB_Imprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(333, 333, 333)
+                        .addGap(318, 318, 318)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -498,7 +498,7 @@ public class JDInformeComision extends javax.swing.JDialog {
                                 .addComponent(jLabel46)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(JTF_CARGO18, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1044,9 +1044,19 @@ public class JDInformeComision extends javax.swing.JDialog {
         // TODO add your handling code here:
         try{
             System.err.println("esto si que es raro");
+            //System.out.println("por aqui si paso");
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos =puerto.getPreventivos(cod_transaccion);
+            /*Map[] datos1=puerto.getPartida(gestion);
+            String partida=datos1[0].get("PARTIDA").toString();
+            String nombre=datos1[0].get("NOMBRE").toString();
+            String detalle=datos1[0].get("DETALLE").toString();
+            String cargo=datos1[0].get("CARGO").toString();
+            String destino=datos1[0].get("DESTINO").toString();
+            String vocal=datos1[0].get("VOCAL").toString();
+            String presidente=datos1[0].get("PRESIDENTE").toString();
+            String secretario=datos1[0].get("SECRETARIO").toString();*/
             this.imprimeComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText(),JTF_CARGO8.getText(),JTF_CARGO9.getText(),JTF_CARGO10.getText(),JTF_CARGO11.getText(),JTF_CARGO12.getText(),JTF_CARGO13.getText(),JTF_CARGO14.getText(),JTF_CARGO15.getText(),JTF_CARGO16.getText(),JTF_CARGO17.getText(),JTF_CARGO18.getText());
             System.err.println("esto si que es raro2");
         //this.genera_res_adj.ReporteAdjObra(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,tprov,tbche,cod_transaccion,this.tadju);
@@ -1430,6 +1440,18 @@ public class JDInformeComision extends javax.swing.JDialog {
                 cc=cc+5;
                 /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
                 cc=cc+3;*/
+                /*puerto.getdatosres15(cod_transaccion);
+                Map[] datos1=puerto.getinvitacion(cod_transaccion, cod_trans_nro);
+                String x=datos1[cc].get("DETALLE").toString();
+                cc=cc+2;
+                Map[] datos2=puerto.getDias(cod_trans_nro);
+                String y=datos2[cc].get("DIAS").toString();
+                cc=cc+3;
+                String x1=datos2[cc].get("MESES").toString();
+                cc=cc+4;
+                String z=datos1[cc].get("NOMBRE").toString();
+                cc=cc+5;
+                nh++;*/
                 hh++;
                 nh++;
             }
