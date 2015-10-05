@@ -2228,8 +2228,10 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        JD_GeneraContrato gc = new JD_GeneraContrato(menu, false, this.cod_trans_nro);
-        gc.setVisible(true);
+//        JD_GeneraContrato gc = new JD_GeneraContrato(menu, false, this.cod_trans_nro);
+//        gc.setVisible(true);
+        JD_GeneraContrato2 gc2 = new JD_GeneraContrato2(menu, false, this.cod_transaccion);
+        gc2.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed

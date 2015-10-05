@@ -15,13 +15,13 @@ import umsa.capricornio.gui.transacciones.reporte.GetContratos;
  *
  * @author UMSA-JES
  */
-public class JD_GeneraContrato extends javax.swing.JDialog {
+public class JD_GeneraContrato_1 extends javax.swing.JDialog {
 
     /**
      * Creates new form JD_GeneraContrato
      */
     private int cod_trans_nro;
-    public JD_GeneraContrato(java.awt.Frame parent, boolean modal, int cod_trans_nro) {
+    public JD_GeneraContrato_1(java.awt.Frame parent, boolean modal, int cod_trans_nro) {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);

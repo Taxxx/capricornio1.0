@@ -234,10 +234,10 @@ public class GetResoluciones {
                 
     }
     String TotalTexto(String total){
-        double m=Double.parseDouble(total);                          
+        double m = Double.parseDouble(total);                          
         
-        long valor =(long)m;
-        double var= m-valor;
+        long valor = (long)m;
+        double var = m-valor;
         
         DecimalFormat formato_decimal = new DecimalFormat("0.00");        
         String decimal =formato_decimal.format(var);
