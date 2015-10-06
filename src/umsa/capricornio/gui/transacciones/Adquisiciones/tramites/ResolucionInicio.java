@@ -83,6 +83,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
         JTF_JefeAdqui = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         JTF_DetRec = new javax.swing.JTextField();
+        jBNuevaRes = new javax.swing.JButton();
 
         jInternalFrame1.setBackground(new java.awt.Color(185, 203, 221));
         jInternalFrame1.setVisible(true);
@@ -214,6 +215,15 @@ public class ResolucionInicio extends javax.swing.JFrame {
             }
         });
 
+        jBNuevaRes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBNuevaRes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/plus_16.png"))); // NOI18N
+        jBNuevaRes.setText("Nueva Convocatoria");
+        jBNuevaRes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBNuevaResActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -221,20 +231,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jBImprimir)
-                .addGap(157, 157, 157))
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,6 +266,23 @@ public class ResolucionInicio extends javax.swing.JFrame {
                                 .addComponent(JTFDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane3))))
                 .addGap(0, 60, Short.MAX_VALUE))
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jBGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jBImprimir)
+                        .addGap(29, 29, 29)
+                        .addComponent(jBNuevaRes))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,7 +324,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(JTF_DetRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 22, Short.MAX_VALUE)
+                .addGap(18, 26, Short.MAX_VALUE)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jBModificar)
@@ -322,7 +335,8 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBImprimir)
                     .addComponent(jBSalir)
-                    .addComponent(jBGenerar))
+                    .addComponent(jBGenerar)
+                    .addComponent(jBNuevaRes))
                 .addGap(44, 44, 44))
         );
 
@@ -609,22 +623,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
             else{
                 sw=0;
             }
-            /*System.err.println("uno"+cod_trans_nro);
-            Map[] datos2=puerto.dias_restantes(cod_trans_nro);
-            System.err.println("uno");
-            int dias=Integer.parseInt(datos2[0].get("DIAS_RESTANTES").toString());
-            System.out.println("estos son los dias "+ dias);
-            if(dias>=0)
-            {
-                sw1=0;
-            }
-            else
-            {
-                proceso=datos2[0].get("PROCESO").toString();
-                fecha=datos2[0].get("FECHA").toString();
-                sw1=1;
-            }*/
-            //System.out.println("asdasd "+datos);
             if(!datos[0].get("CUCE_SICOES").toString().equals("")){
                 System.out.println("--> "+datos[0].get("CUCE_SICOES").toString());
                 //cuce_sicoes = datos[0].get("CUCE_SICOES").toString();
@@ -669,6 +667,31 @@ public class ResolucionInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTF_DetRecActionPerformed
 
+    private void jBNuevaResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNuevaResActionPerformed
+        // TODO add your handling code here:
+        System.out.println("OOOO :D :D OOOOO");
+        System.out.println("El cod_res_ini es : "+this.cod_res_ini);
+        System.out.println("el cod_resolucion es el siguiente "+this.cod_resolucion);
+        cambiarEstado();
+        GuardaResIni(); 
+    }//GEN-LAST:event_jBNuevaResActionPerformed
+
+    private void cambiarEstado()
+    {
+        try{
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("la anterior resolucion es "+this.cod_resolucion);
+            Map[] datos=puerto.cambioEstado(this.cod_resolucion);
+        }
+        catch(Exception e)
+        {
+            System.out.println("error al cambiar estado "+e);
+        }
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -717,6 +740,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBImprimir;
     private javax.swing.JButton jBModificar;
+    private javax.swing.JButton jBNuevaRes;
     private javax.swing.JButton jBSalir;
     private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
