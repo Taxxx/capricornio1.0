@@ -440,6 +440,7 @@ public class invitacion extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             datosextra();
             obtinedatos();
+            //WTF!!!!
             Map[] datos =puerto.updateinvitacion(cod_T,cod_TN,nro_propuesta,fecha,fecha_reunion,jefe_adq,metodo);
             llenadatos();
             /*if(datos!=null)
