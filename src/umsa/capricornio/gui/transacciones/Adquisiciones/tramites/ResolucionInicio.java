@@ -682,7 +682,8 @@ public class ResolucionInicio extends javax.swing.JFrame {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("la anterior resolucion es "+this.cod_resolucion);
-            //Map[] datos=puerto.cambioEstado(this.cod_resolucion);
+            System.out.println("aqui se debe quitar los comentados en map[] datos");
+            Map[] datos=puerto.cambioEstado(this.cod_resolucion);
         }
         catch(Exception e)
         {

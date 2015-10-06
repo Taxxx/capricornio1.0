@@ -464,6 +464,7 @@ public class invitacion extends javax.swing.JDialog {
             int n=Integer.parseInt(nota);
             Map[] datos =puerto.updateinvitacion(cod_T,cod_TN,nro_propuesta,fecha,fecha_reunion,jefe_adq,metodo,n);
             llenadatos();
+            //te llego el comentario/
             /*if(datos!=null)
             {
                 

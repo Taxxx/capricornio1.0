@@ -308,6 +308,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] updateNotaConformidad(java.lang.String tran, int cod_trans_nro, java.lang.String fecha_nc, java.lang.String hora_nc, java.lang.String ciudad, java.lang.String lugar) throws java.rmi.RemoteException;
     public java.util.HashMap[] getContrato2(int cod_transaccion) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateContrato2(int cod_transaccion, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria) throws java.rmi.RemoteException;
+    public java.util.HashMap[] cambioEstado(int cod_resolucion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;
