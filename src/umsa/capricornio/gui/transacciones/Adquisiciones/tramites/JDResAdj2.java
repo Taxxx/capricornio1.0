@@ -40,6 +40,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
     String[] vt1;
     String[] vt2;
     String []codigos=new String[100];
+    int correlativo;
     
     public JDResAdj2(java.awt.Frame parent, boolean modal,int cod_w,int cod_trans_nro,String cod_proveedor,String detalle,int cod_transaccion,int gestion) {
         super(parent, modal);
@@ -340,6 +341,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
         jLabel26 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -542,6 +545,9 @@ public class JDResAdj2 extends javax.swing.JDialog {
         jLabel26.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel26.setText("FECHA DEL ACTO DE APERTURA:");
 
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel27.setText("CORRELATIVO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -563,7 +569,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel25)
-                                    .addComponent(jLabel26))
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27))
                                 .addGap(52, 52, 52)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
@@ -579,7 +586,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
                                             .addComponent(JTF_INFDIVADQUI, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                                             .addComponent(JTF_FechaCC, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(JTF_ADC, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(JTF_Res_Admi))
+                                            .addComponent(JTF_Res_Admi)
+                                            .addComponent(jTextField3))
                                         .addGap(62, 62, 62)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel11)
@@ -670,20 +678,27 @@ public class JDResAdj2 extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JB_Actualizar)
-                    .addComponent(JB_Guardar))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JB_Generar)
-                    .addComponent(JB_Salir)
-                    .addComponent(JB_Imprimir))
-                .addGap(59, 59, 59))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JB_Actualizar)
+                            .addComponent(JB_Guardar))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JB_Generar)
+                            .addComponent(JB_Salir)
+                            .addComponent(JB_Imprimir))
+                        .addGap(59, 59, 59))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -911,6 +926,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.JTF_CARGO.setEnabled(true);
         this.JTF_ACTIVIDAD.setEnabled(true);
         
+        this.jTextField3.setEnabled(true);
         this.JB_Generar.setEnabled(false);
         this.JB_Imprimir.setEnabled(false);
         this.JB_Actualizar.setEnabled(false);
@@ -927,6 +943,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.JTF_ACTIVIDAD.setEnabled(true);
         this.jTextField1.setEnabled(true);
         this.jTextField2.setEnabled(true);
+        
+        this.jTextField3.setEnabled(true);
         
         for(int i=5; i<=(tadju*5)+4 ;i++)
         {
@@ -947,6 +965,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.JTF_DESTINO.setEnabled(true);
         this.JTF_CARGO.setEnabled(true);
         this.JTF_ACTIVIDAD.setEnabled(true);
+        
+        this.jTextField3.setEnabled(true);
         
         this.JB_Generar.setEnabled(false);
         this.JB_Imprimir.setEnabled(false);
@@ -971,8 +991,9 @@ public class JDResAdj2 extends javax.swing.JDialog {
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-                        
-            puerto.updateResAdjServ(adc,this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,cod_usuario);
+
+            correlativo=Integer.parseInt(jTextField3.getText());
+            puerto.updateResAdjServ(adc,this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,cod_usuario,this.correlativo);
             System.out.println("ResAdjServ actualizado correctamente :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de servicio ha sido actualizada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -986,7 +1007,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
                         
             //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjBien(this.cod_trans_nro, 2, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,aaa,bbb,cod_usuario);
+            correlativo=Integer.parseInt(jTextField3.getText());
+            puerto.updateResAdjBien(this.cod_trans_nro, 2, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,aaa,bbb,cod_usuario,this.correlativo);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1016,7 +1038,8 @@ public class JDResAdj2 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
                         
             //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjCons(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,cod_usuario);
+            correlativo=Integer.parseInt(jTextField3.getText());
+            puerto.updateResAdjCons(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,cod_usuario,this.correlativo);
             System.out.println("ResAdjServ actualizado correctamente :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de Adjudicación de servicio ha sido actualizada de forma correcta","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -1103,6 +1126,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
         this.JTF_Res_Admi.setEnabled(false);
         this.jTextField1.setEnabled(false);
         this.jTextField2.setEnabled(false);
+        this.jTextField3.setEnabled(false);
     }
     private void LlenaServicio(){
         System.out.println("En llena servicio");
@@ -1440,6 +1464,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1453,5 +1478,6 @@ public class JDResAdj2 extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

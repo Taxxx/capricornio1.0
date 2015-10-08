@@ -307,8 +307,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
                 .addGap(23, 23, 23))
         );
 
-        jLabel26.getAccessibleContext().setAccessibleName("PTG E.\nECO...");
-
         jScrollPane1.setViewportView(jPanel2);
 
         jLabel17.setText("jLabel17");
@@ -476,33 +474,14 @@ public class JDResAdjObra extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /*private void controlBloqueo(){
-        System.out.println("================ el cod_w: "+cod_w+" =============");
-        if(this.cod_w==6)
-            this.bloqueaServicio();
-        if(this.cod_w==7)
-            this.bloqueaBien();
-        if(this.cod_w==3)
-            this.bloqueaConsultoria();
-    }
-    private void bloqueaConsultoria(){
-        this.JTF_ADC.setEnabled(false);
-        //this.JTF_ACTIVIDAD.setEnabled(false);
-    }
-    private void bloqueaServicio(){
-        /*this.JTF_DET_CONC_PROP.setEnabled(false);
-        this.JTF_MEVAL.setEnabled(false);
-        this.JTF_DESTINO.setEnabled(false);
-        this.JTF_CARGO.setEnabled(false);
-        this.JTF_ACTIVIDAD.setEnabled(false);
-    }*/
+    
     private void ejBien()
     {
         jLabel17.setText("12/05");
@@ -694,7 +673,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
                         jc=new JCheckBox("si cumple");
                         jc.setBounds(300, k, 100, 30);
                         jc.setName("check1"+c);
-                        //jc.setText(datos[c].get("NOMBRE").toString());
                         jc.setVisible(true);
                         jc.setEnabled(true);
                         jt1=new JTextField();
@@ -723,7 +701,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
                         System.out.println("WIDTH "+jPanel2.getSize());
                         jPanel2.setPreferredSize(jPanel2.getSize());
                         jPanel1.setSize(997, kkk);
-                       // System.out.println("WIDTH "+jPanel2.getSize());
                         jPanel1.setPreferredSize(jPanel1.getSize());
                         k=k+30;
                         conc = conc+", "+datos[c].get("NOMBRE_COMERCIAL").toString();
@@ -767,16 +744,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
         verifielementos();
         Genera(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
         
-        /*System.out.println("--***>> el cod_w es: "+cod_w);
-        if(this.cod_w==6){
-            this.GeneraResAdjServ(this.JTF_ADC.getText(), this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText());
-        }
-        if(this.cod_w==7||this.cod_w==1){
-            this.GeneraResAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText());
-        }
-        if(this.cod_w==3){
-            this.GeneraResAdjConsu(this.JTF_Res_Admi.getText(), this.JTF_ADC.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(),this.JTF_DET_CONC_PROP.getText(),this.JTF_MEVAL.getText(),this.JTF_DESTINO.getText(),this.JTF_CARGO.getText(),this.JTF_ACTIVIDAD.getText());
-        }*/
     
     }//GEN-LAST:event_JB_GenerarActionPerformed
 
@@ -843,8 +810,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
-            //System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
             Map[] datos =puerto.getPreventivos(cod_transaccion);
             if(datos!=null){
                 for (int c=0;c<datos.length;c++){
@@ -872,14 +837,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
         {
             JOptionPane.showMessageDialog( null, e.getMessage());
         }
-        //this.genera_res_adj.Reporte(res_adm, res_adm, res_adm, adc, detalle, res_adm, fecha_comision, adc, adc, res_adm, res_adm, res_adm, cod_trans_nro, cod_w);
-        /*if(this.cod_w==6)
-            this.genera_res_adj.ReporteAdjServ(adc, res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
-        if(this.cod_w==7)
-            this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
-//        this.setVisible(false);
-        if(this.cod_w==3)
-            this.genera_res_adj.ReporteAdjConsul(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());*/
     }//GEN-LAST:event_JB_ImprimirActionPerformed
 
     private void unlockAdjObra(){
@@ -889,7 +846,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
         this.JTF_INFDIVADQUI.setEnabled(true);
         this.JTF_DET_CONC_PROP.setEnabled(true);
         this.JTF_MEVAL.setEnabled(true);
-        //this.JTF_DESTINO.setEnabled(true);
         this.JTF_CARGO.setEnabled(true);
         this.JTF_ACTIVIDAD.setEnabled(true);
         for(int i=7; i<=(tadju*7)+6 ;i++)
@@ -906,14 +862,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
         int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea actualizar la Resolución de Adjudicación?",
                 "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
         unlockAdjObra();
-        /*if (res == javax.swing.JOptionPane.YES_OPTION) {
-            if(this.cod_w==6)
-                this.unlockAdjServ();
-            if(this.cod_w==7)
-                this.unlockAdjBien();
-            if(this.cod_w==3)
-                this.unlockAdjCons();
-        }*/
     }//GEN-LAST:event_JB_ActualizarActionPerformed
 
     private void updateAdjObra(String res_adm,String fecha_cc,String inf_div_adq,String det_conc_prop,String modo_eval,String destino,String cargo,String actividad,String adc){
@@ -921,9 +869,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("dsfsdfsdf"+adc); 
-            //LlenaBien();
-            //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario);
+            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario,this.cod_w);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -947,22 +893,14 @@ public class JDResAdjObra extends javax.swing.JDialog {
     
     private void JB_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GuardarActionPerformed
         // TODO add your handling code here:
-        /*if(this.cod_w==6)
-            this.updateAdjServ(this.JTF_ADC.getText(), this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
-        if(this.cod_w==7)
-            this.updateAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
-        if(this.cod_w==3)
-            this.updateAdjCons(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());*/
         this.verifielementos();
         System.err.println("jijiji "+tprov+"  jujujuju "+tbche);
         this.updateAdjObra(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
-        //this.LlenaBien();
         this.setVisible(false);
     }//GEN-LAST:event_JB_GuardarActionPerformed
 
     private void JTF_Res_AdmiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_Res_AdmiActionPerformed
         // TODO add your handling code here:
-        //System.out.println("Changos.... cod_w: "+cod_w);
         if(cod_w==6)
             this.JTF_ADC.requestFocus();
         if(cod_w==7)
@@ -1038,33 +976,25 @@ public class JDResAdjObra extends javax.swing.JDialog {
                 this.adc = datos[0].get("DET_ADC").toString();
                 System.out.println(".. "+this.adc);
                 this.res_adm = datos[0].get("DET_RES_ADM").toString();
-               
                 this.fecha_comision = datos[0].get("FECHA_CC").toString(); 
                 this.inf_div_adqui = datos[0].get("DET_INF_DIV_ADQ").toString();
                 this.proveedor = datos[0].get("PROVEEDOR").toString();
                 this.num_resol = datos[0].get("NUM_RESOLUCION").toString();
-                
                 this.det_conc_prop = datos[0].get("DET_CONC_PROP").toString();
                 this.modo_eval = datos[0].get("MODO_EVAL").toString();
                 this.destino = datos[0].get("DESTINO").toString();
                 this.cargo = datos[0].get("CARGO").toString();
                 this.actividad = datos[0].get("ACTIVIDAD").toString();
                 this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();
-                
                 this.JTF_Res_Admi.setText(res_adm);
-                
                 this.JTF_FechaCC.setText(fecha_comision);
                 this.JTF_INFDIVADQUI.setText(inf_div_adqui);
-                
                 this.JTF_DET_CONC_PROP.setText(det_conc_prop);
                 this.JTF_MEVAL.setText(modo_eval);
                 this.JTF_DESTINO.setText(destino);
                 this.JTF_CARGO.setText(cargo);
                 this.JTF_ACTIVIDAD.setText(actividad);
-                
                 this.JTF_ADC.setText(adc);
-                
-                
                 this.bloqueaTodo();
             }
             else
@@ -1077,14 +1007,12 @@ public class JDResAdjObra extends javax.swing.JDialog {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
             System.out.println("- El cod_w es: "+cod_w+" y el cod_trans_nro: "+cod_trans_nro);
             Map[] datos =puerto.getResAdjObra(cod_trans_nro);
             if(datos!=null){
                 sw1=1;
                 System.out.println("Con datos :D");
                 this.res_adm = datos[0].get("DET_RES_ADM").toString();
-               
                 this.fecha_comision = datos[0].get("FECHA_CC").toString(); 
                 this.inf_div_adqui = datos[0].get("DET_INF_DIV_ADQ").toString();
                 this.proveedor = datos[0].get("PROVEEDOR").toString();
@@ -1096,11 +1024,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
                 this.cargo = datos[0].get("CARGO").toString();
                 this.actividad = datos[0].get("ACTIVIDAD").toString();
                 this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();
-                //this.tprov=datos[0].get("NUM_INF_HP").toString();
-                //this.tbche=datos[0].get("CONVOCATORIA").toString();
-                
                 this.JTF_Res_Admi.setText(res_adm);
-                
                 this.JTF_FechaCC.setText(fecha_comision);
                 this.JTF_INFDIVADQUI.setText(inf_div_adqui);
                 this.JTF_ADC.setText(adc);
@@ -1130,36 +1054,28 @@ public class JDResAdjObra extends javax.swing.JDialog {
             if(datos!=null){
                 System.out.println("Con datos :D");
                 this.res_adm = datos[0].get("DET_RES_ADM").toString();
-               
                 this.fecha_comision = datos[0].get("FECHA_CC").toString(); 
                 this.inf_div_adqui = datos[0].get("DET_INF_DIV_ADQ").toString();
                 this.proveedor = datos[0].get("PROVEEDOR").toString();
                 this.num_resol = datos[0].get("NUM_RESOLUCION").toString();
-                
                 this.det_conc_prop = datos[0].get("DET_CONC_PROP").toString();
                 this.modo_eval = datos[0].get("MODO_EVAL").toString();
                 this.destino = datos[0].get("DESTINO").toString();
                 this.cargo = datos[0].get("CARGO").toString();
                 this.actividad = datos[0].get("ACTIVIDAD").toString();
                 this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();
-                
                 this.JTF_Res_Admi.setText(res_adm);
-                
                 this.JTF_FechaCC.setText(fecha_comision);
                 this.JTF_INFDIVADQUI.setText(inf_div_adqui);
-                
                 this.JTF_DET_CONC_PROP.setText(det_conc_prop);
                 this.JTF_MEVAL.setText(modo_eval);
                 this.JTF_DESTINO.setText(destino);
                 this.JTF_CARGO.setText(cargo);
                 this.JTF_ACTIVIDAD.setText(actividad);
-                
                 this.bloqueaTodo();
             }
             else{
                 System.out.println("Vacio :(");
-                //this.JB_Actualizar.setVisible(false);
-                //this.JB_Guardar.setVisible(false);
             }
         } catch (Exception e) {
             System.out.println("ERROR: "+e);
@@ -1192,8 +1108,6 @@ public class JDResAdjObra extends javax.swing.JDialog {
             {
                 puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh],n1[cc+3],n1[cc+4]);
                 cc=cc+5;
-                /*puerto.gentabla(n1[cc], n1[cc+1], n1[cc+2], n2[hh],cod_trans_nro,codigos[nh]);
-                cc=cc+3;*/
                 hh++;
                 nh++;
             }

@@ -679,7 +679,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             System.out.println("dsfsdfsdf"+adc); 
             //LlenaBien();
             //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario);
+            //puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario,this.cod_w);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
