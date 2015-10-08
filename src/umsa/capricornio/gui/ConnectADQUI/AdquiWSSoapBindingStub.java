@@ -2889,6 +2889,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_aut"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResIniReturn"));
@@ -3206,6 +3208,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResAdjBienReturn"));
@@ -3243,6 +3247,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResAdjObraReturn"));
@@ -3273,6 +3279,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "actividad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
@@ -3306,6 +3314,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "actividad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
@@ -5085,19 +5095,37 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("updateContrato2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "destino"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "proponente_adjudicado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "res_inicio"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dir_proponente_adjudicado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fecha_apertura"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "razon_social_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "informe_tecnico"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nit_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "informe_adquisiciones"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "direccion_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "modalidad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ciudad_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro_convocatoria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "rep_leg_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cargo_rep_leg_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ci_rep_leg_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "desc_tipo_contrato"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ci_proponente_adjudicado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "deno_proponente_adjudicado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "asesor_juridico"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "objeto_contratacion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "modalidad_contratacion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "denominacion_contratacion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
@@ -10985,7 +11013,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateResIni(int cod_resolucion, java.lang.String envia, java.lang.String dns, java.lang.String dnp, java.lang.String destino, int dias, java.lang.String jefe_adqui, java.lang.String det_recursos, java.lang.String det_uni_sol, java.lang.String det_aut) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateResIni(int cod_resolucion, java.lang.String envia, java.lang.String dns, java.lang.String dnp, java.lang.String destino, int dias, java.lang.String jefe_adqui, java.lang.String det_recursos, java.lang.String det_uni_sol, java.lang.String det_aut, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -10998,7 +11026,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_resolucion), envia, dns, dnp, destino, new java.lang.Integer(dias), jefe_adqui, det_recursos, det_uni_sol, det_aut});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_resolucion), envia, dns, dnp, destino, new java.lang.Integer(dias), jefe_adqui, det_recursos, det_uni_sol, det_aut, new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -11357,7 +11385,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateResAdjBien(int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, java.lang.String adc, java.lang.String aaa, java.lang.String bbb, int cod_usuario) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateResAdjBien(int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, java.lang.String adc, java.lang.String aaa, java.lang.String bbb, int cod_usuario, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -11370,7 +11398,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, adc, aaa, bbb, new java.lang.Integer(cod_usuario)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, adc, aaa, bbb, new java.lang.Integer(cod_usuario), new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -11388,7 +11416,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateResAdjObra(int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, java.lang.String adc, java.lang.String a, java.lang.String b, int cod_usuario) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateResAdjObra(int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, java.lang.String adc, java.lang.String a, java.lang.String b, int cod_usuario, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -11401,7 +11429,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, adc, a, b, new java.lang.Integer(cod_usuario)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, adc, a, b, new java.lang.Integer(cod_usuario), new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -11419,7 +11447,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateResAdjCons(int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, int cod_usuario) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateResAdjCons(int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, int cod_usuario, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -11432,7 +11460,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, new java.lang.Integer(cod_usuario)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, new java.lang.Integer(cod_usuario), new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -11450,7 +11478,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateResAdjServ(java.lang.String adc, int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, int cod_usuario) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateResAdjServ(java.lang.String adc, int cod_trans_nro, int cod_tipo_resolucion, java.lang.String det_res_adm, java.lang.String fecha_cc, java.lang.String det_inf_div_adq, java.lang.String det_conc_prop, java.lang.String modo_eval, java.lang.String destino, java.lang.String cargo, java.lang.String actividad, int cod_usuario, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -11463,7 +11491,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {adc, new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, new java.lang.Integer(cod_usuario)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {adc, new java.lang.Integer(cod_trans_nro), new java.lang.Integer(cod_tipo_resolucion), det_res_adm, fecha_cc, det_inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad, new java.lang.Integer(cod_usuario), new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -14550,7 +14578,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateContrato2(int cod_transaccion, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateContrato2(int cod_transaccion, java.lang.String proponente_adjudicado, java.lang.String dir_proponente_adjudicado, java.lang.String razon_social_contratante, java.lang.String nit_contratante, java.lang.String direccion_contratante, java.lang.String ciudad_contratante, java.lang.String rep_leg_contratante, java.lang.String cargo_rep_leg_contratante, java.lang.String ci_rep_leg_contratante, java.lang.String desc_tipo_contrato, java.lang.String ci_proponente_adjudicado, java.lang.String deno_proponente_adjudicado, java.lang.String asesor_juridico, java.lang.String objeto_contratacion, java.lang.String modalidad_contratacion, java.lang.String denominacion_contratacion) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -14563,7 +14591,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), proponente_adjudicado, dir_proponente_adjudicado, razon_social_contratante, nit_contratante, direccion_contratante, ciudad_contratante, rep_leg_contratante, cargo_rep_leg_contratante, ci_rep_leg_contratante, desc_tipo_contrato, ci_proponente_adjudicado, deno_proponente_adjudicado, asesor_juridico, objeto_contratacion, modalidad_contratacion, denominacion_contratacion});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

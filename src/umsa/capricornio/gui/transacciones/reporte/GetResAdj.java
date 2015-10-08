@@ -729,6 +729,34 @@ public class GetResAdj {
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjCons.jasper");
         this.imprimePDF(urlMaestro, parameters);
     }
+    public void ReporteContratoGenerico(int cod_transaccion){
+        Map parameters = new HashMap();
+        
+        parameters.put("cod_transaccion", cod_transaccion);
+        //parameters.put("adc", det_adc);
+//        parameters.put("FechaComisionCalf", fecha_cc);
+//        parameters.put("InfAdq", inf_div_adq);
+//        parameters.put("Profesional", proveedor);
+//        parameters.put("Titulo_trans", detalle);
+//        parameters.put("Num_Resol", num_resol);
+//        
+//        parameters.put("ADCAnpe", det_conc_prop);
+//        parameters.put("InfHP", modo_eval);
+//        parameters.put("Destino", destino);
+//        parameters.put("CARGO", cargo);
+//        parameters.put("NotasAdqInv", actividad);
+//        //parameters.put("prop_proveedor", prop_proveedor);
+//        //parameters.put("proponentes", proponentes);
+//        parameters.put("DIR_DAF", this.dir_daf);
+//        parameters.put("CUCE", cuce);
+//        System.out.println(cuce+"   sdfjsdfoisdjfoisjdoifjds");
+//        parameters.put("MONTO", monto);
+        
+        
+        RepTransaccion t1 = new RepTransaccion(); 
+        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_generico.jasper");
+        this.imprimePDF(urlMaestro, parameters);
+    }
     public void Reporte (String ResAdm,String Num_Resol, String Titulo_trans, String NotasAdqInv, String ADCAnpe, String Convocatoria, String FechaComisionCalf, String InfAdq, String InfHP, String Profesional, String Destino, String Actividad,int cod_trans_nro, int cod_w)
     {
         Transaccion trans = new Transaccion();
