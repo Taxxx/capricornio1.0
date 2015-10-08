@@ -4782,6 +4782,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "resolucion_adm"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateInformeComisionReturn"));
@@ -4857,6 +4859,8 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "modalidad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro_convocatoria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
@@ -13927,7 +13931,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateInformeComision(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateInformeComision(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -13940,7 +13944,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, cargo, modalidad, notas, nota_juridica, citacion, fec_cit, fecha, hora, nro_informe, fecha_inf, presidente, vocal1, vocal2, secretario, nota_uni, nota_ppto, resolucion_adm});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, cargo, modalidad, notas, nota_juridica, citacion, fec_cit, fecha, hora, nro_informe, fecha_inf, presidente, vocal1, vocal2, secretario, nota_uni, nota_ppto, resolucion_adm, new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -14020,7 +14024,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] updateDesierta(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateDesierta(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria, int correlativo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -14033,7 +14037,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria, new java.lang.Integer(correlativo)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
