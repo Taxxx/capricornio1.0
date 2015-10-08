@@ -125,6 +125,8 @@ public class JDInformeComision extends javax.swing.JDialog {
         JTF_CARGO17 = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         JTF_CARGO18 = new javax.swing.JTextField();
+        JTF_CARGO19 = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -400,6 +402,15 @@ public class JDInformeComision extends javax.swing.JDialog {
             }
         });
 
+        JTF_CARGO19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTF_CARGO19ActionPerformed(evt);
+            }
+        });
+
+        jLabel47.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel47.setText("CORRELATIVO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -431,6 +442,10 @@ public class JDInformeComision extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JTF_CARGO19, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -577,7 +592,11 @@ public class JDInformeComision extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel46)
                     .addComponent(JTF_CARGO18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTF_CARGO19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JB_Actualizar)
                     .addComponent(JB_Guardar))
@@ -1101,6 +1120,7 @@ public class JDInformeComision extends javax.swing.JDialog {
         JTF_CARGO16.setEnabled(true);
         JTF_CARGO17.setEnabled(true);
         JTF_CARGO18.setEnabled(true);
+        JTF_CARGO19.setEnabled(true);
         for(int i=7; i<=(tadju*7)+6 ;i++)
         {
             jPanel2.getComponent(i).setEnabled(true);
@@ -1115,7 +1135,7 @@ public class JDInformeComision extends javax.swing.JDialog {
             System.out.println("dsfsdfsdf"+adc); 
             //LlenaBien();
             //puerto.updateResAdjServ(cod_trans_nro, cod_w, res_adm, adc, fecha_cc, inf_div_adq);
-            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario);
+            //puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario,this.cod_w);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1181,6 +1201,7 @@ public class JDInformeComision extends javax.swing.JDialog {
             System.out.println("nota_uni "+nota_uni);
             System.out.println("nota_ppto "+nota_ppto);
             System.out.println("resolucion_adm "+Resolucion_admi);
+            int correlativo=Integer.parseInt(JTF_CARGO19.getText());
             puerto.updateInformeComision(cod_transaccion,cod_trans_nro,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi);
             int cc=1,hh=1,nh=0;
             String []n1;
@@ -1274,6 +1295,10 @@ public class JDInformeComision extends javax.swing.JDialog {
     private void JTF_CARGO18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_CARGO18ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTF_CARGO18ActionPerformed
+
+    private void JTF_CARGO19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_CARGO19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTF_CARGO19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1538,6 +1563,7 @@ public class JDInformeComision extends javax.swing.JDialog {
     private javax.swing.JTextField JTF_CARGO16;
     private javax.swing.JTextField JTF_CARGO17;
     private javax.swing.JTextField JTF_CARGO18;
+    private javax.swing.JTextField JTF_CARGO19;
     private javax.swing.JTextField JTF_CARGO2;
     private javax.swing.JTextField JTF_CARGO3;
     private javax.swing.JTextField JTF_CARGO4;
@@ -1573,6 +1599,7 @@ public class JDInformeComision extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

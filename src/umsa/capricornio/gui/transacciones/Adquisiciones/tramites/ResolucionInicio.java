@@ -84,6 +84,8 @@ public class ResolucionInicio extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         JTF_DetRec = new javax.swing.JTextField();
         jBNuevaRes = new javax.swing.JButton();
+        JTF_DetRec1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         jInternalFrame1.setBackground(new java.awt.Color(185, 203, 221));
         jInternalFrame1.setVisible(true);
@@ -224,6 +226,15 @@ public class ResolucionInicio extends javax.swing.JFrame {
             }
         });
 
+        JTF_DetRec1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTF_DetRec1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel10.setText("Correlativo:");
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -232,22 +243,43 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jSeparator1))
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jBGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jBImprimir)
+                        .addGap(29, 29, 29)
+                        .addComponent(jBNuevaRes))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JTF_DetRec1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JTF_DetRec, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JTF_JefeAdqui, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
                         .addComponent(jBModificar)
                         .addGap(284, 284, 284)
                         .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -266,23 +298,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
                                 .addComponent(JTFDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane3))))
                 .addGap(0, 60, Short.MAX_VALUE))
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jBGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jBImprimir)
-                        .addGap(29, 29, 29)
-                        .addComponent(jBNuevaRes))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,20 +339,27 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(JTF_DetRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 26, Short.MAX_VALUE)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jBModificar)
-                    .addComponent(jBGuardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBImprimir)
-                    .addComponent(jBSalir)
-                    .addComponent(jBGenerar)
-                    .addComponent(jBNuevaRes))
-                .addGap(44, 44, 44))
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(JTF_DetRec1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jBModificar)
+                            .addComponent(jBGuardar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBImprimir)
+                            .addComponent(jBSalir)
+                            .addComponent(jBGenerar)
+                            .addComponent(jBNuevaRes))
+                        .addGap(44, 44, 44))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -377,6 +399,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
         this.JTA_DetAutorizacion.setEnabled(false);
         this.JTF_DetRec.setEnabled(false);
         this.JTF_JefeAdqui.setEnabled(false);
+        this.JTF_DetRec1.setEnabled(false);
     }
     private void desbloqueaTodo(){
         this.JTFEnviado.setEnabled(true);
@@ -388,13 +411,14 @@ public class ResolucionInicio extends javax.swing.JFrame {
         this.JTA_DetAutorizacion.setEnabled(true);
         this.JTF_DetRec.setEnabled(true);
         this.JTF_JefeAdqui.setEnabled(true);
+        
+        this.JTF_DetRec1.setEnabled(true);
     }
     private void LlenaDatos(){
         String dias1="";
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            //System.out.println("Para cod_transaccion: "+cod_transaccion);
             System.out.println("***--> el cod_transaccion es: "+cod_transaccion);
             Map[] datos =puerto.getResIni(cod_transaccion);
             if(datos!=null){
@@ -402,8 +426,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.jBGuardar.setVisible(true);
                 this.jButton1.setEnabled(true);
                 this.jButton1.setVisible(true);
-                //System.out.println("Devolvio Datos :P"+datos[0].get("DETALLE").toString());
-//                System.out.println("1");
                 this.envia=datos[0].get("ENVIA").toString();
                 this.dns=datos[0].get("DETALLE_NOTA_SOLICITUD").toString();
                 this.dnp=datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString();
@@ -412,13 +434,11 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.cod_res_ini=Integer.parseInt(datos[0].get("NRO").toString());
                 this.num_resolucion=datos[0].get("NUM_RESOLUCION").toString();
                 dias1=(datos[0].get("DIAS").toString());
-//                this.monto_ppto=datos[0].get("MONTO_PPTO").toString();
                 
                 this.JTFEnviado.setText(envia);
                 this.JTFDns.setText(dns);
                 this.JTFPpto.setText(dnp);
                 this.JTFDestino.setText(destino);
-                //this.jTextField1.setText(dias1);
                 
                 this.detalle_autorizacion=datos[0].get("DET_AUT").toString();
                 this.detalle_recursos=datos[0].get("DET_RECURSOS").toString();
@@ -430,6 +450,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
                 this.JTA_DetAutorizacion.setText(detalle_autorizacion);
                 this.JTF_DetRec.setText(detalle_recursos);
                 this.JTF_JefeAdqui.setText(jefe_adqui);
+                JTF_DetRec1.setText(datos[0].get("NRO").toString());
                 
                 bloqueaTodo();
                 MsjAlertaFechas(puerto);
@@ -463,18 +484,9 @@ public class ResolucionInicio extends javax.swing.JFrame {
         this.detalle_recursos=this.JTF_DetRec.getText().trim();
         this.detalle_autorizacion=this.JTA_DetAutorizacion.getText().trim();
         this.detalle_uni_sol=this.JTA_DetUniSol.getText().trim();
-//        this.dias=Integer.parseInt(this.jTextField1.getText());
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
-//            System.out.println("cod_transaccion: "+cod_transaccion);
-//            System.out.println("cod_w: "+cod_w);
-//            System.out.println("detalle: "+detalle);
-//            System.out.println("envia: "+envia);
-//            System.out.println("dns: "+dns);
-//            System.out.println("dnp: "+dnp);
-//            System.out.println("destino: "+destino);
                         
             puerto.generaResIni(cod_transaccion, 1, detalle, envia, dns, dnp, destino, dias, gestion,jefe_adqui,detalle_recursos,detalle_uni_sol,detalle_autorizacion);
             
@@ -492,9 +504,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
     private void jBGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerarActionPerformed
         // TODO add your handling code here:
         System.out.println("OOOO :D :D OOOOO");
-        //System.out.println(this.jTextField1.getText());
-        //System.out.println(this.jTextField2.getText());
-        //System.out.println(this.jTextField3.getText());
         System.out.println("El cod_res_ini es : "+this.cod_res_ini);
         if(this.cod_res_ini==0){
            GuardaResIni(); 
@@ -502,16 +511,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this,"Ya se genero la resolucion de inicio","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
         }
-        
-        
-        ///////////////////
-       
-        /*
-        GetResoluciones x = new  GetResoluciones();
-        System.out.println("1: "+this.JTFDns.getText()+" 2: "+this.JTFPpto.getText()+" 3: "+this.JTFEnviado.getText()+" 4: "+this.detalle+" 5: "+this.cod_transaccion+" 6: "+this.cod_w);
-        x.Reporte(this.cod_transaccion,this.cod_w,this.detalle,envia,dns,dnp,destino);
-        this.setVisible(false);
-        */
     }//GEN-LAST:event_jBGenerarActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
@@ -539,8 +538,8 @@ public class ResolucionInicio extends javax.swing.JFrame {
             this.detalle_uni_sol=this.JTA_DetUniSol.getText();
             this.jefe_adqui=this.JTF_JefeAdqui.getText();
 //            this.dias=Integer.parseInt(this.jTextField1.getText());
-            
-            puerto.updateResIni(cod_resolucion, envia, dns, dnp, destino, dias,jefe_adqui,detalle_recursos,detalle_uni_sol,detalle_autorizacion);
+            int correlativo=Integer.parseInt(JTF_DetRec1.getText());
+            puerto.updateResIni(cod_resolucion, envia, dns, dnp, destino, dias,jefe_adqui,detalle_recursos,detalle_uni_sol,detalle_autorizacion,correlativo);
             //puerto.generaResIni(cod_transaccion, cod_w, detalle, envia, dns, dnp, destino);
             System.out.println("Exito :D");
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de inicio ha sido modificada exitosamente","SYSTEM CAPRICORN",
@@ -552,13 +551,6 @@ public class ResolucionInicio extends javax.swing.JFrame {
         }
     }
     private void jBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarActionPerformed
-        // TODO add your handling code here:
-        /*
-        this.JTFEnviado.setEnabled(true);
-        this.JTFDns.setEnabled(true);
-        this.JTFPpto.setEnabled(true);
-        this.JTFDestino.setEnabled(true);
-        */
         int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea actualizar la Resolución de Inicio?",
                 "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
         if (res == javax.swing.JOptionPane.YES_OPTION) {
@@ -569,6 +561,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
             this.jBImprimir.setEnabled(false);
             this.jBModificar.setEnabled(false);
             this.jButton1.setEnabled(false);
+            this.jBNuevaRes.setEnabled(false);
         }
         
         //LlenaDatos();
@@ -676,6 +669,10 @@ public class ResolucionInicio extends javax.swing.JFrame {
         GuardaResIni(); 
     }//GEN-LAST:event_jBNuevaResActionPerformed
 
+    private void JTF_DetRec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_DetRec1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTF_DetRec1ActionPerformed
+
     private void cambiarEstado()
     {
         try{
@@ -735,6 +732,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
     private javax.swing.JTextField JTFEnviado;
     private javax.swing.JTextField JTFPpto;
     private javax.swing.JTextField JTF_DetRec;
+    private javax.swing.JTextField JTF_DetRec1;
     private javax.swing.JTextField JTF_JefeAdqui;
     private javax.swing.JButton jBGenerar;
     private javax.swing.JButton jBGuardar;
@@ -745,6 +743,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

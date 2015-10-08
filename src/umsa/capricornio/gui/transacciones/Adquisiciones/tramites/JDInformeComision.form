@@ -77,6 +77,11 @@
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="JTF_CARGO19" min="-2" pref="411" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="JTF_CARGO6" min="-2" pref="411" max="-2" attributes="0"/>
@@ -262,7 +267,12 @@
                       <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="JTF_CARGO18" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JTF_CARGO19" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JB_Actualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JB_Guardar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -701,6 +711,19 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_CARGO18ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="JTF_CARGO19">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_CARGO19ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel47">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="13" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CORRELATIVO"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
