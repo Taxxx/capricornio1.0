@@ -92,6 +92,8 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         JTF_CARGO6 = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         JTF_CARGO7 = new javax.swing.JTextField();
+        JTF_CARGO8 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -210,6 +212,15 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             }
         });
 
+        JTF_CARGO8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTF_CARGO8ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel36.setText("CORRELATIVO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -235,8 +246,15 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JTF_CARGO8, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -263,10 +281,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel35)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JTF_CARGO7, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jLabel1)))
+                                .addComponent(JTF_CARGO7, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -302,11 +317,15 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel35)
                     .addComponent(JTF_CARGO7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTF_CARGO8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JB_Actualizar)
                     .addComponent(JB_Guardar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -388,6 +407,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         JTF_CARGO5.setEnabled(true);
         JTF_CARGO6.setEnabled(true);
         JTF_CARGO7.setEnabled(true);
+        JTF_CARGO8.setEnabled(true);
         /*JTF_CARGO8.setEnabled(true);
         JTF_CARGO9.setEnabled(true);
         JTF_CARGO10.setEnabled(true);
@@ -454,6 +474,10 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_JB_SalirActionPerformed
+
+    private void JTF_CARGO8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_CARGO8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTF_CARGO8ActionPerformed
 
     private void LlenaTabla(String t1,String t2)
     {
@@ -729,7 +753,8 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
             System.out.println("nota_uni "+nota_uni);
             System.out.println("nota_ppto "+nota_ppto);
             System.out.println("resolucion_adm "+Resolucion_admi);*/
-            puerto.updateDesierta(cod_transaccion, cod_trans_nro, destino, res_ini, fec_apert, inf_tec, inf_adq, modalidad, convocatoria);
+            int correlativo=Integer.parseInt(JTF_CARGO8.getText());
+            puerto.updateDesierta(cod_transaccion, cod_trans_nro, destino, res_ini, fec_apert, inf_tec, inf_adq, modalidad, convocatoria,correlativo);
             //puerto.updateInformeComision(cod_transaccion,cod_trans_nro,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi);
             /*int cc=1,hh=1,nh=0;
             String []n1;
@@ -763,6 +788,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
         JTF_CARGO5.setEnabled(false);
         JTF_CARGO6.setEnabled(false);
         JTF_CARGO7.setEnabled(false);
+        JTF_CARGO8.setEnabled(false);
         /*JTF_CARGO8.setEnabled(false);
         JTF_CARGO9.setEnabled(false);
         JTF_CARGO10.setEnabled(false);
@@ -794,6 +820,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
                 JTF_CARGO5.setText(datos[0].get("MODO_EVAL").toString());
                 JTF_CARGO6.setText(datos[0].get("DESTINO").toString());
                 JTF_CARGO7.setText(datos[0].get("CONVOCATORIA").toString());
+                JTF_CARGO8.setText(datos[0].get("NRO").toString());
                 /*JTF_CARGO8.setText(datos[0].get("NRO_CITA").toString());
                 JTF_CARGO9.setText(datos[0].get("FECHA_NOTA").toString());
                 JTF_CARGO10.setText(datos[0].get("FEC_APERT_SOBRE").toString());
@@ -918,6 +945,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
     private javax.swing.JTextField JTF_CARGO5;
     private javax.swing.JTextField JTF_CARGO6;
     private javax.swing.JTextField JTF_CARGO7;
+    private javax.swing.JTextField JTF_CARGO8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
@@ -926,6 +954,7 @@ public class JD_reporte_desierta extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

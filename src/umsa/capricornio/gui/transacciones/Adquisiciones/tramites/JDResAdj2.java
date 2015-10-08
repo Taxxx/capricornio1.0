@@ -1165,7 +1165,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
                 this.JTF_ACTIVIDAD.setText(actividad);
                 
                 this.JTF_ADC.setText(adc);
-                
+                this.jTextField3.setText(datos[0].get("NRO").toString());
                 
                 this.bloqueaTodo();
             }
@@ -1211,6 +1211,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
                 this.JTF_DESTINO.setText(destino);
                 this.JTF_CARGO.setText(cargo);
                 this.JTF_ACTIVIDAD.setText(actividad);
+                this.jTextField3.setText(datos[0].get("NRO").toString());
                 jTextField1.setText(fec);
                 jTextField2.setText(lug);
                 this.bloqueaTodo();
@@ -1257,7 +1258,7 @@ public class JDResAdj2 extends javax.swing.JDialog {
                 this.JTF_DESTINO.setText(destino);
                 this.JTF_CARGO.setText(cargo);
                 this.JTF_ACTIVIDAD.setText(actividad);
-                
+                this.jTextField3.setText(datos[0].get("NRO").toString());
                 this.bloqueaTodo();
             }
             else{

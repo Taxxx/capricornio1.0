@@ -1202,7 +1202,7 @@ public class JDInformeComision extends javax.swing.JDialog {
             System.out.println("nota_ppto "+nota_ppto);
             System.out.println("resolucion_adm "+Resolucion_admi);
             int correlativo=Integer.parseInt(JTF_CARGO19.getText());
-            puerto.updateInformeComision(cod_transaccion,cod_trans_nro,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi);
+            puerto.updateInformeComision(cod_transaccion,cod_trans_nro,destino,cargo,modalidad,notas,nota_juridica,citacion,fec_cit,fecha,hora,nro_informe,fecha_inf,presidente,vocal1,vocal2,secretario,nota_uni,nota_ppto,Resolucion_admi,correlativo);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -1322,6 +1322,7 @@ public class JDInformeComision extends javax.swing.JDialog {
         JTF_CARGO16.setEnabled(false);
         JTF_CARGO17.setEnabled(false);
         JTF_CARGO18.setEnabled(false);
+        JTF_CARGO19.setEnabled(false);
     }
     private void LlenaServicio(){
         System.out.println("En llena servicio");
@@ -1389,6 +1390,7 @@ public class JDInformeComision extends javax.swing.JDialog {
                 JTF_CARGO16.setText(datos[0].get("RES_ADM").toString());
                 JTF_CARGO17.setText(datos[0].get("DESTINO").toString());
                 JTF_CARGO18.setText(datos[0].get("CARGO").toString());
+                JTF_CARGO19.setText(datos[0].get("NRO").toString());
                
                 System.out.println("kkkk "+tprov+" sdfsdfsd "+tbche);
                 this.bloqueaTodo();
