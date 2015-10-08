@@ -115,6 +115,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        JTF_ACTIVIDAD1 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -327,6 +329,15 @@ public class JDResAdjObra extends javax.swing.JDialog {
 
         jLabel25.setText("jLabel25");
 
+        JTF_ACTIVIDAD1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTF_ACTIVIDAD1ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel28.setText("CORRELATIVO");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -355,7 +366,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
                             .addComponent(jLabel8)
                             .addComponent(jLabel2)
                             .addComponent(jLabel9)
-                            .addComponent(jLabel10))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel28))
                         .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -374,7 +386,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
                                         .addGap(112, 112, 112)
                                         .addComponent(JB_Guardar)
                                         .addGap(77, 77, 77))
-                                    .addComponent(JTF_ACTIVIDAD))
+                                    .addComponent(JTF_ACTIVIDAD)
+                                    .addComponent(JTF_ACTIVIDAD1, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(31, 31, 31)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel17)
@@ -447,7 +460,11 @@ public class JDResAdjObra extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(JTF_ACTIVIDAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel25)))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTF_ACTIVIDAD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28))
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JB_Actualizar)
                     .addComponent(JB_Guardar))
@@ -848,6 +865,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         this.JTF_MEVAL.setEnabled(true);
         this.JTF_CARGO.setEnabled(true);
         this.JTF_ACTIVIDAD.setEnabled(true);
+        JTF_ACTIVIDAD1.setEnabled(true);
         for(int i=7; i<=(tadju*7)+6 ;i++)
         {
             jPanel2.getComponent(i).setEnabled(true);
@@ -869,7 +887,8 @@ public class JDResAdjObra extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("dsfsdfsdf"+adc); 
-            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario,this.cod_w);
+            int correlativo=Integer.parseInt(JTF_ACTIVIDAD1.getText());
+            puerto.updateResAdjObra(this.cod_trans_nro, this.cod_w, res_adm, fecha_cc, inf_div_adq, det_conc_prop, modo_eval, destino, cargo, actividad,adc,tprov,tbche,cod_usuario,correlativo);
             int cc=1,hh=1,nh=0;
             String []n1;
             String []n2;
@@ -895,6 +914,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         // TODO add your handling code here:
         this.verifielementos();
         System.err.println("jijiji "+tprov+"  jujujuju "+tbche);
+        
         this.updateAdjObra(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText(),this.JTF_ADC.getText());
         this.setVisible(false);
     }//GEN-LAST:event_JB_GuardarActionPerformed
@@ -950,6 +970,10 @@ public class JDResAdjObra extends javax.swing.JDialog {
         this.JB_Generar.requestFocus();
     }//GEN-LAST:event_JTF_ACTIVIDADActionPerformed
 
+    private void JTF_ACTIVIDAD1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_ACTIVIDAD1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTF_ACTIVIDAD1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -963,6 +987,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
         this.JTF_INFDIVADQUI.setEnabled(false);
         this.JTF_MEVAL.setEnabled(false);
         this.JTF_Res_Admi.setEnabled(false);
+        JTF_ACTIVIDAD1.setEnabled(false);
     }
     private void LlenaServicio(){
         System.out.println("En llena servicio");
@@ -1033,6 +1058,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
                 this.JTF_DESTINO.setText(destino);
                 this.JTF_CARGO.setText(cargo);
                 this.JTF_ACTIVIDAD.setText(actividad);
+                JTF_ACTIVIDAD1.setText(datos[0].get("NRO").toString());
                 System.out.println("kkkk "+tprov+" sdfsdfsd "+tbche);
                 this.bloqueaTodo();
             }
@@ -1185,6 +1211,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
     private javax.swing.JButton JB_Imprimir;
     private javax.swing.JButton JB_Salir;
     private javax.swing.JTextField JTF_ACTIVIDAD;
+    private javax.swing.JTextField JTF_ACTIVIDAD1;
     private javax.swing.JTextField JTF_ADC;
     private javax.swing.JTextField JTF_CARGO;
     private javax.swing.JTextField JTF_DESTINO;
@@ -1213,6 +1240,7 @@ public class JDResAdjObra extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
