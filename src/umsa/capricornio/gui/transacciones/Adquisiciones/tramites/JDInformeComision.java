@@ -55,6 +55,10 @@ public class JDInformeComision extends javax.swing.JDialog {
         this.cod_transaccion=cod_transaccion;
         this.gestion=gestion;
         System.out.println("codigotrnas"+cod_transaccion);
+        float a=2;
+        float b=3;
+        float xxxx=a/b;
+        System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee "+xxxx);
         LlenaBien();
         creatabla();
         //ejBien();
@@ -1067,15 +1071,6 @@ public class JDInformeComision extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             Map[] datos =puerto.getPreventivos(cod_transaccion);
-            /*Map[] datos1=puerto.getPartida(gestion);
-            String partida=datos1[0].get("PARTIDA").toString();
-            String nombre=datos1[0].get("NOMBRE").toString();
-            String detalle=datos1[0].get("DETALLE").toString();
-            String cargo=datos1[0].get("CARGO").toString();
-            String destino=datos1[0].get("DESTINO").toString();
-            String vocal=datos1[0].get("VOCAL").toString();
-            String presidente=datos1[0].get("PRESIDENTE").toString();
-            String secretario=datos1[0].get("SECRETARIO").toString();*/
             this.imprimeComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText(),JTF_CARGO8.getText(),JTF_CARGO9.getText(),JTF_CARGO10.getText(),JTF_CARGO11.getText(),JTF_CARGO12.getText(),JTF_CARGO13.getText(),JTF_CARGO14.getText(),JTF_CARGO15.getText(),JTF_CARGO16.getText(),JTF_CARGO17.getText(),JTF_CARGO18.getText());
             System.err.println("esto si que es raro2");
         //this.genera_res_adj.ReporteAdjObra(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO(),adc,tprov,tbche,cod_transaccion,this.tadju);
@@ -1086,14 +1081,6 @@ public class JDInformeComision extends javax.swing.JDialog {
             System.out.println("nooo maldicion "+e);
             //JOptionPane.showMessageDialog( null, e.getMessage());
         }
-        //this.genera_res_adj.Reporte(res_adm, res_adm, res_adm, adc, detalle, res_adm, fecha_comision, adc, adc, res_adm, res_adm, res_adm, cod_trans_nro, cod_w);
-        /*if(this.cod_w==6)
-            this.genera_res_adj.ReporteAdjServ(adc, res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
-        if(this.cod_w==7)
-            this.genera_res_adj.ReporteAdjBien(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());
-//        this.setVisible(false);
-        if(this.cod_w==3)
-            this.genera_res_adj.ReporteAdjConsul(res_adm, fecha_comision, inf_div_adqui, proveedor, detalle, num_resol, det_conc_prop, modo_eval, destino, cargo, actividad,prop_proveedor,Concursantes(),CUCE(),MONTO());*/
     }//GEN-LAST:event_JB_ImprimirActionPerformed
 
     
@@ -1158,15 +1145,6 @@ public class JDInformeComision extends javax.swing.JDialog {
     }
     
     private void JB_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GuardarActionPerformed
-        // TODO add your handling code here:
-        /*if(this.cod_w==6)
-            this.updateAdjServ(this.JTF_ADC.getText(), this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
-        if(this.cod_w==7)
-            this.updateAdjBien(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());
-        if(this.cod_w==3)
-            this.updateAdjCons(this.JTF_Res_Admi.getText(), this.JTF_FechaCC.getText(), this.JTF_INFDIVADQUI.getText(), this.JTF_DET_CONC_PROP.getText(), this.JTF_MEVAL.getText(), this.JTF_DESTINO.getText(), this.JTF_CARGO.getText(), this.JTF_ACTIVIDAD.getText());*/
-        //this.verifielementos();
-        //System.err.println("jijiji "+tprov+"  jujujuju "+tbche);
         verifielementos();
         this.GuardaInfComision(JTF_CARGO1.getText(),JTF_CARGO2.getText(),JTF_CARGO3.getText(),JTF_CARGO4.getText(),JTF_CARGO5.getText(),JTF_CARGO6.getText(),JTF_CARGO7.getText(),JTF_CARGO8.getText(),JTF_CARGO9.getText(),JTF_CARGO10.getText(),JTF_CARGO11.getText(),JTF_CARGO12.getText(),JTF_CARGO13.getText(),JTF_CARGO14.getText(),JTF_CARGO15.getText(),JTF_CARGO16.getText(),JTF_CARGO17.getText(),JTF_CARGO18.getText());
         //this.LlenaBien();
@@ -1391,7 +1369,6 @@ public class JDInformeComision extends javax.swing.JDialog {
                 JTF_CARGO17.setText(datos[0].get("DESTINO").toString());
                 JTF_CARGO18.setText(datos[0].get("CARGO").toString());
                 JTF_CARGO19.setText(datos[0].get("NRO").toString());
-               
                 System.out.println("kkkk "+tprov+" sdfsdfsd "+tbche);
                 this.bloqueaTodo();
             }
@@ -1425,8 +1402,6 @@ public class JDInformeComision extends javax.swing.JDialog {
                 this.actividad = datos[0].get("ACTIVIDAD").toString();
                 this.prop_proveedor =datos[0].get("ADH_NOMBRE").toString();
                 */
-                
-                
                 this.bloqueaTodo();
             }
             else{

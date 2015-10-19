@@ -32,6 +32,7 @@ import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmAdquisicione
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmReporteModalidad;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmReporteUnidad;
 import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmResumenReporte;
+import umsa.capricornio.gui.transacciones.Adquisiciones.tramites.FrmtareasAdicionales;
 import umsa.capricornio.gui.transacciones.FrmTransacciones;
 
 /**
@@ -253,6 +254,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         BtnSalir = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         PnlAdquisiciones = new javax.swing.JDesktopPane();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -383,6 +385,18 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
         ToolBotones.add(jButton1);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/application_add.png"))); // NOI18N
+        jButton2.setToolTipText("Notificaciones");
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        ToolBotones.add(jButton2);
 
         getContentPane().add(ToolBotones);
         ToolBotones.setBounds(0, 0, 490, 30);
@@ -898,6 +912,11 @@ public class FrmMenu extends javax.swing.JFrame {
         AbrirFrameInterno(new FrmResumenReporte(this,cod_usuario,cod_rol));
     }//GEN-LAST:event_ItmRepAlmacen3ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AbrirFrameInterno(new FrmtareasAdicionales(this,cod_usuario,cod_rol,this.gestion));
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBandeja;
     private javax.swing.JButton BtnDespacho;
@@ -937,6 +956,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JDesktopPane PnlAdquisiciones;
     private javax.swing.JToolBar ToolBotones;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -838,12 +838,14 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         //JDInformeComision x = new JDInformeComision(menu, false, this.cod_w, this.cod_trans_nro, this.proveedor.getCasa_comercial(), this.detalle, this.cod_transaccion,this.gestion);
         JD_reporte_desierta x=new JD_reporte_desierta(menu, false, cod_w, cod_trans_nro, detalle, cod_transaccion, gestion);
         //JD_reporte desierta x=new JD_reporte_desierta(menu, false, this.cod_w, this.cod_trans_nro, this.detalle, this.cod_transaccion,this.gestion);
-        this.setModal(false);
-        x.setVisible(true);
+        //this.setModal(false);
+        //x.setVisible(true);
         int n = TblPedido.getSelectedRow();
         if ("D".equals(TblPedido.getValueAt(n, 1))) {
             javax.swing.JOptionPane.showMessageDialog(this, "Items ya fue declarado DESIERTO", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
+            this.setModal(false);
+            x.setVisible(true);
             return;
         }
         int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea declarar DESIERTA el item?",
@@ -851,11 +853,14 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
         if (res != javax.swing.JOptionPane.YES_OPTION) {
             return;
         }
-
         try {
             int cod_trans_detalle = Integer.parseInt(TblPedido.getValueAt(n, 0).toString());
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            //JD_reporte_desierta x=new JD_reporte_desierta(menu, false, cod_w, cod_trans_nro, detalle, cod_transaccion, gestion);
+            //JD_reporte desierta x=new JD_reporte_desierta(menu, false, this.cod_w, this.cod_trans_nro, this.detalle, this.cod_transaccion,this.gestion);
+            this.setModal(false);
+            x.setVisible(true);
             Map[] datos = puerto.setItemRegDesierto("SET-upDateItRDes", cod_trans_detalle);
             javax.swing.JOptionPane.showMessageDialog(this, "ITEM FUE DECLARADA DESIERTA", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -1023,13 +1028,6 @@ public class DiagOrdenesGenera extends javax.swing.JDialog {
                     datos = puerto.setTransaccionDetalleNro("SET-upDateTransDetNro", Integer.parseInt(TblOrdenes.getValueAt(f, 0).toString()), cod_trans_nro_nuevo);
                 }
             }
-            /*
-             * for (int f=0;f<TblItems.getRowCount();f++) if
-             * (!"".equals(TblItems.getValueAt(f, 1).toString()) &&
-             * !"D".equals(TblItems.getValueAt(f, 1).toString()))
-             * datos=puerto.setTransaccionesDestino("SET-upDateDestino",Integer.parseInt(TblItems.getValueAt(f,
-             * 2).toString()),cod_w,TblItems.getValueAt(f, 1).toString());
-             */
             javax.swing.JOptionPane.showMessageDialog(this, "Ordenes de Compra Generados", "SYSTEM CAPRICORN",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
             BtnSalir.doClick();

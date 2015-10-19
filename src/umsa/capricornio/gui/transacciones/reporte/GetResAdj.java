@@ -179,9 +179,20 @@ public class GetResAdj {
                 try{
                     AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
                     AdquiWS_PortType puerto = servicio.getAdquiWS();
-                    String x="01/"+i+"/2015";
-                    String y="01/"+(i+1)+"/2015";
-                    System.out.println(x+" siiiii"+y);
+                    String x,y;
+                    if(i<10)
+                    {
+                        x="01/0"+i+"/2015";
+                        y="01/0"+(i+1)+"/2015";
+                        System.out.println(x+" siiiii"+y);
+                    }
+                    else
+                    {
+                        x="01/"+i+"/2015";
+                        y="01/"+(i+1)+"/2015";
+                        System.out.println(x+" siiiii"+y);
+                    
+                    }
                     
                     System.err.println("cod_user: "+cod_user);
                     System.err.println("x: "+x);

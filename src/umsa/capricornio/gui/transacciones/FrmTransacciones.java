@@ -41,6 +41,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
 
     TablaTransaccionBandejaGral bandeja;
     TablaTransaccionEstados estados;
+    TablaTransaccionEstados enviados;
     
     FrmMenu menu;
     Reportes reportes;
@@ -60,6 +61,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         initComponents();
         ConstruyeTablaTransacciones();
         ConstruyeTablaEstados();
+        ConstruyeTablaEnviados();
     }
     
     private void ConstruyeTablaTransacciones(){
@@ -80,6 +82,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         JTableHeader header = TblTransaccionBandeja.getTableHeader();
         header.setUpdateTableInRealTime(true);
         header.setReorderingAllowed(true);
+        System.out.println("aqui lo coloca en el panel234 "+TablaTransaccionBandejaGral.m_columns.length);
         PnlTransaccionBandeja.getViewport().add(TblTransaccionBandeja);
     }
     
@@ -99,6 +102,26 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         header.setUpdateTableInRealTime(true);
         header.setReorderingAllowed(true);
         PnlTransaccionEstado.getViewport().add(TblTransaccionEstado);
+    }
+    
+    private void ConstruyeTablaEnviados()
+    {
+        enviados = new TablaTransaccionEstados();
+        TblEnviados.setAutoCreateColumnsFromModel(false);
+        TblEnviados.setModel(enviados);
+
+        for (int k = 0; k < TablaTransaccionEstados.m_columns.length; k++) {
+            TableCellRenderer renderer = new MiRenderer(TablaTransaccionEstados.m_columns[k].m_alignment);
+            /*DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
+            renderer.setHorizontalAlignment(DatosTablaObligacionBandeja.m_columns[k].m_alignment);*/
+            TableColumn column = new TableColumn(k, TablaTransaccionEstados.m_columns[k].m_width, renderer, null);
+            TblEnviados.addColumn(column);
+        }
+        JTableHeader header = TblEnviados.getTableHeader();
+        header.setUpdateTableInRealTime(true);
+        header.setReorderingAllowed(true);
+        System.out.println("aqui lo coloca en el panel "+TablaTransaccionEstados.m_columns.length);
+        PnlEniviados.getViewport().add(TblEnviados);
     }
         
     private void LlenaBandeja(){
@@ -189,8 +212,136 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
                 bandeja, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
              }
         }
-    }    
+    }
     
+    void CerearTablaEnviados(){
+        int f = TblEnviados.getRowCount();
+        for (int i=f-1;i>=0;i--){
+             if (enviados.delete(i)) {
+                TblEnviados.tableChanged(new TableModelEvent(
+                enviados, i, i, TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT));
+             }
+        }
+    }
+    
+    
+    public void LlenaEnviados()
+    {
+        try{
+            //String []tram=CmbTramite.getSelectedItem().toString().split(" - ");
+            //int cod_tram=Integer.parseInt(tram[0]);
+            System.err.println("esta entrando en el rol 0");
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("Wujuuuu --->>>>   Ini: "+ini+", Fin: "+fin);
+            Map[] datos=puerto.getTransaccionEstado(cod_almacen,1,gestion,ini,fin);
+            CerearTablaEnviados();
+            if (datos!=null){
+                //System.err.println("esta entrando en el rol 0");
+                for (int c=0;c<datos.length;c++){
+                    
+                    enviados.insert(c);
+                    TblEnviados.tableChanged(new TableModelEvent(enviados, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
+                    //TblTransaccionEstado.setValueAt(datos[c].get("COD_TRANSACCION"),c,0);
+                    //this.cod_transaccion = datos[c].get("COD_TRANSACCION").toString();
+                    TblEnviados.setValueAt(datos[c].get("COD_TRANS_NRO"),c,0);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 0));
+                    TblEnviados.setValueAt(datos[c].get("COD_ESTADO"),c,1);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 1));
+                    TblEnviados.setValueAt(datos[c].get("COD_TRAMITE"),c,2);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 2));
+                    TblEnviados.setValueAt(datos[c].get("NRO"),c,3);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 3));
+                    TblEnviados.setValueAt(datos[c].get("TRAMITE"),c,4);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 4));
+                    TblEnviados.setValueAt(datos[c].get("DETALLE"),c,5);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 5));
+                    TblEnviados.setValueAt(datos[c].get("UNIDAD_SOL"),c,6);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 6));
+                    TblEnviados.setValueAt(datos[c].get("UNIDAD_DES"),c,7);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 7));
+                    TblEnviados.setValueAt(datos[c].get("ESTADO"),c,8);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 8));
+                    TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),c,9); 
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 9));
+                    //TblEnviados.setVisible(true);
+                    //PnlEniviados.add(TblEnviados);
+                }
+            }
+            System.out.println("esto son sus datos de la tabla "+TblEnviados.getColumnCount()+" y la segunda parte es "+TblEnviados.getRowCount());
+        }
+        catch (RemoteException e){
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        catch (ServiceException e){ System.out.println(e);}
+        /*try
+        {
+            System.out.println("Aquí esta en presupuestos :D y los datos son: "+gestion+", "+cod_almacen+", "+cod_usuario+", "+cod_tramite);
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario+" cod_tramite"+cod_tramite);
+            Map[] datos=puerto.getTransaccionBandeja(gestion,cod_almacen,cod_usuario,0,"alm",cod_tramite);            
+            CerearTablaEnviados();
+            System.err.println("esta entrando en el rol 0");
+            if (datos!=null)
+                for (int c=0;c<datos.length;c++){
+                    System.err.println("esta entrando en el rol 0");
+                    enviados.insert(c);
+                    //System.out.println("******El cod"+datos[c].get("NRO_TRAMITE"));
+                    TblEnviados.tableChanged(new TableModelEvent(enviados, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
+                    TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),c,0);
+                    TblEnviados.setValueAt(datos[c].get("COD_ESTADO"),c,1);
+                    TblEnviados.setValueAt(datos[c].get("COD_TRANS_NRO"),c,2);
+                    TblEnviados.setValueAt(datos[c].get("COD_W"),c,3);
+                    TblEnviados.setValueAt(datos[c].get("NRO_TRAMITE"),c,4);
+                    TblEnviados.setValueAt(datos[c].get("TIPO_TRAMITE"),c,5);
+                    TblEnviados.setValueAt(datos[c].get("DETALLE"),c,6);
+                    TblEnviados.setValueAt(datos[c].get("UNIDAD_SOL"),c,7);
+                    TblEnviados.setValueAt(datos[c].get("UNIDAD_DES"),c,8);
+                    TblEnviados.setValueAt(datos[c].get("ESTADO"),c,9);
+                    TblEnviados.setValueAt(datos[c].get("CUANTIA"),c,10);
+                    TblEnviados.setValueAt(datos[c].get("DEL"),c,11);
+                    TblEnviados.setValueAt(datos[c].get("HASTA"),c,12);
+                }            
+          
+            if (cod_rol==2){
+                int n=TblEnviados.getRowCount();
+                /*===============================================================================================================
+                 * cod_Tramite=2 porque el usuario de almacenes puede ver ordenes de compra al ingresar a almacen
+                 ================================================================================================================*/
+          /*      System.out.println("/**************** gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario);
+                datos=puerto.getTransaccionBandejaUnion(gestion,cod_almacen,3,cod_usuario);            
+                if (datos!=null){
+                    System.out.println("Siii"+datos.length);
+                    for (int c=0;c<datos.length;c++){
+                        System.err.println("esta entrando en el rol 2");
+                        bandeja.insert(n);
+                        TblEnviados.tableChanged(new TableModelEvent(enviados, n, n, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
+                        TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),n,0);
+                        TblEnviados.setValueAt(datos[c].get("COD_ESTADO"),n,1);
+                        TblEnviados.setValueAt(datos[c].get("COD_TRANS_NRO"),n,2);
+                        TblEnviados.setValueAt(datos[c].get("COD_W"),n,3);
+                        TblEnviados.setValueAt(datos[c].get("NRO"),n,4);
+                        TblEnviados.setValueAt(datos[c].get("TIPO_TRAMITE"),n,5);
+                        TblEnviados.setValueAt(datos[c].get("DETALLE"),n,6);
+                        TblEnviados.setValueAt(datos[c].get("UNIDAD_SOL"),n,7);
+                        TblEnviados.setValueAt(datos[c].get("UNIDAD_DES"),n,8);
+                        TblEnviados.setValueAt(datos[c].get("ESTADO"),n,9);                        
+                        TblEnviados.setValueAt(datos[c].get("CUANTIA"),n,10);                        
+                        TblEnviados.setValueAt(datos[c].get("DEL"),n,11);                        
+                        TblEnviados.setValueAt(datos[c].get("HASTA"),n,12);                        
+                    }          
+                } 
+                              
+            }
+        }
+        catch(Exception e)
+        {
+            System.err.println("este es un error de llenado "+e);
+        }*/
+    }
+     
     private void LlenaEstados(){
         try{
             String []tram=CmbTramite.getSelectedItem().toString().split(" - ");
@@ -235,7 +386,6 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
              }
         }
     }
-    
     private void CalculaElementosListar(){
        int nro_reg=0;
        try{ AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -437,8 +587,11 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane2 = new javax.swing.JTabbedPane();
         PnlTransaccionBandeja = new javax.swing.JScrollPane();
         TblTransaccionBandeja = new javax.swing.JTable();
+        PnlEniviados = new javax.swing.JScrollPane();
+        TblEnviados = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         BtnInicio = new javax.swing.JButton();
         BtnAtras = new javax.swing.JButton();
@@ -494,8 +647,20 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         });
         PnlTransaccionBandeja.setViewportView(TblTransaccionBandeja);
 
-        getContentPane().add(PnlTransaccionBandeja);
-        PnlTransaccionBandeja.setBounds(10, 10, 1120, 250);
+        jTabbedPane2.addTab("BANDEJA", PnlTransaccionBandeja);
+
+        PnlEniviados.setName(""); // NOI18N
+
+        TblEnviados.setMaximumSize(new java.awt.Dimension(0, 0));
+        TblEnviados.setMinimumSize(new java.awt.Dimension(0, 0));
+        TblEnviados.setPreferredSize(new java.awt.Dimension(0, 0));
+        TblEnviados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        PnlEniviados.setViewportView(TblEnviados);
+
+        jTabbedPane2.addTab("ENVIADOS", PnlEniviados);
+
+        getContentPane().add(jTabbedPane2);
+        jTabbedPane2.setBounds(10, 10, 1120, 250);
 
         jPanel2.setBackground(new java.awt.Color(210, 223, 236));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -508,7 +673,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnInicio);
-        BtnInicio.setBounds(0, 50, 30, 25);
+        BtnInicio.setBounds(0, 50, 30, 28);
 
         BtnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_previous.png"))); // NOI18N
         BtnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -517,7 +682,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnAtras);
-        BtnAtras.setBounds(30, 50, 30, 25);
+        BtnAtras.setBounds(30, 50, 30, 28);
 
         BtnAdelante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
         BtnAdelante.addActionListener(new java.awt.event.ActionListener() {
@@ -526,7 +691,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnAdelante);
-        BtnAdelante.setBounds(60, 50, 30, 25);
+        BtnAdelante.setBounds(60, 50, 30, 28);
 
         BtnFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_last.png"))); // NOI18N
         BtnFinal.addActionListener(new java.awt.event.ActionListener() {
@@ -535,7 +700,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnFinal);
-        BtnFinal.setBounds(90, 50, 30, 25);
+        BtnFinal.setBounds(90, 50, 30, 28);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel1.setText("Tipo de Tramite");
@@ -544,7 +709,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
 
         CmbTramite.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jPanel2.add(CmbTramite);
-        CmbTramite.setBounds(340, 20, 270, 20);
+        CmbTramite.setBounds(340, 20, 270, 24);
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/magnifier.png"))); // NOI18N
@@ -588,7 +753,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(420, 600, 150, 25);
+        BtnSalir.setBounds(420, 600, 150, 28);
 
         jPanel1.setBackground(new java.awt.Color(210, 223, 236));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -604,7 +769,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(BtnActualizar);
-        BtnActualizar.setBounds(10, 10, 120, 25);
+        BtnActualizar.setBounds(10, 10, 120, 28);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 260, 1120, 50);
@@ -677,17 +842,6 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         CalculaElementosListar();
     }//GEN-LAST:event_formInternalFrameOpened
 
-    private void TblTransaccionBandejaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblTransaccionBandejaMousePressed
-        if (evt.getClickCount() == 2)
-            AbreItems();
-    }//GEN-LAST:event_TblTransaccionBandejaMousePressed
-
-    private void TblTransaccionBandejaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TblTransaccionBandejaKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
-            AbreItems();
-        }        
-    }//GEN-LAST:event_TblTransaccionBandejaKeyPressed
-
     private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
         CerrarFrame();
     }//GEN-LAST:event_BtnSalirActionPerformed
@@ -713,8 +867,22 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TblTransaccionEstadoMousePressed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        LlenaEnviados();
         LlenaBandeja();
+        //LlenaEstados();
+        
     }//GEN-LAST:event_formComponentShown
+
+    private void TblTransaccionBandejaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TblTransaccionBandejaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER )  {
+            AbreItems();
+        }
+    }//GEN-LAST:event_TblTransaccionBandejaKeyPressed
+
+    private void TblTransaccionBandejaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblTransaccionBandejaMousePressed
+        if (evt.getClickCount() == 2)
+        AbreItems();
+    }//GEN-LAST:event_TblTransaccionBandejaMousePressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizar;
@@ -724,13 +892,16 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnInicio;
     private javax.swing.JButton BtnSalir;
     private javax.swing.JComboBox CmbTramite;
+    private javax.swing.JScrollPane PnlEniviados;
     private javax.swing.JScrollPane PnlTransaccionBandeja;
     private javax.swing.JScrollPane PnlTransaccionEstado;
+    private javax.swing.JTable TblEnviados;
     private javax.swing.JTable TblTransaccionBandeja;
     private javax.swing.JTable TblTransaccionEstado;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
 }

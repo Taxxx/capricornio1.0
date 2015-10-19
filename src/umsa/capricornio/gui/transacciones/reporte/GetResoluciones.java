@@ -93,7 +93,6 @@ public class GetResoluciones {
             if (datos2!=null){
                    dir_daf = datos2[0].get("RPA").toString();
             }
-//            System.err.println("3");
             
             
             //System.out.println("Dir Daf es: "+dir_daf);
@@ -108,7 +107,6 @@ public class GetResoluciones {
                 
                                
                 this.detalle_autorizacion=datos[0].get("DET_AUT").toString();
-//                System.out.println("detalle de autorizacion --> "+datos[0].get("DET_AUT").toString());
                 this.detalle_recursos=datos[0].get("DET_RECURSOS").toString();
                 this.detalle_uni_sol=datos[0].get("DET_UNI_SOL").toString();
                 this.jefe_adqui=datos[0].get("JEFE_ADQUI").toString();
@@ -156,12 +154,8 @@ public class GetResoluciones {
         parameters.put("Envia", this.envia);
         parameters.put("Titulo_trans", Detalle);
         parameters.put("Monto", Monto);
-        /*System.out.println(monto);
-        Number m=Integer.parseInt(monto);
-        parameters.put("monto_num",m);*/
         parameters.put("DIR_DAF", this.dir_daf);
         parameters.put("DESTINO", destino);
-        
         parameters.put("jefe_adqui", jefe_adqui);
         parameters.put("det_jefe_sol",detalle_uni_sol);
         parameters.put("det_recursos", detalle_recursos);
@@ -267,10 +261,4 @@ public class GetResoluciones {
         }
         
     }
-   /*public static void main(String arg[]) {
-       System.out.println("Wolasss");
-       GetResoluciones x = new  GetResoluciones();
-       x.Reporte("DPTO.T.U. Nº115/14", "Depto.Ppto.Nº404/14", "Jefe del Departamento de Tesoro Universitario","Detalle","sads",4,0);
-       System.out.println("Wolass2");
-   }*/
 }

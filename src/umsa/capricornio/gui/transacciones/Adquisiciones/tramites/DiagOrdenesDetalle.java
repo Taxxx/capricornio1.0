@@ -524,11 +524,21 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                     } else {
                         TblItems.setValueAt(new Partida(datos[c].get("PARTIDA").toString()), c, 6);
                     }
-
-                    TblItems.setValueAt(datos[c].get("ARTICULO"), c, 7);
+                    if(datos[c].get("ARTICULO").toString().equals(""))
+                    {
+                        TblItems.setValueAt(datos[c].get("ARTICULO_ALM"), c, 7);
+                        TblItems.setValueAt(datos[c].get("ARTICULO"), c, 9);
+                    }
+                    else
+                    {
+                        TblItems.setValueAt(datos[c].get("ARTICULO"), c, 7);
+                        TblItems.setValueAt(datos[c].get("ARTICULO_ALM"), c, 9);
+                    }
+                    
                     TblItems.setValueAt(datos[c].get("ARTICULO_ACT"), c, 8);
-                    System.out.println("******************** uuuuuuuu: " + datos[c].get("ARTICULO_ALM"));
-                    TblItems.setValueAt(datos[c].get("ARTICULO_ALM"), c, 9);
+                    System.out.println("******************** uuuuuuuu: " + datos[c].get("ARTICULO"));
+                    
+                    
                     if (cod_rol == 7) {
                         TblItems.setValueAt(datos[c].get("CONTRATO"), c, 10);
                     } else {
