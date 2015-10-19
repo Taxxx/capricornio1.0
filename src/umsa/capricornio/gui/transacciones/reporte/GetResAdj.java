@@ -95,10 +95,11 @@ public class GetResAdj {
             System.out.println("es posible que el error este aqui2");
         } 
         catch (JRException e) 
-            { System.out.println("Error cargando el reporte maestro: " + e.getMessage());
-              JOptionPane.showMessageDialog( null, "esto2"+e.getMessage());
-              System.exit(3);
-            }
+        {
+            System.out.println("Error cargando el reporte maestro: " + e.getMessage());
+            JOptionPane.showMessageDialog( null, "esto2"+e.getMessage());
+            System.exit(3);
+        }
         
         //parameters.put("imagen",urlImage.toString());
         //parameters.put("titulo",titulo);        
@@ -731,6 +732,7 @@ public class GetResAdj {
     }
     public void ReporteContratoGenerico(int cod_transaccion){
         Map parameters = new HashMap();
+        RepTransaccion t1 = new RepTransaccion(); 
         
         parameters.put("cod_transaccion", cod_transaccion);
         //parameters.put("adc", det_adc);
@@ -752,10 +754,11 @@ public class GetResAdj {
 //        System.out.println(cuce+"   sdfjsdfoisdjfoisjdoifjds");
 //        parameters.put("MONTO", monto);
         
-        
-        RepTransaccion t1 = new RepTransaccion(); 
-        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_generico.jasper");
-        this.imprimePDF(urlMaestro, parameters);
+        parameters.put("cod_transaccion", 2913);
+        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+        //urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/reporte_items.jasper");
+        //parameters.put("DIR1", urlMaestro1.toString());
+        this.imprimePDF2(urlMaestro, parameters);
     }
     public void Reporte (String ResAdm,String Num_Resol, String Titulo_trans, String NotasAdqInv, String ADCAnpe, String Convocatoria, String FechaComisionCalf, String InfAdq, String InfHP, String Profesional, String Destino, String Actividad,int cod_trans_nro, int cod_w)
     {
