@@ -5,6 +5,10 @@
  */
 package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
+import java.util.Map;
+import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
+import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
+
 /**
  *
  * @author Henrry
@@ -20,6 +24,36 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
         initComponents();
         this.cod_transaccion = cod_transaccion;
         this.setLocationRelativeTo(null);
+    }
+    private void CargaContratante(int cod_transaccion){
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            
+            Map[] datos = null;
+            if (datos != null) {
+                System.err.println("Con Datos");
+            }
+            else
+                System.err.println("Vacio!!!");
+        } catch (Exception e) {
+            System.err.println("Error :O");          
+        }
+    }
+    private void GuardaContratante(int cod_transaccion){
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            
+            Map[] datos = null;
+            if (datos != null) {
+                System.err.println("Con Datos");
+            }
+            else
+                System.err.println("Vacio!!!");
+        } catch (Exception e) {
+            System.err.println("Error :O");          
+        }
     }
 
     /**
