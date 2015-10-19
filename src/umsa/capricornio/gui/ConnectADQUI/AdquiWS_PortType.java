@@ -309,6 +309,8 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getContrato2(int cod_transaccion) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateContrato2(int cod_transaccion, java.lang.String proponente_adjudicado, java.lang.String dir_proponente_adjudicado, java.lang.String razon_social_contratante, java.lang.String nit_contratante, java.lang.String direccion_contratante, java.lang.String ciudad_contratante, java.lang.String rep_leg_contratante, java.lang.String cargo_rep_leg_contratante, java.lang.String ci_rep_leg_contratante, java.lang.String desc_tipo_contrato, java.lang.String ci_proponente_adjudicado, java.lang.String deno_proponente_adjudicado, java.lang.String asesor_juridico, java.lang.String objeto_contratacion, java.lang.String modalidad_contratacion, java.lang.String denominacion_contratacion) throws java.rmi.RemoteException;
     public java.util.HashMap[] cambioEstado(int cod_resolucion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] mostrartareas(int cod_user, java.lang.String mes, int gestion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] insertartareas(int cod_user, java.lang.String mes, java.lang.String tarea, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getTotal(int cod_trans_nro) throws java.rmi.RemoteException;
