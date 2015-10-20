@@ -2240,7 +2240,7 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
         // TODO add your handling code here:
 //        JD_GeneraContrato gc = new JD_GeneraContrato(menu, false, this.cod_trans_nro);
 //        gc.setVisible(true);
-        JD_GeneraContrato2 gc2 = new JD_GeneraContrato2(menu, false, this.cod_transaccion);
+        JD_GeneraContrato2 gc2 = new JD_GeneraContrato2(menu, false, this.cod_transaccion,cuantia,cod_w);
         gc2.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
 

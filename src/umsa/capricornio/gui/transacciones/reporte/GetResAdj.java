@@ -741,32 +741,67 @@ public class GetResAdj {
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjCons.jasper");
         this.imprimePDF(urlMaestro, parameters);
     }
-    public void ReporteContratoGenerico(int cod_transaccion){
+    public void ReporteContratoGenerico(int cod_transaccion,int cod_w,String cuantia){
         Map parameters = new HashMap();
         RepTransaccion t1 = new RepTransaccion(); 
         
-        parameters.put("cod_transaccion", cod_transaccion);
-        //parameters.put("adc", det_adc);
-//        parameters.put("FechaComisionCalf", fecha_cc);
-//        parameters.put("InfAdq", inf_div_adq);
-//        parameters.put("Profesional", proveedor);
-//        parameters.put("Titulo_trans", detalle);
-//        parameters.put("Num_Resol", num_resol);
-//        
-//        parameters.put("ADCAnpe", det_conc_prop);
-//        parameters.put("InfHP", modo_eval);
-//        parameters.put("Destino", destino);
-//        parameters.put("CARGO", cargo);
-//        parameters.put("NotasAdqInv", actividad);
-//        //parameters.put("prop_proveedor", prop_proveedor);
-//        //parameters.put("proponentes", proponentes);
-//        parameters.put("DIR_DAF", this.dir_daf);
-//        parameters.put("CUCE", cuce);
-//        System.out.println(cuce+"   sdfjsdfoisdjfoisjdoifjds");
-//        parameters.put("MONTO", monto);
+//        parameters.put("cod_transaccion", cod_transaccion);
         
-        parameters.put("cod_transaccion", 2913);
-        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+        switch (cod_w) {
+            
+            case 1: 
+//                this.JL_TITULO.setText("BIENES - "+this.cuantia);
+                
+                if(cuantia.trim().equals("COMPRA MENOR"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                if(cuantia.trim().equals("ANPE"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                    
+                break;
+            case 2: 
+//                this.JL_TITULO.setText("PEDIDO MATERIALES - "+this.cuantia);
+                if(cuantia.trim().equals("COMPRA MENOR"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                if(cuantia.trim().equals("ANPE"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                break;
+            case 3: 
+//                this.JL_TITULO.setText("CONSULTORIAS - "+this.cuantia);
+                if(cuantia.trim().equals("COMPRA MENOR"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                if(cuantia.trim().equals("ANPE"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                break;
+            case 4: 
+//                this.JL_TITULO.setText("OBRAS - "+this.cuantia);
+                if(cuantia.trim().equals("COMPRA MENOR"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                if(cuantia.trim().equals("ANPE"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                break;
+            case 5: 
+//                this.JL_TITULO.setText("COMPRAS MAYORES - "+this.cuantia);
+                if(cuantia.trim().equals("COMPRA MENOR"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                if(cuantia.trim().equals("ANPE"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                break;
+            case 6: 
+//                this.JL_TITULO.setText("SERVICIOS - "+this.cuantia);
+                if(cuantia.trim().equals("COMPRA MENOR"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                if(cuantia.trim().equals("ANPE"))
+                    urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_bienes3.jasper");
+                break;
+            default: 
+                System.err.println("a caray");
+                break;
+                  
+        }
+              
+               
+        parameters.put("cod_transaccion", cod_transaccion);
+        
         //urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/reporte_items.jasper");
         //parameters.put("DIR1", urlMaestro1.toString());
         this.imprimePDF2(urlMaestro, parameters);
