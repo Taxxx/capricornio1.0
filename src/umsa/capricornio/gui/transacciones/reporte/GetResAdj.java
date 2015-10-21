@@ -798,7 +798,8 @@ public class GetResAdj {
                 break;
                   
         }
-              
+        
+//        urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/modelo_sabs_servicios.jasper");
                
         parameters.put("cod_transaccion", cod_transaccion);
         

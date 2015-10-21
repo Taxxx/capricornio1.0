@@ -38,8 +38,8 @@ public class JD_CONTRATADO extends javax.swing.JDialog {
 //                System.err.println("Con Datos");
                 this.JTF_NOMBRE_CONTRATADO.setText(datos[0].get("PROPONENTE_ADJUDICADO").toString());
                 this.JTF_NEMPRESA_CONTRATADO.setText(datos[0].get("EMPRESA_PROPONENTE_ADJUDICADO").toString());
-                this.JTF_CI_CONTRATADO.setText(datos[0].get("DIR_PROPONENTE_ADJUDICADO").toString());
-                this.JTF_DIRECCION_CONTRATADO.setText(datos[0].get("CI_PROPONENTE_ADJUDICADO").toString());
+                this.JTF_CI_CONTRATADO.setText(datos[0].get("CI_PROPONENTE_ADJUDICADO").toString());
+                this.JTF_DIRECCION_CONTRATADO.setText(datos[0].get("DIR_PROPONENTE_ADJUDICADO").toString());
                 this.JTF_DENOMINACION_CONTRATADO.setText(datos[0].get("DENO_PROPONENTE_ADJUDICADO").toString());
                 
             }

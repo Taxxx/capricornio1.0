@@ -317,7 +317,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getContratoContratantado(int cod_transaccion) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateContratoContratado(int cod_transaccion, java.lang.String proponente_adjudicado, java.lang.String empresa_proponente_adjudicado, java.lang.String dir_proponente_adjudicado, java.lang.String ci_proponente_adjudicado, java.lang.String deno_proponente_adjudicado) throws java.rmi.RemoteException;
     public java.util.HashMap[] getContratoInicio(int cod_transaccion) throws java.rmi.RemoteException;
-    public java.util.HashMap[] updateContratoInicio(int cod_transaccion, java.lang.String cuce_contratacion, java.lang.String asesor_juridico, java.lang.String sw_garantia_retencion, java.lang.String sw_anticipo, java.lang.String sw_garan_reten_func, java.lang.String sw_tipo_consultoria) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateContratoInicio(int cod_transaccion, java.lang.String cuce_contratacion, java.lang.String asesor_juridico, java.lang.String sw_garantia_retencion, java.lang.String sw_anticipo, java.lang.String sw_garan_reten_func, java.lang.String sw_tipo_consultoria, java.lang.String sw_tipo_servicio) throws java.rmi.RemoteException;
     public java.util.HashMap[] construyeContrato(java.lang.String tran, int cod_transaccion) throws java.rmi.RemoteException;
     public java.util.HashMap[] getItem(java.lang.String cod_item) throws java.rmi.RemoteException;
     public java.util.HashMap[] addItem(java.lang.String tran, int cod_trans_detalle, int cod_transaccion, int gestion) throws java.rmi.RemoteException;
