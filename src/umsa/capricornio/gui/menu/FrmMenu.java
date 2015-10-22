@@ -297,6 +297,9 @@ public class FrmMenu extends javax.swing.JFrame {
         ItmRepAlmacen2 = new javax.swing.JMenuItem();
         ItmRepAlmacen3 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("mio de mi");
@@ -722,6 +725,23 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenu7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         MenMenu.add(jMenu7);
 
+        jMenu8.setForeground(new java.awt.Color(255, 0, 0));
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/bookmark_document.png"))); // NOI18N
+        jMenu8.setText("Generacion de Contratos");
+        jMenu8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+
+        jMenuItem4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jMenuItem4.setForeground(new java.awt.Color(0, 0, 255));
+        jMenuItem4.setText("BECAS");
+        jMenu8.add(jMenuItem4);
+
+        jMenuItem5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jMenuItem5.setForeground(new java.awt.Color(0, 0, 255));
+        jMenuItem5.setText("PLAZO FIJO");
+        jMenu8.add(jMenuItem5);
+
+        MenMenu.add(jMenu8);
+
         setJMenuBar(MenMenu);
 
         setSize(new java.awt.Dimension(1210, 818));
@@ -961,9 +981,12 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;

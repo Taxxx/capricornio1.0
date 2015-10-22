@@ -21,14 +21,67 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
      * Creates new form JD_GeneraContrato2
      */
     int cod_transaccion;
+    String cuantia;
+    int cod_w;
+    
     GetResAdj genera_res_15 = new GetResAdj();
-    public JD_GeneraContrato2(java.awt.Frame parent, boolean modal, int cod_transaccion) {
+    public JD_GeneraContrato2(java.awt.Frame parent, boolean modal, int cod_transaccion,String cuantia, int cod_w) {
         super(parent, modal);
         initComponents();
          this.setLocationRelativeTo(null);
 //         this.cod_transaccion = cod_transaccion;
-         this.cod_transaccion = 2913;
+         System.err.println("el cod_transaccion es: "+cod_transaccion);
+         System.err.println("la cuantia es: "+cuantia);
+         System.err.println("el cod_w es: "+cod_w);
+//         this.cod_transaccion = 2913;
+         this.cod_transaccion = cod_transaccion;
+         this.cod_w = cod_w;
+         this.cuantia = cuantia;
         this.inicia(this.cod_transaccion);
+        JalaDatos(this.cod_transaccion);
+        bloquea();
+        this.JL_TITULO.setText("AJA!!!");
+        setTitulo();
+    }
+    private void setTitulo(){
+        System.err.println("hola palusa"+cod_w);
+        switch (cod_w) {
+            
+            case 1: 
+                this.JL_TITULO.setText("BIENES - "+this.cuantia);
+                break;
+            case 2: 
+                this.JL_TITULO.setText("PEDIDO MATERIALES - "+this.cuantia);
+                break;
+            case 3: 
+                this.JL_TITULO.setText("CONSULTORIAS - "+this.cuantia);
+                break;
+            case 4: 
+                this.JL_TITULO.setText("OBRAS - "+this.cuantia);
+                break;
+            case 5: 
+                this.JL_TITULO.setText("COMPRAS MAYORES - "+this.cuantia);
+                break;
+            case 6: 
+                this.JL_TITULO.setText("SERVICIOS - "+this.cuantia);
+                break;
+            default: 
+                System.err.println("a caray");
+                break;
+                  
+        }
+    }
+    private void bloquea(){
+        if(cod_w!=3){
+            this.JC_TipoConsult.setVisible(false);
+        }
+        if(cod_w!=1){
+            this.JC_FunGarRet.setVisible(false);
+        }
+        if(cod_w!=6){
+            this.JC_TipoServ.setVisible(false);
+        }
+         
     }
     
     private void inicia(int cod_transaccion){
@@ -37,7 +90,7 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            Map[] datos = puerto.getContrato2(cod_transaccion);
+            Map[] datos = puerto.getContratoInicio(cod_transaccion);
             if (datos != null) {
                 System.err.println("Con Datos");
 //                this.JTF_RazonSocialContratante.setText(datos[0].get("RAZON_SOCIAL_CONTRATANTE").toString());
@@ -52,7 +105,14 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
 //                this.JTF_Direccion_ProponenteAdjudicado.setText(datos[0].get("DIR_PROPONENTE_ADJUDICADO").toString());
 //                this.JTF_Denominacion_ProponenteAdjudicado.setText(datos[0].get("DENO_PROPONENTE_ADJUDICADO").toString());
 //                this.JTF_ObjetoContratacion.setText(datos[0].get("OBJETO_CONTRATACION").toString());
+                this.JTF_CUCE.setText(datos[0].get("CUCE_CONTRATACION").toString());
                 this.JTF_AsesorJuridico.setText(datos[0].get("ASESOR_JURIDICO").toString());
+                
+                this.JC_GarRet.setSelectedIndex(Integer.valueOf(datos[0].get("SW_GARANTIA_RETENCION").toString()));
+                this.JC_FunGarRet.setSelectedIndex(Integer.valueOf(datos[0].get("SW_GARAN_RETEN_FUNC").toString()));
+                this.JC_Anticipo.setSelectedIndex(Integer.valueOf(datos[0].get("SW_ANTICIPO").toString()));
+                this.JC_TipoConsult.setSelectedIndex(Integer.valueOf(datos[0].get("SW_TIPO_CONSULTORIA").toString()));
+                this.JC_TipoServ.setSelectedIndex(Integer.valueOf(datos[0].get("SW_TIPO_SERVICIO").toString()));
     //            this.JTF_RazonSocialContratante.setText(datos[0].get("B").toString());
             }
             else
@@ -84,13 +144,14 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        JTF_CUCE = new javax.swing.JTextField();
+        JL_TITULO = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        JC_TipoConsult = new javax.swing.JComboBox();
+        JC_TipoServ = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        JB_Guardar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -126,8 +187,10 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("CUCE:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("TIPO DE CONTRATO");
+        JL_TITULO.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        JL_TITULO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JL_TITULO.setText("TIPO DE CONTRATO");
+        JL_TITULO.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jButton6.setText("DOCUMENTOS INTEGRANTES");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -136,50 +199,55 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Escoja un tipo de Consultoria", "De Linea", "Por Producto" }));
+        JC_TipoConsult.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Escoja un tipo de Consultoria", "De Linea", "Por Producto" }));
+
+        JC_TipoServ.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Escoja un tipo de Servicio", "Servicios 26990", "Servicios Generales" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JC_Anticipo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(JC_GarRet, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JC_FunGarRet, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
-                .addGap(192, 192, 192))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(JTF_AsesorJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(JC_TipoServ, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(JC_TipoConsult, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JC_Anticipo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                        .addComponent(JTF_CUCE, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JC_GarRet, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JC_FunGarRet, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(JL_TITULO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(192, 192, 192))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(JL_TITULO)
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTF_CUCE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JC_GarRet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,8 +261,10 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
                     .addComponent(JC_Anticipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(JC_TipoConsult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JC_TipoServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(JTF_AsesorJuridico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -209,11 +279,11 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk (2).png"))); // NOI18N
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        JB_Guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/disk (2).png"))); // NOI18N
+        JB_Guardar.setText("Guardar");
+        JB_Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                JB_GuardarActionPerformed(evt);
             }
         });
 
@@ -231,28 +301,30 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(68, 68, 68))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jButton1)))
+                .addGap(20, 20, 20)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JB_Guardar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(JB_Guardar))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -270,19 +342,19 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void JB_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_GuardarActionPerformed
         // TODO add your handling code here:
         guardarContrato();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_JB_GuardarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -291,7 +363,8 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        genera_res_15.ReporteContratoGenerico(this.cod_transaccion);
+        this.JB_Guardar.doClick();
+        genera_res_15.ReporteContratoGenerico(this.cod_transaccion,this.cod_w,this.cuantia);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -312,6 +385,18 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         JDI.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void JalaDatos(int cod_transaccion){
+        try {
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            
+            puerto.construyeContrato("SET-ConstruyeContrato", cod_transaccion);
+            
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error :O <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
     private void guardarContrato(){
 //        System.err.println(this.JC_Anticipo.getSelectedIndex());
 //        System.err.println(this.JC_FunGarRet.getSelectedIndex());
@@ -320,18 +405,31 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         int sw_garantia_retencion = this.JC_GarRet.getSelectedIndex();
         int sw_anticipo = this.JC_Anticipo.getSelectedIndex();
         int sw_garan_reten_func = this.JC_FunGarRet.getSelectedIndex();
+        int sw_tipo_consultoria = this.JC_TipoConsult.getSelectedIndex();
+        int sw_tipo_servicio = this.JC_TipoServ.getSelectedIndex();
+        
         if(sw_garantia_retencion ==0){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br> ","SYSTEM CAPRICORN",
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br> entre garantia o retencion ","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
         }
         if(sw_anticipo ==0){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br> ","SYSTEM CAPRICORN",
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br>de anticipo ","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if(sw_garan_reten_func ==0){
-            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br> ","SYSTEM CAPRICORN",
+        if(sw_garan_reten_func ==0 && cod_w==1){
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br>de garantia de funcionamiento ","SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(sw_tipo_consultoria ==0 && cod_w==3){
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br>de tipo de consultoria","SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(sw_tipo_servicio ==0 && cod_w==6){
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> Debe escoger una opcion<br>de tipo de servicio","SYSTEM CAPRICORN",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -340,6 +438,12 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            puerto.updateContratoInicio(cod_transaccion
+                    ,this.JTF_CUCE.getText(),this.JTF_AsesorJuridico.getText()
+                    ,String.valueOf(this.JC_GarRet.getSelectedIndex()),String.valueOf(this.JC_Anticipo.getSelectedIndex())
+                    ,String.valueOf(this.JC_FunGarRet.getSelectedIndex()),String.valueOf(this.JC_TipoConsult.getSelectedIndex())
+                    ,String.valueOf(this.JC_TipoServ.getSelectedIndex())
+            );
             
 //            puerto.updateContrato2(cod_transaccion
 //                , this.JTF_ProponenteAdjudicado.getText(), this.JTF_Direccion_ProponenteAdjudicado.getText(), this.JTF_RazonSocialContratante.getText()
@@ -388,7 +492,7 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JD_GeneraContrato2 dialog = new JD_GeneraContrato2(new javax.swing.JFrame(), true, 0);
+                JD_GeneraContrato2 dialog = new JD_GeneraContrato2(new javax.swing.JFrame(), true, 0,"",0);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -401,22 +505,23 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_Guardar;
     private javax.swing.JComboBox JC_Anticipo;
     private javax.swing.JComboBox JC_FunGarRet;
     private javax.swing.JComboBox JC_GarRet;
+    private javax.swing.JComboBox JC_TipoConsult;
+    private javax.swing.JComboBox JC_TipoServ;
+    private javax.swing.JLabel JL_TITULO;
     private javax.swing.JTextField JTF_AsesorJuridico;
+    private javax.swing.JTextField JTF_CUCE;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,8 @@
 package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import java.util.Map;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
@@ -25,15 +27,47 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
         initComponents();
         this.cod_transaccion = cod_transaccion;
         this.setLocationRelativeTo(null);
+        CargaDocumentos_Integrantes(cod_transaccion);
     }
     private void CargaDocumentos_Integrantes(int cod_transaccion){
         try {
+            
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            Map[] datos = null;
+            Map[] datos = puerto.getContratoDocumentosIntegrantes(cod_transaccion);
             if (datos != null) {
-                System.err.println("Con Datos");
+                SimpleDateFormat formatoDeFecha = new SimpleDateFormat("MM/dd/yyyy");
+                System.err.println("Cargando..."+datos[0].get("NOTA_SOL_ADQ").toString());
+                System.err.println("Cargando..."+formatoDeFecha.parse(datos[0].get("FECHA_HOJA_RUTA").toString()));
+                
+                this.JTF_NOTA_ADQ.setText(datos[0].get("NOTA_SOL_ADQ").toString());
+                this.FECHA_NOTA_ADQ.setValue(formatoDeFecha.parse(datos[0].get("FECHA_NOTA_SOL_ADQ").toString()));
+                
+                this.JTF_CERT_PPTA.setText(datos[0].get("NRO_CERT_PPTA").toString());
+                this.FECHA_CERT_PPTA.setValue(formatoDeFecha.parse(datos[0].get("FECHA_CERT_PPTA").toString()));
+                
+                this.JTF_RESOLUCION_INICIO.setText(datos[0].get("NRO_RES_INI").toString());
+                this.FECHA_RESOLUCION_INICIO.setValue(formatoDeFecha.parse(datos[0].get("FECHA_RES_INI").toString()));
+                
+                this.JTF_INF_COM_CALF.setText(datos[0].get("NRO_INF_COM_CALF").toString());
+                this.FECHA_INF_COM_CALF.setValue(formatoDeFecha.parse(datos[0].get("FECHA_INF_COM_CALF").toString()));
+                
+                this.JTF_RES_ADJ.setText(datos[0].get("NRO_RES_ADJ").toString());
+                this.FECHA_RES_ADJ.setValue(formatoDeFecha.parse(datos[0].get("FECHA_RES_ADJ").toString()));
+                
+                this.JTF_TPGA.setText(datos[0].get("NRO_TPGA").toString());
+                this.FECHA_TPGA.setValue(formatoDeFecha.parse(datos[0].get("FECHA_TPGA").toString()));
+                
+                this.JTF_NOTFEPUB.setText(datos[0].get("NRO_NOTFEPUB").toString());
+                this.JTF_DOC_NOTFEPUB.setText(datos[0].get("DOC_NOTFEPUB").toString());
+                
+                this.JTF_HOJA_RUTA.setText(datos[0].get("NRO_HOJA_RUTA").toString());
+                this.FECHA_HOJA_RUTA.setValue(formatoDeFecha.parse(datos[0].get("FECHA_HOJA_RUTA").toString()));
+                
+                this.JTF_BOLETA_GARANTIA.setText(datos[0].get("NRO_BOLETA_GARANTIA").toString());
+                this.FECHA_BOLETA_GARANTIA.setValue(formatoDeFecha.parse(datos[0].get("FECHA_BOLETA_GARANTIA").toString()));
+                this.JTF_EMIT_BOLETA_GARANTIA.setText(datos[0].get("EMIT_BOLETA_GARANTIA").toString());
             }
             else
                 System.err.println("Vacio!!!");
@@ -45,13 +79,42 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd/MM/yyyy");
             
-            Map[] datos = null;
-            if (datos != null) {
-                System.err.println("Con Datos");
-            }
-            else
-                System.err.println("Vacio!!!");
+            System.err.println("vamo a darle: "+formatoDeFecha.format(this.FECHA_NOTA_ADQ.getValue()));
+            System.err.println("Vamooos: "+formatoDeFecha.format(this.FECHA_HOJA_RUTA.getValue()));
+            
+            Map[] datos = puerto.updateContratoDocumentosIntegrantes(cod_transaccion
+                    ,this.JTF_NOTA_ADQ.getText(),formatoDeFecha.format(this.FECHA_NOTA_ADQ.getValue())
+                    ,this.JTF_CERT_PPTA.getText(),formatoDeFecha.format(this.FECHA_CERT_PPTA.getValue())
+                    ,this.JTF_RESOLUCION_INICIO.getText(),formatoDeFecha.format(this.FECHA_RESOLUCION_INICIO.getValue())
+                    ,this.JTF_INF_COM_CALF.getText(),formatoDeFecha.format(this.FECHA_INF_COM_CALF.getValue())
+                    ,this.JTF_RES_ADJ.getText(),formatoDeFecha.format(this.FECHA_RES_ADJ.getValue())
+                    ,this.JTF_TPGA.getText(),formatoDeFecha.format(this.FECHA_TPGA.getValue())
+                    ,this.JTF_NOTFEPUB.getText(),this.JTF_DOC_NOTFEPUB.getText()
+                    ,this.JTF_HOJA_RUTA.getText(),formatoDeFecha.format(this.FECHA_HOJA_RUTA.getValue())
+                    ,this.JTF_BOLETA_GARANTIA.getText(),formatoDeFecha.format(this.FECHA_BOLETA_GARANTIA.getValue())
+                    ,this.JTF_EMIT_BOLETA_GARANTIA.getText()
+                  
+            );
+            
+            
+//            Map[] datos = puerto.updateContratoDocumentosIntegrantes(cod_transaccion
+//                    ,this.JTF_NOTA_ADQ.getText(),"16/04/1991"
+//                    ,this.JTF_CERT_PPTA.getText(),"13/04/1991"
+//                    ,this.JTF_RESOLUCION_INICIO.getText(),"13/04/1991"
+//                    ,this.JTF_INF_COM_CALF.getText(),"13/04/1991"
+//                    ,this.JTF_RES_ADJ.getText(),"13/04/1991"
+//                    ,this.JTF_TPGA.getText(),"13/04/1991"
+//                    ,this.JTF_NOTFEPUB.getText(),this.JTF_DOC_NOTFEPUB.getText()
+//                    ,this.JTF_HOJA_RUTA.getText(),"13/04/1991"
+//                    ,this.JTF_BOLETA_GARANTIA.getText(),"13/04/1991"
+//                    ,this.JTF_EMIT_BOLETA_GARANTIA.getText()
+//                  
+//            );
+            
+            
+            
         } catch (Exception e) {
             System.err.println("Error :O");          
         }
@@ -71,13 +134,12 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        JTF_NOTA_ADQ = new javax.swing.JTextField();
+        JTF_CERT_PPTA = new javax.swing.JTextField();
+        JTF_RESOLUCION_INICIO = new javax.swing.JTextField();
+        JTF_INF_COM_CALF = new javax.swing.JTextField();
+        JTF_RES_ADJ = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        JB_IMPRIMIR = new javax.swing.JButton();
         JD_GUARDAR = new javax.swing.JButton();
         JD_SALIR = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -85,21 +147,21 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        Fecha_Plazo1 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo2 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo3 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo4 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo5 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo6 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo8 = new net.sf.nachocalendar.components.DateField();
-        Fecha_Plazo9 = new net.sf.nachocalendar.components.DateField();
-        jTextField11 = new javax.swing.JTextField();
+        JTF_TPGA = new javax.swing.JTextField();
+        JTF_NOTFEPUB = new javax.swing.JTextField();
+        JTF_HOJA_RUTA = new javax.swing.JTextField();
+        JTF_BOLETA_GARANTIA = new javax.swing.JTextField();
+        FECHA_NOTA_ADQ = new net.sf.nachocalendar.components.DateField();
+        FECHA_CERT_PPTA = new net.sf.nachocalendar.components.DateField();
+        FECHA_RESOLUCION_INICIO = new net.sf.nachocalendar.components.DateField();
+        FECHA_INF_COM_CALF = new net.sf.nachocalendar.components.DateField();
+        FECHA_RES_ADJ = new net.sf.nachocalendar.components.DateField();
+        FECHA_TPGA = new net.sf.nachocalendar.components.DateField();
+        FECHA_HOJA_RUTA = new net.sf.nachocalendar.components.DateField();
+        FECHA_BOLETA_GARANTIA = new net.sf.nachocalendar.components.DateField();
+        JTF_DOC_NOTFEPUB = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        JTF_EMIT_BOLETA_GARANTIA = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("DOCUMENTOS INTEGRANTES");
@@ -114,71 +176,71 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
 
         jLabel5.setText("No. CERT.PPTA.:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        JTF_NOTA_ADQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                JTF_NOTA_ADQActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        JTF_CERT_PPTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                JTF_CERT_PPTAActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        JTF_RESOLUCION_INICIO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                JTF_RESOLUCION_INICIOActionPerformed(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        JTF_INF_COM_CALF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                JTF_INF_COM_CALFActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        JTF_RES_ADJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                JTF_RES_ADJActionPerformed(evt);
             }
         });
-
-        JB_IMPRIMIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/printer.png"))); // NOI18N
-        JB_IMPRIMIR.setText("Imprimir");
 
         JD_GUARDAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/save_16.png"))); // NOI18N
         JD_GUARDAR.setText("Guardar");
+        JD_GUARDAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JD_GUARDARActionPerformed(evt);
+            }
+        });
 
         JD_SALIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
         JD_SALIR.setText("SALIR");
+        JD_SALIR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JD_SALIRActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JB_IMPRIMIR)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JD_GUARDAR))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(JD_SALIR)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(JD_GUARDAR)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JD_SALIR)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JB_IMPRIMIR)
-                    .addComponent(JD_GUARDAR))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JD_SALIR)
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(JD_GUARDAR)
+                    .addComponent(JD_SALIR))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jLabel6.setText("No. TESTIMONIO DE PODER G.A.:");
@@ -191,105 +253,105 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
 
         jLabel11.setText("No. BOLETA GARANTIA:");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        JTF_TPGA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                JTF_TPGAActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        JTF_NOTFEPUB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                JTF_NOTFEPUBActionPerformed(evt);
             }
         });
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        JTF_HOJA_RUTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                JTF_HOJA_RUTAActionPerformed(evt);
             }
         });
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        JTF_BOLETA_GARANTIA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                JTF_BOLETA_GARANTIAActionPerformed(evt);
             }
         });
 
-        Fecha_Plazo1.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo1.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_NOTA_ADQ.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_NOTA_ADQ.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_NOTA_ADQ.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo1KeyPressed(evt);
+                FECHA_NOTA_ADQKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo2.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo2.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_CERT_PPTA.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_CERT_PPTA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_CERT_PPTA.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo2KeyPressed(evt);
+                FECHA_CERT_PPTAKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo3.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo3.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_RESOLUCION_INICIO.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_RESOLUCION_INICIO.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_RESOLUCION_INICIO.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo3KeyPressed(evt);
+                FECHA_RESOLUCION_INICIOKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo4.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo4.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_INF_COM_CALF.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_INF_COM_CALF.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_INF_COM_CALF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo4KeyPressed(evt);
+                FECHA_INF_COM_CALFKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo5.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo5.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_RES_ADJ.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_RES_ADJ.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_RES_ADJ.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo5KeyPressed(evt);
+                FECHA_RES_ADJKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo6.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo6.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_TPGA.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_TPGA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_TPGA.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo6KeyPressed(evt);
+                FECHA_TPGAKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo8.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo8.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_HOJA_RUTA.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_HOJA_RUTA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_HOJA_RUTA.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo8KeyPressed(evt);
+                FECHA_HOJA_RUTAKeyPressed(evt);
             }
         });
 
-        Fecha_Plazo9.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
-        Fecha_Plazo9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Fecha_Plazo9.addKeyListener(new java.awt.event.KeyAdapter() {
+        FECHA_BOLETA_GARANTIA.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_BOLETA_GARANTIA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_BOLETA_GARANTIA.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Fecha_Plazo9KeyPressed(evt);
+                FECHA_BOLETA_GARANTIAKeyPressed(evt);
             }
         });
 
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        JTF_DOC_NOTFEPUB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                JTF_DOC_NOTFEPUBActionPerformed(evt);
             }
         });
 
         jLabel12.setText("BOLETA GARANTIA EMITIDA POR:");
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        JTF_EMIT_BOLETA_GARANTIA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                JTF_EMIT_BOLETA_GARANTIAActionPerformed(evt);
             }
         });
 
@@ -316,50 +378,50 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTF_NOTA_ADQ, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha_Plazo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(FECHA_NOTA_ADQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTF_INF_COM_CALF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha_Plazo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(FECHA_INF_COM_CALF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JTF_BOLETA_GARANTIA, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_HOJA_RUTA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Fecha_Plazo8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FECHA_HOJA_RUTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(Fecha_Plazo9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jTextField12)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(FECHA_BOLETA_GARANTIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(JTF_EMIT_BOLETA_GARANTIA)
+                            .addComponent(JTF_DOC_NOTFEPUB, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(JTF_NOTFEPUB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(JTF_RESOLUCION_INICIO, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_RES_ADJ)
+                                    .addComponent(JTF_TPGA, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTF_CERT_PPTA, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(Fecha_Plazo5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(Fecha_Plazo2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(Fecha_Plazo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(FECHA_RES_ADJ, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(FECHA_CERT_PPTA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(FECHA_RESOLUCION_INICIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(Fecha_Plazo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(FECHA_TPGA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
+                .addGap(169, 169, 169)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -375,147 +437,158 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel1)
-                                            .addComponent(Fecha_Plazo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(FECHA_NOTA_ADQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(JTF_NOTA_ADQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                 .addComponent(jLabel5)
-                                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(Fecha_Plazo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(JTF_CERT_PPTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(FECHA_CERT_PPTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                 .addComponent(jLabel2)
-                                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(Fecha_Plazo3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(JTF_RESOLUCION_INICIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(FECHA_RESOLUCION_INICIO, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel3)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(Fecha_Plazo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(JTF_INF_COM_CALF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(FECHA_INF_COM_CALF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addComponent(Fecha_Plazo5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(FECHA_RES_ADJ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(JTF_RES_ADJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(12, 12, 12)
                                     .addComponent(jLabel6))
-                                .addComponent(Fecha_Plazo6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(FECHA_TPGA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JTF_TPGA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JTF_NOTFEPUB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel9)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JTF_DOC_NOTFEPUB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Fecha_Plazo8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(JTF_HOJA_RUTA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FECHA_HOJA_RUTA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTF_BOLETA_GARANTIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Fecha_Plazo9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FECHA_BOLETA_GARANTIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                    .addComponent(JTF_EMIT_BOLETA_GARANTIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void JTF_NOTA_ADQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_NOTA_ADQActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_JTF_NOTA_ADQActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void JTF_CERT_PPTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_CERT_PPTAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_JTF_CERT_PPTAActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void JTF_RESOLUCION_INICIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_RESOLUCION_INICIOActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_JTF_RESOLUCION_INICIOActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void JTF_INF_COM_CALFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_INF_COM_CALFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_JTF_INF_COM_CALFActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void JTF_RES_ADJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_RES_ADJActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_JTF_RES_ADJActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void JTF_TPGAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_TPGAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_JTF_TPGAActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void JTF_NOTFEPUBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_NOTFEPUBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_JTF_NOTFEPUBActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void JTF_HOJA_RUTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_HOJA_RUTAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_JTF_HOJA_RUTAActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void JTF_BOLETA_GARANTIAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_BOLETA_GARANTIAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_JTF_BOLETA_GARANTIAActionPerformed
 
-    private void Fecha_Plazo1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo1KeyPressed
+    private void FECHA_NOTA_ADQKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_NOTA_ADQKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo1KeyPressed
+    }//GEN-LAST:event_FECHA_NOTA_ADQKeyPressed
 
-    private void Fecha_Plazo2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo2KeyPressed
+    private void FECHA_CERT_PPTAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_CERT_PPTAKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo2KeyPressed
+    }//GEN-LAST:event_FECHA_CERT_PPTAKeyPressed
 
-    private void Fecha_Plazo3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo3KeyPressed
+    private void FECHA_RESOLUCION_INICIOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_RESOLUCION_INICIOKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo3KeyPressed
+    }//GEN-LAST:event_FECHA_RESOLUCION_INICIOKeyPressed
 
-    private void Fecha_Plazo4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo4KeyPressed
+    private void FECHA_INF_COM_CALFKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_INF_COM_CALFKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo4KeyPressed
+    }//GEN-LAST:event_FECHA_INF_COM_CALFKeyPressed
 
-    private void Fecha_Plazo5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo5KeyPressed
+    private void FECHA_RES_ADJKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_RES_ADJKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo5KeyPressed
+    }//GEN-LAST:event_FECHA_RES_ADJKeyPressed
 
-    private void Fecha_Plazo6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo6KeyPressed
+    private void FECHA_TPGAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_TPGAKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo6KeyPressed
+    }//GEN-LAST:event_FECHA_TPGAKeyPressed
 
-    private void Fecha_Plazo8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo8KeyPressed
+    private void FECHA_HOJA_RUTAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_HOJA_RUTAKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo8KeyPressed
+    }//GEN-LAST:event_FECHA_HOJA_RUTAKeyPressed
 
-    private void Fecha_Plazo9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fecha_Plazo9KeyPressed
+    private void FECHA_BOLETA_GARANTIAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_BOLETA_GARANTIAKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fecha_Plazo9KeyPressed
+    }//GEN-LAST:event_FECHA_BOLETA_GARANTIAKeyPressed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void JTF_DOC_NOTFEPUBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_DOC_NOTFEPUBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_JTF_DOC_NOTFEPUBActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void JTF_EMIT_BOLETA_GARANTIAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTF_EMIT_BOLETA_GARANTIAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_JTF_EMIT_BOLETA_GARANTIAActionPerformed
+
+    private void JD_GUARDARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JD_GUARDARActionPerformed
+        // TODO add your handling code here:
+        
+        GuardaDocumentos_Integrantes(this.cod_transaccion);
+    }//GEN-LAST:event_JD_GUARDARActionPerformed
+
+    private void JD_SALIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JD_SALIRActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_JD_SALIRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -560,17 +633,27 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo1;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo2;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo3;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo4;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo5;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo6;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo8;
-    private net.sf.nachocalendar.components.DateField Fecha_Plazo9;
-    private javax.swing.JButton JB_IMPRIMIR;
+    private net.sf.nachocalendar.components.DateField FECHA_BOLETA_GARANTIA;
+    private net.sf.nachocalendar.components.DateField FECHA_CERT_PPTA;
+    private net.sf.nachocalendar.components.DateField FECHA_HOJA_RUTA;
+    private net.sf.nachocalendar.components.DateField FECHA_INF_COM_CALF;
+    private net.sf.nachocalendar.components.DateField FECHA_NOTA_ADQ;
+    private net.sf.nachocalendar.components.DateField FECHA_RESOLUCION_INICIO;
+    private net.sf.nachocalendar.components.DateField FECHA_RES_ADJ;
+    private net.sf.nachocalendar.components.DateField FECHA_TPGA;
     private javax.swing.JButton JD_GUARDAR;
     private javax.swing.JButton JD_SALIR;
+    private javax.swing.JTextField JTF_BOLETA_GARANTIA;
+    private javax.swing.JTextField JTF_CERT_PPTA;
+    private javax.swing.JTextField JTF_DOC_NOTFEPUB;
+    private javax.swing.JTextField JTF_EMIT_BOLETA_GARANTIA;
+    private javax.swing.JTextField JTF_HOJA_RUTA;
+    private javax.swing.JTextField JTF_INF_COM_CALF;
+    private javax.swing.JTextField JTF_NOTA_ADQ;
+    private javax.swing.JTextField JTF_NOTFEPUB;
+    private javax.swing.JTextField JTF_RESOLUCION_INICIO;
+    private javax.swing.JTextField JTF_RES_ADJ;
+    private javax.swing.JTextField JTF_TPGA;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -583,16 +666,5 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,14 +44,14 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="JTF_NOTA_ADQ" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha_Plazo1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FECHA_NOTA_ADQ" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jTextField4" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="JTF_INF_COM_CALF" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha_Plazo4" min="-2" max="-2" attributes="0"/>
+                              <Component id="FECHA_INF_COM_CALF" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -60,43 +60,43 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jTextField9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField8" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="JTF_BOLETA_GARANTIA" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JTF_HOJA_RUTA" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="Fecha_Plazo8" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FECHA_HOJA_RUTA" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="Fecha_Plazo9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FECHA_BOLETA_GARANTIA" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="jTextField12" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField11" alignment="1" max="32767" attributes="0"/>
+                          <Component id="JTF_EMIT_BOLETA_GARANTIA" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JTF_DOC_NOTFEPUB" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTextField7" alignment="0" pref="100" max="32767" attributes="0"/>
-                                  <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField5" max="32767" attributes="0"/>
-                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JTF_NOTFEPUB" alignment="0" pref="100" max="32767" attributes="0"/>
+                                  <Component id="JTF_RESOLUCION_INICIO" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JTF_RES_ADJ" max="32767" attributes="0"/>
+                                  <Component id="JTF_TPGA" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JTF_CERT_PPTA" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="Fecha_Plazo5" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="Fecha_Plazo2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="FECHA_RES_ADJ" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="FECHA_CERT_PPTA" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha_Plazo3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FECHA_RESOLUCION_INICIO" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="Fecha_Plazo6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FECHA_TPGA" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -106,7 +106,7 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -124,40 +124,40 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Fecha_Plazo1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FECHA_NOTA_ADQ" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JTF_NOTA_ADQ" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="JTF_CERT_PPTA" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha_Plazo2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FECHA_CERT_PPTA" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="JTF_RESOLUCION_INICIO" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha_Plazo3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FECHA_RESOLUCION_INICIO" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="JTF_INF_COM_CALF" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="Fecha_Plazo4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FECHA_INF_COM_CALF" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fecha_Plazo5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FECHA_RES_ADJ" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTF_RES_ADJ" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -166,14 +166,14 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Fecha_Plazo6" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FECHA_TPGA" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jTextField6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTF_TPGA" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTF_NOTFEPUB" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -181,34 +181,34 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JTF_DOC_NOTFEPUB" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fecha_Plazo8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JTF_HOJA_RUTA" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FECHA_HOJA_RUTA" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTF_BOLETA_GARANTIA" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="Fecha_Plazo9" min="-2" max="-2" attributes="0"/>
+                      <Component id="FECHA_BOLETA_GARANTIA" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField12" min="-2" max="-2" attributes="0"/>
+                  <Component id="JTF_EMIT_BOLETA_GARANTIA" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -239,29 +239,29 @@
         <Property name="text" type="java.lang.String" value="No. CERT.PPTA.:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="JTF_NOTA_ADQ">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_NOTA_ADQActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="JTF_CERT_PPTA">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_CERT_PPTAActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="JTF_RESOLUCION_INICIO">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_RESOLUCION_INICIOActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="JTF_INF_COM_CALF">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_INF_COM_CALFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="JTF_RES_ADJ">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_RES_ADJActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -270,19 +270,11 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="JB_IMPRIMIR" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="JD_GUARDAR" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="JD_SALIR" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <Component id="JD_GUARDAR" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="JD_SALIR" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -291,25 +283,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="JB_IMPRIMIR" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JD_GUARDAR" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JD_SALIR" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="JD_SALIR" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="JB_IMPRIMIR">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/umsa/capricornio/gui/images/printer.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Imprimir"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="JD_GUARDAR">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -317,6 +299,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JD_GUARDARActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="JD_SALIR">
           <Properties>
@@ -325,6 +310,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SALIR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JD_SALIRActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -353,27 +341,27 @@
         <Property name="text" type="java.lang.String" value="No. BOLETA GARANTIA:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="JTF_TPGA">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_TPGAActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField7">
+    <Component class="javax.swing.JTextField" name="JTF_NOTFEPUB">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField7ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_NOTFEPUBActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
+    <Component class="javax.swing.JTextField" name="JTF_HOJA_RUTA">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_HOJA_RUTAActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField9">
+    <Component class="javax.swing.JTextField" name="JTF_BOLETA_GARANTIA">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField9ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_BOLETA_GARANTIAActionPerformed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo1">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_NOTA_ADQ">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -383,10 +371,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo1KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_NOTA_ADQKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo2">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_CERT_PPTA">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -396,10 +384,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo2KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_CERT_PPTAKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo3">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_RESOLUCION_INICIO">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -409,10 +397,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo3KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_RESOLUCION_INICIOKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo4">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_INF_COM_CALF">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -422,10 +410,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo4KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_INF_COM_CALFKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo5">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_RES_ADJ">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -435,10 +423,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo5KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_RES_ADJKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo6">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_TPGA">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -448,10 +436,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo6KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_TPGAKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo8">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_HOJA_RUTA">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -461,10 +449,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo8KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_HOJA_RUTAKeyPressed"/>
       </Events>
     </Component>
-    <Component class="net.sf.nachocalendar.components.DateField" name="Fecha_Plazo9">
+    <Component class="net.sf.nachocalendar.components.DateField" name="FECHA_BOLETA_GARANTIA">
       <Properties>
         <Property name="dateFormat" type="java.text.DateFormat" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="DateFormat.getDateInstance(DateFormat.MEDIUM)" type="code"/>
@@ -474,12 +462,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Fecha_Plazo9KeyPressed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FECHA_BOLETA_GARANTIAKeyPressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField11">
+    <Component class="javax.swing.JTextField" name="JTF_DOC_NOTFEPUB">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_DOC_NOTFEPUBActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
@@ -487,9 +475,9 @@
         <Property name="text" type="java.lang.String" value="BOLETA GARANTIA EMITIDA POR:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField12">
+    <Component class="javax.swing.JTextField" name="JTF_EMIT_BOLETA_GARANTIA">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField12ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTF_EMIT_BOLETA_GARANTIAActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

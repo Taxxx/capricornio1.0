@@ -24,15 +24,24 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
         initComponents();
         this.cod_transaccion = cod_transaccion;
         this.setLocationRelativeTo(null);
+        CargaContratante(this.cod_transaccion);
     }
     private void CargaContratante(int cod_transaccion){
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            Map[] datos = null;
+            Map[] datos = puerto.getContratoContratante(cod_transaccion);
             if (datos != null) {
                 System.err.println("Con Datos");
+                
+                this.JTF_RSOCIAL_CONTRATANTE.setText(datos[0].get("RAZON_SOCIAL_CONTRATANTE").toString());
+                this.JTF_NIT_CONTRATANTE.setText(datos[0].get("NIT_CONTRATANTE").toString());
+                this.JTF_DIRECCION_CONTRATANTE.setText(datos[0].get("DIRECCION_CONTRATANTE").toString());
+                this.JTF_CIUDAD_CONTRATANTE.setText(datos[0].get("CIUDAD_CONTRATANTE").toString());
+                this.JTF_NOMBRE_RPA_RPC.setText(datos[0].get("REP_LEG_CONTRATANTE").toString());
+                this.JTF_CI_RPC_RPA.setText(datos[0].get("CI_REP_LEG_CONTRATANTE").toString());
+                this.JTF_CARGO_RPC_RPA.setText(datos[0].get("CARGO_REP_LEG_CONTRATANTE").toString());
             }
             else
                 System.err.println("Vacio!!!");
@@ -45,12 +54,21 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
-            Map[] datos = null;
-            if (datos != null) {
-                System.err.println("Con Datos");
-            }
-            else
-                System.err.println("Vacio!!!");
+            Map[] datos = puerto.updateContratoContratante(cod_transaccion
+                    ,this.JTF_RSOCIAL_CONTRATANTE.getText()
+                    ,this.JTF_NIT_CONTRATANTE.getText()
+                    ,this.JTF_DIRECCION_CONTRATANTE.getText()
+                    ,this.JTF_CIUDAD_CONTRATANTE.getText()
+                    ,this.JTF_NOMBRE_RPA_RPC.getText()
+                    ,this.JTF_CARGO_RPC_RPA.getText()
+                    ,this.JTF_CI_RPC_RPA.getText()
+            );
+            
+//            if (datos != null) {
+//                System.err.println("Con Datos");
+//            }
+//            else
+//                System.err.println("Vacio!!!");
         } catch (Exception e) {
             System.err.println("Error :O");          
         }
@@ -74,7 +92,6 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
         JTF_DIRECCION_CONTRATANTE = new javax.swing.JTextField();
         JTF_CIUDAD_CONTRATANTE = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        JB_IMPRIMIR = new javax.swing.JButton();
         JD_GUARDAR = new javax.swing.JButton();
         JD_SALIR = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -120,29 +137,31 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
             }
         });
 
-        JB_IMPRIMIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/printer.png"))); // NOI18N
-        JB_IMPRIMIR.setText("Imprimir");
-
         JD_GUARDAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/save_16.png"))); // NOI18N
         JD_GUARDAR.setText("Guardar");
+        JD_GUARDAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JD_GUARDARActionPerformed(evt);
+            }
+        });
 
         JD_SALIR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/book_previous.png"))); // NOI18N
         JD_SALIR.setText("SALIR");
+        JD_SALIR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JD_SALIRActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(JB_IMPRIMIR)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JD_GUARDAR))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(JD_SALIR)))
+                .addGap(15, 15, 15)
+                .addComponent(JD_GUARDAR)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JD_SALIR)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -150,11 +169,9 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JB_IMPRIMIR)
-                    .addComponent(JD_GUARDAR))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JD_SALIR)
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(JD_GUARDAR)
+                    .addComponent(JD_SALIR))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jLabel6.setText("NOMBRE (RPC/RPA):");
@@ -202,9 +219,6 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
                             .addComponent(JTF_NIT_CONTRATANTE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JTF_RSOCIAL_CONTRATANTE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -215,7 +229,10 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
                             .addComponent(JTF_CI_RPC_RPA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JTF_NOMBRE_RPA_RPC, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JTF_CARGO_RPC_RPA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(1, 1, 1)))
+                        .addGap(1, 1, 1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -287,6 +304,16 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTF_CARGO_RPC_RPAActionPerformed
 
+    private void JD_GUARDARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JD_GUARDARActionPerformed
+        // TODO add your handling code here:
+        GuardaContratante(this.cod_transaccion);
+    }//GEN-LAST:event_JD_GUARDARActionPerformed
+
+    private void JD_SALIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JD_SALIRActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_JD_SALIRActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -330,7 +357,6 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JB_IMPRIMIR;
     private javax.swing.JButton JD_GUARDAR;
     private javax.swing.JButton JD_SALIR;
     private javax.swing.JTextField JTF_CARGO_RPC_RPA;
