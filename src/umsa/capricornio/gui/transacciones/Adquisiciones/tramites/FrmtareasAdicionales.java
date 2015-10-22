@@ -11,7 +11,9 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Map;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSSoapBindingStub;
@@ -36,18 +38,21 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
     private Runtime r;
     GetResAdj genera_res_15 = new GetResAdj();
     public JTextField jt;
-    public JButton jb;
+    public JCheckBox jb;
     public JLabel jl;
-    public FrmtareasAdicionales(FrmMenu menu,int cod_user, int cod_rol,int gestion) {
+    public String mes;
+    public FrmtareasAdicionales(FrmMenu menu,int cod_user, int cod_rol,int gestion,String mes) {
         this.menu=menu;
         //this.btr=bt;
         this.cod_user=cod_user;
         this.cod_rol=cod_rol;
         this.gestion=gestion;
-        
+        this.mes=mes;
         //jPanel1.setSize(73,612);
         initComponents();
-        this.jButton1.setVisible(false);
+        //this.verificar_lleno();
+        //jComboBox1.setVisible(false);
+        //this.jButton1.setVisible(false);
     }
 
     /**
@@ -66,7 +71,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JCheckBox();
         BtnReporte1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         BtnReporte2 = new javax.swing.JButton();
@@ -99,7 +104,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("NUEVA  TAREA");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/cancel.png"))); // NOI18N
+        jButton1.setText("jCheckBox1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,9 +114,9 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
                 .addGap(54, 54, 54)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         jPanel1Layout.setVerticalGroup(
@@ -202,12 +207,13 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             String x=jComboBox1.getSelectedItem().toString();
             //System.out.println(x);
-            Map[] datos =puerto.mostrartareas(this.cod_user,jComboBox1.getSelectedItem().toString(),gestion);
+            Map[] datos =puerto.mostrartareas(this.cod_user,x,gestion);
             //Map[] datos=null;
             if(datos!=null)
             {
                 almacenados=datos.length;
                 jTextField1.setText(datos[0].get("TAREA").toString());
+                jButton1.setName(datos[0].get("ID").toString());
                 for(int i=1;i<datos.length;i++)
                 {
                     
@@ -217,7 +223,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
                     jl=new JLabel();
                     jl.setText("nueva tarea");
                     jl.setVisible(true);
-                    jb=new JButton();
+                    jb=new JCheckBox();
                     jb.setVisible(true);
                     jb.setIcon(jButton1.getIcon());
                     int a=0,b=0,c,d;
@@ -253,6 +259,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
                         c=jButton1.getWidth();
                         d=jButton1.getHeight();
                         System.out.println("ab:"+a+" bb: "+b+" cb: "+c+" db: "+d);
+                        jb.setName(datos[i].get("ID").toString());
                         jb.setBounds(a, b, c, d);
                         jPanel1.add(this.jb);
                     }
@@ -282,6 +289,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
                         //b=jButton1.getY()+30;
                         c=jButton1.getWidth();
                         d=jButton1.getHeight();
+                        jb.setName(datos[i].get("ID").toString());
                         jb.setBounds(a, b, c, d);
                         jPanel1.add(this.jb);
                     }
@@ -299,6 +307,15 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
         }
         
     }
+    private void elimina_componentes()
+    {
+        //jPanel1.removeAll();
+        //jPanel1.re
+        //System.out.println("esta removiendo todo");
+        //initComponents();
+        for(int i=3;i<jPanel1.getComponentCount();i++)
+            jPanel1.remove(jPanel1.getComponent(i));
+    }
     private void BtnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporteActionPerformed
         jt=new JTextField();
         jt.setText("");
@@ -306,7 +323,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
         jl=new JLabel();
         jl.setText("nueva tarea");
         jl.setVisible(true);
-        jb=new JButton();
+        jb=new JCheckBox();
         jb.setVisible(true);
         jb.setIcon(jButton1.getIcon());
         int a=0,b=0,c,d;
@@ -385,17 +402,57 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
     private void BtnReporte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporte1ActionPerformed
         // TODO add your handling code here:
         guardando();
+        CerrarFrame();
     }//GEN-LAST:event_BtnReporte1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        //elimina_componentes();
         verificar_lleno();
+        jComboBox1.setVisible(false);
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void BtnReporte2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReporte2ActionPerformed
         // TODO add your handling code here:boolean df=jTextField1.getFocusTraversalKeysEnabled();
-        String df=jTextField1.getSelectedText();
-        System.out.println("este es el seleccionado "+df);
+        int x=jPanel1.getComponentCount();
+        JTextField[] jt=new JTextField[x];
+        JCheckBox[] jc=new JCheckBox[x];
+        System.out.println("esta es la cantidad del panel "+x);
+        int t=1,i=0;
+        /*System.out.println("aqui se muestra "+jPanel1.getComponent(1));
+        jt[0]=(JTextField)jPanel1.getComponent(1);
+        System.out.println(jt[0].getText());*/
+        while(t<x)
+        {
+            
+            System.out.println(t);
+            jt[i]=(JTextField)jPanel1.getComponent(t);
+            t=t+1;
+            jc[i]=(JCheckBox)jPanel1.getComponent(t);
+            System.out.println("aqui se muestra "+jPanel1.getComponent(t));
+            System.out.println("esto es lo que hay que ver "+jt[i].getText());
+            if(jc[i].getSelectedObjects()!=null)
+            {
+                try
+                {
+                    AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+                    AdquiWS_PortType puerto = servicio.getAdquiWS();
+                    String xx=jc[i].getName();
+                    Map[] datos =puerto.eliminatarea(Integer.parseInt(xx));
+                    
+                }
+                catch(Exception e)
+                {
+
+                }
+            }
+                
+            t=t+2;
+            i++;
+        }
+        CerrarFrame();
+        //this.verificar_lleno();
+        
     }//GEN-LAST:event_BtnReporte2ActionPerformed
     private void guardando()
     {
@@ -445,7 +502,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnReporte1;
     private javax.swing.JButton BtnReporte2;
     private javax.swing.JButton BtnSalir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

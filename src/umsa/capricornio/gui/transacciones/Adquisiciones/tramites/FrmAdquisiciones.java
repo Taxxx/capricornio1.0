@@ -165,7 +165,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
+            System.out.println("DENTRO DEL POPULAR LLENA Estados --> cod_rol: "+cod_rol+"cod_almacen: "+cod_almacen+" cod_tramite: "+cod_tramite+"gestion: "+gestion+" ini: "+ini+" fin: "+fin);
             Map[] datos=puerto.getTransaccionEstado(cod_almacen,cod_tramite,gestion,ini,fin);
             CerearTablaEstados();
             if (datos!=null){

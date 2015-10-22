@@ -914,7 +914,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        AbrirFrameInterno(new FrmtareasAdicionales(this,cod_usuario,cod_rol,this.gestion));
+        AbrirFrameInterno(new FrmtareasAdicionales(this,cod_usuario,cod_rol,this.gestion,"d"));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -30,6 +30,7 @@ import umsa.capricornio.gui.transacciones.reporte.RepTransaccion;
 import umsa.capricornio.gui.transacciones.reporte.Reportes;
 import umsa.capricornio.gui.transacciones.tablas.TablaTransaccionBandejaGral;
 import umsa.capricornio.gui.transacciones.tablas.TablaTransaccionEstados;
+import umsa.capricornio.gui.transacciones.tablas.TablaTransaccionEstados1;
 import umsa.capricornio.utilitarios.herramientas.MiRenderer;
 import umsa.capricornio.utilitarios.herramientas.i_formatterDate;
 
@@ -41,7 +42,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
 
     TablaTransaccionBandejaGral bandeja;
     TablaTransaccionEstados estados;
-    TablaTransaccionEstados enviados;
+    TablaTransaccionEstados1 enviados;
     
     FrmMenu menu;
     Reportes reportes;
@@ -106,21 +107,22 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     
     private void ConstruyeTablaEnviados()
     {
-        enviados = new TablaTransaccionEstados();
+        enviados = new TablaTransaccionEstados1();
         TblEnviados.setAutoCreateColumnsFromModel(false);
         TblEnviados.setModel(enviados);
 
-        for (int k = 0; k < TablaTransaccionEstados.m_columns.length; k++) {
-            TableCellRenderer renderer = new MiRenderer(TablaTransaccionEstados.m_columns[k].m_alignment);
+        for (int k = 0; k < TablaTransaccionEstados1.m_columns.length; k++) {
+            TableCellRenderer renderer = new MiRenderer(TablaTransaccionEstados1.m_columns[k].m_alignment);
             /*DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
             renderer.setHorizontalAlignment(DatosTablaObligacionBandeja.m_columns[k].m_alignment);*/
-            TableColumn column = new TableColumn(k, TablaTransaccionEstados.m_columns[k].m_width, renderer, null);
+            TableColumn column = new TableColumn(k, TablaTransaccionEstados1.m_columns[k].m_width, renderer, null);
+            //column.setMaxWidth(TablaTransaccionBandejaGral.m_columns[k].m_width);
             TblEnviados.addColumn(column);
         }
         JTableHeader header = TblEnviados.getTableHeader();
         header.setUpdateTableInRealTime(true);
         header.setReorderingAllowed(true);
-        System.out.println("aqui lo coloca en el panel "+TablaTransaccionEstados.m_columns.length);
+        System.out.println("aqui lo coloca en el panel "+TablaTransaccionEstados1.m_columns.length);
         PnlEniviados.getViewport().add(TblEnviados);
     }
         
@@ -227,14 +229,17 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     
     public void LlenaEnviados()
     {
-        try{
+        if(this.cod_rol!=2)
+        {
+            System.out.println("esto es ppto");
+            try{
             //String []tram=CmbTramite.getSelectedItem().toString().split(" - ");
             //int cod_tram=Integer.parseInt(tram[0]);
             System.err.println("esta entrando en el rol 0");
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("Wujuuuu --->>>>   Ini: "+ini+", Fin: "+fin);
-            Map[] datos=puerto.getTransaccionEstado(cod_almacen,1,gestion,ini,fin);
+            Map[] datos=puerto.getTransaccionEstado(cod_almacen,1,gestion,0,100000);
             CerearTablaEnviados();
             if (datos!=null){
                 //System.err.println("esta entrando en el rol 0");
@@ -264,8 +269,92 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
                     System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 8));
                     TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),c,9); 
                     System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 9));
+                    TblEnviados.setValueAt(datos[c].get("CUANTIA"),c,10);
+                    TblEnviados.setValueAt(datos[c].get("DEL"),c,11);
+                    TblEnviados.setValueAt(datos[c].get("HASTA"),c,12);
                     //TblEnviados.setVisible(true);
                     //PnlEniviados.add(TblEnviados);
+                    
+                    /*TblTransaccionEstado.setValueAt(datos[c].get("COD_TRANS_NRO"),c,0);
+                    TblTransaccionEstado.setValueAt(datos[c].get("COD_ESTADO"),c,1);
+                    TblTransaccionEstado.setValueAt(datos[c].get("COD_TRAMITE"),c,2);
+                    TblTransaccionEstado.setValueAt(datos[c].get("NRO"),c,3);
+                    TblTransaccionEstado.setValueAt(datos[c].get("TRAMITE"),c,4);
+                    TblTransaccionEstado.setValueAt(datos[c].get("DETALLE"),c,5);
+                    TblTransaccionEstado.setValueAt(datos[c].get("UNIDAD_SOL"),c,6);
+                    TblTransaccionEstado.setValueAt(datos[c].get("UNIDAD_DES"),c,7);
+                    TblTransaccionEstado.setValueAt(datos[c].get("ESTADO"),c,8);
+                    TblTransaccionEstado.setValueAt(datos[c].get("CUANTIA"),c,10);
+                    TblTransaccionEstado.setValueAt(datos[c].get("DEL"),c,11);
+                    TblTransaccionEstado.setValueAt(datos[c].get("HASTA"),c,12);*/
+                }
+            }
+            System.out.println("esto son sus datos de la tabla "+TblEnviados.getColumnCount()+" y la segunda parte es "+TblEnviados.getRowCount());
+            }
+            catch (RemoteException e){
+                javax.swing.JOptionPane.showMessageDialog(this,"<html> error de conexion con el servidor <br> "+e,"SYSTEM CAPRICORN",
+                            javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+            catch (ServiceException e){ System.out.println(e);}
+        }
+        else
+        {
+            System.out.println("esto es almacenes");
+            try{
+            //String []tram=CmbTramite.getSelectedItem().toString().split(" - ");
+            //int cod_tram=Integer.parseInt(tram[0]);
+            System.err.println("esta entrando en el rol 0");
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            System.out.println("Wujuuuu --->>>>   Ini: "+ini+", Fin: "+fin);
+            Map[] datos=puerto.getTransaccionEstado(cod_almacen,3,gestion,0,100000);
+            CerearTablaEnviados();
+            if (datos!=null){
+                //System.err.println("esta entrando en el rol 0");
+                for (int c=0;c<datos.length;c++){
+                    
+                    enviados.insert(c);
+                    TblEnviados.tableChanged(new TableModelEvent(enviados, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
+                    //TblTransaccionEstado.setValueAt(datos[c].get("COD_TRANSACCION"),c,0);
+                    //this.cod_transaccion = datos[c].get("COD_TRANSACCION").toString();
+                    TblEnviados.setValueAt(datos[c].get("COD_TRANS_NRO"),c,0);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 0));
+                    TblEnviados.setValueAt(datos[c].get("COD_ESTADO"),c,1);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 1));
+                    TblEnviados.setValueAt(datos[c].get("COD_TRAMITE"),c,2);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 2));
+                    TblEnviados.setValueAt(datos[c].get("NRO"),c,3);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 3));
+                    TblEnviados.setValueAt(datos[c].get("TRAMITE"),c,4);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 4));
+                    TblEnviados.setValueAt(datos[c].get("DETALLE"),c,5);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 5));
+                    TblEnviados.setValueAt(datos[c].get("UNIDAD_SOL"),c,6);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 6));
+                    TblEnviados.setValueAt(datos[c].get("UNIDAD_DES"),c,7);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 7));
+                    TblEnviados.setValueAt(datos[c].get("ESTADO"),c,8);
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 8));
+                    TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),c,9); 
+                    System.err.println("esta entrando en el rol 0 "+TblEnviados.getValueAt(c, 9));
+                    TblEnviados.setValueAt(datos[c].get("CUANTIA"),c,10);
+                    TblEnviados.setValueAt(datos[c].get("DEL"),c,11);
+                    TblEnviados.setValueAt(datos[c].get("HASTA"),c,12);
+                    //TblEnviados.setVisible(true);
+                    //PnlEniviados.add(TblEnviados);
+                    
+                    /*TblTransaccionEstado.setValueAt(datos[c].get("COD_TRANS_NRO"),c,0);
+                    TblTransaccionEstado.setValueAt(datos[c].get("COD_ESTADO"),c,1);
+                    TblTransaccionEstado.setValueAt(datos[c].get("COD_TRAMITE"),c,2);
+                    TblTransaccionEstado.setValueAt(datos[c].get("NRO"),c,3);
+                    TblTransaccionEstado.setValueAt(datos[c].get("TRAMITE"),c,4);
+                    TblTransaccionEstado.setValueAt(datos[c].get("DETALLE"),c,5);
+                    TblTransaccionEstado.setValueAt(datos[c].get("UNIDAD_SOL"),c,6);
+                    TblTransaccionEstado.setValueAt(datos[c].get("UNIDAD_DES"),c,7);
+                    TblTransaccionEstado.setValueAt(datos[c].get("ESTADO"),c,8);
+                    TblTransaccionEstado.setValueAt(datos[c].get("CUANTIA"),c,10);
+                    TblTransaccionEstado.setValueAt(datos[c].get("DEL"),c,11);
+                    TblTransaccionEstado.setValueAt(datos[c].get("HASTA"),c,12);*/
                 }
             }
             System.out.println("esto son sus datos de la tabla "+TblEnviados.getColumnCount()+" y la segunda parte es "+TblEnviados.getRowCount());
@@ -275,71 +364,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
                         javax.swing.JOptionPane.ERROR_MESSAGE);
         }
         catch (ServiceException e){ System.out.println(e);}
-        /*try
-        {
-            System.out.println("Aquí esta en presupuestos :D y los datos son: "+gestion+", "+cod_almacen+", "+cod_usuario+", "+cod_tramite);
-            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
-            AdquiWS_PortType puerto = servicio.getAdquiWS();
-            System.out.println("gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario+" cod_tramite"+cod_tramite);
-            Map[] datos=puerto.getTransaccionBandeja(gestion,cod_almacen,cod_usuario,0,"alm",cod_tramite);            
-            CerearTablaEnviados();
-            System.err.println("esta entrando en el rol 0");
-            if (datos!=null)
-                for (int c=0;c<datos.length;c++){
-                    System.err.println("esta entrando en el rol 0");
-                    enviados.insert(c);
-                    //System.out.println("******El cod"+datos[c].get("NRO_TRAMITE"));
-                    TblEnviados.tableChanged(new TableModelEvent(enviados, c, c, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
-                    TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),c,0);
-                    TblEnviados.setValueAt(datos[c].get("COD_ESTADO"),c,1);
-                    TblEnviados.setValueAt(datos[c].get("COD_TRANS_NRO"),c,2);
-                    TblEnviados.setValueAt(datos[c].get("COD_W"),c,3);
-                    TblEnviados.setValueAt(datos[c].get("NRO_TRAMITE"),c,4);
-                    TblEnviados.setValueAt(datos[c].get("TIPO_TRAMITE"),c,5);
-                    TblEnviados.setValueAt(datos[c].get("DETALLE"),c,6);
-                    TblEnviados.setValueAt(datos[c].get("UNIDAD_SOL"),c,7);
-                    TblEnviados.setValueAt(datos[c].get("UNIDAD_DES"),c,8);
-                    TblEnviados.setValueAt(datos[c].get("ESTADO"),c,9);
-                    TblEnviados.setValueAt(datos[c].get("CUANTIA"),c,10);
-                    TblEnviados.setValueAt(datos[c].get("DEL"),c,11);
-                    TblEnviados.setValueAt(datos[c].get("HASTA"),c,12);
-                }            
-          
-            if (cod_rol==2){
-                int n=TblEnviados.getRowCount();
-                /*===============================================================================================================
-                 * cod_Tramite=2 porque el usuario de almacenes puede ver ordenes de compra al ingresar a almacen
-                 ================================================================================================================*/
-          /*      System.out.println("/**************** gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario);
-                datos=puerto.getTransaccionBandejaUnion(gestion,cod_almacen,3,cod_usuario);            
-                if (datos!=null){
-                    System.out.println("Siii"+datos.length);
-                    for (int c=0;c<datos.length;c++){
-                        System.err.println("esta entrando en el rol 2");
-                        bandeja.insert(n);
-                        TblEnviados.tableChanged(new TableModelEvent(enviados, n, n, TableModelEvent.ALL_COLUMNS,TableModelEvent.INSERT));
-                        TblEnviados.setValueAt(datos[c].get("COD_TRANSACCION"),n,0);
-                        TblEnviados.setValueAt(datos[c].get("COD_ESTADO"),n,1);
-                        TblEnviados.setValueAt(datos[c].get("COD_TRANS_NRO"),n,2);
-                        TblEnviados.setValueAt(datos[c].get("COD_W"),n,3);
-                        TblEnviados.setValueAt(datos[c].get("NRO"),n,4);
-                        TblEnviados.setValueAt(datos[c].get("TIPO_TRAMITE"),n,5);
-                        TblEnviados.setValueAt(datos[c].get("DETALLE"),n,6);
-                        TblEnviados.setValueAt(datos[c].get("UNIDAD_SOL"),n,7);
-                        TblEnviados.setValueAt(datos[c].get("UNIDAD_DES"),n,8);
-                        TblEnviados.setValueAt(datos[c].get("ESTADO"),n,9);                        
-                        TblEnviados.setValueAt(datos[c].get("CUANTIA"),n,10);                        
-                        TblEnviados.setValueAt(datos[c].get("DEL"),n,11);                        
-                        TblEnviados.setValueAt(datos[c].get("HASTA"),n,12);                        
-                    }          
-                } 
-                              
-            }
         }
-        catch(Exception e)
-        {
-            System.err.println("este es un error de llenado "+e);
-        }*/
     }
      
     private void LlenaEstados(){
@@ -435,6 +460,21 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         int cod_transaccion=Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 0).toString());
         if ("ALM1".equals(TblTransaccionBandeja.getValueAt(fila, 1).toString()) || "JUR".equals(TblTransaccionBandeja.getValueAt(fila, 1).toString())){           
             this.setVisible(false);
+            System.err.println("cod_almacen: "+cod_almacen);
+            System.err.println("cod_almacen: "+Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()));
+            System.err.println("cod_almacen: "+cod_rol);
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 5).toString());
+            System.err.println("cod_almacen: "+gestion);
+            System.err.println("cod_almacen: "+Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 3).toString()));
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 1).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 6).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 7).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 8).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 4).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 10).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 11).toString());
+            System.err.println("cod_almacen: "+TblTransaccionBandeja.getValueAt(fila, 12).toString());
+            System.err.println("cod_almacen: "+cod_usuario);
             DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle(this,menu,cod_almacen, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 2).toString()),cod_rol,  TblTransaccionBandeja.getValueAt(fila, 5).toString(), gestion, Integer.parseInt(TblTransaccionBandeja.getValueAt(fila, 3).toString()),TblTransaccionBandeja.getValueAt(fila, 1).toString(),TblTransaccionBandeja.getValueAt(fila, 6).toString(),TblTransaccionBandeja.getValueAt(fila, 7).toString(),TblTransaccionBandeja.getValueAt(fila, 8).toString(),TblTransaccionBandeja.getValueAt(fila, 4).toString(),TblTransaccionBandeja.getValueAt(fila, 10).toString(),TblTransaccionBandeja.getValueAt(fila, 11).toString(),TblTransaccionBandeja.getValueAt(fila, 12).toString(),this.cod_usuario,false);
             ordenes.AbreDialogo(); 
             //LlenaBandeja();
@@ -577,6 +617,27 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             reportes.MostrarPedido(cod_trans_nro, cod_estado, cod_tram);//MostrarPedido(cod_trans_nro, cod_estado, cod_tram);
             System.out.println();
     }
+    void MostrarReporteEnviados(){
+        int fila=TblEnviados.getSelectedRow();
+        int cod_trans_nro=Integer.parseInt(TblEnviados.getValueAt(fila, 0).toString()); 
+        int cod_transaccion = Integer.parseInt(TblEnviados.getValueAt(fila, 9).toString());
+        String cod_estado=TblEnviados.getValueAt(fila, 1).toString();
+        int cod_tram=Integer.parseInt(TblEnviados.getValueAt(fila, 2).toString()); 
+        String titulo=TblEnviados.getValueAt(fila, 4).toString();
+        //System.out.println("Capri :D :D :D cod_transaccion -----> "+this.cod_transaccion);
+        /*if (cod_rol==2 && cod_tram==3 && "C".equals(cod_estado))
+            MostrarReporte(cod_trans_nro, cod_estado, cod_tram, titulo);*/
+        if (cod_tram==3 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)) && (this.cod_rol==2 || this.cod_rol==4))
+            reportes.MostrarIngreso(cod_trans_nro, cod_estado, cod_tram);//MostrarIngreso(cod_trans_nro, cod_estado, cod_tram, titulo);
+        else if (cod_tram==1 && (this.cod_rol==2||this.cod_rol==4))
+            reportes.MostrarSolicitud(cod_transaccion, "PPTO", 1, "SOLICITUD DE COMPRAS");//MostrarSolicitud(cod_transaccion, "PPTO", 1, "SOLICITUD DE COMPRAS");
+            //System.out.println();
+        else if (cod_tram==2 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado)||"JUR".equals(cod_estado))&& (this.cod_rol==2 || this.cod_rol==4))
+            reportes.MostrarOrden(cod_trans_nro, cod_estado, cod_tram, titulo);//MostrarOrden(cod_trans_nro, cod_estado, cod_tram, titulo);
+        else if (cod_tram==4 && ("C".equals(cod_estado)||"ALM1".equals(cod_estado))&& (this.cod_rol==2|| this.cod_rol==4))
+            reportes.MostrarPedido(cod_trans_nro, cod_estado, cod_tram);//MostrarPedido(cod_trans_nro, cod_estado, cod_tram);
+            System.out.println();
+    }
     
     /** This method is called from within the constructor to
      * initialize the form.
@@ -590,8 +651,10 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         PnlTransaccionBandeja = new javax.swing.JScrollPane();
         TblTransaccionBandeja = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
         PnlEniviados = new javax.swing.JScrollPane();
         TblEnviados = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         BtnInicio = new javax.swing.JButton();
         BtnAtras = new javax.swing.JButton();
@@ -634,6 +697,14 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         });
         getContentPane().setLayout(null);
 
+        TblTransaccionBandeja.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         TblTransaccionBandeja.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         TblTransaccionBandeja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -649,15 +720,35 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
 
         jTabbedPane2.addTab("BANDEJA", PnlTransaccionBandeja);
 
-        PnlEniviados.setName(""); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel3.setLayout(null);
 
-        TblEnviados.setMaximumSize(new java.awt.Dimension(0, 0));
-        TblEnviados.setMinimumSize(new java.awt.Dimension(0, 0));
-        TblEnviados.setPreferredSize(new java.awt.Dimension(0, 0));
         TblEnviados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        TblEnviados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TblEnviadosMousePressed(evt);
+            }
+        });
+        TblEnviados.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TblEnviadosKeyPressed(evt);
+            }
+        });
         PnlEniviados.setViewportView(TblEnviados);
 
-        jTabbedPane2.addTab("ENVIADOS", PnlEniviados);
+        jPanel3.add(PnlEniviados);
+        PnlEniviados.setBounds(0, 0, 1120, 190);
+
+        jButton2.setText("modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton2);
+        jButton2.setBounds(420, 190, 160, 28);
+
+        jTabbedPane2.addTab("ENVIADOS", jPanel3);
 
         getContentPane().add(jTabbedPane2);
         jTabbedPane2.setBounds(10, 10, 1120, 250);
@@ -884,6 +975,74 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
         AbreItems();
     }//GEN-LAST:event_TblTransaccionBandejaMousePressed
 
+    private void TblEnviadosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblEnviadosMousePressed
+        // TODO add your handling code here:
+        if(evt.getClickCount()==2)
+            MostrarReporteEnviados();
+    }//GEN-LAST:event_TblEnviadosMousePressed
+
+    private void TblEnviadosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TblEnviadosKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+            MostrarReporteEnviados();
+    }//GEN-LAST:event_TblEnviadosKeyPressed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        int res = javax.swing.JOptionPane.showConfirmDialog(this, "¿Esta seguro de Corregir el tramite?\ntenga en cuenta que afecatara a :"
+                + "\n - Solicitud de Compra\n"
+                + "- Orden de Compra\n"
+                + "- Pedido de Material\n"
+                + "- Ingreso de Material",
+                "MENSAJE CAPRICORNIO", javax.swing.JOptionPane.YES_NO_OPTION);
+        if (res != javax.swing.JOptionPane.YES_OPTION) {
+            return;
+        }
+        
+        
+        try {
+            int fila = TblEnviados.getSelectedRow();
+        int cod_trans_nro = Integer.parseInt(TblEnviados.getValueAt(fila, 0).toString());
+        String tramite = TblTransaccionBandeja.getValueAt(fila, 4).toString();
+        System.err.println("El cod_trans_nro: "+cod_trans_nro);
+        //String tramite = "Correccion Tramite";
+        int cod_w = Integer.parseInt(TblEnviados.getValueAt(fila, 2).toString());
+        System.err.println("El cod_w: "+cod_w);
+        String origen=TblEnviados.getValueAt(fila, 1).toString();
+        System.err.println("El origen: "+origen);
+        String detalle=TblEnviados.getValueAt(fila, 5).toString();
+        System.err.println("El detalle: "+detalle);
+        String unidad_sol=TblEnviados.getValueAt(fila, 6).toString();
+        System.err.println("unidad_sol: "+unidad_sol);
+        String unidad_des=TblEnviados.getValueAt(fila, 7).toString();
+        System.err.println("unidad_des: "+unidad_des);
+        String estadox=TblEnviados.getValueAt(fila, 8).toString();
+        System.err.println("El estadox: "+estadox);
+        String nro=TblEnviados.getValueAt(fila, 3).toString();
+        System.err.println("El nro: "+nro);
+        String cuantia=TblEnviados.getValueAt(fila, 10).toString();
+        System.err.println("cuantia: "+cuantia);
+        String del=TblEnviados.getValueAt(fila, 11).toString();
+        System.err.println("del: "+del);
+        String hasta=TblEnviados.getValueAt(fila, 12).toString();
+        System.err.println("hasta: "+hasta);
+//        System.err.println("Bueno el estado es: "+estadox);
+        if(estadox.trim().equals("CONCLUIDO")){
+            DiagOrdenesDetalle ordenes= new DiagOrdenesDetalle
+            (this,menu,cod_almacen, cod_trans_nro,cod_rol,tramite,gestion,cod_w,origen,detalle,unidad_sol,unidad_des,nro,cuantia,del,hasta,this.cod_usuario,true);
+            ordenes.AbreDialogo();
+        }else{
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> SOLO PUEDE MODIFICAR TRAMITES CONCLUIDOS<br> ","SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+          
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> DEBE PINTAR UNA FILA<br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizar;
     private javax.swing.JButton BtnAdelante;
@@ -899,9 +1058,11 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
     private javax.swing.JTable TblTransaccionBandeja;
     private javax.swing.JTable TblTransaccionEstado;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
 }
