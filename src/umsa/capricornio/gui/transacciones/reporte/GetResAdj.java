@@ -746,6 +746,7 @@ public class GetResAdj {
         RepTransaccion t1 = new RepTransaccion(); 
         
 //        parameters.put("cod_transaccion", cod_transaccion);
+        System.err.println("el cod_w: "+cod_w+", cuantia: "+cuantia);
         
         switch (cod_w) {
             
@@ -805,6 +806,9 @@ public class GetResAdj {
         
         //urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/reporte_items.jasper");
         //parameters.put("DIR1", urlMaestro1.toString());
+        
+        System.err.println("vamos a ver : "+urlMaestro);
+        
         this.imprimePDF2(urlMaestro, parameters);
     }
     public void Reporte (String ResAdm,String Num_Resol, String Titulo_trans, String NotasAdqInv, String ADCAnpe, String Convocatoria, String FechaComisionCalf, String InfAdq, String InfHP, String Profesional, String Destino, String Actividad,int cod_trans_nro, int cod_w)
