@@ -169,7 +169,7 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] downProveedor(int cod_trans_nro) throws java.rmi.RemoteException;
     public java.util.HashMap[] addObservacion(int cod_trans_nro, java.lang.String obs_adq) throws java.rmi.RemoteException;
     public java.util.HashMap[] addDatosOrdenCompra(int cod_trans_nro, java.lang.String resolucion_adm, java.lang.String cuce, java.lang.String inf_comision, java.lang.String nro_propuesta) throws java.rmi.RemoteException;
-    public java.util.HashMap[] setAnulaTransaccionAdq(java.lang.String tran, int cod_transaccion) throws java.rmi.RemoteException;
+    public java.util.HashMap[] setAnulaTransaccionAdq(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException;
     public java.util.HashMap[] setNuevoIngresoAlmacen(java.lang.String tran, int cod_tramite, int gestion, int cod_usuario, java.lang.String estado, java.lang.String ingreso_material) throws java.rmi.RemoteException;
     public java.util.HashMap[] addDetallex(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle) throws java.rmi.RemoteException;
     public java.util.HashMap[] updateDetalle(java.lang.String tran, int cod_complemento, java.lang.String detalle) throws java.rmi.RemoteException;
@@ -230,8 +230,8 @@ public interface AdquiWS_PortType extends java.rmi.Remote {
     public java.util.HashMap[] getPartidas1(int cod) throws java.rmi.RemoteException;
     public java.util.HashMap[] getdatosres15(int cod) throws java.rmi.RemoteException;
     public java.util.HashMap[] getresmay(int cod, int cod_t_n) throws java.rmi.RemoteException;
-    public java.util.HashMap[] updateRes15(int cod, int cod_t_n, java.lang.String cite, java.lang.String destino, java.lang.String objetivo, java.lang.String cotizacion, java.lang.String doc, java.lang.String f, java.lang.String cargo) throws java.rmi.RemoteException;
-    public java.util.HashMap[] generaRes15(int cod_trans, int cod_trans_nro, java.lang.String dias, java.lang.String cite, java.lang.String destino, java.lang.String objetivo, java.lang.String cotizacion, java.lang.String detalle, java.lang.String enviado, java.lang.String cargo, int gestion, java.lang.String doc, java.lang.String f) throws java.rmi.RemoteException;
+    public java.util.HashMap[] updateRes15(int cod, int cod_t_n, java.lang.String cite, java.lang.String destino, java.lang.String objetivo, java.lang.String cotizacion, java.lang.String doc, java.lang.String f, java.lang.String cargo, java.lang.String dns, java.lang.String dnp) throws java.rmi.RemoteException;
+    public java.util.HashMap[] generaRes15(int cod_trans, int cod_trans_nro, java.lang.String dias, java.lang.String cite, java.lang.String destino, java.lang.String objetivo, java.lang.String cotizacion, java.lang.String detalle, java.lang.String enviado, java.lang.String cargo, int gestion, java.lang.String doc, java.lang.String f, java.lang.String dns, java.lang.String dnp) throws java.rmi.RemoteException;
     public java.util.HashMap[] getProgramaticApertGestion(int gestion, int cod_almacen) throws java.rmi.RemoteException;
     public java.util.HashMap[] getAlmacenGestion(int gestion) throws java.rmi.RemoteException;
     public java.lang.String getDescPartida(java.lang.String partida) throws java.rmi.RemoteException;
