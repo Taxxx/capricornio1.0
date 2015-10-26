@@ -672,7 +672,7 @@ public class ResMay15 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("aqui uno "+gestion);
             System.out.println(fec_ini);
-            puerto.generaRes15(cod_transaccion,cod_trans_nro,dias,cite,destino,objetivo,cotizacion,detalle,enviado_por,cargo,gestion,doc,fec_ini);
+            puerto.generaRes15(cod_transaccion,cod_trans_nro,dias,cite,destino,objetivo,cotizacion,detalle,enviado_por,cargo,gestion,doc,fec_ini,"","");
             System.out.println("aqui dos");
             llenadatos();
             }catch(Exception e)
@@ -715,7 +715,7 @@ public class ResMay15 extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("la fecha "+fec_ini);
-            puerto.updateRes15(cod_transaccion,cod_trans_nro,cite,destino,objetivo,cotizacion,doc,fec_ini,cargo);
+            puerto.updateRes15(cod_transaccion,cod_trans_nro,cite,destino,objetivo,cotizacion,doc,fec_ini,cargo,"","");
             llenadatos();
             }catch(Exception e)
             {

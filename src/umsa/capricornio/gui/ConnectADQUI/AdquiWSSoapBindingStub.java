@@ -56,7 +56,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getRoles");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getRolesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -79,7 +79,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tipo_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setItemsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -92,7 +92,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setGestionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -120,7 +120,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteOrdenDescargoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -135,7 +135,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setPartidaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -146,7 +146,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getTotal2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTotal2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -157,7 +157,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getTramite");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTramiteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -183,7 +183,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteNotaConformidadxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -203,7 +203,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteOrdenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -218,7 +218,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReportePedidoxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -244,7 +244,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteSolicitudxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -255,7 +255,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getReporteSolicitudBorrador2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteSolicitudBorrador2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -270,7 +270,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteOrdenDescargoxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -285,7 +285,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteOrdenxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -296,7 +296,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getUnidadEjecutora");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUnidadEjecutoraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -311,7 +311,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setTransaccionDetalleNroReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -322,7 +322,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getBuscaItems");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "articulo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getBuscaItemsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -340,7 +340,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "clave"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuarioReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -349,7 +349,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUsuario");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuarioReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -368,7 +368,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nombre_resumen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsuarioReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -379,7 +379,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getGestion");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getGestionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -388,7 +388,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getGestion");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getGestionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -399,7 +399,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getPartida");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getPartidaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -412,7 +412,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getCod_trans_nroReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -421,7 +421,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTipoItem");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTipoItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -430,7 +430,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUnidadMedida");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUnidadMedidaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -451,7 +451,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "telefono"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProponenteADJ2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -467,7 +467,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getNroOrdenCompra");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getNroOrdenCompraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -490,7 +490,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setCreaNroTramiteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -501,7 +501,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getItems2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItems2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -514,7 +514,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItems2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -543,7 +543,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "adh_nombre"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addProponenteDescargoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -572,7 +572,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "adh_nombre"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateProponenteDescargoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -587,7 +587,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "precio_unit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"), double.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setDetallePrecioUnitReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -598,7 +598,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getProponenteADJ2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getProponenteADJ2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -613,7 +613,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addUnidadMedidaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -626,7 +626,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "articulo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getBuscaItemsxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -648,7 +648,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addDetalleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -663,7 +663,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delDetalleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -678,7 +678,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateDetallexReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -714,7 +714,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateItemx2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -725,7 +725,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("loadDetalle");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "loadDetalleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -734,7 +734,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getProveedores");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getProveedoresReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -745,7 +745,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("eliminaFecha");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "x"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "eliminaFechaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -756,7 +756,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("setFechasNH");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "x"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setFechasNHReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -765,7 +765,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getFechasNH");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getFechasNHReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -783,7 +783,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "x"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setFechasModifReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -794,7 +794,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getDetProveedores");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDetProveedoresReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -807,7 +807,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "clave"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuario2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -816,7 +816,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getFechaServ");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getFechaServReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -827,7 +827,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getUsuarioRol");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuarioRolReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -838,7 +838,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getEnlaces");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_rol"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getEnlacesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -855,7 +855,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "pswnue"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getPasswordUsrReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -870,7 +870,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "pswnue"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getPasswordUsrReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -883,7 +883,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "pswant"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getVerifPasswReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -894,7 +894,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getAlmacen");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getAlmacenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -918,7 +918,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setAlmacenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -939,7 +939,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setAlmacenModifReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -954,7 +954,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setAlmacenDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -965,7 +965,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getDa");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -978,7 +978,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuarioxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -991,7 +991,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuariox2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -1004,7 +1004,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuariosTipoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -1013,12 +1013,21 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUsuarios");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsuariosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[67] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SecCodUsuario");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnClass(int.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "SecCodUsuarioReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[68] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsuariox");
@@ -1034,26 +1043,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nombre_resumen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsuarioxReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[68] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("addUserApert");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_apert"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "addUserApertReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[69] = oper;
@@ -1064,6 +1056,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("addUserApert");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_apert"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "addUserApertReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[70] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsuarioModif");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
@@ -1073,12 +1082,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nombre_resumen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsuarioModifReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[70] = oper;
+        _operations[71] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsuarioDel");
@@ -1086,23 +1095,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsuarioDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[71] = oper;
+        _operations[72] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUnidadEjecutora1");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUnidadEjecutora1Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[72] = oper;
+        _operations[73] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUnidadEjecutora2");
@@ -1110,12 +1119,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUnidadEjecutora2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[73] = oper;
+        _operations[74] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUnidadEjecutora");
@@ -1133,12 +1142,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUnidadEjecutoraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[74] = oper;
+        _operations[75] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUnidadEjecutoraModif");
@@ -1156,12 +1165,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUnidadEjecutoraModifReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[75] = oper;
+        _operations[76] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUnidadEjecutoraDel");
@@ -1169,12 +1178,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_apert"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUnidadEjecutoraDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[76] = oper;
+        _operations[77] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getItemsABM");
@@ -1182,12 +1191,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsABMReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[77] = oper;
+        _operations[78] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setItemsModif");
@@ -1203,22 +1212,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setItemsModifReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[78] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("setItemsDel");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "setItemsDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[79] = oper;
@@ -1229,24 +1225,37 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getGrupoItem");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setName("setItemsDel");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getGrupoItemReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "setItemsDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[80] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getGrupoItem");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getGrupoItemReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[81] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSubGrupoItem");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "grupo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSubGrupoItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[81] = oper;
+        _operations[82] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setGestionModif");
@@ -1256,43 +1265,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setGestionModifReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[82] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getUsrRol");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrRolReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[83] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getUsrRol2");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setName("getUsrRol");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrRol2Return"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrRolReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[84] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getUsrRol2");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrRol2Return"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[85] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUsrFirma");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrFirmaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[85] = oper;
+        _operations[86] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsrRol");
@@ -1302,12 +1311,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_rol"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrRolReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[86] = oper;
+        _operations[87] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsrRolDel");
@@ -1317,12 +1326,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_rol"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrRolDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[87] = oper;
+        _operations[88] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getUsrUnidad");
@@ -1330,26 +1339,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrUnidadReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[88] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("setUsrUnidad");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_unidad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrUnidadReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[89] = oper;
@@ -1360,6 +1352,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("setUsrUnidad");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_unidad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrUnidadReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[90] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsrUnidadDel");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
@@ -1369,52 +1378,52 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrUnidadDelReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[90] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getUsrWorkflow");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrWorkflowReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[91] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getUsrWorkflow2");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setName("getUsrWorkflow");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrWorkflow2Return"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrWorkflowReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[92] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getWorkflowDetalle");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setName("getUsrWorkflow2");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getWorkflowDetalleReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getUsrWorkflow2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[93] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getWorkflowDetalle");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getWorkflowDetalleReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[94] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getEstadosWorkflow");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_w"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getEstadosWorkflowReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[94] = oper;
+        _operations[95] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsrWorkflow");
@@ -1424,12 +1433,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrWorkflowReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[95] = oper;
+        _operations[96] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUsrWorkflowDel");
@@ -1439,12 +1448,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUsrWorkflowDelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[96] = oper;
+        _operations[97] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setProveedorCrea");
@@ -1470,12 +1479,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "razon_soc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorCreaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[97] = oper;
+        _operations[98] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setProveedorActualiza");
@@ -1505,22 +1514,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorActualizaReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[98] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("setProveedorElimina");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorEliminaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[99] = oper;
@@ -1531,6 +1527,19 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("setProveedorElimina");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorEliminaReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[100] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getProveedoresBusqueda");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
@@ -1540,23 +1549,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getProveedoresBusquedaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[100] = oper;
+        _operations[101] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSansiones");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSansionesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[101] = oper;
+        _operations[102] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setProveedorSansion");
@@ -1570,12 +1579,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorSansionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[102] = oper;
+        _operations[103] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setProveedorSansionMod");
@@ -1589,12 +1598,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorSansionModReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[103] = oper;
+        _operations[104] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setProveedorSansionElim");
@@ -1602,32 +1611,32 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_prov_sansion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProveedorSansionElimReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[104] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getEst");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getEstReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[105] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getEst");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getEstReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[106] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTramites");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTramitesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[106] = oper;
+        _operations[107] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionBandeja");
@@ -1643,12 +1652,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionBandejaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[107] = oper;
+        _operations[108] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionBandejaUnion");
@@ -1660,13 +1669,18 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionBandejaUnionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[108] = oper;
+        _operations[109] = oper;
 
+    }
+
+    private static void _initOperationDesc12(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionesBuscaAdquisicion");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -1683,18 +1697,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "preventivo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionesBuscaAdquisicionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[109] = oper;
+        _operations[110] = oper;
 
-    }
-
-    private static void _initOperationDesc12(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionesBuscaAdquisicionTODO");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -1705,12 +1714,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionesBuscaAdquisicionTODOReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[110] = oper;
+        _operations[111] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionesBuscaAdquisicionTODO2");
@@ -1722,12 +1731,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionesBuscaAdquisicionTODO2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[111] = oper;
+        _operations[112] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionEstado");
@@ -1741,12 +1750,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fin"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionEstadoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[112] = oper;
+        _operations[113] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTransaccionBandejaAdqui");
@@ -1758,12 +1767,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionBandejaAdquiReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[113] = oper;
+        _operations[114] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("busquedaAdquiOrdenC");
@@ -1777,12 +1786,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "hoja_ruta"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "busquedaAdquiOrdenCReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[114] = oper;
+        _operations[115] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getNroTransacciones");
@@ -1792,12 +1801,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getNroTransaccionesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[115] = oper;
+        _operations[116] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTieneTipoTramite");
@@ -1805,12 +1814,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTieneTipoTramiteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[116] = oper;
+        _operations[117] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setCreaNroTramiteDos");
@@ -1828,24 +1837,29 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setCreaNroTramiteDosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[117] = oper;
+        _operations[118] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatenro");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updatenroReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[118] = oper;
+        _operations[119] = oper;
 
+    }
+
+    private static void _initOperationDesc13(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setCreaNroTramiteTres");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -1862,30 +1876,25 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setCreaNroTramiteTresReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[119] = oper;
+        _operations[120] = oper;
 
-    }
-
-    private static void _initOperationDesc13(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setNumIngreso");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setNumIngresoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[120] = oper;
+        _operations[121] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setTransaccionesDestino");
@@ -1902,7 +1911,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "setTransaccionesDestinoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[121] = oper;
+        _operations[122] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setTransaccionesOrigen");
@@ -1914,12 +1923,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "destino"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setTransaccionesOrigenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[122] = oper;
+        _operations[123] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setTransaccionesPptoUnidad");
@@ -1929,12 +1938,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "origen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setTransaccionesPptoUnidadReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[123] = oper;
+        _operations[124] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteSolicitud");
@@ -1944,34 +1953,34 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteSolicitudReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[124] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getReporteSolicitudBorrador");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteSolicitudBorradorReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[125] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getReporteSolicitudBorrador");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteSolicitudBorradorReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[126] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteSolicitud2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteSolicitud2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[126] = oper;
+        _operations[127] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteIngreso");
@@ -1981,12 +1990,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteIngresoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[127] = oper;
+        _operations[128] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteIngresox");
@@ -1996,24 +2005,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteIngresoxReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[128] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getReportePedido");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getReportePedidoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[129] = oper;
@@ -2024,15 +2018,30 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getReportePedido");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getReportePedidoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[130] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDias");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDiasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[130] = oper;
+        _operations[131] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDias");
@@ -2040,12 +2049,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "d"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setDiasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[131] = oper;
+        _operations[132] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteNotaConformidad");
@@ -2055,12 +2064,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteNotaConformidadReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[132] = oper;
+        _operations[133] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReportePedido2");
@@ -2070,73 +2079,64 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tramite"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReportePedido2Return"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[133] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getTransaccion");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[134] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getTransaccionNro");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("getTransaccion");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionNroReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[135] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getItemsPorOrdenDeCompra");
+        oper.setName("getTransaccionNro");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsPorOrdenDeCompraReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getTransaccionNroReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[136] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getItemsPorOrdenDeCompra2");
+        oper.setName("getItemsPorOrdenDeCompra");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsPorOrdenDeCompra2Return"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsPorOrdenDeCompraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[137] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getDocumentos");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("getItemsPorOrdenDeCompra2");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getDocumentosReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsPorOrdenDeCompra2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[138] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getUltimoDocumento");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setName("getDocumentos");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getUltimoDocumentoReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getDocumentosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[139] = oper;
@@ -2146,6 +2146,15 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
     private static void _initOperationDesc15(){
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getUltimoDocumento");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getUltimoDocumentoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[140] = oper;
+
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDocumentos");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -2162,12 +2171,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_adjunto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setDocumentosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[140] = oper;
+        _operations[141] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setAnulaDocumento");
@@ -2175,12 +2184,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_documento"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setAnulaDocumentoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[141] = oper;
+        _operations[142] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setNuevoComplemento");
@@ -2190,12 +2199,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle_adqui"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setNuevoComplementoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[142] = oper;
+        _operations[143] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setNuevoComplementoIngAlm");
@@ -2205,12 +2214,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle_alm"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setNuevoComplementoIngAlmReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[143] = oper;
+        _operations[144] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDetallePrecioUnit2");
@@ -2222,12 +2231,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setDetallePrecioUnit2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[144] = oper;
+        _operations[145] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDetalleDBC");
@@ -2237,12 +2246,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dbc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setDetalleDBCReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[145] = oper;
+        _operations[146] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setDetalleContrato");
@@ -2252,12 +2261,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "contrato"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setDetalleContratoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[146] = oper;
+        _operations[147] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("XAnulaTramite");
@@ -2265,33 +2274,20 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "XAnulaTramiteReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[147] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getTransDetalle");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getTransDetalleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[148] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("setActualizaTransaccionAlm");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("getTransDetalle");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionAlmReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getTransDetalleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[149] = oper;
@@ -2302,17 +2298,30 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("setActualizaTransaccionAlm");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionAlmReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[150] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setActualizaTransaccionAlmDos");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionAlmDosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[150] = oper;
+        _operations[151] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setActualizaTransaccionObsAdqui");
@@ -2320,12 +2329,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs_adqui"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionObsAdquiReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[151] = oper;
+        _operations[152] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setItemRegDesierto");
@@ -2333,12 +2342,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setItemRegDesiertoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[152] = oper;
+        _operations[153] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setActualizaTransaccionIngresoAlm");
@@ -2356,12 +2365,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionIngresoAlmReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[153] = oper;
+        _operations[154] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setActualizaTransaccionPpto");
@@ -2381,12 +2390,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fondo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionPptoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[154] = oper;
+        _operations[155] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setActualizaTransaccionAdq");
@@ -2406,12 +2415,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro_propuesta"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setActualizaTransaccionAdqReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[155] = oper;
+        _operations[156] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addProveedor");
@@ -2419,12 +2428,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addProveedorReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[156] = oper;
+        _operations[157] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("upProveedor");
@@ -2432,33 +2441,20 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "upProveedorReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[157] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("downProveedor");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "downProveedorReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[158] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("addObservacion");
+        oper.setName("downProveedor");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs_adq"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "addObservacionReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "downProveedorReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[159] = oper;
@@ -2468,6 +2464,19 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
     private static void _initOperationDesc17(){
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("addObservacion");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "obs_adq"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "addObservacionReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[160] = oper;
+
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addDatosOrdenCompra");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -2480,12 +2489,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro_propuesta"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addDatosOrdenCompraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[160] = oper;
+        _operations[161] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setAnulaTransaccionAdq");
@@ -2493,12 +2502,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setAnulaTransaccionAdqReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[161] = oper;
+        _operations[162] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setNuevoIngresoAlmacen");
@@ -2514,12 +2523,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ingreso_material"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setNuevoIngresoAlmacenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[162] = oper;
+        _operations[163] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addDetallex");
@@ -2529,12 +2538,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addDetallexReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[163] = oper;
+        _operations[164] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateDetalle");
@@ -2544,12 +2553,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateDetalleReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[164] = oper;
+        _operations[165] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateDetalle2");
@@ -2561,12 +2570,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateDetalle2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[165] = oper;
+        _operations[166] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getItemMOD");
@@ -2579,7 +2588,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemMODReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[166] = oper;
+        _operations[167] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDetalleALM");
@@ -2592,7 +2601,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDetalleALMReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[167] = oper;
+        _operations[168] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addDetalleALM");
@@ -2602,24 +2611,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addDetalleALMReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[168] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("delDetalleALM");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_complemento"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "delDetalleALMReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[169] = oper;
@@ -2630,6 +2624,21 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("delDetalleALM");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_complemento"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "delDetalleALMReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[170] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateDetalleALM");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
@@ -2637,12 +2646,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateDetalleALMReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[170] = oper;
+        _operations[171] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateCantidadItem");
@@ -2652,12 +2661,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cantidad_pedido"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateCantidadItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[171] = oper;
+        _operations[172] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateCantidadItem2");
@@ -2669,12 +2678,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateCantidadItem2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[172] = oper;
+        _operations[173] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteIngMaterialesAlmacen");
@@ -2684,12 +2693,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteIngMaterialesAlmacenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[173] = oper;
+        _operations[174] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteDocsEnviados");
@@ -2699,12 +2708,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteDocsEnviadosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[174] = oper;
+        _operations[175] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getReporteAdjudicaciones");
@@ -2716,21 +2725,21 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_cuantia"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getReporteAdjudicacionesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[175] = oper;
+        _operations[176] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getModalidad");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getModalidadReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[176] = oper;
+        _operations[177] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addProponente");
@@ -2754,12 +2763,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "adh_nombre"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addProponenteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[177] = oper;
+        _operations[178] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addProponente11");
@@ -2785,24 +2794,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addProponente11Return"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[178] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("delProponente");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "delProponenteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[179] = oper;
@@ -2813,28 +2807,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getProponentes");
+        oper.setName("delProponente");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getProponentesReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "delProponenteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[180] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getProponentes");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getProponentesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[181] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getProponenteADJ");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getProponenteADJReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[181] = oper;
+        _operations[182] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setProponenteADJ");
@@ -2850,23 +2859,58 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "telefono"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setProponenteADJReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[182] = oper;
+        _operations[183] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GeneraResIni");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tipo_resolucion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "envia"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle_nota_solicitud"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle_nota_presupuesto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "destino"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "xx"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "jefe_adqui"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_recursos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_uni_sol"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_aut"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GeneraResIniReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[184] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getResIni");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getResIniReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[183] = oper;
+        _operations[185] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateResIni");
@@ -2892,24 +2936,55 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResIniReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[184] = oper;
+        _operations[186] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("cambioEstado");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_resolucion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "cambioEstadoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[187] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GeneraResAdj");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GeneraResAdjReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[188] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getResAdj");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getResAdjReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[185] = oper;
+        _operations[189] = oper;
 
+    }
+
+    private static void _initOperationDesc20(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addResAdj");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -2938,12 +3013,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "titulo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addResAdjReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[186] = oper;
+        _operations[190] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("gentabla");
@@ -2963,12 +3038,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "g"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "gentablaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[187] = oper;
+        _operations[191] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("genResAdjServ2");
@@ -3002,12 +3077,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "genResAdjServ2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[188] = oper;
+        _operations[192] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("genResAdjBien");
@@ -3045,18 +3120,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "genResAdjBienReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[189] = oper;
+        _operations[193] = oper;
 
-    }
-
-    private static void _initOperationDesc20(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("genResAdjConsu");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -3087,12 +3157,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "genResAdjConsuReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[190] = oper;
+        _operations[194] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("genResAdjObra");
@@ -3128,57 +3198,62 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "genResAdjObraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[191] = oper;
+        _operations[195] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getResAdjServ");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getResAdjServReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[192] = oper;
+        _operations[196] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getResAdjBien");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getResAdjBienReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[193] = oper;
+        _operations[197] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getResAdjObra");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getResAdjObraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[194] = oper;
+        _operations[198] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getResAdjConsul");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getResAdjConsulReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[195] = oper;
+        _operations[199] = oper;
 
+    }
+
+    private static void _initOperationDesc21(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateResAdjBien");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -3211,12 +3286,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResAdjBienReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[196] = oper;
+        _operations[200] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateResAdjObra");
@@ -3250,12 +3325,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResAdjObraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[197] = oper;
+        _operations[201] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateResAdjCons");
@@ -3283,12 +3358,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResAdjConsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[198] = oper;
+        _operations[202] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateResAdjServ");
@@ -3318,18 +3393,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateResAdjServReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[199] = oper;
+        _operations[203] = oper;
 
-    }
-
-    private static void _initOperationDesc21(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updatetabla1");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "n1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -3338,12 +3408,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updatetabla1Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[200] = oper;
+        _operations[204] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setResAdj");
@@ -3367,43 +3437,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "actividad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setResAdjReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[201] = oper;
+        _operations[205] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTipoAdjuntos");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTipoAdjuntosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[202] = oper;
+        _operations[206] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getConcursantes");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getConcursantesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[203] = oper;
+        _operations[207] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("existeReIni");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "existeReIniReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[204] = oper;
+        _operations[208] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("insertDatosGenerales");
@@ -3411,57 +3481,9 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "descripcion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "insertDatosGeneralesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[205] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getDatosGenerales");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getDatosGeneralesReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[206] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getDatosGenerales2");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getDatosGenerales2Return"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[207] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updateDatosDea");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_faculty"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "rpa"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "jadqui"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "updateDatosDeaReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[208] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updateRutaFirmaDigitalRPA");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_faculty"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "firma_rpa"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "updateRutaFirmaDigitalRPAReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[209] = oper;
@@ -3472,28 +3494,76 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updateRutaFirmaDigitalUSER");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "firma"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setName("getDatosGenerales");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "updateRutaFirmaDigitalUSERReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getDatosGeneralesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[210] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getDatosGenerales2");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getDatosGenerales2Return"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[211] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("updateDatosDea");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_faculty"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "rpa"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "jadqui"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "updateDatosDeaReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[212] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("updateRutaFirmaDigitalRPA");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_faculty"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "firma_rpa"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "updateRutaFirmaDigitalRPAReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[213] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("updateRutaFirmaDigitalUSER");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "firma"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "updateRutaFirmaDigitalUSERReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[214] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDatosAlmacen");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDatosAlmacenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[211] = oper;
+        _operations[215] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDatoGeneral");
@@ -3504,7 +3574,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDatoGeneralReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[212] = oper;
+        _operations[216] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateDatosGenerales");
@@ -3512,23 +3582,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "descripcion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateDatosGeneralesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[213] = oper;
+        _operations[217] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getItemsPart");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsPartReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[214] = oper;
+        _operations[218] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateItemPPTO");
@@ -3538,13 +3608,18 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "unidad_medida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateItemPPTOReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[215] = oper;
+        _operations[219] = oper;
 
+    }
+
+    private static void _initOperationDesc23(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addItems");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -3563,12 +3638,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tipo_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addItemsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[216] = oper;
+        _operations[220] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getSEC_COD_ITEM");
@@ -3577,45 +3652,40 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getSEC_COD_ITEMReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[217] = oper;
+        _operations[221] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getPartidas");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getPartidasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[218] = oper;
+        _operations[222] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getPartidas1");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getPartidas1Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[219] = oper;
+        _operations[223] = oper;
 
-    }
-
-    private static void _initOperationDesc23(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getdatosres15");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getdatosres15Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[220] = oper;
+        _operations[224] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getresmay");
@@ -3623,12 +3693,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_t_n"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getresmayReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[221] = oper;
+        _operations[225] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateRes15");
@@ -3654,12 +3724,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dnp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateRes15Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[222] = oper;
+        _operations[226] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("generaRes15");
@@ -3693,12 +3763,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "dnp"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "generaRes15Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[223] = oper;
+        _operations[227] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getProgramaticApertGestion");
@@ -3706,24 +3776,29 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getProgramaticApertGestionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[224] = oper;
+        _operations[228] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAlmacenGestion");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getAlmacenGestionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[225] = oper;
+        _operations[229] = oper;
 
+    }
+
+    private static void _initOperationDesc24(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDescPartida");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -3733,7 +3808,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDescPartidaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[226] = oper;
+        _operations[230] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCodFacultad");
@@ -3744,16 +3819,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getCodFacultadReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[227] = oper;
+        _operations[231] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getRepoAdquiOrden");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getRepoAdquiOrdenReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[228] = oper;
+        _operations[232] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SecTransDetComplemento");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "SecTransDetComplementoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[233] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SecTransaccionDetalle");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "SecTransaccionDetalleReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[234] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SecUnidadMedida");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "SecUnidadMedidaReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[235] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addItem2");
@@ -3769,18 +3871,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addItem2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[229] = oper;
+        _operations[236] = oper;
 
-    }
-
-    private static void _initOperationDesc24(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateItemx");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -3795,12 +3892,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateItemxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[230] = oper;
+        _operations[237] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateItem");
@@ -3814,12 +3911,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cantidad_pedido"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[231] = oper;
+        _operations[238] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateArticulo");
@@ -3829,13 +3926,18 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateArticuloReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[232] = oper;
+        _operations[239] = oper;
 
+    }
+
+    private static void _initOperationDesc25(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateArticulo2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -3846,12 +3948,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateArticulo2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[233] = oper;
+        _operations[240] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delDetallex");
@@ -3859,12 +3961,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_complemento"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delDetallexReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[234] = oper;
+        _operations[241] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setPartida2");
@@ -3876,12 +3978,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setPartida2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[235] = oper;
+        _operations[242] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUnidadMedida");
@@ -3891,12 +3993,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_unidad_medida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUnidadMedidaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[236] = oper;
+        _operations[243] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setUnidadMedida2");
@@ -3908,12 +4010,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setUnidadMedida2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[237] = oper;
+        _operations[244] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getItemClasificador");
@@ -3921,12 +4023,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "partida"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemClasificadorReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[238] = oper;
+        _operations[245] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateCodItem");
@@ -3936,18 +4038,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateCodItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[239] = oper;
+        _operations[246] = oper;
 
-    }
-
-    private static void _initOperationDesc25(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateCodItem2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -3958,12 +4055,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateCodItem2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[240] = oper;
+        _operations[247] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delComplemento");
@@ -3971,12 +4068,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delComplementoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[241] = oper;
+        _operations[248] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delDetalleNro");
@@ -3984,25 +4081,30 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delDetalleNroReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[242] = oper;
+        _operations[249] = oper;
 
+    }
+
+    private static void _initOperationDesc26(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delItemRefFecha");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delItemRefFechaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[243] = oper;
+        _operations[250] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delItemx");
@@ -4010,12 +4112,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delItemxReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[244] = oper;
+        _operations[251] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addPreventivo");
@@ -4031,23 +4133,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "total"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addPreventivoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[245] = oper;
+        _operations[252] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getPreventivos");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getPreventivosReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[246] = oper;
+        _operations[253] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("delPreventivo");
@@ -4057,23 +4159,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_preventivo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "delPreventivoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[247] = oper;
+        _operations[254] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getTotalPartidas");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTotalPartidasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[248] = oper;
+        _operations[255] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetFechasRestriccion");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetFechasRestriccionReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[256] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetFechasRestriccionAdquiDepto");
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetFechasRestriccionAdquiDeptoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[257] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setCodW");
@@ -4083,18 +4205,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_w"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setCodWReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[249] = oper;
+        _operations[258] = oper;
 
-    }
-
-    private static void _initOperationDesc26(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addFechaRestriccion");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -4107,13 +4224,18 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "lugar"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addFechaRestriccionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[250] = oper;
+        _operations[259] = oper;
 
+    }
+
+    private static void _initOperationDesc27(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addFechaRestriccion3");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -4128,12 +4250,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "hora_inicio"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addFechaRestriccion3Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[251] = oper;
+        _operations[260] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addFechaBoletaGarantia");
@@ -4147,12 +4269,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fecha_conclusion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addFechaBoletaGarantiaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[252] = oper;
+        _operations[261] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addFechaRestriccion2");
@@ -4170,12 +4292,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "hora_inicio"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addFechaRestriccion2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[253] = oper;
+        _operations[262] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateFechaEntrega");
@@ -4189,12 +4311,47 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fecha_conclusion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateFechaEntregaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[254] = oper;
+        _operations[263] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetRestriccionFechas");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tipo_resf"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetRestriccionFechasReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[264] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetRestriccionFechas");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetRestriccionFechasReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[265] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetCod_Trans");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetCod_TransReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[266] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("fechasExtra");
@@ -4206,33 +4363,38 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "d"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "fechasExtraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[255] = oper;
+        _operations[267] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("dias_restantes");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "dias_restantesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[256] = oper;
+        _operations[268] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("notificacionfechas");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "notificacionfechasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[257] = oper;
+        _operations[269] = oper;
 
+    }
+
+    private static void _initOperationDesc28(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addContrato");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -4295,12 +4457,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "b1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addContratoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[258] = oper;
+        _operations[270] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addContrato");
@@ -4360,18 +4522,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "z"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addContratoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[259] = oper;
+        _operations[271] = oper;
 
-    }
-
-    private static void _initOperationDesc27(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateContrato");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -4434,12 +4591,36 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "b1"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateContratoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[260] = oper;
+        _operations[272] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetContrato");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetContratoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[273] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetAdjunto");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_adjunto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetAdjuntoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[274] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addCuceSicoes");
@@ -4449,23 +4630,23 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cuce_sicoes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addCuceSicoesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[261] = oper;
+        _operations[275] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCuceSicoes");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getCuceSicoesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[262] = oper;
+        _operations[276] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addAdmAlm");
@@ -4477,12 +4658,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addAdmAlmReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[263] = oper;
+        _operations[277] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateAdmAlm");
@@ -4494,12 +4675,49 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_almacen"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateAdmAlmReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[264] = oper;
+        _operations[278] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetNotaConformidad");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "GetNotaConformidadReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[279] = oper;
+
+    }
+
+    private static void _initOperationDesc29(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("UpdateNotaConformidad");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fecha_nc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "hora_nc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ciudad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "lugar"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnClass(java.util.HashMap[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "UpdateNotaConformidadReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[280] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("addHojaRuta");
@@ -4509,12 +4727,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "hoja_ruta"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addHojaRutaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[265] = oper;
+        _operations[281] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getHojaRuta");
@@ -4525,7 +4743,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setReturnQName(new javax.xml.namespace.QName("", "getHojaRutaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[266] = oper;
+        _operations[282] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getProveedoresbusca");
@@ -4535,50 +4753,45 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "c"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getProveedoresbuscaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[267] = oper;
+        _operations[283] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getFirmaUsuario");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getFirmaUsuarioReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[268] = oper;
+        _operations[284] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getFirmaUsuario2");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getFirmaUsuario2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[269] = oper;
+        _operations[285] = oper;
 
-    }
-
-    private static void _initOperationDesc28(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getdatosextra");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getdatosextraReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[270] = oper;
+        _operations[286] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getinvitacion");
@@ -4586,12 +4799,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getinvitacionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[271] = oper;
+        _operations[287] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("geninvitacion");
@@ -4615,12 +4828,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "aaa"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "geninvitacionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[272] = oper;
+        _operations[288] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateinvitacion");
@@ -4640,13 +4853,18 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateinvitacionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[273] = oper;
+        _operations[289] = oper;
 
+    }
+
+    private static void _initOperationDesc30(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("obtienetotal");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -4659,12 +4877,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "may"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "obtienetotalReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[274] = oper;
+        _operations[290] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("fechasTramite");
@@ -4674,12 +4892,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "c"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "fechasTramiteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[275] = oper;
+        _operations[291] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("generainf_comicion");
@@ -4729,12 +4947,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_usuario"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "generainf_comicionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[276] = oper;
+        _operations[292] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getInformeComision");
@@ -4742,12 +4960,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getInformeComisionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[277] = oper;
+        _operations[293] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateInformeComision");
@@ -4793,12 +5011,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateInformeComisionReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[278] = oper;
+        _operations[294] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDesierta");
@@ -4806,18 +5024,13 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getDesiertaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[279] = oper;
+        _operations[295] = oper;
 
-    }
-
-    private static void _initOperationDesc29(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("generaDesierta");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -4842,12 +5055,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nro_convocatoria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "generaDesiertaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[280] = oper;
+        _operations[296] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("updateDesierta");
@@ -4871,12 +5084,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "correlativo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateDesiertaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[281] = oper;
+        _operations[297] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setModificaEstado");
@@ -4884,233 +5097,20 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "setModificaEstadoReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[282] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("SecCodUsuario");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        oper.setReturnClass(int.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "SecCodUsuarioReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[283] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GeneraResIni");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tipo_resolucion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "envia"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle_nota_solicitud"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle_nota_presupuesto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "destino"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "xx"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "jefe_adqui"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_recursos"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_uni_sol"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "det_aut"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GeneraResIniReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[284] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GeneraResAdj");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_proveedor"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "detalle"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GeneraResAdjReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[285] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("SecTransDetComplemento");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "SecTransDetComplementoReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[286] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("SecTransaccionDetalle");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "SecTransaccionDetalleReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[287] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("SecUnidadMedida");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "SecUnidadMedidaReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[288] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetFechasRestriccion");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetFechasRestriccionReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[289] = oper;
-
-    }
-
-    private static void _initOperationDesc30(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetFechasRestriccionAdquiDepto");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetFechasRestriccionAdquiDeptoReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[290] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetRestriccionFechas");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_tipo_resf"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetRestriccionFechasReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[291] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetRestriccionFechas");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetRestriccionFechasReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[292] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetCod_Trans");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetCod_TransReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[293] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetContrato");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetContratoReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[294] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetAdjunto");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_adjunto"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetAdjuntoReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[295] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetNotaConformidad");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "GetNotaConformidadReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[296] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("UpdateNotaConformidad");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "fecha_nc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "hora_nc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ciudad"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "lugar"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "UpdateNotaConformidadReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.RPC);
-        oper.setUse(org.apache.axis.constants.Use.ENCODED);
-        _operations[297] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getContrato2");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
-        oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getContrato2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[298] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("cambioEstado");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_resolucion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("getContrato2");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "cambioEstadoReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getContrato2Return"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[299] = oper;
@@ -5121,33 +5121,37 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("mostrartareas");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("getContratoInicio");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "mostrartareasReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getContratoInicioReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[300] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("insertartareas");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("updateContratoInicio");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cuce_contratacion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tarea"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "asesor_juridico"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_garantia_retencion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_anticipo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_garan_reten_func"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_tipo_consultoria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_tipo_servicio"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "insertartareasReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "updateContratoInicioReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[301] = oper;
@@ -5156,7 +5160,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getContratoDocumentosIntegrantes");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getContratoDocumentosIntegrantesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5205,7 +5209,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "emit_boleta_garantia"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateContratoDocumentosIntegrantesReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5216,7 +5220,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getContratoContratante");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getContratoContratanteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5241,7 +5245,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ci_rep_leg_contratante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateContratoContratanteReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5252,7 +5256,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getContratoContratantado");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getContratoContratantadoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5273,7 +5277,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "deno_proponente_adjudicado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "updateContratoContratadoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5281,37 +5285,27 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         _operations[307] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getContratoInicio");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("mostrartareas");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "getContratoInicioReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "mostrartareasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[308] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("updateContratoInicio");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("eliminatarea");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cuce_contratacion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "asesor_juridico"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_garantia_retencion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_anticipo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_garan_reten_func"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_tipo_consultoria"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "sw_tipo_servicio"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "updateContratoInicioReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "eliminatareaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[309] = oper;
@@ -5322,25 +5316,31 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("ConstruyeContrato");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("insertartareas");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tarea"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "ConstruyeContratoReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "insertartareasReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[310] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("eliminatarea");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("ConstruyeContrato");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "tran"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "eliminatareaReturn"));
+        oper.setReturnQName(new javax.xml.namespace.QName("", "ConstruyeContratoReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
         oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[311] = oper;
@@ -5349,7 +5349,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getItem");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_item"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5366,7 +5366,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gestion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "addItemReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5377,7 +5377,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getTotal");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_trans_nro"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getTotalReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5386,7 +5386,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getItems");
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5397,7 +5397,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         oper.setName("getItems");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cod_transaccion"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map"));
         oper.setReturnClass(java.util.HashMap[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "getItemsReturn"));
         oper.setStyle(org.apache.axis.constants.Style.RPC);
@@ -5435,7 +5435,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map");
+            qName = new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "ArrayOf_apachesoap_Map");
             cachedSerQNames.add(qName);
             cls = java.util.HashMap[].class;
             cachedSerClasses.add(cls);
@@ -7612,12 +7612,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] setUsuariox(java.lang.String tran, int cod_usuario, java.lang.String apodo, java.lang.String clave, java.lang.String usuario, java.lang.String nombre_resumen) throws java.rmi.RemoteException {
+    public int secCodUsuario() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[68]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "SecCodUsuario"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Integer) _resp).intValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] setUsuariox(java.lang.String tran, int cod_usuario, java.lang.String apodo, java.lang.String clave, java.lang.String usuario, java.lang.String nombre_resumen) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[69]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7648,7 +7679,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[69]);
+        _call.setOperation(_operations[70]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7679,7 +7710,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[70]);
+        _call.setOperation(_operations[71]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7710,7 +7741,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[71]);
+        _call.setOperation(_operations[72]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7741,7 +7772,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[72]);
+        _call.setOperation(_operations[73]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7772,7 +7803,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[73]);
+        _call.setOperation(_operations[74]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7803,7 +7834,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[74]);
+        _call.setOperation(_operations[75]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7834,7 +7865,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[75]);
+        _call.setOperation(_operations[76]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7865,7 +7896,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[76]);
+        _call.setOperation(_operations[77]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7896,7 +7927,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[77]);
+        _call.setOperation(_operations[78]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7927,7 +7958,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[78]);
+        _call.setOperation(_operations[79]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7958,7 +7989,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[79]);
+        _call.setOperation(_operations[80]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -7989,7 +8020,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[80]);
+        _call.setOperation(_operations[81]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8020,7 +8051,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[81]);
+        _call.setOperation(_operations[82]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8051,7 +8082,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[82]);
+        _call.setOperation(_operations[83]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8082,7 +8113,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[83]);
+        _call.setOperation(_operations[84]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8113,7 +8144,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[84]);
+        _call.setOperation(_operations[85]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8144,7 +8175,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[85]);
+        _call.setOperation(_operations[86]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8175,7 +8206,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[86]);
+        _call.setOperation(_operations[87]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8206,7 +8237,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[87]);
+        _call.setOperation(_operations[88]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8237,7 +8268,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[88]);
+        _call.setOperation(_operations[89]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8268,7 +8299,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[89]);
+        _call.setOperation(_operations[90]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8299,7 +8330,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[90]);
+        _call.setOperation(_operations[91]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8330,7 +8361,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[91]);
+        _call.setOperation(_operations[92]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8361,7 +8392,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[92]);
+        _call.setOperation(_operations[93]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8392,7 +8423,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[93]);
+        _call.setOperation(_operations[94]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8423,7 +8454,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[94]);
+        _call.setOperation(_operations[95]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8454,7 +8485,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[95]);
+        _call.setOperation(_operations[96]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8485,7 +8516,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[96]);
+        _call.setOperation(_operations[97]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8516,7 +8547,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[97]);
+        _call.setOperation(_operations[98]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8547,7 +8578,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[98]);
+        _call.setOperation(_operations[99]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8578,7 +8609,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[99]);
+        _call.setOperation(_operations[100]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8609,7 +8640,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[100]);
+        _call.setOperation(_operations[101]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8640,7 +8671,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[101]);
+        _call.setOperation(_operations[102]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8671,7 +8702,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[102]);
+        _call.setOperation(_operations[103]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8702,7 +8733,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[103]);
+        _call.setOperation(_operations[104]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8733,7 +8764,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[104]);
+        _call.setOperation(_operations[105]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8764,7 +8795,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[105]);
+        _call.setOperation(_operations[106]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8795,7 +8826,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[106]);
+        _call.setOperation(_operations[107]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8826,7 +8857,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[107]);
+        _call.setOperation(_operations[108]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8857,7 +8888,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[108]);
+        _call.setOperation(_operations[109]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8888,7 +8919,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[109]);
+        _call.setOperation(_operations[110]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8919,7 +8950,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[110]);
+        _call.setOperation(_operations[111]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8950,7 +8981,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[111]);
+        _call.setOperation(_operations[112]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -8981,7 +9012,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[112]);
+        _call.setOperation(_operations[113]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9012,7 +9043,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[113]);
+        _call.setOperation(_operations[114]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9043,7 +9074,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[114]);
+        _call.setOperation(_operations[115]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9074,7 +9105,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[115]);
+        _call.setOperation(_operations[116]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9105,7 +9136,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[116]);
+        _call.setOperation(_operations[117]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9136,7 +9167,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[117]);
+        _call.setOperation(_operations[118]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9167,7 +9198,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[118]);
+        _call.setOperation(_operations[119]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9198,7 +9229,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[119]);
+        _call.setOperation(_operations[120]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9229,7 +9260,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[120]);
+        _call.setOperation(_operations[121]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9260,7 +9291,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[121]);
+        _call.setOperation(_operations[122]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9291,7 +9322,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[122]);
+        _call.setOperation(_operations[123]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9322,7 +9353,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[123]);
+        _call.setOperation(_operations[124]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9353,7 +9384,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[124]);
+        _call.setOperation(_operations[125]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9384,7 +9415,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[125]);
+        _call.setOperation(_operations[126]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9415,7 +9446,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[126]);
+        _call.setOperation(_operations[127]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9446,7 +9477,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[127]);
+        _call.setOperation(_operations[128]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9477,7 +9508,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[128]);
+        _call.setOperation(_operations[129]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9508,7 +9539,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[129]);
+        _call.setOperation(_operations[130]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9539,7 +9570,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[130]);
+        _call.setOperation(_operations[131]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9570,7 +9601,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[131]);
+        _call.setOperation(_operations[132]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9601,7 +9632,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[132]);
+        _call.setOperation(_operations[133]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9632,7 +9663,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[133]);
+        _call.setOperation(_operations[134]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9663,7 +9694,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[134]);
+        _call.setOperation(_operations[135]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9694,7 +9725,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[135]);
+        _call.setOperation(_operations[136]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9725,7 +9756,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[136]);
+        _call.setOperation(_operations[137]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9756,7 +9787,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[137]);
+        _call.setOperation(_operations[138]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9787,7 +9818,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[138]);
+        _call.setOperation(_operations[139]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9818,7 +9849,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[139]);
+        _call.setOperation(_operations[140]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9849,7 +9880,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[140]);
+        _call.setOperation(_operations[141]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9880,7 +9911,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[141]);
+        _call.setOperation(_operations[142]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9911,7 +9942,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[142]);
+        _call.setOperation(_operations[143]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9942,7 +9973,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[143]);
+        _call.setOperation(_operations[144]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -9973,7 +10004,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[144]);
+        _call.setOperation(_operations[145]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10004,7 +10035,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[145]);
+        _call.setOperation(_operations[146]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10035,7 +10066,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[146]);
+        _call.setOperation(_operations[147]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10066,7 +10097,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[147]);
+        _call.setOperation(_operations[148]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10097,7 +10128,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[148]);
+        _call.setOperation(_operations[149]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10128,7 +10159,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[149]);
+        _call.setOperation(_operations[150]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10159,7 +10190,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[150]);
+        _call.setOperation(_operations[151]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10190,7 +10221,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[151]);
+        _call.setOperation(_operations[152]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10221,7 +10252,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[152]);
+        _call.setOperation(_operations[153]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10252,7 +10283,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[153]);
+        _call.setOperation(_operations[154]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10283,7 +10314,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[154]);
+        _call.setOperation(_operations[155]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10314,7 +10345,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[155]);
+        _call.setOperation(_operations[156]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10345,7 +10376,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[156]);
+        _call.setOperation(_operations[157]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10376,7 +10407,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[157]);
+        _call.setOperation(_operations[158]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10407,7 +10438,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[158]);
+        _call.setOperation(_operations[159]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10438,7 +10469,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[159]);
+        _call.setOperation(_operations[160]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10469,7 +10500,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[160]);
+        _call.setOperation(_operations[161]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10500,7 +10531,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[161]);
+        _call.setOperation(_operations[162]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10531,7 +10562,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[162]);
+        _call.setOperation(_operations[163]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10562,7 +10593,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[163]);
+        _call.setOperation(_operations[164]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10593,7 +10624,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[164]);
+        _call.setOperation(_operations[165]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10624,7 +10655,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[165]);
+        _call.setOperation(_operations[166]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10655,7 +10686,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[166]);
+        _call.setOperation(_operations[167]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10686,7 +10717,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[167]);
+        _call.setOperation(_operations[168]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10717,7 +10748,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[168]);
+        _call.setOperation(_operations[169]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10748,7 +10779,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[169]);
+        _call.setOperation(_operations[170]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10779,7 +10810,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[170]);
+        _call.setOperation(_operations[171]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10810,7 +10841,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[171]);
+        _call.setOperation(_operations[172]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10841,7 +10872,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[172]);
+        _call.setOperation(_operations[173]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10872,7 +10903,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[173]);
+        _call.setOperation(_operations[174]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10903,7 +10934,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[174]);
+        _call.setOperation(_operations[175]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10934,7 +10965,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[175]);
+        _call.setOperation(_operations[176]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10965,7 +10996,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[176]);
+        _call.setOperation(_operations[177]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -10996,7 +11027,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[177]);
+        _call.setOperation(_operations[178]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11027,7 +11058,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[178]);
+        _call.setOperation(_operations[179]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11058,7 +11089,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[179]);
+        _call.setOperation(_operations[180]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11089,7 +11120,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[180]);
+        _call.setOperation(_operations[181]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11120,7 +11151,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[181]);
+        _call.setOperation(_operations[182]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11151,7 +11182,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[182]);
+        _call.setOperation(_operations[183]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11177,12 +11208,43 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
+    public java.util.HashMap[] generaResIni(int cod_transaccion, int cod_tipo_resolucion, java.lang.String detalle, java.lang.String envia, java.lang.String detalle_nota_solicitud, java.lang.String detalle_nota_presupuesto, java.lang.String destino, int xx, int gestion, java.lang.String jefe_adqui, java.lang.String det_recursos, java.lang.String det_uni_sol, java.lang.String det_aut) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[184]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "GeneraResIni"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_tipo_resolucion), detalle, envia, detalle_nota_solicitud, detalle_nota_presupuesto, destino, new java.lang.Integer(xx), new java.lang.Integer(gestion), jefe_adqui, det_recursos, det_uni_sol, det_aut});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.util.HashMap[] getResIni(int cod_transaccion) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[183]);
+        _call.setOperation(_operations[185]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11213,7 +11275,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[184]);
+        _call.setOperation(_operations[186]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11239,12 +11301,74 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
+    public java.util.HashMap[] cambioEstado(int cod_resolucion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[187]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "cambioEstado"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_resolucion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] generaResAdj(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String detalle) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[188]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "GeneraResAdj"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), cod_proveedor, detalle});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.util.HashMap[] getResAdj(int cod_trans_nro) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[185]);
+        _call.setOperation(_operations[189]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11275,7 +11399,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[186]);
+        _call.setOperation(_operations[190]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11306,7 +11430,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[187]);
+        _call.setOperation(_operations[191]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11337,7 +11461,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[188]);
+        _call.setOperation(_operations[192]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11368,7 +11492,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[189]);
+        _call.setOperation(_operations[193]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11399,7 +11523,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[190]);
+        _call.setOperation(_operations[194]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11430,7 +11554,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[191]);
+        _call.setOperation(_operations[195]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11461,7 +11585,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[192]);
+        _call.setOperation(_operations[196]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11492,7 +11616,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[193]);
+        _call.setOperation(_operations[197]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11523,7 +11647,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[194]);
+        _call.setOperation(_operations[198]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11554,7 +11678,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[195]);
+        _call.setOperation(_operations[199]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11585,7 +11709,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[196]);
+        _call.setOperation(_operations[200]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11616,7 +11740,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[197]);
+        _call.setOperation(_operations[201]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11647,7 +11771,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[198]);
+        _call.setOperation(_operations[202]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11678,7 +11802,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[199]);
+        _call.setOperation(_operations[203]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11709,7 +11833,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[200]);
+        _call.setOperation(_operations[204]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11740,7 +11864,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[201]);
+        _call.setOperation(_operations[205]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11771,7 +11895,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[202]);
+        _call.setOperation(_operations[206]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11802,7 +11926,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[203]);
+        _call.setOperation(_operations[207]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11833,7 +11957,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[204]);
+        _call.setOperation(_operations[208]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11864,7 +11988,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[205]);
+        _call.setOperation(_operations[209]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11895,7 +12019,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[206]);
+        _call.setOperation(_operations[210]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11926,7 +12050,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[207]);
+        _call.setOperation(_operations[211]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11957,7 +12081,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[208]);
+        _call.setOperation(_operations[212]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -11988,7 +12112,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[209]);
+        _call.setOperation(_operations[213]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12019,7 +12143,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[210]);
+        _call.setOperation(_operations[214]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12050,7 +12174,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[211]);
+        _call.setOperation(_operations[215]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12081,7 +12205,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[212]);
+        _call.setOperation(_operations[216]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12112,7 +12236,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[213]);
+        _call.setOperation(_operations[217]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12143,7 +12267,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[214]);
+        _call.setOperation(_operations[218]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12174,7 +12298,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[215]);
+        _call.setOperation(_operations[219]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12205,7 +12329,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[216]);
+        _call.setOperation(_operations[220]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12236,7 +12360,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[217]);
+        _call.setOperation(_operations[221]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12267,7 +12391,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[218]);
+        _call.setOperation(_operations[222]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12298,7 +12422,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[219]);
+        _call.setOperation(_operations[223]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12329,7 +12453,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[220]);
+        _call.setOperation(_operations[224]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12360,7 +12484,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[221]);
+        _call.setOperation(_operations[225]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12391,7 +12515,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[222]);
+        _call.setOperation(_operations[226]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12422,7 +12546,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[223]);
+        _call.setOperation(_operations[227]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12453,7 +12577,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[224]);
+        _call.setOperation(_operations[228]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12484,7 +12608,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[225]);
+        _call.setOperation(_operations[229]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12515,7 +12639,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[226]);
+        _call.setOperation(_operations[230]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12546,7 +12670,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[227]);
+        _call.setOperation(_operations[231]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12577,7 +12701,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[228]);
+        _call.setOperation(_operations[232]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -12603,1779 +12727,12 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] addItem2(java.lang.String tran, int cod_transaccion, java.lang.String detalle, java.lang.String unidad_medida, int cantidad_pedido, int gestion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[229]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addItem2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), detalle, unidad_medida, new java.lang.Integer(cantidad_pedido), new java.lang.Integer(gestion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateItemx(java.lang.String tran, java.lang.String cod_trans_detalle, java.lang.String detalle, int cod_unidad_medida, int cantidad_pedido, java.lang.String partida) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[230]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateItemx"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, cod_trans_detalle, detalle, new java.lang.Integer(cod_unidad_medida), new java.lang.Integer(cantidad_pedido), partida});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateItem(java.lang.String tran, java.lang.String cod_trans_detalle, java.lang.String detalle, int cod_unidad_medida, int cantidad_pedido) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[231]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateItem"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, cod_trans_detalle, detalle, new java.lang.Integer(cod_unidad_medida), new java.lang.Integer(cantidad_pedido)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateArticulo(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[232]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateArticulo"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), detalle});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateArticulo2(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle, int cod_user) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[233]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateArticulo2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), detalle, new java.lang.Integer(cod_user)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] delDetallex(java.lang.String tran, int cod_complemento) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[234]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delDetallex"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_complemento)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] setPartida2(java.lang.String tran, int cod_trans_detalle, java.lang.String partida, int cod_user) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[235]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setPartida2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), partida, new java.lang.Integer(cod_user)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] setUnidadMedida(java.lang.String tran, int cod_trans_detalle, int cod_unidad_medida) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[236]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setUnidadMedida"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_unidad_medida)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] setUnidadMedida2(java.lang.String tran, int cod_trans_detalle, int cod_unidad_medida, int cod_user) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[237]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setUnidadMedida2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_unidad_medida), new java.lang.Integer(cod_user)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getItemClasificador(int gestion, int partida) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[238]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getItemClasificador"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(gestion), new java.lang.Integer(partida)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateCodItem(java.lang.String tran, int cod_trans_detalle, int cod_item) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[239]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateCodItem"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_item)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateCodItem2(java.lang.String tran, int cod_trans_detalle, int cod_item, int cod_user) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[240]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateCodItem2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_item), new java.lang.Integer(cod_user)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] delComplemento(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[241]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delComplemento"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] delDetalleNro(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[242]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delDetalleNro"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] delItemRefFecha(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[243]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delItemRefFecha"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] delItemx(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[244]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delItemx"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addPreventivo(java.lang.String tran, int cod_transaccion, java.lang.String cod_preventivo, java.lang.String resumen, int da, java.lang.String total) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[245]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addPreventivo"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), cod_preventivo, resumen, new java.lang.Integer(da), total});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getPreventivos(int cod_transaccion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[246]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getPreventivos"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] delPreventivo(java.lang.String tran, int cod_transaccion, java.lang.String cod_preventivo) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[247]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delPreventivo"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), cod_preventivo});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getTotalPartidas(int cod_trans_nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[248]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getTotalPartidas"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] setCodW(java.lang.String tran, int cod_transaccion, int cod_w) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[249]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setCodW"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_w)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addFechaRestriccion(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_conclusion, java.lang.String lugar) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[250]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaRestriccion"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_conclusion, lugar});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addFechaRestriccion3(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_conclusion, java.lang.String lugar, java.lang.String hora_inicio) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[251]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaRestriccion3"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_conclusion, lugar, hora_inicio});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addFechaBoletaGarantia(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_inicio, java.lang.String fecha_conclusion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[252]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaBoletaGarantia"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_inicio, fecha_conclusion});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addFechaRestriccion2(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_inicio, java.lang.String fecha_conclusion, java.lang.String lugar, java.lang.String hora_inicio) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[253]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaRestriccion2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_inicio, fecha_conclusion, lugar, hora_inicio});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateFechaEntrega(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_inicio, java.lang.String fecha_conclusion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[254]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateFechaEntrega"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_inicio, fecha_conclusion});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] fechasExtra(java.lang.String a, java.lang.String b, int c, int d) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[255]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "fechasExtra"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {a, b, new java.lang.Integer(c), new java.lang.Integer(d)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] dias_restantes(int cod_trans_nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[256]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "dias_restantes"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] notificacionfechas() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[257]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "notificacionfechas"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addContrato(java.lang.String tran, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, java.lang.String g, java.lang.String h, java.lang.String i, java.lang.String j, java.lang.String k, java.lang.String l, java.lang.String m, java.lang.String n, java.lang.String o, java.lang.String p, java.lang.String q, java.lang.String r, java.lang.String s, java.lang.String t, java.lang.String u, java.lang.String v, java.lang.String w, java.lang.String x, java.lang.String y, java.lang.String z, java.lang.String a1, java.lang.String b1) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[258]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addContrato"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a1, b1});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addContrato(java.lang.String tran, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, java.lang.String g, java.lang.String h, java.lang.String i, java.lang.String j, java.lang.String k, java.lang.String l, java.lang.String m, java.lang.String n, java.lang.String o, java.lang.String p, java.lang.String q, java.lang.String r, java.lang.String s, java.lang.String t, java.lang.String u, java.lang.String v, java.lang.String w, java.lang.String x, java.lang.String y, java.lang.String z) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[259]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addContrato"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateContrato(java.lang.String tran, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, java.lang.String g, java.lang.String h, java.lang.String i, java.lang.String j, java.lang.String k, java.lang.String l, java.lang.String m, java.lang.String n, java.lang.String o, java.lang.String p, java.lang.String q, java.lang.String r, java.lang.String s, java.lang.String t, java.lang.String u, java.lang.String v, java.lang.String w, java.lang.String x, java.lang.String y, java.lang.String z, java.lang.String a1, java.lang.String b1) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[260]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateContrato"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a1, b1});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addCuceSicoes(java.lang.String tran, int cod_transaccion, java.lang.String cuce_sicoes) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[261]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addCuceSicoes"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), cuce_sicoes});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getCuceSicoes(int cod_transaccion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[262]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getCuceSicoes"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addAdmAlm(java.lang.String tran, int cod_usuario, int cod_almacen, int gestion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[263]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addAdmAlm"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_usuario), new java.lang.Integer(cod_almacen), new java.lang.Integer(gestion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateAdmAlm(java.lang.String tran, int cod_usr_alm, int cod_usuario, int cod_almacen) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[264]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateAdmAlm"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_usr_alm), new java.lang.Integer(cod_usuario), new java.lang.Integer(cod_almacen)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] addHojaRuta(java.lang.String tran, int cod_transaccion, java.lang.String hoja_ruta) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[265]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addHojaRuta"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), hoja_ruta});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.lang.String getHojaRuta(int cod_transaccion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[266]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getHojaRuta"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.lang.String) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getProveedoresbusca(java.lang.String a, java.lang.String b, java.lang.String c) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[267]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getProveedoresbusca"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {a, b, c});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getFirmaUsuario(int cod_trans_nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[268]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getFirmaUsuario"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getFirmaUsuario2(int cod_transaccion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[269]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getFirmaUsuario2"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getdatosextra(int cod_transaccion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[270]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getdatosextra"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getinvitacion(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[271]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getinvitacion"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] geninvitacion(int cod_transaccion, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, int gestion, java.lang.String aaa) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[272]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "geninvitacion"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, new java.lang.Integer(gestion), aaa});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateinvitacion(int cod_t, int codtn, java.lang.String np, java.lang.String fec, java.lang.String fec_re, java.lang.String jefe_adq, java.lang.String aaa, int nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[273]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateinvitacion"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_t), new java.lang.Integer(codtn), np, fec, fec_re, jefe_adq, aaa, new java.lang.Integer(nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] obtienetotal(int user, java.lang.String fi, java.lang.String ff, int men, int may) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[274]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "obtienetotal"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(user), fi, ff, new java.lang.Integer(men), new java.lang.Integer(may)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] fechasTramite(java.lang.String a, java.lang.String b, int c) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[275]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "fechasTramite"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {a, b, new java.lang.Integer(c)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] generainf_comicion(int gestion, int cod_trans, int cod_trans_nro, java.lang.String detalle, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm, int cod_usuario) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[276]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "generainf_comicion"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(gestion), new java.lang.Integer(cod_trans), new java.lang.Integer(cod_trans_nro), detalle, destino, cargo, modalidad, notas, nota_juridica, citacion, fec_cit, fecha, hora, nro_informe, fecha_inf, presidente, vocal1, vocal2, secretario, nota_uni, nota_ppto, resolucion_adm, new java.lang.Integer(cod_usuario)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getInformeComision(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[277]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getInformeComision"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateInformeComision(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm, int correlativo) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[278]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateInformeComision"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, cargo, modalidad, notas, nota_juridica, citacion, fec_cit, fecha, hora, nro_informe, fecha_inf, presidente, vocal1, vocal2, secretario, nota_uni, nota_ppto, resolucion_adm, new java.lang.Integer(correlativo)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] getDesierta(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[279]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getDesierta"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] generaDesierta(int gestion, int cod_transaccion, int cod_trans_nro, java.lang.String detalle, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[280]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "generaDesierta"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(gestion), new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), detalle, destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateDesierta(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria, int correlativo) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[281]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateDesierta"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria, new java.lang.Integer(correlativo)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] setModificaEstado(int cod_transaccion, java.lang.String estado) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[282]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setModificaEstado"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), estado});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public int secCodUsuario() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[283]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "SecCodUsuario"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return ((java.lang.Integer) _resp).intValue();
-            } catch (java.lang.Exception _exception) {
-                return ((java.lang.Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] generaResIni(int cod_transaccion, int cod_tipo_resolucion, java.lang.String detalle, java.lang.String envia, java.lang.String detalle_nota_solicitud, java.lang.String detalle_nota_presupuesto, java.lang.String destino, int xx, int gestion, java.lang.String jefe_adqui, java.lang.String det_recursos, java.lang.String det_uni_sol, java.lang.String det_aut) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[284]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "GeneraResIni"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_tipo_resolucion), detalle, envia, detalle_nota_solicitud, detalle_nota_presupuesto, destino, new java.lang.Integer(xx), new java.lang.Integer(gestion), jefe_adqui, det_recursos, det_uni_sol, det_aut});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] generaResAdj(int cod_trans_nro, java.lang.String cod_proveedor, java.lang.String detalle) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[285]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "GeneraResAdj"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro), cod_proveedor, detalle});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
     public java.lang.String secTransDetComplemento() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[286]);
+        _call.setOperation(_operations[233]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14406,7 +12763,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[287]);
+        _call.setOperation(_operations[234]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14437,7 +12794,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[288]);
+        _call.setOperation(_operations[235]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14463,12 +12820,632 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
+    public java.util.HashMap[] addItem2(java.lang.String tran, int cod_transaccion, java.lang.String detalle, java.lang.String unidad_medida, int cantidad_pedido, int gestion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[236]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addItem2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), detalle, unidad_medida, new java.lang.Integer(cantidad_pedido), new java.lang.Integer(gestion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateItemx(java.lang.String tran, java.lang.String cod_trans_detalle, java.lang.String detalle, int cod_unidad_medida, int cantidad_pedido, java.lang.String partida) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[237]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateItemx"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, cod_trans_detalle, detalle, new java.lang.Integer(cod_unidad_medida), new java.lang.Integer(cantidad_pedido), partida});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateItem(java.lang.String tran, java.lang.String cod_trans_detalle, java.lang.String detalle, int cod_unidad_medida, int cantidad_pedido) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[238]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateItem"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, cod_trans_detalle, detalle, new java.lang.Integer(cod_unidad_medida), new java.lang.Integer(cantidad_pedido)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateArticulo(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[239]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateArticulo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), detalle});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateArticulo2(java.lang.String tran, int cod_trans_detalle, java.lang.String detalle, int cod_user) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[240]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateArticulo2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), detalle, new java.lang.Integer(cod_user)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] delDetallex(java.lang.String tran, int cod_complemento) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[241]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delDetallex"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_complemento)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] setPartida2(java.lang.String tran, int cod_trans_detalle, java.lang.String partida, int cod_user) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[242]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setPartida2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), partida, new java.lang.Integer(cod_user)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] setUnidadMedida(java.lang.String tran, int cod_trans_detalle, int cod_unidad_medida) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[243]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setUnidadMedida"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_unidad_medida)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] setUnidadMedida2(java.lang.String tran, int cod_trans_detalle, int cod_unidad_medida, int cod_user) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[244]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setUnidadMedida2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_unidad_medida), new java.lang.Integer(cod_user)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getItemClasificador(int gestion, int partida) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[245]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getItemClasificador"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(gestion), new java.lang.Integer(partida)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateCodItem(java.lang.String tran, int cod_trans_detalle, int cod_item) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[246]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateCodItem"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_item)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateCodItem2(java.lang.String tran, int cod_trans_detalle, int cod_item, int cod_user) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[247]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateCodItem2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle), new java.lang.Integer(cod_item), new java.lang.Integer(cod_user)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] delComplemento(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[248]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delComplemento"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] delDetalleNro(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[249]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delDetalleNro"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] delItemRefFecha(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[250]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delItemRefFecha"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] delItemx(java.lang.String tran, int cod_trans_detalle) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[251]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delItemx"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_detalle)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addPreventivo(java.lang.String tran, int cod_transaccion, java.lang.String cod_preventivo, java.lang.String resumen, int da, java.lang.String total) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[252]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addPreventivo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), cod_preventivo, resumen, new java.lang.Integer(da), total});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getPreventivos(int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[253]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getPreventivos"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] delPreventivo(java.lang.String tran, int cod_transaccion, java.lang.String cod_preventivo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[254]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "delPreventivo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), cod_preventivo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getTotalPartidas(int cod_trans_nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[255]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getTotalPartidas"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.util.HashMap[] getFechasRestriccion(int cod_transaccion) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[289]);
+        _call.setOperation(_operations[256]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14499,7 +13476,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[290]);
+        _call.setOperation(_operations[257]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14525,12 +13502,198 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
+    public java.util.HashMap[] setCodW(java.lang.String tran, int cod_transaccion, int cod_w) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[258]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setCodW"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_w)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addFechaRestriccion(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_conclusion, java.lang.String lugar) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[259]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaRestriccion"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_conclusion, lugar});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addFechaRestriccion3(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_conclusion, java.lang.String lugar, java.lang.String hora_inicio) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[260]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaRestriccion3"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_conclusion, lugar, hora_inicio});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addFechaBoletaGarantia(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_inicio, java.lang.String fecha_conclusion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[261]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaBoletaGarantia"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_inicio, fecha_conclusion});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addFechaRestriccion2(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_inicio, java.lang.String fecha_conclusion, java.lang.String lugar, java.lang.String hora_inicio) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[262]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addFechaRestriccion2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_inicio, fecha_conclusion, lugar, hora_inicio});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateFechaEntrega(java.lang.String tran, int cod_tipo_resf, int cod_trans_nro, java.lang.String fecha_inicio, java.lang.String fecha_conclusion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[263]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateFechaEntrega"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_tipo_resf), new java.lang.Integer(cod_trans_nro), fecha_inicio, fecha_conclusion});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.util.HashMap[] getRestriccionFechas(int cod_trans_nro, int cod_tipo_resf) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[291]);
+        _call.setOperation(_operations[264]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14561,7 +13724,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[292]);
+        _call.setOperation(_operations[265]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14592,7 +13755,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[293]);
+        _call.setOperation(_operations[266]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14618,12 +13781,198 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
+    public java.util.HashMap[] fechasExtra(java.lang.String a, java.lang.String b, int c, int d) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[267]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "fechasExtra"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {a, b, new java.lang.Integer(c), new java.lang.Integer(d)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] dias_restantes(int cod_trans_nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[268]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "dias_restantes"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] notificacionfechas() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[269]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "notificacionfechas"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addContrato(java.lang.String tran, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, java.lang.String g, java.lang.String h, java.lang.String i, java.lang.String j, java.lang.String k, java.lang.String l, java.lang.String m, java.lang.String n, java.lang.String o, java.lang.String p, java.lang.String q, java.lang.String r, java.lang.String s, java.lang.String t, java.lang.String u, java.lang.String v, java.lang.String w, java.lang.String x, java.lang.String y, java.lang.String z, java.lang.String a1, java.lang.String b1) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[270]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addContrato"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a1, b1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addContrato(java.lang.String tran, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, java.lang.String g, java.lang.String h, java.lang.String i, java.lang.String j, java.lang.String k, java.lang.String l, java.lang.String m, java.lang.String n, java.lang.String o, java.lang.String p, java.lang.String q, java.lang.String r, java.lang.String s, java.lang.String t, java.lang.String u, java.lang.String v, java.lang.String w, java.lang.String x, java.lang.String y, java.lang.String z) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[271]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addContrato"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateContrato(java.lang.String tran, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, java.lang.String g, java.lang.String h, java.lang.String i, java.lang.String j, java.lang.String k, java.lang.String l, java.lang.String m, java.lang.String n, java.lang.String o, java.lang.String p, java.lang.String q, java.lang.String r, java.lang.String s, java.lang.String t, java.lang.String u, java.lang.String v, java.lang.String w, java.lang.String x, java.lang.String y, java.lang.String z, java.lang.String a1, java.lang.String b1) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[272]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateContrato"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a1, b1});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.util.HashMap[] getContrato(int cod_trans_nro) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[294]);
+        _call.setOperation(_operations[273]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14654,7 +14003,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[295]);
+        _call.setOperation(_operations[274]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14680,12 +14029,136 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
+    public java.util.HashMap[] addCuceSicoes(java.lang.String tran, int cod_transaccion, java.lang.String cuce_sicoes) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[275]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addCuceSicoes"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), cuce_sicoes});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getCuceSicoes(int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[276]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getCuceSicoes"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] addAdmAlm(java.lang.String tran, int cod_usuario, int cod_almacen, int gestion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[277]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addAdmAlm"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_usuario), new java.lang.Integer(cod_almacen), new java.lang.Integer(gestion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateAdmAlm(java.lang.String tran, int cod_usr_alm, int cod_usuario, int cod_almacen) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[278]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateAdmAlm"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_usr_alm), new java.lang.Integer(cod_usuario), new java.lang.Integer(cod_almacen)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public java.util.HashMap[] getNotaConformidad(int cod_trans_nro) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[296]);
+        _call.setOperation(_operations[279]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14716,7 +14189,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[297]);
+        _call.setOperation(_operations[280]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14742,12 +14215,570 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] getContrato2(int cod_transaccion) throws java.rmi.RemoteException {
+    public java.util.HashMap[] addHojaRuta(java.lang.String tran, int cod_transaccion, java.lang.String hoja_ruta) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[281]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "addHojaRuta"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion), hoja_ruta});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String getHojaRuta(int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[282]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getHojaRuta"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getProveedoresbusca(java.lang.String a, java.lang.String b, java.lang.String c) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[283]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getProveedoresbusca"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {a, b, c});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getFirmaUsuario(int cod_trans_nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[284]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getFirmaUsuario"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_trans_nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getFirmaUsuario2(int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[285]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getFirmaUsuario2"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getdatosextra(int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[286]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getdatosextra"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getinvitacion(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[287]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getinvitacion"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] geninvitacion(int cod_transaccion, int cod_trans_nro, java.lang.String a, java.lang.String b, java.lang.String c, java.lang.String d, java.lang.String e, java.lang.String f, int gestion, java.lang.String aaa) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[288]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "geninvitacion"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), a, b, c, d, e, f, new java.lang.Integer(gestion), aaa});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateinvitacion(int cod_t, int codtn, java.lang.String np, java.lang.String fec, java.lang.String fec_re, java.lang.String jefe_adq, java.lang.String aaa, int nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[289]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateinvitacion"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_t), new java.lang.Integer(codtn), np, fec, fec_re, jefe_adq, aaa, new java.lang.Integer(nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] obtienetotal(int user, java.lang.String fi, java.lang.String ff, int men, int may) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[290]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "obtienetotal"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(user), fi, ff, new java.lang.Integer(men), new java.lang.Integer(may)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] fechasTramite(java.lang.String a, java.lang.String b, int c) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[291]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "fechasTramite"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {a, b, new java.lang.Integer(c)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] generainf_comicion(int gestion, int cod_trans, int cod_trans_nro, java.lang.String detalle, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm, int cod_usuario) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[292]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "generainf_comicion"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(gestion), new java.lang.Integer(cod_trans), new java.lang.Integer(cod_trans_nro), detalle, destino, cargo, modalidad, notas, nota_juridica, citacion, fec_cit, fecha, hora, nro_informe, fecha_inf, presidente, vocal1, vocal2, secretario, nota_uni, nota_ppto, resolucion_adm, new java.lang.Integer(cod_usuario)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getInformeComision(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[293]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getInformeComision"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateInformeComision(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String cargo, java.lang.String modalidad, java.lang.String notas, java.lang.String nota_juridica, java.lang.String citacion, java.lang.String fec_cit, java.lang.String fecha, java.lang.String hora, java.lang.String nro_informe, java.lang.String fecha_inf, java.lang.String presidente, java.lang.String vocal1, java.lang.String vocal2, java.lang.String secretario, java.lang.String nota_uni, java.lang.String nota_ppto, java.lang.String resolucion_adm, int correlativo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[294]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateInformeComision"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, cargo, modalidad, notas, nota_juridica, citacion, fec_cit, fecha, hora, nro_informe, fecha_inf, presidente, vocal1, vocal2, secretario, nota_uni, nota_ppto, resolucion_adm, new java.lang.Integer(correlativo)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getDesierta(int cod_transaccion, int cod_trans_nro) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[295]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getDesierta"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] generaDesierta(int gestion, int cod_transaccion, int cod_trans_nro, java.lang.String detalle, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[296]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "generaDesierta"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(gestion), new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), detalle, destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] updateDesierta(int cod_transaccion, int cod_trans_nro, java.lang.String destino, java.lang.String res_inicio, java.lang.String fecha_apertura, java.lang.String informe_tecnico, java.lang.String informe_adquisiciones, java.lang.String modalidad, java.lang.String nro_convocatoria, int correlativo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[297]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateDesierta"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), new java.lang.Integer(cod_trans_nro), destino, res_inicio, fecha_apertura, informe_tecnico, informe_adquisiciones, modalidad, nro_convocatoria, new java.lang.Integer(correlativo)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] setModificaEstado(int cod_transaccion, java.lang.String estado) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[298]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "setModificaEstado"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), estado});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] getContrato2(int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[299]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -14773,38 +14804,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] cambioEstado(int cod_resolucion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[299]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "cambioEstado"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_resolucion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] mostrartareas(int cod_user, java.lang.String mes, int gestion) throws java.rmi.RemoteException {
+    public java.util.HashMap[] getContratoInicio(int cod_transaccion) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -14813,11 +14813,11 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "mostrartareas"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getContratoInicio"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_user), mes, new java.lang.Integer(gestion)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -14835,7 +14835,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] insertartareas(int cod_user, java.lang.String mes, java.lang.String tarea, int gestion) throws java.rmi.RemoteException {
+    public java.util.HashMap[] updateContratoInicio(int cod_transaccion, java.lang.String cuce_contratacion, java.lang.String asesor_juridico, java.lang.String sw_garantia_retencion, java.lang.String sw_anticipo, java.lang.String sw_garan_reten_func, java.lang.String sw_tipo_consultoria, java.lang.String sw_tipo_servicio) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -14844,11 +14844,11 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "insertartareas"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateContratoInicio"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_user), mes, tarea, new java.lang.Integer(gestion)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), cuce_contratacion, asesor_juridico, sw_garantia_retencion, sw_anticipo, sw_garan_reten_func, sw_tipo_consultoria, sw_tipo_servicio});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -15052,7 +15052,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
 }
     }
 
-    public java.util.HashMap[] getContratoInicio(int cod_transaccion) throws java.rmi.RemoteException {
+    public java.util.HashMap[] mostrartareas(int cod_user, java.lang.String mes, int gestion) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -15061,73 +15061,11 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "getContratoInicio"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "mostrartareas"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] updateContratoInicio(int cod_transaccion, java.lang.String cuce_contratacion, java.lang.String asesor_juridico, java.lang.String sw_garantia_retencion, java.lang.String sw_anticipo, java.lang.String sw_garan_reten_func, java.lang.String sw_tipo_consultoria, java.lang.String sw_tipo_servicio) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[309]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "updateContratoInicio"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_transaccion), cuce_contratacion, asesor_juridico, sw_garantia_retencion, sw_anticipo, sw_garan_reten_func, sw_tipo_consultoria, sw_tipo_servicio});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (java.util.HashMap[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public java.util.HashMap[] construyeContrato(java.lang.String tran, int cod_transaccion) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[310]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "ConstruyeContrato"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_user), mes, new java.lang.Integer(gestion)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -15150,7 +15088,7 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[311]);
+        _call.setOperation(_operations[309]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
@@ -15159,6 +15097,68 @@ public class AdquiWSSoapBindingStub extends org.apache.axis.client.Stub implemen
         setRequestHeaders(_call);
         setAttachments(_call);
  try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] insertartareas(int cod_user, java.lang.String mes, java.lang.String tarea, int gestion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[310]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "insertartareas"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(cod_user), mes, tarea, new java.lang.Integer(gestion)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.util.HashMap[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.util.HashMap[]) org.apache.axis.utils.JavaUtils.convert(_resp, java.util.HashMap[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.util.HashMap[] construyeContrato(java.lang.String tran, int cod_transaccion) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[311]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "ConstruyeContrato"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {tran, new java.lang.Integer(cod_transaccion)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
