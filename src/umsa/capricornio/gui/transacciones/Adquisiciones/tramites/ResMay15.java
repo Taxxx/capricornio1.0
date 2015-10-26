@@ -145,19 +145,25 @@ public class ResMay15 extends javax.swing.JDialog {
             System.out.println("asdfsfsdfsdf"+datos);
             if(datos!=null)
             {
+                System.out.println("uno");
                 jTextField1.setText(datos[0].get("CITE").toString());
+                System.out.println("dos");
                 jTextField2.setText(datos[0].get("CARGO").toString());
+                System.out.println("tres");
                 jTextField3.setText(datos[0].get("DETALLE_NOTA_SOLICITUD").toString());
+                System.out.println("cuatro");
                 jTextField4.setText(datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString());
+                System.out.println("cinco");
                 SimpleDateFormat formatoDeFecha = new SimpleDateFormat("MM/dd/yyyy");
                 String strf=(datos[0].get("FECHA_INICIO_CON").toString());
-                System.out.println(strf);
+                System.out.println("esto es str "+strf);
                 Fecha1.setValue(formatoDeFecha.parse(strf));
                 jTextArea1.setText(datos[0].get("DESTINO").toString());
                 jTextArea2.setText(datos[0].get("OBJETIVO").toString());
                 jTextField6.setText(datos[0].get("COTIZACION").toString());
                 nro_res=datos[0].get("NRO").toString();
                 documentos=datos[0].get("DOCUMENTOS").toString();
+                System.out.println("hasta aqui si pasa");
                 llena_checks();
                 bloquea_check(false);
                 bloquea();
@@ -472,17 +478,15 @@ public class ResMay15 extends javax.swing.JDialog {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addComponent(Fecha1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13)
                     .addComponent(jLabel9)
                     .addComponent(jLabel14)))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -516,13 +520,8 @@ public class ResMay15 extends javax.swing.JDialog {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19)
-                        .addContainerGap())
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -539,7 +538,16 @@ public class ResMay15 extends javax.swing.JDialog {
                                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel17)))
-                            .addGap(34, 34, 34)))))
+                            .addGap(34, 34, 34)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -672,7 +680,9 @@ public class ResMay15 extends javax.swing.JDialog {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("aqui uno "+gestion);
             System.out.println(fec_ini);
-            puerto.generaRes15(cod_transaccion,cod_trans_nro,dias,cite,destino,objetivo,cotizacion,detalle,enviado_por,cargo,gestion,doc,fec_ini,"","");
+
+            puerto.generaRes15(cod_transaccion,cod_trans_nro,dias,cite,destino,objetivo,cotizacion,detalle,enviado_por,cargo,gestion,doc,fec_ini,fecha_hr,fecha_nota);
+
             System.out.println("aqui dos");
             llenadatos();
             }catch(Exception e)
@@ -715,11 +725,13 @@ public class ResMay15 extends javax.swing.JDialog {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             System.out.println("la fecha "+fec_ini);
-            puerto.updateRes15(cod_transaccion,cod_trans_nro,cite,destino,objetivo,cotizacion,doc,fec_ini,cargo,"","");
+            System.out.println("esto es un clasico error jejeje "+fecha_hr+" esto "+fecha_nota+" "+cod_transaccion+" "+cod_trans_nro+" "+cite+","+destino+","+objetivo+","+cotizacion+","+doc+","+fec_ini+","+cargo+","+fecha_hr+","+fecha_nota);
+            puerto.updateRes15(cod_transaccion,cod_trans_nro,cite,destino,objetivo,cotizacion,doc,fec_ini,cargo,fecha_hr,fecha_nota);
+
             llenadatos();
             }catch(Exception e)
             {
-            
+                System.out.println("este es el error al actualizar "+e);
             }
         }
         habilita();

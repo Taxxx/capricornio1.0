@@ -3,6 +3,66 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/FrmTransacciones.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_FechaEntrega.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/FrmItems.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmReporteUnidad.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmAdquisiciones.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmtareasAdicionales.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/invitacion.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/RepTransaccion.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/ProponentesDialog.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/BancoProveedor/DiagBuscaProveedor.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/Juridica/FrmReportesJuridica.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/Almacen/FrmReportesItems.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_reporte_desierta.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/tablas/TablaTransaccionEstados.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/Reportes.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JDAdjuntos.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/GetResAdj.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/XXXIngresoMateriales/XXXFrmIngresoMateriales.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/DiagOrdenesGenera.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/menu/JD_RES_FECH.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/GetResoluciones.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/ResolucionInicio.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/ProponentesDialog11.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmReporteModalidad.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/JD_Opciones.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_FECH_ANPE.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JDResAdjObra.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/BancoProveedor/FrmBancoProveedores.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/domain/TransaccionEstadosData1.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmResumenReporte.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/domain/TransaccionEstadosData.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JDResAdj2.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/JD_addDetalle.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/Almacen/FrmReportesAlmacen.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/tablas/TablaTransaccionEstados1.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/menu/FrmMenu.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/JD_Preventivo.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/DiagOrdenesDetalle.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JDInformeComision.java</file>
+=======
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/ResMay15.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/JD_AddPreventivo.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/RepTransaccion.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/tablas/TablaOrden.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_FechaEntrega.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/Reportes.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/FrmTransacciones.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/Maestros/tablas/TablaAlmacen.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/GetResAdj.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/menu/FrmMenu.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_GeneraContrato2.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_CONTRATANTE.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_DOCUMENTOS_INTEGRANTES.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_CONTRATADO.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/DiagOrdenesDetalle.java</file>
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/ResMay15.java</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/JD_AddPreventivo.java</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/RepTransaccion.java</file>
