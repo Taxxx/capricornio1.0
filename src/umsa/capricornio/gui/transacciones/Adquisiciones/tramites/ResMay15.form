@@ -110,7 +110,11 @@
                       <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <EmptySpace pref="15" max="32767" attributes="0"/>
+=======
+                  <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 40cf7ed9c396de6962a43a6be77700c4769f0fa6
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">

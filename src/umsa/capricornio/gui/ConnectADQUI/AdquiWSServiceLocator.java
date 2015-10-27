@@ -22,7 +22,7 @@ public class AdquiWSServiceLocator extends org.apache.axis.client.Service implem
     }
 
     // Use to get a proxy class for AdquiWS
-    private java.lang.String AdquiWS_address = "http://200.7.160.25/axis/ADQUI/AdquiWS.jws";
+    private java.lang.String AdquiWS_address = "http://200.7.160.182/axis/ADQUI/AdquiWS.jws";
 
     public java.lang.String getAdquiWSAddress() {
         return AdquiWS_address;
@@ -105,7 +105,7 @@ public class AdquiWSServiceLocator extends org.apache.axis.client.Service implem
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "AdquiWSService");
+        return new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "AdquiWSService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class AdquiWSServiceLocator extends org.apache.axis.client.Service implem
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://200.7.160.25/axis/ADQUI/AdquiWS.jws", "AdquiWS"));
+            ports.add(new javax.xml.namespace.QName("http://200.7.160.182/axis/ADQUI/AdquiWS.jws", "AdquiWS"));
         }
         return ports.iterator();
     }

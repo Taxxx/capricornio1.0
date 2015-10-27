@@ -84,7 +84,7 @@ public class GetResAdj {
             }
             try {
                 System.out.println("aqui ya vemos otro2");
-                conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
+                conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.182:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
             } catch (SQLException ex) {
                 System.out.println("esto es un error1");
                 JOptionPane.showMessageDialog( null, "esto1"+ex.getMessage());

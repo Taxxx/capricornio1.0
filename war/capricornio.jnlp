@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--<jnlp spec="1.0+" codebase="http://200.7.166.211:8080/capricornio/" href="capricornio.jnlp">-->
 <!--jnlp spec="1.0+" codebase="http://localhost:8080/capricornio/" href="capricornio.jnlp"-->
-<jnlp spec="1.0+" codebase="http://200.7.160.25/capricornio/" href="capricornio.jnlp">
+<jnlp spec="1.0+" codebase="http://200.7.160.182/capricornio/" href="capricornio.jnlp">
   <information>
     <title>SISTEMA DE SOLICITUD,PEDIDO Y ORDEN DE COMPRA - DIVISO DE ADQUISICIONES</title>
     <vendor>umsa</vendor>
