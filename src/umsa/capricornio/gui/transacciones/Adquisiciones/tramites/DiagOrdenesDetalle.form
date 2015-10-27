@@ -1142,7 +1142,6 @@
           <Image iconType="3" name="/umsa/capricornio/gui/images/eliminar.gif"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Anular"/>
-        <Property name="enabled" type="boolean" value="false"/>
         <Property name="horizontalTextPosition" type="int" value="4"/>
       </Properties>
       <Events>
