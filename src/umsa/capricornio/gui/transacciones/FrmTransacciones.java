@@ -146,7 +146,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
             System.out.println("Aquí esta en presupuestos :D y los datos son: "+gestion+", "+cod_almacen+", "+cod_usuario+", "+cod_tramite);
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            System.out.println("gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario+" cod_tramite"+cod_tramite);
+            System.err.println("1).............. gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario+" cod_tramite"+cod_tramite);
             Map[] datos=puerto.getTransaccionBandeja(gestion,cod_almacen,cod_usuario,0,"alm",cod_tramite);            
             CerearTablaBandeja();
             if (datos!=null)
@@ -174,7 +174,7 @@ public class FrmTransacciones extends javax.swing.JInternalFrame {
                 /*===============================================================================================================
                  * cod_Tramite=2 porque el usuario de almacenes puede ver ordenes de compra al ingresar a almacen
                  ================================================================================================================*/
-                System.out.println("/**************** gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario);
+                System.out.println("2)............. gestion: "+gestion+" cod_almacen: "+cod_almacen+" cod_usuario: "+cod_usuario);
                 datos=puerto.getTransaccionBandejaUnion(gestion,cod_almacen,3,cod_usuario);            
                 if (datos!=null){
                     System.out.println("Siii"+datos.length);

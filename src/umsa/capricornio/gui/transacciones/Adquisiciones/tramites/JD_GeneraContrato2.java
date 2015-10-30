@@ -6,6 +6,8 @@
 
 package umsa.capricornio.gui.transacciones.Adquisiciones.tramites;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Map;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWSServiceLocator;
 import umsa.capricornio.gui.ConnectADQUI.AdquiWS_PortType;
@@ -81,6 +83,13 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         if(cod_w!=6){
             this.JC_TipoServ.setVisible(false);
         }
+        
+        
+        if(cuantia.equals("COMPRA MENOR")){
+            this.JTF_CUCE.setEnabled(false);
+            this.JTF_Convocatoria.setEnabled(false);
+            this.FECHA_CONVOCATORIA.setEnabled(false);
+        }
          
     }
     
@@ -89,7 +98,7 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
             
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-            
+            SimpleDateFormat formatoDeFecha = new SimpleDateFormat("MM/dd/yyyy");
             Map[] datos = puerto.getContratoInicio(cod_transaccion);
             if (datos != null) {
                 System.err.println("Con Datos");
@@ -105,6 +114,12 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
 //                this.JTF_Direccion_ProponenteAdjudicado.setText(datos[0].get("DIR_PROPONENTE_ADJUDICADO").toString());
 //                this.JTF_Denominacion_ProponenteAdjudicado.setText(datos[0].get("DENO_PROPONENTE_ADJUDICADO").toString());
 //                this.JTF_ObjetoContratacion.setText(datos[0].get("OBJETO_CONTRATACION").toString());
+                //this.JTF_Convocatoria.setText(datos[0].get("CONVOCATORIA_ADC_ANPE").toString());
+                //System.out.println("La Fecha es:----- "+datos[0].get("FECHA_CONTRATO").toString());
+                this.FECHA_CONVOCATORIA.setValue(formatoDeFecha.parse(datos[0].get("FECHA_CONV_ANPE").toString()));
+                this.FECHA_CONTRATO.setValue(formatoDeFecha.parse(datos[0].get("FECHA_CONTRATO").toString()));
+                this.JTF_Convocatoria.setText(datos[0].get("CONVOCATORIA_ADC_ANPE").toString());
+                this.JTF_ObjetoContratacion.setText(datos[0].get("OBJETO_CONTRATACION").toString());
                 this.JTF_CUCE.setText(datos[0].get("CUCE_CONTRATACION").toString());
                 this.JTF_AsesorJuridico.setText(datos[0].get("ASESOR_JURIDICO").toString());
                 
@@ -113,6 +128,9 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
                 this.JC_Anticipo.setSelectedIndex(Integer.valueOf(datos[0].get("SW_ANTICIPO").toString()));
                 this.JC_TipoConsult.setSelectedIndex(Integer.valueOf(datos[0].get("SW_TIPO_CONSULTORIA").toString()));
                 this.JC_TipoServ.setSelectedIndex(Integer.valueOf(datos[0].get("SW_TIPO_SERVICIO").toString()));
+                
+                
+                
     //            this.JTF_RazonSocialContratante.setText(datos[0].get("B").toString());
             }
             else
@@ -149,6 +167,13 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         jButton6 = new javax.swing.JButton();
         JC_TipoConsult = new javax.swing.JComboBox();
         JC_TipoServ = new javax.swing.JComboBox();
+        jLabel14 = new javax.swing.JLabel();
+        JTF_ObjetoContratacion = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        JTF_Convocatoria = new javax.swing.JTextField();
+        FECHA_CONVOCATORIA = new net.sf.nachocalendar.components.DateField();
+        jLabel16 = new javax.swing.JLabel();
+        FECHA_CONTRATO = new net.sf.nachocalendar.components.DateField();
         jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         JB_Guardar = new javax.swing.JButton();
@@ -203,16 +228,42 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
 
         JC_TipoServ.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Escoja un tipo de Servicio", "Servicios 26990", "Servicios Generales" }));
 
+        jLabel14.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel14.setText("Objeto Contratación:");
+
+        JTF_ObjetoContratacion.setPreferredSize(new java.awt.Dimension(250, 28));
+
+        jLabel15.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("Convocatoria:");
+
+        JTF_Convocatoria.setPreferredSize(new java.awt.Dimension(250, 28));
+
+        FECHA_CONVOCATORIA.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_CONVOCATORIA.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_CONVOCATORIA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FECHA_CONVOCATORIAKeyPressed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel16.setText("Fecha Contrato:");
+
+        FECHA_CONTRATO.setDateFormat(DateFormat.getDateInstance(DateFormat.MEDIUM));
+        FECHA_CONTRATO.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        FECHA_CONTRATO.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FECHA_CONTRATOKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(JTF_AsesorJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +288,28 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
                                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(JL_TITULO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(192, 192, 192))))
+                        .addGap(192, 192, 192))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FECHA_CONTRATO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTF_Convocatoria, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FECHA_CONVOCATORIA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTF_AsesorJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTF_ObjetoContratacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(287, 287, 287))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,11 +336,25 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
                 .addComponent(JC_TipoConsult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JC_TipoServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JTF_AsesorJuridico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(78, 78, 78))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(JTF_ObjetoContratacion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15)
+                        .addComponent(JTF_Convocatoria, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FECHA_CONVOCATORIA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(FECHA_CONTRATO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(JTF_AsesorJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/printer.png"))); // NOI18N
@@ -342,8 +428,8 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
@@ -363,8 +449,8 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.JB_Guardar.doClick();
-        genera_res_15.ReporteContratoGenerico(this.cod_transaccion,this.cod_w,this.cuantia);
+        //this.JB_Guardar.doClick();
+        genera_res_15.ReporteContratoGenerico(this.cod_transaccion,this.cod_w,this.cuantia,this.JC_TipoServ.getSelectedIndex(),this.JC_TipoConsult.getSelectedIndex());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -384,6 +470,14 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         JD_DOCUMENTOS_INTEGRANTES JDI = new JD_DOCUMENTOS_INTEGRANTES(null,true,this.cod_transaccion);
         JDI.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void FECHA_CONVOCATORIAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_CONVOCATORIAKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FECHA_CONVOCATORIAKeyPressed
+
+    private void FECHA_CONTRATOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FECHA_CONTRATOKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FECHA_CONTRATOKeyPressed
 
     private void JalaDatos(int cod_transaccion){
         try {
@@ -436,6 +530,7 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
             
         
         try {
+            SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd/MM/yyyy");
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             puerto.updateContratoInicio(cod_transaccion
@@ -443,6 +538,10 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
                     ,String.valueOf(this.JC_GarRet.getSelectedIndex()),String.valueOf(this.JC_Anticipo.getSelectedIndex())
                     ,String.valueOf(this.JC_FunGarRet.getSelectedIndex()),String.valueOf(this.JC_TipoConsult.getSelectedIndex())
                     ,String.valueOf(this.JC_TipoServ.getSelectedIndex())
+                    ,this.JTF_ObjetoContratacion.getText()/*,"hola"*/
+                    ,this.JTF_Convocatoria.getText()
+                    ,formatoDeFecha.format(this.FECHA_CONVOCATORIA.getValue())
+                    ,formatoDeFecha.format(this.FECHA_CONTRATO.getValue())
             );
             
 //            puerto.updateContrato2(cod_transaccion
@@ -505,6 +604,8 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private net.sf.nachocalendar.components.DateField FECHA_CONTRATO;
+    private net.sf.nachocalendar.components.DateField FECHA_CONVOCATORIA;
     private javax.swing.JButton JB_Guardar;
     private javax.swing.JComboBox JC_Anticipo;
     private javax.swing.JComboBox JC_FunGarRet;
@@ -514,6 +615,8 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
     private javax.swing.JLabel JL_TITULO;
     private javax.swing.JTextField JTF_AsesorJuridico;
     private javax.swing.JTextField JTF_CUCE;
+    private javax.swing.JTextField JTF_Convocatoria;
+    private javax.swing.JTextField JTF_ObjetoContratacion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -521,6 +624,9 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

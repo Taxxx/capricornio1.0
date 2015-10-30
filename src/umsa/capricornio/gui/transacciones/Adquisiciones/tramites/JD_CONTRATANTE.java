@@ -63,6 +63,8 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
                     ,this.JTF_CARGO_RPC_RPA.getText()
                     ,this.JTF_CI_RPC_RPA.getText()
             );
+            javax.swing.JOptionPane.showMessageDialog(this, "Se actualizo el tramite de forma exitosa!!! ", "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
             
 //            if (datos != null) {
 //                System.err.println("Con Datos");
@@ -70,7 +72,8 @@ public class JD_CONTRATANTE extends javax.swing.JDialog {
 //            else
 //                System.err.println("Vacio!!!");
         } catch (Exception e) {
-            System.err.println("Error :O");          
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error :O <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
 
