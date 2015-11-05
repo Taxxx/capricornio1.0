@@ -828,8 +828,8 @@ public class GetResAdj {
                
         parameters.put("cod_transaccion", cod_transaccion);
         
-        //urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/reporte_items.jasper");
-        //parameters.put("DIR1", urlMaestro1.toString());
+        urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/reporte_items.jasper");
+        parameters.put("DIR1", urlMaestro1.toString());
         
         System.err.println("vamos a ver : "+urlMaestro);
         

@@ -31,7 +31,7 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
      * Creates new form FrmReporteUnidad
      */
     FrmMenu menu;
-    int cc=1,tamaño=100;
+    int cc=1,tamanio=100;
     int almacenados=0;
     int cod_user, cod_rol,estado,btr;
     int gestion;
@@ -247,8 +247,8 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
                         jt.setBounds(a,b,c,d);
                         jt.setName("texto"+cc);
                         jt.setText(datos[i].get("TAREA").toString());
-                        System.out.println(tamaño+","+jPanel1.getSize().width+"asdojasdoijasdio");
-                        jPanel1.setSize(jPanel1.getSize().height,tamaño);
+                        System.out.println(tamanio+","+jPanel1.getSize().width+"asdojasdoijasdio");
+                        jPanel1.setSize(jPanel1.getSize().height,tamanio);
                         jPanel1.setPreferredSize(jPanel1.getSize());
                         jPanel1.add(this.jt);
 
@@ -280,9 +280,9 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
                         System.out.println("a:"+a+" b: "+b+" c: "+c+" d: "+d);
                         jt.setBounds(a,b,c,d);
                         jt.setText(datos[i].get("TAREA").toString());
-                        tamaño=tamaño+30;
-                        System.out.println(tamaño+","+jPanel1.getSize().width);
-                        jPanel1.setSize(jPanel1.getSize().height,tamaño);
+                        tamanio=tamanio+30;
+                        System.out.println(tamanio+","+jPanel1.getSize().width);
+                        jPanel1.setSize(jPanel1.getSize().height,tamanio);
                         jPanel1.setPreferredSize(jPanel1.getSize());
                         jPanel1.add(this.jt);
                         a=jButton1.getX();
@@ -346,8 +346,8 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
             System.out.println("a:"+a+" b: "+b+" c: "+c+" d: "+d);
             jt.setBounds(a,b,c,d);
             jt.setName("texto"+cc);
-            System.out.println(tamaño+","+jPanel1.getSize().width+"asdojasdoijasdio");
-            jPanel1.setSize(jPanel1.getSize().height,tamaño);
+            System.out.println(tamanio+","+jPanel1.getSize().width+"asdojasdoijasdio");
+            jPanel1.setSize(jPanel1.getSize().height,tamanio);
             jPanel1.setPreferredSize(jPanel1.getSize());
             jPanel1.add(this.jt);
             
@@ -377,9 +377,9 @@ public class FrmtareasAdicionales extends javax.swing.JInternalFrame {
             d=jTextField1.getHeight();
             System.out.println("a:"+a+" b: "+b+" c: "+c+" d: "+d);
             jt.setBounds(a,b,c,d);
-            tamaño=tamaño+30;
-            System.out.println(tamaño+","+jPanel1.getSize().width);
-            jPanel1.setSize(jPanel1.getSize().height,tamaño);
+            tamanio=tamanio+30;
+            System.out.println(tamanio+","+jPanel1.getSize().width);
+            jPanel1.setSize(jPanel1.getSize().height,tamanio);
             jPanel1.setPreferredSize(jPanel1.getSize());
             jPanel1.add(this.jt);
             
