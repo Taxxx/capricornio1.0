@@ -487,7 +487,7 @@ public class ResolucionInicio extends javax.swing.JFrame {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
-                        
+            System.err.println("cod_transaccion: "+cod_transaccion+", 1, detalle: "+detalle+", envia:"+ envia+", dns:"+dns+" , dnp: "+dnp+" , destino: "+destino+" , dias: "+dias+" , gestion: "+gestion+" ,jefe_adqui: "+jefe_adqui+" ,detalle_recursos:"+detalle_recursos+" ,detalle_uni_sol: "+detalle_uni_sol+",detalle_autorizacion: "+detalle_autorizacion);            
             puerto.generaResIni(cod_transaccion, 1, detalle, envia, dns, dnp, destino, dias, gestion,jefe_adqui,detalle_recursos,detalle_uni_sol,detalle_autorizacion);
             
             javax.swing.JOptionPane.showMessageDialog(this,"La Resolución de inicio ha sido generada de forma correcta","SYSTEM CAPRICORN",

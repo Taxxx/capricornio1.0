@@ -61,6 +61,8 @@ public class JD_CONTRATADO extends javax.swing.JDialog {
                     ,this.JTF_CI_CONTRATADO.getText()
                     ,this.JTF_DENOMINACION_CONTRATADO.getText()
             );
+            javax.swing.JOptionPane.showMessageDialog(this, "Se actualizo el tramite de forma exitosa!!! ", "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
 //            Map[] datos =null;
 //            if (datos != null) {
 //                System.err.println("Con Datos");
@@ -68,7 +70,8 @@ public class JD_CONTRATADO extends javax.swing.JDialog {
 //            else
 //                System.err.println("Vacio!!!");
         } catch (Exception e) {
-            System.err.println("Error :O");          
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error :O <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
 

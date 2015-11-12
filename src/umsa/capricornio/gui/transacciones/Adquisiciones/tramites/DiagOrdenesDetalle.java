@@ -1723,14 +1723,112 @@ public class DiagOrdenesDetalle extends javax.swing.JDialog {
                             cod_w = 1;
                         }
                         Map[] d=puerto.getDias(cod_trans_nro);
-                        if(cuantia.equals("COMPRA MENOR") && cod_w == 6 && d[0].get("DIAS").toString().equals("15"))
-                        {
-                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "ALM1");
+                        
+                        System.err.println("xx entro!!!  "+d[0].get("DIAS").toString().trim());
+                        
+                        switch(cod_w){
+                            case 1:
+                                if(cuantia.equals("COMPRA MENOR")){
+                                    if(Integer.parseInt(d[0].get("DIAS").toString().trim()) <15){
+                                        destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                    }
+                                    else{
+                                        System.err.println("entro!!!  "+d[0].get("DIAS").toString().trim());
+                                        destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "XJUR");
+                                    }
+                                }
+                                if(cuantia.equals("ANPE")){
+                                    destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "XJUR");
+                                }
+                                break;
+//                            case 2:
+//                                if(cuantia.equals("COMPRA MENOR")){
+//                                    
+//                                }
+//                                if(cuantia.equals("ANPE")){
+//                                    
+//                                }
+//                                break;
+                            case 3:
+                                if(cuantia.equals("COMPRA MENOR")){
+                                    destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                }
+                                if(cuantia.equals("ANPE")){
+                                    destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                }
+                                break;
+                            case 4:
+                                if(cuantia.equals("COMPRA MENOR")){
+                                    destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                }
+                                if(cuantia.equals("ANPE")){
+                                    destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                }
+                                break;
+//                            case 5:
+//                                if(cuantia.equals("COMPRA MENOR")){
+//                                    
+//                                }
+//                                if(cuantia.equals("ANPE")){
+//                                    
+//                                }
+//                                break;
+                            case 6:
+                                if(cuantia.equals("COMPRA MENOR")){
+                                    if(Integer.parseInt(d[0].get("DIAS").toString().trim()) <15){
+                                        System.err.println("entro!!!  "+d[0].get("DIAS").toString().trim());
+                                        destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "ALM1");
+                                    }
+                                    else{
+                                        destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                    }
+                                }
+                                if(cuantia.equals("ANPE")){
+                                    destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+                                }
+                                break;
                         }
-                        else
-                        {
-                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
-                        }
+                        
+                        
+                        
+//                        if(cuantia.equals("COMPRA MENOR") && cod_w == 6 && Integer.parseInt(d[0].get("DIAS").toString().trim()) <15 /*&& d[0].get("DIAS").toString().equals("15")*/)
+//                        {
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "ALM1");
+//                        }
+//                        else
+//                        {
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+//                        }
+//                        
+//                        if(cuantia.equals("COMPRA MENOR") && cod_w == 1 && Integer.parseInt(d[0].get("DIAS").toString().trim()) >=15 /*&& d[0].get("DIAS").toString().equals("15")*/)
+//                        {
+//                            System.err.println("entro!!!  "+d[0].get("DIAS").toString().trim());
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "XJUR");
+//                        }
+//                        else
+//                        {
+//                            System.err.println("--entro!!!  "+d[0].get("DIAS").toString().trim());
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+//                        }
+                        
+//                        if(cuantia.equals("ANPE") && cod_w == 1 /*&& d[0].get("DIAS").toString().equals("15")*/)
+//                        {
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "XJUR");
+//                        }
+//                        else
+//                        {
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+//                        }
+//                        if(cuantia.equals("COMPRA MENOR") && cod_w == 1 && Integer.parseInt(d[0].get("DIAS").toString().trim()) >=15 /*&& d[0].get("DIAS").toString().equals("15")*/)
+//                        {
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, "XJUR");
+//                        }
+//                        else
+//                        {
+//                            destino = puerto.setTransaccionesDestino("SET-upDateDestino", Integer.parseInt(TblItems.getValueAt(f, 2).toString()), cod_w, TblItems.getValueAt(f, 1).toString());
+//                        }
+                        
+                        
                     }
                 }
                 //cod_w = cod_aux;

@@ -98,6 +98,9 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
                   
             );
             
+             javax.swing.JOptionPane.showMessageDialog(this, "Se actualizo el tramite de forma exitosa!!! ", "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            
             
 //            Map[] datos = puerto.updateContratoDocumentosIntegrantes(cod_transaccion
 //                    ,this.JTF_NOTA_ADQ.getText(),"16/04/1991"
@@ -116,7 +119,8 @@ public class JD_DOCUMENTOS_INTEGRANTES extends javax.swing.JDialog {
             
             
         } catch (Exception e) {
-            System.err.println("Error :O");          
+            javax.swing.JOptionPane.showMessageDialog(this, "<html> error :O <br> " + e, "SYSTEM CAPRICORN",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);       
         }
     }
 
