@@ -84,7 +84,7 @@ public class GetResAdj {
             }
             try {
                 System.out.println("aqui ya vemos otro2");
-                conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.182:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
+                conexion = DriverManager.getConnection("jdbc:oracle:thin:@200.7.160.25:1521:ADQUI", "ADQUISICIONES", "4dqu1_c3n72al");
             } catch (SQLException ex) {
                 System.out.println("esto es un error1");
                 JOptionPane.showMessageDialog( null, "esto1"+ex.getMessage());
@@ -521,7 +521,7 @@ public class GetResAdj {
         this.imprimePDF(urlMaestro, parameters);
         
     }
-    public void reporte15(String hr,String ep,String c,String det,String dest,String obj,String prev,String m,String part,String sc,String cot,String prov,String dias,String cite,String nro_res,int estado,String doc,String fec_ini)
+    public void reporte15(String hr,String ep,String c,String det,String dest,String obj,String prev,String m,String part,String sc,String cot,String prov,String dias,String cite,String nro_res,int estado,String doc,String fec_ini,String feccha_hr,String fecha_nota)
     {
         Map parameters = new HashMap();
         parameters.put("HOJA_RUTA", hr);
@@ -543,6 +543,8 @@ public class GetResAdj {
         parameters.put("ESTADO", estado);
         parameters.put("DOCUMENTOS", doc);
         parameters.put("FECHA", fec_ini);
+        parameters.put("FECHA_HR", feccha_hr);
+        parameters.put("FECHA_NOTA", fecha_nota);
         RepTransaccion t1 = new RepTransaccion(); 
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ReportMay15Cons.jasper");
         this.imprimePDF(urlMaestro, parameters);

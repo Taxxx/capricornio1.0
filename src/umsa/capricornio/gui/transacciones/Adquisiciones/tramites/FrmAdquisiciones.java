@@ -444,6 +444,8 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         String cite;
         String nro_res;
         String fec_ini;
+        String fec_hr = null;
+        String fec_nota = null;
         String documentos;
         int cod_w = 0;
         int x=0;
@@ -458,17 +460,18 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             Map[] dat = puerto.getProponenteADJ(cod_trans_nro);
             dias=dd[0].get("DIAS").toString();
             proveedor=(dat[0].get("NOMBRE_COMERCIAL").toString());
+            System.out.println("datos son :"+datos);
             if(datos!=null)
             {
                 System.out.println("nro de partidas "+datos.length);
                 for(int i=0;i<datos.length;i++)
                 {
-                    t=t+"-"+datos[i].get("PARTIDA").toString()+"-"+datos[i].get("DETALLE").toString()+", ";
+                    t=t+", "+datos[i].get("PARTIDA").toString()+"-"+datos[i].get("DETALLE").toString()+"";
                 }
             }
         }catch(Exception e)
         {
-            
+            System.out.println("errorers que no esperaba "+e);
         }
         try{
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
@@ -478,16 +481,39 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             int cod_transaccion=Integer.parseInt(d[0].get("COD_TRANSACCION").toString());
             System.out.println("cod_tn"+cod_trans_nro+" cod_T"+cod_transaccion);
             Map[] datos=puerto.getresmay(cod_transaccion, cod_trans_nro);
+            System.out.println("parece que esta aqui el error "+datos);
             if(datos!=null)
             {
-                cite=datos[0].get("CITE").toString();
+                /*cite=datos[0].get("CITE").toString();
                 destino=datos[0].get("DESTINO").toString();
                 cargo=datos[0].get("CARGO").toString();
                 objetivo=datos[0].get("OBJETIVO").toString();
                 cotizacion=datos[0].get("COTIZACION").toString();
                 nro_res=datos[0].get("NRO").toString();
                 documentos=datos[0].get("DOCUMENTOS").toString();
+                fec_ini=datos[0].get("FECHA_INICIO_CON").toString();*/
+                
+                System.out.println("uno");
+                cite=(datos[0].get("CITE").toString());
+                System.out.println("dos");
+                cargo=(datos[0].get("CARGO").toString());
+                System.out.println("tres");
+                fec_hr=(datos[0].get("DETALLE_NOTA_SOLICITUD").toString());
+                System.out.println("cuatro");
+                fec_nota=(datos[0].get("DETALLE_NOTA_PRESUPUESTO").toString());
+                System.out.println("cinco");
+                /*SimpleDateFormat formatoDeFecha = new SimpleDateFormat("MM/dd/yyyy");
+                String strf=(datos[0].get("FECHA_INICIO_CON").toString());
+                System.out.println("esto es str "+strf);
+                fec_ini=(formatoDeFecha.parse(strf));*/
                 fec_ini=datos[0].get("FECHA_INICIO_CON").toString();
+                destino=(datos[0].get("DESTINO").toString());
+                objetivo=(datos[0].get("OBJETIVO").toString());
+                cotizacion=(datos[0].get("COTIZACION").toString());
+                nro_res=datos[0].get("NRO").toString();
+                documentos=datos[0].get("DOCUMENTOS").toString();
+                System.out.println("hasta aqui si pasa");
+                
                 partida=t;
                 //*********
                 Map[] datos1=puerto.getdatosres15(cod_transaccion);
@@ -498,12 +524,14 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     detalle=datos1[0].get("DET").toString();
                     preventivo=datos1[0].get("COD_PREVENTIVO").toString();
                     monto=datos1[0].get("TOTAL").toString();
+                    /*fec_hr=datos1[0].get("DETALLE_NOTA_SOLICITUD").toString();
+                    fec_nota=datos1[0].get("DETALLE_NOTA_PRESUPUESTO").toString();*/
                     //cargo=datos[0].get("CARGO").toString();
                     sol_compra=datos1[0].get("SOL").toString();
                 }
                 else
                     System.out.println("nookokokok");
-                monto=monto+" "+TotalTexto(monto);
+                monto=monto+" ("+TotalTexto(monto).toLowerCase()+")";
                 String doc=obtiene_doc_imp(documentos);
                 try{
                     System.out.println("monto "+monto);
@@ -520,7 +548,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                     System.out.println("prov "+proveedor);
                     System.out.println("dias "+dias);
                     System.out.println("cite "+cite);
-                    genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc,fec_ini);
+                    genera_res_15.reporte15(hoja_ruta,enviado_por,cargo,detalle,destino,objetivo,preventivo,monto,partida,sol_compra,cotizacion,proveedor,dias,cite,nro_res,cod_w,doc,fec_ini,fec_hr,fec_nota);
                     x=1;
                 }catch(Exception e)
                 {
@@ -713,6 +741,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(104, 129, 156));
         setClosable(true);
@@ -752,7 +781,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(BtnSalir);
-        BtnSalir.setBounds(510, 640, 150, 25);
+        BtnSalir.setBounds(510, 640, 150, 28);
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 204));
         jPanel4.setLayout(null);
@@ -787,7 +816,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(BtnActualizar);
-        BtnActualizar.setBounds(30, 10, 120, 25);
+        BtnActualizar.setBounds(30, 10, 120, 28);
 
         BtnOrdenes.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         BtnOrdenes.setForeground(new java.awt.Color(0, 102, 153));
@@ -799,7 +828,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(BtnOrdenes);
-        BtnOrdenes.setBounds(170, 10, 140, 25);
+        BtnOrdenes.setBounds(170, 10, 140, 28);
 
         jPanel4.add(jPanel1);
         jPanel1.setBounds(20, 10, 1100, 50);
@@ -836,7 +865,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnInicio);
-        BtnInicio.setBounds(40, 30, 30, 25);
+        BtnInicio.setBounds(40, 30, 30, 28);
 
         BtnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_previous.png"))); // NOI18N
         BtnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -845,7 +874,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnAtras);
-        BtnAtras.setBounds(70, 30, 30, 25);
+        BtnAtras.setBounds(70, 30, 30, 28);
 
         BtnAdelante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_next.png"))); // NOI18N
         BtnAdelante.addActionListener(new java.awt.event.ActionListener() {
@@ -854,7 +883,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnAdelante);
-        BtnAdelante.setBounds(100, 30, 30, 25);
+        BtnAdelante.setBounds(100, 30, 30, 28);
 
         BtnFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/resultset_last.png"))); // NOI18N
         BtnFinal.addActionListener(new java.awt.event.ActionListener() {
@@ -863,19 +892,19 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(BtnFinal);
-        BtnFinal.setBounds(130, 30, 30, 25);
+        BtnFinal.setBounds(130, 30, 30, 28);
 
         jLabel1.setText("Nro. Orden de Compra:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(230, 24, 140, 14);
+        jLabel1.setBounds(230, 24, 140, 16);
 
         jLabel2.setText("Nro. Hoja de Ruta: ");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(540, 24, 120, 14);
+        jLabel2.setBounds(540, 24, 120, 16);
         jPanel2.add(JTF_nroOrden);
-        JTF_nroOrden.setBounds(370, 20, 110, 20);
+        JTF_nroOrden.setBounds(370, 20, 110, 28);
         jPanel2.add(JTF_hojaRuta);
-        JTF_hojaRuta.setBounds(650, 20, 100, 20);
+        JTF_hojaRuta.setBounds(650, 20, 100, 28);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/search_16.png"))); // NOI18N
         jButton1.setText("BUSCAR");
@@ -885,7 +914,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(800, 5, 140, 25);
+        jButton1.setBounds(800, 5, 140, 28);
 
         jButton2.setForeground(new java.awt.Color(255, 0, 0));
         jButton2.setText("MOSTRAR TODO");
@@ -905,7 +934,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(jButton3);
-        jButton3.setBounds(800, 30, 140, 25);
+        jButton3.setBounds(800, 30, 140, 28);
 
         jPanel3.add(jPanel2);
         jPanel2.setBounds(10, 20, 1120, 60);
@@ -918,7 +947,17 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
             }
         });
         jPanel3.add(jButton4);
-        jButton4.setBounds(480, 530, 190, 25);
+        jButton4.setBounds(400, 530, 190, 28);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umsa/capricornio/gui/images/desktop.png"))); // NOI18N
+        jButton5.setText("Cierre y observaciones");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton5);
+        jButton5.setBounds(603, 528, 200, 30);
 
         jTabbedPane1.addTab("Enviados", jPanel3);
 
@@ -1134,6 +1173,75 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
   
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        try{
+            int fila = TblTransaccionEstado.getSelectedRow();
+            int cod_trans_nro = Integer.parseInt(TblTransaccionEstado.getValueAt(fila, 0).toString());
+            //String tramite = TblTransaccionBandeja.getValueAt(fila, 4).toString();
+            System.err.println("El cod_trans_nro: "+cod_trans_nro);
+            
+            String tramite = "Correccion Tramite";
+            int cod_w = Integer.parseInt(TblTransaccionEstado.getValueAt(fila, 2).toString());
+            System.err.println("El cod_w: "+cod_w);
+            String origen=TblTransaccionEstado.getValueAt(fila, 1).toString();
+            System.err.println("El origen: "+origen);
+            String detalle=TblTransaccionEstado.getValueAt(fila, 5).toString();
+            System.err.println("El detalle: "+detalle);
+            String unidad_sol=TblTransaccionEstado.getValueAt(fila, 6).toString();
+            System.err.println("unidad_sol: "+unidad_sol);
+            String unidad_des=TblTransaccionEstado.getValueAt(fila, 7).toString();
+            System.err.println("unidad_des: "+unidad_des);
+            String estadox=TblTransaccionEstado.getValueAt(fila, 8).toString();
+            System.err.println("El estadox: "+estadox);
+            String nro=TblTransaccionEstado.getValueAt(fila, 3).toString();
+            System.err.println("El nro: "+nro);
+            String cuantia=TblTransaccionEstado.getValueAt(fila, 10).toString();
+            System.err.println("cuantia: "+cuantia);
+            String del=TblTransaccionEstado.getValueAt(fila, 11).toString();
+            System.err.println("del: "+del);
+            String hasta=TblTransaccionEstado.getValueAt(fila, 12).toString();
+            System.err.println("hasta: "+hasta);
+            AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
+            AdquiWS_PortType puerto = servicio.getAdquiWS();
+            Map[] d=puerto.getTransaccionNro(cod_trans_nro);
+            int cod_transaccion = Integer.parseInt(d[0].get("COD_TRANSACCION").toString());
+            Map[] datos=puerto.getresmay(cod_transaccion, cod_trans_nro);
+            if(datos!=null)
+            {
+                System.out.println("esto si tiene datos");
+                DiagOrdenesDetalleForm ordenes= new DiagOrdenesDetalleForm
+                (this,menu,cod_almacen, cod_trans_nro,cod_rol,tramite,gestion,cod_w,origen,detalle,unidad_sol,unidad_des,nro,cuantia,del,hasta,this.cod_usuario,true);
+                ordenes.AbreDialogo();
+            }
+            else
+            {
+                d=puerto.getResIni(cod_transaccion);
+                if(d!=null)
+                {
+                    System.out.println("este es un anpe");
+                    DiagOrdenesDetalleForm ordenes= new DiagOrdenesDetalleForm
+                    (this,menu,cod_almacen, cod_trans_nro,cod_rol,tramite,gestion,cod_w,origen,detalle,unidad_sol,unidad_des,nro,cuantia,del,hasta,this.cod_usuario,true);
+                    ordenes.AbreDialogo();
+                }
+                else
+                {
+                    System.out.println("no puedes ya que este tramite no necesita");
+                    javax.swing.JOptionPane.showMessageDialog(this,"<html> ESTE TRAMITE NO NECESITA LA GENERACION DE ESTOS FORMULARIOS<br> ","SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
+                
+            }
+            
+        }
+        catch(Exception e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,"<html> DEBE PINTAR UNA FILA<br> "+e,"SYSTEM CAPRICORN",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizar;
     private javax.swing.JButton BtnAdelante;
@@ -1152,6 +1260,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

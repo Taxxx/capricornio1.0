@@ -438,12 +438,13 @@ public class JD_GeneraContrato2 extends javax.swing.JDialog {
         try {
             AdquiWSServiceLocator servicio = new AdquiWSServiceLocator();
             AdquiWS_PortType puerto = servicio.getAdquiWS();
+            /*quitar el comentario
             puerto.updateContratoInicio(cod_transaccion
                     ,this.JTF_CUCE.getText(),this.JTF_AsesorJuridico.getText()
                     ,String.valueOf(this.JC_GarRet.getSelectedIndex()),String.valueOf(this.JC_Anticipo.getSelectedIndex())
                     ,String.valueOf(this.JC_FunGarRet.getSelectedIndex()),String.valueOf(this.JC_TipoConsult.getSelectedIndex())
                     ,String.valueOf(this.JC_TipoServ.getSelectedIndex())
-            );
+            );*/
             
 //            puerto.updateContrato2(cod_transaccion
 //                , this.JTF_ProponenteAdjudicado.getText(), this.JTF_Direccion_ProponenteAdjudicado.getText(), this.JTF_RazonSocialContratante.getText()
