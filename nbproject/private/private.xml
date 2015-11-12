@@ -4,14 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmtareasAdicionales.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_PAGO.java</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/GetResAdj.java</file>
-            <file>file:/E:/workspace2015/capricornio1.0/build.xml</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_GeneraContrato2.java</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_CONTRATANTE.java</file>
             <file>file:/E:/workspace2015/capricornio1.0/war/capricornio.jnlp</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/jarADQUI.bat</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_DOCUMENTOS_INTEGRANTES.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_PLAZOS.java</file>
             <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_CONTRATADO.java</file>
+            <file>file:/E:/workspace2015/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/Reportes.java</file>
         </group>
     </open-files>
 </project-private>

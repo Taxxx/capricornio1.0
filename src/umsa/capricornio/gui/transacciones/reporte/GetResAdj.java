@@ -741,7 +741,7 @@ public class GetResAdj {
         urlMaestro = t1.getClass().getResource("/umsa/capricornio/gui/reports/ResAdjCons.jasper");
         this.imprimePDF(urlMaestro, parameters);
     }
-    public void ReporteContratoGenerico(int cod_transaccion,int cod_w,String cuantia,int sw_servicio,int sw_consultoria){
+    public void ReporteContratoGenerico(int cod_transaccion,int cod_w,String cuantia,int sw_servicio,int sw_consultoria,double monto){
         Map parameters = new HashMap();
         RepTransaccion t1 = new RepTransaccion(); 
         
@@ -830,6 +830,10 @@ public class GetResAdj {
         
         urlMaestro1 = t1.getClass().getResource("/umsa/capricornio/gui/reports/reporte_items.jasper");
         parameters.put("DIR1", urlMaestro1.toString());
+        
+        //System.err.println(TotalTexto(String.valueOf(monto)));
+        parameters.put("monto_num", String.valueOf(monto));
+        parameters.put("monto_lit", TotalTexto(String.valueOf(monto)));
         
         System.err.println("vamos a ver : "+urlMaestro);
         
