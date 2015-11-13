@@ -5,10 +5,12 @@
         <group>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/FrmTransacciones.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_FechaEntrega.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/menu/JIF_DatosInstitucion.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmReporteUnidad.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmAdquisiciones.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/FrmtareasAdicionales.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/invitacion.java</file>
+            <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/reporte/RepTransaccion.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/ProponentesDialog.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/BancoProveedor/DiagBuscaProveedor.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JD_reporte_desierta.java</file>
@@ -38,7 +40,6 @@
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/menu/FrmMenu.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/JD_Preventivo.java</file>
             <file>file:/F:/git/tercer%20git/capricornio1.0/src/umsa/capricornio/gui/transacciones/Adquisiciones/tramites/JDInformeComision.java</file>
-            <file>file:/F:/git/tercer%20git/capricornio1.0/src/jarADQUI.bat</file>
         </group>
     </open-files>
 </project-private>

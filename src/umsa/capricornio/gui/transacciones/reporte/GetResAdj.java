@@ -123,7 +123,7 @@ public class GetResAdj {
             AdquiWS_PortType puerto = servicio.getAdquiWS();
             
             //dir_daf = puerto.getDatoGeneral("DIR_DAF");
-            dir_daf = puerto.getDatoGeneral("DIR_DAF");
+            dir_daf = puerto.getDatoGeneral("DIR_DAF_2");
             
             System.out.println("DIR_DAF: "+dir_daf);
         } catch (Exception e) {

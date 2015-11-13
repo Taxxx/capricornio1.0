@@ -531,7 +531,7 @@ public class FrmAdquisiciones extends javax.swing.JInternalFrame {
                 }
                 else
                     System.out.println("nookokokok");
-                monto=monto+" ("+TotalTexto(monto).toLowerCase()+")";
+                monto=monto+" ("+TotalTexto(monto).toLowerCase()+" Bolivianos)";
                 String doc=obtiene_doc_imp(documentos);
                 try{
                     System.out.println("monto "+monto);
